@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[84],{590:function(n,o,c){"use strict";c.r(o),o.default={fetch:function(n){(0,n.redirect)(301,"/docs/components/layout")}}}}]);
