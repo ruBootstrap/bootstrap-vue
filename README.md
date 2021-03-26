@@ -6,10 +6,7 @@
 <br>
 
 <p align="center">
-  With more than 85 components, over 45 available plugins, several directives, and 1000+ icons,
-  BootstrapVue provides one of the most comprehensive implementations of the Bootstrap v4.5
-  component and grid system available for Vue.js v2.6, complete with extensive and automated
-  WAI-ARIA accessibility markup.
+  BootstrapVue, состоящий из более чем 85 компонентов, более 45 доступных плагинов, нескольких директив и более 1000 иконок, обеспечивает одну из наиболее полных реализаций компонента Bootstrap v4.5 и системы сеток, доступных для Vue.js v2.6, в комплекте с обширными и автоматическая разметка доступности WAI-ARIA.
 </p>
 <br>
 
@@ -57,19 +54,19 @@
   </a>
 </p>
 
-<h2 align="center">Links</h2>
+<h2 align="center">Ссылки</h2>
 
-- 📘 [Documentation](https://bootstrap-vue.org)
-- 🔨 [Release Notes](https://bootstrap-vue.org/docs/reference/changelog)
-- 💬 [Discord Chat](https://discord.gg/j2Mtcny)
+- 📘 [Documentation](https://bootstrap-vue.org) | [Перевод Документации](https://bootstrap-vue.ru)
+- 🔨 [Release Notes](https://bootstrap-vue.org/docs/reference/changelog) | [Примечания к выпуску](https://bootstrap-vue.ru/docs/reference/changelog)
+- 💬 [Discord чат](https://discord.gg/j2Mtcny)
 - 🐦 [Twitter](https://twitter.com/BootstrapVue)
 
-<h2 align="center">Sponsors</h2>
+<h2 align="center">Спонсоры</h2>
 
-Support this project by becoming a sponsor.
+Поддержите этот проект, став спонсором.
 
-Your logo will show up here with a link to your website.
-[[Become a sponsor](https://opencollective.com/bootstrap-vue#sponsor)]
+Здесь будет отображаться Ваш логотип со ссылкой на Ваш веб-сайт.
+[[Стать спонсором](https://opencollective.com/bootstrap-vue#sponsor)]
 
 <a href="https://opencollective.com/bootstrap-vue/sponsor/0/website" target="_blank" rel="noopener"><img src="https://opencollective.com/bootstrap-vue/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/bootstrap-vue/sponsor/1/website" target="_blank" rel="noopener"><img src="https://opencollective.com/bootstrap-vue/sponsor/1/avatar.svg"></a>
@@ -82,27 +79,27 @@ Your logo will show up here with a link to your website.
 <a href="https://opencollective.com/bootstrap-vue/sponsor/8/website" target="_blank" rel="noopener"><img src="https://opencollective.com/bootstrap-vue/sponsor/8/avatar.svg"></a>
 <a href="https://opencollective.com/bootstrap-vue/sponsor/9/website" target="_blank" rel="noopener"><img src="https://opencollective.com/bootstrap-vue/sponsor/9/avatar.svg"></a>
 
-<h2 align="center">Backers</h2>
+<h2 align="center">Сторонники</h2>
 
-Thank you to all our backers! 🙏
-[[Become a backer](https://opencollective.com/bootstrap-vue#backer)]
+Спасибо всем нашим спонсорам! 🙏
+[[Стать сторонником](https://opencollective.com/bootstrap-vue#backer)]
 
 <a href="https://opencollective.com/bootstrap-vue#backers" target="_blank" rel="noopener"><img src="https://opencollective.com/bootstrap-vue/backers.svg?width=890"></a>
 
-<h2 align="center">Contributors</h2>
+<h2 align="center">Контрибьюторы</h2>
 
-This project exists thanks to all the people who contribute. [[Contribute]](CONTRIBUTING.md).
+Этот проект существует благодаря всем, кто вносит свой вклад. [[Содействовать]](CONTRIBUTING.md).
 
 <a href="https://github.com/bootstrap-vue/bootstrap-vue/graphs/contributors"><img src="https://opencollective.com/bootstrap-vue/contributors.svg?width=890"></a>
 
-<h2 align="center">Partners</h2>
+<h2 align="center">Партнеры</h2>
 
 <p align="center">
   <a href="https://vercel.com/?utm_source=bootstrapvue" target="_blank" rel="noopener"><img src="https://github.com/bootstrap-vue/bootstrap-vue/raw/master/static/powered-by-vercel.svg" width="175" alt="Powered by Vercel"></a>
 </p>
 
-<h2 align="center">License</h2>
+<h2 align="center">Лицензия</h2>
 
-Released under the MIT [License](./LICENSE). Copyright (c) BootstrapVue.
+Выпущено под лицензией MIT [License](./LICENSE). Copyright (c) BootstrapVue.
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fbootstrap-vue%2Fbootstrap-vue.svg?type=small)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fbootstrap-vue%2Fbootstrap-vue?ref=badge_small)

@@ -1,66 +1,58 @@
-# Contributing
+# Содействие
 
 > 👍🎉 First off, thanks for taking the time to contribute! 🎉👍
 
-## Playground & Issue reports
+## Отчеты о проблемах и игровой площадке
 
-If you want to play with BootstrapVue components without any local setup just head to our
-[Online Playground](https://bootstrap-vue.org/play) and you can interactively play and test
-components with a fresh Vue instance. If you want to keep your changes or make PRs reporting a
-component's misbehaviour you can save them to _CodePen_, _CodeSandbox_ or _JSFiddle_ and provide
-that link in issues.
+Если Вы хотите поиграть с компонентами BootstrapVue без какой-либо локальной настройки, просто зайдите на нашу [онлайн игровую площадку](https://bootstrap-vue.org/play), и Вы сможете интерактивно играть и тестировать компоненты с помощью нового экземпляра Vue. Если Вы хотите сохранить свои изменения или сделать PR, сообщающие о ненадлежащем поведении компонента, Вы можете сохранить их в _CodePen_, _CodeSandbox_ или _JSFiddle_ и предоставить эту ссылку в проблемах.
 
-## Setup
+## Установка
 
-- Clone this repo (`git clone https://github.com/bootstrap-vue/bootstrap-vue --branch=dev`)
-- Make sure you have `node` & `yarn` installed locally
+- Клонировать это репозиторий (`git clone https://github.com/bootstrap-vue/bootstrap-vue --branch=dev`)
+- Убедитесь, что у Вас локально установлены `node` и `yarn`
 - `cd bootstrap-vue`
-- Run `yarn install` to get all dependencies installed
+- Запустите `yarn install`, чтобы установить все зависимости
 
-## Work on components
+## Работа над компонентами
 
-If you want to hack and improve components locally, you can follow these steps:
+Если Вы хотите улучшить компоненты локально, Вы можете выполнить следующие действия:
 
-- Run `yarn docs-dev` to run a local development server
-- Head to `http://localhost:3000/play`
-- Now you can locally make changes to components (they are located in the `components` directory)
-  Changes will be applied with webpack hot-reloading without needing to reload the page
-- Finally feel free to share your awesome hacks with others and opening a PR
+- Запустите `yarn docs-dev`, чтобы запустить локальный сервер разработки
+- Перейдите по адресу `http://localhost:3000/play`
+- Теперь Вы можете локально вносить изменения в компоненты (они находятся в каталоге `components`)
+  Изменения будут применены с горячей перезагрузкой веб-пакета без необходимости перезагружать страницу.
+- Наконец, не стесняйтесь делиться своими крутыми хаками с другими и открывать PR
 
-## Test inside your project
+## Тестируйте внутри своего проекта
 
-If you want to see your changes in your project instead of the playground:
+Если Вы хотите видеть свои изменения в своем проекте, а не на игровой площадке:
 
-- Execute `yarn link` inside _bootstrap-vue_ directory
-- In your project run `yarn link bootstrap-vue`
-- Run `yarn watch` inside _bootstrap-vue_
-- Now every time you change a component, a new production version will be built and ready on your
-  project
+- Выполните `yarn link` внутри каталога _bootstrap-vue_
+- В вашем проекте запустите `yarn link bootstrap-vue`
+- Запустите `yarn watch` внутри _bootstrap-vue_
+- Теперь каждый раз, когда Вы меняете компонент, для Вашего проекта будет создана новая продакшен версия
 
-## Pull requests
+## Пулл Реквесты
 
-Please ensure all pull requests are made against the `dev` branch on GitHub. See the
-[Conventional Commits](https://conventionalcommits.org/) spec for commit and PR naming guidelines.
-This is very important, as the `CHANGELOG` is generated from these messages.
+Пожалуйста, убедитесь, что все пулл реквесты отправляются в ветку `dev` на GitHub. Смотрите спецификацию [Обычные коммиты](https://conventionalcommits.org/) для получения инструкций по присвоению имен и ПР.
+Это очень важно, так как из этих сообщений генерируется `CHANGELOG`.
 
-Examples:
+Примеры:
 
 - `fix(b-modal): fixes some broken modal stuff`
 - `feat(b-table): add a feature to the table component`
 
-## Financial contributions
+## Финансовые вклады
 
-We also welcome financial contributions in full transparency on our
-[Open Collective](https://opencollective.com/bootstrap-vue). Anyone can file an expense. If the
-expense makes sense for the development of the community, it will be "merged" in the ledger of our
-open collective by the core contributors and the person who filed the expense will be reimbursed.
+Мы также приветствуем финансовые взносы в условиях полной прозрачности в нашем
+[Open Collective](https://opencollective.com/bootstrap-vue). Кто угодно может подать заявку на оплату. Если расходы имеют смысл для развития сообщества, они будут «объединены» в реестре нашего открытого коллектива основными участниками, и лицо, подавшее расходы, будет возмещено.
 
-Consider asking your company to also support this open source project by
-[becoming a sponsor](https://opencollective.com/bootstrap-vue/contribute/).
+Вы можете попросить вашу компанию также поддержать этот проект с открытым исходным кодом,
+[став спонсором](https://opencollective.com/bootstrap-vue/contribute/).
 
-## Contributors
+## Контрибьюторы
 
-Thank you to all the people who have already contributed to BootstrapVue!
+Спасибо всем, кто уже внес свой вклад в BootstrapVue!
 
 <div class="p-3 mb-3text-center">
   <a href="https://github.com/bootstrap-vue/bootstrap-vue/graphs/contributors" rel="noopener" class="d-inline-block"><img src="https://opencollective.com/bootstrap-vue/contributors.svg?width=890" class="img-fluid"></a>
