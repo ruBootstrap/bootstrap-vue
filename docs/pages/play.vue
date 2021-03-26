@@ -6,13 +6,13 @@
       <b-row align-v="center">
         <b-col>
           <p class="bd-lead">
-            Here you can interactively play and test components with a fresh Vue.js instance. Please
-            refer to the <b-link to="/docs">Docs</b-link> section for more information about
-            available components and usage.
+            Здесь вы можете интерактивно играть и тестировать компоненты с помощью свежего экземпляра Vue.js.
+            Пожалуйста, обратитесь к разделу <b-link to="/docs">Документация</b-link> для получения дополнительной информации
+            о доступных компонентах и их использовании.
           </p>
         </b-col>
         <b-col lg="auto">
-          <BVCarbonAd class="my-3 my-lg-1"></BVCarbonAd>
+          <!-- <BVCarbonAd class="my-3 my-lg-1"></BVCarbonAd> -->
         </b-col>
       </b-row>
     </div>
@@ -26,7 +26,7 @@
           class="text-center"
           show
         >
-          Loading JavaScript compiler...
+          Загрузка компилятора JavaScript...
         </b-alert>
       </b-col>
     </b-row>
@@ -42,9 +42,9 @@
             fade
             dismissible
           >
-            Your browser does not support modern ES6 JavaScript syntax. However, the code in the
-            JavaScipt editor will be transpiled to work with your browser, except for any ES6 code
-            that is in the Template editor (i.e. destructuring, arrow functions, etc.)
+            Ваш браузер не поддерживает современный синтаксис ES6 JavaScript.
+            Однако код в редакторе JavaScipt будет перенесен для работы с Вашим браузером, за исключением любого кода ES6,
+            который находится в редакторе шаблонов (т. е. деструктурирования, стрелочных функций и т. д.)
           </b-alert>
         </b-col>
       </b-row>
@@ -60,7 +60,7 @@
           :disabled="isDefault || isBusy"
           @click="reset"
         >
-          Reset to default
+          Восстановить значения по умолчанию
         </b-btn>
       </b-col>
 
@@ -69,7 +69,7 @@
         md="auto"
         class="mt-2 mt-md-0"
       >
-        <b class="d-block d-sm-inline-block mr-sm-2 mb-1 mb-sm-0">Export to</b>
+        <b class="d-block d-sm-inline-block mr-sm-2 mb-1 mb-sm-0">Экспортировать в</b>
 
         <!-- Export to CodePen -->
         <b-form
@@ -134,7 +134,7 @@
               <template #header>
                 <div class="d-flex justify-content-between align-items-center">
                   <h5 class="mb-0">
-                    <span class="notranslate" translate="no">Template</span>
+                    <span class="notranslate" translate="no">Шаблон</span>
                   </h5>
                   <b-btn
                     size="sm"
@@ -142,7 +142,7 @@
                     class="d-none d-md-inline-block"
                     @click="toggleFull"
                   >
-                    <span>{{ full ? 'Split' : 'Full' }}</span>
+                    <span>{{ full ? 'Раздельно' : 'На всю ширину' }}</span>
                   </b-btn>
                 </div>
               </template>
@@ -164,7 +164,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <h5 class="mb-0">
                     <span class="notranslate" translate="no">JavaScript</span>
-                    <small v-if="compiling" class="text-muted"> compiling</small>
+                    <small v-if="compiling" class="text-muted"> компиляция</small>
                   </h5>
                   <b-btn
                     size="sm"
@@ -172,7 +172,7 @@
                     class="d-none d-md-inline-block"
                     @click="toggleFull"
                   >
-                    <span>{{ full ? 'Split' : 'Full' }}</span>
+                    <span>{{ full ? 'Раздельно' : 'На всю ширину' }}</span>
                   </b-btn>
                 </div>
               </template>
@@ -193,8 +193,8 @@
               <template #header>
                 <div class="d-flex justify-content-between align-items-center">
                   <h5 class="mb-0">
-                    <span>Result</span>
-                    <small v-if="compiling || building" class="text-muted"> building</small>
+                    <span>Результат</span>
+                    <small v-if="compiling || building" class="text-muted"> сборка</small>
                   </h5>
                   <b-btn
                     v-if="!full"
@@ -203,7 +203,7 @@
                     class="d-none d-md-inline-block"
                     @click="toggleVertical"
                   >
-                    <span>{{ vertical ? 'Horizontal' : 'Vertical' }}</span>
+                    <span>{{ vertical ? 'Горизонтально' : 'Вертикально' }}</span>
                   </b-btn>
                 </div>
               </template>
@@ -219,7 +219,7 @@
               <template #header>
                 <div class="d-flex justify-content-between align-items-center">
                   <h5 class="mb-0">
-                    <span>Console log</span>
+                    <span>Журнал консоли</span>
                   </h5>
                   <b-btn
                     :disabled="messages.length === 0"
@@ -227,7 +227,7 @@
                     variant="outline-danger"
                     @click="clear"
                   >
-                    <span>Clear</span>
+                    <span>Очистить</span>
                   </b-btn>
                 </div>
               </template>
@@ -268,14 +268,14 @@ import debounce from 'lodash/debounce'
 import { getParameters as getCodeSandboxParameters } from 'codesandbox/lib/api/define'
 import needsTranspiler from '~/utils/needs-transpiler'
 import { version as bootstrapVueVersion, bootstrapVersion, vueVersion } from '~/content'
-import BVCarbonAd from '~/components/carbon-ad'
+// import BVCarbonAd from '~/components/carbon-ad'
 import BVCodeMirror from '~/components/code-mirror'
 
 // --- Constants ---
 
 const DEFAULT_HTML = `<div>
   <b-button size="sm" @click="toggle">
-    {{ show ? 'Hide' : 'Show' }} Alert
+    {{ show ? 'Скрыть' : 'Показать' }} Уведомление
   </b-button>
   <b-alert
     v-model="show"
@@ -283,29 +283,29 @@ const DEFAULT_HTML = `<div>
     dismissible
     @dismissed="dismissed"
   >
-    Hello {{ name }}!
+    Привет {{ name }}!
   </b-alert>
 </div>`
 
 const DEFAULT_JS = `{
   data() {
     return {
-      name: 'BootstrapVue',
+      name: 'ruBootstrapVue',
       show: true
     }
   },
   watch: {
     show(newVal) {
-      console.log('Alert is now ' + (newVal ? 'visible' : 'hidden'))
+      console.log('Уведомление сейчас ' + (newVal ? 'показано' : 'скрыто'))
     }
   },
   methods: {
     toggle() {
-      console.log('Toggle button clicked')
+      console.log('Нажата кнопка переключения')
       this.show = !this.show
     },
     dismissed() {
-      console.log('Alert dismissed')
+      console.log('Уведомление отклонено')
     }
   }
 }`
@@ -337,7 +337,7 @@ const indent = (value, count = 2, { indent } = { indent: ' ' }) => {
 
 export default {
   components: {
-    BVCarbonAd,
+    // BVCarbonAd,
     BVCodeMirror
   },
   data() {
@@ -359,7 +359,7 @@ export default {
   },
   head() {
     const title = `${this.title} | BootstrapVue`
-    const description = 'Interactively play and test BootstrapVue components online.'
+    const description = 'Интерактивное воспроизведение и тестирование компонентов BootstrapVue онлайн.'
     return {
       title,
       meta: [
@@ -385,7 +385,7 @@ export default {
   },
   computed: {
     title() {
-      return 'Online Playground'
+      return 'Онлайн интерактивная площадка'
     },
     isDefault() {
       // Check if editors contain default JS and template

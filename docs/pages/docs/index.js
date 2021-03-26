@@ -1,4 +1,4 @@
-import CarbonAd from '~/components/carbon-ad'
+// import CarbonAd from '~/components/carbon-ad'
 import Main from '~/components/main'
 import QuickLinks from '~/components/quick-links'
 import Section from '~/components/section'
@@ -31,7 +31,7 @@ const { titleLead = '', body = '', baseTOC = {} } = readmeData
 export default {
   name: 'BDVDocs',
   components: {
-    CarbonAd,
+    // CarbonAd,
     Main,
     QuickLinks,
     Section

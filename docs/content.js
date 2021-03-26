@@ -31,33 +31,33 @@ export const reference = importAll(referenceContext)
 
 export const nav = [
   {
-    title: 'Getting Started',
+    title: 'Начало',
     base: '',
     exact: true
   },
   {
-    title: 'Components',
+    title: 'Компоненты',
     base: 'components/',
     pages: components,
-    description: 'BootstrapVue components and component group plugins.'
+    description: 'Компоненты BootstrapVue и плагины для групп компонентов.'
   },
   {
-    title: 'Directives',
+    title: 'Директивы',
     base: 'directives/',
     pages: directives,
-    description: 'BootstrapVue directives and directive group plugins.'
+    description: 'Директивы BootstrapVue и плагины группы директив.'
   },
   {
-    title: 'Icons',
+    title: 'Иконки',
     base: 'icons',
     version: '2.3.0',
-    description: 'BootstrapVue icons.'
+    description: 'Иконки BootstrapVue.'
   },
   {
-    title: 'Reference',
+    title: 'Справочник',
     base: 'reference/',
     pages: reference,
-    description: 'BootstrapVue and Bootstrap reference, and additional resources documentation.'
+    description: 'Справочник по BootstrapVue и Bootstrap, а также документация по дополнительным ресурсам.'
   }
 ]
 

@@ -3,12 +3,12 @@
     <Section tag="header">
       <h1 :id="id" class="bv-no-focus-ring" tabindex="-1">
         <span class="bd-content-title">
-          {{ groupTitle }} <span class="small text-muted">- table of contents</span>
+          <span class="small text-muted">Содержание страницы:</span> {{ groupTitle }}
         </span>
       </h1>
       <p v-if="groupDescription" class="bd-lead">{{ groupDescription }}</p>
     </Section>
-    <CarbonAd :key="`ad-{$route.path}`"></CarbonAd>
+    <!-- <CarbonAd :key="`ad-{$route.path}`"></CarbonAd> -->
     <Section>
       <b-list-group tag="nav" :aria-label="`${groupTitle} section navigation`" class="mb-5">
         <b-list-group-item
@@ -18,7 +18,7 @@
           active-class=""
         >
           <strong class="text-primary">{{ page.title }}</strong> &mdash;
-          <b-badge v-if="page.new" variant="success">NEW</b-badge>
+          <b-badge v-if="page.new" variant="success">НОВОЕ</b-badge>
           <span class="text-muted">{{ page.description }}</span>
           <b-badge v-if="page.version" variant="secondary">v{{ page.version }}</b-badge>
         </b-list-group-item>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import CarbonAd from '~/components/carbon-ad'
+// import CarbonAd from '~/components/carbon-ad'
 import Main from '~/components/main'
 import Section from '~/components/section'
 import { nav } from '~/content'
@@ -43,7 +43,7 @@ const groups = nav.reduce((obj, g) => {
 export default {
   name: 'BVSectionToc',
   components: {
-    CarbonAd,
+    // CarbonAd,
     Main,
     Section
   },
@@ -63,10 +63,10 @@ export default {
     },
     groupTitle() {
       const title = this.group.title || ''
-      return title === 'Components'
-        ? 'Component groups'
-        : title === 'Misc'
-          ? 'Miscellaneous'
+      return title === 'Компоненты'
+        ? 'Группы компонентов'
+        : title === 'Разное'
+          ? 'Разное'
           : title || ''
     },
     pages() {

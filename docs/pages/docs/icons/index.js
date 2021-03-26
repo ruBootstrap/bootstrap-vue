@@ -1,5 +1,5 @@
 import AnchoredHeading from '~/components/anchored-heading'
-import CarbonAd from '~/components/carbon-ad'
+// import CarbonAd from '~/components/carbon-ad'
 import Componentdoc from '~/components/componentdoc'
 import IconsTable from '~/components/icons-table'
 import Importdoc from '~/components/importdoc'
@@ -17,7 +17,7 @@ export default {
   name: 'BDVIcons',
   components: {
     AnchoredHeading,
-    CarbonAd,
+    // CarbonAd,
     Componentdoc,
     IconsTable,
     Importdoc,

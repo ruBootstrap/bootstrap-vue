@@ -48,7 +48,7 @@ export default {
       return !!this.toc.toc
     },
     toogleText() {
-      return `${this.expanded ? 'Hide' : 'Show'} page table of contents`
+      return `${this.expanded ? 'Скрыть' : 'Показать'} оглавление страницы`
     }
   },
   created() {
