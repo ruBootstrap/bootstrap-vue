@@ -14,10 +14,9 @@
             </h1>
 
             <p class="lead">
-              With <span class="font-weight-bolder">BootstrapVue</span> you can build responsive,
-              mobile-first, and ARIA accessible projects on the web using
-              <span class="text-muted font-weight-bolder">Vue.js</span> and the world's most popular
-              front-end CSS library &mdash;
+              С помощью <span class="font-weight-bolder">BootstrapVue</span> Вы можете создавать в Интернете адаптивные,
+              ориентированные на мобильные устройства и доступные ARIA проекты, используя
+              <span class="text-muted font-weight-bolder">Vue.js</span> и самую популярную в мире интерфейсную CSS-библиотеку CSS &mdash;
               <span class="text-muted font-weight-bolder">Bootstrap v4</span>.
             </p>
 
@@ -37,8 +36,8 @@
                 </svg>
               </b-media-aside>
               <b-media-body class="ml-3 text-muted align-self-center">
-                <a :href="bootstrapUrl" target="_blank">Bootstrap v4</a> is the world's most popular
-                framework for building responsive, mobile-first sites.
+                <a :href="bootstrapUrl" target="_blank">Bootstrap v4</a> самый популярный в мире фреймворк для создания адаптивных сайтов,
+                ориентированных в первую очередь на мобильные устройства.
               </b-media-body>
             </b-media>
 
@@ -60,15 +59,15 @@
               </b-media-aside>
               <b-media-body class="ml-3 text-muted align-self-center">
                 <a href="https://vuejs.org" target="_blank">Vue.js</a>
-                (pronounced <span class="text-nowrap">/<i>vjuː</i>/</span>, like view)
-                is a progressive framework for building user interfaces.
+                (произносится как <span class="text-nowrap">/<i>vjuː</i>/</span>, как view)
+                это прогрессивный фреймворк для создания пользовательских интерфейсов.
               </b-media-body>
             </b-media>
           </b-col>
         </b-row>
 
         <p class="mb-0 text-muted text-center mb-n4 mb-md-n5">
-          Current Version<br>
+          Текущая версия<br>
           <b-link to="/docs/reference/changelog" class="small">v{{ version }}</b-link>
         </p>
       </b-container>
@@ -78,20 +77,17 @@
       <b-container tag="article">
         <div class="d-flex flex-column">
           <div class="order-2 order-md-1">
-            <h2 class="h4 text-center bd-text-purple-bright">Overview</h2>
+            <h2 class="h4 text-center bd-text-purple-bright">Обзор</h2>
             <b-row class="mb-4">
               <b-col lg="10" offset-lg="1">
                 <p class="text-lg-center">
-                  With more than 85 components, over 45 available plugins, several directives, and {{ bootstrapIconsCount }}+ icons,
-                  <span class="bd-text-purple-bright">BootstrapVue</span> provides one of the most
-                  comprehensive implementations of the
-                  <span class="bd-text-purple-bright">Bootstrap v{{ bootstrapVersionMajor }}</span> component and grid system
-                  available for <span class="bd-text-purple-bright">Vue.js v{{ vueVersionMinor }}</span>, complete with
-                  extensive and automated
+                  BootstrapVue, состоящий из более чем 85 компонентов, более 45 доступных плагинов, нескольких директив и более {{ bootstrapIconsCount }}+ иконок,
+                  обеспечивает одну из наиболее полных реализаций компонента <span class="bd-text-purple-bright">BootstrapVue</span>
+                  <span class="bd-text-purple-bright">Bootstrap v{{ bootstrapVersionMajor }}</span> и системы сеток, доступных для
+                  <span class="bd-text-purple-bright">Vue.js v{{ vueVersionMinor }}</span>, вместе с обширным и автоматизированным повышением доступности
                   <b-link href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank">
-                    <abbr title="Web Accessibility Initiative – Accessible Rich Internet Applications">WAI-ARIA</abbr>
-                  </b-link>
-                  accessibility markup.
+                    <abbr title="Инициатива Веб-Доступности - Доступные Полнофункциональные Интернет-Приложения">WAI-ARIA</abbr>
+                  </b-link>.
                 </p>
               </b-col>
             </b-row>
@@ -105,7 +101,7 @@
                   class="mb-3 mb-md-0"
                   block
                 >
-                  Get started
+                  Начать
                 </b-btn>
               </b-col>
               <b-col md="4" lg="3">
@@ -116,7 +112,7 @@
                   class="mb-3 mb-md-0"
                   block
                 >
-                  Playground
+                  Игровая площадка
                 </b-btn>
               </b-col>
               <b-col md="4" lg="3">
@@ -134,7 +130,7 @@
           </div>
 
           <div class="order-1 order-md-2">
-            <BVCarbonAd></BVCarbonAd>
+            <!-- <BVCarbonAd></BVCarbonAd> -->
           </div>
         </div>
       </b-container>
@@ -142,25 +138,25 @@
 
     <section class="bv-section bv-white">
       <b-container>
-        <h2 class="h4 text-center text-muted">Reasons to choose BootstrapVue</h2>
+        <h2 class="h4 text-center text-muted">Причины выбрать BootstrapVue</h2>
         <b-card-group deck class="mb-sm-4">
           <b-card tag="article" body-text-variant="muted" class="rounded-0 border-0">
             <b-card-text text-tag="h3" class="h5 text-center mb-2 bd-text-purple-bright">
               <b-icon icon="phone" width="2.5em" height="2.5em" class="mx-auto d-block mb-3"></b-icon>
-              <span>Responsive</span>
+              <span>Отзывчивый</span>
             </b-card-text>
             <b-card-text class="text-center">
-              Mobile first <b-link to="/docs/components/layout">responsive</b-link> layout
+              Сначала мобильный <b-link to="/docs/components/layout">отзывчивый</b-link> макет
             </b-card-text>
           </b-card>
 
           <b-card tag="article" body-text-variant="muted" class="rounded-0 border-0">
             <b-card-text text-tag="h3" class="h5 text-center bd-text-purple-bright mb-2">
               <b-icon icon="puzzle" width="2.5em" height="2.5em" class="mx-auto d-block mb-3"></b-icon>
-              <span>Modular</span>
+              <span>Модульный</span>
             </b-card-text>
             <b-card-text class="text-center">
-              <b-link to="/docs/#tree-shaking-with-module-bundlers">Import</b-link> only the features that you need
+              <b-link to="/docs/#tree-shaking-with-module-bundlers">Импортируйте</b-link> только те функции, которые Вам нужны
             </b-card-text>
           </b-card>
 
@@ -173,10 +169,10 @@
                 scale="1.2"
                 class="mx-auto d-block mb-3"
               ></b-icon>
-              <span>Accessible</span>
+              <span>Доступный</span>
             </b-card-text>
             <b-card-text class="text-center">
-              Automated <b-link to="/docs/reference/accessibility">WAI-ARIA accessibility</b-link> markup
+              Автоматическая разметка доступности <b-link to="/docs/reference/accessibility">WAI-ARIA</b-link>
             </b-card-text>
           </b-card>
         </b-card-group>
@@ -198,10 +194,10 @@
                   d="M356.9 64.3H280l-56 88.6-48-88.6H0L224 448 448 64.3h-91.1zm-301.2 32h53.8L224 294.5 338.4 96.3h53.8L224 384.5 55.7 96.3z"
                 />
               </svg>
-              <span>Modern</span>
+              <span>Современный</span>
             </b-card-text>
             <b-card-text class="text-center" bg-variant="light">
-              Built with <a href="https://vuejs.org/">Vue.js v{{ vueVersionMinor }}</a> and
+              Создан с использованием <a href="https://vuejs.org/">Vue.js v{{ vueVersionMinor }}</a> и
               <a href="https://getbootstrap.com">Bootstrap SCSS v{{ bootstrapVersionMinor }}</a>
             </b-card-text>
           </b-card>
@@ -209,10 +205,10 @@
           <b-card tag="article" body-text-variant="muted" body-class="px-2" class="rounded-0 border-0">
             <b-card-text text-tag="h3" class="h5 text-center bd-text-purple-bright mb-2">
               <b-icon icon="gear" width="2.5em" height="2.5em" class="mx-auto d-block mb-3"></b-icon>
-              <span>Configurable</span>
+              <span>Настраиваемый</span>
             </b-card-text>
             <b-card-text class="text-center">
-              Create <b-link to="/docs/reference/theming">themes</b-link> with SCSS variables and <b-link to="/docs/reference/settings">global options</b-link>
+              Создавайте <b-link to="/docs/reference/theming">темы</b-link> с SCSS переменными и <b-link to="/docs/reference/settings">глобальными параметрами</b-link>
             </b-card-text>
           </b-card>
 
@@ -232,11 +228,11 @@
                   d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
                 />
               </svg>
-              <span>Free</span>
+              <span>Бесплатный</span>
             </b-card-text>
             <b-card-text class="text-center">
-              Open sourced on <a href="https://github.com/bootstrap-vue/bootstrap-vue/" target="_blank">GitHub</a>,
-              <a href="https://github.com/bootstrap-vue/bootstrap-vue/blob/master/LICENSE" target="_blank">MIT</a> License
+              Открытый исходный код на <a href="https://github.com/bootstrap-vue/bootstrap-vue/" target="_blank">GitHub</a>,
+              <a href="https://github.com/bootstrap-vue/bootstrap-vue/blob/master/LICENSE" target="_blank">MIT</a> Лицензия
             </b-card-text>
           </b-card>
         </b-card-group>
@@ -245,7 +241,7 @@
 
     <section class="bv-section bv-gray">
       <b-container tag="article" class="text-center">
-        <h2 class="h4 text-center bd-text-purple-bright">Integrate with Nuxt.js</h2>
+        <h2 class="h4 text-center bd-text-purple-bright">Интеграция с Nuxt.js</h2>
         <div class="mb-2 d-flex flex-row justify-content-center align-items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -293,8 +289,8 @@
         <b-row class="mb-3">
           <b-col lg="10" offset-lg="1">
             <p class="text-lg-center mb-0">
-              Easily integrate BootstrapVue into your Nuxt.js projects using our included Nuxt.js module.
-              You can optionally specify only the components, directives and/or plugins you require.
+              Легко интегрируйте BootstrapVue в свои проекты Nuxt.js с помощью нашего включенного модуля Nuxt.js.
+              При желании Вы можете указать только необходимые компоненты, директивы и/или плагины.
             </p>
           </b-col>
         </b-row>
@@ -305,12 +301,12 @@
           variant="outline-secondary"
           class="mb-3"
         >
-          BootstrapVue Nuxt.js module
+          Модуль BootstrapVue Nuxt.js
         </b-button>
         <p class="mb-0 text-center">
-          BootstrapVue's documentation is created using
-          <span class="bd-text-purple-bright">BootstrapVue</span> and
-          generated with <a href="https://nuxtjs.org" target="_blank">Nuxt.js</a>
+          Документация BootstrapVue создается с использованием
+          <span class="bd-text-purple-bright">BootstrapVue</span> и
+          генерируется с помощью <a href="https://nuxtjs.org" target="_blank">Nuxt.js</a>
         </p>
       </b-container>
     </section>
@@ -337,7 +333,7 @@
             />
             <path d="M20 33.7a12.8 12.8 0 0 1 0-25.6c2.6 0 5 .7 7 2.1L32 5a20 20 0 1 0 .1 31.9l-5-5.2a13 13 0 0 1-7 2z" />
           </svg>
-          Support BootstrapVue on Open Collective
+          Поддержка BootstrapVue в Open Collective
         </h2>
         <b-button
           href="https://opencollective.com/bootstrap-vue#sponsor"
@@ -346,7 +342,7 @@
           target="_blank"
           class="mb-2"
         >
-          Become a sponsor
+          Стать спонсором
         </b-button>
         <b-button
           href="https://opencollective.com/bootstrap-vue#backer"
@@ -355,7 +351,7 @@
           target="_blank"
           class="mb-2"
         >
-          Become a backer
+          Стать сторонником
         </b-button>
         <b-button
           href="https://opencollective.com/bootstrap-vue#donate"
@@ -364,7 +360,7 @@
           target="_blank"
           class="mb-2"
         >
-          Donate
+          Пожертвовать
         </b-button>
 
         <BVContributors></BVContributors>
@@ -372,8 +368,8 @@
         <hr style="withd: 90%">
 
         <div class="text-center mb-n4" aria-labeledby="parners-heading">
-          <h3 id="partners-heading" class="mx-auto mt-4">Partners</h3>
-          <p class="text-muted mb-4"><b>BootstrapVue</b> would like to thank our partners</p>
+          <h3 id="partners-heading" class="mx-auto mt-4">Партнеры</h3>
+          <p class="text-muted mb-4"><b>BootstrapVue</b> благодарит наших партнеров</p>
           <a
             href="https://vercel.com/?utm_source=bootstrapvue"
             target="_blank"
@@ -387,7 +383,7 @@
     </section>
 
     <div class="bv-section bv-gray bv-p-reset" aria-hidden="true">
-      <!-- To give footer on landing page angled top -->
+      <!-- Чтобы разместить нижний колонтитул на целевой странице под углом вверх -->
     </div>
   </main>
 </template>
@@ -401,13 +397,13 @@ import {
   vueVersionMinor
 } from '~/content'
 import BvLogo from '~/components/bv-logo'
-import BVCarbonAd from '~/components/carbon-ad'
+// import BVCarbonAd from '~/components/carbon-ad'
 import BVContributors from '~/components/contributors'
 
 export default {
   components: {
     BvLogo,
-    BVCarbonAd,
+    // BVCarbonAd,
     BVContributors
   },
   created() {

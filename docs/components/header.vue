@@ -30,13 +30,13 @@
 
     <div class="navbar-nav-scroll">
       <b-navbar-nav class="bd-navbar-nav flex-row">
-        <b-nav-item to="/docs" active-class="active" exact no-prefetch>Docs</b-nav-item>
-        <b-nav-item to="/docs/components" active-class="active" no-prefetch>Components</b-nav-item>
-        <b-nav-item to="/docs/directives" active-class="active" no-prefetch>Directives</b-nav-item>
-        <b-nav-item to="/docs/icons" active-class="active" no-prefetch>Icons</b-nav-item>
-        <b-nav-item to="/docs/reference" active-class="active">Reference</b-nav-item>
-        <b-nav-item to="/themes" active-class="active" no-prefetch>Themes</b-nav-item>
-        <b-nav-item to="/play" active-class="active" no-prefetch>Play</b-nav-item>
+        <b-nav-item to="/docs" active-class="active" exact no-prefetch>Документация</b-nav-item>
+        <b-nav-item to="/docs/components" active-class="active" no-prefetch>Компоненты</b-nav-item>
+        <b-nav-item to="/docs/directives" active-class="active" no-prefetch>Директивы</b-nav-item>
+        <b-nav-item to="/docs/icons" active-class="active" no-prefetch>Иконки</b-nav-item>
+        <b-nav-item to="/docs/reference" active-class="active">Справочник</b-nav-item>
+        <b-nav-item to="/themes" active-class="active" no-prefetch>Темы</b-nav-item>
+        <b-nav-item to="/play" active-class="active" no-prefetch>Играть</b-nav-item>
       </b-navbar-nav>
     </div>
 
@@ -51,21 +51,21 @@
             Pull Request {{ prId ? '#' + prId : '- ' + branchName }}
           </b-dropdown-item>
           <b-dropdown-item v-else-if="isLocal" active href="/">
-            Local copy
+            Локальная копия
           </b-dropdown-item>
           <b-dropdown-item :active="isDev" :href="devURL" rel="nofollow">
-            Development
+            В разработке
           </b-dropdown-item>
           <b-dropdown-item :href="prodURL">
-            Latest (v{{ version }})
+            Последняя (v{{ version }})
           </b-dropdown-item>
         </template>
         <template v-else>
           <b-dropdown-item active :href="prodURL">
-            Latest (v{{ version }})
+            Последняя (v{{ version }})
           </b-dropdown-item>
           <b-dropdown-item :href="devURL" rel="nofollow">
-            Development
+            В разработке
           </b-dropdown-item>
         </template>
       </b-nav-item-dropdown>

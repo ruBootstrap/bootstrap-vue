@@ -2,11 +2,11 @@
   <div v-b-visible.once.1000="visibleHandler">
     <!-- SPONSORS -->
     <template v-if="sponsors.length > 0">
-      <h3 class="h4 mx-auto mt-4 text-muted">Sponsors</h3>
+      <h3 class="h4 mx-auto mt-4 text-muted">Спонсоры</h3>
 
       <!-- PLATINUM SPONSORS -->
       <template v-if="platinumSponsors.length > 0">
-        <h4 class="h5 mx-auto mt-3 text-muted">Platinum Sponsors</h4>
+        <h4 class="h5 mx-auto mt-3 text-muted">Платиновые спонсоры</h4>
         <BVContributorsContainer
           type="platinum-sponsors"
           :contributors="platinumSponsors"
@@ -16,7 +16,7 @@
 
       <!-- GOLD SPONSORS -->
       <template v-if="goldSponsors.length > 0">
-        <h4 class="h5 mx-auto mt-3 text-muted">Gold Sponsors</h4>
+        <h4 class="h5 mx-auto mt-3 text-muted">Золотые спонсоры</h4>
         <BVContributorsContainer
           type="gold-sponsors"
           :contributors="goldSponsors"
@@ -26,7 +26,7 @@
 
       <!-- SILVER SPONSORS -->
       <template v-if="silverSponsors.length > 0">
-        <h4 class="h5 mx-auto mt-3 text-muted">Silver Sponsors</h4>
+        <h4 class="h5 mx-auto mt-3 text-muted">Серебрянные спонсоры</h4>
         <BVContributorsContainer
           type="silver-sponsors"
           :contributors="silverSponsors"
@@ -36,7 +36,7 @@
 
       <!-- BRONZE SPONSORS -->
       <template v-if="bronzeSponsors.length > 0">
-        <h4 class="h5 mx-auto mt-3 text-muted">Bronze Sponsors</h4>
+        <h4 class="h5 mx-auto mt-3 text-muted">Бронзовые спонсоры</h4>
         <BVContributorsContainer
           type="bronze-sponsors"
           :contributors="bronzeSponsors"
@@ -47,7 +47,7 @@
 
     <!-- BACKERS -->
     <template v-if="backers.length > 0">
-      <h3 class="h4 mx-auto mt-4 text-muted">Backers</h3>
+      <h3 class="h4 mx-auto mt-4 text-muted">Сторонники</h3>
       <BVContributorsContainer
         type="backers"
         :contributors="backers"
@@ -56,7 +56,7 @@
 
     <!-- DONORS -->
     <template v-if="donors.length > 0">
-      <h3 class="h4 mx-auto mt-4 text-muted">Donors</h3>
+      <h3 class="h4 mx-auto mt-4 text-muted">Доноры</h3>
       <BVContributorsContainer
         type="donors"
         :contributors="donors"
