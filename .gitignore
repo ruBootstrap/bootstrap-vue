@@ -6,6 +6,7 @@
 coverage/
 dist/
 docs-dist/
+_gh_pages/
 esm/
 node_modules/
 *.iml

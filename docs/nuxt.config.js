@@ -271,7 +271,7 @@ module.exports = {
   },
 
   generate: {
-    dir: 'docs-dist',
+    dir: '_gh_pages',
     routes: () => [
       // Dynamic slug routes
       ...getRoutesByDir('src', 'components'),
