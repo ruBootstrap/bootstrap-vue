@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[89],{595:function(e,c,t){"use strict";t.r(c),c.default={fetch:function(e){var c=e.redirect,t=e.route;c(301,"/docs/reference/third-party".concat((void 0===t?{}:t).hash||""))}}}}]);
