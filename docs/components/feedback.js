@@ -3,7 +3,8 @@ export default {
   name: 'BVFeedback',
   data() {
     return {
-      baseUrl: 'https://github.com/bootstrap-vue/bootstrap-vue'
+      originUrl: 'https://github.com/bootstrap-vue/bootstrap-vue',
+      baseUrl: 'https://github.com/ruBootstrap/bootstrap-vue'
     }
   },
   computed: {
@@ -14,7 +15,7 @@ export default {
     },
     reportIssueUrl() {
       // Select issue template
-      return `${this.baseUrl}/issues/new?template=DOCS_ISSUE_TEMPLATE.md`
+      return `${this.originUrl}/issues/new?template=DOCS_ISSUE_TEMPLATE.md`
     },
     editPageUrl() {
       const name = this.$route.name
@@ -39,7 +40,7 @@ export default {
           path = `docs/markdown/reference/${slug}/README.md`
         }
       }
-      return `${this.baseUrl}/tree/dev/${path}`
+      return `${this.baseUrl}/tree/dev-ru/${path}`
     }
   },
   render(h) {
@@ -55,7 +56,7 @@ export default {
           target: '_blank'
         }
       },
-      'Report an issue'
+      'Сообщить о проблеме'
     )
     const $editPageButton = h(
       'b-button',
@@ -66,7 +67,7 @@ export default {
           target: '_blank'
         }
       },
-      'Edit this page'
+      'Редактировать эту страницу'
     )
     return h('b-button-group', { props: { size: 'sm' } }, [$reportIssueButton, $editPageButton])
   }
