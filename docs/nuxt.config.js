@@ -282,14 +282,18 @@ module.exports = {
 
   plugins: ['~/plugins/bootstrap-vue.js', '~/plugins/play.js', '~/plugins/docs.js'],
 
-  buildModules: ['@nuxtjs/google-analytics'],
+  buildModules: ['@nuxtjs/google-analytics', '@nuxtjs/gtm'],
   modules: ['@nuxt/content', '@nuxtjs/pwa', '@nuxtjs/robots', '@nuxtjs/sitemap'],
 
-  googleAnalytics: {
-    id: GA_TRACKING_ID,
-    autoTracking: {
-      exception: true
-    }
+  // googleAnalytics: {
+  //   id: GA_TRACKING_ID,
+  //   autoTracking: {
+  //     exception: true
+  //   }
+  // },
+
+  gtm: {
+    id: 'GTM-WN4743G'
   },
 
   content: {

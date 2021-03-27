@@ -687,7 +687,7 @@ BootstrapVue использует следующие функции и API:
 npm install core-js regenerator-runtime intersection-observer
 ```
 
-Then import the polyfills in your app main entry point:
+Затем импортируйте полифиллы в основную точку входа приложения:
 
 <!-- eslint-disable no-unused-vars -->
 
@@ -705,7 +705,7 @@ import BootstrapVue from 'bootstrap-vue'
 npm install @babel/polyfill intersection-observer
 ```
 
-Then import the polyfills in your app main entry point:
+Затем импортируйте полифиллы в основную точку входа приложения:
 
 <!-- eslint-disable no-unused-vars -->
 
