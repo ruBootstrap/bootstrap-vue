@@ -55,7 +55,7 @@ Bootstrap требует использования типа документа 
 
 ```html
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   ...
 </html>
 ```

@@ -18,6 +18,9 @@ export default {
           href: `${BASE_URL}${this.$route.path}`
         }
       ],
+      htmlAttrs: {
+        lang: 'ru'
+      },
       meta: []
     }
   }

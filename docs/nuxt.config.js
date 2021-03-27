@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const marked = require('marked')
 const hljs = require('highlight.js/lib/core')
-const { BASE_URL, GA_TRACKING_ID, TWITTER_HANDLE } = require('./constants')
+const { BASE_URL, TWITTER_HANDLE } = require('./constants')
 
 // Import only the languages we need from "highlight.js"
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash')) // Includes sh
@@ -285,13 +285,6 @@ module.exports = {
   buildModules: ['@nuxtjs/google-analytics', '@nuxtjs/gtm'],
   modules: ['@nuxt/content', '@nuxtjs/pwa', '@nuxtjs/robots', '@nuxtjs/sitemap'],
 
-  // googleAnalytics: {
-  //   id: GA_TRACKING_ID,
-  //   autoTracking: {
-  //     exception: true
-  //   }
-  // },
-
   gtm: {
     id: 'GTM-WN4743G'
   },
@@ -322,6 +315,9 @@ module.exports = {
   },
 
   head: {
+    htmlAttrs: {
+      lang: 'ru'
+    },
     meta: [{ 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }],
     script: [
       {
