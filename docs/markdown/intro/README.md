@@ -1,70 +1,57 @@
-# Getting Started
+# Начало
 
-> Get started with BootstrapVue, based on the world's most popular framework - Bootstrap
-> v{{ bootstrapVersionMajor }}, for building responsive, mobile-first sites using Vue.js.
+> Начните работу с BootstrapVue, основанным на самой популярной в мире платформе - Bootstrap
+> v{{ bootstrapVersionMajor }}, для создания адаптивных, ориентированных на мобильные устройства сайтов с использованием Vue.js.
 
-- [Vue.js](https://vuejs.org/) `v{{ vueVersionMinor }}` is required, `v{{ vueVersion }}` is
-  recommended
-- [Bootstrap](https://getbootstrap.com/) `v4.3.1` is required, `v{{ bootstrapVersion }}` is
-  recommended
-- [Popper.js](https://popper.js.org/) `v{{ popperVersionMinor }}` is required for dropdowns (and
-  components based on dropdown), tooltips, and popovers. `v{{ popperVersion }}` is recommended
-- [PortalVue](https://portal-vue.linusb.org/) `v{{ portalVueVersionMinor }}` is required by
-  [Toasts](/docs/components/toast), `v{{ portalVueVersion }}` is recommended
-- [jQuery](https://jquery.com/) is **not** required
+- [Vue.js](https://vuejs.org/) `v{{ vueVersionMinor }}` обязательно, `v{{ vueVersion }}` рекомендуется
+- [Bootstrap](https://getbootstrap.com/) `v4.3.1` обязательно, `v{{ bootstrapVersion }}` рекомендуется
+- [Popper.js](https://popper.js.org/) `v{{ popperVersionMinor }}` обязательно для раскрывающихся списков
+  (и компонентов на основе раскрывающихся списков), всплывающих подсказок и всплывающих окон. `v{{ popperVersion }}` рекомендуется
+- [PortalVue](https://portal-vue.linusb.org/) `v{{ portalVueVersionMinor }}` обязательно by
+  [Toasts](/docs/components/toast), `v{{ portalVueVersion }}` рекомендуется
+- [jQuery](https://jquery.com/) **не** обязательно
 
-Check out what is new in [BootstrapVue release v{{ version }}](/docs/reference/changelog).
+Узнайте, что нового в [релизе BootstrapVue v{{ version }}](/docs/reference/changelog).
 
-If you are migrating from a previous `v2.0.0-rc.##` release, please see the
-[`v2.0.0` migration guide](/docs/reference/changelog#v200).
+Если вы переходите с предыдущей версии `v2.0.0-rc.##`, смотрите
+[руководство по миграции `v2.0.0`](/docs/reference/changelog#v200).
 
-## Documentation sections
+## Разделы документации
 
-The online documentation comprises:
+Электронная документация включает:
 
-- [Components](/docs/components) - Components and component plugin documentation
-- [Directives](/docs/directives) - Directives and directive plugin documentation
-- [Icons](/docs/icons) - Icons and icon plugin documentation <b-badge>v2.2.0+</b-badge>
-- [Reference](/docs/reference) - Reference information and documentation
-- [Playground](/play) - Online playground
-- [Themes](/themes) - Themes and dashboards
+- [Компоненты](/docs/components) - Документация по компонентам и плагинам компонентов
+- [Директивы](/docs/directives) - Директивы и документация плагина директив
+- [Иконки](/docs/icons) - Иконки и документация плагина иконок <b-badge>v2.2.0+</b-badge>
+- [Справочник](/docs/reference) - Справочная информация и документация
+- [Интерактивная площадка](/play) - Интерактивная онлайн площадка
+- [Темы](/themes) - Темы и информационные панели
 
-## Prerequisites
+## Предпосылки
 
-This BootstrapVue documentation assumes you are familiar with Vue and and Bootstrap
-v{{ bootstrapVersionMajor }} CSS. Good starting points for these:
+В этой документации BootstrapVue предполагается, что Вы знакомы с Vue и Bootstrap
+v{{ bootstrapVersionMajor }} CSS. Хорошие отправные точки для этого:
 
-- [Vue Guide](https://vuejs.org/v2/guide/)
+- [Руководство по Vue](https://vuejs.org/v2/guide/)
 - [Vue API](https://vuejs.org/v2/api/)
-- [Bootstrap v{{bootstrapVersionMinor}} documentation](https://getbootstrap.com/)
-- [Vue loader scoped CSS](https://vue-loader.vuejs.org/guide/scoped-css.html), if using scoped
-  styles in SFC (Single File Component) `.vue` files
+- [Документация Bootstrap v{{bootstrapVersionMinor}}](https://v4.getbootstrap.su/)
+- [Vue область загрузки CSS](https://vue-loader.vuejs.org/guide/scoped-css.html), при использовании стилей с областью видимости в файлах SFC (однофайловый компонент) `.vue`
 
-## Documentation information
+## Информация о документации
 
-In many of the examples shown in BootstrapVue's documentation, you may see the use of CSS classes
-such as <code class="text-nowrap">ml-2</code>, <code class="text-nowrap">py-1</code>, etc. These are
-Bootstrap v{{bootstrapVersionMinor}} utility classes that help control padding, margins, positioning
-and more. You can find information on these classes in the
-[Utility Classes](/docs/reference/utility-classes) reference section.
+Во многих примерах, показанных в документации BootstrapVue, Вы можете увидеть использование CSS-классы такие как <code class="text-nowrap">ml-2</code>, <code class="text-nowrap">py-1</code> и т. д. Это классы утилиты Bootstrap v{{bootstrapVersionMinor}}, которые помогают управлять заполнением, полями, позиционированием и т. д. Вы можете найти информацию об этих классах в справочном разделе по [Утилитам классов](/docs/reference/utility-classes).
 
-Many of the examples in this documentation are _live_ and can be edited in-place for an enhanced
-learning experience (note some examples may not work in IE 11 due to use of ES6 JavaScript code in
-the `<template>` sections).
+Многие из примеров в этой документации являются _действующими_ и могут быть отредактированы на месте для улучшения процесса обучения (обратите внимание, что некоторые примеры могут не работать в IE 11 из-за использования кода ES6 JavaScript в разделах `<template>`).
 
-BootstrapVue also provides an [interactive playground](/play) where you can experiment with the
-various components and export your results to JSFiddle, CodePen, and/or CodeSandbox.
+BootstrapVue также предоставляет [интерактивную площадку](/play), где Вы можете экспериментировать с различными компонентами и экспортировать результаты в JSFiddle, CodePen и/или CodeSandbox.
 
-## Important HTML globals
+## Важные глобальные HTML
 
-Bootstrap v{{bootstrapVersionMajor}} CSS employs a handful of important global styles and settings
-that you'll need to be aware of when using it, all of which are almost exclusively geared towards
-the normalization of cross browser styles. Refer to the following sub-sections for details.
+Bootstrap v{{bootstrapVersionMajor}} CSS использует несколько важных глобальных стилей и настроек, о которых Вам нужно знать при его использовании. Все они почти исключительно направлены на нормализацию кроссбраузерных стилей. См. Подробности в следующих подразделах.
 
-### HTML5 doctype
+### Доктайп HTML5
 
-Bootstrap requires the use of the `HTML5` doctype. Without it, you may see some strange incomplete
-styling.
+Bootstrap требует использования типа документа `HTML5`. Без него Вы можете увидеть какое-то странное незавершенное оформление.
 
 ```html
 <!doctype html>
@@ -73,11 +60,9 @@ styling.
 </html>
 ```
 
-### Responsive meta tag
+### Адаптивный метатег
 
-Bootstrap is optimized for mobile devices first and then scales up components as necessary using CSS
-media queries. To ensure proper rendering and touch zooming for all devices, **add the responsive
-viewport meta** tag to your `<head>`.
+Bootstrap сначала оптимизируется для мобильных устройств, а затем масштабирует компоненты по мере необходимости с помощью медиа-запросов CSS. Чтобы обеспечить правильный рендеринг и сенсорное масштабирование для всех устройств, **добавьте метатег** адаптивного окна просмотра к вашему `<head>`.
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -85,12 +70,10 @@ viewport meta** tag to your `<head>`.
 
 ### CSS box-sizing
 
-For more straightforward sizing in CSS, the global `box-sizing` value is switched from `content-box`
-to `border-box`. This ensures `padding` does not affect the final computed width of an element, but
-it can cause problems with some third party software like Google Maps and Google Custom Search
-Engine.
+Для более простого изменения размера в CSS глобальное значение `box-sizing` переключается с `content-box`
+на `border-box`. Это гарантирует, что `padding` не влияет на окончательную вычисленную ширину элемента, но может вызвать проблемы с некоторым сторонним программным обеспечением, таким как Google Maps и Google Custom Search Engine.
 
-On the rare occasion you need to override it, use something like the following:
+В редких случаях Вам нужно отменить его, используйте что-то вроде следующего:
 
 ```css
 .selector-for-some-widget {
@@ -98,24 +81,17 @@ On the rare occasion you need to override it, use something like the following:
 }
 ```
 
-With the above snippet, nested elements — including generated content via `::before` and `::after` —
-will all inherit the specified `box-sizing` for that `.selector-for-some-widget`.
+В приведенном выше фрагменте все вложенные элементы, включая сгенерированный контент с помощью `::before` и `::after`, будут наследовать указанный `box-sizing` для этого `.selector-for-some-widget`.
 
-Learn more about [box model and sizing at CSS Tricks](https://css-tricks.com/box-sizing/).
+Узнайте больше о [блочной модели и размерах на сайте CSS Tricks](https://css-tricks.com/box-sizing/).
 
-### Style reboot
+### Перезагрузка стиля
 
-For improved cross-browser rendering, Bootstrap v{{ bootstrapVersionMinor }} uses
-[Reboot](https://getbootstrap.com/docs/4.5/content/reboot/) to correct inconsistencies across
-browsers and devices while providing slightly more opinionated resets to common
-<abbr title="Hyper Text markup Language">HTML</abbr> elements.
+Для улучшения кроссбраузерности рендеринга, Bootstrap v{{ bootstrapVersionMinor }} использует [Reboot](https://v4.getbootstrap.su/docs/4.5/content/reboot/) для исправления несоответствий между браузерами и устройствами, обеспечивая при этом несколько более самоуверенный сброс для общие элементы <abbr title="Язык гипертекстовой разметки">HTML</abbr>.
 
-## Using module bundlers
+## Использование сборщиков модулей
 
-Most likely you are using module bundlers like [Webpack](https://webpack.js.org/),
-[Parcel](https://parceljs.org/) or [rollup.js](https://rollupjs.org/), which makes it easy to
-directly include the package into your project. To do this, use `npm` or `yarn` to get the latest
-version of Vue.js, Bootstrap v4 and BootstrapVue:
+Скорее всего, Dы используете такие комплекты модулей, как [Webpack](https://webpack.js.org/), [Parcel](https://parceljs.org/) или [rollup.js](https://rollupjs.org/), что упрощает прямое включение пакета в Ваш проект. Для этого используйте `npm` или `yarn`, чтобы получить последнюю версию Vue.js, Bootstrap v4 и BootstrapVue:
 
 ```bash
 # With npm
@@ -125,44 +101,42 @@ npm install vue bootstrap bootstrap-vue
 yarn add vue bootstrap bootstrap-vue
 ```
 
-Then, register BootstrapVue in your app entry point (typically `app.js` or `main.js`):
+Затем зарегистрируйте BootstrapVue в точке входа Вашего приложения (обычно `app.js` или `main.js`):
 
 ```js
 // app.js
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
-// Import Bootstrap an BootstrapVue CSS files (order is important)
+// Импортировать файлы CSS Bootstrap и Bootstrap Vue (порядок важен)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-// Make BootstrapVue available throughout your project
+// Сделайте BootstrapVue доступным для всего проекта
 Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
+// При желании установите плагин компонентов иконок BootstrapVue
 Vue.use(IconsPlugin)
 ```
 
-### Theming Bootstrap
+### Темы в Bootstrap
 
-If you want to change Bootstrap's default styles (e.g. the `$body-color`), you have to use
-Bootstrap's and BootstrapVue's `scss` files.
+Если Вы хотите изменить стили Bootstrap по умолчанию (например, `$body-color`), Вы должны использовать файлы `scss` в Bootstrap и BootstrapVue.
 
-Create your own `scss` file (e.g. `app.scss`) containing **both** your custom definitions **and**
-the 2 `@import`'s at the end:
+Создайте свой собственный файл `scss` (например, `app.scss`) содержащий **оба** ваши пользовательские определения **и** 2 `@import` в конце:
 
 ```scss
 // app.scss
 
-// Define variable defaults
+// Определить значения переменных по умолчанию
 $body-bg: #000;
 $body-color: #111;
 
-// Then import Bootstrap an BootstrapVue SCSS files (order is important)
+// Затем импортируйте файлы Bootstrap и BootstrapVue SCSS (порядок важен)
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 ```
 
-Then import that single `scss` file into your project:
+Затем импортируйте этот единственный файл `scss` в свой проект:
 
 ```js
 // app.js
@@ -174,28 +148,21 @@ import './app.scss'
 Vue.use(BootstrapVue)
 ```
 
-Do not import the individual SCSS files separately into your project, because variables and
-functions will fail to be shared between files.
+Не импортируйте отдельные файлы SCSS в свой проект по отдельности, потому что переменные и функции не будут совместно использоваться файлами.
 
-For information on theming Bootstrap, check out the [Theming](/docs/reference/theming) reference
-section.
+Для получения информации о темах Bootstrap ознакомьтесь со справочным разделом [Theming](/docs/reference/theming).
 
-### Aliasing Vue import
+### Импорт Vue с псевдонимом
 
-BootstrapVue and PortalVue require access to the global `Vue` reference (via
-`import Vue from 'vue'`).
+BootstrapVue и PortalVue требуют доступа к глобальной ссылке `Vue` (через `import Vue from 'vue'`).
 
 <div class="alert alert-info mb-3">
   <p class="mb-0">
-    If you are using a specific build of Vue (i.e. runtime-only vs. compiler + runtime), you will
-    need to set up an alias to <code>'vue'</code> in your bundler config to ensure that your
-    project, BootstrapVue and PortalVue are all using the same build version of Vue. If you are
-    seeing an error such as <code>"$attr and $listeners is readonly"</code>, or
-    <code>"Multiple instances of Vue detected"</code>, then you will need to set up an alias.
+    Если Вы используете конкретную сборку Vue (т.е. runtime-only против compiler + runtime), Вам нужно будет настроить псевдоним для <code>'vue'</code> в конфигурации Вашего сборщика, чтобы гарантировать, что Ваш проект, BootstrapVue и PortalVue используют одну и ту же версию сборки Vue. Если Вы видите такую ошибку, как <code>"$attr and $listeners is readonly"</code>, или <code>"Multiple instances of Vue detected"</code>, то Вам необходимо настроить псевдоним.
   </p>
 </div>
 
-**Example: Vue alias for [Vue CLI](https://cli.vuejs.org/) in `vue.config.js`**
+**Пример: Vue алиас для [Vue CLI](https://cli.vuejs.org/) в `vue.config.js`**
 
 ```js
 const path = require('path')
@@ -204,9 +171,9 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias.set(
       'vue$',
-      // If using the runtime only build
+      // Если используется только рантайм сборка
       path.resolve(__dirname, 'node_modules/vue/dist/vue.runtime.esm.js')
-      // Or if using full build of Vue (runtime + compiler)
+      // Или при использовании полной сборки Vue (рантайм + компилятор)
       // path.resolve(__dirname, 'node_modules/vue/dist/vue.esm.js')
     )
   }
@@ -220,134 +187,114 @@ module.exports = {
   // ...
   resolve: {
     alias: {
-      // If using the runtime only build
-      vue$: 'vue/dist/vue.runtime.esm.js' // 'vue/dist/vue.runtime.common.js' for webpack 1
-      // Or if using full build of Vue (runtime + compiler)
-      // vue$: 'vue/dist/vue.esm.js'      // 'vue/dist/vue.common.js' for webpack 1
+      // Если используется только рантайм сборка
+      vue$: 'vue/dist/vue.runtime.esm.js' // 'vue/dist/vue.runtime.common.js' для webpack 1
+      // Или при использовании полной сборки Vue (рантайм + компилятор)
+      // vue$: 'vue/dist/vue.esm.js'      // 'vue/dist/vue.common.js' для webpack 1
     }
   }
 }
 ```
 
-**Note:** If your project has multiple webpack config files (i.e. `webpack.config.js`,
-`webpack.renderer.config.js`, `webpack.vendor.config.js`, `webpack.server.config.js`,
-`webpack.client.config.js`, etc.), you will need to set the appropriate alias in _all_ of them.
+**Примечание:** Если Ваш проект имеет несколько файлов конфигурации webpack (например, `webpack.config.js`, `webpack.renderer.config.js`, `webpack.vendor.config.js`, `webpack.server.config.js`, `webpack.client.config.js` и т. д.) Вам нужно будет установить соответствующий псевдоним для _all_ из них.
 
-See the [Vue.js](https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only)
-Guide for full details on setting up aliases for [webpack](https://webpack.js.org/),
-[rollup.js](https://rollupjs.org/), [Parcel](https://parceljs.org/), etc.
+Смотрите руководство [Vue.js](https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only) для получения полной информации о настройке псевдонимов для [webpack](https://webpack.js.org/), [rollup.js](https://rollupjs.org/), [Parcel](https://parceljs.org/) и т. д.
 
-### Advanced module bundler usage
+### Использование расширенного сборщика модулей
 
-Webpack and Parcel support prepending the `scss` modules with tilde paths (`~`) when importing from
-a `scss` file:
+Webpack и Parcel поддерживают добавление модулей `scss` с путями тильды (`~`) при импорте из файла `scss`:
 
 ```scss
-// Webpack example
+// Webpack пример
 @import '~bootstrap';
 @import '~bootstrap-vue';
 ```
 
 ```scss
-// Parcel example
+// Parcel пример
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~bootstrap-vue/src/index.scss';
 ```
 
-For more details how to configure asset loading and how modules are resolved, please consult the
-module bundlers documentation.
+Для получения дополнительных сведений о настройке загрузки ресурсов и разрешении модулей смотрите документацию по сборщикам модулей.
 
-**Notes**:
+**Примечания**:
 
-- Webpack configuration to load CSS files
-  ([official guide](https://webpack.js.org/guides/asset-management/#loading-css))
-- Webpack Loader for SASS/SCSS files ([official guide](https://webpack.js.org/loaders/sass-loader/))
-- Parcel CSS ([official guide](https://parceljs.org/css.html))
-- Parcel SCSS ([official guide](https://parceljs.org/scss.html))
+- Конфигурация Webpack для загрузки файлов CSS ([официальное руководство](https://webpack.js.org/guides/asset-management/#loading-css))
+- Загрузчик Webpack для файлов SASS/SCSS ([официальное руководство](https://webpack.js.org/loaders/sass-loader/))
+- Parcel CSS ([официальное руководство](https://parceljs.org/css.html))
+- Parcel SCSS ([официальное руководство](https://parceljs.org/scss.html))
 
-## Tree shaking with module bundlers
+## Встряхивание дерева с помощью сборщиков модулей
 
-When using a module bundler you can optionally import only specific components groups (plugins),
-components and/or directives. Note that tree shaking only applies to the JavaScript code and not
-CSS/SCSS.
+При использовании сборщика модулей Вы можете дополнительно импортировать только определенные группы компонентов (плагины), компоненты и/или директивы. Обратите внимание, что встряхивание дерева применяется только к коду JavaScript, а не к CSS/SCSS.
 
 <div class="alert alert-info">
   <p class="mb-0">
-    <b>Note:</b> Optimal tree shaking only works when webpack 4 is in
-    <a href="https://webpack.js.org/guides/tree-shaking"><code>production</code></a> mode and
-    javascript minification is enabled.
+    <b>Примечание:</b> Оптимальное встряхивание дерева работает только тогда, когда установлен webpack 4 находится в режиме <a href="https://webpack.js.org/guides/tree-shaking"><code>продакшен</code></a> и минимизация javascript включена.
   </p>
 </div>
 
-### Component groups and directives as Vue plugins
+### Группы компонентов и директивы как плагины Vue
 
-You can import component groups and directives as Vue plugins by importing from the `bootstrap-vue`:
+Вы можете импортировать группы компонентов и директивы как плагины Vue, импортировав из `bootstrap-vue`:
 
 <!-- eslint-disable import/first, import/no-duplicates -->
 
 ```js
-// This imports all the layout components such as <b-container>, <b-row>, <b-col>:
+// Это импортирует все компоненты макета, такие как <b-container>, <b-row>, <b-col>:
 import { LayoutPlugin } from 'bootstrap-vue'
 Vue.use(LayoutPlugin)
 
-// This imports <b-modal> as well as the v-b-modal directive as a plugin:
+// Это импортирует <b-modal>, а также директиву v-b-modal как плагин:
 import { ModalPlugin } from 'bootstrap-vue'
 Vue.use(ModalPlugin)
 
-// This imports <b-card> along with all the <b-card-*> sub-components as a plugin:
+// Это импортирует <b-card> вместе со всеми субкомпонентами <b-card-*> как плагин:
 import { CardPlugin } from 'bootstrap-vue'
 Vue.use(CardPlugin)
 
-// This imports directive v-b-scrollspy as a plugin:
+// Это импортирует директиву v-b-scrollspy как плагин:
 import { VBScrollspyPlugin } from 'bootstrap-vue'
 Vue.use(VBScrollspyPlugin)
 
-// This imports the dropdown and table plugins
+// Это импортирует плагины раскрывающегося списка и таблицы
 import { DropdownPlugin, TablePlugin } from 'bootstrap-vue'
 Vue.use(DropdownPlugin)
 Vue.use(TablePlugin)
 ```
 
-When importing as plugins, all subcomponents and related directives are imported in most cases. i.e.
-When importing `<b-nav>`, all the `<nav-*>` sub components are also included, as well all dropdown
-sub components. Component shorthand aliases (if any) are also included in the plugin. Refer to the
-component and directive documentation for details.
+При импорте в виде плагинов в большинстве случаев импортируются все подкомпоненты и связанные директивы. т.е. при импорте `<b-nav>`, все подкомпоненты `<nav-*>` также включаются, а также все подкомпоненты выпадающего списка. Сокращенные псевдонимы компонентов (если есть) также включены в плагин. За подробностями обращайтесь к документации по компонентам и директивам.
 
-There are two additional helper plugins for providing the `$bvModal` and `$bvToast` injections (if
-you are not using the `ModalPlugin` or `ToastPlugin` plugins) which are available for import from
-`'bootstrap-vue'`:
+Есть два дополнительных вспомогательных плагина для обеспечения инъекций `$bvModal` и `$bvToast` (если Вы не используете плагины `ModalPlugin` или `ToastPlugin`), которые доступны для импорта из `'bootstrap-vue'`:
 
-- `BVModalPlugin` - provides the injection `$bvModal` for generating
-  [message boxes](/docs/components/modal#modal-message-boxes).
-- `BVToastPlugin` - provides the injection `$bvToast` for generating
-  [on demand toasts](/docs/components/toast#toasts-on-demand).
+- `BVModalPlugin` - предоставляет инъекцию `$bvModal` для генерации [коробок сообщений](/docs/components/modal#modal-message-boxes).
+- `BVToastPlugin` - предоставляет инъекцию `$bvToast` для генерации [тосты по запросу](/docs/components/toast#toasts-on-demand).
 
-When importing multiple component group and/or directive group plugins, include all imports in a
-single `import` statement for optimal tree shaking.
+При импорте нескольких подключаемых модулей группы компонентов и/или группы директив, включите весь импорт в один оператор `import` для оптимального встряхивания дерева.
 
-### Individual components and directives
+### Отдельные компоненты и директивы
 
-If you would like to only pull in a specific component or set of components, you can do this by
-directly importing those components.
+Если Вы хотите использовать только определенный компонент или набор компонентов, Вы можете сделать это, напрямую импортировав эти компоненты.
 
-To cherry pick a component/directive, start by importing it in the file where it is being used:
+Чтобы выбрать компонент/директиву cherry, начните с импорта ее в файл, в котором она используется:
 
 <!-- eslint-disable no-unused-vars -->
 
 ```js
-// Place all imports from 'bootstrap-vue' in a single import
-// statement for optimal bundle sizes
+// Поместите весь импорт из 'bootstrap-vue' в один оператор импорта
+// для получения оптимальных размеров пакета
 import { BModal, VBModal } from 'bootstrap-vue'
 ```
 
-Then add it to your component definition:
+Затем добавьте его в определение Вашего компонента:
 
 <!-- eslint-disable no-undef -->
 
 ```js
 Vue.component('MyComponent', {
   components: { BModal },
-  // Note that Vue automatically prefixes directive names with `v-`
+  // Обратите внимание, что Vue автоматически добавляет к именам директив префиксы `v-`
   directives: { 'b-modal': VBModal }
   // ...
 })
@@ -359,33 +306,25 @@ Or register them globally:
 
 ```js
 Vue.component('BModal', BModal)
-// Note that Vue automatically prefixes directive names with `v-`
+// Обратите внимание, что Vue автоматически добавляет к именам директив префиксы `v-`
 Vue.directive('b-modal', VBModal)
 ```
 
-Vue allows for various component and directive name syntaxes here, so feel free to utilize
-<samp>kebab-casing</samp> (shown), <samp>camelCasing</samp>, <samp>PascalCasing</samp>, and/or
-object property shorthand (components only).
+Vue позволяет использовать здесь различные синтаксисы имен компонентов и директив, поэтому не стесняйтесь использовать <samp>kebab-casing</samp> (показано), <samp>camelCasing</samp>, <samp>PascalCasing</samp> и/или сокращенное обозначение свойства объекта (только для компонентов).
 
-### Using BootstrapVue source code for smaller bundles
+### Использование исходного кода BootstrapVue для небольших пакетов
 
-When using module bundlers, they will usually default to using the `esm/` modular build, which has
-been pre-transpiled by Babel for our
-[supported browsers](https://github.com/bootstrap-vue/bootstrap-vue/blob/master/.browserslistrc).
+При использовании сборщиков модулей они обычно по умолчанию используют модульную сборку `esm/`, которая была предварительно перенесена Babel для наших [поддерживаемых браузеров](https://github.com/bootstrap-vue/bootstrap-vue/blob/master/.browserslistrc).
 
-You can override the use of the `esm/` build by aliasing `'bootstrap-vue'` to use the BootstrapVue
-source files, and whitelisting `node_modules/bootstrap-vue/src/*` for transpilation by your build
-process, in your module bundler config. This will allow you to transpile BootstrapVue for your
-target browsers/environments and potentially reduce bundle sizes (and will only include the babel
-helper utils once) at the expense of slightly longer build times.
+Вы можете переопределить использование сборки `esm/`, назначив псевдоним `'bootstrap-vue'` для использования исходных файлов BootstrapVue и добавив `node_modules/bootstrap-vue/src/*` в белый список для транспиляции в процессе сборки в Вашем конфигурация сборщика модулей. Это позволит Вам перенести BootstrapVue для Ваших целевых браузеров/сред и потенциально уменьшить размеры пакетов (и включать вспомогательные утилиты babel только один раз) за счет немного большего времени сборки.
 
-**Example webpack.config.js for Babel transpilation:**
+**Пример webpack.config.js для транспиляции Babel:**
 
 ```js
 module.exports = {
   resolve: {
     alias: {
-      // Alias for using source of BootstrapVue
+      // Псевдоним для использования источника BootstrapVue
       'bootstrap-vue$': 'bootstrap-vue/src/index.js'
     }
   },
@@ -393,7 +332,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        // Exclude transpiling `node_modules`, except `bootstrap-vue/src`
+        // Исключить транспилирование `node_modules`, кроме `bootstrap-vue/src`
         exclude: /node_modules\/(?!bootstrap-vue\/src\/)/,
         use: {
           loader: 'babel-loader',
@@ -407,45 +346,44 @@ module.exports = {
 }
 ```
 
-You may need to install `babel-core`, `babel-loader`, and `babel-preset-env`:
+Вам может потребоваться установить `babel-core`, `babel-loader` и `babel-preset-env`:
 
 ```bash
-# If using npm
+# Если Вы используете npm
 npm install babel-core babel-loader babel-preset-env --save-dev
 
-# If using yarn
+# Если Вы используете yarn
 yarn add babel-core babel-loader babel-preset-env --dev
 ```
 
-For more details see:
+Подробнее смотрите:
 
 - [Webpack `resolve.alias`](https://webpack.js.org/configuration/resolve/)
 - [Webpack `rule`](https://webpack.js.org/configuration/module/#rule)
 - [rollup.js](https://rollupjs.org/)
 - [Parcel](https://parceljs.org/)
 
-## Nuxt.js module
+## Модуль Nuxt.js
 
-BootstrapVue provides a Nuxt.js module for easily importing BootstrapVue (or portions of
-BootstrapVue) into your Nuxt.js app.
+BootstrapVue предоставляет модуль Nuxt.js для простого импорта BootstrapVue (или частей BootstrapVue) в Ваше приложение Nuxt.js.
 
-### Getting started with Nuxt.js
+### Начало работы с Nuxt.js
 
-[Nuxt.js](https://nuxtjs.org/) version <code>{{ nuxtVersion }}</code> (or greater) is recommended.
+[Nuxt.js](https://nuxtjs.org/) версия <code>{{ nuxtVersion }}</code> (или выше) рекомендуется.
 
-Install dependencies:
+Установка зависимостей:
 
 ```bash
-# With npm
+# С помощью npm
 npm install bootstrap-vue
 
-# With yarn
+# С помощью yarn
 yarn add bootstrap-vue
 ```
 
-Add `bootstrap-vue/nuxt` to modules section of your **`nuxt.config.js`** file.
+Добавьте `bootstrap-vue/nuxt` в раздел модулей Вашего файла **`nuxt.config.js`**.
 
-This will include both `bootstrap.css` and `bootstrap-vue.css` default pre-compiled CSS.
+Это будет включать как `bootstrap.css` и `bootstrap-vue.css` по умолчанию предварительно скомпилированный CSS.
 
 ```js
 module.exports = {
@@ -453,32 +391,28 @@ module.exports = {
 }
 ```
 
-Note that this will **not** install the Icons components. To see how to include icons via the
-Nuxt.js module, refer to the [Icons section](#icons) below.
+Обратите внимание, что это **не** установит компоненты иконок. Чтобы узнать, как включить иконки через модуль Nuxt.js, обратитесь к [разделу Иконки](#иконки) ниже.
 
-### Using custom Bootstrap SCSS
+### Использование настраиваемого Bootstrap SCSS
 
-If you are using custom Bootstrap SCSS, you can disable automatic inclusion of Bootstrap and
-BootstrapVue pre-compiled CSS files by setting the following option(s) to `false`:
+Если Вы используете собственный Bootstrap SCSS, Вы можете отключить автоматическое включение предварительно скомпилированных файлов CSS Bootstrap и BootstrapVue, установив для следующих опций значение `false`:
 
 ```js
 module.exports = {
   modules: ['bootstrap-vue/nuxt'],
   bootstrapVue: {
-    bootstrapCSS: false, // Or `css: false`
-    bootstrapVueCSS: false // Or `bvCSS: false`
+    bootstrapCSS: false, // Или `css: false`
+    bootstrapVueCSS: false // Или `bvCSS: false`
   }
 }
 ```
 
-BootstrapVue's custom SCSS relies on Bootstrap SCSS variables and mixins, and any variable overrides
-you may have set. You can include Bootstrap and BootstrapVue SCSS in your project's custom SCSS
-file:
+Пользовательский SCSS BootstrapVue полагается на переменные и миксины Bootstrap SCSS, а также любые переопределения переменных, которые Вы могли установить. Вы можете включить Bootstrap и BootstrapVue SCSS в пользовательский файл SCSS Вашего проекта:
 
 ```scss
 // custom.scss
 
-// Custom Bootstrap variable overrides go first
+// Пользовательские переопределения переменных Bootstrap идут первыми
 $grid-breakpoints: (
   xs: 0,
   sm: 480px,
@@ -488,32 +422,28 @@ $grid-breakpoints: (
 );
 $enable-rounded: false;
 
-// Then include the following
+// Затем включите следующие
 @import 'bootstrap/scss/bootstrap.scss';
 @import 'bootstrap-vue/src/index.scss';
 
-// And define any of your custom or additional CSS/SCSS here,
-// or via an @import
+// И определите любой из ваших пользовательских или дополнительных CSS/SCSS
+// здесь или через @import
 ```
 
-In your app main entry point include the _single_ custom SCSS file (when using `sass-loader`):
+В главную точку входа Вашего приложения включите _одиночный_ пользовательский файл SCSS (при использовании `sass-loader`):
 
 ```js
 // app.js
 import 'custom.scss'
 ```
 
-### `transformAssetUrls` with Nuxt.js
+### `transformAssetUrls` с Nuxt.js
 
-The BootstrapVue Nuxt plugin module will automatically add in the BootstrapVue specific
-[`transformAssetUrls`](/docs/reference/images) image `src` prop configuration for you.
+Плагин подключаемого модуля BootstrapVue Nuxt автоматически добавит в конкретный для BootstrapVue  [`transformAssetUrls`](/docs/reference/images) изображения `src` конфигурация свойства для Вас.
 
-### Tree shaking with Nuxt.js
+### Тряска дерева с Nuxt.js
 
-If you wish to reduce your production bundle size because you only use a subset of the available
-BootstrapVue plugins, you can configure the list of BootstrapVue `componentPlugins` or
-`directivePlugins` you want to globally install in your Nuxt.js project. Note tree shaking only
-applies to the JavaScript code and not CSS/SCSS.
+Если Вы хотите уменьшить размер производственного пакета, потому что Вы используете только подмножество доступных плагинов BootstrapVue, Вы можете настроить список BootstrapVue `componentPlugins` или `directivePlugins`, которые Вы хотите глобально установить в свой проект Nuxt.js. Встряхивание дерева заметок применяется только к коду JavaScript, но не к CSS/SCSS.
 
 ```js
 module.exports = {
@@ -533,17 +463,12 @@ module.exports = {
 }
 ```
 
-There are two additional helper plugins for providing the `$bvModal` and `$bvToast` injections (if
-you are not using the `ModalPlugin` or `ToastPlugin` plugins) that are available in the
-`componentPlugins` option:
+Есть два дополнительных вспомогательных плагина для обеспечения инъекций `$bvModal` и `$bvToast` injections (если вы не используете плагины `ModalPlugin` или `ToastPlugin`), которые доступны в опции `componentPlugins`:
 
-- `BVModalPlugin` - provides the injection `$bvModal` for generating
-  [message boxes](/docs/components/modal#modal-message-boxes).
-- `BVToastPlugin` - provides the injection `$bvToast` for generating
-  [on demand toasts](/docs/components/toast#toasts-on-demand).
+- `BVModalPlugin` - предоставляет инъекцию `$bvModal` для генерации [коробок сообщения](/docs/components/modal#modal-message-boxes).
+- `BVToastPlugin` - предоставляет инъекцию `$bvToast` для генерации [тосты по запросу](/docs/components/toast#toasts-on-demand).
 
-You can also optionally import individual components and/or directives, by configuring the list of
-BootstrapVue `components` or `directives` you want to globally install in your Nuxt.js project.
+Вы также можете при желании импортировать отдельные компоненты и/или директивы, настроив список BootstrapVue `components` или `directives`, которые Вы хотите глобально установить в свой проект Nuxt.js.
 
 ```js
 module.exports = {
@@ -555,116 +480,98 @@ module.exports = {
 }
 ```
 
-Feel free to mix and match plugin imports with individual component and directive imports.
+Не стесняйтесь смешивать и сопоставлять импорт плагинов с импортом отдельных компонентов и директив.
 
-Refer to the reference section at the bottom of each of the [component](/docs/components) and
-[directive](/docs/directives) docs for details on the plugin names available (and which components
-and directives are included in each plugin) and component and/or directive import names.
+Обратитесь к справочному разделу внизу каждого из документации [компонент](/docs/components) и [директива](/docs/directives) для получения подробной информации о доступных именах подключаемых модулей (и о том, какие компоненты и директивы включены в каждый подключаемый плагин) и имена импорта компонентов и/или директив.
 
-Note that when importing individual components, any component aliases will **not** be available.
+Обратите внимание, что при импорте отдельных компонентов любые псевдонимы компонентов **недоступны**.
 
 <div class="alert alert-info">
   <p class="mb-0">
-    <b>Note:</b> Optimal tree shaking only works when your Nuxt.js app is in <code>production</code>
-    mode. You may notice larger bundle sizes when not in <code>production</code> mode (i.e.
-    <code>dev</code> mode).
+    <b>Примечание:</b> Оптимальное встряхивание дерева работает только тогда, когда Ваше приложение Nuxt.js находится в режиме <code>production</code>. Вы можете заметить большие размеры пакетов, когда не находитесь в режиме <code>production</code> (т.е. в режиме <code>dev</code>).
   </p>
 </div>
 
-If you want to import individual BootstrapVue components into _specific_ pages and/or components of
-your Nuxt app, you may want to bypass the Nuxt.js module and, instead, follow the
-[module bundlers](#using-module-bundlers) and
-[Tree shaking with module bundlers](#tree-shaking-with-module-bundlers) sections above.
-Alternatively you may want to to just import a few plugins (such as `LayoutPlugin`) in your Nuxt.js
-module config, and then import additional components or plugins in the pages where needed.
+Если Вы хотите импортировать отдельные компоненты BootstrapVue на _специфичных_ страницах и/или компоненты Вашего приложения Nuxt, Вы можете обойти модуль Nuxt.js и вместо этого следовать [модульным сборщикам](#использование-сборщиков-модулей) и [Встряхивание дерева с помощью сборщиков модулей](#встряхивание-дерева-с-помощью-сборщиков-модулей) разделы выше. В качестве альтернативы Вы можете просто импортировать несколько плагинов (например, `LayoutPlugin`) в конфигурацию Вашего модуля Nuxt.js, а затем импортировать дополнительные компоненты или плагины на страницы, где это необходимо.
 
-### Icons
+### Иконки
 
-The [icons plugin](/docs/icons) is **not** automatically installed when using the Nuxt.js module.
-You must either explicitly enable the `IconsPlugin`, or specify which icon components you wish to
-import.
+[Плагин иконок](/docs/icons) **не** автоматически устанавливается при использовании модуля Nuxt.js. Вы должны либо явно включить `IconsPlugin`, либо указать, какие компоненты значков Вы хотите импортировать.
 
-All Icons:
+Все иконки:
 
 ```js
 module.exports = {
   modules: ['bootstrap-vue/nuxt'],
   bootstrapVue: {
-    // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
+    // Установите плагин `IconsPlugin` (в дополнение к плагину `BootstrapVue`)
     icons: true
   }
 }
 ```
 
-Specific icons:
+Конкретные иконки:
 
 ```js
 module.exports = {
   modules: ['bootstrap-vue/nuxt'],
   bootstrapVue: {
-    // Add the desired icon components to the `components` array
+    // Добавьте нужные компоненты иконки в массив `components`
     components: ['BIcon', 'BIconAlertFill', 'BIconCalendar', 'BIconGears']
   }
 }
 ```
 
-Icons plugin:
+Плагин иконок:
 
 ```js
 module.exports = {
   modules: ['bootstrap-vue/nuxt'],
   bootstrapVue: {
-    // Add the icon plugin to the `componentsPlugins` array
+    // Добавьте плагин иконки в массив `componentsPlugins`
     componentPlugins: ['IconsPlugin']
   }
 }
 ```
 
-### Passing custom BootstrapVue config with Nuxt.js
+### Передача пользовательской конфигурации BootstrapVue с помощью Nuxt.js
 
-If you need to pass a custom
-[BootstrapVue configuration](/docs/reference/settings#default-bootstrapvue-configuration), you may
-do so by setting the `config` property in your `nuxt.config.js`:
+Если Вам нужно передать пользовательскую [конфигурацию BootstrapVue](/docs/reference/settings#default-bootstrapvue-configuration), Вы можете сделать это, установив свойство `config` в Вашем `nuxt.config.js`:
 
 ```js
 module.exports = {
   modules: ['bootstrap-vue/nuxt'],
   bootstrapVue: {
     config: {
-      // Custom config options here
+      // Пользовательские параметры конфигурации здесь
     }
   }
 }
 ```
 
-### Using pretranspiled version of BootstrapVue for Nuxt.js
+### Использование предварительно перенесенной версии BootstrapVue для Nuxt.js
 
-Nuxt.js module uses the pre-transpiled versions of BootstrapVue for faster development builds and
-the source (`src/`) of BootstrapVue for higher quality and smaller production builds.
+Модуль Nuxt.js использует предварительно перенесенные версии BootstrapVue для более быстрой разработки и исходный код (`src/`) BootstrapVue для более качественных и небольших производственных сборок.
 
-You can override this option using `usePretranspiled` option. Setting to `true` always uses the
-pre-transpiled versions, while setting it to `false` will always use `src/`. By default
-`usePretranspiled` is enabled in development mode only. You should not need to use this option as
-the default is most optimal for performance.
+Вы можете переопределить эту опцию, используя опцию `usePretranspiled`. Установка значения `true` всегда использует предварительно перенесенные версии, а установка значения `false` всегда будет использовать `src/`. По умолчанию `usePretranspiled` включен только в режиме разработки. Вам не нужно использовать этот параметр, поскольку значение по умолчанию является наиболее оптимальным для производительности.
 
 ## Vue CLI 3
 
-Unlike V2, Vue CLI 3 doesn't use templates.
+В отличие от V2, Vue CLI 3 не использует шаблоны.
 
-Create a new project in the directory `my-project`:
+Создайте новый проект в каталоге `my-project`:
 
 ```bash
 npx @vue/cli create my-project
 ```
 
-Enter the `my-project` directory and install `bootstrap-vue`:
+Войдите в каталог `my-project` и установите `bootstrap-vue`:
 
 ```bash
 npm install bootstrap-vue
 ```
 
-Under the hood, Vue CLI uses webpack, so we can register the BootstrapVue plugin as with the webpack
-instructions.
+Под капотом Vue CLI использует webpack, поэтому мы можем зарегистрировать плагин BootstrapVue, как с инструкциями webpack.
 
 ```js
 import Vue from 'vue'
@@ -677,15 +584,11 @@ Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 ```
 
-For additional configuration for Vue CLI 3 for using project relative paths for image src props on
-various BootstrapVue components, refer to the Vue CLI 3 section of the
-[Image Src Resolving](/docs/reference/images#vue-cli-3-support) reference page.
+Дополнительную конфигурацию Vue CLI 3 для использования относительных путей проекта для свойств src изображений в различных компонентах BootstrapVue смотрите в разделе Vue CLI 3 статьи [Разрешение источника изображений](/docs/reference/images#vue-cli-3-support) справочной страницы.
 
-### Vue CLI 3 plugin
+### Vue CLI 3 плагин
 
-As an alternative, you can use the
-[Bootstrap-Vue Vue CLI 3 plugin](https://github.com/GregYankovoy/vue-cli-plugin-bootstrap-vue) to
-help you configure your app.
+В качестве альтернативы Вы можете использовать [плагин Bootstrap-Vue Vue CLI 3](https://github.com/GregYankovoy/vue-cli-plugin-bootstrap-vue), который поможет Вам настроить приложение.
 
 ```bash
 vue create my-app
@@ -693,120 +596,92 @@ cd my-app
 vue add bootstrap-vue
 ```
 
-This will create a new app with basic BootstrapVue settings to get your project started.
+Это создаст новое приложение с базовыми настройками BootstrapVue для запуска Вашего проекта.
 
-In the future this plugin will provide options for more advanced configurations and templates.
+В будущем этот плагин будет предоставлять возможности для более сложных конфигураций и шаблонов.
 
-For Icons support, you may need to edit the resultant config file.
+Для поддержки иконок Вам может потребоваться отредактировать полученный файл конфигурации.
 
-## Browser
+## Браузер
 
-If not using a module bundler or compile process, you can instead add the Bootstrap and BootstrapVue
-CSS URLs in your HTML `<head>` section, followed by the required JavaScript files.
+Если Вы не используете сборщик модулей или процесс компиляции, Вы можете вместо этого добавить URL-адреса CSS Bootstrap и BootstrapVue в свой HTML-раздел `<head>`, а затем необходимые файлы JavaScript.
 
-When supporting older browsers (see [Browser Support](#browser-support) below), you will need to
-include a polyfill for handling modern JavaScript features before loading Vue and BootstrapVue
-JavaScript files.
+Для поддержки старых браузеров (смотрите [Поддержка браузера](#поддержка-браузера) ниже), Вам необходимо будет включить полифилл для обработки современных функций JavaScript перед загрузкой файлов JavaScript Vue и BootstrapVue.
 
 ```html
-<!-- Add this to <head> -->
+<!-- Добавьте это в <head> -->
 
-<!-- Load required Bootstrap and BootstrapVue CSS -->
+<!-- Загрузите необходимые Bootstrap и BootstrapVue CSS -->
 <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
 <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
 
-<!-- Load polyfills to support older browsers -->
+<!-- Загрузите полифиллы для поддержки старых браузеров -->
 <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
 
-<!-- Load Vue followed by BootstrapVue -->
+<!-- Загрузите Vue, а затем BootstrapVue -->
 <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
 <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 
-<!-- Load the following for BootstrapVueIcons support -->
+<!-- Загрузите следующее для поддержки BootstrapVueIcons -->
 <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
 ```
 
-## Build variants
+## Варианты сборки
 
-Choosing the best variant for your build environment / packager helps reduce bundle sizes. If your
-bundler supports esm modules, it will automatically prefer it over commonjs.
+Выбор лучшего варианта для вашей среды сборки / упаковщика помогает уменьшить размеры пакетов. Если Ваш сборщик поддерживает модули esm, он автоматически предпочтет их по сравнению с commonjs.
 
-| Variant        | Environments           | Tree Shake | Package path                                                           |
+| Вариант        | Среды                  | Tree Shake | Путь к пакету                                                           |
 | -------------- | ---------------------- | ---------- | ---------------------------------------------------------------------- |
-| **ESM module** | webpack 2+ / rollup.js | Yes        | `esm/index.js`                                                         |
-| ESM bundle     | webpack 2+ / rollup.js | Yes        | `dist/bootstrap-vue.esm.js`                                            |
-| commonjs2      | webpack 1 / ...        | No         | `dist/bootstrap-vue.common.js` _or_ `dist/bootstrap-vue.common.min.js` |
-| UMD            | Browser                | No         | `dist/bootstrap-vue.js` _or_ `dist/bootstrap-vue.min.js`               |
+| **ESM module** | webpack 2+ / rollup.js | Да         | `esm/index.js`                                                         |
+| ESM bundle     | webpack 2+ / rollup.js | Да         | `dist/bootstrap-vue.esm.js`                                            |
+| commonjs2      | webpack 1 / ...        | Нет        | `dist/bootstrap-vue.common.js` _или_ `dist/bootstrap-vue.common.min.js` |
+| UMD            | Browser                | Нет        | `dist/bootstrap-vue.js` _или_ `dist/bootstrap-vue.min.js`               |
 
-Note the UMD (browser) variant **does not** include BootstrapVue [icons](/docs/icons) support. All
-other variants listed above _do include_ the `BootstrapVueIcons` (`IconsPlugin`) plugin (note the
-icons plugin is not automatically installed, and must explicitly installed via `Vue.use()`. See the
-[Icons usage](/docs/icons#usage) section for more details.
+Обратите внимание, что вариант UMD (браузер) **не** включает поддержку BootstrapVue [иконок](/docs/icons). Все другие варианты, перечисленные выше _дополняют_ подключаемый плагин `BootstrapVueIcons` (`IconsPlugin`) (обратите внимание, что подключаемый модуль иконок не устанавливается автоматически и должен быть явно установлен через `Vue.use()`. Смотрите [Использование иконок](/docs/icons#usage) для получения более подробной информации.
 
-Icons only modules:
+Только модули иконок:
 
-| Variant        | Environments           | Tree Shake | Package path                                                                       |
+| Вариант        | Среды                  | Tree Shake | Путь к пакету                                                                       |
 | -------------- | ---------------------- | ---------- | ---------------------------------------------------------------------------------- |
-| **ESM bundle** | webpack 2+ / rollup.js | Yes        | `dist/bootstrap-vue-icons.esm.js`                                                  |
-| commonjs2      | webpack 1 / ...        | No         | `dist/bootstrap-vue-icons.common.js` _or_ `dist/bootstrap-vue-icons.common.min.js` |
-| UMD            | Browser                | No         | `dist/bootstrap-vue-icons.js` _or_ `dist/bootstrap-vue-icons.min.js`               |
+| **ESM bundle** | webpack 2+ / rollup.js | Да         | `dist/bootstrap-vue-icons.esm.js`                                                  |
+| commonjs2      | webpack 1 / ...        | Нет        | `dist/bootstrap-vue-icons.common.js` _или_ `dist/bootstrap-vue-icons.common.min.js` |
+| UMD            | Browser                | Нет        | `dist/bootstrap-vue-icons.js` _или_ `dist/bootstrap-vue-icons.min.js`               |
 
-The `ESM` module build and the `ESM` bundles (single file) are
-[tree-shakeable](#tree-shaking-with-module-bundlers), but you will experience smaller final bundle
-sizes when using the `ESM` module _vs._ the `ESM` bundle.
+Сборка модуля `ESM` и пакеты `ESM` (один файл) are [tree-shakeable](#встряхивание-дерева-с-помощью-сборщиков-модулей), но Вы получите меньшие конечные размеры пакетов при использовании модуля `ESM` _против_ пакета `ESM`.
 
-All of the build variants listed above have been pre-transpiled targeting the
-[browsers](https://github.com/bootstrap-vue/bootstrap-vue/blob/master/.browserslistrc) supported by
-BootstrapVue. However, if you are targeting only modern browsers, you may want to import
-`BootstrapVue` from `src/index.js`, (by aliasing `bootstrap-vue` to `bootstrap-vue/src/index.js`)
-and whitelisting `bootstrap-vue/src` for transpilation via your own project. This can potentially
-reduce final project bundle sizes. See the
-[Using BootstrapVue source code for smaller bundles](#using-bootstrapvue-source-code-for-smaller-bundles)
-section above for more details.
+Все перечисленные выше варианты сборки были предварительно перенесены на [браузеры](https://github.com/bootstrap-vue/bootstrap-vue/blob/master/.browserslistrc), поддерживаемые BootstrapVue. Однако, если Вы ориентируетесь только на современные браузеры, Вы можете импортировать `BootstrapVue` из `src/index.js`, (добавив псевдоним `bootstrap-vue` к `bootstrap-vue/src/index.js`) и добавив в белый список `bootstrap-vue/src` для транспиляции через Ваш собственный проект. Это потенциально может уменьшить размеры окончательного пакета проекта. Дополнительные сведения смотрите в разделе [Использование исходного кода BootstrapVue для небольших пакетов](#использование-исходного-кода-bootstrapvue-для-небольших-пакетов) выше.
 
-### Dependencies
+### Зависимости
 
-BootstrapVue relies on `Popper.js` (for Tooltip, Popover, and Dropdown positioning),
-[`PortalVue`](https://portal-vue.linusb.org/) (for toasts) and
-[`vue-functional-data-merge`](https://github.com/alexsasharegan/vue-functional-data-merge) (used by
-our functional components). These three dependencies are included in the BootstrapVue `UMD` bundle,
-while the UMD (browser) icons only bundle includes `vue-functional-data-merge`. All other builds do
-not include these dependencies.
+BootstrapVue использует `Popper.js` (для позиционирования всплывающих подсказок, всплывающих окон и раскрывающегося списка), [`PortalVue`](https://portal-vue.linusb.org/) (для тостов) и [`vue-functional-data-merge`](https://github.com/alexsasharegan/vue-functional-data-merge) (используется нашими функциональными компонентами). Эти три зависимости включены в пакет BootstrapVue `UMD`, в то время как пакет только для значков UMD (браузера) включает в себя `vue-functional-data-merge`. Все другие сборки не включают эти зависимости.
 
-## Migrating a project already using Bootstrap
+## Перенос проекта уже с использованием Bootstrap
 
-If you've already been using Bootstrap v{{bootstrapVersionMajor}}, there are a couple adjustments
-you may need to make to your project:
+Если Вы уже использовали Bootstrap v{{bootstrapVersionMajor}}, Вам, возможно, придется внести в свой проект несколько изменений:
 
-- Remove the `bootstrap.js` file from your page scripts or build pipeline
-- If Bootstrap is the only thing relying on `jQuery`, you can safely remove it — BootstrapVue **does
-  not** depend on `jQuery`
-- Convert your native Bootstrap HTML markup into the simplified BootstrapVue custom component markup
-- Start by converting only the interactive controls that require Bootstrap's javascript first.
+- Удалите файл `bootstrap.js` из скриптов Вашей страницы или конвейера сборки
+- Если Bootstrap - единственное, что полагается на `jQuery`, Вы можете безопасно удалить его - BootstrapVue **не** зависит от `jQuery`
+- Преобразуйте собственную разметку HTML Bootstrap в упрощенную разметку пользовательских компонентов BootstrapVue
+- Начните с преобразования только интерактивных элементов управления, для которых сначала требуется Bootstrap javascript.
 
-## Browser support
+## Поддержка браузера
 
 ### CSS
 
-BootstrapVue is to be used with Bootstrap v{{bootstrapVersionMinor}} CSS/SCSS. Please see
-<b-link :href="bootstrapBrowserDevicesHref" target="_blank">Browsers and devices</b-link> for more
-information about browsers currently supported by Bootstrap v{{bootstrapVersionMajor}}.
+BootstrapVue должен использоваться с Bootstrap v{{bootstrapVersionMinor}} CSS/SCSS. Смотрите <b-link :href="bootstrapBrowserDevicesHref" target="_blank">браузеры и устройства</b-link> для получения дополнительной информации о браузерах, которые в настоящее время поддерживаются Bootstrap v{{bootstrapVersionMajor}}.
 
 ### JS
 
-BootstrapVue is written in Vue.js! So it is up to your project and bundler which browsers are
-supported.
+BootstrapVue написан на Vue.js! Итак, какие браузеры поддерживаются, зависит от Вашего проекта и сборщика.
 
-Following features and APIs are used by BootstrapVue:
+BootstrapVue использует следующие функции и API:
 
-- ES6 (e.g. `Array.from()`, `Array.isArray()`, `Object.assign()`, `Object.is()`, etc.)
+- ES6 (например, `Array.from()`, `Array.isArray()`, `Object.assign()`, `Object.is()`, и т.д.)
 - `Promise`
 - `MutationObserver`
-- `IntersectionObserver` (optional)
+- `IntersectionObserver` (опционально)
 
-If you want to support older IE, Android, and iOS device web browsers, you may want to use
-[core-js](https://github.com/zloirock/core-js) and
-[intersection-observer](https://www.npmjs.com/package/intersection-observer):
+Если Вы хотите поддерживать старые веб-браузеры устройств IE, Android и iOS, Вы можете использовать [core-js](https://github.com/zloirock/core-js) и [intersection-observer](https://www.npmjs.com/package/intersection-observer):
 
 ```bash
 npm install core-js regenerator-runtime intersection-observer
@@ -819,12 +694,12 @@ Then import the polyfills in your app main entry point:
 ```js
 import 'core-js/stable'
 import 'regenerator-runtime/runtime'
-import 'intersection-observer' // Optional
+import 'intersection-observer' // Опционально
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 ```
 
-If using deprecated [@babel/polyfill](https://babeljs.io/docs/en/babel-polyfill/):
+При использовании устаревшего [@babel/polyfill](https://babeljs.io/docs/en/babel-polyfill/):
 
 ```bash
 npm install @babel/polyfill intersection-observer
@@ -836,26 +711,21 @@ Then import the polyfills in your app main entry point:
 
 ```js
 import '@babel/polyfill'
-import 'intersection-observer' // Optional
+import 'intersection-observer' // Опционально
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 ```
 
-Alternatively, use [Polyfill.io](https://polyfill.io/) to dynamically serve browser specific
-polyfills via `<script>` tags in the HTML `<head>` section. See the [Browser](#browser) section
-above for an example.
+В качестве альтернативы используйте [Polyfill.io](https://polyfill.io/) для динамического обслуживания полифиллов, специфичных для браузера, с помощью тегов `<script>` в разделе HTML `<head>`. Смотрите пример в разделе [Браузер](#браузер) выше.
 
-## Tooling support
+## Поддержка Инструментов
 
-BootstrapVue provides additional helper files for auto completion in popular IDE editors.
+BootstrapVue предоставляет дополнительные вспомогательные файлы для автозаполнения в популярных редакторах IDE.
 
 ### VS Code + Vetur
 
-If you are using [VS Code](https://code.visualstudio.com/) as your text editor, BootstrapVue has
-intellisense autocompletion for component attributes and directives available via the
-`dist/vetur-tags.json` and `dist/vetur-attributes.json` files.
+Если Вы используете [VS Code](https://code.visualstudio.com/) в качестве текстового редактора, BootstrapVue имеет автозаполнение intellisense для атрибутов компонентов и директив, доступных через файлы `dist/vetur-tags.json` и `dist/vetur-attributes.json`.
 
-### JetBrains WebStorm (and compatible)
+### JetBrains WebStorm (и совместимый)
 
-For [WebStorm](https://www.jetbrains.com/webstorm/) editor (or web-types compatible), BootstrapVue
-provides the file `dist/web-types.json` for component attribute and directive auto-completion.
+Для редактора [WebStorm](https://www.jetbrains.com/webstorm/) (или совместимого с веб-типами), BootstrapVue предоставляет файл `dist/web-types.json` для атрибута компонента и автозаполнения директив.

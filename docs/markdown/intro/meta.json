@@ -1,5 +1,5 @@
 {
-  "name": "Intro",
-  "title": "Getting Started",
-  "description": "Get started with BootstrapVue, based on the world's most popular framework - Bootstrap v4, for building responsive, mobile-first sites using Vue.js"
+  "name": "Вступление",
+  "title": "Начало",
+  "description": "Начните работу с BootstrapVue, основанным на самой популярной в мире платформе - Bootstrap v4, для создания адаптивных, ориентированных на мобильные устройства сайтов с использованием Vue.js"
 }
