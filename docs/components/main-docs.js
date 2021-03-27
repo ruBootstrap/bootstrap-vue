@@ -1,4 +1,4 @@
-import CarbonAd from '~/components/carbon-ad'
+// import CarbonAd from '~/components/carbon-ad'
 import Main from '~/components/main'
 import QuickLinks from '~/components/quick-links'
 import Reload from '~/components/reload'
@@ -56,7 +56,7 @@ export default {
     const $error = loadError ? h(Reload) : h()
 
     // Carbon Ad
-    const $carbonAd = h(CarbonAd)
+    // const $carbonAd = h(CarbonAd)
 
     // Quick links
     const $quickLinks = h(QuickLinks)
@@ -71,7 +71,7 @@ export default {
       $leadSection,
       $error,
       $availableSinceSection,
-      $carbonAd,
+      // $carbonAd,
       $quickLinks,
       $bodySection,
       children
