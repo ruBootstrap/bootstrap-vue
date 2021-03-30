@@ -112,7 +112,7 @@
                   class="mb-3 mb-md-0"
                   block
                 >
-                  Игровая площадка
+                  Плейграунд
                 </b-btn>
               </b-col>
               <b-col md="4" lg="3">

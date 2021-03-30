@@ -17,7 +17,7 @@
             <li><b-link to="/docs/directives" exact>Директивы</b-link></li>
             <li><b-link to="/docs/icons" exact>Иконки</b-link></li>
             <li><b-link to="/docs/reference" exact>Справка</b-link></li>
-            <li><b-link to="/play" exact>Игровая площадка</b-link></li>
+            <li><b-link to="/play" exact>Плейграунд</b-link></li>
           </ul>
           <h5 class="bd-text-purple-bright mb-1 mt-3">Темы</h5>
           <ul class="list-unstyled ml-3">
