@@ -6,16 +6,16 @@
     <template v-if="components.length > 0">
       <article class="bd-content">
         <anchored-heading id="importing-individual-components" level="3">
-          Importing individual components
+          Импорт отдельных компонентов
         </anchored-heading>
 
         <p>
-          You can import individual components into your project via the following named
-          exports:
+          Вы можете импортировать отдельные компоненты в свой проект с помощью следующих именованных экспортов:
         </p>
 
         <b-table
           :items="componentImports"
+          :fields="[{ key: 'component', label: 'Компонент' }, { key: 'namedExport', label: 'Именованный экспорт' }, { key: 'importPath', label: 'Путь импорта' }]"
           table-class="bv-docs-table"
           responsive="sm"
           head-variant="default"
@@ -33,7 +33,7 @@
           </template>
         </b-table>
 
-        <p><strong>Example:</strong></p>
+        <p><strong>Пример:</strong></p>
         <pre class="hljs language-js text-monospace p-2 notranslate" translate="no">{{ componentImportCode }}</pre>
       </article>
     </template>
@@ -41,16 +41,16 @@
     <template v-if="directives.length > 0">
       <article class="bd-content">
         <anchored-heading id="importing-individual-directives" level="3">
-          Importing individual directives
+          Импорт отдельных директив
         </anchored-heading>
 
         <p>
-          You can import individual directives into your project via the following named
-          exports:
+          Вы можете импортировать отдельные директивы в свой проект с помощью следующих именованных экспортов:
         </p>
 
         <b-table
           :items="directiveImports"
+          :fields="[{ key: 'directive', label: 'Директива' }, { key: 'namedExport', label: 'Именованный экспорт' }, { key: 'importPath', label: 'Путь импорта' }]"
           table-class="bv-docs-table"
           responsive="sm"
           head-variant="default"
@@ -68,28 +68,27 @@
           </template>
         </b-table>
 
-        <p><strong>Example:</strong></p>
+        <p><strong>Пример:</strong></p>
         <pre class="hljs language-js text-monospace p-2 notranslate" translate="no">{{ directiveImportCode }}</pre>
       </article>
     </template>
 
     <article class="bd-content">
       <anchored-heading id="importing-as-a-plugin" level="3">
-        Importing as a Vue.js plugin
+        Импортировать как плагин Vue.js
       </anchored-heading>
 
       <p v-if="isComponentRoute">
-        This plugin includes all of the above listed individual
-        components<span v-if="directives.length"> and directives</span>.
-        Plugins also include any component aliases.
+        Этот плагин включает в себя все перечисленные выше отдельные компоненты<span v-if="directives.length"> и директивы</span>.
+        Плагины также включают псевдонимы любых компонентов.
       </p>
       <p v-else>
-        This plugin includes all of the above listed individual directives.
+        Этот плагин включает в себя все перечисленные выше отдельные директивы.
       </p>
 
       <b-table
         :items="pluginImports"
-        :fileds="['namedExport', 'importPath']"
+        :fields="[{ key: 'namedExport', label: 'Именованный экспорт' }, { key: 'importPath', label: 'Путь импорта' }]"
         table-class="bv-docs-table"
         responsive="sm"
         head-variant="default"
@@ -106,7 +105,7 @@
       </b-table>
 
       <template v-if="meta.plugins && meta.plugins.length > 0">
-        <p>This plugin also automatically includes the following plugins:</p>
+        <p>Этот плагин также автоматически включает следующие плагины:</p>
         <ul>
           <li v-for="plugin in meta.plugins" :key="plugin">
             <code class="notranslate" translate="no">{{ plugin }}</code>
@@ -114,7 +113,7 @@
         </ul>
       </template>
 
-      <p><strong>Example:</strong></p>
+      <p><strong>Пример:</strong></p>
       <pre class="hljs language-js text-monospace p-2 notranslate" translate="no">{{ pluginImportCode }}</pre>
     </article>
   </section>

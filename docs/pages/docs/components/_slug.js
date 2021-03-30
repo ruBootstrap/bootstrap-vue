@@ -33,7 +33,7 @@ export default {
     // Reference section
     const $referenceSection = h(Section, { class: ['bd-component-reference'] }, [
       // Heading
-      h(AnchoredHeading, { props: { id: 'component-reference' } }, 'Component reference'),
+      h(AnchoredHeading, { props: { id: 'component-reference' } }, 'Справочник по компонентам'),
       // Component reference information
       ...this.meta.components.map(
         ({ component, events, rootEventListeners, slots, aliases, props: propsMeta, version }) =>

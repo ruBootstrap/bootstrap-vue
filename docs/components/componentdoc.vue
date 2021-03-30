@@ -13,7 +13,7 @@
           href="https://vuejs.org/v2/guide/render-function.html#Functional-Components"
           class="mb-3 mb-sm-0"
         >
-          Functional component
+          Функциональный компонент
         </b-badge>
       </b-col>
       <b-col sm="3" class="text-sm-right">
@@ -24,7 +24,7 @@
           :href="githubURL"
           target="_blank"
         >
-          View source
+          Смотреть источник
         </b-btn>
       </b-col>
     </b-row>
@@ -32,12 +32,12 @@
     <ul class="component-ref-mini-toc my-3">
       <li v-if="aliases && aliases.length > 0">
         <a :href="`#comp-ref-${componentName}-aliases`">
-          <code class="notranslate" translate="no">{{ tag }}</code> Component aliases
+          <code class="notranslate" translate="no">{{ tag }}</code> Псевдонимы компонентов
         </a>
       </li>
       <li v-if="propsItems && propsItems.length > 0">
         <a :href="`#comp-ref-${componentName}-props`">
-          <code class="notranslate" translate="no">{{ tag }}</code> Properties
+          <code class="notranslate" translate="no">{{ tag }}</code> Свойства
         </a>
       </li>
       <li v-if="componentVModel">
@@ -47,27 +47,27 @@
       </li>
       <li v-if="slots && slots.length > 0">
         <a :href="`#comp-ref-${componentName}-slots`">
-          <code class="notranslate" translate="no">{{ tag }}</code> Slots
+          <code class="notranslate" translate="no">{{ tag }}</code> Слоты
         </a>
       </li>
       <li v-if="events && events.length > 0">
         <a :href="`#comp-ref-${componentName}-events`">
-          <code class="notranslate" translate="no">{{ tag }}</code> Events
+          <code class="notranslate" translate="no">{{ tag }}</code> События
         </a>
       </li>
       <li v-if="rootEventListeners && rootEventListeners.length > 0">
         <a :href="`#comp-ref-${componentName}-rootEventListeners`">
           <code class="notranslate" translate="no">{{ tag }}</code>
-          <code class="notranslate" translate="no">$root</code> Event listeners
+          <code class="notranslate" translate="no">$root</code> Прослушиватели событий
         </a>
       </li>
     </ul>
 
     <article v-if="aliases && aliases.length > 0" class="bd-content">
       <anchored-heading :id="`comp-ref-${componentName}-aliases`" level="4" class="mb-3">
-        Component aliases
+        Псевдонимы компонентов
       </anchored-heading>
-      <p><code class="notranslate" translate="no">{{ tag }}</code> can also be used via the following aliases:</p>
+      <p><code class="notranslate" translate="no">{{ tag }}</code> также может использоваться через следующие псевдонимы:</p>
       <ul>
         <li v-for="alias in aliases" :key="alias">
           <code class="notranslate" translate="no">&lt;{{ kebabCase(alias) }}&gt;</code>
@@ -75,19 +75,18 @@
       </ul>
       <div class="alert alert-info">
         <p class="mb-0 small">
-          Note: component aliases are only available when importing all of BootstrapVue or using
-          the component group plugin.
+          Примечание: Псевдонимы компонентов доступны только при импорте всего BootstrapVue или при использовании подключаемого модуля группы компонентов.
         </p>
       </div>
     </article>
 
     <article v-if="propsItems && propsItems.length > 0" class="bd-content">
       <anchored-heading :id="`comp-ref-${componentName}-props`" level="4" class="mb-3">
-        Properties
+        Свойства
       </anchored-heading>
 
       <p>
-        All property default values are <b-link href="/docs/reference/settings">globally configurable</b-link>.
+        Все значения свойств по умолчанию <b-link href="/docs/reference/settings">настраиваются глобально</b-link>.
       </p>
 
       <b-table
@@ -102,12 +101,12 @@
       >
         <template #cell(prop)="{ value, item }">
           <code class="text-nowrap notranslate" translate="no">{{ value }}</code><br>
-          <b-badge v-if="item.required" variant="info">Required</b-badge>
+          <b-badge v-if="item.required" variant="info">Обязательный</b-badge>
           <b-badge v-if="item.version" variant="secondary">v{{ item.version }}+</b-badge>
           <b-badge v-if="item.isVModel" variant="primary">v-model</b-badge>
-          <b-badge v-if="item.xss" variant="warning">Use with caution</b-badge>
-          <b-badge v-if="item.deprecated" variant="danger">Deprecated</b-badge>
-          <b-badge v-else-if="item.deprecation" variant="warning">Deprecation</b-badge>
+          <b-badge v-if="item.xss" variant="warning">Использовать с осторожностью</b-badge>
+          <b-badge v-if="item.deprecated" variant="danger">Устаревший</b-badge>
+          <b-badge v-else-if="item.deprecation" variant="warning">Устаревающий</b-badge>
         </template>
         <template #cell(type)="{ value }">
           <span v-html="value"></span>
@@ -126,26 +125,25 @@
       </b-table>
       <div v-if="hasRouterProps" class="alert alert-info">
         <p class="mb-0 small">
-          <code class="notranslate" translate="no">{{ tag }}</code> supports generating
-          <code class="notranslate" translate="no">&lt;router-link&gt;</code> or
-          <code class="notranslate" translate="no">&lt;nuxt-link&gt;</code> component (if using Nuxt.js).
-          For more details on the router link (or nuxt link) specific props, see the
-          <b-link to="/docs/reference/router-links" class="alert-link">Router support</b-link>
-          reference section.
+          <code class="notranslate" translate="no">{{ tag }}</code> поддерживает генерацию
+          <code class="notranslate" translate="no">&lt;router-link&gt;</code> или
+          <code class="notranslate" translate="no">&lt;nuxt-link&gt;</code> компонент (при использовании Nuxt.js).
+          Дополнительные сведения о свойствах, связанных с ссылками на маршрутизаторы (или Nuxt Link), смотрите в разделе справки по
+          <b-link to="/docs/reference/router-links" class="alert-link">поддержке роутов</b-link>.
         </p>
       </div>
       <div v-if="hasHtmlProps" class="alert alert-warning">
         <p class="mb-0 small">
-          <strong>Caution:</strong> Props that support HTML strings
-          (<code class="notranslate" translate="no">*-html</code>) can be vulnerable to
+          <strong>Осторожно:</strong> Свойства, поддерживающие HTML-строки
+          (<code class="notranslate" translate="no">*-html</code>) может быть уязвим для
           <b-link href="https://en.wikipedia.org/wiki/Cross-site_scripting" class="alert-link" target="_blank">
-            Cross Site Scripting (XSS) attacks
+            Атаки межсайтового скриптинга (XSS)
           </b-link>
-          when passed raw user supplied values. You must properly
+          при передаче необработанных значений, предоставленных пользователем. Вы должны правильно
           <b-link href="https://en.wikipedia.org/wiki/HTML_sanitization" class="alert-link" target="_blank">
-            sanitize
+            очищать
           </b-link>
-          the user input first!
+          ввод пользователя!
         </p>
       </div>
     </article>
@@ -156,7 +154,7 @@
       </anchored-heading>
       <b-table-lite
         :items="[componentVModel]"
-        :fields="[{ key: 'prop', label: 'Property' }, 'event']"
+        :fields="[{ key: 'prop', label: 'Свойство' }, { key: 'event', label: 'Событие' }]"
         table-class="bv-docs-table"
         responsive="sm"
         bordered
@@ -173,7 +171,7 @@
 
     <article v-if="slots && slots.length > 0" class="bd-content">
       <anchored-heading :id="`comp-ref-${componentName}-slots`" level="4" class="mb-3">
-        Slots
+        Слоты
       </anchored-heading>
       <b-table
         :items="slotsItems"
@@ -197,14 +195,14 @@
             class="py-0"
             @click="toggleDetails()"
           >
-            {{ detailsShowing ? 'Hide scope' : 'Show scope' }}
+            {{ detailsShowing ? 'Скрыть область' : 'Показать область' }}
           </b-button>
-          <span v-else>No</span>
+          <span v-else>Нет</span>
         </template>
         <template #row-details="{ item }">
           <b-table-lite
             :items="item.scope"
-            :fields="[{ key: 'prop', label: 'Property' }, 'type', 'description']"
+            :fields="[{ key: 'prop', label: 'Свойство' }, { key: 'type', label: 'Тип' }, { key: 'description', label: 'Описание' }]"
             primary-key="prop"
             class="m-0"
             dark
@@ -215,7 +213,7 @@
               <b-tr>
                 <b-th colspan="3" class="text-center">
                   <code class="text-nowrap notranslate" translate="no">{{ item.name }}</code>
-                  Slot scoped properties
+                  Свойства области слота
                 </b-th>
               </b-tr>
             </template>
@@ -224,7 +222,7 @@
               <b-badge v-if="cellItem.version" variant="secondary">v{{ cellItem.version }}+</b-badge>
             </template>
             <template #cell(type)="{ value }">
-              <code class="text-nowrap notranslate" translate="no">{{ value || 'Any' }}</code>
+              <code class="text-nowrap notranslate" translate="no">{{ value || 'Другие' }}</code>
             </template>
           </b-table-lite>
         </template>
@@ -233,7 +231,7 @@
 
     <article v-if="events && events.length > 0" class="bd-content">
       <anchored-heading :id="`comp-ref-${componentName}-events`" level="4" class="mb-3">
-        Events
+        События
       </anchored-heading>
       <b-table
         :items="events"
@@ -263,11 +261,11 @@
 
     <article v-if="rootEventListeners && rootEventListeners.length > 0" class="bd-content">
       <anchored-heading :id="`comp-ref-${componentName}-rootEventListeners`" level="4" class="mb-3">
-        <code class="notranslate" translate="no">$root</code> event listeners
+        <code class="notranslate" translate="no">$root</code> слушатели событий
       </anchored-heading>
       <p>
-        You can control <code class="notranslate" translate="no">{{ tag }}</code> by emitting the
-        following events on <samp class="notranslate" translate="no">$root</samp>:
+        Вы можете управлять <code class="notranslate" translate="no">{{ tag }}</code>,
+        генерируя следующие события на <samp class="notranslate" translate="no">$root</samp>:
       </p>
       <b-table-lite
         :items="rootEventListeners"
@@ -398,35 +396,35 @@ export default {
       const sortable = this.propsItems.length >= SORT_THRESHOLD
       const hasDescriptions = this.propsItems.some(p => p.description)
       return [
-        { key: 'prop', label: 'Property', sortable },
-        { key: 'type', label: 'Type', sortable },
-        { key: 'defaultValue', label: 'Default' },
-        ...(hasDescriptions ? [{ key: 'description', label: 'Description' }] : [])
+        { key: 'prop', label: 'Свойство', sortable },
+        { key: 'type', label: 'Тип', sortable },
+        { key: 'defaultValue', label: 'По умолчанию' },
+        ...(hasDescriptions ? [{ key: 'description', label: 'Описание' }] : [])
       ]
     },
     eventsFields() {
       const sortable = this.events.length >= SORT_THRESHOLD
       return [
-        { key: 'event', label: 'Event', sortable },
-        { key: 'args', label: 'Arguments' },
-        { key: 'description', label: 'Description' }
+        { key: 'event', label: 'Событие', sortable },
+        { key: 'args', label: 'Аргументы' },
+        { key: 'description', label: 'Описание' }
       ]
     },
     rootEventListenersFields() {
       const sortable = this.rootEventListeners.length >= SORT_THRESHOLD
       return [
-        { key: 'event', label: 'Event', sortable },
-        { key: 'args', label: 'Arguments' },
-        { key: 'description', label: 'Description' }
+        { key: 'event', label: 'Событие', sortable },
+        { key: 'args', label: 'Аргументы' },
+        { key: 'description', label: 'Описание' }
       ]
     },
     slotsFields() {
       const sortable = this.slots.length >= SORT_THRESHOLD
       const hasScopedSlots = this.slots.some(s => s.scope)
       return [
-        { key: 'name', label: 'Name', sortable },
-        ...(hasScopedSlots ? [{ key: 'scope', label: 'Scoped' }] : []),
-        { key: 'description', label: 'Description' }
+        { key: 'name', label: 'Наименование', sortable },
+        ...(hasScopedSlots ? [{ key: 'scope', label: 'Область' }] : []),
+        { key: 'description', label: 'Описание' }
       ]
     },
     propsItems() {

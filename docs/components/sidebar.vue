@@ -21,9 +21,9 @@
         no-prefetch
       >
         {{ group.title }}
-        <b-badge v-if="group.new" tag="small" variant="success" class="text-uppercase">New</b-badge>
-        <b-badge v-if="group.breaking" tag="small" variant="danger" class="text-uppercase">Breaking change</b-badge>
-        <b-badge v-if="group.beta" tag="small" variant="warning" class="text-uppercase">Beta</b-badge>
+        <b-badge v-if="group.new" tag="small" variant="success" class="text-uppercase">Новое</b-badge>
+        <b-badge v-if="group.breaking" tag="small" variant="danger" class="text-uppercase">Критические изменения</b-badge>
+        <b-badge v-if="group.beta" tag="small" variant="warning" class="text-uppercase">Бета</b-badge>
       </b-link>
 
       <b-nav class="bd-sidenav">
@@ -42,10 +42,10 @@
             active-class=""
           >
             {{ page.title }}
-            <b-badge v-if="page.new" tag="small" variant="success" class="text-uppercase">New</b-badge>
-            <b-badge v-if="page.enhanced" tag="small" variant="info" class="text-uppercase">Enhanced</b-badge>
-            <b-badge v-if="page.breaking" tag="small" variant="danger" class="text-uppercase">Breaking change</b-badge>
-            <b-badge v-if="page.beta" tag="small" variant="warning" class="text-uppercase">Beta</b-badge>
+            <b-badge v-if="page.new" tag="small" variant="success" class="text-uppercase">Новое</b-badge>
+            <b-badge v-if="page.enhanced" tag="small" variant="info" class="text-uppercase">Улучшения</b-badge>
+            <b-badge v-if="page.breaking" tag="small" variant="danger" class="text-uppercase">Критические изменения</b-badge>
+            <b-badge v-if="page.beta" tag="small" variant="warning" class="text-uppercase">Бета</b-badge>
           </b-link>
         </b-link>
       </b-nav>
@@ -65,7 +65,7 @@
         no-prefetch
         class="bd-toc-link"
       >
-        Themes
+        Темы
       </b-link>
     </b-link>
 
@@ -83,7 +83,7 @@
         no-prefetch
         class="bd-toc-link"
       >
-        Playground
+        Плейграунд
       </b-link>
     </b-link>
   </nav>
