@@ -10,7 +10,7 @@ export default {
   name: 'BVBreadcrumbs',
   computed: {
     items() {
-      const items = [{ text: 'Home', to: '/' }, { text: 'Docs', to: '/docs' }]
+      const items = [{ text: 'Главная', to: '/' }, { text: 'Документация', to: '/docs' }]
 
       const section = this.$route.name.split('-')[1] || ''
       if (section) {
@@ -36,7 +36,7 @@ export default {
     }
   },
   render(h) {
-    return h('nav', { attrs: { 'aria-label': 'Breadcrumbs' } }, [
+    return h('nav', { attrs: { 'aria-label': 'Хлебные крошки' } }, [
       h('b-breadcrumb', {
         staticClass: 'd-inline-flex my-0 px-2 py-1 bg-transparent',
         props: { items: this.items }
