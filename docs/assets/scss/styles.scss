@@ -154,7 +154,7 @@
 
     &.editable {
       &::after {
-        content: "(Double click to edit)";
+        content: "(Двойной клик для редактирования)";
         top: 5px;
         right: 10px;
       }
@@ -169,7 +169,7 @@
 
       &.live {
         &::after {
-          content: "Live";
+          content: "Живая";
         }
       }
 
@@ -178,7 +178,7 @@
         box-shadow: 0 1px 1px rgba(220, 53, 69, 0.5);
 
         &::after {
-          content: "JavaScript compile error!";
+          content: "Ошибка компиляции JavaScript!";
           color: #dc3545;
         }
       }
