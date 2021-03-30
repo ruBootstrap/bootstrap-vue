@@ -75,7 +75,7 @@
     "description": "<router-link> prop: Configure the active CSS class applied when the link is active with exact match. Typically you will want to set this to class name 'active'"
   },
   "fade": {
-    "description": "When set to `true`, enables the fade animation/transition on the component"
+    "description": "Если установлено значение `true`, включает анимацию затухания/переход на компоненте"
   },
   "footer": {
     "description": "Text content to place in the footer"
@@ -144,7 +144,7 @@
     "description": "Sets the value of the `name` attribute on the form control"
   },
   "noFade": {
-    "description": "When set to `true`, disables the fade animation/transition on the component"
+    "description": "Если установлено значение `true`, отключает анимацию затухания/переход на компоненте"
   },
   "noPrefetch": {
     "description": "<nuxt-link> prop: To improve the responsiveness of your Nuxt.js applications, when the link will be displayed within the viewport, Nuxt.js will automatically prefetch the code splitted page. Setting `no-prefetch` will disabled this feature for the specific link"

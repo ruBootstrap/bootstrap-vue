@@ -1,22 +1,20 @@
-# Alert
+# Уведомление
 
-> Provide contextual feedback messages for typical user actions with the handful of available and
-> flexible alert messages.
+> Предоставляйте контекстные сообщения обратной связи для типичных действий пользователя с помощью нескольких доступных и гибких предупреждающих сообщений.
 
-## Overview
+## Обзор
 
-Alerts are available for any length of text, as well as an optional dismiss button (and optional
-auto-dismissing).
+Уведомления доступны для текста любой длины, а также для дополнительной кнопки закрытия (и для дополнительного автоматического закрытия).
 
 ```html
 <template>
   <div>
-    <b-alert show>Default Alert</b-alert>
+    <b-alert show>Уведомление по умолчанию</b-alert>
 
-    <b-alert variant="success" show>Success Alert</b-alert>
+    <b-alert variant="success" show>Уведомление об успехе</b-alert>
 
     <b-alert v-model="showDismissibleAlert" variant="danger" dismissible>
-      Dismissible Alert!
+      Отклоняемое уведомление!
     </b-alert>
 
     <b-alert
@@ -26,7 +24,7 @@ auto-dismissing).
       @dismissed="dismissCountDown=0"
       @dismiss-count-down="countDownChanged"
     >
-      <p>This alert will dismiss after {{ dismissCountDown }} seconds...</p>
+      <p>Это уведомление будет закрыто через {{ dismissCountDown }} секунд...</p>
       <b-progress
         variant="warning"
         :max="dismissSecs"
@@ -36,10 +34,10 @@ auto-dismissing).
     </b-alert>
 
     <b-button @click="showAlert" variant="info" class="m-1">
-      Show alert with count-down timer
+      Показать уведомление с таймером обратного отсчета
     </b-button>
     <b-button @click="showDismissibleAlert=true" variant="info" class="m-1">
-      Show dismissible alert ({{ showDismissibleAlert ? 'visible' : 'hidden' }})
+      Показать закрываемое уведомление ({{ showDismissibleAlert ? 'visible' : 'hidden' }})
     </b-button>
   </div>
 </template>
@@ -67,66 +65,53 @@ auto-dismissing).
 <!-- b-alert.vue -->
 ```
 
-## Visible state
+## Видимое состояние
 
-Use the `show` prop to control the visibility state of the alert. By default alerts are **not**
-shown. Set the prop `show` to explicitly display them.
+Используйте опцию `show` для управления состоянием видимости уведомления. По умолчанию оповещения **не** отображаются. Установите свойство `show` для их явного отображения.
 
-The `show` prop accepts boolean `true` or `false` to show and hide the alert respectively. It can
-also be set to a positive integer (representing seconds) to create a self dismissing alert. See the
-[Auto Dismissing Alerts](#auto-dismissing-alerts) section below for details.
+Свойство `show` принимает логические значения `true` или `false`, чтобы отображать и скрывать уведомление соответственно. Он также может быть установлен в положительное целое число (представляющее секунды), чтобы создать самоотключение уведомления. Смотрите подробности в разделе [Автоматическое отклонение уведомлений](#auto-dismissing-alerts) ниже.
 
-### `v-model` support
+### Поддержка `v-model`
 
-You can use the `v-model` directive to create two-way data bindings on the `show` prop as in
-`v-model="showDismissibleAlert"` above. Useful when you use dismissible because when user closes the
-alert, your variable will be updated. Do not use the `show` prop when using `v-model`.
+Вы можете использовать директиву `v-model` для создания двусторонних привязок данных в свойстве `show`, как в `v-model="showDismissibleAlert"` выше. Полезно, когда Вы используете отключение, потому что, когда пользователь закрывает уведомление, Ваша переменная будет обновлена. Не используйте свойство `show` при использовании `v-model`.
 
-## Contextual variants
+## Контекстные варианты
 
-For proper styling of `<b-alert>`, use one of the four required contextual variants by setting the
-`variant` prop to one of the following: `info`, `success`, `warning` or `danger`. The default is
-`info`.
+Для правильного оформления `<b-alert>`, используйте один из четырех требуемых контекстных вариантов, установив для свойства `variant` одно из следующих значений: `info`, `success`, `warning` или `danger`. По умолчанию это `info`.
 
 ```html
 <div>
-  <b-alert show variant="primary">Primary Alert</b-alert>
-  <b-alert show variant="secondary">Secondary Alert</b-alert>
-  <b-alert show variant="success">Success Alert</b-alert>
-  <b-alert show variant="danger">Danger Alert</b-alert>
-  <b-alert show variant="warning">Warning Alert</b-alert>
-  <b-alert show variant="info">Info Alert</b-alert>
-  <b-alert show variant="light">Light Alert</b-alert>
-  <b-alert show variant="dark">Dark Alert</b-alert>
+  <b-alert show variant="primary">Первичное Уведомление</b-alert>
+  <b-alert show variant="secondary">Вторичное Уведомление</b-alert>
+  <b-alert show variant="success">Уведомление об успехе</b-alert>
+  <b-alert show variant="danger">Уведомление об опасности</b-alert>
+  <b-alert show variant="warning">Уведомление с предупреждением</b-alert>
+  <b-alert show variant="info">Информационное Уведомление</b-alert>
+  <b-alert show variant="light">Светлое Уведомление</b-alert>
+  <b-alert show variant="dark">Темное Уведомление</b-alert>
 </div>
 
 <!-- b-alert-variants.vue -->
 ```
 
-### Conveying meaning to assistive technologies
+### Передача смысла вспомогательным технологиям
 
-Using color variants to add meaning only provides a visual indication, which will not be conveyed to
-users of assistive technologies – such as screen readers. Ensure that information denoted by the
-color is either obvious from the content itself (e.g. the visible text), or is included through
-alternative means, such as additional text hidden with the `.sr-only` class.
+Использование цветовых вариантов для добавления смысла обеспечивает только визуальную индикацию, которая не будет передана пользователям вспомогательных технологий, таких как программы чтения с экрана. Убедитесь, что информация, обозначенная цветом, либо очевидна из самого содержимого (например, видимый текст), либо включена с помощью альтернативных средств, таких как дополнительный текст, скрытый с помощью класса `.sr-only`.
 
-## Additional content inside alerts
+## Дополнительный контент внутри уведомлений
 
-`<b-alerts>` can also contain additional HTML elements like headings and paragraphs, which will be
-styled with the appropriate color matching the variant.
+`<b-alerts>` также может содержать дополнительные элементы HTML, такие как заголовки и абзацы, которые будут окрашены в соответствующий цвет, соответствующий варианту.
 
 ```html
 <div>
   <b-alert show variant="success">
-    <h4 class="alert-heading">Well done!</h4>
+    <h4 class="alert-heading">Хорошо сделано!</h4>
     <p>
-      Aww yeah, you successfully read this important alert message. This example text is going to
-      run a bit longer so that you can see how spacing within an alert works with this kind of
-      content.
+      О да, Вы успешно прочитали это важное уведомляющее сообщение. Этот пример текста будет длиться немного дольше, чтобы Вы могли увидеть, как интервалы в уведомлении работают с этим типом контента.
     </p>
     <hr>
     <p class="mb-0">
-      Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+      Когда Вам нужно, обязательно используйте утилиты маржи, чтобы все было в порядке и порядке.
     </p>
   </b-alert>
 </div>
@@ -134,47 +119,42 @@ styled with the appropriate color matching the variant.
 <!-- b-alert-content.vue -->
 ```
 
-### Color of links within alerts
+### Цвет ссылок в предупреждениях
 
-Use the `.alert-link` utility CSS class to quickly provide matching colored links within any alert.
-Use on `<a>` or `<b-link>`.
+Используйте утилиту CSS класса `.alert-link`, чтобы быстро предоставлять соответствующие цветные ссылки в любом уведомлении. Используйте на `<a>` или `<b-link>`.
 
 ```html
 <div>
-  <b-alert show variant="primary"><a href="#" class="alert-link">Primary Alert</a></b-alert>
-  <b-alert show variant="secondary"><a href="#" class="alert-link">Secondary Alert</a></b-alert>
-  <b-alert show variant="success"><a href="#" class="alert-link">Success Alert</a></b-alert>
-  <b-alert show variant="danger"><a href="#" class="alert-link">Danger Alert</a></b-alert>
-  <b-alert show variant="warning"><a href="#" class="alert-link">Warning Alert</a></b-alert>
-  <b-alert show variant="info"><a href="#" class="alert-link">Info Alert</a></b-alert>
-  <b-alert show variant="light"><a href="#" class="alert-link">Light Alert</a></b-alert>
-  <b-alert show variant="dark"><a href="#" class="alert-link">Dark Alert</a></b-alert>
+  <b-alert show variant="primary"><a href="#" class="alert-link">Первичное Уведомление</a></b-alert>
+  <b-alert show variant="secondary"><a href="#" class="alert-link">Вторичное Уведомление</a></b-alert>
+  <b-alert show variant="success"><a href="#" class="alert-link">Уведомление об успехе</a></b-alert>
+  <b-alert show variant="danger"><a href="#" class="alert-link">Уведомление об опасности</a></b-alert>
+  <b-alert show variant="warning"><a href="#" class="alert-link">Уведомление с предупреждением</a></b-alert>
+  <b-alert show variant="info"><a href="#" class="alert-link">Информационное Уведомление</a></b-alert>
+  <b-alert show variant="light"><a href="#" class="alert-link">Светлое Уведомление</a></b-alert>
+  <b-alert show variant="dark"><a href="#" class="alert-link">Темное Уведомление</a></b-alert>
 </div>
 
 <!-- b-alert-links.vue -->
 ```
 
-## Dismissible alerts
+## Отклоняемые оповещения
 
-Using the `dismissible` prop it's possible to dismiss any `<b-alert>` inline. This will add a close
-`X` button. Use the `dismiss-label` prop to change the hidden label text associated with the dismiss
-button.
+Используя свойство `dismissible`, можно отклонить любой встроенный `<b-alert>`. Это добавит кнопку закрытия `X`. Используйте опцию `dismiss-label`, чтобы изменить текст скрытой метки, связанный с кнопкой отклонения.
 
 ```html
 <div>
   <b-alert show dismissible>
-    Dismissible Alert! Click the close button over there <b>&rArr;</b>
+    Отклоняемое уведомление! Нажмите там кнопку закрытия <b>&rArr;</b>
   </b-alert>
 </div>
 
 <!-- b-alert-dismiss.vue -->
 ```
 
-### Auto dismissing alerts
+### Автоматически отклоняемые уведомления
 
-To create a `<b-alert>` that dismisses automatically after a period of time, set the `show` prop (or
-the `v-model`) to the number of seconds you would like the `<b-alert>` to remain visible for. Only
-integer number of seconds are supported.
+Чтобы создать `<b-alert>`, который автоматически закрывается по прошествии определенного периода времени, установите свойство `show` (или `v-model`) на количество секунд, в течение которого Вы хотите, чтобы `<b-alert>` оставался видимым. Поддерживается только целое число секунд.
 
 ```html
 <template>
@@ -186,10 +166,10 @@ integer number of seconds are supported.
       @dismissed="dismissCountDown=0"
       @dismiss-count-down="countDownChanged"
     >
-      This alert will dismiss after {{ dismissCountDown }} seconds...
+      Это уведомление будет закрыто через {{ dismissCountDown }} секунд...
     </b-alert>
     <b-button @click="showAlert" variant="info" class="m-1">
-      Show alert with count-down timer
+      Показать уведомление с таймером обратного отсчета
     </b-button>
   </div>
 </template>
@@ -216,14 +196,14 @@ integer number of seconds are supported.
 <!-- b-alert-auto-dismissing.vue -->
 ```
 
-## Fading alerts
+## Затухающие уведомления
 
-Use the `fade` prop to enable animation. By default alerts are not animated.
+Используйте свойство `fade`, чтобы включить анимацию. По умолчанию уведомления не анимированы.
 
 ```html
 <template>
   <div>
-    <b-alert show dismissible fade>Dismissible Alert!</b-alert>
+    <b-alert show dismissible fade>Отклоняемое уведомление!</b-alert>
 
     <b-alert
       variant="danger"
@@ -232,7 +212,7 @@ Use the `fade` prop to enable animation. By default alerts are not animated.
       :show="showDismissibleAlert"
       @dismissed="showDismissibleAlert=false"
     >
-      Dismissible Alert!
+      Отклоняемое уведомление!
     </b-alert>
 
     <b-alert
@@ -242,14 +222,14 @@ Use the `fade` prop to enable animation. By default alerts are not animated.
       variant="warning"
       @dismiss-count-down="countDownChanged"
     >
-      This alert will dismiss after {{ dismissCountDown }} seconds...
+      Это уведомление будет закрыто через {{ dismissCountDown }} секунд...
     </b-alert>
 
     <b-button @click="showAlert" variant="info" class="m-1">
-      Show alert with count-down timer
+      Показать уведомление с таймером обратного отсчета
     </b-button>
     <b-button @click="showDismissibleAlert=true" variant="info" class="m-1">
-      Show dismissible alert ({{ showDismissibleAlert ? 'visible' : 'hidden' }})
+      Показать отклоняемое уведомление ({{ showDismissibleAlert ? 'visible' : 'hidden' }})
     </b-button>
   </div>
 </template>

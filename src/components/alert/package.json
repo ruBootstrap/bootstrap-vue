@@ -3,47 +3,47 @@
   "version": "1.0.0",
   "meta": {
     "title": "Alert",
-    "description": "Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.",
+    "description": "Предоставляйте контекстные сообщения обратной связи для типичных действий пользователя с помощью нескольких доступных и гибких предупреждающих сообщений.",
     "components": [
       {
         "component": "BAlert",
         "props": [
           {
             "prop": "dismissLabel",
-            "description": "Value for the 'aria-label' attribute on the dismiss button"
+            "description": "Значение атрибута 'aria-label' на кнопке закрытия"
           },
           {
             "prop": "dismissible",
-            "description": "When set, enables the dismiss close button"
+            "description": "Когда установлено, включает кнопку закрытия"
           },
           {
             "prop": "show",
-            "description": "When set, shows the alert. Set to a number (seconds) to show and automatically dismiss the alert after the number of seconds has elapsed"
+            "description": "Когда установлено, показывает уведомление. Установите число (в секундах) для отображения и автоматического скрытия уведомлений по истечении заданного количества секунд"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из вариантов цвета темы Bootstrap"
           }
         ],
         "events": [
           {
             "event": "dismiss-count-down",
-            "description": "When prop show is a number, this event emits every second on countdown",
+            "description": "Когда свойство представляет собой число, это событие генерируется каждую секунду при обратном отсчете",
             "args": [
               {
                 "arg": "dismissCountDown",
                 "type": "Number",
-                "description": "Time remaining to dismissed"
+                "description": "Время, оставшееся до скрытия"
               }
             ]
           },
           {
             "event": "dismissed",
-            "description": "Alert dismissed either via the dismiss close button or when the dismiss countdown has expired"
+            "description": "Уведомление закрыто либо с помощью кнопки закрытия, либо по истечении обратного отсчета до закрытия"
           },
           {
             "event": "input",
-            "description": "Used to update the v-model show value",
+            "description": "Используется для обновления показанного значения v-model",
             "args": [
               {
                 "arg": "show",
@@ -51,7 +51,7 @@
                   "Boolean",
                   "Number"
                 ],
-                "description": "Boolean state of alert, or Number for current countdown value"
+                "description": "Логическое состояние уведомления или Число для текущего значения обратного отсчета"
               }
             ]
           }
@@ -59,11 +59,11 @@
         "slots": [
           {
             "name": "dismiss",
-            "description": "Content for the dismiss button"
+            "description": "Контент для кнопки закрытия"
           },
           {
             "name": "default",
-            "description": "Content to place in the alert"
+            "description": "Контент для размещения в уведомлении"
           }
         ]
       }
