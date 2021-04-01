@@ -1,18 +1,14 @@
-# Aspect
+# Аспект
 
-> The `<b-aspect>` component can be used to maintain a minimum responsive aspect ratio for content.
-> When the content is longer than the available height, then the component will expand vertically to
-> fit all content. If the content is shorter than the computed aspect height, the component will
-> ensure a minimum height is maintained.
+> Компонент `<b-aspect>` может использоваться для поддержания минимального адаптивного соотношения сторон содержимого.
+> Когда содержимое превышает доступную высоту, компонент будет расширяться по вертикали, чтобы вместить все содержимое.
+> Если содержимое короче, чем вычисленная высота аспекта, компонент будет обеспечивать поддержание минимальной высоты.
 
-## Overview
+## Обзор
 
-The default [aspect](<https://en.wikipedia.org/wiki/Aspect_ratio_(image)>) ratio is `1:1` (ratio of
-`1`), which makes the height always be at least the same as the width. The `aspect` prop can be used
-to specify an arbitrary aspect ratio (i.e. `1.5`) or a ratio as a string such as `'16:9'` or
-`'4:3'`.
+По умолчанию [aspect](<https://en.wikipedia.org/wiki/Aspect_ratio_(image)>) соотношение равно `1:1` (соотношение `1`), что делает высоту всегда как минимум одинаковой, как ширина. Свойство `aspect` можно использовать для указания произвольного соотношения сторон (например, `1.5`) или соотношения в виде строки, например `'16:9'` или `'4:3'`.
 
-The width will always be 100% of the available width in the parent element/component.
+Ширина всегда будет составлять 100% доступной ширины родительского элемента/компонента.
 
 ```html
 <template>
@@ -22,8 +18,7 @@ The width will always be 100% of the available width in the parent element/compo
     </b-form-group>
     <b-card>
       <b-aspect :aspect="aspect">
-        This will always be an aspect of "{{ aspect }}",
-        except when the content is too tall.
+        Это всегда будет аспект "{{ aspect }}", за исключением случаев, когда содержание слишком высокое.
       </b-aspect>
     </b-card>
   </div>
@@ -60,6 +55,6 @@ The width will always be 100% of the available width in the parent element/compo
 <!-- b-aspect.vue -->
 ```
 
-## See also
+## Смотрите также
 
-- [`<b-embed>` component](/docs/components/embed) for responsive embeds (videos, iframes, etc.)
+- [Компонент `<b-embed>`](/docs/components/embed) для адаптивных встраиваний (видео, фреймы и т. д.)

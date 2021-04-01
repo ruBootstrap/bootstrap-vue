@@ -4,20 +4,20 @@
   "meta": {
     "title": "Aspect",
     "version": "2.9.0",
-    "description": "The `<b-aspect>` component can be used to maintain a minimum responsive aspect ratio for content.",
+    "description": "Компонент `<b-aspect>` может использоваться для поддержания минимального адаптивного соотношения сторон содержимого.",
     "components": [
       {
         "component": "BAspect",
         "props": [
           {
             "prop": "aspect",
-            "description": "Aspect as a width to height numeric ratio (such as `1.5`) or `width:height` string (such as '16:9')"
+            "description": "Аспект как числовое отношение ширины к высоте (например, `1.5`) или строка `width:height` (например, '16:9')"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the aspect"
+            "description": "Контент для размещения в аспекте"
           }
         ]
       }

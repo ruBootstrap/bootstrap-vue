@@ -209,7 +209,7 @@
     "description": "Applies one of the Bootstrap theme color variants to the sub title text"
   },
   "tag": {
-    "description": "Specify the HTML tag to render instead of the default tag"
+    "description": "Укажите тег HTML для отображения вместо тега по умолчанию"
   },
   "target": {
     "description": "<b-link> prop: Sets the `target` attribute on the rendered link"

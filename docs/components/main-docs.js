@@ -46,7 +46,7 @@ export default {
     if (version) {
       $availableSinceSection = h(Section, { props: { play: false } }, [
         h('p', { staticClass: 'font-italic' }, [
-          'Available in BootstrapVue since ',
+          'Доступно в BootstrapVue с ',
           h('code', { staticClass: 'text-nowrap' }, `v${version}`)
         ])
       ])

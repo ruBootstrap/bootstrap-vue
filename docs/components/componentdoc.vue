@@ -451,7 +451,7 @@ export default {
           }
           type = types
             .map(type => `<code class="notranslate" translate="no">${type}</code>`)
-            .join(' or ')
+            .join(' или ')
 
           // Default value
           let defaultValue = p.default
