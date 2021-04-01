@@ -3,13 +3,13 @@
     "description": "When set to `true`, places the component in the active state with active styling"
   },
   "activeClass": {
-    "description": "<router-link> prop: Configure the active CSS class applied when the link is active. Typically you will want to set this to class name 'active'"
+    "description": "<router-link> свойство: Настроить активный класс CSS, применяемый, когда ссылка активна. Обычно Вам нужно установить это имя класс 'active'"
   },
   "alt": {
     "description": "Value to set for the `alt` attribute"
   },
   "append": {
-    "description": "<router-link> prop: Setting append prop always appends the relative path to the current path"
+    "description": "<router-link> свойство: Настройка добавления свойства всегда добавляет относительный путь к текущему пути"
   },
   "ariaControls": {
     "description": "If this component controls another component or element, set this to the ID of the controlled component or element"
@@ -18,7 +18,7 @@
     "description": "The ID of the element that provides additional context for this component. Used as the value for the `aria-describedby` attribute"
   },
   "ariaLabel": {
-    "description": "Sets the value of `aria-label` attribute on the rendered element"
+    "description": "Устанавливает значение атрибута `aria-label` для отображаемого элемента"
   },
   "ariaLabelledby": {
     "description": "The ID of the element that provides a label for this component. Used as the value for the `aria-labelledby` attribute"
@@ -60,7 +60,7 @@
     "description": "Applies one of the Bootstrap theme color variants to the border"
   },
   "disabled": {
-    "description": "When set to `true`, disables the component's functionality and places it in a disabled state"
+    "description": "Если установлено значение `true`, отключает функциональность компонента и переводит его в отключенное состояние."
   },
   "disabledField": {
     "description": "Field name in the `options` array that should be used for the disabled state"
@@ -69,10 +69,10 @@
     "description": "<router-link> prop: Specify the event that triggers the link. In most cases you should leave this as the default"
   },
   "exact": {
-    "description": "<router-link> prop: The default active class matching behavior is inclusive match. Setting this prop forces the mode to exactly match the route"
+    "description": "<router-link> свойство: Поведение сопоставления активного класса по умолчанию включает сопоставление. Установка этого свойства заставляет режим точно соответствовать маршруту"
   },
   "exactActiveClass": {
-    "description": "<router-link> prop: Configure the active CSS class applied when the link is active with exact match. Typically you will want to set this to class name 'active'"
+    "description": "<router-link> свойство: Настройте активный класс CSS, применяемый, когда ссылка активна с точным соответствием. Обычно Вам нужно установить это имя класса 'active'"
   },
   "fade": {
     "description": "Если установлено значение `true`, включает анимацию затухания/переход на компоненте"
@@ -131,7 +131,7 @@
     "description": "Applies one of the Bootstrap theme color variants to the header"
   },
   "href": {
-    "description": "<b-link> prop: Denotes the target URL of the link for standard a links"
+    "description": "<b-link> свойство: Обозначает целевой URL-адрес ссылки для стандартных ссылок"
   },
   "htmlField": {
     "description": "Field name in the `options` array that should be used for the html label instead of text field",
@@ -147,7 +147,7 @@
     "description": "Если установлено значение `true`, отключает анимацию затухания/переход на компоненте"
   },
   "noPrefetch": {
-    "description": "<nuxt-link> prop: To improve the responsiveness of your Nuxt.js applications, when the link will be displayed within the viewport, Nuxt.js will automatically prefetch the code splitted page. Setting `no-prefetch` will disabled this feature for the specific link"
+    "description": "<nuxt-link> свойство: Чтобы улучшить отзывчивость Ваших приложений Nuxt.js, когда ссылка будет отображаться в области просмотра, Nuxt.js автоматически выполнит предварительную загрузку страницы с разделением кода. Установка `no-prefetch` отключит эту функцию для конкретной ссылки"
   },
   "options": {
     "description": "Array of items to render in the component"
@@ -162,17 +162,17 @@
     "description": "Set the form control as readonly and renders the control to look like plain text (no borders)"
   },
   "prefetch": {
-    "description": "<nuxt-link> prop: To improve the responsiveness of your Nuxt.js applications, when the link will be displayed within the viewport, Nuxt.js will automatically prefetch the code splitted page. Setting `prefetch` to `true` or `false` will overwrite the default value of `router.prefetchLinks`",
+    "description": "<nuxt-link> свойство: Чтобы улучшить отзывчивость Ваших приложений Nuxt.js, когда ссылка будет отображаться в области просмотра, Nuxt.js автоматически выполнит предварительную загрузку страницы с разделением кода. Установка для `prefetch` значения `true` или `false` перезапишет значение по умолчанию `router.prefetchLinks`",
     "version": "2.15.0"
   },
   "readonly": {
     "description": "Sets the `readonly` attribute on the form control"
   },
   "rel": {
-    "description": "<b-link> prop: Sets the `rel` attribute on the rendered link"
+    "description": "<b-link> свойство: Устанавливает атрибут `rel` для отображаемой ссылки"
   },
   "replace": {
-    "description": "<router-link> prop: Setting the replace prop will call `router.replace()` instead of `router.push()` when clicked, so the navigation will not leave a history record"
+    "description": "<router-link> свойство: Установка свойства replace будет вызывать `router.replace()` вместо `router.push()` при нажатии, поэтому навигация не будет оставлять запись в истории"
   },
   "required": {
     "description": "Adds the `required` attribute to the form control"
@@ -181,7 +181,7 @@
     "description": "Sets the ARIA attribute `role` to a specific value"
   },
   "routerComponentName": {
-    "description": "<b-link> prop: BootstrapVue auto detects between `<router-link>` and `<nuxt-link>`. In cases where you want to use a 3rd party link component based on `<router-link>`, set this prop to the component name. e.g. set it to 'g-link' if you are using Gridsome (note only `<router-link>` specific props are passed to the component)",
+    "description": "<b-link> свойство: BootstrapVue автоматически определяет между `<router-link>` и `<nuxt-link>`. В случаях, когда Вы хотите использовать сторонний компонент ссылки на основе `<router-link>`, установите это свойство на имя компонента, например установите для него значение 'g-link', если Вы используете Gridsome (обратите внимание, что компоненту передаются только определенные свойства `<router-link>`)",
     "version": "2.15.0"
   },
   "routerTag": {
@@ -212,7 +212,7 @@
     "description": "Укажите тег HTML для отображения вместо тега по умолчанию"
   },
   "target": {
-    "description": "<b-link> prop: Sets the `target` attribute on the rendered link"
+    "description": "<b-link> свойство: Устанавливает атрибут `target` для отображаемой ссылки"
   },
   "textField": {
     "description": "Field name in the `options` array that should be used for the text label"
@@ -240,7 +240,7 @@
     "description": "Applies one of the Bootstrap theme color variants to the title text"
   },
   "to": {
-    "description": "<router-link> prop: Denotes the target route of the link. When clicked, the value of the to prop will be passed to `router.push()` internally, so the value can be either a string or a Location descriptor object"
+    "description": "<router-link> свойство: Обозначает целевой маршрут ссылки. При нажатии значение свойства будет передано в `router.push()` внутренне, поэтому значение может быть либо строкой, либо объектом дескриптора местоположения"
   },
   "valueField": {
     "description": "Field name in the `options` array that should be used for the value"

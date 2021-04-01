@@ -100,7 +100,7 @@ export const updateMetaTOC = (tocData = {}, meta = null) => {
         }),
         // Add component import sub-heading
         {
-          label: 'Importing individual components',
+          label: 'Импорт отдельных компонентов',
           href: '#importing-individual-components'
         }
       )
@@ -108,35 +108,35 @@ export const updateMetaTOC = (tocData = {}, meta = null) => {
     // Add directive import sub-heading
     if (hasDirectives) {
       componentToc.push({
-        label: 'Importing individual directives',
+        label: 'Импорт отдельных директив',
         href: '#importing-individual-directives'
       })
     }
     // Add plugin import sub-heading
     componentToc.push({
-      label: 'Importing as a Vue.js plugin',
+      label: 'Импорт как плагин Vue.js',
       href: '#importing-as-a-plugin'
     })
     // Add component reference heading
     tocData.toc.push({
-      label: 'Component reference',
+      label: 'Справочник по компонентам',
       href: '#component-reference',
       toc: componentToc
     })
   } else if (isDirective) {
     // Add directive reference heading
     tocData.toc.push({
-      label: 'Directive reference',
+      label: 'Справочник по директивам',
       href: '#directive-reference',
       toc: [
         // Directive import sub-heading
         {
-          label: 'Importing individual directives',
+          label: 'Импорт отдельных директив',
           href: '#importing-individual-directives'
         },
         // Plugin import sub-heading
         {
-          label: 'Importing as a Vue.js plugin',
+          label: 'Импорт как плагин Vue.js',
           href: '#importing-as-a-plugin'
         }
       ]
