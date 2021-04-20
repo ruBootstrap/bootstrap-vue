@@ -1,71 +1,66 @@
-# Button
+# Кнопка
 
-> Use Bootstrap's custom `b-button` component for actions in forms, dialogs, and more. Includes
-> support for a handful of contextual variations, sizes, states, and more.
+> Используйте специальный компонент Bootstrap `b-button` для действий в формах, диалоговых окнах и т. д. Включает поддержку нескольких контекстных вариаций, размеров, состояний и т. д.
 
-## Overview
+## Обзор
 
-BootstrapVue's `<b-button>` component generates either a `<button>` element, `<a>` element, or
-`<router-link>` component with the styling of a button.
+Компонент `<b-button>` в BootstrapVue генерирует либо элемент `<button>`, либо элемент `<a>`, либо компонент `<router-link>` со стилем кнопки.
 
 ```html
 <div>
-  <b-button>Button</b-button>
-  <b-button variant="danger">Button</b-button>
-  <b-button variant="success">Button</b-button>
-  <b-button variant="outline-primary">Button</b-button>
+  <b-button>Кнопка</b-button>
+  <b-button variant="danger">Кнопка</b-button>
+  <b-button variant="success">Кнопка</b-button>
+  <b-button variant="outline-primary">Кнопка</b-button>
 </div>
 
 <!-- b-button.vue -->
 ```
 
-## Element type
+## Тип элемента
 
-The `<b-button>` component generally renders a `<button>` element. However, you can also render an
-`<a>` element by providing an `href` prop value. You may also generate `vue-router` `<router-link>`
-when providing a value for the `to` prop (`vue-router` is required).
+Компонент `<b-button>` обычно отображает элемент `<button>`. Однако вы также можете отобразить элемент `<a>`, указав значение свойства `href`. Вы также можете сгенерировать `vue-router` `<router-link>` при указании значения для свойства `to` (требуется `vue-router`).
 
 ```html
 <div>
-  <b-button>I am a Button</b-button>
-  <b-button href="#">I am a Link</b-button>
+  <b-button>Я Кнопка</b-button>
+  <b-button href="#">Я Ссылка</b-button>
 </div>
 
 <!-- b-button-types.vue -->
 ```
 
-## Type
+## Тип
 
-You can specify the button's type by setting the prop `type` to `'button'`, `'submit'` or `'reset'`.
-The default type is `'button'`.
+Вы можете указать тип кнопки, установив для свойства `type` значения `'button'`, `'submit'` или `'reset'`.Тип по умолчанию - `'button'`.
 
-Note the `type` prop has no effect when either `href` or `to` props are set.
+Обратите внимание, что свойство `type` не действует, если заданы свойства `href` или `to`.
 
-## Sizing
+## Размеры
 
-Fancy larger or smaller buttons? Specify `lg` or `sm` via the `size` prop.
+Хотите кнопки большего или меньшего размера? Укажите `lg` или `sm` через свойство `size`.
 
 ```html
 <b-row>
-  <b-col lg="4" class="pb-2"><b-button size="sm">Small Button</b-button></b-col>
-  <b-col lg="4" class="pb-2"><b-button>Default Button</b-button></b-col>
-  <b-col lg="4" class="pb-2"><b-button size="lg">Large Button</b-button></b-col>
+  <b-col lg="4" class="pb-2"><b-button size="sm">Маленькая кнопка</b-button></b-col>
+  <b-col lg="4" class="pb-2"><b-button>Кнопка по умолчанию</b-button></b-col>
+  <b-col lg="4" class="pb-2"><b-button size="lg">Большая кнопка</b-button></b-col>
 </b-row>
 
 <!-- b-button-sizes.vue -->
 ```
 
-## Contextual variants
+## Контекстные варианты
 
-Use the `variant` prop to generate the various Bootstrap contextual button variants.
+Используйте свойство `variant` для создания различных вариантов контекстных кнопок Bootstrap.
 
-By default `<b-button>` will render with the `secondary` variant.
+По умолчанию `<b-button>` будет отображаться с вариантом `secondary`.
 
-The `variant` prop adds the Bootstrap v4.3 class `.btn-<variant>` on the rendered button.
+Свойство `variant` добавляет класс Bootstrap v4.3 `.btn-<variant>` на отображаемую кнопку.
 
-### Solid color variants
+### Варианты сплошного цвета
 
-`primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light` and `dark`.
+`primary`, `secondary`, `success`, `danger`, `warning`, `info`, `light` и `dark`.
 
 ```html
 <div>
@@ -82,13 +77,11 @@ The `variant` prop adds the Bootstrap v4.3 class `.btn-<variant>` on the rendere
 <!-- b-button-solid.vue -->
 ```
 
-### Outline color variants
+### Варианты цвета контура
 
-In need of a button, but not the hefty background colors they bring? Use the `outline-*` variants to
-remove all background images and colors on any `<b-button>`:
+Нужна кнопка, но не изрядные цвета фона, которые они приносят? Используйте варианты `outline-*`, чтобы удалить все фоновые изображения и цвета на любой `<b-button>`:
 
-`outline-primary`, `outline-secondary`, `outline-success`, `outline-danger`, `outline-warning`,
-`outline-info`, `outline-light` and `outline-dark`.
+`outline-primary`, `outline-secondary`, `outline-success`, `outline-danger`, `outline-warning`, `outline-info`, `outline-light` и `outline-dark`.
 
 ```html
 <div>
@@ -105,114 +98,107 @@ remove all background images and colors on any `<b-button>`:
 <!-- b-button-outline.vue -->
 ```
 
-### Link variant
+### Вариант ссылки
 
-Variant `link` will render a button with the appearance of a link while maintaining the default
-padding and size of a button.
+Вариант `link` визуализирует кнопку с внешним видом ссылки, сохраняя отступ и размер кнопки по умолчанию.
 
 ```html
 <div>
-  <b-button variant="link">Link</b-button>
+  <b-button variant="link">Ссылка</b-button>
 </div>
 
 <!-- b-button-link.vue -->
 ```
 
-**Tip:** remove the hover underline from a link variant button by adding the Bootstrap v4.3 utility
-class `text-decoration-none` to `<b-button>`.
+**Совет:** удалите подчеркивание при наведении курсора с кнопки варианта ссылки, добавив класс-утилиту Bootstrap v4.3 `text-decoration-none` в `<b-button>`.
 
-## Block level buttons
+## Блочные кнопки
 
-Create block level buttons — those that span the full width of a parent — by setting the `block`
-prop.
+Создайте кнопки блочного уровня - те, которые охватывают всю ширину родительского элемента - путем установки свойства `block`.
 
 ```html
 <div>
-  <b-button block variant="primary">Block Level Button</b-button>
+  <b-button block variant="primary">Блочная кнопка</b-button>
 </div>
 
 <!-- b-button-block.vue -->
 ```
 
-## Pill style
+## Таблеточный стиль
 
-Prefer buttons with a more rounded-pill style? Just set the prop `pill` to true.
+Предпочитаете кнопки с более округлыми формами таблеток? Просто установите для свойства `pill` значение `true`.
 
 ```html
 <div>
-  <b-button pill>Button</b-button>
-  <b-button pill variant="primary">Button</b-button>
-  <b-button pill variant="outline-secondary">Button</b-button>
-  <b-button pill variant="success">Button</b-button>
-  <b-button pill variant="outline-danger">Button</b-button>
-  <b-button pill variant="info">Button</b-button>
+  <b-button pill>Кнопка</b-button>
+  <b-button pill variant="primary">Кнопка</b-button>
+  <b-button pill variant="outline-secondary">Кнопка</b-button>
+  <b-button pill variant="success">Кнопка</b-button>
+  <b-button pill variant="outline-danger">Кнопка</b-button>
+  <b-button pill variant="info">Кнопка</b-button>
 </div>
 
 <!-- b-button-pill.vue -->
 ```
 
-This prop adds the Bootstrap v4.3 utility class `.rounded-pill` on the rendered button.
+Эта опция добавляет класс-утилиту Bootstrap v4.3 `.rounded-pill` на отображаемую кнопку.
 
-## Squared style
+## Квадратный стиль
 
-Prefer buttons with a more square corner style? Just set the prop `squared` to true.
+Предпочитаете кнопки с более квадратными углами? Просто установите для свойства `squared` значение `true`.
 
 ```html
 <div>
-  <b-button squared>Button</b-button>
-  <b-button squared variant="primary">Button</b-button>
-  <b-button squared variant="outline-secondary">Button</b-button>
-  <b-button squared variant="success">Button</b-button>
-  <b-button squared variant="outline-danger">Button</b-button>
-  <b-button squared variant="info">Button</b-button>
+  <b-button squared>Кнопка</b-button>
+  <b-button squared variant="primary">Кнопка</b-button>
+  <b-button squared variant="outline-secondary">Кнопка</b-button>
+  <b-button squared variant="success">Кнопка</b-button>
+  <b-button squared variant="outline-danger">Кнопка</b-button>
+  <b-button squared variant="info">Кнопка</b-button>
 </div>
 
 <!-- b-button-square.vue -->
 ```
 
-The `squared` prop adds the Bootstrap v4.3 utility class `.rounded-0` on the rendered button. The
-`pill` prop takes precedence over the `squared` prop.
+Свойство `squared` добавляет класс-утилиту Bootstrap v4.3 `.rounded-0` на отображаемую кнопку. Свойство `pill` имеет приоритет над свойством `squared`.
 
-## Disabled state
+## Отключенное состояние
 
-Set the `disabled` prop to disable button default functionality. `disabled` also works with buttons
-rendered as `<a>` elements and `<router-link>` (i.e. with the `href` or `to` prop set).
+Установите свойство `disabled`, чтобы отключить функциональность кнопки по умолчанию. `disabled` также работает с кнопками, отображаемыми как элементы `<a>` и `<router-link>` (т.е. с установленными свойствами `href` или `to`).
 
 ```html
 <div>
-  <b-button disabled size="lg" variant="primary">Disabled</b-button>
-  <b-button disabled size="lg">Also Disabled</b-button>
+  <b-button disabled size="lg" variant="primary">Отключена</b-button>
+  <b-button disabled size="lg">Также отключена</b-button>
 </div>
 
 <!-- b-button-disabled.vue -->
 ```
 
-## Pressed state and toggling
+## Нажатое состояние и переключение
 
-Buttons will appear pressed (with a darker background, darker border, and inset shadow) when the
-prop `pressed` is set to `true`.
+Кнопки будут казаться нажатыми (с более темным фоном, более темной рамкой и вставленной тенью), когда свойство `pressed` установлено в `true`.
 
-The `pressed` prop can be set to one of three values:
+Свойство `pressed` может иметь одно из трех значений:
 
-- `true`: Sets the `.active` class and adds the attribute `aria-pressed="true"`.
-- `false`: Clears the `.active` class and adds the attribute `aria-pressed="false"`.
-- `null`: (default) Neither the class `.active` nor the attribute `aria-pressed` will be set.
+- `true`: Устанавливает класс `.active` и добавляет атрибут `aria-pressed="true"`.
+- `false`: Очищает класс `.active` и добавляет атрибут `aria-pressed="false"`.
+- `null`: (по умолчанию) не будут установлены ни класс `.active`, ни атрибут `aria-pressed`.
 
-To create a button that can be toggled between active and non-active states, use the `.sync` prop
-modifier (available in Vue 2.3+) on the `pressed` property
+Чтобы создать кнопку, которая может переключаться между активным и неактивным состояниями, используйте модификатор свойства `.sync` (доступный в Vue 2.3+) в свойстве `pressed`.
 
 ```html
 <template>
   <div>
-    <h5>Pressed and un-pressed state</h5>
-    <b-button :pressed="true" variant="success">Always Pressed</b-button>
-    <b-button :pressed="false" variant="success">Not Pressed</b-button>
+    <h5>Нажатое и отжатое состояние</h5>
+    <b-button :pressed="true" variant="success">Всегда нажата</b-button>
+    <b-button :pressed="false" variant="success">Не нажата</b-button>
 
-    <h5 class="mt-3">Toggleable Button</h5>
-    <b-button :pressed.sync="myToggle" variant="primary">Toggle Me</b-button>
-    <p>Pressed State: <strong>{{ myToggle }}</strong></p>
+    <h5 class="mt-3">Переключаемая кнопка</h5>
+    <b-button :pressed.sync="myToggle" variant="primary">Переключи меня</b-button>
+    <p>Нажатое состояние: <strong>{{ myToggle }}</strong></p>
 
-    <h5>In a button group</h5>
+    <h5>В группе кнопок</h5>
     <b-button-group size="sm">
       <b-button
         v-for="(btn, idx) in buttons"
@@ -223,7 +209,7 @@ modifier (available in Vue 2.3+) on the `pressed` property
         {{ btn.caption }}
       </b-button>
     </b-button-group>
-    <p>Pressed States: <strong>{{ btnStates }}</strong></p>
+    <p>Нажатое состояние: <strong>{{ btnStates }}</strong></p>
   </div>
 </template>
 
@@ -233,10 +219,10 @@ modifier (available in Vue 2.3+) on the `pressed` property
       return {
         myToggle: false,
         buttons: [
-          { caption: 'Toggle 1', state: true },
-          { caption: 'Toggle 2', state: false },
-          { caption: 'Toggle 3', state: true },
-          { caption: 'Toggle 4', state: false }
+          { caption: 'Переключатель 1', state: true },
+          { caption: 'Переключатель 2', state: false },
+          { caption: 'Переключатель 3', state: true },
+          { caption: 'Переключатель 4', state: false }
         ]
       }
     },
@@ -251,31 +237,24 @@ modifier (available in Vue 2.3+) on the `pressed` property
 <!-- b-button-toggles.vue -->
 ```
 
-If using toggle button style for a radio or checkbox style interface, it is best to use the built-in
-`button` style support of [`<b-form-radio-group>`](/docs/components/form-radio) and
-[`<b-form-checkbox-group>`](/docs/components/form-checkbox).
+При использовании стиля переключателя для интерфейса стиля радио или флажка лучше всего использовать встроенную поддержку стиля `button` [`<b-form-radio-group>`](/docs/components/form-radio) и [`<b-form-checkbox-group>`](/docs/components/form-checkbox).
 
-## Router link support
+## Поддержка router link
 
-Refer to the [`Router support`](/docs/reference/router-links) reference docs for the various
-supported `<router-link>` related props.
+Обратитесь к справочной документации [`Router support`](/docs/reference/router-links), чтобы узнать о различных поддерживаемых свойствах, связанных с `<router-link>`.
 
-## Accessibility
+## Доступность
 
-When the `href` prop is set to `'#'`, `<b-button>` will render a link (`<a>`) element with attribute
-`role="button"` set and appropriate keydown listeners (<kbd>Enter</kbd> and <kbd>Space</kbd>) so
-that the link acts like a native HTML `<button>` for screen reader and keyboard-only users. When
-disabled, the `aria-disabled="true"` attribute will be set on the `<a>` element.
+Если для свойства `href` задано значение `'#'`, `<b-button>` будет отображать элемент ссылки (`<a>`) с атрибутом `role="button"`, установленным и соответствующими слушателями нажатия клавиш (<kbd>Ввод</kbd> и <kbd>Пробел</kbd>), чтобы ссылка действовала как нативный HTML `<button>` для пользователей программ чтения с экрана и пользователей, использующих только клавиатуру. Когда он отключен, атрибут `aria-disabled="true"` будет установлен в элементе `<a>`.
 
-When the `href` is set to any other value (or the `to` prop is used), `role="button"` will not be
-added, nor will the keyboard event listeners be enabled.
+Когда для параметра `href` установлено любое другое значение (или используется свойство `to`), `role="button"` не будет добавлен, а также не будут включены прослушиватели событий клавиатуры.
 
-## See also
+## Смотрите также
 
 - [`<b-button-group>`](/docs/components/button-group)
 - [`<b-button-toolbar>`](/docs/components/button-toolbar)
 - [`<b-link>`](/docs/components/link)
-- [Router Link Support](/docs/reference/router-links)
-- [Color Variants](/docs/reference/color-variants)
+- [Поддержка Router Link](/docs/reference/router-links)
+- [Варианты цвета](/docs/reference/color-variants)
 
 <!-- Component reference added automatically from component package.json -->
