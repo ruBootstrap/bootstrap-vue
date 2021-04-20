@@ -1,25 +1,25 @@
-# Button Group
+# Группа кнопок
 
-> Group a series of buttons together on a single line with `<b-button-group>`.
+> Сгруппируйте несколько кнопок в одну строку с помощью `<b-button-group>`.
 
-## Overview
+## Обзор
 
-Button Groups are an easy way to group a series of buttons together.
+Группы кнопок - это простой способ сгруппировать серии кнопок вместе.
 
 ```html
 <div>
   <div>
     <b-button-group>
-      <b-button>Button 1</b-button>
-      <b-button>Button 2</b-button>
-      <b-button>Button 3</b-button>
+      <b-button>Кнопка 1</b-button>
+      <b-button>Кнопка 2</b-button>
+      <b-button>Кнопка 3</b-button>
     </b-button-group>
   </div>
   <div class="mt-3">
     <b-button-group>
-      <b-button variant="success">Success</b-button>
-      <b-button variant="info">Info</b-button>
-      <b-button variant="warning">Warning</b-button>
+      <b-button variant="success">Успешно</b-button>
+      <b-button variant="info">Инфо</b-button>
+      <b-button variant="warning">Внимание</b-button>
     </b-button-group>
   </div>
 </div>
@@ -27,32 +27,31 @@ Button Groups are an easy way to group a series of buttons together.
 <!-- b-button-group.vue -->
 ```
 
-## Sizing
+## Размеры
 
-Set the `size` prop to `lg` or `sm` to render larger or smaller, respectively, buttons. There is no
-need to specify the size on the individual buttons.
+Установите для свойства `size` значение `lg` или `sm`, чтобы отображать кнопки большего или меньшего размера соответственно. Нет необходимости указывать размер на отдельных кнопках.
 
 ```html
 <div>
   <div>
     <b-button-group>
-      <b-button>Button 1</b-button>
-      <b-button>Button 2</b-button>
-      <b-button>Button 3</b-button>
+      <b-button>Кнопка 1</b-button>
+      <b-button>Кнопка 2</b-button>
+      <b-button>Кнопка 3</b-button>
     </b-button-group>
   </div>
   <div class="mt-3">
     <b-button-group size="sm">
-      <b-button>Left</b-button>
-      <b-button>Middle</b-button>
-      <b-button>Right</b-button>
+      <b-button>Лево</b-button>
+      <b-button>Середина</b-button>
+      <b-button>Право</b-button>
     </b-button-group>
   </div>
   <div class="mt-3">
     <b-button-group size="lg">
-      <b-button>Left</b-button>
-      <b-button>Middle</b-button>
-      <b-button>Right</b-button>
+      <b-button>Лево</b-button>
+      <b-button>Середина</b-button>
+      <b-button>Право</b-button>
     </b-button-group>
   </div>
 </div>
@@ -60,43 +59,41 @@ need to specify the size on the individual buttons.
 <!-- b-button-group-sizes.vue -->
 ```
 
-## Vertical variation
+## Вертикальная вариация
 
-Make a set of buttons appear vertically stacked rather than horizontally by setting the `vertical`
-prop. Split button dropdowns are not supported here.
+Сделайте так, чтобы набор кнопок выглядел вертикально сложенными, а не горизонтально, установив свойство `vertical`. Выпадающие меню с разделенными кнопками здесь не поддерживаются.
 
 ```html
 <div>
   <b-button-group vertical>
-    <b-button>Top</b-button>
-    <b-button>Middle</b-button>
-    <b-button>Bottom</b-button>
+    <b-button>Верх</b-button>
+    <b-button>Середина</b-button>
+    <b-button>низ</b-button>
   </b-button-group>
 </div>
 
 <!-- b-button-group-vertical.vue -->
 ```
 
-## Dropdown menu support
+## Поддержка выпадающего меню
 
-Add [`<b-dropdown>`](/docs/components/dropdown) menus directly inside your `<b-button-group>`. Note
-that split dropdown menus are not supported when prop `vertical` is set.
+Добавьте [`<b-dropdown>`](/docs/components/dropdown) меню прямо внутри вашей `<b-button-group>`. Обратите внимание, что разделенные раскрывающиеся меню не поддерживаются, если задано свойство `vertical`.
 
 ```html
 <div>
   <b-button-group>
-    <b-button>Button</b-button>
-    <b-dropdown right text="Menu">
-      <b-dropdown-item>Item 1</b-dropdown-item>
-      <b-dropdown-item>Item 2</b-dropdown-item>
+    <b-button>Кнопка</b-button>
+    <b-dropdown right text="Меню">
+      <b-dropdown-item>Элемент 1</b-dropdown-item>
+      <b-dropdown-item>Элемент 2</b-dropdown-item>
       <b-dropdown-divider></b-dropdown-divider>
-      <b-dropdown-item>Item 3</b-dropdown-item>
+      <b-dropdown-item>Элемент 3</b-dropdown-item>
     </b-dropdown>
-    <b-dropdown right split text="Split Menu">
-      <b-dropdown-item>Item 1</b-dropdown-item>
-      <b-dropdown-item>Item 2</b-dropdown-item>
+    <b-dropdown right split text="Раздельное меню">
+      <b-dropdown-item>Элемент 1</b-dropdown-item>
+      <b-dropdown-item>Элемент 2</b-dropdown-item>
       <b-dropdown-divider></b-dropdown-divider>
-      <b-dropdown-item>Item 3</b-dropdown-item>
+      <b-dropdown-item>Элемент 3</b-dropdown-item>
     </b-dropdown>
   </b-button-group>
 </div>
@@ -104,9 +101,8 @@ that split dropdown menus are not supported when prop `vertical` is set.
 <!-- b-button-group-menu.vue -->
 ```
 
-## See also
+## Смотрите также
 
-Also check out the [`<b-button-toolbar>`](/docs/components/button-toolbar) component for generating
-toolbars containing button groups and input groups.
+Также обратите внимание на компонент [`<b-button-toolbar>`](/docs/components/button-toolbar) для создания панелей инструментов, содержащих группы кнопок и группы ввода.
 
 <!-- Component reference added automatically from component package.json -->

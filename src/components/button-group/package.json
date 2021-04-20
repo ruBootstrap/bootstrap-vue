@@ -3,24 +3,24 @@
   "version": "1.0.0",
   "meta": {
     "title": "Button Group",
-    "description": "Group a series of buttons together on a single line with <b-button-group>.",
+    "description": "Сгруппируйте несколько кнопок в одну строку с помощью <b-button-group>.",
     "components": [
       {
         "component": "BButtonGroup",
-        "description": "Group a series of buttons together on a single line",
+        "description": "Сгруппируйте несколько кнопок в одну строку",
         "aliases": [
           "BBtnGroup"
         ],
         "props": [
           {
             "prop": "vertical",
-            "description": "When set, rendered the button group in vertical mode"
+            "description": "Когда установлено, визуализирует группу кнопок в вертикальном режиме"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content (buttons) to place in the button group"
+            "description": "Контент (кнопки) для размещения в группе кнопок"
           }
         ]
       }

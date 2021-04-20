@@ -27,7 +27,7 @@
     "description": "When the rendered element is an `aria-live` region (for screen reader users), set to either 'polite' or 'assertive'"
   },
   "ariaRole": {
-    "description": "Sets the ARIA attribute `role` to a specific value"
+    "description": "Устанавливает определенное значение для атрибута ARIA `role`"
   },
   "autocomplete": {
     "description": "Sets the 'autocomplete' attribute value on the form control"
@@ -178,7 +178,7 @@
     "description": "Adds the `required` attribute to the form control"
   },
   "role": {
-    "description": "Sets the ARIA attribute `role` to a specific value"
+    "description": "Устанавливает определенное значение для атрибута ARIA `role`"
   },
   "routerComponentName": {
     "description": "<b-link> свойство: BootstrapVue автоматически определяет между `<router-link>` и `<nuxt-link>`. В случаях, когда Вы хотите использовать сторонний компонент ссылки на основе `<router-link>`, установите это свойство на имя компонента, например установите для него значение 'g-link', если Вы используете Gridsome (обратите внимание, что компоненту передаются только определенные свойства `<router-link>`)",
@@ -188,7 +188,7 @@
     "description": "<router-link> prop: Specify which tag to render, and it will still listen to click events for navigation. `router-tag` translates to the tag prop on the final rendered `<router-link>`. Typically you should use the default value"
   },
   "size": {
-    "description": "Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'"
+    "description": "Устанавливает размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'"
   },
   "src": {
     "description": "URL to set for the `src` attribute"
