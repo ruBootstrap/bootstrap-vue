@@ -3,24 +3,24 @@
   "version": "1.0.0",
   "meta": {
     "title": "Badge",
-    "description": "Small and adaptive tag for adding context to just about any content.",
+    "description": "Небольшой адаптивный тег для добавления контекста практически к любому контенту.",
     "components": [
       {
         "component": "BBadge",
         "props": [
           {
             "prop": "pill",
-            "description": "When set to 'true', renders the badge in pill style"
+            "description": "Если установлено значение 'true', значок отображается в виде таблетки"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из вариантов цвета темы Bootstrap"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the badge"
+            "description": "Контент для размещения на значке"
           }
         ]
       }

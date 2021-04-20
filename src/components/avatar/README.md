@@ -125,7 +125,7 @@
 <b-avatar><custom-icon></custom-icon></b-avatar>
 ```
 
-**Multi-line text example:**
+**Пример многострочного текста:**
 
 ```html
 <template>

@@ -1,6 +1,6 @@
 {
   "active": {
-    "description": "When set to `true`, places the component in the active state with active styling"
+    "description": "При значении `true` переводит компонент в активное состояние с активным стилем."
   },
   "activeClass": {
     "description": "<router-link> свойство: Настроить активный класс CSS, применяемый, когда ссылка активна. Обычно Вам нужно установить это имя класс 'active'"
@@ -33,7 +33,7 @@
     "description": "Sets the 'autocomplete' attribute value on the form control"
   },
   "autofocus": {
-    "description": "When set to `true`, attempts to auto-focus the control when it is mounted, or re-activated when in a keep-alive. Does not set the `autofocus` attribute on the control"
+    "description": "Если установлено значение `true`, пытается автоматически сфокусировать элемент управления, когда он установлен, или повторно активировать, когда находится в состоянии активности. Не устанавливает атрибут `autofocus` на элементе управления"
   },
   "bgVariant": {
     "description": "Applies one of the Bootstrap theme color variants to the background"
@@ -246,6 +246,6 @@
     "description": "Field name in the `options` array that should be used for the value"
   },
   "variant": {
-    "description": "Applies one of the Bootstrap theme color variants to the component"
+    "description": "Применяет к компоненту один из вариантов цвета темы Bootstrap."
   }
 }
