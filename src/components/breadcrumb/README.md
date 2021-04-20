@@ -1,9 +1,8 @@
-# Breadcrumb
+# Хлебные крошки
 
-> Indicate the current page's location within a navigational hierarchy. Separators are automatically
-> added in CSS through <code>::before</code> and <code>content</code>.
+> Укажите местоположение текущей страницы в навигационной иерархии. Разделители автоматически добавляются в CSS через <code>::before</code> и <code>content</code>.
 
-## Overview
+## Обзор
 
 ```html
 <template>
@@ -16,15 +15,15 @@
       return {
         items: [
           {
-            text: 'Admin',
+            text: 'Админ',
             href: '#'
           },
           {
-            text: 'Manage',
+            text: 'Управление',
             href: '#'
           },
           {
-            text: 'Library',
+            text: 'Библиотека',
             active: true
           }
         ]
@@ -36,58 +35,53 @@
 <!-- b-breadcrumb.vue -->
 ```
 
-## Breadcrumb items
+## Элементы хлебных крошек
 
-Items are rendered using `:items` prop. It can be an array of objects to provide link and active
-state. Links can be `href`'s for anchor tags, or `to`'s for router-links. Active state of last
-element is automatically set if it is `undefined`.
+Элементы визуализируются с использованием свойства `:items`. Это может быть массив объектов для предоставления ссылки и активного состояния. Ссылки могут быть `href` для тегов привязки или `to` для ссылок маршрутизатора. Активное состояние последнего элемента устанавливается автоматически, если он не определен. `undefined`.
 
 <!-- eslint-disable no-unused-vars -->
 
 ```js
 const items = [
   {
-    text: 'Home',
+    text: 'Главная',
     href: 'https://google.com'
   },
   {
-    text: 'Posts',
+    text: 'Посты',
     to: { name: 'home' }
   },
   {
-    text: 'Another Story',
+    text: 'Другая история',
     active: true
   }
 ]
 ```
 
-Refer to the [Router support](/docs/reference/router-links) reference page for router-link specific
-props.
+Смотрите справочную страницу [Поддержка маршрутизатора](/docs/reference/router-links) для получения информации о конкретных свойствах связи маршрутизатора.
 
-## Manually placed items
+## Элементы, размещенные вручную
 
-You may also manually place individual `<b-breadcrumb-item>` child components in the default slot of
-the `<b-breadcrumb>` component, as an alternative to using the `items` prop, for greater control
-over the content of each item:
+Вы также можете вручную поместить отдельные дочерние компоненты `<b-breadcrumb-item>` в слот по умолчанию компонента `<b-breadcrumb>` в качестве альтернативы использованию свойства `items` для большего контроля над содержимым каждого элемента:
 
 ```html
 <template>
   <b-breadcrumb>
     <b-breadcrumb-item href="#home">
       <b-icon icon="house-fill" scale="1.25" shift-v="1.25" aria-hidden="true"></b-icon>
-      Home
+      Главная
     </b-breadcrumb-item>
-    <b-breadcrumb-item href="#foo">Foo</b-breadcrumb-item>
-    <b-breadcrumb-item href="#bar">Bar</b-breadcrumb-item>
-    <b-breadcrumb-item active>Baz</b-breadcrumb-item>
+    <b-breadcrumb-item href="#foo">Фуу</b-breadcrumb-item>
+    <b-breadcrumb-item href="#bar">Бар</b-breadcrumb-item>
+    <b-breadcrumb-item active>Баз</b-breadcrumb-item>
   </b-breadcrumb>
 </template>
 
 <!-- b-breadcrumb-item.vue -->
 ```
 
-Remember to set the `active` prop on the last item.
+Не забудьте установить свойство `active` для последнего элемента.
 
-`<b-breadcrumb-item>` also supports the various `<router-link>` props such as `to`, etc.
+`<b-breadcrumb-item>` также поддерживает различные свойства `<router-link>`, такие как `to` и т. д.
 
 <!-- Component reference added automatically from component package.json -->
