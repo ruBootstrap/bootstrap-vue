@@ -3,145 +3,145 @@
     "description": "При значении `true` переводит компонент в активное состояние с активным стилем."
   },
   "activeClass": {
-    "description": "<router-link> свойство: Настроить активный класс CSS, применяемый, когда ссылка активна. Обычно Вам нужно установить это имя класс 'active'"
+    "description": "<router-link> свойство: Настройка активного класса CSS, применяемого, когда ссылка активна. Обычно Вам нужно установить это имя класса 'active'"
   },
   "alt": {
-    "description": "Value to set for the `alt` attribute"
+    "description": "Значение, устанавливаемое для атрибута `alt`"
   },
   "append": {
     "description": "<router-link> свойство: Настройка добавления свойства всегда добавляет относительный путь к текущему пути"
   },
   "ariaControls": {
-    "description": "If this component controls another component or element, set this to the ID of the controlled component or element"
+    "description": "Если этот компонент управляет другим компонентом или элементом, установите для него идентификатор управляемого компонента или элемента"
   },
   "ariaDescribedby": {
-    "description": "The ID of the element that provides additional context for this component. Used as the value for the `aria-describedby` attribute"
+    "description": "Идентификатор элемента, который обеспечивает дополнительный контекст для этого компонента. Используется в качестве значения атрибута `aria-describedby`"
   },
   "ariaLabel": {
     "description": "Устанавливает значение атрибута `aria-label` для отображаемого элемента"
   },
   "ariaLabelledby": {
-    "description": "The ID of the element that provides a label for this component. Used as the value for the `aria-labelledby` attribute"
+    "description": "Идентификатор элемента, который предоставляет метку для этого компонента. Используется как значение атрибута `aria-labelledby`"
   },
   "ariaLive": {
-    "description": "When the rendered element is an `aria-live` region (for screen reader users), set to either 'polite' or 'assertive'"
+    "description": "Если визуализируемый элемент является областью `aria-live` (для пользователей программ чтения с экрана), установите значение 'polite' или 'assertive'"
   },
   "ariaRole": {
     "description": "Устанавливает определенное значение для атрибута ARIA `role`"
   },
   "autocomplete": {
-    "description": "Sets the 'autocomplete' attribute value on the form control"
+    "description": "Устанавливает значение атрибута 'autocomplete' в элементе управления формы"
   },
   "autofocus": {
     "description": "Если установлено значение `true`, пытается автоматически сфокусировать элемент управления, когда он установлен, или повторно активировать, когда находится в состоянии активности. Не устанавливает атрибут `autofocus` на элементе управления"
   },
   "bgVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the background"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к фону"
   },
   "bodyBgVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the body background"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к фону `body`"
   },
   "bodyBorderVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the body border"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к границе `body`"
   },
   "bodyClass": {
-    "description": "CSS class (or classes) to apply to the body"
+    "description": "CSS-класс (или классы) для применения к `body`"
   },
   "bodyTag": {
-    "description": "Specify the HTML tag to render instead of the default tag for the body"
+    "description": "Указывает тег HTML для отображения вместо тега по умолчанию для `body`"
   },
   "bodyTextVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the body text"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к тексту `body`"
   },
   "bodyVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the body"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к `body`"
   },
   "borderVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the border"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к границе"
   },
   "disabled": {
     "description": "Если установлено значение `true`, отключает функциональность компонента и переводит его в отключенное состояние."
   },
   "disabledField": {
-    "description": "Field name in the `options` array that should be used for the disabled state"
+    "description": "Имя поля в массиве `options`, которое следует использовать для отключенного состояния"
   },
   "event": {
-    "description": "<router-link> prop: Specify the event that triggers the link. In most cases you should leave this as the default"
+    "description": "<router-link> свойство: Указывает событие, которое запускает ссылку. В большинстве случаев вы должны оставить это значение по умолчанию"
   },
   "exact": {
     "description": "<router-link> свойство: Поведение сопоставления активного класса по умолчанию включает сопоставление. Установка этого свойства заставляет режим точно соответствовать маршруту"
   },
   "exactActiveClass": {
-    "description": "<router-link> свойство: Настройте активный класс CSS, применяемый, когда ссылка активна с точным соответствием. Обычно Вам нужно установить это имя класса 'active'"
+    "description": "<router-link> свойство: Настройка активного класса CSS, применяемого, когда ссылка активна с точным соответствием. Обычно Вам нужно установить это имя класса 'active'"
   },
   "fade": {
     "description": "Если установлено значение `true`, включает анимацию затухания/переход на компоненте"
   },
   "footer": {
-    "description": "Text content to place in the footer"
+    "description": "Текстовый контент для размещения в `footer`"
   },
   "footerBgVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the footer background"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к фону `footer`"
   },
   "footerBorderVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the footer border"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к границе `footer`"
   },
   "footerClass": {
-    "description": "CSS class (or classes) to apply to the footer"
+    "description": "CSS-класс (или классы) для применения к `footer`"
   },
   "footerHtml": {
-    "description": "HTML string content to place in the footer",
+    "description": "Содержимое строки HTML для размещения в `footer`",
     "xss": true
   },
   "footerTag": {
-    "description": "Specify the HTML tag to render instead of the default tag for the footer"
+    "description": "Указывает тег HTML для отображения вместо тега по умолчанию для `footer`"
   },
   "footerTextVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the footer text"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к тексту `footer`"
   },
   "footerVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the footer"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к `footer`"
   },
   "form": {
-    "description": "ID of the form that the form control belongs to. Sets the `form` attribute on the control"
+    "description": "Идентификатор формы, к которой принадлежит элемент управления формой. Устанавливает атрибут `form` в элементе управления"
   },
   "header": {
-    "description": "Text content to place in the header"
+    "description": "Текстовый контент для размещения в `header`"
   },
   "headerBgVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the header background"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к фону `header`"
   },
   "headerBorderVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the header border"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к границе `header`"
   },
   "headerClass": {
-    "description": "CSS class (or classes) to apply to the header"
+    "description": "CSS-класс (или классы) для применения к `header`"
   },
   "headerHtml": {
-    "description": "HTML string content to place in the header",
+    "description": "Содержимое строки HTML для размещения в `header`",
     "xss": true
   },
   "headerTag": {
-    "description": "Specify the HTML tag to render instead of the default tag for the header"
+    "description": "Указывает тег HTML для отображения вместо тега по умолчанию для `header`"
   },
   "headerTextVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the header text"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к `header` text"
   },
   "headerVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the header"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к `header`"
   },
   "href": {
     "description": "<b-link> свойство: Обозначает целевой URL-адрес ссылки для стандартных ссылок"
   },
   "htmlField": {
-    "description": "Field name in the `options` array that should be used for the html label instead of text field",
+    "description": "Имя поля в массиве `options`, которое следует использовать для html-метки вместо текстового поля",
     "xss": true
   },
   "id": {
-    "description": "Used to set the `id` attribute on the rendered content, and used as the base to generate any additional element IDs as needed"
+    "description": "Используется для установки атрибута `id` для визуализированного контента и используется в качестве основы для генерации любых дополнительных идентификаторов элементов по мере необходимости."
   },
   "name": {
-    "description": "Sets the value of the `name` attribute on the form control"
+    "description": "Устанавливает значение атрибута `name` в элементе управления формы"
   },
   "noFade": {
     "description": "Если установлено значение `true`, отключает анимацию затухания/переход на компоненте"
@@ -150,32 +150,32 @@
     "description": "<nuxt-link> свойство: Чтобы улучшить отзывчивость Ваших приложений Nuxt.js, когда ссылка будет отображаться в области просмотра, Nuxt.js автоматически выполнит предварительную загрузку страницы с разделением кода. Установка `no-prefetch` отключит эту функцию для конкретной ссылки"
   },
   "options": {
-    "description": "Array of items to render in the component"
+    "description": "Массив элементов для визуализации в компоненте"
   },
   "placeholder": {
-    "description": "Sets the `placeholder` attribute value on the form control"
+    "description": "Устанавливает значение атрибута `placeholder` в элементе управления формы"
   },
   "plain": {
-    "description": "Render the form control in plain mode, rather than custom styled mode"
+    "description": "Визуализируйте элемент управления формы в обычном режиме, а не в режиме пользовательского стиля"
   },
   "plaintext": {
-    "description": "Set the form control as readonly and renders the control to look like plain text (no borders)"
+    "description": "Устанавливает элемент управления формы как только для чтения и визуализируйте элемент управления как обычный текст (без границ)"
   },
   "prefetch": {
     "description": "<nuxt-link> свойство: Чтобы улучшить отзывчивость Ваших приложений Nuxt.js, когда ссылка будет отображаться в области просмотра, Nuxt.js автоматически выполнит предварительную загрузку страницы с разделением кода. Установка для `prefetch` значения `true` или `false` перезапишет значение по умолчанию `router.prefetchLinks`",
     "version": "2.15.0"
   },
   "readonly": {
-    "description": "Sets the `readonly` attribute on the form control"
+    "description": "Устанавливает атрибут `readonly` в элементе управления формы"
   },
   "rel": {
     "description": "<b-link> свойство: Устанавливает атрибут `rel` для отображаемой ссылки"
   },
   "replace": {
-    "description": "<router-link> свойство: Установка свойства replace будет вызывать `router.replace()` вместо `router.push()` при нажатии, поэтому навигация не будет оставлять запись в истории"
+    "description": "<router-link> свойство: Установка свойства `replace` будет вызывать `router.replace()` вместо `router.push()` при нажатии, поэтому навигация не будет оставлять запись в истории"
   },
   "required": {
-    "description": "Adds the `required` attribute to the form control"
+    "description": "Добавляет атрибут `required` в элемент управления формы"
   },
   "role": {
     "description": "Устанавливает определенное значение для атрибута ARIA `role`"
@@ -185,65 +185,65 @@
     "version": "2.15.0"
   },
   "routerTag": {
-    "description": "<router-link> prop: Specify which tag to render, and it will still listen to click events for navigation. `router-tag` translates to the tag prop on the final rendered `<router-link>`. Typically you should use the default value"
+    "description": "<router-link> свойство: Указывает, какой тег отображать, и он все равно будет прослушивать события щелчка для навигации. `router-tag` переводится в свойство тега в окончательном отрисованном `<router-link>`. Обычно следует использовать значение по умолчанию"
   },
   "size": {
     "description": "Устанавливает размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'"
   },
   "src": {
-    "description": "URL to set for the `src` attribute"
+    "description": "URL для установки значения атрибута `src`"
   },
   "state": {
-    "description": "Controls the validation state appearance of the component. `true` for valid, `false` for invalid, or `null` for no validation state"
+    "description": "Управляет внешним видом состояния проверки компонента. `true` для действительного, `false` для недопустимого или `null` для отсутствия проверки состояния"
   },
   "static": {
-    "description": "Renders the content of the component in-place in the DOM, rather than portalling it to be appended to the body element"
+    "description": "Отображает содержимое компонента на месте в DOM, а не переносит его для добавления к элементу `body`"
   },
   "subTitle": {
-    "description": "Text content to place in the sub title"
+    "description": "Текстовый контент для размещения в подзаголовке"
   },
   "subTitleTag": {
-    "description": "Specify the HTML tag to render instead of the default tag for the sub title"
+    "description": "Указывает тег HTML для отображения вместо тега по умолчанию для подзаголовка"
   },
   "subTitleTextVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the sub title text"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к тексту подзаголовка"
   },
   "tag": {
-    "description": "Укажите тег HTML для отображения вместо тега по умолчанию"
+    "description": "Указывает тег HTML для отображения вместо тега по умолчанию"
   },
   "target": {
     "description": "<b-link> свойство: Устанавливает атрибут `target` для отображаемой ссылки"
   },
   "textField": {
-    "description": "Field name in the `options` array that should be used for the text label"
+    "description": "Имя поля в массиве `options`, которое следует использовать для текстовой метки"
   },
   "textTag": {
-    "description": "Specify the HTML tag to render instead of the default tag for the text content"
+    "description": "Указывает тег HTML для отображения вместо тега по умолчанию для контента текста"
   },
   "textVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the text"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к тексту"
   },
   "title": {
-    "description": "Text content to place in the title"
+    "description": "Текстовый контент для размещения в заголовке"
   },
   "titleClass": {
-    "description": "CSS class (or classes) to apply to the title"
+    "description": "CSS-класс (или классы) для применения к заголовке"
   },
   "titleHtml": {
-    "description": "HTML string content to place in the title",
+    "description": "Содержимое строки HTML для размещения в заголовке",
     "xss": true
   },
   "titleTag": {
-    "description": "Specify the HTML tag to render instead of the default tag for the title"
+    "description": "Указывает тег HTML для отображения вместо тега по умолчанию для заголовке"
   },
   "titleTextVariant": {
-    "description": "Applies one of the Bootstrap theme color variants to the title text"
+    "description": "Применяет один из вариантов цвета темы Bootstrap к тексту заголовка"
   },
   "to": {
     "description": "<router-link> свойство: Обозначает целевой маршрут ссылки. При нажатии значение свойства будет передано в `router.push()` внутренне, поэтому значение может быть либо строкой, либо объектом дескриптора местоположения"
   },
   "valueField": {
-    "description": "Field name in the `options` array that should be used for the value"
+    "description": "Имя поля в массиве `options`, которое следует использовать для значения"
   },
   "variant": {
     "description": "Применяет к компоненту один из вариантов цвета темы Bootstrap."
