@@ -1,21 +1,20 @@
-# Button Toolbar
+# Панель инструментов кнопок
 
-> Group a series of button-groups and/or input-groups together on a single line, with optional
-> keyboard navigation
+> Сгруппируйте серию групп кнопок и/или групп ввода в одну строку с дополнительной навигацией с помощью клавиатуры
 
-**Example 1:** with button groups & Keyboard navigation
+**Пример 1:** с группами кнопок и навигацией по клавиатуре
 
 ```html
 <div>
-  <b-button-toolbar key-nav aria-label="Toolbar with button groups">
+  <b-button-toolbar key-nav aria-label="Панель инструментов с группами кнопок и навигацией по клавиатуре">
     <b-button-group class="mx-1">
       <b-button>&laquo;</b-button>
       <b-button>&lsaquo;</b-button>
     </b-button-group>
     <b-button-group class="mx-1">
-      <b-button>Edit</b-button>
-      <b-button>Undo</b-button>
-      <b-button>Redo</b-button>
+      <b-button>Редактировать</b-button>
+      <b-button>Отменить</b-button>
+      <b-button>Повторить</b-button>
     </b-button-group>
     <b-button-group class="mx-1">
       <b-button>&rsaquo;</b-button>
@@ -27,14 +26,14 @@
 <!-- b-button-toolbar.vue -->
 ```
 
-**Example 2:** with mixture of small button group and small input group
+**Пример 2:** со смесью небольшой группы кнопок и небольшой группы ввода
 
 ```html
 <div>
-  <b-button-toolbar aria-label="Toolbar with button groups and input groups">
+  <b-button-toolbar aria-label="Панель инструментов со смесью небольшой группы кнопок и небольшой группы ввода">
     <b-button-group size="sm" class="mr-1">
-      <b-button>Save</b-button>
-      <b-button>Cancel</b-button>
+      <b-button>Сохранить</b-button>
+      <b-button>Отменить</b-button>
     </b-button-group>
     <b-input-group size="sm" prepend="$" append=".00">
       <b-form-input value="100" class="text-right"></b-form-input>
@@ -45,24 +44,24 @@
 <!-- b-button-toolbar-input.vue -->
 ```
 
-**Example 3:** with button groups and dropdown menu
+**Пример 3:** с группами кнопок и раскрывающимся меню
 
 ```html
 <div>
-  <b-button-toolbar aria-label="Toolbar with button groups and dropdown menu">
+  <b-button-toolbar aria-label="Панель инструментов с группами кнопок и раскрывающимся меню">
     <b-button-group class="mx-1">
-      <b-button>New</b-button>
-      <b-button>Edit</b-button>
-      <b-button>Undo</b-button>
+      <b-button>Новый</b-button>
+      <b-button>Редактировать</b-button>
+      <b-button>Отменить</b-button>
     </b-button-group>
     <b-dropdown class="mx-1" right text="menu">
-      <b-dropdown-item>Item 1</b-dropdown-item>
-      <b-dropdown-item>Item 2</b-dropdown-item>
-      <b-dropdown-item>Item 3</b-dropdown-item>
+      <b-dropdown-item>Элемент 1</b-dropdown-item>
+      <b-dropdown-item>Элемент 2</b-dropdown-item>
+      <b-dropdown-item>Элемент 3</b-dropdown-item>
     </b-dropdown>
     <b-button-group class="mx-1">
-      <b-button>Save</b-button>
-      <b-button>Cancel</b-button>
+      <b-button>Сохранить</b-button>
+      <b-button>Отменить</b-button>
     </b-button-group>
   </b-button-toolbar>
 </div>
@@ -70,38 +69,34 @@
 <!-- b-button-toolbar-dropdown.vue -->
 ```
 
-## Usage
+## Применение
 
-Feel free to mix input groups and dropdowns with button groups in your toolbars. Similar to the
-example above, you'll likely need some utility classes though to space things properly.
+Не стесняйтесь комбинировать группы ввода и раскрывающиеся списки с группами кнопок на панелях инструментов. Как и в приведенном выше примере, вам, вероятно, понадобятся некоторые классы утилиты, чтобы правильно расположить вещи.
 
-## Sizing
+## Размеры
 
-Note, if you want smaller or larger buttons or controls, set the `size` prop directly on the
-`<b-button-group>`, `<b-input-group>`, and `<b-dropdown>` components.
+Обратите внимание, если вам нужны кнопки или элементы управления меньшего или большего размера, установите свойство `size` непосредственно в компонентах `<b-button-group>`, `<b-input-group>` и `<b-dropdown>`.
 
-## Justify
+## Обоснование
 
-Make the toolbar span the maximum available width, by increasing spacing between the button groups,
-input groups and dropdowns, by setting the prop `justify`.
+Сделайте панель инструментов с максимально доступной шириной, увеличив интервал между группами кнопок, группами ввода и раскрывающимися списками, установив свойство `justify`.
 
-## Keyboard navigation
+## Навигация с клавиатуры
 
-Enable optional keyboard navigation by setting the prop `key-nav`.
+Включите необязательную навигацию с клавиатуры, установив свойство `key-nav`.
 
-| Keypress                                                              | Action                                                |
-| --------------------------------------------------------------------- | ----------------------------------------------------- |
-| <kbd>Left</kbd> or <kbd>Up</kbd>                                      | Move to the previous non-disabled item in the toolbar |
-| <kbd>Right</kbd> or <kbd>Down</kbd>                                   | Move to the next non-disabled item in the toolbar     |
-| <kbd>Shift</kbd>+<kbd>Left</kbd> or <kbd>Shift</kbd>+<kbd>Up</kbd>    | Move to the first non-disabled item in the toolbar    |
-| <kbd>Shift</kbd>+<kbd>Right</kbd> or <kbd>Shift</kbd>+<kbd>Down</kbd> | Move to the last non-disabled item in the toolbar     |
-| <kbd>Tab</kbd>                                                        | Move to the next control on the page                  |
-| <kbd>Shift</kbd>+<kbd>Tab</kbd>                                       | Move to the previous control on the page              |
+| Нажатие клавиши                                                        | Действие                                              |
+| ---------------------------------------------------------------------- | ----------------------------------------------------- |
+| <kbd>Left</kbd> или <kbd>Up</kbd>                                      | Перейти к предыдущему неотключенному элементу на панели инструментов |
+| <kbd>Right</kbd> или <kbd>Down</kbd>                                   | Перейти к следующему неотключенному элементу на панели инструментов     |
+| <kbd>Shift</kbd>+<kbd>Left</kbd> или <kbd>Shift</kbd>+<kbd>Up</kbd>    | Перейти к первому неотключенному элементу на панели инструментов    |
+| <kbd>Shift</kbd>+<kbd>Right</kbd> или <kbd>Shift</kbd>+<kbd>Down</kbd> | Перейти к последнему неотключенному элементу на панели инструментов     |
+| <kbd>Tab</kbd>                                                         | Перейти к следующему элементу управления на странице                  |
+| <kbd>Shift</kbd>+<kbd>Tab</kbd>                                        | Перейти к предыдущему элементу управления на странице              |
 
-**Caution:** If you have text or text-like inputs in your toolbar, leave keyboard navigation off, as
-it is not possible to use key presses to jump out of a text (or test-like) inputs.
+**Осторожно:** Если у вас есть текст или текстовые поля ввода на панели инструментов, оставьте навигацию с клавиатуры отключенной, так как невозможно использовать нажатия клавиш для выхода из текстовых (или тестовых) полей ввода.
 
-## See also
+## Смотрите также
 
 - [`<b-button-group>`](/docs/components/button-group)
 - [`<b-dropdown>`](/docs/components/dropdown)

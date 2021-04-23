@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Button Toolbar",
-    "description": "Group a series of <b-button-group> and/or <b-input-group> together on a single line, with optional keyboard navigation.",
+    "description": "Сгруппируйте серию <b-button-group> и/или <b-input-group> вместе в одной строке с дополнительной навигацией с клавиатуры.",
     "components": [
       {
         "component": "BButtonToolbar",
@@ -13,17 +13,17 @@
         "props": [
           {
             "prop": "justify",
-            "description": "Make the toolbar span the maximum available width, by increasing spacing between the button groups, input groups and dropdowns"
+            "description": "Сделайте панель инструментов с максимально доступной шириной, увеличив интервал между группами кнопок, группами ввода и раскрывающимися списками"
           },
           {
             "prop": "keyNav",
-            "description": "When set, enabled keyboard navigation mode for the toolbar. Do not set this prop when the toolbar has inputs"
+            "description": "Если установлено, включен режим навигации с помощью клавиатуры для панели инструментов. Не устанавливайте это свойство, когда на панели инструментов есть поля ввода"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the button toolbar"
+            "description": "Контент для размещения на панели инструментов кнопки"
           }
         ]
       }
