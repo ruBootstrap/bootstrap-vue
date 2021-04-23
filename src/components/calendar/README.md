@@ -1,27 +1,22 @@
-# Calendar
+# Календарь
 
-> BootstrapVue's custom `<b-calendar>` component generates a WAI-ARIA compliant calendar style date
-> selection widget, which can be used to control other components, or can be used to create
-> customized date picker inputs.
+> Пользовательский компонент BootstrapVue `<b-calendar>` генерирует WAI-ARIA-совместимый виджет выбора даты в стиле календаря, который можно использовать для управления другими компонентами или для создания настраиваемых входов для выбора даты.
 
-## Overview
+## Обзор
 
-`<b-calendar>` is WAI-ARIA accessibility compliant, optimized for keyboard control (arrow, page
-up/down, home, and end keys). Internationalization is also supported, and default's to the browser's
-or page's locale, if no locale(s) are specified.
+`<b-calendar>` совместим с WAI-ARIA, оптимизирован для управления с клавиатуры (arrow, page up/down, home и end keys). Также поддерживается интернационализация и по умолчанию используется языковой стандарт браузера или страницы, если языковой стандарт не указан.
 
-If you need a date picker as a custom form control input, use the
-[`<b-form-datepicker>`](/docs/components/form-datepicker) component instead.
+Если вам нужен выбор даты в качестве ввода настраиваемого элемента управления формой, используйте вместо него компонент [`<b-form-datepicker>`](/docs/components/form-datepicker).
 
 ```html
 <template>
   <b-row>
     <b-col md="auto">
-      <b-calendar v-model="value" @context="onContext" locale="en-US"></b-calendar>
+      <b-calendar v-model="value" @context="onContext" locale="ru"></b-calendar>
     </b-col>
     <b-col>
-      <p>Value: <b>'{{ value }}'</b></p>
-      <p class="mb-0">Context:</p>
+      <p>Значение: <b>'{{ value }}'</b></p>
+      <p class="mb-0">Контекст:</p>
       <pre class="small">{{ context }}</pre>
     </b-col>
   </b-row>
@@ -45,41 +40,35 @@ If you need a date picker as a custom form control input, use the
 <!-- b-calendar.vue -->
 ```
 
-## `v-model` return value
+## Возвращаемое значение `v-model`
 
-By default, `<b-calendar>` returns dates as a string in the `YYYY-MM-DD` format, which is the same
-format returned by native browser `<input type="date">` controls. You can have `<b-calendar>` return
-a `Date` object (with no time portion) as the `v-model` value instead by setting the `value-as-date`
+По умолчанию `<b-calendar>` возвращает даты в виде строки в формате `YYYY-MM-DD`, который является тем же форматом, что и элементы управления нативного браузера `<input type="date">`. Вместо этого вы можете заставить `<b-calendar>` возвращать объект `Date` (без временной части) в качестве значения `v-model` установив свойство `value-as-date`
 prop.
 
-If no date is selected, `<b-calendar>` returns an empty string `''`, or returns `null` if the
-`value-as-date` prop is set.
+Если дата не выбрана, `<b-calendar>` возвращает пустую строку `''` или возвращает `null`, если задано свойство `value-as-date`.
 
-Note that when `value-as-date` prop is set, the returned `Date` object will be in the browser's
-default timezone.
+Обратите внимание, что когда свойство `value-as-date` установлено, возвращаемый объект `Date` будет в часовом поясе браузера по умолчанию.
 
-## Disabled and readonly states
+## Состояния: отключено и только для чтения
 
-Setting the `disabled` prop will remove all interactivity of the `<b-calendar>` component.
+Установка свойства `disabled` удалит всю интерактивность компонента `<b-calendar>`.
 
-Setting the `readonly` prop will disable selecting a date, but will keep the component interactive,
-allowing for date navigation. The `v-model` will not be updated in the readonly state.
+Установка свойства `readonly` отключит выбор даты, но сохранит интерактивность компонента, позволяя осуществлять навигацию по дате. `v-model` не будет обновляться в состоянии только для чтения.
 
-For disabling specific dates or setting minimum and maximum date limits, refer to the
-[Date constraints](#date-constraints) section.
+Чтобы отключить определенные даты или установить минимальные и максимальные пределы дат, обратитесь к разделу [Ограничения даты](#date-constraints).
 
 ```html
 <template>
   <div>
-    <b-form-group label="Select calendar interactive state" v-slot="{ ariaDescribedby }">
+    <b-form-group label="Выберите интерактивное состояние календаря" v-slot="{ ariaDescribedby }">
       <b-form-radio-group
         v-model="state"
         :aria-describedby="ariaDescribedby"
         aria-controls="ex-disabled-readonly"
       >
-        <b-form-radio value="disabled">Disabled</b-form-radio>
-        <b-form-radio value="readonly">Readonly</b-form-radio>
-        <b-form-radio value="normal">Normal</b-form-radio>
+        <b-form-radio value="disabled">Отключено</b-form-radio>
+        <b-form-radio value="readonly">Только чтение</b-form-radio>
+        <b-form-radio value="normal">Обычное</b-form-radio>
       </b-form-radio-group>
     </b-form-group>
 
@@ -112,17 +101,16 @@ For disabling specific dates or setting minimum and maximum date limits, refer t
 <!-- b-form-calendar-disabled-readonly.vue -->
 ```
 
-## Date constraints
+## Ограничения по дате
 
-### Minimum and maximum dates
+### Минимальные и максимальные даты
 
-Restrict the calendar range via the `min` and `max` props. The props accept a date string in the
-format of `YYYY-MM-DD` or a `Date` object.
+Ограничьте диапазон календаря с помощью свойств `min` и `max`. Свойства принимают строку даты в формате `YYYY-MM-DD` или объект `Date`.
 
 ```html
 <template>
   <div>
-    <b-calendar v-model="value" :min="min" :max="max" locale="en"></b-calendar>
+    <b-calendar v-model="value" :min="min" :max="max" locale="ru"></b-calendar>
   </div>
 </template>
 
@@ -152,22 +140,19 @@ format of `YYYY-MM-DD` or a `Date` object.
 <!-- b-calendar-min-max.vue -->
 ```
 
-### Disabling dates
+### Отключение дат
 
-If you need to disable specific dates within the calendar, specify a function reference to the
-`date-disabled-fn` prop. The function is passed two arguments:
+Если вам нужно отключить определенные даты в календаре, укажите ссылку на функцию для свойства `date-disabled-fn`. Функции передаются два аргумента:
 
-- `ymd` The date as a `YYYY-MM-DD` string
-- `date` The date as a `Date` object
+- `ymd` Дата как строка `YYYY-MM-DD`
+- `date` Дата как объект `Date`
 
-The function should either return `true` if the date _cannot_ be selected (disabled), or `false` if
-the date _can_ be selected (enabled). Note that the function **cannot** be asynchronous, and should
-return a value as quickly as possible.
+Функция должна либо возвращать `true`, если дата _не может_ быть выбрана (отключена), либо `false`, если дата _может_ быть выбрана (включена). Обратите внимание, что функция **не может** быть асинхронной и должна возвращать значение как можно быстрее.
 
 ```html
 <template>
   <div>
-    <b-calendar v-model="value" :date-disabled-fn="dateDisabled" locale="en"></b-calendar>
+    <b-calendar v-model="value" :date-disabled-fn="dateDisabled" locale="ru"></b-calendar>
   </div>
 </template>
 
@@ -180,11 +165,11 @@ return a value as quickly as possible.
     },
     methods: {
       dateDisabled(ymd, date) {
-        // Disable weekends (Sunday = `0`, Saturday = `6`) and
-        // disable days that fall on the 13th of the month
+        // Отключить выходные (воскресенье = `0`, суббота = `6`) и
+        // отключить дни, приходящиеся на 13-е число месяца.
         const weekday = date.getDay()
         const day = date.getDate()
-        // Return `true` if the date should be disabled
+        // Вернет `true`, если дату нужно отключить
         return weekday === 0 || weekday === 6 || day === 13
       }
     }
@@ -194,23 +179,19 @@ return a value as quickly as possible.
 <!-- b-calendar-disabled-dates.vue -->
 ```
 
-Note the `min` and `max` date constraints are evaluated first, before `date-disabled-fn`.
+Обратите внимание, что ограничения даты `min` и `max` оцениваются в первую очередь, перед `date-disabled-fn`.
 
-## Styling
+## Стилизация
 
-### Variants
+### Варианты
 
-The selected date button (background color) defaults to the `'primary'` theme variant. You can
-change this to any of the Bootstrap v4 theme variant colors: `'secondary'`, `'success'`, `'danger'`,
-`'warning'`, `'info'`, etc, via the `selected-variant` prop.
+Выбранная кнопка даты (цвет фона) по умолчанию соответствует `'primary'` варианту темы. Вы можете изменить это на любой из цветов варианта темы Bootstrap v4: `'secondary'`, `'success'`, `'danger'`, `'warning'`, `'info'` и т. д. с помощью свойства `selected-variant`.
 
-Today's date will also be highlighted (text color) using the same variant as the selected date by
-default. To specify a different theme color to use for today's date, use the `today-variant` prop.
+Сегодняшняя дата также будет выделена (цветом текста) с использованием того же варианта, что и выбранная дата по умолчанию. Чтобы указать другой цвет темы, который будет использоваться для сегодняшней даты, используйте свойство `today-variant`.
 
-To disable highlighting of today's date altogether, set the `no-highlight-today` prop.
+Чтобы полностью отключить выделение сегодняшней даты, установите свойство `no-highlight-today`.
 
-The navigation buttons default to the `'secondary'` theme variant. You can change this via the
-`nav-button-variant` prop.
+Кнопки навигации по умолчанию относятся к `'secondary'` варианту темы. Вы можете изменить это с помощью свойства `nav-button-variant`.
 
 ```html
 <template>
@@ -224,56 +205,46 @@ The navigation buttons default to the `'secondary'` theme variant. You can chang
 <!-- b-calendar-variants.vue -->
 ```
 
-### Width
+### Ширина
 
-The `<b-calendar>` renders as an inline-block element with a default width of `270px` (excluding any
-padding or border that may be added to it). This width is optimized to fit the width of smaller
-mobile devices.
+`<b-calendar>` отображается как встроенный блочный элемент с шириной по умолчанию `270px` (исключая любые отступы или границы, которые могут быть добавлены к нему). Эта ширина оптимизирована, чтобы соответствовать ширине небольших мобильных устройств.
 
-To change the width, set the `width` prop to any valid CSS width (including units).
+Чтобы изменить ширину, установите для свойства `width` любую допустимую ширину CSS (включая единицы измерения).
 
-Optionally, make the calendar full width by setting the prop `block`, which will make it expand to
-fit the width of the parent element. The `width` prop has no effect when `block` is set.
+При желании, сделайте календарь полной шириной, установив свойство `block`, которое заставит его расширяться, чтобы соответствовать ширине родительского элемента. Свойство `width` не действует, когда установлен `block`.
 
 ```html
 <template>
-  <b-calendar block locale="en-US"></b-calendar>
+  <b-calendar block locale="ru"></b-calendar>
 </template>
 
 <!-- b-calendar-block.vue -->
 ```
 
-Note it is _not recommended_ to set a width below `260px`, otherwise truncation and layout issues
-with the component may occur.
+Обратите внимание, что _не рекомендуется_ устанавливать ширину ниже `260px`, в противном случае могут возникнуть проблемы с усечением и компоновкой компонента.
 
-### Initial open calendar date
+### Начальная дата открытия календаря
 
-By default, when no date is selected, the calendar view will be set to the current month (or the
-`min` or `max` date if today's date is out of range of `min` or `max`). You can change this
-behaviour by specifying a date via the `initial-date` prop. The initial date prop will be used to
-determine the calendar month to be initially presented to the user. It does not set the component's
-value.
+По умолчанию, если дата не выбрана, в представлении календаря будет установлен текущий месяц (или `min` или `max` дата, если сегодняшняя дата находится вне диапазона `min` или `max`). Вы можете изменить это поведение, указав дату через свойство `initial-date`. Свойство начальной даты будет использоваться для определения календарного месяца, который будет первоначально представлен пользователю. Он не устанавливает значение компонента.
 
-### Date string format
+### Строковый формат даты
 
 <span class="badge badge-info small">v2.6.0+</span>
 
-To change format options of the displayed date text inside the component, e.g. in the header, set
-the `date-format-options` prop to an object containing the requested format properties for the
-`Intl.DateTimeFormat` object (see also [Internationalization](#internationalization)).
+Чтобы изменить параметры формата отображаемого текста даты внутри компонента, например в заголовке установите опцию `date-format-options` для объекта, содержащего запрошенные свойства формата для объекта `Intl.DateTimeFormat` (смотрите также [Интернационализация](#internationalization)).
 
 ```html
 <template>
   <div>
-    <p>Custom date format:</p>
+    <p>Пользовательский формат даты:</p>
     <b-calendar
       :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
-      locale="en"
+      locale="ru"
     ></b-calendar>
-    <p class="mt-3">Short date format:</p>
+    <p class="mt-3">Краткий формат даты:</p>
     <b-calendar
       :date-format-options="{ year: 'numeric', month: 'numeric', day: 'numeric' }"
-      locale="en"
+      locale="ru"
     ></b-calendar>
   </div>
 </template>
@@ -281,81 +252,66 @@ the `date-format-options` prop to an object containing the requested format prop
 <!-- b-calendar-dateformat.vue -->
 ```
 
-The following table summarizes the valid options for each format property:
+В следующей таблице приведены допустимые параметры для каждого свойства формата:
 
-| Property  | Possible values                                              |
-| --------- | ------------------------------------------------------------ |
-| `year`    | `'numeric'`, or `'2-digit'`                                  |
-| `month`   | `'numeric'`, `'2-digit'`, `'long'`, `'short'`, or `'narrow'` |
-| `day`     | `'numeric'`, or `'2-digit'`                                  |
-| `weekday` | `'long'`, `'short'`, or `'narrow'`                           |
+| Свойство  | Возможные значения                                            |
+| --------- | ------------------------------------------------------------- |
+| `year`    | `'numeric'`, или `'2-digit'`                                  |
+| `month`   | `'numeric'`, `'2-digit'`, `'long'`, `'short'`, или `'narrow'` |
+| `day`     | `'numeric'`, или `'2-digit'`                                  |
+| `weekday` | `'long'`, `'short'`, или `'narrow'`                           |
 
-Notes:
+Заметки:
 
-- Leaving out certain options may affect the formatted text string, e.g. the `weekday`
-- The formatted value will vary according to the resolved locale. Some locales may not support the
-  `'narrow'` format and will fall back to `'short'` or `long'` (if `'short'` is not available)
-- `year`, `month` and `day` will always be shown. If you need to leave out a value, set the property
-  to `undefined`, although this is highly discouraged for accessibility reasons
+- Отсутствие определенных параметров может повлиять на форматированную текстовую строку, например `weekday`
+- Отформатированное значение будет варьироваться в зависимости от разрешенного языкового стандарта. Некоторые языки могут не поддерживать `'narrow'` формат и будут использовать `'short'` или `long'` формат (если `'short'` недоступен)
+- Всегда будут отображаться `year`, `month` и `day`. Если вам нужно не указывать значение, установите для свойства значение `undefined`, хотя это крайне не рекомендуется по причинам доступности
 
-### Weekday name header format
+### Формат заголовка названия дня недели
 
 <span class="badge badge-info small">2.12.0+</span>
 
-The calendar weekday name header format defaults to `'short'`, which is typically a three-character
-abbreviation of the weekday, although some [locales](#internationalization) may override this. The
-format can be controlled via the prop `weekday-header-format` and accepts one of three values:
+Формат заголовка имени дня недели календаря по умолчанию `'short'`, который обычно представляет собой трехсимвольное сокращение дня недели, хотя некоторые [локали](#internationalization) могут переопределить это. Форматом можно управлять с помощью свойства `weekday-header-format`, которое принимает одно из трех значений:
 
-- `'long'` the full weekday name (e.g. <samp>Tuesday</samp>). Handy when using a full width
-  calendar. Avoid using with the default calendar width.
-- `'short'` typically is a 2 or 3 letter abbreviation of the weekday name, depending on the selected
-  locale (e.g. "Tue").
-- `'narrow'` is typically a single character abbreviation (e.g., <samp>T</samp>). Two weekdays may
-  have the same narrow style for some locales (e.g. Tuesday and Thursday's narrow style are both
-  <samp>T</samp>). This can be handy for those locales that do not support the `'short'` format,
-  such as locales `'ar'` and `'fa'`.
+- `'long'` - полное название дня недели (например, <samp>Вторник</samp>). Удобно при использовании календаря полной ширины. Избегайте использования с шириной календаря по умолчанию.
+- `'short'` обычно представляет собой двух- или трехбуквенное сокращение названия дня недели, в зависимости от выбранного языка (например, "Вт").
+- `'narrow'` - это обычно односимвольное сокращение (например, <samp>В</samp>). Два будних дня могут иметь один и тот же узкий стиль для некоторых регионов (например, узкий стиль вторника <samp>В</samp> и четверга <samp>Ч</samp>). Это может быть удобно для тех языков, которые не поддерживают `'short'` формат, например для локалей `'ar'` и `'fa'`.
 
-### Hiding the top selected date header
+### Скрытие верхнего выбранного заголовка даты
 
-By default, the current selected date will be displayed at the top of the calendar component,
-formatted in the locale's language.
+По умолчанию текущая выбранная дата будет отображаться в верхней части календарного компонента в формате, установленном на языке локали.
 
-You can hide this header via the `hide-header` prop. Note this only _visually hides_ the selected
-date, while keeping it available to screen reader users as an `aria-live` region.
+Вы можете скрыть этот заголовок с помощью свойства `hide-header`. Обратите внимание, что это только _визуально скрывает_ выбранную дату, сохраняя при этом доступность для пользователей программ чтения с экрана как область `aria-live`.
 
-For example usage, refer to the [Internationalization section](#internationalization) below.
+Для примера использования смотрите [Раздел интернационализации](#internationalization) ниже.
 
-### Optional decade navigation buttons
+### Дополнительные кнопки навигации декады
 
-Set the prop `show-decade-nav` to enable the previous and next decade buttons in the calendar's date
-navigation toolbar.
+Установите свойство `show-decade-nav`, чтобы включить кнопки предыдущей и следующей декады на панели инструментов навигации по дате календаря.
 
-The props `label-prev-decade` and `label-next-decade` props can be used to provide custom label text
-for the decade buttons.
+Свойства `label-prev-decade` и `label-next-decade` могут использоваться для предоставления пользовательского текста метки для кнопок декады.
 
-For example usage, refer to the [Internationalization section](#internationalization) below.
+Для примера использования смотрите [Раздел интернационализации](#internationalization) ниже.
 
-### Border and padding
+### Граница и отступы
 
-Fancy a calendar with a border with padding? Use Bootstrap's
-[border and padding utility classes](/docs/reference/utility-classes) to add borders and padding:
+Хотите календарь с рамкой и отступом? Используйте [классы-утилиты границ и отступов](/docs/reference/utility-classes), чтобы добавить границы и отступы:
 
 ```html
 <template>
-  <b-calendar class="border rounded p-2" locale="en"></b-calendar>
+  <b-calendar class="border rounded p-2" locale="ru"></b-calendar>
 </template>
 
 <!-- b-calendar-border-padding.vue -->
 ```
 
-### Default slot
+### Слот по умолчанию
 
-Provide optional content at the bottom of the calendar interface via the use of default slot. The
-slot can be used to add buttons such as `Select Today` or `Reset`, etc.
+Предоставьте дополнительный контент в нижней части интерфейса календаря с помощью слота по умолчанию. В слот можно добавлять такие кнопки, как `Select Today` или `Reset` и т. д.
 
 ```html
 <template>
-  <b-calendar v-model="value" value-as-date locale="en">
+  <b-calendar v-model="value" value-as-date locale="ru">
     <div class="d-flex" dir="ltr">
       <b-button
         size="sm"
@@ -363,7 +319,7 @@ slot can be used to add buttons such as `Select Today` or `Reset`, etc.
         v-if="value"
         @click="clearDate"
       >
-        Clear date
+        Очистить дату
       </b-button>
       <b-button
         size="sm"
@@ -371,7 +327,7 @@ slot can be used to add buttons such as `Select Today` or `Reset`, etc.
         class="ml-auto"
         @click="setToday"
       >
-        Set Today
+        Установить сегодня
       </b-button>
     </div>
   </b-calendar>
@@ -399,51 +355,43 @@ slot can be used to add buttons such as `Select Today` or `Reset`, etc.
 <!-- b-calendar-default-slot.vue -->
 ```
 
-### Date navigation button slots
+### Слоты для кнопок навигации по дате
 
 <span class="badge badge-info small">2.12.0+</span>
 
-To change the content of the calendar's date navigation buttons, BootstrapVue provides scoped slots
-for each button:
+Чтобы изменить содержимое кнопок навигации по дате календаря, BootstrapVue предоставляет слоты с заданной областью для каждой кнопки:
 
 - `'nav-prev-decade'`
 - `'nav-prev-year'`
 - `'nav-prev-month'`
-- `'nav-this-month'` (the go to selected/today button)
+- `'nav-this-month'` (кнопка перехода к выбранному/сегодня)
 - `'nav-next-month'`
 - `'nav-next-year'`
 - `'nav-next-decade'`
 
-All seven slots have the same scoped property available:
+Для всех семи слотов доступно одно и то же свойство с областью действия:
 
-| Property | Type    | Description                                                           |
-| -------- | ------- | --------------------------------------------------------------------- |
-| `isRTL`  | Boolean | Will be `true` when the date navigation bar is rendered right-to-left |
+| Свойство | Тип     | Описание                                                                               |
+| -------- | ------- | -------------------------------------------------------------------------------------- |
+| `isRTL`  | Boolean | Будет иметь значение `true` , если панель навигации по дате отображается справа-налево |
 
-You can use the `isRTL` scoped property to "flip" the prev vs next button content to handle the
-left-to-right to right-to-left orientation change &mdash; i.e. the previous year button will be on
-the right when `isRTL` is `true`, instead of the left.
+Вы можете использовать рассмотренное свойство `isRTL`, чтобы «перевернуть» содержимое кнопки назад и далее для обработки изменения ориентации слева направо на справа налево &mdash; т.е. кнопка предыдущего года будет справа, когда `isRTL` имеет значение `true`, а не слева.
 
-### Adding CSS classes to specific dates
+### Добавление классов CSS к определенным датам
 
-If you need to highlight a specific date or dates, set the `date-info-fn` prop to a reference to a
-function that returns a CSS class string (or array of strings) to apply to the date's cell. The
-function is passed two arguments:
+Если вам нужно выделить конкретную дату или даты, установите свойство `date-info-fn` на ссылку на функцию, которая возвращает строку класса CSS (или массив строк) для применения к ячейке даты. Функции передаются два аргумента:
 
-- `ymd` The date as a `YYYY-MM-DD` string
-- `date` The date as a `Date` object
+- `ymd` Дата как строка `YYYY-MM-DD`
+- `date` Дата как объект `Date`
 
-The function can return a string, or an array of strings. If setting no classes, you can return an
-empty string (`''`), empty array (`[]`), or `null`.
+Функция может возвращать строку или массив строк. Если не заданы классы, вы можете вернуть пустую строку (`''`), пустой массив (`[]`) или `null`.
 
-In this example we are using the `table-{variant}` color classes to set a background color on the
-date cell. The `table-{variant}` color classes work well as they are muted versions of the theme
-colors.
+В этом примере мы используем классы цвета `table-{variant}` для установки цвета фона в ячейке даты. Цветовые классы `table-{variant}` работают хорошо, поскольку они являются приглушенными версиями цветов темы.
 
 ```html
 <template>
   <div>
-    <b-calendar v-model="value" :date-info-fn="dateClass" locale="en"></b-calendar>
+    <b-calendar v-model="value" :date-info-fn="dateClass" locale="ru"></b-calendar>
   </div>
 </template>
 
@@ -466,106 +414,79 @@ colors.
 <!-- b-calendar-date-classes.vue -->
 ```
 
-Note the function will _not_ be called for [disabled dates](#date-constraints).
+Обратите внимание, что функция _не_ будет вызываться для [отключенных дат](#date-constraints).
 
-**Accessibility note:**
+**Примечание о доступности:**
 
-When using classes to convey specific meaning to a date, you should include additional context
-outside of the calendar (or via the default slot) as to the dates being highlighted (such as in an
-`aria-live` region), specifically for screen reader users.
+При использовании классов для передачи определенного значения дате вы должны включить дополнительный контекст вне календаря (или через слот по умолчанию) в отношении выделенных дат (например, в области `aria-live`), особенно для программы чтения с экрана пользователей.
 
-BootstrapVue may, in the future, add in a feature to add in screen-reader friendly text note on the
-highlighted date via this function.
+В будущем BootstrapVue может добавить функцию добавления текстовой заметки, удобной для чтения с экрана, для выделенной даты с помощью этой функции.
 
-## Events
+## События
 
-### `input` event
+### Событие `input`
 
-The `'input'` event is emitted when updating the `v-model`. The event has a single argument which is
-the selected date. By default the value is a string in the format of `YYYY-MM-DD` (or an empty
-string if no date is selected). If the prop `value-as-date` is set, then the first argument will
-instead be a `Date` object (or `null` if no date selected).
+Событие `'input'` генерируется при обновлении `v-model`. У события есть единственный аргумент - выбранная дата. По умолчанию значение представляет собой строку в формате `YYYY-MM-DD` (или пустую строку, если дата не выбрана). Если свойство `value-as-date` установлено, то первым аргументом вместо этого будет объект `Date` (или `null`, если дата не выбрана).
 
-If the `disabled` or `readonly` props are set, the `'input'` event will **not** be emitted.
+Если заданы свойства `disabled` или `readonly`, событие `'input'` **не** генерируется.
 
-### `selected` event
+### Событие `selected`
 
-The `'selected'` event is emitted when the user clicks a non-disabled date. The event passes two
-arguments:
+Событие `'selected'` генерируется, когда пользователь щелкает дату без отключения. Событие передает два аргумента:
 
-- `ymd` The selected date as a `YYYY-MM-DD` string
-- `date` The selected date as a `Date` object
+- `ymd` Выбранная дата как строка `YYYY-MM-DD`
+- `date` Выбранная дата как объект `Date`
 
-If the user clicks the already selected date, the `selected` event will still be emitted, contrary
-to the `'input'` event which will _not_ re-emit the already selected date.
+Если пользователь щелкает по уже выбранной дате, событие `selected` все равно будет генерироваться, в отличие от события `'input'`, которое _не_ повторно генерирует уже выбранную дату.
 
-If the `disabled` or `readonly` props are set, the `'selected'` event will **not** be emitted.
+Если заданы свойства `disabled` или `readonly`, событие `'selected'` **не** генерируется.
 
-### `context` event
+### Событие `context`
 
-The `'context'` event is emitted whenever a user selects a date, or the user navigates the calendar
-(either via cursor keys, page up/down keys, home or end keys, or uses the calendar navigation
-buttons). It will also be emitted when the component is created (just before insertion into the
-DOM), or when the resolved locale has changed.
+Событие `'context'` генерируется всякий раз, когда пользователь выбирает дату или пользователь перемещается по календарю (либо с помощью клавиш курсора, клавиш вверх/вниз, клавиш домой или завершения, либо с помощью кнопок навигации календаря). Он также будет генерироваться при создании компонента (непосредственно перед вставкой в DOM) или при изменении разрешенного языкового стандарта.
 
-When the `readonly` prop is set, the event will still be emitted when the user navigates the
-calendar. It will not be emitted when the `disabled` prop is set (except for the initial emit when
-the calendar is created).
+Когда установлено свойство `readonly`, событие все равно будет генерироваться, когда пользователь будет перемещаться по календарю. Он не будет генерироваться, если установлено свойство `disabled` prop is set (за исключением начального испускания при создании календаря).
 
-The `'context'` event is passed a context object as it's only argument, with the following
-properties:
+Событию `'context'` передается объект контекста как единственный аргумент со следующими свойствами:
 
-| Property            | Description                                                                                                                                                                                                                                                |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `selectedYMD`       | The selected date value (`YYYY-MM-DD` format) or an empty string if no date selected                                                                                                                                                                       |
-| `selectedDate`      | The selected date value as a `Date` object or `null` if no date selected                                                                                                                                                                                   |
-| `selectedFormatted` | The selected date formatted in the current locale. If no date is selected, this will be the value of the `label-no-date-selected` prop                                                                                                                     |
-| `activeYMD`         | The current date of the calendar day button that can receive focus as a string (`YYYY-MM-DD` format)                                                                                                                                                       |
-| `activeDate`        | The current date of the calendar day button that can receive focus as a `Date` object                                                                                                                                                                      |
-| `activeFormatted`   | The active date formatted in the current locale                                                                                                                                                                                                            |
-| `disabled`          | Will be `true` if active date is disabled, `false` otherwise                                                                                                                                                                                               |
-| `locale`            | The resolved locale (may not be the same as the requested locale)                                                                                                                                                                                          |
-| `calendarLocale`    | The resolved locale used by the calendar, optionally including the calendar type (i.e. 'gregory'). Usually this will be the same as `locale`, but may include the calendar type used, such as `fa-u-ca-gregory` when selecting the Persian locale (`'fa'`) |
-| `isRTL`             | Will be `true` if the calendar is in a RTL (Right-To-Left) orientation. It will be `false` if LTR (Left-To-Right)                                                                                                                                          |
+| Свойство            | Описание                                                                                                                                                                                                                                                                   |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `selectedYMD`       | Выбранное значение даты (формат `YYYY-MM-DD`) или пустая строка, если дата не выбрана                                                                                                                                                                                      |
+| `selectedDate`      | Выбранное значение даты как объект `Date` или `null`, если дата не выбрана                                                                                                                                                                                                 |
+| `selectedFormatted` | Выбранная дата отформатирована в текущем языковом стандарте. Если дата не выбрана, это будет значение свойства `label-no-date-selected`                                                                                                                                    |
+| `activeYMD`         | Текущая дата кнопки календарного дня, которая может получать фокус в виде строки (формат `YYYY-MM-DD`)                                                                                                                                                                     |
+| `activeDate`        | Текущая дата кнопки календарного дня, которая может получать фокус как объект `Date`                                                                                                                                                                                       |
+| `activeFormatted`   | Активная дата, отформатированная в текущем языковом стандарте.                                                                                                                                                                                                             |
+| `disabled`          | Будет `true`, если активная дата отключена, иначе `false` otherwise                                                                                                                                                                                                        |
+| `locale`            | Разрешенный языковой стандарт (может отличаться от запрошенного языкового стандарта)                                                                                                                                                                                       |
+| `calendarLocale`    | Разрешенный языковой стандарт, используемый календарем, необязательно включая тип календаря (например, 'gregory'). Обычно это то же самое, что и `locale`, но может включать используемый тип календаря, например, `fa-u-ca-gregory` при выборе персидского языка (`'fa'`) |
+| `isRTL`             | Будет иметь значение `true`, если календарь имеет ориентацию RTL (справа налево). Будет `false`, если LTR (слева направо)                                                                                                                                                  |
 
-If formatting dates manually via `Intl.DateTimeFormat`, use the `calendarLocale` property value
-instead of the `locale` property value to ensure you are using the same calendaring convention that
-`<b-calendar>` uses. This is especially true for the IE 11 browser which does not fully implement
-all features of `Intl.DateTimeFormat`. Refer to the
-[Internationalization section](#internationalization) section below for additional details.
+При форматировании дат вручную с помощью `Intl.DateTimeFormat` используйте значение свойства `calendarLocale` вместо значения свойства `locale`, чтобы убедиться, что вы используете то же соглашение календаря, которое использует `<b-calendar>`. Это особенно верно для браузера IE 11, который не полностью реализует все функции `Intl.DateTimeFormat`. Дополнительные сведения смотрите в разделе [Интернационализации](#internationalization) ниже.
 
-## Internationalization
+## Интернационализация
 
-Internationalization of the calendar is provided via
-[`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat),
-except for labels applied to elements of the calendar control (aria-labels, selected status, and
-help text). You must provide your own translations for these labels. The available locales will be
-browser dependant (not all browsers support all locales)
+Интернационализация календаря обеспечивается через [`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat), за исключением меток, применяемых к элементам управление календарем (aria-labels, выбранный статус и текст справки). Вы должны предоставить свои собственные переводы для этих этикеток. Доступные языковые стандарты будут зависеть от браузера (не все браузеры поддерживают все языковые стандарты)
 
-By default `<b-calendar>` will use the browser's default locale, but you can specify the locale (or
-locales) to use via the `locale` prop. The prop accepts either a single locale string, or an array
-of locale strings (listed in order of preferred locale).
+По умолчанию `<b-calendar>` будет использовать языковой стандарт браузера по умолчанию, но вы можете указать языковой стандарт (или языковые стандарты) для использования через свойство `locale`. Свойство принимает либо одну строку языкового стандарта, либо массив строк языкового стандарта (перечисленных в порядке предпочтительного языкового стандарта).
 
-The calendar starts the week on Sunday. This can be changed by setting the `start-weekday` prop to a
-number in the range of `0` to `6` where `0` represents Sunday, `1` for Monday, up to `6` for
-Saturday.
+В календаре неделя начинается в воскресенье. Это можно изменить, установив для свойства `start-weekday` значение от `0` до `6`, где `0` означает воскресенье, `1` - понедельник, а `6` субботу.
 
-The emitted `context` event will include which locale the calendar has resolved to (which may not be
-the same locale as requested, depending on the supported locales of `Intl`).
+Вызванное событие `context` будет включать, какой языковой стандарт разрешен для календаря (который может отличаться от запрашиваемого языкового стандарта, в зависимости от поддерживаемых языковых стандартов `Intl`).
 
 ```html
 <template>
   <b-row>
     <b-col cols="12" class="mb-3">
-      <label for="example-locales">Locale:</label>
+      <label for="example-locales">Локаль:</label>
       <b-form-select id="example-locales" v-model="locale" :options="locales"></b-form-select>
-      <label for="example-weekdays" class="mt-2">Start weekday:</label>
+      <label for="example-weekdays" class="mt-2">Начало рабочего дня:</label>
       <b-form-select id="example-weekdays" v-model="weekday" :options="weekdays"></b-form-select>
       <b-form-checkbox v-model="showDecadeNav" switch inline class="my-2">
-        Show decade navigation buttons
+        Показать кнопки навигации по декаде
       </b-form-checkbox>
       <b-form-checkbox v-model="hideHeader" switch inline class="my-2">
-        Hide the date header
+        Скрыть заголовок даты
       </b-form-checkbox>
     </b-col>
     <b-col md="auto">
@@ -580,8 +501,8 @@ the same locale as requested, depending on the supported locales of `Intl`).
       ></b-calendar>
     </b-col>
     <b-col>
-      <p>Value: <b>'{{ value }}'</b></p>
-      <p class="mb-0">Context:</p>
+      <p>Значение: <b>'{{ value }}'</b></p>
+      <p class="mb-0">Контекст:</p>
       <pre class="small">{{ context }}</pre>
    </b-col>
   </b-row>
@@ -595,8 +516,9 @@ the same locale as requested, depending on the supported locales of `Intl`).
         context: null,
         showDecadeNav: false,
         hideHeader: false,
-        locale: 'en-US',
+        locale: 'ru',
         locales: [
+          { value: 'ru', text: 'Русский (ru)' },
           { value: 'en-US', text: 'English US (en-US)' },
           { value: 'de', text: 'German (de)' },
           { value: 'ar-EG', text: 'Arabic Egyptian (ar-EG)' },
@@ -604,11 +526,26 @@ the same locale as requested, depending on the supported locales of `Intl`).
         ],
         weekday: 0,
         weekdays: [
-          { value: 0, text: 'Sunday' },
-          { value: 1, text: 'Monday' },
-          { value: 6, text: 'Saturday' }
+          { value: 0, text: 'Воскресенье' },
+          { value: 1, text: 'Понедельник' },
+          { value: 6, text: 'Суббота' }
         ],
         labels: {
+          'ru': {
+            labelPrevDecade: 'Предыдущее десятилетие',
+            labelPrevYear: 'Предыдущий год',
+            labelPrevMonth: 'Предыдущий месяц',
+            labelCurrentMonth: 'Текущий месяц',
+            labelNextMonth: 'Следующий месяц',
+            labelNextYear: 'В следующем году',
+            labelNextDecade: 'Следующее десятилетие',
+            labelToday: 'Сегодня',
+            labelSelected: 'Выбранная дата',
+            labelNoDateSelected: 'Дата не выбрана',
+            labelCalendar: 'Календарь',
+            labelNav: 'Навигация по календарю',
+            labelHelp: 'Используйте клавиши со стрелками для навигации по календарю'
+          },
           de: {
             labelPrevDecade: 'Vorheriges Jahrzehnt',
             labelPrevYear: 'Vorheriges Jahr',
@@ -670,66 +607,48 @@ the same locale as requested, depending on the supported locales of `Intl`).
 <!-- b-calendar-i18n.vue -->
 ```
 
-Currently `<b-calendar>` only supports the Gregorian (`'gregory'`) calendar.
+В настоящее время `<b-calendar>` поддерживает только Григорианский (`'gregory'`) календарь.
 
-By default, `<b-calendar>` automatically detects RTL vs LTR via the resolved locale. You can force
-the calendar to render right-to-left by setting the `direction` prop to the string `rtl`, or set the
-`direction` prop to `'ltr'` to always render left-to-right.
+По умолчанию `<b-calendar>` автоматически определяет RTL и LTR через разрешенную локаль. Вы можете заставить календарь отображаться справа налево, установив свойство `direction` в строку `rtl`, или установив свойство `direction` равной `'ltr'`, чтобы всегда отображать слева направо.
 
-You can listen to the `context` event to determine the locale and directionality that the calendar
-has resolved to.
+Вы можете прослушать событие `context`, чтобы определить локаль и направленность, на которые настроен календарь.
 
-For server side rendering (SSR) when using Node.js, ensure that the Node.js runtime you are using
-supports `Intl` and the locales you will be using. Refer to the
-[Node `Intl` support documentation](https://nodejs.org/api/intl.html) for details.
+Для рендеринга на стороне сервера (SSR) при использовании Node.js убедитесь, что среда выполнения Node.js, которую вы используете, поддерживает `Intl` и локали, которые вы будете использовать. За подробностями обращайтесь к [документации поддержки Node `Intl`](https://nodejs.org/api/intl.html).
 
-## Accessibility
+## Доступность
 
-`<b-calendar>` provides many accessibility features, such as `aria-live` regions, roles, aria
-labeling, shortcut keys and full keyboard navigation to work with most screen readers.
+`<b-calendar>` предоставляет множество специальных возможностей, таких как `aria-live` области, роли, метка арий, сочетания клавиш и полная навигация с клавиатуры для работы с большинством программ чтения с экрана.
 
-Keyboard navigation:
+Клавиатурная навигация:
 
-- <kbd>ArrowLeft</kbd> moves to the previous day (or next day in RTL mode)
-- <kbd>ArrowRight</kbd> moves to the next day (or previous day in RTL mode)
-- <kbd>ArrowUp</kbd> moves to the same day in the previous week
-- <kbd>ArrowDown</kbd> moves to the same day in the next week
-- <kbd>PageUp</kbd> moves to the same day in the previous month
-- <kbd>PageDown</kbd> moves to the same day in the next month
-- <kbd>Alt</kbd>+<kbd>PageUp</kbd> moves to the same day and month in the previous year
-- <kbd>Alt</kbd>+<kbd>PageDown</kbd> moves to the same day and month in the next year
-- <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PageUp</kbd> moves to the same day and month in the previous
-  decade
-- <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PageDown</kbd> moves to the same day and month in the next
-  decade
-- <kbd>Home</kbd> moves to today's date
-- <kbd>End</kbd> moves to the current selected date, or today if no selected date
-- <kbd>Enter</kbd> or <kbd>Space</kbd> selects the currently highlighted (focused) day
+- <kbd>ArrowLeft</kbd> перемещает на предыдущий день (или на следующий день в режиме RTL)
+- <kbd>ArrowRight</kbd> перемещает на следующий день (или предыдущий день в режиме RTL)
+- <kbd>ArrowUp</kbd> перемещается в тот же день на предыдущей неделе
+- <kbd>ArrowDown</kbd> перемещается в тот же день на следующей неделе
+- <kbd>PageUp</kbd> перемещается на тот же день предыдущего месяца
+- <kbd>PageDown</kbd> перемещается в тот же день следующего месяца
+- <kbd>Alt</kbd>+<kbd>PageUp</kbd> перемещается в тот же день и месяц в предыдущем году
+- <kbd>Alt</kbd>+<kbd>PageDown</kbd> перемещает в тот же день и месяц следующего года
+- <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PageUp</kbd> перемещает в тот же день и месяц в предыдущей декаде
+- <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>PageDown</kbd> перемещает к тому же дню и месяцу в следующем десятилетии
+- <kbd>Home</kbd> перемещается на сегодняшнюю дату
+- <kbd>End</kbd> перемещает к текущей выбранной дате или сегодня, если не выбрана дата
+- <kbd>Enter</kbd> или <kbd>Space</kbd> выбирает текущий выделенный (сфокусированный) день
 
-Several of the `label-*` props are not visible on screen, but are used to label various elements
-within the calendar for screen reader users. e.g. the `label-today` prop is added to the cell that
-contains todays date: `'January 28, 2020 (Today)'`, while the `label-selected` prop is added to the
-cell that contains the selected date `'January 28, 2020 (Selected date)'` as well as added to the
-selected date header as `sr-only` text.
+Некоторые свойства `label-*` не видны на экране, но используются для обозначения различных элементов в календаре для пользователей программ чтения с экрана, например, свойство `label-today` добавляется в ячейку, которая содержит сегодняшнюю дату: `'January 28, 2020 (Сегодня)'`, а свойство `label-selected` добавляется в ячейку, содержащую выбранную дату `'January 28, 2020 (Выбранная дата)'`, а также добавлен в заголовок выбранной даты в виде текста `sr-only`.
 
-When internationalizing the datepicker, it is important to also update the `label-*` props with
-appropriate translated strings, so that international screen reader users will hear the correct
-prompts and descriptions.
+При интернационализации datepicker важно также обновить свойства `label-*`, соответствующими переведенными строками, чтобы международные пользователи программ чтения с экрана слышали правильные подсказки и описания.
 
-The features and styling of `<b-calendar>` are intentionally kept minimalistic in order to provide
-the best possible accessibility to _all_ users.
+Функции и стиль `<b-calendar>` намеренно сохранены в минималистичном стиле, чтобы обеспечить максимальную доступность для _всех_ пользователей.
 
-## Implementation notes
+## Замечания по реализации
 
-`<b-calendar>` uses Bootstrap's border and flex utility classes, along with button (`btn-*`) classes
-and the `form-control` class. BootstrapVue's custom SCSS/CSS is also required for proper styling.
+`<b-calendar>` использует классы-утилиты Bootstrap `border` и `flex`, а также классы кнопок (`btn-*`) и `form-control`. Пользовательский SCSS/CSS BootstrapVue также необходим для правильного стиля.
 
-Accessibility-wise, we chose _not_ to use the ARIA role `grid` for the calendar to minimize
-verbosity and to provide consistency across various screen readers (NVDA, when encountering role
-`grid`, reads the focused cell as being "selected" which can be misleading to the user).
+С точки зрения доступности мы решили _не_ использовать `grid` ролей ARIA для календаря, чтобы свести к минимуму многословие и обеспечить согласованность между различными программами чтения с экрана (NVDA при обнаружении роли `grid` считывает выделенную ячейку как "выбранную", что вводит пользователя в заблуждение).
 
-## See also
+## Смотрите также
 
-- [`<b-form-datepicker>` Date picker custom form input](/docs/components/form-datepicker)
-- [`<b-form-timepicker>` Time picker custom form input](/docs/components/form-timepicker)
-- [`<b-time>` Time date selection widget](/docs/components/calendar)
+- [`<b-form-datepicker>` Ввод настраиваемой формы для выбора даты](/docs/components/form-datepicker)
+- [`<b-form-timepicker>` Ввод настраиваемой формы для выбора времени](/docs/components/form-timepicker)
+- [`<b-time>` Виджет выбора даты и времени](/docs/components/calendar)

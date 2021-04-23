@@ -5,7 +5,7 @@
     "title": "Calendar",
     "slug": "calendar",
     "version": "2.5.0",
-    "description": "BootstrapVue custom calendar widget for selecting dates and controlling other components, fully WAI-ARIA accessible (a11y) and supports internationalization (i18n).",
+    "description": "Пользовательский виджет календаря BootstrapVue для выбора дат и управления другими компонентами, полностью доступен WAI-ARIA (a11y) и поддерживает интернационализацию (i18n).",
     "components": [
       {
         "component": "BCalendar",
@@ -13,177 +13,177 @@
         "props": [
           {
             "prop": "block",
-            "description": "Makes the calendar full width"
+            "description": "Делает календарь на всю ширину"
           },
           {
             "prop": "dateDisabledFn",
-            "description": "Set to a function reference which returns `true` if the date is disabled, or `false` if the date should be enabled. See documentation for details"
+            "description": "Установите ссылку на функцию, которая возвращает `true`, если дата отключена, или `false`, если дата должна быть включена. Подробную информацию смотрите в документации."
           },
           {
             "prop": "dateFormatOptions",
             "version": "2.6.0",
-            "description": "Format object for displayed text string that is passed to `Intl.DateTimeFormat`"
+            "description": "Объект формата для отображаемой текстовой строки, передаваемой в `Intl.DateTimeFormat`"
           },
           {
             "prop": "dateInfoFn",
-            "description": "Set to a function reference which returns a class (string), or classes (array of strings) to apply to the date cell. See documentation for details"
+            "description": "Установите ссылку на функцию, которая возвращает класс (строку) или классы (массив строк) для применения к ячейке даты. Подробную информацию смотрите в документации"
           },
           {
             "prop": "direction",
-            "description": "Set to the string 'rtl' or 'ltr' to explicitly force the calendar to render in right-to-left or left-ro-right (respectively) mode. Defaults to the resolved locale's directionality"
+            "description": "Установите в строку 'rtl' или 'ltr', чтобы явно заставить календарь отображаться в режиме справа-налево или слева-направо (соответственно). По умолчанию - направленность разрешенного языкового стандарта"
           },
           {
             "prop": "disabled",
-            "description": "Places the calendar in a non-interactive disabled state"
+            "description": "Переводит календарь в неинтерактивное отключенное состояние"
           },
           {
             "prop": "headerTag",
             "version": "2.22.0",
-            "description": "Specify the HTML tag to render instead of the default tag for the footer"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для нижнего колонтитула"
           },
           {
             "prop": "hidden",
-            "description": "When `true`, renders a comment node instead of the calendar widget while keeping the Vue instance active. Mainly used when implementing a custom date picker"
+            "description": "При значении `true` отображает узел комментария вместо виджета календаря, сохраняя при этом активным экземпляр Vue. В основном используется при реализации настраиваемого средства выбора даты"
           },
           {
             "prop": "hideHeader",
-            "description": "When `true`, visually hides the selected date header"
+            "description": "При значении `true` визуально скрывает выбранный заголовок даты"
           },
           {
             "prop": "initialDate",
             "version": "2.7.0",
-            "description": "When a `value` is not specified, sets the initial calendar month date that will be presented to the user. Accepts a value in `YYYY-MM-DD` format or a `Date` object. Defaults to the current date (or min or max if the current date is out of range)"
+            "description": "Если значение `value` не указано, устанавливает начальную дату календарного месяца, которая будет представлена пользователю. Принимает значение в формате `YYYY-MM-DD` или объект `Date`. По умолчанию используется текущая дата (или минимальная или максимальная, если текущая дата выходит за пределы допустимого диапазона)"
           },
           {
             "prop": "labelCalendar",
-            "description": "Value of the `aria-label` and `role-description` attributes applied to the calendar grid"
+            "description": "Значение атрибутов `aria-label` и `role-description`, примененное к календарной сетке"
           },
           {
             "prop": "labelCurrentMonth",
-            "description": "Value of the `aria-label` and `title` attributes on the `Current Month` navigation button"
+            "description": "Значение атрибутов `aria-label` и `title` на кнопке навигации `Current Month`"
           },
           {
             "prop": "labelHelp",
-            "description": "Help text that appears at the bottom of the calendar grid"
+            "description": "Текст справки, который отображается в нижней части календарной сетки"
           },
           {
             "prop": "labelNav",
-            "description": "Value of the `aria-label` attribute on to the calendar navigation button wrapper"
+            "description": "Значение атрибута `aria-label` в оболочке кнопки навигации календаря"
           },
           {
             "prop": "labelNextDecade",
             "version": "2.11.0",
-            "description": "Value of the `aria-label` and `title` attributes on the optional `Next Decade` navigation button"
+            "description": "Значение атрибутов `aria-label` и `title` на дополнительной кнопке навигации `Next Decade`"
           },
           {
             "prop": "labelNextMonth",
-            "description": "Value of the `aria-label` and `title` attributes on the `Next Month` navigation button"
+            "description": "Значение атрибутов `aria-label` и `title` на кнопке навигации `Next Month`"
           },
           {
             "prop": "labelNextYear",
-            "description": "Value of the `aria-label` and `title` attributes on the `Next Year` navigation button"
+            "description": "Значение атрибутов `aria-label` и `title` на кнопке навигации `Next Year`"
           },
           {
             "prop": "labelNoDateSelected",
-            "description": "Label to use when no date is currently selected"
+            "description": "Метка для использования, если в данный момент дата не выбрана"
           },
           {
             "prop": "labelPrevDecade",
             "version": "2.11.0",
-            "description": "Value of the `aria-label` and `title` attributes on the optional `Previous Decade` navigation button"
+            "description": "Значение атрибутов `aria-label` и `title` на дополнительной кнопке навигации `Previous Decade`"
           },
           {
             "prop": "labelPrevMonth",
-            "description": "Value of the `aria-label` and `title` attributes on the `Previous Month` navigation button"
+            "description": "Значение атрибутов `aria-label` и `title` на кнопке навигации `Previous Month`"
           },
           {
             "prop": "labelPrevYear",
-            "description": "Value of the `aria-label` and `title` attributes on the `Previous Year` navigation button"
+            "description": "Значение атрибутов `aria-label` и `title` на кнопке навигации `Previous Year`"
           },
           {
             "prop": "labelSelected",
-            "description": "Value of the `aria-label` attribute set on the calendar grid date button that is selected"
+            "description": "Значение атрибута `aria-label` установленное на выбранной кнопке даты в сетке календаря"
           },
           {
             "prop": "labelToday",
-            "description": "Value of the `aria-label` attribute for the calendar grid date button to signify that the date is today's date"
+            "description": "Значение атрибута `aria-label` для кнопки даты в сетке календаря, указывающее, что дата является сегодняшней датой"
           },
           {
             "prop": "locale",
-            "description": "Locale (or locales) for the calendar to use. When passing an array of locales, the order of the locales is from most preferred to least preferred"
+            "description": "Языковой стандарт (или языковые стандарты) для использования календаря. При передаче массива локалей порядок локалей от наиболее предпочтительного до наименее предпочтительного"
           },
           {
             "prop": "max",
-            "description": "The maximum date the calendar will show"
+            "description": "Максимальная дата, отображаемая в календаре"
           },
           {
             "prop": "min",
-            "description": "The minimum date the calendar will show"
+            "description": "Минимальная дата, отображаемая в календаре"
           },
           {
             "prop": "navButtonVariant",
             "version": "2.17.0",
-            "description": "Theme color variant to use for the navigation buttons"
+            "description": "Вариант цвета темы для кнопок навигации"
           },
           {
             "prop": "noHighlightToday",
-            "description": "Disabled the highlighting of todays date in the calendar"
+            "description": "Отключено выделение сегодняшней даты в календаре"
           },
           {
             "prop": "noKeyNav",
-            "description": "Disable keyboard navigation of the calendar components"
+            "description": "Отключить навигацию по компонентам календаря с помощью клавиатуры"
           },
           {
             "prop": "readonly",
-            "description": "Places the calendar in an interactive readonly state. Disables updating the v-model, while still allowing date navigation"
+            "description": "Переводит календарь в интерактивное состояние только для чтения. Отключено обновление v-model, но по-прежнему разрешена навигация по дате"
           },
           {
             "prop": "roleDescription",
-            "description": "Sets a value for the `role-description` attribute on the component"
+            "description": "Устанавливает значение атрибута `role-description` в компоненте"
           },
           {
             "prop": "selectedVariant",
-            "description": "Theme color variant to use for the selected date button"
+            "description": "Вариант цвета темы для выбранной кнопки даты"
           },
           {
             "prop": "showDecadeNav",
             "version": "2.11.0",
-            "description": "When `true`, shows the +/- decade navigation buttons"
+            "description": "При значении `true`, отображаются кнопки навигации декады +/-"
           },
           {
             "prop": "startWeekday",
-            "description": "Day of week to start the calendar. `0` for Sunday, `1` for Monday, `6` for Saturday, etc"
+            "description": "День недели для начала календаря. `0` для воскресенья, `1` для понедельника, `6` для субботы и т. д."
           },
           {
             "prop": "todayVariant",
-            "description": "Theme color variant to use for highlighting todays date button. Defaults to the `selectedVariant` prop"
+            "description": "Вариант цвета темы для выделения кнопки сегодняшней даты. По умолчанию используется свойство `selectedVariant`"
           },
           {
             "prop": "value",
-            "description": "Initially selected date value. Accepts either a `YYYY-MM-DD` string or a `Date` object"
+            "description": "Первоначально выбранное значение даты. Принимает либо строку `YYYY-MM-DD`, либо объект `Date`"
           },
           {
             "prop": "valueAsDate",
-            "description": "Returns a `Date` object for the v-model instead of a `YYYY-MM-DD` string"
+            "description": "Возвращает объект `Date` для v-model вместо строки `YYYY-MM-DD`"
           },
           {
             "prop": "weekdayHeaderFormat",
             "version": "2.12.0",
-            "description": "Format to use for the calendar weekday headings. Possible values are `long`, `short` (default), or `narrow`"
+            "description": "Формат для заголовков календарных дней недели. Возможные значения: `long`, `short` (по умолчанию) или `narrow`"
           },
           {
             "prop": "width",
-            "description": "The width of the calendar. Has no effect if prop `block` is set"
+            "description": "Ширина календаря. Не действует, если установлено свойство `block`"
           }
         ],
         "events": [
           {
             "event": "context",
-            "description": "Emitted when when the user changes the active date via date navigation buttons or cursor control",
+            "description": "Выдается, когда пользователь изменяет активную дату с помощью кнопок навигации по дате или управления курсором",
             "args": [
               {
                 "arg": "context",
-                "description": "The context object. See documentaion for details",
+                "description": "Объект контекста. Подробную информацию смотрите в документации.",
                 "type": [
                   "Object"
                 ]
@@ -192,11 +192,11 @@
           },
           {
             "event": "input",
-            "description": "Emitted when updating the v-model",
+            "description": "Выдается при обновлении v-model",
             "args": [
               {
                 "arg": "date",
-                "description": "Either a string in the format of `YYYY-MM-DD` or a `Date` object (if `value-as-date` prop is `true`)",
+                "description": "Либо строка в формате `YYYY-MM-DD`, либо объект `Date` (если свойство `value-as-date` имеет значение `true`)",
                 "type": [
                   "String",
                   "Date"
@@ -206,16 +206,16 @@
           },
           {
             "event": "selected",
-            "description": "Emitted when user has selected (clicked) a date. Note this event will also be emitted if the user clicks on the currently selected date",
+            "description": "Выдается, когда пользователь выбрал (кликнул) дату. Обратите внимание, что это событие также будет сгенерировано, если пользователь кликнет текущую выбранную дату",
             "args": [
               {
                 "arg": "ymd",
-                "description": "The selected date as a string in the format of `YYYY-MM-DD`",
+                "description": "Выбранная дата в виде строки в формате `YYYY-MM-DD`",
                 "type": "String"
               },
               {
                 "arg": "date",
-                "description": "The selected date as a `Date` object",
+                "description": "Выбранная дата как объект `Date`",
                 "type": "Date"
               }
             ]
@@ -224,89 +224,89 @@
         "slots": [
           {
             "name": "default",
-            "description": "Used to place custom controls at the bottom of the calendar component"
+            "description": "Используется для размещения настраиваемых элементов управления в нижней части компонента календаря"
           },
           {
             "name": "nav-next-decade",
             "version": "2.12.0",
-            "description": "Used to place custom content in the next decade navigation button",
+            "description": "Используется для размещения пользовательского контента в кнопке навигации следующего десятилетия",
             "scope": [
               {
                 "prop": "isRTL",
                 "type": "Boolean",
-                "description": "Will be `true` if the date navigation bar is rendered right to left"
+                "description": "Будет иметь значение `true`, если панель навигации по дате отображается справа налево"
               }
             ]
           },
           {
             "name": "nav-next-month",
             "version": "2.12.0",
-            "description": "Used to place custom content in the next month navigation button",
+            "description": "Используется для размещения настраиваемого содержимого в кнопке навигации следующего месяца",
             "scope": [
               {
                 "prop": "isRTL",
                 "type": "Boolean",
-                "description": "Will be `true` if the date navigation bar is rendered right to left"
+                "description": "Будет иметь значение `true`, если панель навигации по дате отображается справа налево"
               }
             ]
           },
           {
             "name": "nav-next-year",
             "version": "2.12.0",
-            "description": "Used to place custom content in the next year navigation button",
+            "description": "Используется для размещения настраиваемого содержимого в кнопке навигации следующего года",
             "scope": [
               {
                 "prop": "isRTL",
                 "type": "Boolean",
-                "description": "Will be `true` if the date navigation bar is rendered right to left"
+                "description": "Будет иметь значение `true`, если панель навигации по дате отображается справа налево"
               }
             ]
           },
           {
             "name": "nav-prev-decade",
             "version": "2.12.0",
-            "description": "Used to place custom content in the previous decade navigation button",
+            "description": "Используется для размещения настраиваемого содержимого на кнопке навигации предыдущего десятилетия",
             "scope": [
               {
                 "prop": "isRTL",
                 "type": "Boolean",
-                "description": "Will be `true` if the nav bar is rendered right to left"
+                "description": "Будет иметь значение `true`, если панель навигации отображается справа налево"
               }
             ]
           },
           {
             "name": "nav-prev-month",
             "version": "2.12.0",
-            "description": "Used to place custom content in the previous month navigation button",
+            "description": "Используется для размещения настраиваемого содержимого на кнопке навигации за предыдущий месяц",
             "scope": [
               {
                 "prop": "isRTL",
                 "type": "Boolean",
-                "description": "Will be `true` if the date navigation bar is rendered right to left"
+                "description": "Будет иметь значение `true`, если панель навигации по дате отображается справа налево"
               }
             ]
           },
           {
             "name": "nav-prev-year",
             "version": "2.12.0",
-            "description": "Used to place custom content in the previous year navigation button",
+            "description": "Используется для размещения настраиваемого содержимого на кнопке навигации за предыдущий год",
             "scope": [
               {
                 "prop": "isRTL",
                 "type": "Boolean",
-                "description": "Will be `true` if the date navigation bar is rendered right to left"
+                "description": "Будет иметь значение `true`, если панель навигации по дате отображается справа налево"
               }
             ]
           },
           {
             "name": "nav-this-month",
             "version": "2.12.0",
-            "description": "Used to place custom content in the this month/day navigation button",
+            "description": "Используется для размещения настраиваемого содержимого в кнопке навигации по этому месяцу/дню",
             "scope": [
               {
                 "prop": "isRTL",
                 "type": "Boolean",
-                "description": "Will be `true` if the date navigation bar is rendered right to left"
+                "description": "Будет иметь значение `true`, если панель навигации по дате отображается справа налево"
               }
             ]
           }
