@@ -3,76 +3,76 @@
   "version": "1.0.0",
   "meta": {
     "title": "Card",
-    "description": "A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.",
+    "description": "Карточка - это гибкий и расширяемый контейнер содержимого. Он включает в себя варианты верхних и нижних колонтитулов, широкий спектр контента, контекстные цвета фона и мощные параметры отображения.",
     "components": [
       {
         "component": "BCard",
         "props": [
           {
             "prop": "overlay",
-            "description": "When set, will overlay the card body on top of the image (if the card has an image)"
+            "description": "Если задано, будет наложено тело карточки поверх изображения (если на карте есть изображение)"
           },
           {
             "prop": "noBody",
-            "description": "Disable rendering of the default inner card-body element"
+            "description": "Отключить рендеринг внутреннего элемента тела карточки по умолчанию"
           },
           {
             "prop": "align",
-            "description": "Text alignment for the card's content: 'left', 'center' or 'right'"
+            "description": "Выравнивание текста для содержимого карточки: 'лево', 'центр' или 'право'"
           },
           {
             "prop": "imgSrc",
-            "description": "URL for the optional image"
+            "description": "URL-адрес необязательного изображения"
           },
           {
             "prop": "imgAlt",
-            "description": "Value to set the image attribute 'alt'"
+            "description": "Значение для установки атрибута изображения 'alt'"
           },
           {
             "prop": "imgWidth",
-            "description": "The value to set on the image's 'width' attribute"
+            "description": "Значение, устанавливаемое для атрибута изображения 'width'"
           },
           {
             "prop": "imgHeight",
-            "description": "The value to set on the image's 'height' attribute"
+            "description": "Значение, устанавливаемое для атрибута изображения 'height'"
           },
           {
             "prop": "imgTop",
-            "description": "Set if the image should appear at the top of the card"
+            "description": "Установите, должно ли изображение появляться в верхней части карточки"
           },
           {
             "prop": "imgBottom",
-            "description": "Set if the image should appear at the bottom of the card"
+            "description": "Установите, должно ли изображение отображаться в нижней части карточки"
           },
           {
             "prop": "imgStart",
-            "description": "Set if the image should appear at the start (left) of the card"
+            "description": "Установите, должно ли изображение появляться в начале (слева) карточки"
           },
           {
             "prop": "imgLeft",
-            "description": "Set if the image should appear at the start (left) of the card. Synonym for the 'left' prop"
+            "description": "Установите, должно ли изображение появляться в начале (слева) карточки. Синоним свойства 'left'"
           },
           {
             "prop": "imgEnd",
-            "description": "Set if the image should appear at the end (right) of the card"
+            "description": "Установите, должно ли изображение появляться в конце (справа) карточки"
           },
           {
             "prop": "imgRight",
-            "description": "Set if the image should appear at the end (right) of the card. Synonym for the 'right' prop"
+            "description": "Установите, должно ли изображение появляться в конце (справа) карточки. Синоним свойства 'right'"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the card"
+            "description": "Контент для размещения на карточке"
           },
           {
             "name": "footer",
-            "description": "For custom rendering of footer content"
+            "description": "Для настраиваемого рендеринга содержимого нижнего колонтитула"
           },
           {
             "name": "header",
-            "description": "For custom rendering of header content"
+            "description": "Для настраиваемого рендеринга содержимого заголовка"
           }
         ]
       },
@@ -81,7 +81,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the card header"
+            "description": "Контент для размещения в заголовке карточки"
           }
         ]
       },
@@ -90,7 +90,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the card footer"
+            "description": "Контент для размещения в нижнем колонтитуле карточки"
           }
         ]
       },
@@ -99,13 +99,13 @@
         "props": [
           {
             "prop": "overlay",
-            "description": "When set, will overlay the card body on top of the image (if the card has an image)"
+            "description": "Если задано, будет наложено тело карты поверх изображения (если на карточке есть изображение)"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the card body"
+            "description": "Контент для размещения в теле карточки"
           }
         ]
       },
@@ -114,7 +114,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the card title"
+            "description": "Контент для размещения в заголовке карточки"
           }
         ]
       },
@@ -123,7 +123,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the card sub-title"
+            "description": "Контент для размещения в подзаголовке карточки"
           }
         ]
       },
@@ -132,39 +132,39 @@
         "props": [
           {
             "prop": "width",
-            "description": "The value to set on the image's 'width' attribute"
+            "description": "Значение, устанавливаемое для атрибута изображения 'width'"
           },
           {
             "prop": "height",
-            "description": "The value to set on the image's 'height' attribute"
+            "description": "Значение, устанавливаемое для атрибута изображения 'height'"
           },
           {
             "prop": "top",
-            "description": "Set if the image will be placed at the top of the card"
+            "description": "Установите, будет ли изображение размещаться вверху карточки"
           },
           {
             "prop": "bottom",
-            "description": "Set if the image will be placed at the bottom of the card"
+            "description": "Установите, будет ли изображение размещаться внизу карточки"
           },
           {
             "prop": "start",
-            "description": "Set if the image will be placed at the start (left) of the card"
+            "description": "Установите, будет ли изображение размещаться в начале (слева) карточки"
           },
           {
             "prop": "left",
-            "description": "Set if the image will be placed at the start (left) of the card. Synonym for the 'left' prop"
+            "description": "Установите, будет ли изображение размещаться в начале (слева) карточки. Синоним для свойства 'left'"
           },
           {
             "prop": "end",
-            "description": "Set if the image will be placed at the end (right) of the card"
+            "description": "Установите, будет ли изображение размещаться в конце (справа) карточки"
           },
           {
             "prop": "right",
-            "description": "Set if the image will be placed at the end (right) of the card. Synonym for the 'right' prop"
+            "description": "Установите, будет ли изображение размещаться в конце (справа) карточки. Синоним для свойства 'right'"
           },
           {
             "prop": "subTitleTextVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the sub title text"
+            "description": "Применяет один из вариантов цвета темы Bootstrap к тексту подзаголовка"
           }
         ]
       },
@@ -173,59 +173,59 @@
         "props": [
           {
             "prop": "show",
-            "description": "If set to true, will force show the image specified via the 'src' prop"
+            "description": "Если установлено значение true, заставит показывать изображение, указанное через свойство 'src'"
           },
           {
             "prop": "offset",
-            "description": "Number of pixels away from the viewport edge before the lazy image is loaded"
+            "description": "Количество пикселей от края области просмотра до загрузки отложенного изображения"
           },
           {
             "prop": "blankSrc",
-            "description": "URL of placeholder image. If not set, an SVG placeholder placeholder will be used"
+            "description": "URL-адрес изображения-заполнителя. Если не установлен, будет использоваться заполнитель SVG"
           },
           {
             "prop": "blankColor",
-            "description": "CSS color of the blank SVG placeholder image. Has no effect if 'blank-src' is set"
+            "description": "Цвет CSS пустого изображения-заполнителя SVG. Не действует, если установлен 'blank-src'"
           },
           {
             "prop": "blankWidth",
-            "description": "Value of the 'width' attribute for the placeholder image"
+            "description": "Значение атрибута 'width' для изображения-заполнителя"
           },
           {
             "prop": "blankHeight",
-            "description": "Value of the 'height' attribute for the placeholder image"
+            "description": "Значение атрибута 'height' для изображения-заполнителя"
           },
           {
             "prop": "width",
-            "description": "The value to set on the image's 'width' attribute"
+            "description": "Значение, устанавливаемое для атрибута изображения 'width'"
           },
           {
             "prop": "height",
-            "description": "The value to set on the image's 'height' attribute"
+            "description": "Значение, устанавливаемое для атрибута изображения 'height'"
           },
           {
             "prop": "top",
-            "description": "Set if the image will be placed at the top of the card"
+            "description": "Установите, будет ли изображение размещаться вверху карточки"
           },
           {
             "prop": "bottom",
-            "description": "Set if the image will be placed at the bottom of the card"
+            "description": "Установите, будет ли изображение размещаться внизу карточки"
           },
           {
             "prop": "start",
-            "description": "Set if the image will be placed at the start (left) of the card"
+            "description": "Установите, будет ли изображение размещаться в начале (слева) карточки"
           },
           {
             "prop": "left",
-            "description": "Set if the image will be placed at the start (left) of the card. Synonym for the 'left' prop"
+            "description": "Установите, будет ли изображение размещаться в начале (слева) карточки. Синоним для свойства 'left'"
           },
           {
             "prop": "end",
-            "description": "Set if the image will be placed at the end (right) of the card"
+            "description": "Установите, будет ли изображение размещаться в конце (справа) карточки"
           },
           {
             "prop": "right",
-            "description": "Set if the image will be placed at the end (right) of the card. Synonym for the 'right' prop"
+            "description": "Установите, будет ли изображение размещаться в конце (справа) карточки. Синоним для свойства 'right'"
           }
         ]
       },
@@ -234,7 +234,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the card text"
+            "description": "Контент для размещения в тексте карточки"
           }
         ]
       },
@@ -243,17 +243,17 @@
         "props": [
           {
             "prop": "deck",
-            "description": "When set renders the card group with gutters between cards"
+            "description": "При установке отображает группу карточек с промежутками между карточками"
           },
           {
             "prop": "columns",
-            "description": "When set, renders the card group in a masonry-like columnar style"
+            "description": "Когда установлено, отображает группу карточек в столбчатом стиле каменной кладки"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content (cards) to place in the card group"
+            "description": "Контент (карточки) для размещения в группе карточек"
           }
         ]
       }

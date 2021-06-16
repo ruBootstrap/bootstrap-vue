@@ -1,60 +1,52 @@
-# Card
+# Карточка
 
-> A card is a flexible and extensible content container. It includes options for headers and
-> footers, a wide variety of content, contextual background colors, and powerful display options.
+> Карточка - это гибкий и расширяемый контейнер содержимого. Он включает в себя варианты верхних и нижних колонтитулов, широкий спектр контента, контекстные цвета фона и мощные параметры отображения.
 
-## Overview
+## Обзор
 
-Cards are built with as little markup and styles as possible, but still manage to deliver a ton of
-control and customization. Built with flexbox, they offer easy alignment and mix well with other
-components.
+Карточки построены с минимальным количеством разметки и стилей, насколько это возможно, но при этом обеспечивают тонну контроля и настройки. Созданные с помощью флексбокс, они легко выравниваются и хорошо сочетаются с другими компонентами.
 
-`<b-card>` has no fixed width to start, so they'll naturally fill the full width of its parent
-element. This is easily customized via styles or standard Bootstrap v4 sizing classes.
+`<b-card>` не имеет фиксированной ширины для начала, поэтому они естественным образом заполняют всю ширину своего родительского элемента. Это легко настроить с помощью стилей или стандартных классов размеров Bootstrap v4.
 
-Change the default `div` root tag to any other HTML element by specifying via the `tag` prop
+Измените корневой тег по умолчанию `div` на любой другой элемент HTML, указав через свойство `tag`.
 
 ```html
 <div>
   <b-card
-    title="Card Title"
+    title="Заголовок карточки"
     img-src="https://picsum.photos/600/300/?image=25"
-    img-alt="Image"
+    img-alt="Изображение"
     img-top
     tag="article"
     style="max-width: 20rem;"
     class="mb-2"
   >
     <b-card-text>
-      Some quick example text to build on the card title and make up the bulk of the card's content.
+      Небольшой пример текста, который будет построен на заголовке карты и составляет основную часть содержимого карты.
     </b-card-text>
 
-    <b-button href="#" variant="primary">Go somewhere</b-button>
+    <b-button href="#" variant="primary">Иди куда-нибудь</b-button>
   </b-card>
 </div>
 
 <!-- b-card.vue -->
 ```
 
-## Content types
+## Типы контента
 
-Cards support a wide variety of content, including images, text, list groups, links and more. The
-following are examples of what's supported inside a `<b-card>`
+Карточки поддерживают широкий спектр содержимого, включая изображения, текст, группы списков, ссылки и многое другое. Ниже приведены примеры того, что поддерживается внутри `<b-card>`
 
-### Card body
+### Тело карточки
 
-The building block of a `<b-card>` is the `<b-card-body>` section which provides a padded section
-within a card.
+Строительным блоком `<b-card>` является раздел `<b-card-body>`, который обеспечивает заполненный раздел внутри карты.
 
-By default the `<b-card>` content is automatically placed in a `<b-card-body>` section:
+По умолчанию содержимое `<b-card>` автоматически помещается в раздел `<b-card-body>`:
 
 ```html
 <div>
   <b-card class="text-center">
     <div class="bg-secondary text-light">
-      This is some content within the default <samp>&lt;b-card-body&gt;</samp> block of the
-      <samp>&lt;b-card&gt;</samp> component. Notice the padding between the card's border and this
-      gray <samp>&lt;div&gt;</samp>.
+      Это часть содержимого по умолчанию в блоке <samp>&lt;b-card-body&gt;</samp> компонента <samp>&lt;b-card&gt;</samp>. Обратите внимание на отступ между рамкой карточки и этим серым <samp>&lt;div&gt;</samp>.
     </div>
   </b-card>
 </div>
@@ -62,15 +54,13 @@ By default the `<b-card>` content is automatically placed in a `<b-card-body>` s
 <!-- b-card-body.vue -->
 ```
 
-Disable the automatic `<b-card-body>` section (and associated padding) by setting the prop `no-body`
-on the `<b-card>`.
+Отключите автоматический раздел `<b-card-body>` (и связанное с ним заполнение), установив свойство `no-body` в `<b-card>`.
 
 ```html
 <div>
   <b-card no-body class="text-center">
     <div class="bg-secondary text-light">
-      This is some content without the default <samp>&lt;b-card-body&gt;</samp> section. Notice the
-      lack of padding between the card's border and this gray <samp>&lt;div&gt;</samp>.
+      Это некоторый контент без раздела по умолчанию <samp>&lt;b-card-body&gt;</samp>. Обратите внимание на отсутствие отступов между рамкой карточки и этим серым <samp>&lt;div&gt;</samp>.
     </div>
   </b-card>
 </div>
@@ -78,81 +68,71 @@ on the `<b-card>`.
 <!-- b-card-body-no-body.vue -->
 ```
 
-Note that with `no-body` enabled, the content of the `title` and `sub-title` props will not be
-rendered.
+Обратите внимание, что с включенным параметром `no-body` содержимое реквизитов `title` и `sub-title` отображаться не будет.
 
-Use the `<b-card-body>` sub-component to place your own card body anywhere in a `<b-card>` component
-that has `no-body` set.
+Используйте подкомпонент `<b-card-body>`, чтобы разместить собственное тело карты в любом месте компонента `<b-card>`, для которого установлено значение `no-body`.
 
-#### Titles, text, and links
+#### Заголовки, текст и ссылки
 
-_Card titles_ are adding via the `title` prop, and _sub titles_ are added via the `sub-title` prop.
-The title is rendered using the sub-component `<b-card-title>` while the Sub Title is rendered using
-the sub-component `<b-card-sub-title>`.
+_Заголовки карточек_ добавляются через свойство `title`, а _подзаголовки_ добавляются через свойство `sub-title`.
+Заголовок отображается с помощью подкомпонента `<b-card-title>`, в то время как подзаголовок отображается с помощью подкомпонента `<b-card-sub-title>`.
 
-With sub-component `<b-card-text>`, paragraph text can be added to the card. The last
-`<b-card-text>` in the card body will have its bottom margin automatically removed (via CSS). Text
-within `<b-card-text>` can also be styled with the standard HTML tags.
+С помощью подкомпонента `<b-card-text>` текст абзаца может быть добавлен к карточке. Нижнее поле последнего `<b-card-text>` в теле карточки будет автоматически удалено (через CSS). Текст внутри `<b-card-text>` также можно стилизовать с помощью стандартных тегов HTML.
 
-Links can be added and placed next to each other by adding the `.card-link` class to a `<a>` tag (or
-`<b-link>` component).
+Ссылки могут быть добавлены и размещены рядом друг с другом путем добавления класса `.card-link` к тегу `<a>` (или компоненту `<b-link>`).
 
 ```html
 <div>
-  <b-card title="Card title" sub-title="Card subtitle">
+  <b-card title="Заголовок карточки" sub-title="Подзаголовок карточки">
     <b-card-text>
-      Some quick example text to build on the <em>card title</em> and make up the bulk of the card's
-      content.
+      Небольшой пример текста, который должен основываться на <em>заголовке карточки</em> и составлять основную часть содержимого карточки.
     </b-card-text>
 
-    <b-card-text>A second paragraph of text in the card.</b-card-text>
+    <b-card-text>Второй абзац текста на карточке.</b-card-text>
 
-    <a href="#" class="card-link">Card link</a>
-    <b-link href="#" class="card-link">Another link</b-link>
+    <a href="#" class="card-link">Ссылка карточки</a>
+    <b-link href="#" class="card-link">Другая ссылка</b-link>
   </b-card>
 </div>
 
 <!-- b-card-text.vue -->
 ```
 
-### Images
+### Изображения
 
-The `<b-card>` prop `img-src` places an image on the top of the card, and use the `img-alt` prop to
-specify a string to be placed in the image's `alt` attribute. The image specified by the `img-src`
-prop will be responsive and will adjust its width when the width of the card is changed.
+Свойство `img-src` компонента `<b-card>` помещает изображение в верхнюю часть карты и использует свойство `img-alt`, чтобы указать строку, которая будет помещена в атрибут изображения `alt`. Изображение, указанное опцией `img-src`, будет отзывчивым и будет регулировать свою ширину при изменении ширины карты.
 
-Alternatively you can manually place images inside `<b-card>` using the sub-component
-`<b-card-img>`. See the kitchen sink example below for usage.
+В качестве альтернативы вы можете вручную разместить изображения внутри `<b-card>` с помощью подкомпонента `<b-card-img>`. Смотрите пример использования ниже.
 
 ```html
 <div>
   <div>
-    <h4>Top and Bottom</h4>
+    <h4>Верх и низ</h4>
     <b-card-group deck>
-      <b-card img-src="https://placekitten.com/1000/300" img-alt="Card image" img-top>
+      <b-card img-src="https://placekitten.com/1000/300" img-alt="Изображение карточки" img-top>
         <b-card-text>
-          Some quick example text to build on the card and make up the bulk of the card's content.
+          Небольшой пример текста, который можно построить на карточке и составить основную часть содержимого карточки.
         </b-card-text>
       </b-card>
 
-      <b-card img-src="https://placekitten.com/1000/300" img-alt="Card image" img-bottom>
+      <b-card img-src="https://placekitten.com/1000/300" img-alt="Изображение карточки" img-bottom>
         <b-card-text>
-          Some quick example text to build on the card and make up the bulk of the card's content.
+          Небольшой пример текста, который можно построить на карточке и составить основную часть содержимого карточки.
         </b-card-text>
       </b-card>
     </b-card-group>
   </div>
   <div class="mt-4">
-    <h4>Left and Right (or Start and End)</h4>
-    <b-card img-src="https://placekitten.com/300/300" img-alt="Card image" img-left class="mb-3">
+    <h4>Лево и право (или начало и конец)</h4>
+    <b-card img-src="https://placekitten.com/300/300" img-alt="Изображение карточки" img-left class="mb-3">
       <b-card-text>
-        Some quick example text to build on the card and make up the bulk of the card's content.
+        Небольшой пример текста, который можно построить на карточке и составить основную часть содержимого карточки.
       </b-card-text>
     </b-card>
 
-    <b-card img-src="https://placekitten.com/300/300" img-alt="Card image" img-right>
+    <b-card img-src="https://placekitten.com/300/300" img-alt="Изображение карточки" img-right>
       <b-card-text>
-        Some quick example text to build on the card and make up the bulk of the card's content.
+        Небольшой пример текста, который можно построить на карточке и составить основную часть содержимого карточки.
       </b-card-text>
     </b-card>
   </div>
@@ -161,28 +141,24 @@ Alternatively you can manually place images inside `<b-card>` using the sub-comp
 <!-- b-card-img.vue -->
 ```
 
-**Note:** For left and right images, you may need to apply additional styles to classes
-`.card-img-left` and `.card-img-right`, as images will "stretch" in height if you have content that
-is taller than your image. Note headers and footers are not supported when images are left or right
-aligned. You may find the [Horizontal Card Layout](#horizontal-card-layout) example to be more
-flexible when creating a responsive horizontal card.
+**Примечание:** Для левого и правого изображений вам может потребоваться применить дополнительные стили к классам `.card-img-left` и `.card-img-right`, поскольку изображения будут "растягиваться" по высоте, если у вас есть контент, который выше вашего изображения. Верхние и нижние колонтитулы заметок не поддерживаются, если изображения выровнены по левому или правому краю. Вы можете найти пример [Горизонтальный макет карточки](#horizontal-card-layout) более гибким при создании адаптивной горизонтальной карты.
 
-#### Overlay image
+#### Наложение изображения
 
-Place the image in the background of the card by setting the boolean prop `overlay`:
+Поместите изображение на задний план карты, установив логическое свойство `overlay`:
 
 ```html
 <div>
   <b-card
     overlay
     img-src="https://picsum.photos/900/250/?image=3"
-    img-alt="Card Image"
+    img-alt="Изображение карточки"
     text-variant="white"
-    title="Image Overlay"
-    sub-title="Subtitle"
+    title="Наложение изображения"
+    sub-title="Подзаголовок"
   >
     <b-card-text>
-      Some quick example text to build on the card and make up the bulk of the card's content.
+      Небольшой пример текста, который можно построить на карточке и составить основную часть содержимого карточки.
     </b-card-text>
   </b-card>
 </div>
@@ -190,17 +166,14 @@ Place the image in the background of the card by setting the boolean prop `overl
 <!-- b-card-overlay-img-.vue -->
 ```
 
-#### Lazy loaded images
+#### Отложенная загрузка изображений
 
-Use the `<b-card-img-lazy>` sub-component to lazy load images as they scroll into view.
-`<b-card-img-lazy>` supports the same props as `<b-card-img>` as well as many of the props of the
-[`<b-img-lazy>`](/docs/components/image#lazy-loaded-images) component.
+Используйте подкомпонент `<b-card-img-lazy>` для отложенной загрузки изображений по мере их прокрутки в поле зрения. `<b-card-img-lazy>` поддерживает те же свойства, что и `<b-card-img>`, а также многие из свойств [`<b-img-lazy>`](/docs/components/image#lazy-loaded-images) компонента.
 
-### Header and footer
+### Верхний и нижний колонтитулы
 
-Add an optional header and/or footer within a card via the `header`/`footer` props or named slots.
-You can control the wrapper element tags used by setting the `header-tag` and `footer-tag` props
-(both default is `div`)
+Добавьте необязательный верхний и / или нижний колонтитул в карточку через свойства `header`/`footer` или именованные слоты.
+Вы можете управлять используемыми тегами элементов оболочки, установив свойства `header-tag` и `footer-tag` (оба по умолчанию - `div`)
 
 ```html
 <div>
@@ -208,22 +181,22 @@ You can control the wrapper element tags used by setting the `header-tag` and `f
     <b-card
       header="featured"
       header-tag="header"
-      footer="Card Footer"
+      footer="Нижний колонтитул карточки"
       footer-tag="footer"
-      title="Title"
+      title="Заголовок"
     >
-      <b-card-text>Header and footers using props.</b-card-text>
-      <b-button href="#" variant="primary">Go somewhere</b-button>
+      <b-card-text>Верхний и нижний колонтитулы с использованием свойств.</b-card-text>
+      <b-button href="#" variant="primary">Иди куда-нибудь</b-button>
     </b-card>
 
-    <b-card title="Title" header-tag="header" footer-tag="footer">
+    <b-card title="Заголовок" header-tag="header" footer-tag="footer">
       <template #header>
-        <h6 class="mb-0">Header Slot</h6>
+        <h6 class="mb-0">Слот верхнего колонтитула</h6>
       </template>
-      <b-card-text>Header and footers using slots.</b-card-text>
-      <b-button href="#" variant="primary">Go somewhere</b-button>
+      <b-card-text>Верхний и нижний колонтитулы с использованием слотов.</b-card-text>
+      <b-button href="#" variant="primary">Иди куда-нибудь</b-button>
       <template #footer>
-        <em>Footer Slot</em>
+        <em>Слот нижнего колонтитула</em>
       </template>
     </b-card>
   </b-card-group>
@@ -232,11 +205,10 @@ You can control the wrapper element tags used by setting the `header-tag` and `f
 <!-- b-card-header-footer.vue -->
 ```
 
-### Kitchen sink example
+### Бытовой пример
 
-Mix and match multiple content types to create the card you need, or throw everything in there.
-Shown below are image styles, blocks, text styles, and a list group—all wrapped in a fixed-width
-card.
+Комбинируйте несколько типов контента, чтобы создать нужную вам карточку, или добавьте туда все.
+Ниже показаны стили изображения, блоки, стили текста и группа списков - все они заключены в карточку фиксированной ширины.
 
 ```html
 <div>
@@ -248,15 +220,14 @@ card.
     img-top
   >
     <template #header>
-      <h4 class="mb-0">Hello World</h4>
+      <h4 class="mb-0">Привет мир</h4>
     </template>
 
     <b-card-body>
-      <b-card-title>Card Title</b-card-title>
-      <b-card-sub-title class="mb-2">Card Sub Title</b-card-sub-title>
+      <b-card-title>Заголовок карточки</b-card-title>
+      <b-card-sub-title class="mb-2">Подзаголовок карточки</b-card-sub-title>
       <b-card-text>
-        Some quick example text to build on the card title and make up the bulk of the card's
-        content.
+        Небольшой пример текста, который будет построен на заголовке карты и составляет основную часть содержимого карты.
       </b-card-text>
     </b-card-body>
 
@@ -267,42 +238,37 @@ card.
     </b-list-group>
 
     <b-card-body>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <a href="#" class="card-link">Ссылка карточки</a>
+      <a href="#" class="card-link">Другая ссылка</a>
     </b-card-body>
 
-    <b-card-footer>This is a footer</b-card-footer>
+    <b-card-footer>Это нижний колонтитул</b-card-footer>
 
-    <b-card-img src="https://placekitten.com/480/210" alt="Image" bottom></b-card-img>
+    <b-card-img src="https://placekitten.com/480/210" alt="Изображение" bottom></b-card-img>
   </b-card>
 </div>
 
 <!-- b-card-kitchen-sink.vue -->
 ```
 
-## Horizontal card layout
+## Горизонтальный макет карточки
 
-Using a combination of grid components, utility classes and individual card sub-components, cards
-can be made horizontal in a mobile-friendly and responsive way.
+Используя комбинацию компонентов сетки, служебных классов и отдельных подкомпонентов карты, карты можно сделать горизонтальными, удобными для мобильных устройств и гибкими.
 
-In the example below, we remove the row grid gutters with the `no-gutters` prop on `<b-row>` and use
-`md` props on `<b-col>` to make the card horizontal at the `md` breakpoint. Class `rounded-0`
-removes the rounding of the `<b-card-img>` corners while class `overflow-hidden` on `<b-card>` will
-appropriately clip the image's corners based on the border-radius of the card. Further adjustments
-may be needed depending on your card content.
+В приведенном ниже примере мы удаляем желоба сетки строк с помощью свойства `no-gutters` в `<b-row>` и используем свойства `md` в `<b-col>`, чтобы сделать карточку горизонтальной в контрольной точке `md`. Класс `rounded-0` удаляет округление углов `<b-card-img>`, в то время как класс `overflow-hidden` в `<b-card>` будет соответствующим образом обрезать углы изображения на основе радиуса границы карточки. В зависимости от содержимого вашей карточки могут потребоваться дополнительные корректировки.
 
 ```html
 <div>
   <b-card no-body class="overflow-hidden" style="max-width: 540px;">
     <b-row no-gutters>
       <b-col md="6">
-        <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Image" class="rounded-0"></b-card-img>
+        <b-card-img src="https://picsum.photos/400/400/?image=20" alt="Изображение" class="rounded-0"></b-card-img>
       </b-col>
       <b-col md="6">
-        <b-card-body title="Horizontal Card">
+        <b-card-body title="Горизонтальная карточка">
           <b-card-text>
-            This is a wider card with supporting text as a natural lead-in to additional content.
-            This content is a little bit longer.
+            Это более широкая карточка с вспомогательным текстом, который естественным образом ведет к дополнительному контенту.
+            Этот контент немного длиннее.
           </b-card-text>
         </b-card-body>
       </b-col>
@@ -313,30 +279,27 @@ may be needed depending on your card content.
 <!-- b-card-horizontal.vue -->
 ```
 
-## Text variants
+## Варианты текста
 
-By default, cards use dark text and assume a light background. You can reverse that by toggling the
-color of text within, as well as that of the card's sub-components, via the prop `text-variant`.
-Then, specify a dark background variant.
+По умолчанию в карточках используется темный текст и используется светлый фон. Вы можете отменить это, переключая цвет текста внутри карточки, а также цвет подкомпонентов карточки, через свойство `text-variant`.
+Затем укажите вариант темного фона.
 
 ```html
-<b-card bg-variant="dark" text-variant="white" title="Card Title">
+<b-card bg-variant="dark" text-variant="white" title="Заголовок карточки">
   <b-card-text>
-    With supporting text below as a natural lead-in to additional content.
+    С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту.
   </b-card-text>
-  <b-button href="#" variant="primary">Go somewhere</b-button>
+  <b-button href="#" variant="primary">Иди куда-нибудь</b-button>
 </b-card>
 
 <!-- b-card-text-variants.vue -->
 ```
 
-## Background and border variants
+## Варианты фона и границы
 
-Cards include their own variant style for quickly changing the background-color and of a card via
-the `bg-variant` and `border-variant` props. Darker solid variants may require setting the prop
-`text-variant` to adjust the text color.
+Карточки содержат собственный вариантный стиль для быстрого изменения цвета фона и карточки с помощью свойств `bg-variant` и `border-variant`. Для более темных сплошных вариантов может потребоваться установка свойства `text-variant` для настройки цвета текста.
 
-### Solid
+### Сплошной
 
 ```html
 <div>
@@ -390,7 +353,7 @@ the `bg-variant` and `border-variant` props. Darker solid variants may require s
 <!-- b-card-variants.vue -->
 ```
 
-### Bordered
+### С рамками
 
 ```html
 <div>
@@ -462,16 +425,13 @@ the `bg-variant` and `border-variant` props. Darker solid variants may require s
 <!-- b-card-border-variants.vue -->
 ```
 
-#### Variant to class mapping
+#### Вариант сопоставления классов
 
-BootstrapVue `<b-card>` variants are directly mapped to Bootstrap v4 card classes by pre-pending
-`bg-` (for solid) or `border-` (for bordered) to the above variant names.
+Варианты BootstrapVue `<b-card>` напрямую сопоставляются с классами карточек Bootstrap v4 путем предварительного добавления `bg-` (для сплошного) или `border-` (для с рамкой) к вышеуказанным именам вариантов.
 
-### Header and footer variants
+### Варианты верхнего и нижнего колонтитулов
 
-You can also apply the solid and border variants individually to card headers and footers via the
-`header-bg-variant`, `header-border-variant`, `header-text-variant`, `footer-bg-variant`,
-`footer-border-variant`, and `footer-text-variant` props.
+Вы также можете применить варианты сплошного и рамочного цветов по отдельности к верхним и нижним колонтитулам карточек с помощью `header-bg-variant`, `header-border-variant`, `header-text-variant`, `footer-bg-variant`, `footer-border-variant` и `footer-text-variant`.
 
 ```html
 <div>
@@ -480,76 +440,73 @@ You can also apply the solid and border variants individually to card headers an
     header-text-variant="white"
     header-tag="header"
     header-bg-variant="dark"
-    footer="Card Footer"
+    footer="Нижний колонтитул карточки"
     footer-tag="footer"
     footer-bg-variant="success"
     footer-border-variant="dark"
-    title="Title"
+    title="Заголовок"
     style="max-width: 20rem;"
   >
-    <b-card-text>Header and footers variants.</b-card-text>
+    <b-card-text>Варианты верхнего и нижнего колонтитулов.</b-card-text>
   </b-card>
 </div>
 
 <!-- b-card-header-footer-variant.vue -->
 ```
 
-### Conveying meaning to assistive technologies
+### Передача смысла вспомогательным технологиям
 
-Using color to add meaning only provides a visual indication, which will not be conveyed to users of
-assistive technologies – such as screen readers. Ensure that information denoted by the color is
-either obvious from the content itself (e.g. the visible text), or is included through alternative
-means, such as additional text hidden with the `.sr-only` class.
+Использование цвета для добавления смысла обеспечивает только визуальную индикацию, которая не будет передана пользователям вспомогательных технологий, таких как программы чтения с экрана. Убедитесь, что информация, обозначенная цветом, либо очевидна из самого контента (например, видимый текст), либо включена с помощью альтернативных средств, таких как дополнительный текст, скрытый с помощью класса `.sr-only`.
 
-## Nav integration
+## Интеграция с навигацией
 
-Integrate [`<b-nav>`](/docs/components/nav) into card headers easily.
+Легко интегрируйте [`<b-nav>`](/docs/components/nav) в заголовки карточек.
 
-**Using the `header` slot**:
+**Использование слота `header`**:
 
 ```html
 <div>
-  <b-card title="Card Title" body-class="text-center" header-tag="nav">
+  <b-card title="Заголовок карточки" body-class="text-center" header-tag="nav">
     <template #header>
       <b-nav card-header tabs>
-        <b-nav-item active>Active</b-nav-item>
-        <b-nav-item>Inactive</b-nav-item>
-        <b-nav-item disabled>Disabled</b-nav-item>
+        <b-nav-item active>Активная</b-nav-item>
+        <b-nav-item>Неактивная</b-nav-item>
+        <b-nav-item disabled>Отключенная</b-nav-item>
       </b-nav>
     </template>
 
     <b-card-text>
-      With supporting text below as a natural lead-in to additional content.
+      С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту.
     </b-card-text>
 
-    <b-button variant="primary">Go somewhere</b-button>
+    <b-button variant="primary">Иди куда-нибудь</b-button>
   </b-card>
 </div>
 
 <!-- card-with-nav-header-slot.vue -->
 ```
 
-**Using `<b-card-header>` sub-component:**
+**Использование подкомпонента `<b-card-header>`:**
 
 ```html
 <div>
   <b-card no-body>
     <b-card-header header-tag="nav">
       <b-nav card-header tabs>
-        <b-nav-item active>Active</b-nav-item>
-        <b-nav-item>Inactive</b-nav-item>
-        <b-nav-item disabled>Disabled</b-nav-item>
+        <b-nav-item active>Активная</b-nav-item>
+        <b-nav-item>Неактивная</b-nav-item>
+        <b-nav-item disabled>Отключенная</b-nav-item>
       </b-nav>
     </b-card-header>
 
     <b-card-body class="text-center">
-      <b-card-title>Card Title</b-card-title>
+      <b-card-title>Заголовок карточки</b-card-title>
 
       <b-card-text>
-        With supporting text below as a natural lead-in to additional content.
+        С вспомогательным текстом ниже в качестве естественного перехода к дополнительному контенту.
       </b-card-text>
 
-      <b-button variant="primary">Go somewhere</b-button>
+      <b-button variant="primary">Иди куда-нибудь</b-button>
     </b-card-body>
   </b-card>
 </div>
@@ -557,50 +514,48 @@ Integrate [`<b-nav>`](/docs/components/nav) into card headers easily.
 <!-- card-with-nav-header-component.vue -->
 ```
 
-For more information on using `<b-nav>` in card headers, refer to the
-[Navs documentation](/docs/components/nav).
+Для получения дополнительной информации об использовании `<b-nav>` в заголовках карточек обратитесь к [документации Навигации](/docs/components/nav).
 
-## Card groups
+## Группы карточек
 
-In addition to styling the content within cards, BootstrapVue includes a `<b-card-group>` component
-for laying out series of cards. For the time being, these layout options are not yet responsive.
+Помимо стилизации содержимого карточек, BootstrapVue включает компонент `<b-card-group>` для размещения серий карточек. В настоящее время эти параметры макета еще не работают.
 
-### Default card group
+### Группа карточек по умолчанию
 
-Use card groups to render cards as a single, attached element with equal width and height columns.
-Card groups use display: flex; to achieve their uniform sizing.
+Используйте группы карточек, чтобы отображать карточки как один прикрепленный элемент с столбцами одинаковой ширины и высоты.
+Группы карт используют `display: flex`; чтобы добиться их однородной калибровки.
 
-When using card groups with footers, their content will automatically line up.
+При использовании групп карточек с нижними колонтитулами их содержимое будет автоматически выровнено.
 
 ```html
 <div>
   <b-card-group>
-    <b-card title="Title" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
+    <b-card title="Заголовок" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
       <b-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content.
-        This content is a little bit longer.
+        Это более широкая карточка с вспомогательным текстом ниже как естественный ввод к дополнительному контенту.
+        Этот контент немного длиннее.
       </b-card-text>
       <template #footer>
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Последнее обновление: 3 мин. назад</small>
       </template>
     </b-card>
 
-    <b-card title="Title" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
+    <b-card title="Заголовок" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
       <b-card-text>
-        This card has supporting text below as a natural lead-in to additional content.
+        Под этой карточкой есть вспомогательный текст, который является естественным введением к дополнительному содержанию.
       </b-card-text>
       <template #footer>
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Последнее обновление: 3 мин. назад</small>
       </template>
     </b-card>
 
-    <b-card title="Title" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
+    <b-card title="Заголовок" img-src="https://placekitten.com/g/300/450" img-alt="Image" img-top>
       <b-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content.
-        This card has even longer content than the first to show that equal height action.
+        Это более широкая карточка с вспомогательным текстом ниже как естественный ввод к дополнительному контенту.
+        Эта карточка имеет даже более длинное содержание, чем первая, чтобы показать действие одинаковой высоты.
       </b-card-text>
       <template #footer>
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Последнее обновление: 3 мин. назад</small>
       </template>
     </b-card>
   </b-card-group>
@@ -609,41 +564,39 @@ When using card groups with footers, their content will automatically line up.
 <!-- b-card-group.vue -->
 ```
 
-### Card deck groups
+### Группы колод карточек
 
-Need a set of equal width and height cards that aren't attached to one another? Use card decks by
-setting the `deck` prop. And just like with regular card groups, card footers in decks will
-automatically line up.
+Нужен набор карточек одинаковой ширины и высоты, которые не прикреплены друг к другу? Используйте карточные колоды, установив свойство `deck`. И, как и в случае с обычными группами карточек, нижние колонтитулы карточек в колодах автоматически выстраиваются в линию.
 
 ```html
 <div>
   <b-card-group deck>
-    <b-card title="Title" img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+    <b-card title="Заголовок" img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
       <b-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content.
-        This content is a little bit longer.
+        Это более широкая карточка с вспомогательным текстом ниже как естественный ввод к дополнительному контенту.
+        Этот контент немного длиннее.
       </b-card-text>
       <template #footer>
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Последнее обновление: 3 мин. назад</small>
       </template>
     </b-card>
 
-    <b-card title="Title" img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+    <b-card title="Заголовок" img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
       <b-card-text>
-        This card has supporting text below as a natural lead-in to additional content.
+        Под этой карточкой есть вспомогательный текст, который является естественным введением к дополнительному содержанию.
       </b-card-text>
       <template #footer>
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Последнее обновление: 3 мин. назад</small>
       </template>
     </b-card>
 
-    <b-card title="Title" img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
+    <b-card title="Заголовок" img-src="https://picsum.photos/300/300/?image=41" img-alt="Image" img-top>
       <b-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content.
-        This card has even longer content than the first to show that equal height action.
+        Это более широкая карточка с вспомогательным текстом ниже как естественный ввод к дополнительному контенту.
+        Эта карточка имеет даже более длинное содержание, чем первая, чтобы показать действие одинаковой высоты.
       </b-card-text>
       <template #footer>
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Последнее обновление: 3 мин. назад</small>
       </template>
     </b-card>
   </b-card-group>
@@ -652,72 +605,69 @@ automatically line up.
 <!-- b-card-group-deck.vue -->
 ```
 
-### Card column groups
+### Группы столбцов карточек
 
-Cards can be organized into Masonry-like columns with by wrapping them in a `<b-card-group>` with
-the prop `columns` set. Cards are built with CSS column properties instead of flexbox for easier
-alignment. Cards are ordered from top to bottom and left to right.
+Карточки могут быть организованы в столбцы, подобные масонству, путем их упаковки в `<b-card-group>` с набором свойств `columns`. Карточки построены с использованием свойств столбца CSS вместо гибкого бокса для упрощения выравнивания. Карты располагаются сверху вниз и слева направо.
 
-Heads up! Your mileage with card columns may vary. To prevent cards breaking across columns, we must
-set them to display: inline-block as column-break-inside: avoid isn't a bulletproof solution yet.
+Берегись! Ваш пробег с карточными столбцами может отличаться. Чтобы карточки не разбивались по столбцам, мы должны настроить их на `display: inline-block` как `column-break-inside: avoid` - это еще не пуленепробиваемое решение.
 
 ```html
 <div>
   <b-card-group columns>
     <b-card
-      title="Card title that wraps to a new line"
+      title="Название карточки, которое переносится на новую строку"
       img-src="https://placekitten.com/g/400/450"
       img-alt="Image"
       img-top
     >
       <b-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content.
-        This content is a little bit longer.
+        Это более широкая карточка с вспомогательным текстом ниже как естественный ввод к дополнительному контенту.
+        Этот контент немного длиннее.
       </b-card-text>
     </b-card>
 
-    <b-card header="Quote">
+    <b-card header="Цитата">
       <blockquote class="blockquote mb-0">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
         <footer class="blockquote-footer">
-          Someone famous in <cite title="Source Title">Source Title</cite>
+          Кто-то, известный в <cite title="Название источника">Название источника</cite>
         </footer>
       </blockquote>
     </b-card>
 
-    <b-card title="Title" img-src="https://placekitten.com/500/350" img-alt="Image" img-top>
+    <b-card title="Заголовок" img-src="https://placekitten.com/500/350" img-alt="Image" img-top>
       <b-card-text>
-        This card has supporting text below as a natural lead-in to additional content.
+        Под этой карточкой есть вспомогательный текст, который является естественным введением к дополнительному содержанию.
       </b-card-text>
-      <b-card-text class="small text-muted">Last updated 3 mins ago</b-card-text>
+      <b-card-text class="small text-muted">Последнее обновление: 3 мин. назад</b-card-text>
     </b-card>
 
     <b-card bg-variant="primary" text-variant="white">
       <blockquote class="card-blockquote">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
         <footer>
-          <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+          <small>Кто-то, известный в <cite title="Название источника">Название источника</cite></small>
         </footer>
       </blockquote>
     </b-card>
 
     <b-card>
-      <b-card-title>Title</b-card-title>
+      <b-card-title>Заголовок</b-card-title>
       <b-card-text>
-        This card has supporting text below as a natural lead-in to additional content.
+        Под этой карточкой есть вспомогательный текст, который является естественным введением к дополнительному содержанию.
       </b-card-text>
-      <b-card-text class="small text-muted">Last updated 3 mins ago</b-card-text>
+      <b-card-text class="small text-muted">Последнее обновление: 3 мин. назад</b-card-text>
     </b-card>
 
     <b-card img-src="https://picsum.photos/400/400/?image=41" img-alt="Image" overlay></b-card>
 
     <b-card img-src="https://picsum.photos/400/200/?image=41" img-alt="Image" img-top>
       <b-card-text>
-        This is a wider card with supporting text below as a natural lead-in to additional content.
-        This card has even longer content than the first.
+        Это более широкая карточка с вспомогательным текстом ниже как естественный ввод к дополнительному контенту.
+        Эта карточка имеет даже более длинный контент, чем первая.
       </b-card-text>
       <template #footer>
-        <small class="text-muted">Footer Text</small>
+        <small class="text-muted">Текст нижнего колонтитула</small>
       </template>
     </b-card>
   </b-card-group>
