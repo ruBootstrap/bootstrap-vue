@@ -1,8 +1,7 @@
-# Carousel
+# Карусель
 
-> The carousel is a slideshow for cycling through a series of content, built with CSS 3D transforms.
-> It works with a series of images, text, or custom markup. It also includes support for
-> previous/next controls and indicators.
+> Карусель - это слайд-шоу для циклического просмотра серии контента, созданного с помощью преобразований CSS 3D.
+> Он работает с серией изображений, текста или пользовательской разметки. Он также включает поддержку элементов управления и индикаторов «предыдущий / следующий».
 
 ```html
 <template>
@@ -20,23 +19,23 @@
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-      <!-- Text slides with image -->
+      <!-- Текстовые слайды с изображением -->
       <b-carousel-slide
-        caption="First slide"
+        caption="Первый слайд"
         text="Nulla vitae elit libero, a pharetra augue mollis interdum."
         img-src="https://picsum.photos/1024/480/?image=52"
       ></b-carousel-slide>
 
-      <!-- Slides with custom text -->
+      <!-- Слайды с произвольным текстом -->
       <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-        <h1>Hello world!</h1>
+        <h1>Привет мир!</h1>
       </b-carousel-slide>
 
-      <!-- Slides with image only -->
+      <!-- Слайды только с изображением -->
       <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
 
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
+      <!-- Слайды со слотом img -->
+      <!-- Обратите внимание на классы .d-block и .img-fluid, чтобы предотвратить выравнивание изображений по умолчанию в браузере -->
       <b-carousel-slide>
         <template #img>
           <img
@@ -44,13 +43,13 @@
             width="1024"
             height="480"
             src="https://picsum.photos/1024/480/?image=55"
-            alt="image slot"
+            alt="слот изображения"
           >
         </template>
       </b-carousel-slide>
 
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
+      <!-- Слайд с пустым плавным изображением для сохранения пропорций слайда -->
+      <b-carousel-slide caption="Пустое изображение" img-blank img-alt="Пустое изображение">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
           a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
@@ -59,8 +58,8 @@
     </b-carousel>
 
     <p class="mt-4">
-      Slide #: {{ slide }}<br>
-      Sliding: {{ sliding }}
+      Слайд #: {{ slide }}<br>
+      Слайдинг: {{ sliding }}
     </p>
   </div>
 </template>
@@ -87,94 +86,72 @@
 <!-- b-carousel.vue -->
 ```
 
-Please be aware that nested carousels are **not** supported.
+Имейте в виду, что вложенные карусели **не** поддерживаются.
 
-## Sizing
+## Размеры
 
-Carousels don't automatically normalize slide dimensions. As such, you may need to use additional
-utilities or custom styles to appropriately size content. When using images in each slide, ensure
-they all have the same dimensions (or aspect ratio).
+Карусели не нормализуют размеры слайдов автоматически. Таким образом, вам может потребоваться использовать дополнительные утилиты или пользовательские стили для соответствующего размера содержимого. При использовании изображений на каждом слайде убедитесь, что все они имеют одинаковые размеры (или соотношение сторон).
 
-When using `img-src` or `img-blank` on `<b-carousel-slide>`, you can set the image width and height
-via the `img-width` and `img-height` props on `<b-carousel>` and have these values automatically
-applied to each `carousel-slide` image.
+При использовании `img-src` или `img-blank` на `<b-carousel-slide>`, вы можете установить ширину и высоту изображения с помощью свойств `img-width` и `img-height` на `<b-carousel>` и эти значения автоматически применяются к каждому изображению `carousel-slide`.
 
-Note that images will still be responsive and automatically grow or shrink to fit within the width
-of its parent container.
+Обратите внимание, что изображения по-прежнему будут реагировать и автоматически увеличиваться или уменьшаться, чтобы соответствовать ширине родительского контейнера.
 
-Internally, `<b-carousel-slide>` uses the [`<b-img>`](/docs/components/image) component to render
-the images. The `img-*` props map to the corresponding props available to `<b-img>`.
+Внутренне `<b-carousel-slide>` использует компонент [`<b-img>`](/docs/components/image) для рендеринга изображений. Свойства `img-*` сопоставляются с соответствующими свойствами, доступными для `<b-img>`.
 
-## Interval
+## Интервал
 
-Carousel defaults to an interval of `5000`ms (5 seconds). You can change the interval between slides
-by setting the `interval` prop to the desired number of milliseconds. The smallest supported sliding
-interval is 1000ms (1 second).
+По умолчанию для карусели установлен интервал `5000`мс (5 секунд). Вы можете изменить интервал между слайдами, установив для свойства `interval` желаемое количество миллисекунд. Наименьший поддерживаемый интервал скольжения составляет 1000 мс (1 секунда).
 
-In browsers where the [Page Visibility API](https://www.w3.org/TR/page-visibility/) is supported,
-the carousel will avoid sliding when the webpage is not visible to the user (such as when the
-browser tab is inactive, the browser window is minimized, etc.). Sliding will resume when the
-browser tab is active.
+В браузерах, где поддерживается [API видимости страницы](https://www.w3.org/TR/page-visibility/), карусель не будет скользить, когда веб-страница не видна пользователю (например, когда браузер вкладка неактивна, окно браузера свернуто и т. д.). Скольжение возобновится, когда активна вкладка браузера.
 
-### Pausing the carousel
+### Приостановка карусели
 
-To pause the carousel from auto sliding, set the `interval` prop to `0`. To restart a paused
-carousel, set the `interval` back to the desired number of ms.
+Чтобы приостановить автоматическое скольжение карусели, установите для свойства `interval` значение `0`. Чтобы перезапустить приостановленную карусель, установите интервал `interval` обратно на желаемое количество мс.
 
-When the carousel is paused, the user can still switch slides via the controls (if enabled) or touch
-swipe (on touch enabled devices, if not disabled).
+Когда карусель приостановлена, пользователь по-прежнему может переключать слайды с помощью элементов управления (если они включены) или сенсорного пролистывания (на устройствах с сенсорным экраном, если они не отключены).
 
-When the users mouse hovers the carousel it will automatically pause, and will automatically restart
-when the mouse leaves the carousel. To disable this feature, set the `no-hover-pause` prop on
-`<b-carousel>`.
+Когда пользовательская мышь наводит курсор на карусель, она автоматически приостанавливается и автоматически перезапускается, когда мышь покидает карусель. Чтобы отключить эту функцию, установите свойство `no-hover-pause` на `<b-carousel>`.
 
-## Controls and indicators
+## Управление и индикаторы
 
-Set the prop `controls` to enable the previous and next control buttons.
+Установите свойство `controls`, чтобы включить предыдущую и следующую кнопки управления.
 
-Set the prop `indicators` to show the slide indicator buttons.
+Установите свойство `indicators`, чтобы отображать кнопки индикатора слайда.
 
-Both indicators and controls can be set at the same time or independently.
+И индикаторы, и элементы управления можно настроить одновременно или независимо.
 
-## Carousel slide content
+## Содержимое слайдов карусели
 
-`b-carousel-slide` provides several props and slots for placing content in the slide.
+`b-carousel-slide` предоставляет несколько свойств и слотов для размещения содержимого на слайде.
 
-### Props
+### Свойства
 
-- `caption` Text to use as the main title on the slide (placed inside the inner element which has
-  the class `carousel-caption`)
-- `text` Textual placed under the title (placed inside the inner element which has the class
-  `carousel-caption`)
-- `img-src` URL of image to be placed into the background of the slide
-- `caption-html` Alternate prop to the `caption` prop, which supports HTML strings
-- `html` Alternate prop to the `text` prop, which supports HTML strings
+- `caption` Текст для использования в качестве основного заголовка на слайде (помещается внутри внутреннего элемента, имеющего класс `carousel-caption`)
+- `text` Текстовый текст, помещаемый под заголовком (помещается внутри внутреннего элемента, имеющего класс `carousel-caption`)
+- `img-src` URL-адрес изображения, которое будет помещено в фон слайда
+- `caption-html` Альтернативное свойство для свойства `caption`, которое поддерживает строки HTML
+- `html` Альтернативное свойство для свойства `text`, которое поддерживает строки HTML
 
 <p class="alert alert-danger">
-  <strong>Warning:</strong> Be cautious of using the <code>caption-html</code> and <code>html</code>
-  props to display user supplied content, as it may make your application vulnerable to
+  <strong>Предупреждение:</strong> будьте осторожны при использовании свойств <code>caption-html</code> и <code>html</code>
+  для отображения контента, предоставленного пользователем, так как это может сделать ваше приложение уязвимым для
   <a class="alert-link" href="https://en.wikipedia.org/wiki/Cross-site_scripting">
-  <abbr title="Cross Site Scripting Attacks">XSS attacks</abbr></a>, if you do not first
-  <a class="alert-link" href="https://en.wikipedia.org/wiki/HTML_sanitization">sanitize</a> the
-  user supplied string.
+  <abbr title="Cross Site Scripting Attacks">XSS атаки</abbr></a>, если вы не сначала
+  <a class="alert-link" href="https://en.wikipedia.org/wiki/HTML_sanitization">очистите</a> введенную пользователем строку.
 </p>
 
-### Named slots
+### Именованные слоты
 
-- `default` content that will be placed inside of the inner element which has the class
-  `carousel-caption`. Appears after any content from the `caption` and `text` props.
-- `img` content to place into the background of the slide. Despite the slot's name, you can place
-  almost any content in this slot in lieu of using the `default` slot or `caption` and `text` props.
+- содержимое `default`, которое будет помещено внутри внутреннего элемента, имеющего класс `carousel-caption`. Появляется после любого содержимого из свойств `caption` и `text`.
+- содержимое `img` для размещения на фоне слайда. Несмотря на название слота, вы можете разместить в нем практически любой контент вместо использования слота `default`или свойств `caption` и `text`.
 
-## Carousel animation
+## Анимация карусели
 
-Carousel, by default, uses a sliding animation. You can change the slide animation to a cross-fade
-animation, or disable animation completely.
+Карусель по умолчанию использует скользящую анимацию. Вы можете изменить слайд-анимацию на плавную или полностью отключить анимацию.
 
-### Crossfade animation
+### Кроссфейдная анимация
 
-Set the `<b-carousel>` `fade` prop to `true` to animate slides with a fade transition instead of the
-default slide animation.
+Установите для свойства `<b-carousel>` `fade` значение `true` для анимации слайдов с постепенным переходом вместо стандартной анимации слайдов.
 
 ```html
 <div>
@@ -187,15 +164,15 @@ default slide animation.
     img-height="480"
   >
     <b-carousel-slide
-      caption="First slide"
+      caption="Первый слайд"
       img-src="https://picsum.photos/1024/480/?image=10"
     ></b-carousel-slide>
     <b-carousel-slide
-      caption="Second Slide"
+      caption="Второй слайд"
       img-src="https://picsum.photos/1024/480/?image=12"
     ></b-carousel-slide>
     <b-carousel-slide
-      caption="Third Slide"
+      caption="Третий слайд"
       img-src="https://picsum.photos/1024/480/?image=22"
     ></b-carousel-slide>
   </b-carousel>
@@ -204,9 +181,9 @@ default slide animation.
 <!-- b-carousel-fade.vue -->
 ```
 
-### Disable animation
+### Отключить анимацию
 
-Set the `<b-carousel>` `no-animation` prop to `true` to disable slide animation.
+Установите для свойства `<b-carousel>` `no-animation` значение `true`, чтобы отключить анимацию слайдов.
 
 ```html
 <div>
@@ -219,19 +196,19 @@ Set the `<b-carousel>` `no-animation` prop to `true` to disable slide animation.
     img-height="480"
   >
     <b-carousel-slide
-      caption="First slide"
+      caption="Первый слайд"
       img-src="https://picsum.photos/1024/480/?image=10"
     ></b-carousel-slide>
     <b-carousel-slide
-      caption="Second Slide"
+      caption="Второй слайд"
       img-src="https://picsum.photos/1024/480/?image=12"
     ></b-carousel-slide>
     <b-carousel-slide
-      caption="Third Slide"
+      caption="Третий слайд"
       img-src="https://picsum.photos/1024/480/?image=22"
     ></b-carousel-slide>
     <b-carousel-slide
-      caption="Fourth Slide"
+      caption="Четвертый слайд"
       img-src="https://picsum.photos/1024/480/?image=23"
     ></b-carousel-slide>
   </b-carousel>
@@ -240,49 +217,43 @@ Set the `<b-carousel>` `no-animation` prop to `true` to disable slide animation.
 <!-- b-carousel-no-animation.vue -->
 ```
 
-## Slide wrapping
+## Обертывание слайдов
 
-Normally when the carousel reaches one end or the other in the list of slides, it will wrap to the
-opposite end of the list of slides and continue cycling.
+Обычно, когда карусель достигает одного или другого конца в списке слайдов, она переходит к противоположному концу списка слайдов и продолжает цикл.
 
-To disable carousel slide wrapping, set the `no-wrap` prop to true.
+Чтобы отключить перенос слайдов карусели, установите для свойства `no-wrap` значения `true`.
 
-## Hide slide text content on small screens
+## Скрыть текстовое содержимое слайдов на маленьких экранах
 
-On smaller screens you may want to hide the captions and headings. You can do so via the
-`content-visible-up` prop of `<b-carousel-slide>`. The prop accepts a breakpoint name (i.e. `sm`,
-`md`, `lg`, `xl`, or custom breakpoint names if you have defined them), and will hide the headings
-and captions on screens _smaller_ than the breakpoint.
+На небольших экранах вы можете скрыть подписи и заголовки. Вы можете сделать это с помощью свойства `content-visible-up` объекта `<b-carousel-slide>`. Свойство принимает имя контрольной точки (например, `sm`, `md`, `lg`, `xl`или пользовательские имена контрольных точек, если вы их определили) и скроет заголовки и подписи на экранах, которые _меньше_, чем контрольная точка.
 
-## Touch swipe support
+## Поддержка сенсорного пролистывания
 
-On touch enabled devices, users can switch slides by swiping left or right on the carousel. To
-disable touch control, set the `no-touch` prop to `true`.
+На устройствах с сенсорным экраном пользователи могут переключать слайды, проводя пальцем влево или вправо по карусели. Чтобы отключить сенсорное управление, установите для свойства `no-touch` значение `true`.
 
-## `v-model` support
+## Поддержка `v-model`
 
-Programmatically control which slide is showing via `v-model` (which binds to the `value` prop).
-Note, that slides are indexed starting at `0`.
+Программно управлять отображаемым слайдом с помощью `v-model` (которая привязывается к свойству `value`).
+Обратите внимание, что слайды индексируются, начиная с `0`.
 
-## Programmatic slide control
+## Программное управление слайдами
 
-The `<b-carousel>` instance provides several public methods for controlling sliding:
+Экземпляр `<b-carousel>` предоставляет несколько общедоступных методов для управления скольжением:
 
-| Method            | Description                                             |
-| ----------------- | ------------------------------------------------------- |
-| `setSlide(index)` | Go to slide specified by `index`                        |
-| `next()`          | Go to next slide                                        |
-| `prev()`          | Go to previous slide                                    |
-| `pause()`         | Pause the slide cycling                                 |
-| `start()`         | Start slide cycling (prop `interval` must have a value) |
+| Метод             | Описание                                                               |
+| ----------------- | ---------------------------------------------------------------------- |
+| `setSlide(index)` | Перейти к слайду, указанному `index`                                   |
+| `next()`          | Перейти к следующему слайду                                            |
+| `prev()`          | Перейти к предыдущему слайду                                           |
+| `pause()`         | Приостановить слайд-цикл                                               |
+| `start()`         | Начать чередование слайдов (свойство `interval` должно иметь значение) |
 
-You will need a reference (via `this.$refs`) to the carousel instance in order to call these
-methods:
+Вам понадобится ссылка (через `this.$refs`) на экземпляр карусели для вызова этих методов:
 
 ```html
 <template>
   <b-carousel ref="myCarousel" .... >
-    <!-- slides go here -->
+    <!-- слайды идут сюда -->
   </b-carousel>
 </template>
 
@@ -301,20 +272,15 @@ methods:
 </script>
 ```
 
-## Accessibility
+## Доступность
 
-Carousels are generally not fully compliant with accessibility standards, although we try to make
-them as accessible as possible.
+Карусели, как правило, не полностью соответствуют стандартам доступности, хотя мы стараемся сделать их максимально доступными.
 
-By providing a document unique value via the `id` prop, `<b-carousel>` will enable accessibility
-features. It is highly recommended to always add an ID to all components.
+Предоставляя уникальное значение документа через свойство `id`, `<b-carousel>` активирует специальные возможности. Настоятельно рекомендуется всегда добавлять идентификатор ко всем компонентам.
 
-All carousel controls and indicators have aria labels. These can be customized by setting the
-various `label-*` props.
+Все элементы управления и индикаторы карусели имеют метки в виде арий. Их можно настроить, задав различные свойства `label-*`.
 
-**Note:** The animation effect of this component is dependent on the `prefers-reduced-motion` media
-query. See the
-[reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
-additional details.
+**Примечание:** Эффект анимации этого компонента зависит от медиа-запроса `prefers-reduced-motion`. Смотрите
+[раздел с сокращенным движением в нашей документации по специальным возможностям](/docs/reference/accessibility) для получения дополнительных сведений.
 
 <!-- Component reference added automatically from component package.json -->

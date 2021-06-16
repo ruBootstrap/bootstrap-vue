@@ -3,98 +3,98 @@
   "version": "1.0.0",
   "meta": {
     "title": "Carousel",
-    "description": "The <b-carousel> component is a slideshow for cycling through a series of content, built with CSS 3D transforms. It works with a series of images, text, or custom markup.",
+    "description": "Компонент <b-carousel> представляет собой слайд-шоу для циклического просмотра серии контента, созданного с помощью преобразований CSS 3D. Он работает с серией изображений, текста или пользовательской разметки.",
     "components": [
       {
         "component": "BCarousel",
-        "description": "The <b-carousel> component is a slideshow for cycling through a series of slide content",
+        "description": "Компонент <b-carousel> представляет собой слайд-шоу для циклического перехода по серии содержимого слайдов",
         "props": [
           {
             "prop": "background",
-            "description": "Set the CSS color of the carousel's background"
+            "description": "Установите цвет CSS для фона карусели"
           },
           {
             "prop": "controls",
-            "description": "Enable the previous and next controls"
+            "description": "Включить предыдущий и следующий элементы управления"
           },
           {
             "prop": "fade",
-            "description": "When set, changes the slide animation to a crossfade instead of a sliding effect"
+            "description": "Если установлено, изменяет анимацию слайда на перекрестное затухание вместо эффекта скольжения"
           },
           {
             "prop": "imgHeight",
-            "description": "Set the default image 'height' attribute for all b-tab children"
+            "description": "Установите атрибут изображения 'height' для всех дочерних элементов b-tab"
           },
           {
             "prop": "imgWidth",
-            "description": "Set the default image 'width' attribute for all b-tab children"
+            "description": "Установите атрибут изображения 'width' для всех дочерних элементов b-tab"
           },
           {
             "prop": "indicators",
-            "description": "Enable the indicator buttons for jumping to specific slides"
+            "description": "Включите кнопки индикатора для перехода к определенным слайдам"
           },
           {
             "prop": "interval",
-            "description": "Set the delay time (in milliseconds) between slides"
+            "description": "Установите время задержки (в миллисекундах) между слайдами"
           },
           {
             "prop": "labelGotoSlide",
-            "description": "Sets the prefix for the 'aria-label' on the slide indicator controls. Will be suffixed with the slide number (1 indexed)"
+            "description": "Устанавливает префикс для 'aria-label' на элементах управления индикатором слайда. Будет добавлен суффикс с номером слайда (1 проиндексирован)"
           },
           {
             "prop": "labelIndicators",
-            "description": "Sets the 'aria-label' on the indicator controls wrapper"
+            "description": "Устанавливает 'aria-label' на оболочке элементов управления индикатора"
           },
           {
             "prop": "labelNext",
-            "description": "Sets the 'aria-label' value for the next slide control"
+            "description": "Устанавливает значение 'aria-label' для следующего элемента управления слайдом"
           },
           {
             "prop": "labelPrev",
-            "description": "Sets the 'aria-label' value for the previous slide control"
+            "description": "Устанавливает значение 'aria-label' для предыдущего элемента управления слайдом"
           },
           {
             "prop": "noAnimation",
-            "description": "When set, disables animation when transitioning between slides"
+            "description": "Если установлено, отключает анимацию при переходе между слайдами"
           },
           {
             "prop": "noHoverPause",
-            "description": "When set, disables the pausing of the slide show when the current slide is hovered"
+            "description": "Если задано, отключает приостановку слайд-шоу при наведении курсора на текущий слайд"
           },
           {
             "prop": "noTouch",
-            "description": "Disable controlling the slides via touch swipes"
+            "description": "Отключить управление слайдами с помощью сенсорных движений"
           },
           {
             "prop": "noWrap",
             "version": "2.0.0",
-            "description": "Do not restart the slide show when then end is reached"
+            "description": "Не перезапускайте слайд-шоу, когда будет достигнут конец"
           },
           {
             "prop": "value",
-            "description": "The currently active slide (zero-indexed)"
+            "description": "Текущий активный слайд (с нулевым индексом)"
           }
         ],
         "events": [
           {
             "event": "sliding-end",
-            "description": "Emitted when transitioning to a new slide has ended",
+            "description": "Выдается при завершении перехода к новому слайду",
             "args": [
               {
                 "arg": "slide",
                 "type": "Number",
-                "description": "Slide number that was slid to"
+                "description": "Номер слайда, на который был сдвинут"
               }
             ]
           },
           {
             "event": "sliding-start",
-            "description": "Emitted when transitioning to a new slide has started",
+            "description": "Выдается, когда начался переход к новому слайду",
             "args": [
               {
                 "arg": "slide",
                 "type": "Number",
-                "description": "Slide number that is being slid to"
+                "description": "Номер слайда, на который перемещается"
               }
             ]
           }
@@ -102,81 +102,81 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content (slides) to place in the carousel"
+            "description": "Контент (слайды) для размещения в карусели"
           }
         ]
       },
       {
         "component": "BCarouselSlide",
-        "description": "The <b-carousel-slide> component is a slide to be placed in the <b-carousel>",
+        "description": "Компонент <b-carousel-slide> - это слайд, который нужно разместить в <b-carousel>",
         "props": [
           {
             "prop": "background",
-            "description": "CSS color to use as the slide's background color"
+            "description": "Цвет CSS для использования в качестве цвета фона слайда"
           },
           {
             "prop": "caption",
-            "description": "Text content to place in the caption"
+            "description": "Текстовый контент для размещения в подписи"
           },
           {
             "prop": "captionHtml",
-            "description": "HTML string content to place in the caption",
+            "description": "Содержимое строки HTML для размещения в подписи",
             "xss": true
           },
           {
             "prop": "captionTag",
-            "description": "Specify the HTML tag to render instead of the default tag for the caption wrapper"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для оболочки заголовка"
           },
           {
             "prop": "contentTag",
-            "description": "Specify the HTML tag to render instead of the default tag for the content wrapper"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для оболочки содержимого"
           },
           {
             "prop": "contentVisibleUp",
-            "description": "Specify the breakpoint that the textual content will start to be shown. Leave at default to always show the textual content"
+            "description": "Укажите точку останова, с которой будет отображаться текстовое содержимое. Оставьте значение по умолчанию, чтобы всегда отображать текстовое содержимое"
           },
           {
             "prop": "imgAlt",
-            "description": "Sets the value of the 'alt' attribute on the image"
+            "description": "Устанавливает значение атрибута 'alt' на изображении"
           },
           {
             "prop": "imgBlank",
-            "description": "If set, will render a blank image instead of the img-src"
+            "description": "Если установлено, будет отображаться пустое изображение вместо img-src"
           },
           {
             "prop": "imgBlankColor",
-            "description": "Set the CSS color to use as the fill of the blank image"
+            "description": "Установите цвет CSS для использования в качестве заливки пустого изображения"
           },
           {
             "prop": "imgHeight",
-            "description": "Set the default image 'height' attribute for all b-tab children"
+            "description": "Установите атрибут изображения 'height' по умолчанию для всех дочерних элементов"
           },
           {
             "prop": "imgSrc",
-            "description": "Sets the URL of the image"
+            "description": "Устанавливает URL-адрес изображения"
           },
           {
             "prop": "imgWidth",
-            "description": "Set the default image 'width' attribute for all b-tab children"
+            "description": "Установите атрибут изображения 'width' по умолчанию для всех дочерних элементов"
           },
           {
             "prop": "text",
-            "description": "Text content to place in the text of the slide"
+            "description": "Текстовое содержимое для размещения в тексте слайда"
           },
           {
             "prop": "textHtml",
-            "description": "HTML string content to place in the text of the slide",
+            "description": "Содержимое строки HTML для размещения в тексте слайда",
             "xss": true
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the carousel slide"
+            "description": "Контент для размещения на слайде карусели"
           },
           {
             "name": "img",
-            "description": "Slot for img element or image component"
+            "description": "Слот для элемента img или компонента изображения"
           }
         ]
       }
