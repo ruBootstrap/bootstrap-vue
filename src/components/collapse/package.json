@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Collapse",
-    "description": "Easily toggle content visibility on your pages. Includes support for making accordions.",
+    "description": "Легко переключайте видимость контента на своих страницах. Включает поддержку для изготовления аккордеонов.",
     "plugins": [
       "VBTogglePlugin"
     ],
@@ -13,20 +13,20 @@
         "props": [
           {
             "prop": "accordion",
-            "description": "The name of the accordion group that this collapse belongs to"
+            "description": "Название аккордеонной группы, которой принадлежит этот коллапс"
           },
           {
             "prop": "appear",
             "version": "2.2.0",
-            "description": "When set, and prop 'visible' is true on mount, will animate on initial mount"
+            "description": "Если установлено, и у свойства 'visible' значение true при монтировании, будет анимироваться при первоначальном монтировании"
           },
           {
             "prop": "isNav",
-            "description": "When set, signifies that the collapse is part of a navbar, enabling certain features for navbar support"
+            "description": "Если установлено, означает, что сворачивание является частью панели навигации, что позволяет использовать определенные функции для поддержки панели навигации"
           },
           {
             "prop": "visible",
-            "description": "When 'true', expands the collapse"
+            "description": "Когда 'true', разворачивается коллапс"
           }
         ],
         "slots": [
@@ -37,12 +37,12 @@
               {
                 "prop": "close",
                 "type": "Function",
-                "description": "Method for closing the collapse"
+                "description": "Метод закрытия коллапса"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "Visible state of the collapse. `true` if the collapse is visible"
+                "description": "Видно состояние коллапса. `true` если коллапс виден"
               }
             ]
           }
@@ -50,57 +50,57 @@
         "events": [
           {
             "event": "bv::collapse::state",
-            "description": "Emitted on $root when collapse has changed its state",
+            "description": "Генерируется в $root, когда коллапс изменил свое состояние",
             "args": [
               {
                 "arg": "id",
                 "type": "String",
-                "description": "Changed state collapse ID"
+                "description": "Идентификатор измененного состояния коллапса"
               },
               {
                 "arg": "state",
                 "type": "Boolean",
-                "description": "`true` or `false`, i.e. opened or closed"
+                "description": "`true` или `false`, т.е. открыт или закрыт"
               }
             ]
           },
           {
             "event": "hidden",
-            "description": "Emitted when collapse has finished closing"
+            "description": "Выдается, когда коллапс завершил закрытие"
           },
           {
             "event": "hide",
-            "description": "Emitted when collapse has started to close"
+            "description": "Выдается, когда коллапс начал закрываться"
           },
           {
             "event": "input",
-            "description": "Used to update the v-model",
+            "description": "Используется для обновления v-model",
             "args": [
               {
                 "arg": "visible",
                 "type": "Boolean",
-                "description": "Will be true if the collapse is visible"
+                "description": "Будет истинной, если будет виден коллапс"
               }
             ]
           },
           {
             "event": "show",
-            "description": "Emitted when collapse has started to open"
+            "description": "Выдается, когда коллапс начал открываться"
           },
           {
             "event": "shown",
-            "description": "Emitted when collapse has finished opening"
+            "description": "Выдается, когда коллапс начал открываться"
           }
         ],
         "rootEventListeners": [
           {
             "event": "bv::toggle::collapse",
-            "description": "Toggles visible state of collapse with specified ID when this event is emitted on $root",
+            "description": "Переключает видимое состояние коллапса с указанным идентификатором, когда это событие генерируется в $root",
             "args": [
               {
                 "arg": "id",
                 "type": "String",
-                "description": "Collapse ID to toggle"
+                "description": "Идентификатор коллапса для переключателя"
               }
             ]
           }

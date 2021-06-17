@@ -1,18 +1,17 @@
-# Collapse
+# Сворачиваемое
 
-> Easily toggle visibility of almost any content on your pages in a vertically collapsing container.
-> Includes support for making accordions. Visibility can be easily toggled with our
-> [`v-b-toggle` directive](/docs/directives/toggle), or via `v-model`.
+> Легко переключайте видимость практически любого контента на ваших страницах в вертикально сворачивающемся контейнере.
+> Включает поддержку для изготовления аккордеонов. Видимость можно легко переключить с помощью нашей [директивы `v-b-toggle`](/docs/directives/toggle) или с помощью `v-model`.
 
 ```html
 <div>
-  <b-button v-b-toggle.collapse-1 variant="primary">Toggle Collapse</b-button>
+  <b-button v-b-toggle.collapse-1 variant="primary">Переключить коллапс</b-button>
   <b-collapse id="collapse-1" class="mt-2">
     <b-card>
-      <p class="card-text">Collapse contents Here</p>
-      <b-button v-b-toggle.collapse-1-inner size="sm">Toggle Inner Collapse</b-button>
+      <p class="card-text">Свернутое содержимое здесь</p>
+      <b-button v-b-toggle.collapse-1-inner size="sm">Переключить внутренний коллапс</b-button>
       <b-collapse id="collapse-1-inner" class="mt-2">
-        <b-card>Hello!</b-card>
+        <b-card>Привет!</b-card>
       </b-collapse>
     </b-card>
   </b-collapse>
@@ -21,59 +20,51 @@
 <!-- b-collapse.vue -->
 ```
 
-## Usage
+## Применение
 
-Other elements can easily toggle `<b-collapse>` components using the
-[`v-b-toggle` directive](/docs/directives/toggle).
+Другие элементы могут легко переключать компоненты `<b-collapse>` с помощью [директивы `v-b-toggle`](/docs/directives/toggle).
 
 ```html
 <div>
-  <!-- Using modifiers -->
-  <b-button v-b-toggle.collapse-2 class="m-1">Toggle Collapse</b-button>
+  <!-- Использование модификаторов -->
+  <b-button v-b-toggle.collapse-2 class="m-1">Переключить коллапс</b-button>
 
-  <!-- Using value -->
-  <b-button v-b-toggle="'collapse-2'" class="m-1">Toggle Collapse</b-button>
+  <!-- Использование значения -->
+  <b-button v-b-toggle="'collapse-2'" class="m-1">Переключить коллапс</b-button>
 
-  <!-- Element to collapse -->
+  <!-- Элемент для сворачивания -->
   <b-collapse id="collapse-2">
-    <b-card>I am collapsible content!</b-card>
+    <b-card>Я сворачиваемый контент!</b-card>
   </b-collapse>
 </div>
 
 <!-- b-collapse-usage.vue -->
 ```
 
-See the [`v-b-toggle` directive documentation](/docs/directives/toggle) for detailed usage
-information.
+Смотрите [документацию по директиве `v-b-toggle`](/docs/directives/toggle) для получения подробной информации об использовании.
 
-## Initial visibility (start expanded)
+## Первоначальная видимость (начало расширено)
 
-To make the `<b-collapse>` show initially, set the `visible` prop:
+Чтобы показать `<b-collapse>` изначально, установите свойство `visible`:
 
 ```html
 <div>
-  <b-button v-b-toggle.collapse-3 class="m-1">Toggle Collapse</b-button>
+  <b-button v-b-toggle.collapse-3 class="m-1">Переключить коллапс</b-button>
   <b-collapse visible id="collapse-3">
-    <b-card>I should start open!</b-card>
+    <b-card>Я должен начать открываться!</b-card>
   </b-collapse>
 </div>
 
 <!-- b-collapse-visible.vue -->
 ```
 
-By default, an initially visible collapse will not animate on mount. To enable the collapse
-expanding animation on mount (when `visible` or `v-model` is `true`), set the `appear` prop on
-`<b-collapse>`.
+По умолчанию изначально видимый коллапс не анимируется при монтировании. Чтобы включить анимацию разворачивания сворачивания при монтировании (когда `visible` или `v-model` имеет значение `true`), установите свойство `appear` на `<b-collapse>`.
 
-## `v-model` support
+## Поддержка `v-model`
 
-The component's collapsed (visible) state can also be set with `v-model` which binds internally to
-the `visible` prop.
+Состояние свернутого (видимого) компонента также может быть установлено с помощью `v-model`, которая внутренне привязывается к свойству `visible`.
 
-Note, when using `v-model` to control `<b-collapse>`, the `aria-*` attributes and class `collapsed`
-are not automatically placed on the trigger button (as is the case when using the `v-b-toggle`
-directive). In this example we **must control the attributes ourselves** for proper accessibility
-support.
+Обратите внимание, что при использовании `v-model` для управления `<b-collapse>` атрибуты `aria-*` и класс `collapsed` не помещаются автоматически на кнопку триггера (как в случае использования директивы `v-b-toggle`). В этом примере мы **должны сами контролировать атрибуты** для надлежащей поддержки специальных возможностей.
 
 ```html
 <template>
@@ -84,10 +75,10 @@ support.
       aria-controls="collapse-4"
       @click="visible = !visible"
     >
-      Toggle Collapse
+      Переключить коллапс
     </b-button>
     <b-collapse id="collapse-4" v-model="visible" class="mt-2">
-      <b-card>I should start open!</b-card>
+      <b-card>Я должен начать открываться!</b-card>
     </b-collapse>
   </div>
 </template>
@@ -105,52 +96,49 @@ support.
 <!-- b-collapse-v-model.vue -->
 ```
 
-## Trigger multiple collapse elements
+## Запуск нескольких свернутых элементов
 
-You can even collapse multiple `<b-collapse>` components via a single `v-b-toggle` by providing
-multiple target IDs using _modifiers_.
+Вы даже можете свернуть несколько компонентов `<b-collapse>` с помощью одного `v-b-toggle` , указав несколько целевых идентификаторов с помощью _модификаторов_.
 
-You can also pass multiple target IDs via the directive _value_ in BootstrapVue release v2.14.0+.
+Вы также можете передать несколько целевых идентификаторов с помощью директивы _значение_ в BootstrapVue версии v2.14.0+.
 
 ```html
 <div>
-  <!-- Via multiple directive modifiers -->
-  <b-button v-b-toggle.collapse-a.collapse-b>Toggle Collapse A and B</b-button>
+  <!-- Через несколько модификаторов директив -->
+  <b-button v-b-toggle.collapse-a.collapse-b>Переключить коллапс A и B</b-button>
 
-  <!-- Via space separated string of IDs passed to directive value -->
-  <b-button v-b-toggle="'collapse-a collapse-b'">Toggle Collapse A and B</b-button>
+  <!-- Строка идентификаторов, разделенных пробелами, передается в значение директивы -->
+  <b-button v-b-toggle="'collapse-a collapse-b'">Переключить коллапс A и B</b-button>
 
-  <!-- Via array of string IDs passed to directive value -->
-  <b-button v-b-toggle="['collapse-a', 'collapse-b']">Toggle Collapse A and B</b-button>
+  <!-- Через массив идентификаторов строк, переданных в значение директивы -->
+  <b-button v-b-toggle="['collapse-a', 'collapse-b']">Переключить коллапс A и B</b-button>
 
-  <!-- Elements to collapse -->
+  <!-- Элементы для сворачивания -->
   <b-collapse id="collapse-a" class="mt-2">
-    <b-card>I am collapsible content A!</b-card>
+    <b-card>Я сворачиваемый контент A!</b-card>
   </b-collapse>
   <b-collapse id="collapse-b" class="mt-2">
-    <b-card>I am collapsible content B!</b-card>
+    <b-card>Я сворачиваемый контент B!</b-card>
   </b-collapse>
 </div>
 
 <!-- b-collapse-trigger-multiple.vue -->
 ```
 
-## Accordion support
+## Поддержка аккордеона
 
-Turn a group of `<b-collapse>` components into an accordion by supplying an accordion group
-identifier via the `accordion` prop. Note that only one collapse in an accordion group can be open
-at a time.
+Превратите группу компонентов `<b-collapse>` в аккордеон, предоставив идентификатор группы аккордеона через свойство `accordion`. Обратите внимание, что в группе аккордеона может быть открыт только один сверток одновременно.
 
 ```html
 <template>
   <div class="accordion" role="tablist">
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
-        <b-button block v-b-toggle.accordion-1 variant="info">Accordion 1</b-button>
+        <b-button block v-b-toggle.accordion-1 variant="info">Аккордеон 1</b-button>
       </b-card-header>
       <b-collapse id="accordion-1" visible accordion="my-accordion" role="tabpanel">
         <b-card-body>
-          <b-card-text>I start opened because <code>visible</code> is <code>true</code></b-card-text>
+          <b-card-text>Я начинаю открывать, потому что <code>visible</code> имеет значение <code>true</code></b-card-text>
           <b-card-text>{{ text }}</b-card-text>
         </b-card-body>
       </b-collapse>
@@ -158,7 +146,7 @@ at a time.
 
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
-        <b-button block v-b-toggle.accordion-2 variant="info">Accordion 2</b-button>
+        <b-button block v-b-toggle.accordion-2 variant="info">Аккордеон 2</b-button>
       </b-card-header>
       <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
         <b-card-body>
@@ -169,7 +157,7 @@ at a time.
 
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
-        <b-button block v-b-toggle.accordion-3 variant="info">Accordion 3</b-button>
+        <b-button block v-b-toggle.accordion-3 variant="info">Аккордеон 3</b-button>
       </b-card-header>
       <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
         <b-card-body>
@@ -202,33 +190,25 @@ at a time.
 <!-- b-accordion.vue -->
 ```
 
-**Notes:**
+**Примечание:**
 
-- When using accordion mode, make sure you place the trigger elements and `<b-collapse>` components
-  inside an element with `role="tablist"` and set `role="tab"` on each trigger element's container
-  (each trigger element should be wrapped) in order to help screen reader users navigate the
-  accordion group.
-- If using the `v-model` feature of `<b-collapse>` in accordion mode, do not bind the `v-model` or
-  `visible` prop of all the collapses in the accordion group to the same variable!
-- Ensure, at most, only one `<b-collapse>` in the accordion group has the `visible` prop and/or
-  `v-model` set to `true`. Only one collapse in an accordion group can be open at a time.
+- При использовании режима аккордеона убедитесь, что вы разместили элементы триггера и компоненты `<b-collapse>` внутри элемента с помощью `role="tablist"` и установите `role="tab"` для каждого контейнера элемента триггера (каждый триггер элемент должен быть обернут), чтобы помочь пользователям программ чтения с экрана перемещаться по группе аккордеонов.
+- Если вы используете функцию `v-model` из `<b-collapse>` в режиме аккордеона, не привязывайте свойство `v-model` или `visible` всех коллапсов в группе аккордеона к одной и той же переменной!
+- Убедитесь, что не более одного элемента `<b-collapse>` в группе аккордеона имеет значение свойства `visible` и/или `v-model`, равное `true`. Одновременно может быть открыт только один коллапс в группе аккордеона.
 
-## Hiding and showing content in the toggle button based on collapse state
+## Скрытие и отображение содержимого в кнопке переключения в зависимости от состояния свертывания
 
-When using the `v-b-toggle` directive, the class `collapsed` will automatically be placed on the
-trigger element when the collapse is closed, and removed when open. You can use this class to
-display or hide content within the toggle via custom CSS. As of BootstrapVue 2.14.0, the class
-`not-collapsed` will be applied when the target(s) are not closed.
+При использовании директивы `v-b-toggle` класс `collapsed` автоматически помещается в элемент триггера при закрытии коллапса и удаляется при открытии. Вы можете использовать этот класс для отображения или скрытия содержимого в переключателе с помощью настраиваемого CSS. Начиная с BootstrapVue 2.14.0, класс `not-collapsed` будет применяться, когда цель (цели) не закрыты.
 
-**Example HTML markup:**
+**Пример разметки HTML:**
 
 ```html
 <div>
   <b-button v-b-toggle:my-collapse>
-    <span class="when-open">Close</span><span class="when-closed">Open</span> My Collapse
+    <span class="when-open">Закрыть</span><span class="when-closed">Открыть</span> мой коллапс
   </b-button>
   <b-collapse id="my-collapse">
-    <!-- Content here -->
+    <!-- Содержимое здесь -->
   </b-collapse>
 </div>
 ```
@@ -242,16 +222,13 @@ display or hide content within the toggle via custom CSS. As of BootstrapVue 2.1
 }
 ```
 
-## 'Global' \$root instance events
+## События экземпляра 'Global' \$root
 
-Using `$root` instance it is possible to emit and listen events somewhere out of a component, where
-`<b-collapse>` is used. In short, `$root` behaves like a global event emitters and listener. Details
-about `$root` instance can be found in
-[the official Vue docs](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-the-Root-Instance).
+Используя экземпляр `$root`, можно генерировать и прослушивать события где-нибудь вне компонента, где используется `<b-collapse>`. Короче говоря, `$root` ведет себя как генератор и приемник глобальных событий. Подробности об экземпляре `$root` можно найти в [официальной документации Vue](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-the-Root-Instance).
 
-### Listening to collapses state changes via \$root events
+### Прослушивание изменений состояния сворачивания через события \$root
 
-To listen to any collapse state changes, use:
+Чтобы прослушать любые изменения состояния коллапса, используйте:
 
 ```js
 export default {
@@ -264,57 +241,41 @@ export default {
 }
 ```
 
-where `collapseId` is collapse id which changed its state; `isJustShown` is true/false, i.e.
-shown/hidden collapse.
+где `collapseId` - идентификатор коллапса, который изменил свое состояние; `isJustShown` имеет значение true/false, т.е. показано/скрыто сворачивание.
 
-### Toggling collapses via \$root events
+### Переключение сворачивается через события \$root
 
-To toggle (open/close) a **specific collapse**, pass the collapse `id`:
+Чтобы переключить (открыть/закрыть) **конкретное сворачивание**, передайте в коллапс `id`:
 
 ```js
 this.$root.$emit('bv::toggle::collapse', 'my-collapse-id')
 ```
 
-## Optionally scoped default slot
+## Слот по умолчанию с дополнительной областью действия
 
-<span class="badge badge-info small">New in v2.2.0</span>
+<span class="badge badge-info small">Новое в v2.2.0</span>
 
-The default slot can be optionally scoped. The following scope properties are available:
+Слот по умолчанию может быть дополнительно ограничен. Доступны следующие свойства области:
 
-| Property  | Type     | Description                          |
+| Свойство  | Тип      | Описание                             |
 | --------- | -------- | ------------------------------------ |
-| `visible` | Boolean  | Visible state of the collapse        |
-| `close`   | Function | When called, will close the collapse |
+| `visible` | Boolean  | Видимое состояние коллапса           |
+| `close`   | Function | При вызове закроет коллапс           |
 
-## Accessibility
+## Доступность
 
-The `v-b-toggle` directive will automatically add the ARIA attributes `aria-controls` and
-`aria-expanded` to the component that the directive appears on (as well as add the class `collapsed`
-when not expanded). `aria-expanded` will reflect the state of the target `<b-collapse>` component,
-while `aria-controls` will be set to the ID(s) of the target `<b-collapse>` component(s).
+Директива `v-b-toggle` автоматически добавит атрибуты ARIA `aria-controls` и `aria-expanded` к компоненту, на котором указана директива (а также добавит класс `collapsed`, когда он не развернут). `aria-expanded` будет отражать состояние целевого компонента `<b-collapse>`, в то время как для `aria-controls` будет установлено значение идентификатора(ов) целевого компонента `<b-collapse>`.
 
-If using `v-model` to set the visible state instead of the directive `v-b-toggle`, you will be
-required to, on the toggle element, add the `aria-controls` and other appropriate attributes and
-classes yourself.
+Если вы используете `v-model` для установки видимого состояния вместо директивы `v-b-toggle`, вам потребуется добавить в элемент переключателя самим `aria-controls` и другие соответствующие атрибуты и классы.
 
-While the `v-b-toggle` directive can be placed on almost any HTML element or Vue component, it is
-recommended to use a button or link (or similar component) to act as your toggler. Otherwise your
-trigger elements may be inaccessible to keyboard or screen reader users. If you do place them on
-something other than a button or link (or similar component), you should add the attributes
-`tabindex="0"` and `role="button"` to allow users of assistive technology to reach your trigger
-element.
+Хотя директиву `v-b-toggle` можно разместить практически на любом элементе HTML или компоненте Vue, рекомендуется использовать кнопку или ссылку (или аналогичный компонент) в качестве переключателя. В противном случае ваши триггерные элементы могут быть недоступны для пользователей клавиатуры или программ чтения с экрана. Если вы размещаете их на чем-то другом, кроме кнопки или ссылки (или аналогичного компонента), вам следует добавить атрибуты `tabindex="0"` и `role="button"`, чтобы позволить пользователям вспомогательных технологий добраться до вашего триггерного элемента. .
 
-When using accordion mode, make sure you place the trigger elements and `<b-collapse>` components
-inside an element with `role="tablist"` and set `role="tab"` on each trigger element's container in
-order to help screen reader users navigate the accordion group. Unfortunately, BootstrapVue cannot
-apply those roles for you automatically, as it depends on your final document markup.
+При использовании режима аккордеона убедитесь, что вы разместили элементы триггера и компоненты `<b-collapse>` внутри элемента с помощью `role="tablist"` и установите `role="tab"` для каждого контейнера элемента триггера, чтобы помочь пользователи программ чтения с экрана перемещаются по группе аккордеона. К сожалению, BootstrapVue не может применить эти роли автоматически, так как это зависит от окончательной разметки документа.
 
-**Note:** The animation effect of this component is dependent on the `prefers-reduced-motion` media
-query. See the
-[reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
-additional details.
+**Примечание:** Эффект анимации этого компонента зависит от медиа-запроса `prefers-reduced-motion`. Смотрите
+[раздел с сокращенным движением в нашей документации по специальным возможностям](/docs/reference/accessibility) для получения дополнительных сведений.
 
-## See also
+## Смотрите также
 
 - [`v-b-toggle` directive](/docs/directives/toggle)
 
