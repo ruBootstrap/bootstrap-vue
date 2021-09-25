@@ -3,24 +3,24 @@
   "version": "1.0.0",
   "meta": {
     "title": "Embed",
-    "description": "Create responsive video or slideshow embeds based on the width of the parent by creating an intrinsic ratio that scales on any device.",
+    "description": "Создавайте адаптивные встраивания видео или слайд-шоу на основе ширины родительского элемента, создавая внутреннее соотношение, которое масштабируется на любом устройстве.",
     "components": [
       {
         "component": "BEmbed",
         "props": [
           {
             "prop": "aspect",
-            "description": "Aspect ratio of the embed. Supported values are '16by9', '21by9', '4by3', and '1by1' and are translated to CSS classes. Refer to the docs for more details"
+            "description": "Соотношение сторон вставки. Поддерживаемые значения: '16на9', '21на9', '4на3' и '1на1' и транслируются в классы CSS. Обратитесь к документации для получения более подробной информации."
           },
           {
             "prop": "type",
-            "description": "Type of embed. Possible values are 'iframe', 'video', 'embed' and 'object'"
+            "description": "Тип встраивания. Возможные значения: 'iframe', 'video', 'embed' и 'object'"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the embed"
+            "description": "Контент для размещения во встраивании"
           }
         ]
       }

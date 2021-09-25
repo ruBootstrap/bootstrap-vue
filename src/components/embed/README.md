@@ -1,9 +1,8 @@
-# Embed
+# Встраивание
 
-> Create responsive video or slideshow embeds based on the width of the parent by creating an
-> intrinsic ratio that scales on any device.
+> Создавайте адаптивные встраивания видео или слайд-шоу на основе ширины родительского элемента, создавая внутреннее соотношение, которое масштабируется на любом устройстве.
 
-Rules are directly applied to `<iframe>`, `<embed>`, `<video>`, and `<object>` elements
+Правила напрямую применяются к элементам `<iframe>`, `<embed>`, `<video>` и `<object>`
 
 ```html
 <div>
@@ -18,34 +17,27 @@ Rules are directly applied to `<iframe>`, `<embed>`, `<video>`, and `<object>` e
 <!-- b-embed.vue -->
 ```
 
-## Embed types
+## Типы встраивания
 
-Supported embed types are `iframe` (default), `video`, `embed` and `object`, which translate to the
-standard HTML `<iframe>`, `<video>`, `<embed>` and `<object>` elements.
+Поддерживаемые типы встраивания: `iframe` (по умолчанию), `video`, `embed` и `object`, которые переводятся в стандартные HTML-элементы: `<iframe>`, `<video>`, `<embed>` и `<object>`.
 
-Set the type of embed you would like via the `type` prop.
+Установите желаемый тип встраивания с помощью свойства `type`.
 
-## Aspect ratios
+## Соотношения сторон
 
-Aspect ratios can be set via the `aspect` prop. Supported aspect ratios are: `21by9` (21:9), `16by9`
-(16:9), `4by3` (4:3) and `1by1` (1:1). The default aspect is `16by9`. Aspect ratios are defined in
-Bootstrap's SCSS and translate to the classname `embed-responsive-{aspect}` (i.e.
-`embed-responsive-16by9`, `embed-responsive-4by3`, etc.).
+Соотношение сторон может быть установлено с помощью свойства `aspect`. Поддерживаемые соотношения сторон: `21by9` (21:9), `16by9` (16:9), `4by3` (4:3) и `1by1` (1:1). Формат по умолчанию `16by9`. Соотношения сторон определены в SCSS Bootstrap и преобразуются в имя класса `embed-responsive-{aspect}` (то есть `embed-responsive-16by9`, `embed-responsive-4by3`, etc.).
 
-## Wrapper element
+## Элемент оболочки
 
-The Responsive embed is wrapped in an outer element (default is `div`) to enforce the responsive
-aspect ratio. You can change this tag via the `tag` prop.
+Адаптивное встраивание обернуто во внешний элемент (по умолчанию - `div`), чтобы обеспечить адаптивное соотношение сторон. Вы можете изменить этот тег с помощью свойства `tag`.
 
-## Attributes and child elements
+## Атрибуты и дочерние элементы
 
-Any additional attributes provided to `<b-embed>` (other than the above `type`, `aspect` and `tag`
-props) are applied to the inner embedded element (i.e. the `iframe`, `video`, `embed` or `object`).
+Любые дополнительные атрибуты, предоставленные для `<b-embed>` (кроме указанных выше свойств `type`, `aspect` и `tag`) применяются к внутреннему встроенному элементу (например, `iframe`, `video`, `embed` или `object`).
 
-Any children elements between the opening and closing `<b-embed>` will be placed inside the inner
-embedded element. Note that the type `iframe` does not support any children.
+Любые дочерние элементы между открывающим и закрывающим `<b-embed>` будут помещены внутри внутреннего встроенного элемента. Обратите внимание, что тип iframe не поддерживает дочерние элементы.
 
-**Example: Responsive embedding of an HTML5 `<video>`**
+**Пример: отзывчивое встраивание HTML5 `<video>`**
 
 ```html
 <div>
@@ -56,7 +48,7 @@ embedded element. Note that the type `iframe` does not support any children.
 </div>
 ```
 
-## See also
+## Смотрите также
 
 - [`<b-aspect>` component](/docs/components/aspect)
 
