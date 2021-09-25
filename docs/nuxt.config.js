@@ -25,9 +25,9 @@ const ANCHOR_LINK_HEADING_LEVELS = [2, 3, 4, 5]
 // Determine if documentation generation is published production docs
 // Must be from 'bootstrap-vue/bootstrap-vue' repo 'master' branch
 const IS_PROD_DOCS =
-  process.env.VERCEL_GITHUB_ORG === 'bootstrap-vue' &&
+  process.env.VERCEL_GITHUB_ORG === 'ruBootstrap' &&
   process.env.VERCEL_GITHUB_REPO === 'bootstrap-vue' &&
-  process.env.VERCEL_GITHUB_COMMIT_REF === 'master'
+  process.env.VERCEL_GITHUB_COMMIT_REF === 'dev-ru'
 
 // --- Utility methods ---
 
@@ -293,9 +293,9 @@ module.exports = {
     apiPrefix: 'api'
   },
 
-  // We enable crawling in production docs only
+  // Мы разрешаем сканирование только в рабочей документации
   robots: () => {
-    // In production docs we allow crawling, else we deny crawling
+    // В рабочей документации мы разрешаем сканирование, в противном случае мы запрещаем сканирование
     return [IS_PROD_DOCS ? { UserAgent: '*', Allow: '/' } : { UserAgent: '*', Disallow: '/' }]
   },
 
