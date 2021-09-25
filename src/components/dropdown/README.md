@@ -1,256 +1,226 @@
-# Dropdown
+# Выпадающий список
 
-> Dropdowns are toggleable, contextual overlays for displaying lists of links and actions in a
-> dropdown menu format.
+> Выпадающие списки - это переключаемые контекстные наложения для отображения списков ссылок и действий в формате раскрывающегося меню.
 
-`<b-dropdown>` (or known by its shorter alias of `<b-dd>`) components are toggleable, contextual
-overlays for displaying lists of links and more. They're toggled by clicking (or pressing space or
-enter when focused), not by hovering; this is an
-[intentional design decision](https://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/).
+Компоненты `<b-dropdown>` (или известные под его более коротким псевдонимом `<b-dd>`) являются переключаемыми, контекстными наложениями для отображения списков ссылок и многого другого. Они переключаются щелчком (или нажатием пробела или вводом при фокусировке), а не при наведении курсора; это [намеренное дизайнерское решение](https://markdotto.com/2012/02/27/bootstrap-explained-dropdowns/).
 
 ```html
 <div>
   <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
-    <b-dropdown-item>First Action</b-dropdown-item>
-    <b-dropdown-item>Second Action</b-dropdown-item>
-    <b-dropdown-item>Third Action</b-dropdown-item>
+    <b-dropdown-item>Первое действие</b-dropdown-item>
+    <b-dropdown-item>Второе действие</b-dropdown-item>
+    <b-dropdown-item>Третье действие</b-dropdown-item>
     <b-dropdown-divider></b-dropdown-divider>
-    <b-dropdown-item active>Active action</b-dropdown-item>
-    <b-dropdown-item disabled>Disabled action</b-dropdown-item>
+    <b-dropdown-item active>Активное действие</b-dropdown-item>
+    <b-dropdown-item disabled>Отключенное действие</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown.vue -->
 ```
 
-## Button content
+## Контент кнопки
 
-You can customize the text of the dropdown button by using either the `text` prop (shown in previous
-examples), or use the `button-content` slot instead of the `text` prop. The `button-content` slot
-allows you to use basic HTML and icons in the button content.
+Вы можете настроить текст раскрывающейся кнопки, используя либо свойство `text` (показанное в предыдущих примерах), либо используя слот `button-content` вместо свойства `text`. Слот `button-content` позволяет вам использовать базовый HTML и иконки в содержимом кнопки.
 
-If both the prop `text` and slot `button-content` are present, the slot `button-content` will take
-precedence.
+Если присутствуют и свойство `text`, и слот `button-content`, то слот `button-content` будет иметь приоритет.
 
 ```html
 <div>
   <b-dropdown text="Button text via Prop">
-    <b-dropdown-item href="#">An item</b-dropdown-item>
-    <b-dropdown-item href="#">Another item</b-dropdown-item>
+    <b-dropdown-item href="#">Пункт</b-dropdown-item>
+    <b-dropdown-item href="#">Другой пункт</b-dropdown-item>
   </b-dropdown>
 
   <b-dropdown>
     <template #button-content>
-      Custom <strong>Content</strong> with <em>HTML</em> via Slot
+      Пользовательский <strong>Content</strong> с <em>HTML</em> через слот
     </template>
-    <b-dropdown-item href="#">An item</b-dropdown-item>
-    <b-dropdown-item href="#">Another item</b-dropdown-item>
+    <b-dropdown-item href="#">Пункт</b-dropdown-item>
+    <b-dropdown-item href="#">Другой пункт</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-button-content.vue -->
 ```
 
-## Positioning
+## Позиционирование
 
-Dropdown supports various positioning such as left and right aligned, dropdown and dropup, and
-supports auto-flipping (dropdown to dropup, and vice-versa) when the menu would overflow off of the
-visible screen area.
+Раскрывающийся список поддерживает различное позиционирование, такое как выравнивание по левому и правому краю, раскрывающееся и раскрывающееся, а также поддерживает автоматическое переворачивание (раскрывающееся в раскрывающееся и наоборот), когда меню выходит за пределы видимой области экрана.
 
-### Menu alignment
+### Выравнивание меню
 
-The dropdown menu can either be left aligned (default) or right aligned with respect to the button
-above it. To have the dropdown aligned on the right, set the `right` prop.
+Выпадающее меню может быть выровнено по левому краю (по умолчанию) или по правому краю относительно кнопки над ним. Чтобы выпадающий список был выровнен по правому краю, установите свойство `right`.
 
 ```html
 <div>
   <b-dropdown id="dropdown-left" text="Left align" variant="primary" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 
   <b-dropdown id="dropdown-right" right text="Right align" variant="primary" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-right.vue -->
 ```
 
-### Dropup
+### Выпадающее вверх
 
-Turn your dropdown menu into a drop-up menu by setting the `dropup` prop.
+Превратите выпадающее меню в выпадающее вверх, установив свойство `dropup`.
 
 ```html
 <div>
   <b-dropdown id="dropdown-dropup" dropup text="Drop-Up" variant="primary" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-dropup.vue -->
 ```
 
-### Drop right or left
+### Выпадающее вправо или влево
 
-Turn your dropdown menu into a drop-right menu by setting the `dropright` prop. Or, turn it into a
-drop-left menu by setting the `dropleft` right prop to true.
+Превратите раскрывающееся меню в раскрывающееся меню справа, установив свойство `dropright`. Или превратите его в выпадающее левое меню, установив для свойства `dropleft` значение `true`.
 
-`dropright` takes precedence over `dropleft`. Neither `dropright` or `dropleft` have any effect if
-`dropup` is set.
+`dropright` имеет приоритет над `dropleft`. Ни `dropright`, ни `dropleft` не действуют, если установлено `dropup`.
 
 ```html
 <div>
   <b-dropdown id="dropdown-dropright" dropright text="Drop-Right" variant="primary" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 
   <b-dropdown id="dropdown-dropleft" dropleft text="Drop-Left" variant="primary" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-dropright-dropleft.vue -->
 ```
 
-### Auto "flipping"
+### Авто "flipping"
 
-By default, dropdowns may flip to the top, or to the bottom, based on their current position in the
-viewport. To disable this auto-flip feature, set the `no-flip` prop.
+По умолчанию раскрывающиеся списки могут переворачиваться вверх или вниз в зависимости от их текущего положения в области просмотра. Чтобы отключить эту функцию автоматического переворачивания, установите свойство `no-flip`.
 
-### Menu offset
+### Смещение меню
 
-Like to move your menu away from the toggle buttons a bit? Then use the `offset` prop to specify the
-number of pixels to push right (or left when negative) from the toggle button:
+Хотите немного отодвинуть меню от кнопок-переключателей? Затем используйте свойство `offset`, чтобы указать количество пикселей, которые нужно сдвинуть вправо (или влево, если оно отрицательно) от переключателя:
 
-- Specified as a number of pixels: positive for right shift, negative for left shift.
-- Specify the distance in CSS units (i.e. `0.3rem`, `4px`, `1.2em`, etc.) passed as a string.
+- Задается как количество пикселей: положительное для сдвига вправо, отрицательное для сдвига влево.
+- Укажите расстояние в единицах CSS (например, `0.3rem`, `4px`, `1.2em` и т. д.), передаваемое в виде строки.
 
 ```html
 <div>
   <b-dropdown id="dropdown-offset" offset="25" text="Offset Dropdown" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-offset.vue -->
 ```
 
-### Boundary constraint
+### Ограничение границ
 
-By default, dropdowns are visually constrained to its scroll parent, which will suffice in most
-situations. However, if you place a dropdown inside an element that has `overflow: scroll` (or
-similar) set, the dropdown menu may - in some situations - get cut off. To get around this, you can
-specify a boundary element via the `boundary` prop. Supported values are `'scrollParent'` (the
-default), `'viewport'`, `'window'` or a reference to an HTML element. The boundary value is passed
-directly to Popper.js's `boundariesElement` configuration option.
+По умолчанию раскрывающиеся списки визуально ограничены родительским элементом прокрутки, чего будет достаточно в большинстве ситуаций. Однако, если вы поместите раскрывающийся список внутри элемента, для которого задано `overflow: scroll` (или аналогичный), раскрывающееся меню может - в некоторых ситуациях - обрезаться. Чтобы обойти это, вы можете указать граничный элемент через свойство `boundary`. Поддерживаемые значения: `'scrollParent'` (по умолчанию), `'viewport'`, `'window'` или ссылка на элемент HTML. Граничное значение передается непосредственно в параметр конфигурации Popper.js `boundariesElement`.
 
-**Note:** When `boundary` is any value other than the default of `'scrollParent'`, the style
-`position: static` is applied to to the dropdown component's root element in order to allow the menu
-to "break-out" of its scroll container. In some situations this may affect your layout or
-positioning of the dropdown trigger button. In these cases you may need to wrap your dropdown inside
-another element.
+**Примечание:** Когда `boundary` - это любое значение, отличное от `'scrollParent'` по умолчанию, стиль `position: static` применяется к корневому элементу раскрывающегося компонента, чтобы позволить меню "прорыв" из контейнера прокрутки. В некоторых ситуациях это может повлиять на ваш макет или расположение кнопки запуска раскрывающегося списка. В этих случаях вам может потребоваться заключить раскрывающийся список в другой элемент.
 
-### Advanced Popper.js configuration
+### Расширенная конфигурация Popper.js
 
-If you need some advanced Popper.js configuration to make dropdowns behave to your needs, you can
-use the `popper-opts` prop to pass down a custom configuration object which will be deeply merged
-with the BootstrapVue defaults.
+Если вам нужна расширенная конфигурация Popper.js, чтобы раскрывающиеся списки соответствовали вашим потребностям, вы можете использовать свойство `popper-opts` для передачи настраиваемого объекта конфигурации, который будет полностью объединен с настройками BootstrapVue по умолчанию.
 
-Head to the [Popper.js docs](https://popper.js.org/docs/v1/) to see all the configuration options.
+Перейдите в [документацию Popper.js](https://popper.js.org/docs/v1/), чтобы увидеть все параметры конфигурации.
 
-**Note**: The props `offset`, `boundary` and `no-flip` may loose their effect when you overwrite the
-Popper.js configuration.
+**Примечание**: Свойства `offset`, `boundary` и `no-flip` могут потерять свое действие при перезаписи конфигурации Popper.js.
 
-## Split button support
+## Поддержка разделенных кнопок
 
-Create a split dropdown button, where the left button provides standard `click` event and link
-support, while the right hand side is the dropdown menu toggle button.
+Создайте разделенную кнопку раскрывающегося списка, где левая кнопка обеспечивает стандартное событие `click` и поддержку ссылок, а правая сторона - кнопка переключения раскрывающегося меню.
 
 ```html
 <div>
   <b-dropdown split text="Split Dropdown" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here...</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь...</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-split.vue -->
 ```
 
-### Split button link support
+### Поддержка ссылки на разделенную кнопку
 
-The left split button defaults to an element of type `<button>` (a `<b-button>` to be exact). To
-convert this button into a link or `<router-link>`, specify the href via the `split-href` prop or a
-router link `to` value via the `split-to` prop, while maintaining the look of a button.
+Левая разделенная кнопка по умолчанию представляет собой элемент типа `<button>` (точнее, `<b-button>`). Чтобы преобразовать эту кнопку в ссылку или `<router-link>`, укажите href через свойство `split-href` или ссылку маршрутизатора `to` значение через свойство `split-to`, сохраняя при этом внешний вид кнопка.
 
 ```html
 <div>
-  <b-dropdown split split-href="#foo/bar" text="Split Link" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here...</b-dropdown-item>
+  <b-dropdown split split-href="#foo/bar" text="Раздельная ссылка" class="m-2">
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь...</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-split-link.vue -->
 ```
 
-### Split button type
+### Тип разделенной кнопки
 
-The split button defaults to a button `type` of `'button'`. You can specify an alternate type via
-the `split-button-type` prop. Supported values are: `'button'`, `'submit'` and `'reset'`.
+По умолчанию для разделенной кнопки используется кнопка `type` типа кнопка `'button'`. Вы можете указать альтернативный тип с помощью свойства `split-button-type`. Поддерживаемые значения: `'button'`, `'submit'` и `'reset'`.
 
-If props `split-to` or `split-href` are set, the `split-button-type` prop will be ignored.
+Если заданы свойства `split-to` или `split-href`, свойство `split-button-type` будет проигнорировано.
 
-## Styling options
+## Варианты стилизации
 
-Dropdowns support various props for styling the dropdown trigger button.
+Выпадающие списки поддерживают различные элементы оформления кнопки запуска раскрывающегося списка.
 
-### Sizing
+### Размеры
 
-Dropdowns work with trigger buttons of all sizes, including default and split dropdown buttons.
+Выпадающие списки работают с кнопками-триггерами любого размера, включая кнопки по умолчанию и кнопки с разделенным раскрывающимся списком.
 
-Set the `size` prop to either `sm` for small button(s), or `lg` for large button(s).
+Задайте для свойства `size` значение `sm` для маленьких кнопок или `lg` для больших кнопок.
 
 ```html
 <div>
   <div>
     <b-dropdown size="lg" text="Large" class="m-2">
-      <b-dropdown-item-button>Action</b-dropdown-item-button>
-      <b-dropdown-item-button>Another action</b-dropdown-item-button>
-      <b-dropdown-item-button>Something else here</b-dropdown-item-button>
+      <b-dropdown-item-button>Действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Другое действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Что-то еще здесь</b-dropdown-item-button>
     </b-dropdown>
 
     <b-dropdown size="lg" split text="Large Split" class="m-2">
-      <b-dropdown-item-button>Action</b-dropdown-item-button>
-      <b-dropdown-item-button>Another action</b-dropdown-item-button>
-      <b-dropdown-item-button>Something else here...</b-dropdown-item-button>
+      <b-dropdown-item-button>Действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Другое действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Что-то еще здесь...</b-dropdown-item-button>
     </b-dropdown>
   </div>
   <div>
     <b-dropdown size="sm" text="Small" class="m-2">
-      <b-dropdown-item-button>Action</b-dropdown-item-button>
-      <b-dropdown-item-button>Another action</b-dropdown-item-button>
-      <b-dropdown-item-button>Something else here...</b-dropdown-item-button>
+      <b-dropdown-item-button>Действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Другое действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Что-то еще здесь...</b-dropdown-item-button>
     </b-dropdown>
 
     <b-dropdown size="sm" split text="Small Split" class="m-2">
-      <b-dropdown-item-button>Action</b-dropdown-item-button>
-      <b-dropdown-item-button>Another action</b-dropdown-item-button>
-      <b-dropdown-item-button>Something else here...</b-dropdown-item-button>
+      <b-dropdown-item-button>Действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Другое действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Что-то еще здесь...</b-dropdown-item-button>
     </b-dropdown>
   </div>
 </div>
@@ -258,48 +228,43 @@ Set the `size` prop to either `sm` for small button(s), or `lg` for large button
 <!-- b-dropdown-sizes.vue -->
 ```
 
-**Note:** _changing the size of the button(s) does not affect the size of the menu items!_
+**Примечание:** _Изменение размера кнопок не влияет на размер пунктов меню!_
 
-### Dropdown color variants
+### Варианты цвета раскрывающегося списка
 
-The dropdown toggle button can have one of the standard Bootstrap contextual variants applied by
-setting the prop `variant` to `success`, `primary`, `info`, `danger`, `link`, `outline-dark`, etc.
-(or custom variants, if defined). The default variant is `secondary`.
+К кнопке переключения раскрывающегося списка можно применить один из стандартных контекстных вариантов Bootstrap, установив для свойства `variant` значение `success`, `primary`, `info`, `danger`, `link`, `outline-dark` и т. д. (или пользовательские варианты, если они определены). Вариант по умолчанию - `secondary`.
 
-See the [Variant Reference](/docs/reference/color-variants) for a full list of built-in contextual
-variants.
+Полный список встроенных контекстных вариантов смотрите в [Справочнике по вариантам](/docs/reference/color-variants).
 
 ```html
 <div>
   <b-dropdown text="Primary" variant="primary" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 
   <b-dropdown text="Success" variant="success" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 
   <b-dropdown text="Outline Danger" variant="outline-danger" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-variants.vue -->
 ```
 
-You can also apply arbitrary classes to the toggle button via the `toggle-class` prop. This prop
-accepts either a string or array of strings.
+Вы также можете применить произвольные классы к кнопке-переключателю с помощью свойства `toggle-class`. Это свойство принимает либо строку, либо массив строк.
 
-### Split button color variant
+### Вариант цвета разделенной кнопки
 
-By default the left split button uses the same `variant` as the `toggle` button. You can give the
-split button its own variant via the `split-variant` prop.
+По умолчанию левая разделенная кнопка использует тот же вариант `variant`, что и кнопка `toggle`. Вы можете дать кнопке разделения отдельный вариант через свойство `split-variant`.
 
 ```html
 <div>
@@ -310,27 +275,25 @@ split button its own variant via the `split-variant` prop.
     text="Split Variant Dropdown"
     class="m-2"
   >
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here...</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь...</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-split-variant.vue -->
 ```
 
-### Block level dropdowns
+### Выпадающие списки на уровне блоков
 
-By default dropdowns act like buttons and are displayed inline. To create block level dropdowns
-(that span to the full width of a parent) set the `block` prop. Both, regular and split button
-dropdowns are supported.
+По умолчанию раскрывающиеся списки действуют как кнопки и отображаются в строке. Чтобы создать выпадающие списки на уровне блоков (которые охватывают всю ширину родительского элемента), установите свойство `block`. Поддерживаются раскрывающиеся списки как обычных, так и разделенных кнопок.
 
 ```html
 <div>
   <b-dropdown text="Block Level Dropdown" block variant="primary" class="m-2">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 
   <b-dropdown
@@ -341,17 +304,16 @@ dropdowns are supported.
     variant="primary"
     class="m-2"
   >
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here...</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь...</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-block.vue -->
 ```
 
-If you want the dropdown menu to span to the full width of the parent container too, add the `w-100`
-utility class to the `menu-class` prop.
+Если вы хотите, чтобы раскрывающееся меню также занимало всю ширину родительского контейнера, добавьте утилиту `w-100` в свойство `menu-class`.
 
 ```html
 <div>
@@ -362,112 +324,99 @@ utility class to the `menu-class` prop.
     class="m-2"
     menu-class="w-100"
   >
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-block-menu.vue -->
 ```
 
-### Dropdown sub-component color variants
+### Варианты цвета раскрывающегося подкомпонента
 
-Many of the supported dropdown [sub-components](#dropdown-supported-sub-components) provide a
-`variant` prop for controlling their text color.
+Многие из поддерживаемых раскрывающихся [субкомпонентов](#dropdown-supported-sub-components) предоставляют свойство `variant` для управления цветом их текста.
 
-### Hidden caret
+### Скрытая каретка
 
-The dropdown can be created with the toggle's caret visually hidden by setting the `no-caret` prop
-to `true`. This is useful when the dropdown is to be displayed as an icon.
+Выпадающий список может быть создан с визуально скрытой кареткой переключателя, установив для свойства `no-caret` значение `true`. Это полезно, когда раскрывающийся список должен отображаться в виде иконки.
 
 ```html
 <div>
   <b-dropdown size="lg"  variant="link" toggle-class="text-decoration-none" no-caret>
     <template #button-content>
-      &#x1f50d;<span class="sr-only">Search</span>
+      &#x1f50d;<span class="sr-only">Поиск</span>
     </template>
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here...</b-dropdown-item>
+    <b-dropdown-item href="#">Действие</b-dropdown-item>
+    <b-dropdown-item href="#">Другое действие</b-dropdown-item>
+    <b-dropdown-item href="#">Что-то еще здесь...</b-dropdown-item>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-hidden-caret.vue -->
 ```
 
-**Note:** The caret will always be shown when using `split` mode.
+**Примечание:** Каретка всегда будет отображаться при использовании режима `split`.
 
-## Lazy dropdown
+## Отложенный раскрывающийся список
 
-By default, `<b-dropdown>` renders the menu contents in the DOM even when the menu is not shown.
-When there are a large number of dropdowns rendered on the same page, performance could be impacted
-due to larger overall memory utilization. You can instruct `<b-dropdown>` to render the menu
-contents only when it is shown by setting the `lazy` prop to true.
+По умолчанию `<b-dropdown>` отображает содержимое меню в DOM, даже если меню не отображается.
+Когда на одной странице отображается большое количество раскрывающихся списков, производительность может снизиться из-за большего общего использования памяти. Вы можете указать `<b-dropdown>` отображать содержимое меню только тогда, когда оно отображается, установив для свойства `lazy` значение `true`.
 
-## Dropdown supported sub-components
+## Подкомпоненты, поддерживаемые раскрывающимся списком
 
-The following components can be placed inside of your dropdowns. Using any other component or markup
-may break layout and/or keyboard navigation.
+Следующие компоненты можно разместить в раскрывающихся списках. Использование любого другого компонента или разметки может нарушить раскладку и/или навигацию с клавиатуры.
 
-| Sub-component              | Description                                                                                                                     | Aliases                                                          |
+| Подкомпонент              | Описание                                                                                                                     | Алиасы                                                          |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `<b-dropdown-item>`        | Action items that provide click, link, and `<router-link>`/`<nuxt-link>` functionality. Renders as an `<a>` element by default. | `<b-dd-item>`                                                    |
-| `<b-dropdown-item-button>` | An alternative to `<b-dropdown-item>` that renders a menu item using a `<button>` element.                                      | `<b-dropdown-item-btn>`, `<b-dd-item-button>`, `<b-dd-item-btn>` |
-| `<b-dropdown-divider>`     | A divider / spacer which can be used to separate dropdown items.                                                                | `<b-dd-divider>`                                                 |
-| `<b-dropdown-text>`        | Free flowing text content in a menu.                                                                                            | `<b-dd-text>`                                                    |
-| `<b-dropdown-form>`        | For placing form controls within a dropdown menu.                                                                               | `<b-dd-form>`                                                    |
-| `<b-dropdown-group>`       | For grouping dropdown sub components with an optional header.                                                                   | `<b-dd-group>`                                                   |
-| `<b-dropdown-header>`      | A header item, used to help identify a group of dropdown items.                                                                 | `<b-dd-header>`                                                  |
+| `<b-dropdown-item>`        | Элементы действий, которые обеспечивают щелчок, ссылку и функциональность `<router-link>`/`<nuxt-link>`. По умолчанию отображается как элемент `<a>`. | `<b-dd-item>`                                                    |
+| `<b-dropdown-item-button>` | Альтернатива `<b-dropdown-item>`, которая отображает пункт меню с помощью элемента `<button>`.                                      | `<b-dropdown-item-btn>`, `<b-dd-item-button>`, `<b-dd-item-btn>` |
+| `<b-dropdown-divider>`     | Разделитель / разделитель, который можно использовать для разделения раскрывающихся элементов.                                                                | `<b-dd-divider>`                                                 |
+| `<b-dropdown-text>`        | Свободный текстовый контент в меню.                                                                                            | `<b-dd-text>`                                                    |
+| `<b-dropdown-form>`        | Для размещения элементов управления формы в раскрывающемся меню.                                                                               | `<b-dd-form>`                                                    |
+| `<b-dropdown-group>`       | Для группировки раскрывающихся субкомпонентов с дополнительным заголовком.                                                                   | `<b-dd-group>`                                                   |
+| `<b-dropdown-header>`      | Элемент заголовка, используемый для идентификации группы раскрывающихся элементов.                                                                 | `<b-dd-header>`                                                  |
 
-**Note:** _Nested sub-menus are **not** supported._
+**Примечание:** _Вложенные подменю **не** поддерживаются._
 
 ### `<b-dropdown-item>`
 
-The `<b-dropdown-item>` is typically used to create a navigation link inside your menu. Use either
-the `href` prop or the `to` prop (for router link support) to generate the appropriate navigation
-link. If neither `href` nor `to` are provided, a standard `<a>` link will be generated with an
-`href` of `#` (with an event handler that will prevent scroll to top behaviour by preventing the
-default link action).
+`<b-dropdown-item>` обычно используется для создания навигационной ссылки внутри вашего меню. Используйте либо свойство `href` или свойство `to` (для поддержки ссылки маршрутизатора), чтобы сгенерировать соответствующую ссылку навигации. Если ни `href`, ни `to` не указаны, будет сгенерирована стандартная ссылка `<a>` с `href`, равным `#` (с обработчиком событий, который предотвратит прокрутку вверх, не допуская действия ссылки по умолчанию).
 
-Disabled the dropdown item by setting the `disabled` prop.
+Отключить раскрывающийся список, установив свойство `disabled`.
 
 ### `<b-dropdown-item-button>`
 
-Historically dropdown menu contents had to be links (`<b-dropdown-item>`), but that's no longer the
-case with Bootstrap v4. Now you can optionally create `<button>` elements in your dropdowns by using
-the `<b-dropdown-item-button>` sub-component. `<b-dropdown-item-button>` does not support the `href`
-or `to` props.
+Исторически содержимое выпадающего меню должно было быть ссылками (`<b-dropdown-item>`), но это уже не относится к Bootstrap v4. Теперь вы можете дополнительно создавать элементы `<button>` в раскрывающихся списках с помощью подкомпонента `<b-dropdown-item-button>`. `<b-dropdown-item-button>` не поддерживает свойства `href` или `to`.
 
-Disabled the dropdown item button by setting the `disabled` prop.
+Отключить кнопку выпадающего списка, установив свойство `disabled`.
 
 ```html
 <div>
   <b-dropdown id="dropdown-buttons" text="Dropdown using buttons as menu items" class="m-2">
-    <b-dropdown-item-button>I'm a button</b-dropdown-item-button>
-    <b-dropdown-item-button active>I'm a active button</b-dropdown-item-button>
-    <b-dropdown-item-button disabled>I'm a button, but disabled!</b-dropdown-item-button>
-    <b-dropdown-item-button>I don't look like a button, but I am!</b-dropdown-item-button>
+    <b-dropdown-item-button>Я кнопка</b-dropdown-item-button>
+    <b-dropdown-item-button active>Я активная кнопка</b-dropdown-item-button>
+    <b-dropdown-item-button disabled>Я кнопка, но отключена!</b-dropdown-item-button>
+    <b-dropdown-item-button>Я не похож на кнопку, но я такая!</b-dropdown-item-button>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-item-button.vue -->
 ```
 
-When the menu item doesn't trigger navigation, it is recommended to use the
-`<b-dropdown-item-button>` sub-component.
+Когда элемент меню не запускает навигацию, рекомендуется использовать подкомпонент `<b-dropdown-item-button>`.
 
 ### `<b-dropdown-divider>`
 
-Separate groups of related menu items with `<b-dropdown-divider>`.
+Разделите группы связанных пунктов меню с помощью `<b-dropdown-divider>`.
 
 ```html
 <div>
   <b-dropdown id="dropdown-divider" text="Dropdown with divider" class="m-2">
-    <b-dropdown-item-button>First item</b-dropdown-item-button>
-    <b-dropdown-item-button>Second item</b-dropdown-item-button>
+    <b-dropdown-item-button>Первый элемент</b-dropdown-item-button>
+    <b-dropdown-item-button>Второй элемент</b-dropdown-item-button>
     <b-dropdown-divider></b-dropdown-divider>
-    <b-dropdown-item-button>Separated Item</b-dropdown-item-button>
+    <b-dropdown-item-button>Отдельный элемент</b-dropdown-item-button>
   </b-dropdown>
 </div>
 
@@ -476,40 +425,31 @@ Separate groups of related menu items with `<b-dropdown-divider>`.
 
 ### `<b-dropdown-text>`
 
-Place any freeform text within a dropdown menu using the `<b-dropdown-text>` sub component or use
-text and use spacing utilities. Note that you'll likely need additional sizing styles to
-constrain/set the menu width.
+Поместите любой текст произвольной формы в раскрывающееся меню с помощью субкомпонента `<b-dropdown-text>` или используйте текст и утилиты интервалов. Обратите внимание, что вам, вероятно, понадобятся дополнительные стили размеров, чтобы ограничить/установить ширину меню.
 
 ```html
 <div>
   <b-dropdown id="dropdown-text" text="Dropdown with text" class="m-2">
     <b-dropdown-text style="width: 240px;">
-      Some example text that's free-flowing within the dropdown menu.
+      Пример текста, который свободно перемещается в раскрывающемся меню.
     </b-dropdown-text>
-    <b-dropdown-text>And this is more example text.</b-dropdown-text>
+    <b-dropdown-text>И это еще один пример текста.</b-dropdown-text>
     <b-dropdown-divider></b-dropdown-divider>
-    <b-dropdown-item-button>First item</b-dropdown-item-button>
-    <b-dropdown-item-button>Second Item</b-dropdown-item-button>
+    <b-dropdown-item-button>Первый элемент</b-dropdown-item-button>
+    <b-dropdown-item-button>Второй элемент</b-dropdown-item-button>
   </b-dropdown>
 </div>
 
 <!-- b-dropdown-text.vue -->
 ```
 
-`<b-dropdown-text>` has the BootstrapVue custom class `.b-dropdown-text` applied to it which sets
-some basic styles which are suitable in most situations. By default its width will be the same as
-the widest `<b-dropdown-item>` content. You may need to place additional styles or helper classes on
-the component.
+`<b-dropdown-text>` имеет примененный к нему пользовательский класс BootstrapVue `.b-dropdown-text`, который устанавливает некоторые базовые стили, подходящие в большинстве ситуаций. По умолчанию его ширина будет такой же, как у самого широкого содержимого `<b-dropdown-item>`. Возможно, вам потребуется разместить в компоненте дополнительные стили или вспомогательные классы.
 
-By default `<b-dropdown-text>` renders using tag `<p>`. You can change the rendered tag by setting
-the `tag` prop to any valid HTML5 tag on the `<b-dropdown-text>` sub-component.
+По умолчанию `<b-dropdown-text>` отображается с использованием тега `<p>`. Вы можете изменить отображаемый тег, установив для свойства `tag` любой допустимый тег HTML5 в подкомпоненте `<b-dropdown-text>`.
 
 ### `<b-dropdown-form>`
 
-Dropdowns support basic forms. Put a `<b-dropdown-form>` within a dropdown menu and place form
-controls within the `<b-dropdown-form>`. The `<b-dropdown-form>` is based on the
-[`<b-form>`](/docs/components/form) component, and supports the same props and attributes as a
-regular form.
+Выпадающие списки поддерживают основные формы. Поместите `<b-dropdown-form>` в раскрывающееся меню и разместите элементы управления формой внутри `<b-dropdown-form>`. `<b-dropdown-form>` основан на компоненте [`<b-form>`](/docs/components/form) и поддерживает те же свойства и атрибуты, что и обычная форма.
 
 ```html
 <template>
@@ -533,12 +473,12 @@ regular form.
           ></b-form-input>
         </b-form-group>
 
-        <b-form-checkbox class="mb-3">Remember me</b-form-checkbox>
-        <b-button variant="primary" size="sm" @click="onClick">Sign In</b-button>
+        <b-form-checkbox class="mb-3">Запомнить меня</b-form-checkbox>
+        <b-button variant="primary" size="sm" @click="onClick">Войти</b-button>
       </b-dropdown-form>
       <b-dropdown-divider></b-dropdown-divider>
-      <b-dropdown-item-button>New around here? Sign up</b-dropdown-item-button>
-      <b-dropdown-item-button>Forgot Password?</b-dropdown-item-button>
+      <b-dropdown-item-button>Впервые здесь? Зарегистрироваться</b-dropdown-item-button>
+      <b-dropdown-item-button>Забыли пароль?</b-dropdown-item-button>
     </b-dropdown>
   </div>
 </template>
@@ -547,7 +487,7 @@ regular form.
   export default {
     methods: {
       onClick() {
-        // Close the menu and (by passing true) return focus to the toggle button
+        // Закройте меню и (передав true) верните фокус переключателю.
         this.$refs.dropdown.hide(true)
       }
     }
@@ -557,35 +497,30 @@ regular form.
 <!-- b-dropdown-form.vue -->
 ```
 
-`<b-dropdown-form>` has the BootstrapVue custom class `.b-dropdown-form` applied to it which sets
-some basic styles which are suitable in most situations. By default its width will be the same as
-the widest `<b-dropdown-item>` content. You may need to place additional styles or helper classes on
-the component.
+`<b-dropdown-form>` имеет примененный к нему пользовательский класс BootstrapVue `.b-dropdown-form`, который устанавливает некоторые базовые стили, подходящие в большинстве ситуаций. По умолчанию его ширина будет такой же, как у самого широкого содержимого `<b-dropdown-item>`. Возможно, вам потребуется разместить в компоненте дополнительные стили или вспомогательные классы.
 
 ### `<b-dropdown-group>`
 
-Group a set of dropdown sub components with an optional associated header. Place a
-`<b-dropdown-divider>` between your `<b-dropdown-group>` and other groups or non-grouped dropdown
-contents
+Сгруппируйте набор раскрывающихся подкомпонентов с необязательным связанным заголовком. Поместите `<b-dropdown-divider>` между вашей `<b-dropdown-group>` и другими группами или несгруппированным содержимым раскрывающегося списка.
 
 ```html
 <div>
   <b-dropdown id="dropdown-grouped" text="Dropdown with group" class="m-2">
     <b-dropdown-item-button>
-      Non-grouped Item
+      Несгруппированный элемент
     </b-dropdown-item-button>
     <b-dropdown-divider></b-dropdown-divider>
     <b-dropdown-group id="dropdown-group-1" header="Group 1">
-      <b-dropdown-item-button>First Grouped item</b-dropdown-item-button>
-      <b-dropdown-item-button>Second Grouped Item</b-dropdown-item-button>
+      <b-dropdown-item-button>Первый сгруппированный элемент</b-dropdown-item-button>
+      <b-dropdown-item-button>Второй сгруппированный элемент</b-dropdown-item-button>
     </b-dropdown-group>
     <b-dropdown-group id="dropdown-group-2" header="Group 2">
-      <b-dropdown-item-button>First Grouped item</b-dropdown-item-button>
-      <b-dropdown-item-button>Second Grouped Item</b-dropdown-item-button>
+      <b-dropdown-item-button>Первый сгруппированный элемент</b-dropdown-item-button>
+      <b-dropdown-item-button>Второй сгруппированный элемент</b-dropdown-item-button>
     </b-dropdown-group>
     <b-dropdown-divider></b-dropdown-divider>
     <b-dropdown-item-button>
-      Another Non-grouped Item
+      Другой несгруппированный элемент
     </b-dropdown-item-button>
   </b-dropdown>
 </div>
@@ -593,24 +528,23 @@ contents
 <!-- b-dropdown-group.vue -->
 ```
 
-Using `<b-dropdown-group>` instead of `<b-dropdown-header>` is the recommended method for providing
-accessible grouped items with a header.
+Использование `<b-dropdown-group>` вместо `<b-dropdown-header>` является рекомендуемым методом для предоставления доступных сгруппированных элементов с заголовком.
 
 ### `<b-dropdown-header>`
 
-Add a header to label sections of actions in any dropdown menu.
+Добавьте заголовок для обозначения разделов действий в любом раскрывающемся меню.
 
 ```html
 <div>
   <b-dropdown id="dropdown-header" text="Dropdown with header" class="m-2">
     <b-dropdown-header id="dropdown-header-label">
-      Dropdown header
+      Раскрывающийся заголовок
     </b-dropdown-header>
     <b-dropdown-item-button aria-describedby="dropdown-header-label">
-      First item
+      Первый элемент
     </b-dropdown-item-button>
     <b-dropdown-item-button aria-describedby="dropdown-header-label">
-      Second Item
+      Второй элемент
     </b-dropdown-item-button>
   </b-dropdown>
 </div>
@@ -618,25 +552,19 @@ Add a header to label sections of actions in any dropdown menu.
 <!-- b-dropdown-header.vue -->
 ```
 
-See Section [Dropdown headers and accessibility](#dropdown-headers-and-accessibility) for details on
-making headers more accessible for users of assistive technologies.
+Смотрите Раздел [Раскрывающиеся заголовки и доступность](#dropdown-headers-and-accessibility) для получения подробной информации о том, как сделать заголовки более доступными для пользователей вспомогательных технологий.
 
-Using the `<b-dropdown-group>` sub-component simplifies creating accessible grouped dropdown items
-with an associated header.
+Использование подкомпонента `<b-dropdown-group>` упрощает создание доступных сгруппированных раскрывающихся элементов со связанным заголовком.
 
-#### Closing the menu via form interaction
+#### Закрытие меню через взаимодействие с формой
 
-Clicking buttons inside of a `<b-dropdown-form>` will not automatically close the menu. If you need
-to close the menu using a button (or via the form submit event), call the `hide()` method on the
-`<b-dropdown>` instance, as is shown in the above example.
+Нажатие кнопок внутри `<b-dropdown-form>` не приведет к автоматическому закрытию меню. Если вам нужно закрыть меню с помощью кнопки (или через событие отправки формы), вызовите метод `hide()` для экземпляра `<b-dropdown>`, как показано в приведенном выше примере.
 
-The `hide()` method accepts a single boolean argument. If the argument is `true`, then focus will be
-returned to the dropdown toggle button after the menu has closed. Otherwise the document will gain
-focus once the menu is closed.
+Метод `hide()` принимает единственный логический аргумент. Если аргумент равен `true`, то после закрытия меню фокус будет возвращен к кнопке-переключателю раскрывающегося списка. В противном случае документ перейдет в фокус после закрытия меню.
 
-## Listening to dropdown changes via \$root events
+## Прослушивание изменений раскрывающегося списка с помощью событий \$root
 
-To listen to any dropdown opening, use:
+Чтобы прослушать любое раскрывающееся меню, используйте:
 
 ```js
 export default {
@@ -648,51 +576,43 @@ export default {
 }
 ```
 
-Refer to the [Events](#component-reference) section of documentation for the full list of events.
+Полный список событий смотрите в разделе документации [События](#component-reference).
 
-## Optionally scoped default slot
+## Слот по умолчанию с дополнительной областью действия
 
-The default slot is optionally scoped with the following scope available:
+Слот по умолчанию может быть ограничен следующей доступной областью:
 
-| Property or Method | Description                                                                                                                      |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
-| `hide()`           | Can be used to close the dropdown menu. Accepts an optional boolean argument, which if `true` returns focus to the toggle button |
+| Свойство или метод | Описание                                                                                                                                                   |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hide()`           | Может использоваться для закрытия раскрывающегося меню. Принимает необязательный логический аргумент, который, если `true`, возвращает фокус переключателю |
 
-## Accessibility
+## Доступность
 
-Providing a unique `id` prop ensures ARIA compliance by automatically adding the appropriate
-`aria-*` attributes in the rendered markup.
+Предоставление уникального свойства `id` обеспечивает соответствие ARIA за счет автоматического добавления соответствующих атрибутов `aria-*` в визуализированную разметку.
 
-The default ARIA role is set to `menu`, but you can change this default to another role (such as
-`navigation`) via the `role` prop, depending on your user case.
+Роль ARIA по умолчанию установлена на `menu`, но вы можете изменить это значение по умолчанию на другую роль (например, `navigation`) через свойство `role`, в зависимости от вашего пользовательского случая.
 
-When a menu item doesn't trigger navigation, it is recommended to use the `<b-dropdown-item-button>`
-sub-component (which is not announced as a link) instead of `<b-dropdown-item>` (which is presented
-as a link to the user).
+Когда элемент меню не запускает навигацию, рекомендуется использовать субкомпонент `<b-dropdown-item-button>` (который не объявляется как ссылка) вместо `<b-dropdown-item>` (который представлен в виде ссылки на пользователя).
 
-### Headers and accessibility
+### Заголовки и доступность
 
-When using `<b-dropdown-header>` components in the dropdown menu, it is recommended to add an `id`
-attribute to each of the headers, and then set the `aria-describedby` attribute (set to the `id`
-value of the associated header) on each following dropdown items under that header. This will
-provide users of assistive technologies (i.e. sight-impaired users) additional context about the
-dropdown item:
+При использовании компонентов `<b-dropdown-header>` в раскрывающемся меню рекомендуется добавить атрибут `id` к каждому из заголовков, а затем установить атрибут `aria-describedby` (установленный на `id` значение связанного заголовка) для каждого следующего раскрывающегося списка под этим заголовком. Это предоставит пользователям вспомогательных технологий (то есть пользователям с ослабленным зрением) дополнительный контекст о раскрывающемся элементе:
 
 ```html
 <div>
   <b-dropdown id="dropdown-aria" text="Dropdown ARIA" variant="primary" class="m-2">
-    <b-dropdown-header id="dropdown-header-1">Groups</b-dropdown-header>
-    <b-dropdown-item-button aria-describedby="dropdown-header-1">Add</b-dropdown-item-button>
-    <b-dropdown-item-button aria-describedby="dropdown-header-1">Delete</b-dropdown-item-button>
+    <b-dropdown-header id="dropdown-header-1">Группы</b-dropdown-header>
+    <b-dropdown-item-button aria-describedby="dropdown-header-1">Добавить</b-dropdown-item-button>
+    <b-dropdown-item-button aria-describedby="dropdown-header-1">Удалить</b-dropdown-item-button>
 
-    <b-dropdown-header id="dropdown-header-2">Users</b-dropdown-header>
-    <b-dropdown-item-button aria-describedby="dropdown-header-2">Add</b-dropdown-item-button>
-    <b-dropdown-item-button aria-describedby="dropdown-header-2">Delete</b-dropdown-item-button>
+    <b-dropdown-header id="dropdown-header-2">Пользователи</b-dropdown-header>
+    <b-dropdown-item-button aria-describedby="dropdown-header-2">Добавить</b-dropdown-item-button>
+    <b-dropdown-item-button aria-describedby="dropdown-header-2">Удалить</b-dropdown-item-button>
 
     <b-dropdown-divider></b-dropdown-divider>
 
     <b-dropdown-item-button>
-      Something <strong>not</strong> associated with Users
+      Что-то <strong>не</strong> связанное с Пользователями
     </b-dropdown-item-button>
 
   </b-dropdown>
@@ -701,29 +621,21 @@ dropdown item:
 <!-- b-dropdown-aria.vue -->
 ```
 
-As a simplified alternative, use the `<b-dropdown-group>` instead to easily associate header text to
-the contained dropdown sub-components.
+В качестве упрощенной альтернативы используйте `<b-dropdown-group>`, чтобы легко связать текст заголовка с содержащимися подкомпонентами раскрывающегося списка.
 
-### Keyboard navigation
+### Клавиатурная навигация
 
-Dropdowns support keyboard navigation, emulating native `<select>` behaviour.
+Выпадающие списки поддерживают навигацию с клавиатуры, имитируя собственное поведение `<select>`.
 
-Note that <kbd>Down</kbd> and <kbd>Up</kbd> will not move focus into `<b-dropdown-form>` sub
-components, but users can still use <kbd>Tab</kbd> or <kbd>Shift</kbd>+<kbd>Tab</kbd> to move into
-form controls within the menu.
+Обратите внимание, что <kbd>Down</kbd> и <kbd>Up</kbd> не перемещают фокус на субкомпоненты `<b-dropdown-form>`, но пользователи все равно могут использовать <kbd>Tab</kbd> или <kbd>Shift</kbd>+<kbd>Tab</kbd> для перехода к элементам управления формы в меню.
 
-## Implementation notes
+## Примечания по реализации
 
-The dropdown menu is rendered with semantic `<ul>` and `<li>` elements for accessibility reasons.
-The `.dropdown-menu` is the `<ul>` element, while dropdown items (items, buttons, text, form,
-headers, and dividers) are wrapped in an `<li>` element. If creating custom items to place inside
-the dropdown menu, ensure they are wrapped with a plain `<li>`.
+Выпадающее меню отображается с семантическими элементами `<ul>` и `<li>` по причинам доступности. `.dropdown-menu` - это элемент `<ul>`, а выпадающие элементы (элементы, кнопки, текст, форма, заголовки и разделители) заключены в элемент `<li>`. При создании пользовательских элементов для размещения в раскрывающемся меню убедитесь, что они заключены в простой `<li>`.
 
-## See also
+## Смотрите также
 
-- [`<b-nav-item-dropdown>`](/docs/components/nav#dropdown-support) for dropdown support inside
-  `<b-nav>` and `<n-navbar>`
-- [Router Link Support](/docs/reference/router-links) reference for information about router-link
-  specific props available on `<b-dropdown-item>`
+- [`<b-nav-item-dropdown>`](/docs/components/nav#dropdown-support) для поддержки раскрывающегося списка внутри `<b-nav>` и `<n-navbar>`
+- [Поддержка связи маршрутизатора](/docs/reference/router-links) справочник для получения информации о свойствах, специфичных для связи маршрутизатора, доступных в `<b-dropdown-item>`
 
 <!-- Component reference added automatically from component package.json -->

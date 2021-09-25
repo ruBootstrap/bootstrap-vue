@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Dropdown",
-    "description": "Dropdowns are toggleable, contextual overlays for displaying lists of links and actions in a dropdown menu format.",
+    "description": "Выпадающие списки - это переключаемые контекстные наложения для отображения списков ссылок и действий в формате раскрывающегося меню.",
     "components": [
       {
         "component": "BDropdown",
@@ -14,195 +14,195 @@
           {
             "prop": "block",
             "version": "2.1.0",
-            "description": "Renders a 100% width toggle button (expands to the width of its parent container)"
+            "description": "Отображает кнопку переключения шириной 100% (расширяется до ширины родительского контейнера)"
           },
           {
             "prop": "boundary",
-            "description": "The boundary constraint of the menu: 'scrollParent', 'window', 'viewport', or a reference to an HTMLElement"
+            "description": "Граничное ограничение меню: 'scrollParent', 'window', 'viewport' или ссылка на HTMLElement"
           },
           {
             "prop": "dropleft",
-            "description": "When set, positions the menu to the left of the button"
+            "description": "Когда установлено, позиционирует меню слева от кнопки"
           },
           {
             "prop": "dropright",
-            "description": "When set, positions the menu to the right of the button"
+            "description": "Когда установлено, позиционирует меню справа от кнопки"
           },
           {
             "prop": "dropup",
-            "description": "When set, positions the menu on the top of the button"
+            "description": "Когда установлено, размещает меню в верхней части кнопки"
           },
           {
             "prop": "html",
-            "description": "HTML string to place in the toggle button, or in the split button is split mode",
+            "description": "HTML-строка для размещения в кнопке переключения или в разделенной кнопке в режиме разделения",
             "xss": true
           },
           {
             "prop": "lazy",
-            "description": "When set, will only mount the menu content into the DOM when the menu is open"
+            "description": "Если установлено, будет монтировать содержимое меню в DOM только тогда, когда меню открыто"
           },
           {
             "prop": "menuClass",
-            "description": "CSS class (or classes) to add to the menu container"
+            "description": "CSS-класс (или классы) для добавления в контейнер меню"
           },
           {
             "prop": "noCaret",
-            "description": "Hide the caret indicator on the toggle button"
+            "description": "Скрыть индикатор каретки на кнопке-переключателе"
           },
           {
             "prop": "noFlip",
-            "description": "Prevent the menu from auto flipping positions"
+            "description": "Предотвратить автоматическое переворачивание меню"
           },
           {
             "prop": "offset",
-            "description": "Specify the number of pixels to shift the menu by. Negative values supported"
+            "description": "Укажите количество пикселей, на которое нужно сдвинуть меню. Поддерживаются отрицательные значения"
           },
           {
             "prop": "popperOpts",
-            "description": "Additional configuration to pass to Popper.js"
+            "description": "Дополнительная конфигурация для передачи в Popper.js"
           },
           {
             "prop": "right",
-            "description": "Align the right edge of the menu with the right of the button"
+            "description": "Выровняйте правый край меню по правому краю кнопки"
           },
           {
             "prop": "size",
-            "description": "Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'"
+            "description": "Установите размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'"
           },
           {
             "prop": "split",
-            "description": "When set, renders a split button dropdown"
+            "description": "Когда установлено, отображает раскрывающееся меню с разделенной кнопкой"
           },
           {
             "prop": "splitButtonType",
-            "description": "Value to place in the 'type' attribute on the split button: 'button', 'submit', 'reset'"
+            "description": "Значение, которое нужно разместить в атрибуте 'type' на раздельной кнопке: 'button', 'submit', 'reset'"
           },
           {
             "prop": "splitClass",
             "version": "2.2.0",
-            "description": "CSS class (or classes) to add to the split button"
+            "description": "CSS-класс (или классы) для добавления к кнопке разделения"
           },
           {
             "prop": "splitHref",
-            "description": "Denotes the target URL of the link for the split button"
+            "description": "Обозначает целевой URL-адрес ссылки для кнопки разделения"
           },
           {
             "prop": "splitTo",
-            "description": "<router-link> prop: Denotes the target route of the split button. When clicked, the value of the to prop will be passed to router.push() internally, so the value can be either a string or a Location descriptor object"
+            "description": "Свойство <router-link>: Обозначает целевой маршрут кнопки разделения. При нажатии значение свойства в свойство будет передано в router.push() внутренне, поэтому значение может быть либо строкой, либо объектом дескриптора местоположения"
           },
           {
             "prop": "splitVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the split button. Defaults to the 'variant' prop value"
+            "description": "Применяет один из вариантов цвета темы Bootstrap к разделенной кнопке. По умолчанию значение свойства 'variant'"
           },
           {
             "prop": "text",
-            "description": "Text to place in the toggle button, or in the split button is split mode"
+            "description": "Текст для размещения в кнопке-переключателе или в разделенной кнопке в режиме разделения"
           },
           {
             "prop": "toggleAttrs",
             "version": "2.22.0",
-            "description": "Additional attributes to apply to the toggle button"
+            "description": "Дополнительные атрибуты, применяемые к кнопке-переключателю"
           },
           {
             "prop": "toggleClass",
-            "description": "CSS class (or classes) to add to the toggle button"
+            "description": "Класс (или классы) CSS для добавления к кнопке переключения"
           },
           {
             "prop": "toggleTag",
-            "description": "Specify the HTML tag to render instead of the default tag",
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию",
             "xss": true
           },
           {
             "prop": "toggleText",
-            "description": "ARIA label (sr-only) to set on the toggle when in split mode"
+            "description": "Метка ARIA (только для sr) для установки на переключателе в режиме разделения"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из вариантов цвета темы Bootstrap"
           }
         ],
         "events": [
           {
             "event": "bv::dropdown::hide",
-            "description": "Emitted on $root just before dropdown is hidden. Cancelable",
+            "description": "Генерируется в $root непосредственно перед скрытием раскрывающегося списка. Отменяемый",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object. Call bvEvent.preventDefault() to cancel hide"
+                "description": "Объект BvEvent. Вызов bvEvent.preventDefault() для отмены скрытия"
               }
             ]
           },
           {
             "event": "bv::dropdown::show",
-            "description": "Emitted on $root just before dropdown is shown. Cancelable",
+            "description": "Генерируется в $root непосредственно перед отображением раскрывающегося списка. Отменяемый",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object. Call bvEvent.preventDefault() to cancel show"
+                "description": "Объект BvEvent. Вызов bvEvent.preventDefault() для отмены показа"
               }
             ]
           },
           {
             "event": "click",
-            "description": "Emitted when split button is clicked in split mode",
+            "description": "Генерируется при нажатии кнопки разделения в режиме разделения",
             "args": [
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native click event object"
+                "description": "Собственный объект события клика"
               }
             ]
           },
           {
             "event": "hidden",
-            "description": "Emitted when dropdown is hidden"
+            "description": "Выдается, когда раскрывающийся список скрыт"
           },
           {
             "event": "hide",
-            "description": "Emitted just before dropdown is hidden. Cancelable",
+            "description": "Выдается непосредственно перед скрытием раскрывающегося списка. Отменяемый",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object. Call bvEvent.preventDefault() to cancel hide"
+                "description": "Объект BvEvent. Вызов bvEvent.preventDefault() для отмены скрытия"
               }
             ]
           },
           {
             "event": "show",
-            "description": "Emitted just before dropdown is shown. Cancelable",
+            "description": "Выдается непосредственно перед отображением раскрывающегося списка. Отменяемый",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object. Call bvEvent.preventDefault() to cancel show"
+                "description": "Объект BvEvent. Вызов bvEvent.preventDefault() для отмены показа"
               }
             ]
           },
           {
             "event": "shown",
-            "description": "Emitted when dropdown is shown"
+            "description": "Выдается, когда отображается раскрывающийся список"
           },
           {
             "event": "toggle",
-            "description": "Emitted when toggle button is clicked"
+            "description": "Выдается при нажатии кнопки переключения"
           }
         ],
         "slots": [
           {
             "name": "button-content",
-            "description": "Can be used to implement custom text with icons and more styling"
+            "description": "Может использоваться для реализации настраиваемого текста с помощью значков и других стилей"
           },
           {
             "name": "default",
-            "description": "Optionally scoped default slot for dropdown menu content",
+            "description": "Слот по умолчанию с дополнительной областью действия для содержимого раскрывающегося меню",
             "scope": [
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "Can be used to close the dropdown menu. Accepts an optional boolean argument, which if true returns focus to the toggle button"
+                "description": "Может использоваться для закрытия раскрывающегося меню. Принимает необязательный логический аргумент, который, если true, возвращает фокус переключателю"
               }
             ]
           }
@@ -217,18 +217,18 @@
           {
             "prop": "linkClass",
             "version": "2.9.0",
-            "description": "Class or classes to apply to the inner link element"
+            "description": "Класс или классы для применения к элементу внутренней ссылки"
           }
         ],
         "events": [
           {
             "event": "click",
-            "description": "Emitted when item is clicked",
+            "description": "Выдается при нажатии на элемент",
             "args": [
               {
                 "name": "event",
                 "type": "MouseEvent",
-                "description": "Native click event object"
+                "description": "Собственный объект события клика"
               }
             ]
           }
@@ -236,7 +236,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the dropdown item"
+            "description": "Контент для размещения в раскрывающемся списке"
           }
         ]
       },
@@ -251,18 +251,18 @@
           {
             "prop": "buttonClass",
             "version": "2.9.0",
-            "description": "Class or classes to apply to the inner button element"
+            "description": "Класс или классы для применения к элементу внутренней кнопки"
           }
         ],
         "events": [
           {
             "event": "click",
-            "description": "Emitted when button item is clicked",
+            "description": "Выдается при нажатии кнопки",
             "args": [
               {
                 "name": "event",
                 "type": "MouseEvent",
-                "description": "Native click event object"
+                "description": "Собственный объект события клика"
               }
             ]
           }
@@ -270,7 +270,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the dropdown item-button"
+            "description": "Контент для размещения в раскрывающемся списке-кнопке"
           }
         ]
       },
@@ -289,25 +289,25 @@
           {
             "prop": "formClass",
             "version": "2.2.0",
-            "description": "CSS class (or classes) to add to the form"
+            "description": "CSS-класс (или классы) для добавления в форму"
           },
           {
             "prop": "inline",
-            "description": "When set, the form will be in inline mode which display labels, form controls, and buttons on a single horizontal row"
+            "description": "Если задано, форма будет во встроенном режиме, в котором метки, элементы управления формы и кнопки будут отображаться в одной горизонтальной строке"
           },
           {
             "prop": "novalidate",
-            "description": "When set, disables browser native HTML5 validation on controls in the form"
+            "description": "Если задано, отключает встроенную в браузере проверку HTML5 для элементов управления в форме"
           },
           {
             "prop": "validated",
-            "description": "When set, adds the Bootstrap class 'was-validated' on the form, triggering the native browser validation states"
+            "description": "Если установлено, добавляет в форму класс Bootstrap 'was-validated', вызывая собственные состояния проверки браузера"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the dropdown form"
+            "description": "Контент для размещения в раскрывающейся форме"
           }
         ]
       },
@@ -319,13 +319,13 @@
         "props": [
           {
             "prop": "textClass",
-            "description": "Class or classes to apply to the inner element"
+            "description": "Класс или классы для применения к внутреннему элементу"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the dropdown text"
+            "description": "Контент для размещения в раскрывающемся тексте"
           }
         ]
       },
@@ -337,17 +337,17 @@
         "props": [
           {
             "prop": "headerClasses",
-            "description": "CSS class (or classes) to add to the header"
+            "description": "CSS-класс (или классы) для добавления в заголовок"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content (items) to place in the dropdown group"
+            "description": "Контент (элементы) для размещения в раскрывающейся группе"
           },
           {
             "name": "header",
-            "description": "Optional header content for the dropdown group"
+            "description": "Необязательное содержимое заголовка для раскрывающейся группы"
           }
         ]
       },
@@ -359,7 +359,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the dropdown header"
+            "description": "Контент для размещения в раскрывающемся заголовке"
           }
         ]
       }
