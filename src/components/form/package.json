@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Form",
-    "description": "Form component and form helper components that optionally supports inline form styles and validation states.",
+    "description": "Компонент формы и вспомогательные компоненты формы, которые дополнительно поддерживают встроенные стили формы и состояния проверки.",
     "slug": "form",
     "components": [
       {
@@ -11,26 +11,26 @@
         "props": [
           {
             "prop": "inline",
-            "description": "When set, the form will be in inline mode which display labels, form controls, and buttons on a single horizontal row"
+            "description": "Если задано, форма будет во встроенном режиме, в котором метки, элементы управления формы и кнопки будут отображаться в одной горизонтальной строке"
           },
           {
             "prop": "novalidate",
-            "description": "When set, disables browser native HTML5 validation on controls in the form"
+            "description": "Если задано, отключает встроенную в браузере проверку HTML5 для элементов управления в форме"
           },
           {
             "prop": "validated",
-            "description": "When set, adds the Bootstrap class 'was-validated' on the form, triggering the native browser validation states"
+            "description": "Если установлено, добавляет в форму класс Bootstrap 'was-validated', вызывая собственные состояния проверки браузера"
           }
         ],
         "events": [
           {
             "event": "submit",
-            "description": "Emitted when the form is being submitted",
+            "description": "Выдается при отправке формы",
             "args": [
               {
                 "arg": "event",
                 "type": "Event",
-                "description": "Native submit event"
+                "description": "Собственное событие отправки"
               }
             ]
           }
@@ -38,7 +38,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form"
+            "description": "Контент для размещения в форме"
           }
         ]
       },
@@ -47,17 +47,17 @@
         "props": [
           {
             "prop": "inline",
-            "description": "When set, renders the help text as an inline element, rather than a block element"
+            "description": "Если установлено, отображает текст справки как встроенный элемент, а не как блочный элемент"
           },
           {
             "prop": "textVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the text"
+            "description": "Применяет к тексту один из вариантов цвета темы Bootstrap"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form text"
+            "description": "Контент для размещения в тексте формы"
           }
         ]
       },
@@ -66,21 +66,21 @@
         "props": [
           {
             "prop": "forceShow",
-            "description": "Shows the feedback text, regardless of the value of the 'state' prop"
+            "description": "Показывает текст обратной связи, независимо от значения свойства 'state'"
           },
           {
             "prop": "state",
-            "description": "When explicitly 'false', forces the feedback to show"
+            "description": "Когда явно 'false', заставляет показывать обратную связь"
           },
           {
             "prop": "tooltip",
-            "description": "Renders the feedback text in a rudimentary tooltip style"
+            "description": "Отображает текст обратной связи в элементарном стиле всплывающей подсказки"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form invalid feedback"
+            "description": "Контент для размещения в форме недействительный отзыв"
           }
         ]
       },
@@ -89,21 +89,21 @@
         "props": [
           {
             "prop": "forceShow",
-            "description": "Shows the feedback text, regardless of the value of the 'state' prop"
+            "description": "Показывает текст обратной связи, независимо от значения свойства 'state'"
           },
           {
             "prop": "state",
-            "description": "When explicitly 'true', forces the feedback to show"
+            "description": "Когда явно 'true', заставляет показывать обратную связь"
           },
           {
             "prop": "tooltip",
-            "description": "Renders the feedback text in a rudimentary tooltip style"
+            "description": "Отображает текст обратной связи в элементарном стиле всплывающей подсказки"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form valid feedback element"
+            "description": "Контент для размещения в форме действительного элемента обратной связи"
           }
         ]
       },
@@ -115,7 +115,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the from datalist"
+            "description": "Контент для размещения в списке из даталиста"
           }
         ]
       }

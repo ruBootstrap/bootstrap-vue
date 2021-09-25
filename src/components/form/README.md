@@ -1,17 +1,12 @@
-# Form
+# Форма
 
-> BootstrapVue form component and helper components that optionally support inline form styles and
-> validation states. Pair them up with other BootstrapVue form control components for an easy
-> customized, and responsive, layout with a consistent look and feel.
+> Компонент формы BootstrapVue и вспомогательные компоненты, которые дополнительно поддерживают встроенные стили формы и состояния проверки. Объедините их с другими компонентами элементов управления формами BootstrapVue, чтобы получить простой настраиваемый и отзывчивый макет с единообразным внешним видом.
 
-## Introduction to forms and controls
+## Введение в формы и элементы управления
 
-Be sure to use an appropriate `type` on all inputs (e.g., `email` for email address or `number` for
-numerical information) to take advantage of newer input controls like email verification, number
-selection, and more.
+Обязательно используйте соответствующий `type` для всех входных данных (например, `email` для адреса электронной почты или `number` для числовой информации), чтобы воспользоваться преимуществами новых элементов управления вводом, таких как проверка электронной почты, выбор номера и т. д.
 
-Here's a quick example to demonstrate BootstrapVue's form styles. Keep reading for documentation on
-supported components, form layout, and more.
+Вот быстрый пример, демонстрирующий стили формы BootstrapVue. Продолжайте читать, чтобы узнать о поддерживаемых компонентах, макете формы и многом другом.
 
 ```html
 <template>
@@ -56,13 +51,13 @@ supported components, form layout, and more.
           id="checkboxes-4"
           :aria-describedby="ariaDescribedby"
         >
-          <b-form-checkbox value="me">Check me out</b-form-checkbox>
-          <b-form-checkbox value="that">Check that out</b-form-checkbox>
+          <b-form-checkbox value="me">Проверить меня</b-form-checkbox>
+          <b-form-checkbox value="that">Проверь это</b-form-checkbox>
         </b-form-checkbox-group>
       </b-form-group>
 
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="submit" variant="primary">Отправить</b-button>
+      <b-button type="reset" variant="danger">Сбросить</b-button>
     </b-form>
     <b-card class="mt-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
@@ -91,12 +86,12 @@ supported components, form layout, and more.
       },
       onReset(event) {
         event.preventDefault()
-        // Reset our form values
+        // Сбросить значения нашей формы
         this.form.email = ''
         this.form.name = ''
         this.form.food = null
         this.form.checked = []
-        // Trick to reset/clear native browser form validation state
+        // Уловка для сброса/очистки состояния проверки формы в собственном браузере
         this.show = false
         this.$nextTick(() => {
           this.show = true
@@ -109,127 +104,111 @@ supported components, form layout, and more.
 <!-- b-form.vue -->
 ```
 
-## Inline form
+## Инлайновая форма
 
-Use the `inline` prop on `<b-form>` to display a series of labels, form controls, and buttons on a
-single horizontal row. Form controls within inline forms vary slightly from their default states.
+Используйте свойство `inline` в `<b-form>`, чтобы отобразить серию меток, элементов управления формы и кнопок в одной горизонтальной строке. Элементы управления формами внутри встроенных форм незначительно отличаются от состояний по умолчанию.
 
-- Controls are `display: flex`, collapsing any HTML white space and allowing you to provide
-  alignment control with spacing and flexbox utilities.
-- Controls and input groups receive `width: auto` to override the Bootstrap default width: 100%.
-- Controls **only appear inline in viewports that are at least 576px wide** to account for narrow
-  viewports on mobile devices.
+- Элементы управления - это `display: flex`, сворачивающие любое пустое пространство HTML и позволяющие вам обеспечить контроль выравнивания с помощью утилит spacing и flexbox.
+- Элементы управления и группы ввода получают `width: auto`, чтобы переопределить ширину Bootstrap по умолчанию: 100%.
+- Элементы управления **отображаются встроенными только в окнах просмотра шириной не менее 576 пикселей**, чтобы учесть узкие окна просмотра на мобильных устройствах.
 
-You may need to manually address the width and alignment of individual form controls with
-[spacing utilities](/docs/reference/spacing-classes) (as shown below). Lastly, be sure to always
-include a `<label>` with each form control, even if you need to hide it from non-screenreader
-visitors with class `.sr-only`.
+Возможно, вам придется вручную задать ширину и выравнивание отдельных элементов управления формой с помощью [утилит интервалов](/docs/reference/spacing-classes) (как показано ниже). Наконец, не забудьте всегда включать `<label>` в каждый элемент управления формы, даже если вам нужно скрыть его от посетителей, не читающих с экрана, с помощью класса `.sr-only`.
 
 ```html
 <div>
   <b-form inline>
-    <label class="sr-only" for="inline-form-input-name">Name</label>
+    <label class="sr-only" for="inline-form-input-name">Имя</label>
     <b-form-input
       id="inline-form-input-name"
       class="mb-2 mr-sm-2 mb-sm-0"
       placeholder="Jane Doe"
     ></b-form-input>
 
-    <label class="sr-only" for="inline-form-input-username">Username</label>
+    <label class="sr-only" for="inline-form-input-username">Пользователь</label>
     <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
-      <b-form-input id="inline-form-input-username" placeholder="Username"></b-form-input>
+      <b-form-input id="inline-form-input-username" placeholder="Пользователь"></b-form-input>
     </b-input-group>
 
-    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
+    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Запомнить меня</b-form-checkbox>
 
-    <b-button variant="primary">Save</b-button>
+    <b-button variant="primary">Сохранить</b-button>
   </b-form>
 </div>
 
 <!-- b-form-inline.vue -->
 ```
 
-Custom form controls and selects are also supported.
+Также поддерживаются настраиваемые элементы управления и выбор формы.
 
 ```html
 <div>
   <b-form inline>
-    <label class="mr-sm-2" for="inline-form-custom-select-pref">Preference</label>
+    <label class="mr-sm-2" for="inline-form-custom-select-pref">Предпочтение</label>
     <b-form-select
       id="inline-form-custom-select-pref"
       class="mb-2 mr-sm-2 mb-sm-0"
-      :options="[{ text: 'Choose...', value: null }, 'One', 'Two', 'Three']"
+      :options="[{ text: 'Выберите...', value: null }, 'One', 'Two', 'Three']"
       :value="null"
     ></b-form-select>
 
-    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember my preference</b-form-checkbox>
+    <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Запомнить мои предпочтения</b-form-checkbox>
 
-    <b-button variant="primary">Save</b-button>
+    <b-button variant="primary">Сохранить</b-button>
   </b-form>
 </div>
 
 <!-- b-form-inline-custom.vue -->
 ```
 
-**Note:** _`<b-form-group>` is not supported in `inline` forms due to layout conflicts._
+**Примечание:** _`<b-form-group>` не поддерживается в `inline` формах из-за конфликтов макета._
 
-### Alternatives to hidden labels
+### Альтернативы скрытым ярлыкам
 
-Assistive technologies such as screen readers will have trouble with your forms if you don't include
-a label for every input. For these inline forms, you can hide the labels using the `.sr-only` class.
-There are further alternative methods of providing a label for assistive technologies, such as the
-`aria-label`, `aria-labelledby` or `title` attributes. If none of these are present, assistive
-technologies may resort to using the `placeholder` attribute, if present, but note that use of
-`placeholder` as a replacement for other labelling methods is not advised.
+Вспомогательные технологии, такие как программы чтения с экрана, будут иметь проблемы с вашими формами, если вы не добавите метку для каждого ввода. Для этих встроенных форм вы можете скрыть метки с помощью класса `.sr-only`.
+Существуют и другие альтернативные методы предоставления метки для вспомогательных технологий, такие как атрибуты `aria-label`, `aria-labelledby` или `title`. Если ни один из них не присутствует, вспомогательные технологии могут прибегать к использованию атрибута `placeholder`, если он присутствует, но учтите, что использование `placeholder` в качестве замены для других методов маркировки не рекомендуется.
 
-## Related form control and layout components
+## Связанные элементы управления формой и компоненты макета
 
-See also:
+Смотрите также:
 
-- [`<b-form-input>`](/docs/components/form-input) Textual and text-like inputs
-- [`<b-form-textarea>`](/docs/components/form-textarea) Text area inputs
-- [`<b-form-select>`](/docs/components/form-select) Select input
-- [`<b-form-radio>`](/docs/components/form-radio) Radio Inputs
-- [`<b-form-checkbox>`](/docs/components/form-checkbox) Checkbox Inputs
-- [`<b-form-file>`](/docs/components/form-file) File Input
-- [`<b-form-datepicker>`](/docs/components/form-datepicker) Date picker input
-- [`<b-form-spinbutton>`](/docs/components/form-spinbutton) Numerical range spinbutton input
-- [`<b-form-tags>`](/docs/components/form-tags) Customizable tag input
-- [`<b-form-timepicker>`](/docs/components/form-timepicker) Time picker custom form input
-- [`<b-form-rating>`](/docs/components/form-rating) Star rating custom form input and display
-- [`<b-button>`](/docs/components/button) Buttons
-- [`<b-form-group>`](/docs/components/form-group) Form Input wrapper to generate form-groups that
-  support labels, help text and feedback
-- [`<b-input-group>`](/docs/components/input-group) Form Inputs with add-ons
-- [`<b-form-row>`](/docs/components/layout) Create grid rows and columns with tighter margins
-  (available via the [Layout and grid components](/docs/components/layout))
+- [`<b-form-input>`](/docs/components/form-input) Текстовые и текстовые поля ввода
+- [`<b-form-textarea>`](/docs/components/form-textarea) Многострочные текстовые поля ввода
+- [`<b-form-select>`](/docs/components/form-select) Элемент выбора
+- [`<b-form-radio>`](/docs/components/form-radio) Радио кнопки
+- [`<b-form-checkbox>`](/docs/components/form-checkbox) Флажки
+- [`<b-form-file>`](/docs/components/form-file) Выбор файла
+- [`<b-form-datepicker>`](/docs/components/form-datepicker) Выбор даты
+- [`<b-form-spinbutton>`](/docs/components/form-spinbutton) Ввод с помощью спиновой кнопки числового диапазона
+- [`<b-form-tags>`](/docs/components/form-tags) Настраиваемый ввод тегов
+- [`<b-form-timepicker>`](/docs/components/form-timepicker) Ввод настраиваемой формы для выбора времени
+- [`<b-form-rating>`](/docs/components/form-rating) Ввод и отображение пользовательской формы звездного рейтинга
+- [`<b-button>`](/docs/components/button) Кнопки
+- [`<b-form-group>`](/docs/components/form-group) Оболочка ввода формы для создания групп форм, поддерживающих метки, текст справки и отзывы
+- [`<b-input-group>`](/docs/components/input-group) Ввод формы с надстройками
+- [`<b-form-row>`](/docs/components/layout) Создавайте строки и столбцы сетки с более узкими полями (доступно через [Компоненты макета и сетки](/docs/components/layout))
 
-## Form helper components
+## Компоненты помощника формы
 
-The following helper components are available with the `Form` plugin:
+Следующие вспомогательные компоненты доступны с плагином `Form`:
 
-- `<b-form-text>` Help text blocks for inputs
-- `<b-form-invalid-feedback>` Invalid feedback text blocks for input `invalid` states
-- `<b-form-valid-feedback>` Valid feedback text blocks for input `valid` states
-- `<b-form-datalist>` Easily create a `<datalist>` for use with `<b-form-input>` or plain `<input>`
+- `<b-form-text>` Блоки текста справки для входов
+- `<b-form-invalid-feedback>` Недействительные текстовые блоки обратной связи для входных `invalid` состояний
+- `<b-form-valid-feedback>` Действительные текстовые блоки обратной связи для входных состояний `valid`
+- `<b-form-datalist>` Простое создание `<datalist>` для использования с `<b-form-input>` или обычным `<input>`
 
-### Form text helper
+### Помощник по тексту формы
 
-Display a block of help text below an input with the `<b-form-text>` helper component. text is
-displayed with a muted color and slightly smaller font-size.
+Отобразите блок текста справки под полем ввода с помощью вспомогательного компонента `<b-form-text>`. Текст отображается с приглушенным цветом и немного меньшим размером шрифта.
 
-**Tip:** Help text should be explicitly associated with the form control it relates to using the
-`aria-describedby` attribute. This will ensure that assistive technologies, such as screen readers,
-will announce this help text when the user focuses or enters the control.
+**Совет:** Текст справки должен быть явно связан с элементом управления формы, к которому он относится, с помощью атрибута `aria-describedby`. Это гарантирует, что вспомогательные технологии, такие как программы чтения с экрана, будут озвучивать этот текст справки, когда пользователь фокусируется или входит в элемент управления.
 
 ```html
 <div>
   <b-form @submit.stop.prevent>
-    <label for="text-password">Password</label>
+    <label for="text-password">Пароль</label>
     <b-form-input type="password" id="text-password" aria-describedby="password-help-block"></b-form-input>
     <b-form-text id="password-help-block">
-      Your password must be 8-20 characters long, contain letters and numbers, and must not
-      contain spaces, special characters, or emoji.
+      Ваш пароль должен состоять из 8-20 символов, содержать буквы и цифры и не должен содержать пробелов, специальных символов или эмодзи.
     </b-form-text>
    </b-form>
 </div>
@@ -237,40 +216,28 @@ will announce this help text when the user focuses or enters the control.
 <!-- b-form-help-text.vue -->
 ```
 
-### Feedback helpers
+### Помощники по обратной связи
 
-The `<b-form-valid-feedback>` and `<b-form-invalid-feedback>` helper components will display
-feedback (based on input state) as a block of colored text. They rely on being placed after an input
-(sibling) and will show based on the browser native validation state of the input. To force them to
-show, set the prop `force-show` to `true`, or bind the controls `state` to the `state` prop of the
-feedback helper, or set the `was-validated` class on a parent element (such as a form). See the
-**Validation** section below for additional details.
+Вспомогательные компоненты `<b-form-valid-feedback>` и `<b-form-invalid-feedback>` будут отображать обратную связь (основанную на состоянии ввода) в виде блока цветного текста. Они полагаются на то, что их помещают после ввода (родственника) и будут отображаться на основе собственного состояния проверки ввода в браузере. Чтобы заставить их показываться, установите для свойства `force-show` значение `true` или привяжите элементы управления `state` к свойству `state` помощника обратной связи, или установите класс `was-validated` для родительского элемента (например, форма). Дополнительные сведения смотрите в разделе **Валидация** ниже.
 
-Use the optional Boolean prop `tooltip` to change the display from a block to a static tooltip
-style. The feedback will typically appear below the form control. When this mode is enabled, it is
-important that the parent container have a `position: relative:` css style (or `position-relative`
-class). Note that tooltip style feedback may, since its positioning is static, obscure other inputs,
-labels, etc.
+Используйте необязательную логическую опцию `tooltip`, чтобы изменить отображение с блочного на статический стиль всплывающей подсказки. Отзыв обычно отображается под элементом управления формы. Когда этот режим включен, важно, чтобы родительский контейнер имел стиль `position: relative:` css (или класс `position-relative`). Обратите внимание, что обратная связь в стиле всплывающей подсказки может, поскольку ее расположение статично, скрывать другие поля ввода, метки и т. д.
 
-**Note:** Some form controls, such as
+**Примечание:** Некоторые элементы управления формой, например
 [`<b-form-radio>`](/docs/components/form-radio#contextual-states),
-[`<b-form-checkbox>`](/docs/components/form-checkbox#contextual-states), and
-[`<b-form-file>`](/docs/components/form-file) have wrapper elements which will prevent the feedback
-text from automatically showing (as the feedback component is not a direct sibling of the form
-control's input). Use the feedback component's `state` prop (bound to the state of the form control)
-or the `force-show` prop to display the feedback.
+[`<b-form-checkbox>`](/docs/components/form-checkbox#contextual-states) и
+[`<b-form-file>`](/docs/components/form-file) имеют элементы оболочки, которые предотвращают автоматическое отображение текста обратной связи (поскольку компонент обратной связи не является прямым родственником ввода элемента управления формой). Используйте свойство `state` компонента обратной связи (привязанное к состоянию элемента управления формой) или свойство `force-show` для отображения обратной связи.
 
 ```html
 <template>
   <div>
     <b-form  @submit.stop.prevent>
-      <label for="feedback-user">User ID</label>
+      <label for="feedback-user">Идентификатор пользователя</label>
       <b-form-input v-model="userId" :state="validation" id="feedback-user"></b-form-input>
       <b-form-invalid-feedback :state="validation">
-        Your user ID must be 5-12 characters long.
+        Ваш идентификатор пользователя должен состоять из 5–12 символов.
       </b-form-invalid-feedback>
       <b-form-valid-feedback :state="validation">
-        Looks Good.
+        Выглядит неплохо.
       </b-form-valid-feedback>
      </b-form>
   </div>
@@ -294,20 +261,17 @@ or the `force-show` prop to display the feedback.
 <!-- b-form-feedback-example.vue -->
 ```
 
-### Datalist helper
+### Помощник даталиста
 
-For browsers that support
-[`<datalist>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) elements, the
-`<b-form-datalist>` helper component will allow you to quickly create a `<datalist>` and child
-`<option>` elements via an array passed to the `options` prop.
+Для браузеров, поддерживающих
+[`<datalist>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) элементы, вспомогательный компонент `<b-form-datalist>` позволит вам быстро создать элементы `<datalist>` и дочерние элементы `<option>` через массив, переданный в свойство `options`.
 
-You may also manually provide `<option>` elements inside `<b-form-datalist>`. They will appear below
-any `<option>` elements generated from the `options` prop.
+Вы также можете вручную указать элементы `<option>` внутри `<b-form-datalist>`. Они будут отображаться под любыми элементами `<option>`, созданными из свойства `options`.
 
 ```html
 <template>
   <div>
-    <label for="input-with-list">Input with datalist</label>
+    <label for="input-with-list">Ввод с помощью списка данных</label>
     <b-form-input list="input-list" id="input-with-list"></b-form-input>
     <b-form-datalist id="input-list" :options="options"></b-form-datalist>
   </div>
@@ -326,45 +290,38 @@ export default {
 <!-- b-form-datalist-example.vue -->
 ```
 
-`<b-form-datalist>` is also available via the shorter alias of `<b-datalist>`.
+`<b-form-datalist>` также доступен через более короткий псевдоним `<b-datalist>`.
 
-See also:
+Смотрите также:
 
-- [`<b-form-input> datalist`](/docs/components/form-input#datalist-support) for datalist usage.
-- [`<b-form-select>` `options` prop](/docs/components/form-select#options-property) docs for details
-  on the formats and helper props associated with `options`.
+- [`<b-form-input> datalist`](/docs/components/form-input#datalist-support) для использования списка данных.
+- [`<b-form-select>` `options` prop](/docs/components/form-select#options-property) документация для получения подробной информации о форматах и вспомогательных свойствах, связанных с `options`.
 
-## Validation
+## Валидация
 
-Disable browser native HTML5 validation by setting the `novalidate` prop to true on `<b-form>`.
+Отключите встроенную проверку HTML5 в браузере, установив для свойства `novalidate` значение true в `<b-form>`.
 
-Set the `validated` prop, on `<b-form>`, to `true` to add the Bootstrap v4 `.was-validated` class to
-the form to trigger validation states
+Установите для свойства `validated` на `<b-form>` значение `true`, чтобы добавить класс Bootstrap v4 `.was-validated` в форму для запуска состояний проверки.
 
-All of the form controls support a `state` prop, which can be used to set the form control into one
-of three contextual states:
+Все элементы управления формой поддерживают свойство `state`, которое можно использовать для установки элемента управления формы в одно из трех контекстных состояний:
 
-- `false` (denotes invalid state) is great for when there's a blocking or required field. A user
-  must fill in this field properly to submit the form.
-- `true` (denotes valid state) is ideal for situations when you have per-field validation throughout
-  a form and want to encourage a user through the rest of the fields.
-- `null` Displays no validation state (neither valid nor invalid)
+- `false` (обозначает недопустимое состояние) отлично подходит, когда есть блокирующее или обязательное поле. Пользователь должен правильно заполнить это поле, чтобы отправить форму.
+- `true` (обозначает действительное состояние) идеально подходит для ситуаций, когда у вас есть проверка по каждому полю во всей форме и вы хотите побудить пользователя пройти через остальные поля.
+- `null` Не отображает состояние проверки (ни действительное, ни недействительное)
 
-Refer to the
-[Bootstrap v4 Form Validation Documentation](https://getbootstrap.com/docs/4.5/components/forms/#validation)
-for details on the new Bootstrap v4 validation states.
+Смотрите [Документацию по проверке формы Bootstrap v4](https://getbootstrap.com/docs/4.5/components/forms/#validation) для получения подробной информации о новых состояниях проверки Bootstrap v4.
 
-### Validation mechanisms
+### Механизмы валидации
 
-Using 3<sup>rd</sup> party Vue-based validation libraries with BootstrapVue:
+Использование 3<sup>х</sup> сторонних проверочных библиотек на основе Vue с BootstrapVue:
 
-- BootstrapVue [Form validation reference section](/docs/reference/validation)
+- BootstrapVue [раздел справки по проверке формы](/docs/reference/validation)
 
-Additional resources:
+Дополнительные ресурсы:
 
-- [Bootstrap v4: Form Validation Documentation](https://getbootstrap.com/docs/4.5/components/forms/#validation)
-- [MDN: Learn Form Validation - Using JavaScript API](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation#Validating_forms_using_JavaScript)
-- [MDN: HTML5 Constraint Validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation)
-- [MDN: Validity State API](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
+- [Bootstrap v4: документация по проверке формы](https://getbootstrap.com/docs/4.5/components/forms/#validation)
+- [MDN: изучение проверки форм - использование JavaScript API](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation#Validating_forms_using_JavaScript)
+- [MDN: проверка ограничений HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation)
+- [MDN: API состояния действительности](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
 
 <!-- Component reference added automatically from component package.json -->
