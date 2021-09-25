@@ -24,10 +24,11 @@ const ANCHOR_LINK_HEADING_LEVELS = [2, 3, 4, 5]
 
 // Determine if documentation generation is published production docs
 // Must be from 'bootstrap-vue/bootstrap-vue' repo 'master' branch
-const IS_PROD_DOCS =
-  process.env.VERCEL_GITHUB_ORG === 'ruBootstrap' &&
-  process.env.VERCEL_GITHUB_REPO === 'bootstrap-vue' &&
-  process.env.VERCEL_GITHUB_COMMIT_REF === 'dev-ru'
+// const IS_PROD_DOCS =
+//   process.env.VERCEL_GITHUB_ORG === 'ruBootstrap' &&
+//   process.env.VERCEL_GITHUB_REPO === 'bootstrap-vue' &&
+//   process.env.VERCEL_GITHUB_COMMIT_REF === 'dev-ru'
+const IS_PROD_DOCS = true
 
 // --- Utility methods ---
 
