@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Form File",
-    "description": "Customized, cross-browser consistent, file input control that supports single file, multiple files, and directory upload.",
+    "description": "Настраиваемый, кроссбраузерный, элемент управления вводом файлов, поддерживающий загрузку одного файла, нескольких файлов и каталогов.",
     "components": [
       {
         "component": "BFormFile",
@@ -13,106 +13,106 @@
         "props": [
           {
             "prop": "accept",
-            "description": "Value to set on the file input's `accept` attribute"
+            "description": "Значение, устанавливаемое для атрибута `accept` входного файла"
           },
           {
             "prop": "browseText",
-            "description": "Text content for the file browse button"
+            "description": "Текстовое содержимое для кнопки просмотра файла"
           },
           {
             "prop": "capture",
-            "description": "When set, will instruction the browser to use the devices camera (if supported)"
+            "description": "Если установлено, будет указывать браузеру использовать камеру устройства (если поддерживается)"
           },
           {
             "prop": "directory",
-            "description": "Enable `directory` mode (on browsers that support it)"
+            "description": "Включите режим `directory` (в браузерах, которые его поддерживают)"
           },
           {
             "prop": "dropPlaceholder",
-            "description": "Text to display as the placeholder when files are being dragged and it's allowed to drop them"
+            "description": "Текст, отображаемый в качестве заполнителя, когда файлы перетаскиваются, и их можно оставить"
           },
           {
             "prop": "fileNameFormatter",
-            "description": "Method to format the file names for display. Refer to the docs for details"
+            "description": "Метод форматирования имен файлов для отображения. Подробности смотрите в документации"
           },
           {
             "prop": "multiple",
-            "description": "When set, will allow multiple files to be selected. `v-model` will be an array"
+            "description": "Если установлено, можно выбрать несколько файлов. `v-model` будет массивом"
           },
           {
             "prop": "noDrop",
-            "description": "Disable drag and drop mode"
+            "description": "Отключить режим перетаскивания"
           },
           {
             "prop": "noDropPlaceholder",
-            "description": "Text to display as the placeholder when files are being dragged and it isn't allowed to drop them"
+            "description": "Текст, отображаемый в качестве заполнителя, когда файлы перетаскиваются, и их нельзя бросать"
           },
           {
             "prop": "noTraverse",
-            "description": "Wether to returns files as a flat array when in `directory` mode"
+            "description": "Следует ли возвращать в виде плоского массива в режиме `directory`"
           },
           {
             "prop": "placeholder",
-            "description": "Sets the `placeholder` attribute value on the form control"
+            "description": "Устанавливает значение атрибута `placeholder` элементе управления формы"
           },
           {
             "prop": "value",
-            "description": "The current value of the file input. Will be a single `File` object or an array of `File` objects (if `multiple` or `directory` is set). Can be set to `null`, or an empty array to reset the file input"
+            "description": "Текущее значение входного файла. Будет одиночным объектом `File` или массивом объектов `File` (если установлено `multiple` или `directory`). Может иметь значение `null` или пустой массив для сброса ввода файла"
           }
         ],
         "slots": [
           {
             "name": "drop-placeholder",
-            "description": "Placeholder content when files are about to be dropped. Defaults to value of `drop-placeholder` prop",
+            "description": "Контент-заполнитель, когда файлы собираются отбрасывать. По умолчанию значение свойства `drop-placeholder`",
             "scope": [
               {
                 "prop": "allowed",
                 "type": "Boolean",
-                "description": "Wether its currently allowed to drop files"
+                "description": "Разрешено ли в настоящее время отбрасывать файлы"
               }
             ]
           },
           {
             "name": "file-name",
-            "description": "Scoped slot for formatting the file names",
+            "description": "Слот с ограниченным размером для форматирования имен файлов",
             "scope": [
               {
                 "prop": "files",
                 "type": "Array",
-                "description": "Flat array of `File` objects"
+                "description": "Плоский массив объектов `File`"
               },
               {
                 "prop": "filesTraversed",
                 "type": "Array",
-                "description": "Array of arrays of `File` objects when in `directory` mode"
+                "description": "Массив массивов объектов `File` в режиме `directory`"
               },
               {
                 "prop": "names",
                 "type": "Array",
-                "description": "Flat array of file names (strings)"
+                "description": "Плоский массив имен файлов (строк)"
               }
             ]
           },
           {
             "name": "placeholder",
-            "description": "Placeholder content, when no files selected. Defaults to `placeholder` prop value"
+            "description": "Заполнитель содержимого, когда файлы не выбраны. По умолчанию значение свойства `placeholder`"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Original change event of the input",
+            "description": "Исходное событие изменения ввода",
             "args": [
               {
                 "arg": "event",
                 "type": "Event",
-                "description": "Native change event object"
+                "description": "Собственный объект события изменения"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Updates the `v-model` value (see docs for more details)",
+            "description": "Обновляет значение `v-model` (подробности смотрите в документации)",
             "args": [
               {
                 "arg": "file",
@@ -120,7 +120,7 @@
                   "File",
                   "Array"
                 ],
-                "description": "Will be a single File object in single mode or an array of File objects in multiple mode"
+                "description": "Будет одиночным объектом File в одиночном режиме или массивом объектов File в множественном режиме"
               }
             ]
           }

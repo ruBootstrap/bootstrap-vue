@@ -1,7 +1,6 @@
-# Form File
+# Файл формы
 
-> Customized, cross-browser consistent, file input control that supports single file, multiple
-> files, and directory upload (for browsers that support directory mode).
+> Настраиваемый, кросс-браузерный, элемент управления вводом файлов, который поддерживает загрузку одного файла, нескольких файлов и каталогов (для браузеров, поддерживающих режим каталогов).
 
 ```html
 <template>
@@ -13,11 +12,11 @@
       placeholder="Choose a file or drop it here..."
       drop-placeholder="Drop file here..."
     ></b-form-file>
-    <div class="mt-3">Selected file: {{ file1 ? file1.name : '' }}</div>
+    <div class="mt-3">Выбранный файл: {{ file1 ? file1.name : '' }}</div>
 
     <!-- Plain mode -->
     <b-form-file v-model="file2" class="mt-3" plain></b-form-file>
-    <div class="mt-3">Selected file: {{ file2 ? file2.name : '' }}</div>
+    <div class="mt-3">Выбранный файл: {{ file2 ? file2.name : '' }}</div>
   </div>
 </template>
 
@@ -35,39 +34,28 @@
 <!-- b-form-file.vue -->
 ```
 
-For cross browser consistency, `<b-form-file>` defaults to the Bootstrap custom file input to
-replace the browser defaults. They're built on top of semantic and accessible markup, so it is a
-solid replacement for the default file input.
+Для согласованности между браузерами, `<b-form-file>` по умолчанию используется для ввода пользовательского файла Bootstrap, чтобы заменить настройки браузера по умолчанию. Они построены на основе семантической и доступной разметки, поэтому представляют собой надежную замену вводимым по умолчанию файлам.
 
-## Single file (default)
+## Один файл (по умолчанию)
 
-On single file mode, when no file is selected or user cancels the "Browse" dialog, `v-model` is
-`null` indicating no file selected. When a file is selected the return value will be a JavaScript
-[`File`](https://developer.mozilla.org/en/docs/Web/API/File) object instance.
+В однофайловом режиме, когда файл не выбран или пользователь отменяет диалог «Обзор», `v-model` принимает значение `null`, что означает, что файл не выбран. Когда файл выбран, возвращаемое значение будет экземпляром объекта JavaScript [`File`](https://developer.mozilla.org/en/docs/Web/API/File).
 
-## Multiple files
+## Несколько файлов
 
-Multiple file uploading is supported by adding `multiple` prop to component. In this case `v-model`
-is _always_ an `Array`. When no files are selected, an empty array will be returned. When a file or
-files are selected the return value will be an array of JavaScript
-[`File`](https://developer.mozilla.org/en/docs/Web/API/File) object instances.
+Выгрузка нескольких файлов поддерживается добавлением к компоненту свойства `multiple`. В этом случае `v-model` _всегда_ `Array`. Если файлы не выбраны, будет возвращен пустой массив. Когда файл или файлы выбраны, возвращаемое значение будет массивом экземпляров объекта JavaScript [`File`](https://developer.mozilla.org/en/docs/Web/API/File).
 
-## Directory mode
+## Режим каталога
 
 <div class="alert alert-warning small mb-3">
   <p class="mb-0">
-    <strong>CAUTION:</strong> Directory mode is a <em>non-standard</em> feature. While being
-    supported by all modern browsers, it should not be relied on for production.
-    Read more on <a class="alert-link" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory">MDN</a>
-    and <a class="alert-link" href="https://caniuse.com/input-file-directory">Can I use</a>.
+    <strong>ВНИМАНИЕ:</strong> Режим каталога - это <em>нестандартная</em> функция. Несмотря на то, что он поддерживается всеми современными браузерами, на него не следует полагаться в производственной среде.
+    Подробнее об <a class="alert-link" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/webkitdirectory">MDN</a> и <a class="alert-link" href="https://caniuse.com/input-file-directory">Могу я использовать</a>.
   </p>
 </div>
 
-By adding the `directory` prop, a user can select directories instead of files. When a directory is
-selected, the directory and its entire hierarchy of contents are included in the set of selected
-items.
+Добавляя свойство `directory`, пользователь может выбирать каталоги вместо файлов. Когда каталог выбран, каталог и вся его иерархия содержимого включаются в набор выбранных элементов.
 
-When in `directory` mode, files are returned in a nested array format by default. i.e.
+В режиме `directory` файлы по умолчанию возвращаются в формате вложенного массива. Т. е.
 
 ```
 dirA/
@@ -82,79 +70,63 @@ dirD/
   - fileD1
 ```
 
-will be returned as (or similar, file/directory order may vary):
+будет возвращено как (или аналогичный, порядок файлов/каталогов может отличаться):
 
 ```
 [[fileA1, fileA2, [fileB1], [fileC1, fileC2]], [fileD1]]
 ```
 
-If you set the `no-traverse` prop, the array will be flattened:
+Если вы установите свойство `no-traverse`, массив будет сглажен:
 
 ```
 [fileA1, fileA2, fileB1, fileC1, fileC2, fileD1]
 ```
 
-Each file entry will have a special `$path` prop that will contain the relative path of each file.
-For nested directory structures, BootstrapVue uses its own routine to determine the relative path,
-otherwise it relies on
-[`File.webkitRelativePath`](https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath).
+Каждая запись файла будет иметь специальную свойство `$path`, которая будет содержать относительный путь к каждому файлу.
+Для вложенных структур каталогов BootstrapVue использует свою собственную процедуру для определения относительного пути, в противном случае он полагается на [`File.webkitRelativePath`](https://developer.mozilla.org/en-US/docs/Web/API/File/webkitRelativePath).
 
-Directory mode is also supported when the file input is in [`plain` mode](#non-custom-file-input) on
-**most** modern browsers.
+Режим каталога также поддерживается, когда ввод файла находится в [режиме `plain`](#non-custom-file-input) в **большинстве** современных браузеров.
 
-## Drag and Drop support
+## Поддержка перетаскивания
 
-Drop mode is enabled by default. It can disabled by setting the `no-drop` prop. `no-drop` has no
-effect in [`plain` mode](#non-custom-file-input) (some browsers support dropping files onto a plain
-input file).
+По умолчанию включен режим перетаскивания. Его можно отключить, установив свойство `no-drop`. `no-drop` не действует в [режиме `plain`](#non-custom-file-input) (некоторые браузеры поддерживают перетаскивание файлов в простой входной файл).
 
-You can optionally set a different placeholder while dragging via the `drop-placeholder` prop or the
-scoped `drop-placeholder` slot. The prop only supports plain text. Use the slot for custom HTML
-markup. The slot takes precedence over the prop. The `drop-placeholder` prop/slot has no effect if
-`no-drop` is set or in [`plain` mode](#non-custom-file-input).
+При желании вы можете установить другой заполнитель при перетаскивании через свойство `drop-placeholder` или слот `drop-placeholder` с заданной областью действия. Опора поддерживает только обычный текст. Используйте слот для пользовательской разметки HTML. Слот имеет приоритет над свойством. Свойство/слот `drop-placeholder` не действует, если установлено `no-drop` или в [режиме `plain`](#non-custom-file-input).
 
-Note that native browser constraints (such as `required`) will not work with drop mode, as the
-hidden file input does not handle the drag and drop functionality and will have zero files selected.
+Обратите внимание, что собственные ограничения браузера (такие как `required`) не будут работать в режиме перетаскивания, поскольку скрытый ввод файла не обрабатывает функциональность перетаскивания и будет иметь нулевые выбранные файлы.
 
-## Limiting to certain file types
+## Ограничение определенными типами файлов
 
-You can limit the file types by setting the `accept` prop to a string containing the allowed file
-type(s). To specify more than one type, separate the values with a comma.
+Вы можете ограничить типы файлов, установив свойство `accept` в строку, содержащую разрешенный тип(ы) файлов. Чтобы указать более одного типа, разделите значения запятой.
 
 ```html
 <div>
-  <!-- Accept all image formats by IANA media type wildcard-->
+  <!-- Принять все форматы изображений с помощью подстановочного знака типа мультимедиа IANA-->
   <b-form-file accept="image/*"></b-form-file>
 
-  <!-- Accept specific image formats by IANA type -->
+  <!-- Принимать определенные форматы изображений по типу IANA -->
   <b-form-file accept="image/jpeg, image/png, image/gif"></b-form-file>
 
-  <!-- Accept specific image formats by extension -->
+  <!-- Принимать определенные форматы изображений по расширению -->
   <b-form-file accept=".jpg, .png, .gif"></b-form-file>
 </div>
 ```
 
-To accept any file type, leave `accept` as `null` (default). You can mix and match IANA media types
-and extensions.
+Чтобы принять файл любого типа, оставьте для параметра `accept` значение `null` (по умолчанию). Вы можете смешивать и сопоставлять типы носителей и расширения IANA.
 
-Refer to [IANA Media Types](https://www.iana.org/assignments/media-types/) for a complete list of
-standard media types.
+Смотрите [медиа типы IANA](https://www.iana.org/assignments/media-types/) для получения полного списка стандартных типов носителей.
 
-**Note:** Not all browsers support or respect the `accept` attribute on file inputs.
+**Примечание:** Не все браузеры поддерживают или соблюдают атрибут `accept` во входных файлах.
 
-For drag and drop, BootstrapVue uses an internal file type checking routine and will filter out
-files that do not have the correct IANA media type or extension.
+Для перетаскивания BootstrapVue использует внутреннюю процедуру проверки типа файла и отфильтровывает файлы, которые не имеют правильного типа или расширения IANA.
 
-## Customizing
+## Кастомизация
 
-`<b-form-file>`, when not in [`plain` mode](#non-custom-file-input), provides several features for
-customizing its appearance.
+`<b-form-file>`, когда он не в [режиме `plain`](#non-custom-file-input), предоставляет несколько функций для настройки его внешнего вида.
 
-### Control sizing
+### Размеры
 
-Use the `size` prop to control the visual size of the input. The default size is considered `md`
-(medium). Optional sizes are `lg` (large) and `sm` (small). These sizes line up with the sizes
-available on other form controls.
+Используйте свойство `size` для управления визуальным размером ввода. Размер по умолчанию считается `md` (средний). Дополнительные размеры: `lg` (большой) и `sm` (маленький). Эти размеры совпадают с размерами, доступными в других элементах управления формой.
 
 ```html
 <div>
@@ -174,20 +146,15 @@ available on other form controls.
 <!-- form-file-sizes.vue -->
 ```
 
-**Note:** Bootstrap v4.x does not natively support sizes for the custom file control. However,
-BootstrapVue includes custom SCSS/CSS that adds support for sizing the custom file input control.
+**Примечание:** Bootstrap v4.x изначально не поддерживает размеры для настраиваемого файлового элемента управления. Однако BootstrapVue включает настраиваемый SCSS/CSS, который добавляет поддержку изменения размера настраиваемого элемента управления вводом файлов.
 
-### Customize the placeholder text
+### Настроить текст заполнителя
 
-Use the `placeholder` prop or the scoped `placeholder` slot to change the prompt text that is shown
-when no files are selected. The prop only supports plain text. Use the slot for custom HTML markup.
-The slot takes precedence over the prop.
+Используйте свойство `placeholder` или слот `placeholder` с заданной областью, чтобы изменить текст подсказки, который отображается, когда файлы не выбраны. Свойство поддерживает только обычный текст. Используйте слот для пользовательской разметки HTML. Слот имеет приоритет над свойством.
 
-### Customize browse button label
+### Настроить метку кнопки просмотра
 
-If you want to globally change `Browse` label, you can add something like this to your global
-stylesheets. Also it is advised to use
-[:lang()](https://developer.mozilla.org/en-US/docs/Web/CSS/:lang) for multi-language sites.
+Если вы хотите глобально изменить метку `Browse`, вы можете добавить что-то подобное в свои глобальные таблицы стилей. Также рекомендуется использовать [:lang()](https://developer.mozilla.org/en-US/docs/Web/CSS/:lang) для многоязычных сайтов.
 
 ```css
 .custom-file-input:lang(en) ~ .custom-file-label::after {
@@ -195,21 +162,19 @@ stylesheets. Also it is advised to use
 }
 ```
 
-Alternatively you can set the content of the custom file browse button text via the `browse-text`
-prop. Note, only plain text is supported. HTML and components are not supported.
+В качестве альтернативы вы можете установить содержимое пользовательского текста кнопки просмотра файла с помощью свойства `browse-text`. Обратите внимание, поддерживается только обычный текст. HTML и компоненты не поддерживаются.
 
-### File name formatter function
+### Функция форматирования имени файла
 
-Set the prop `file-name-formatter` to a function that accepts three arguments:
+Задайте для свойства `file-name-formatter` функцию, которая принимает три аргумента:
 
-| Argument             | Type  | Description                                                                   |
-| -------------------- | ----- | ----------------------------------------------------------------------------- |
-| [1] `files`          | Array | Flat array of `File` objects                                                  |
-| [2] `filesTraversed` | Array | Array of arrays of `File` objects when in [`directory` mode](#directory-mode) |
-| [3] `names`          | Array | Flat array of file names (strings)                                            |
+| Аргумент             | Тип   | Описание                                                                |
+| -------------------- | ----- | ----------------------------------------------------------------------- |
+| [1] `files`          | Array | Плоский массив объектов `File`                                          |
+| [2] `filesTraversed` | Array | Массив массивов объектов `File` в [режиме `directory`](#directory-mode) |
+| [3] `names`          | Array | Плоский массив имен файлов (строк)                                      |
 
-The function should return a single formatted string (HTML is not supported). The formatter will not
-be called if no files are selected.
+Функция должна возвращать одну отформатированную строку (HTML не поддерживается). Средство форматирования не будет вызываться, если файлы не выбраны.
 
 ```html
 <template>
@@ -229,18 +194,17 @@ be called if no files are selected.
 <!-- file-formatter-function.vue -->
 ```
 
-### File name formatting via scoped slot
+### Форматирование имени файла через слот с заданной областью
 
-Alternatively, you can use the scoped slot `file-name` to render the file names. The scoped slot
-will receive the following properties:
+В качестве альтернативы вы можете использовать слот с ограниченной областью видимости `file-name` для отображения имен файлов. Слот с заданной областью действия получит следующие свойства:
 
-| Property         | Type  | Description                                                                   |
-| ---------------- | ----- | ----------------------------------------------------------------------------- |
-| `files`          | Array | Flat array of `File` objects                                                  |
-| `filesTraversed` | Array | Array of arrays of `File` objects when in [`directory` mode](#directory-mode) |
-| `names`          | Array | Flat array of file names (strings)                                            |
+| Свойство         | Тип   | Описание                                                                |
+| ---------------- | ----- | ----------------------------------------------------------------------- |
+| `files`          | Array | Плоский массив объектов `File`                                          |
+| `filesTraversed` | Array | Массив массивов объектов `File` в [режиме `directory`](#directory-mode) |
+| `names`          | Array | Плоский массив имен файлов (строк)                                      |
 
-All three properties are always arrays, regardless of the setting of the `multiple` prop.
+Все три свойства всегда являются массивами, независимо от настройки свойства `multiple`.
 
 ```html
 <template>
@@ -248,7 +212,7 @@ All three properties are always arrays, regardless of the setting of the `multip
    <template slot="file-name" slot-scope="{ names }">
      <b-badge variant="dark">{{ names[0] }}</b-badge>
      <b-badge v-if="names.length > 1" variant="dark" class="ml-1">
-       + {{ names.length - 1 }} More files
+       + {{ names.length - 1 }} Больше файлов
      </b-badge>
    </template>
   </b-form-file>
@@ -257,65 +221,49 @@ All three properties are always arrays, regardless of the setting of the `multip
 <!-- file-formatter-slot.vue -->
 ```
 
-When using the `file-name` slot, the `file-name-formatter` prop is ignored. The slot **will not** be
-rendered when there are no file(s) selected.
+При использовании слота `file-name` свойство `file-name-formatter` игнорируется. Слот **не будет** отображаться, если не выбран ни один файл(ы).
 
-## Non custom file input
+## Нестандартный ввод файла
 
-You can have `<b-form-file>` render a browser native file input by setting the `plain` prop. Note
-that many of the custom features do not apply when `plain` is set.
+Вы можете сделать так, чтобы `<b-form-file>` отображал исходный файл браузера, установив свойство `plain`. Обратите внимание, что многие из настраиваемых функций не применяются, когда установлен `plain`.
 
-## Contextual state feedback
+## Контекстная обратная связь о состоянии
 
-Bootstrap includes validation styles for `valid` and `invalid` states on most form controls.
+Bootstrap включает стили проверки `valid` и `invalid` состояний для большинства элементов управления формой.
 
-Generally speaking, you'll want to use a particular state for specific types of feedback:
+Вообще говоря, вы захотите использовать определенное состояние для определенных типов обратной связи:
 
-- `false` (denotes invalid state) is great for when there's a blocking or required field. A user
-  must fill in this field properly to submit the form
-- `true` (denotes valid state) is ideal for situations when you have per-field validation throughout
-  a form and want to encourage a user through the rest of the fields
-- `null` displays no validation state (neither valid nor invalid)
+- `false` (обозначает недопустимое состояние) отлично подходит, когда есть блокирующее или обязательное поле. Пользователь должен правильно заполнить это поле, чтобы отправить форму
+- `true` (обозначает допустимое состояние) идеально подходит для ситуаций, когда у вас есть проверка по полю во всей форме и вы хотите побудить пользователя пройти через остальные поля
+- `null` diне отображает состояние проверки (ни действительное, ни недействительное)
 
-To apply one of the contextual state icons on `<b-form-file>`, set the `state` prop to `false` (for
-invalid), `true` (for valid), or `null` (no validation state).
+Чтобы применить один из иконок контекстного состояния к `<b-form-file>`, установите для свойства `state` значение `false` (для недопустимого), `true` (для действительного) или `null` (состояние проверки отсутствует).
 
-**Note:** Contextual states are **not** supported when in [`plain` mode](#non-custom-file-input).
+**Примечание:** Контекстные состояния **не** поддерживаются в [режиме `plain`](#non-custom-file-input).
 
-## Autofocus
+## Автофокус
 
-When the `autofocus` prop is set on `<b-form-file>`, the input will be auto-focused when it is
-inserted (i.e. **mounted**) into the document, or re-activated when inside a Vue `<keep-alive>`
-component. Note that this prop **does not** set the `autofocus` attribute on the input, nor can it
-tell when the input becomes visible.
+Когда свойство `autofocus` установлено на `<b-form-file>`, ввод будет автоматически сфокусирован, когда он вставлен (т.е. **установлен**) в документ, или повторно активирован, когда он находится внутри Vue. Компонент `<keep-alive>`. Обратите внимание, что это свойство **не** устанавливает атрибут `autofocus` на входе и не может определить, когда ввод становится видимым.
 
-## Accessibility
+## Доступность
 
-When using the custom version of `<b-form-file>` input which hides the original input, it is
-**highly recommended** that you supply a document unique ID string via the `id` prop. This will
-automatically render the extra ARIA attributes required to improve usability for persons using
-assistive technologies.
+При использовании пользовательской версии ввода `<b-form-file>`, которая скрывает исходный ввод, **настоятельно рекомендуется** указать строку уникального идентификатора документа через свойство `id`. Это автоматически отобразит дополнительные атрибуты ARIA, необходимые для повышения удобства использования людьми, использующими вспомогательные технологии.
 
-## Clearing the file selection
+## Очистка выбора файла
 
-With inputs of type file, normally the `v-model` is uni-directional (meaning you cannot pre-set the
-selected files). However, you can clear the file input's selected files by setting the `v-model` to
-either `null` (for single mode) or an empty array `[]` (for
-[`multiple`](#multiple-files)/[`directory`](#directory-mode) mode).
+При вводе типа file обычно `v-model` однонаправлен (это означает, что вы не можете предварительно установить выбранные файлы). Однако вы можете очистить выбранные файлы входного файла, установив для `v-model` значение `null` (для одиночного режима) или пустой массив `[]` (для режимов [`multiple`](#multiple-files)/[`directory`](#directory-mode)).
 
-Alternatively, `<b-form-file>` provides a `reset()` method that can be called to clear the file
-input. To take advantage of the `reset()` method, you will need to obtain a reference to the
-`<b-form-file>` component.
+В качестве альтернативы, `<b-form-file>` предоставляет метод `reset()`, который может быть вызван для очистки ввода файла. Чтобы воспользоваться преимуществом метода `reset()`, вам необходимо получить ссылку на компонент `<b-form-file>`.
 
 ```html
 <template>
   <div>
     <b-form-file v-model="file" ref="file-input" class="mb-2"></b-form-file>
 
-    <b-button @click="clearFiles" class="mr-2">Reset via method</b-button>
-    <b-button @click="file = null">Reset via v-model</b-button>
+    <b-button @click="clearFiles" class="mr-2">Сброс с помощью метода</b-button>
+    <b-button @click="file = null">Сброс через v-model</b-button>
 
-    <p class="mt-2">Selected file: <b>{{ file ? file.name : '' }}</b></p>
+    <p class="mt-2">Выбранный файл: <b>{{ file ? file.name : '' }}</b></p>
   </div>
 </template>
 
@@ -337,21 +285,12 @@ input. To take advantage of the `reset()` method, you will need to obtain a refe
 <!-- b-form-file-reset.vue -->
 ```
 
-## Implementation notes
+## Примечания по реализации
 
-As not all browsers allow setting a value of a file input (even to `null` or an empty string),
-`b-form-input` employs a technique that works cross-browser that involves changing the input type to
-`null` and then immediately back to type `file`.
+Поскольку не все браузеры позволяют устанавливать значение входного файла (даже в `null` или пустую строку), `b-form-input` использует технику, которая работает кроссбраузерно, которая включает изменение типа ввода на `null` и затем сразу же вернитесь к типу `file`.
 
-Nested file structures in [`directory` mode](#directory-mode) require `Promise` support in the
-browser. If targeting your app for older browsers, such as IE 11, please include a polyfill that
-provides `Promise` support. If `Promise` support is not detected, files will always be in a flat
-file structure.
+Вложенные файловые структуры в [режим `directory`](#directory-mode) требуют поддержки `Promise` в браузере. Если ваше приложение ориентировано на старые браузеры, такие как IE 11, включите полифилл, который обеспечивает поддержку `Promise`. Если поддержка `Promise` не обнаружена, файлы всегда будут иметь плоскую файловую структуру.
 
-Due to a ["bug" in Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=138987), nested
-file structures in [`directory` mode](#directory-mode) are currently only supported when directories
-are [dropped](#drag-and-drop-support) on the file input. When selecting them via the "Browse" dialog
-they will always be in a flattened array structure. Mozilla implemented the behavior
-[the same way as Chromium.](https://bugzilla.mozilla.org/show_bug.cgi?id=1326031)
+Из-за ["ошибки" в Chromium](https://bugs.chromium.org/p/chromium/issues/detail?id=138987), вложенные файловые структуры в [режиме `directory`](#directory-mode) в настоящее время поддерживаются только тогда, когда каталоги [дропнуты](#drag-and-drop-support) при вводе файла. При выборе их в диалоговом окне «Обзор» они всегда будут иметь структуру плоского массива. Mozilla реализовала поведение [так же, как Chromium](https://bugzilla.mozilla.org/show_bug.cgi?id=1326031).
 
 <!-- Component reference added automatically from component package.json -->
