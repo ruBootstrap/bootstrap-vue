@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Form Checkbox",
-    "description": "Custom checkbox input and checkbox group to replace the browser default checkbox input, built on top of semantic and accessible markup. Optionally supports switch styling.",
+    "description": "Пользовательский ввод флажка и группа флажков для замены ввода флажка по умолчанию в браузере, построенного на основе семантической и доступной разметки. Опционально поддерживает стиль переключателя.",
     "components": [
       {
         "component": "BFormCheckboxGroup",
@@ -14,57 +14,57 @@
         "props": [
           {
             "prop": "ariaInvalid",
-            "description": "Sets the 'aria-invalid' attribute value on the wrapper element. When not provided, the 'state' prop will control the attribute"
+            "description": "Устанавливает значение атрибута 'aria-invalid' в элементе оболочки. Если не указано, свойство 'state' будет управлять атрибутом"
           },
           {
             "prop": "buttonVariant",
-            "description": "Specifies the Bootstrap contextual color theme variant the apply to the button style checkboxes"
+            "description": "Определяет вариант контекстной цветовой темы Bootstrap, применяемый к флажкам стиля кнопки"
           },
           {
             "prop": "buttons",
-            "description": "When set, renderes the checkboxes in this group with button styling"
+            "description": "Когда установлено, отображает флажки в этой группе с помощью стиля кнопки"
           },
           {
             "prop": "checked",
-            "description": "The current value of the checked checkboxes in the group. Must be an array when there are multiple checkboxes"
+            "description": "Текущее значение отмеченных флажков в группе. Должен быть массив, если есть несколько флажков"
           },
           {
             "prop": "size",
-            "description": "Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'"
+            "description": "Установите размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'"
           },
           {
             "prop": "stacked",
-            "description": "When set, renders the checkbox group in stacked mode"
+            "description": "Если установлено, отображает группу флажков в режиме с накоплением"
           },
           {
             "prop": "switches",
-            "description": "When set, renders the checkboxes in the group with switch styling"
+            "description": "Если установлено, отображает флажки в группе со стилем переключателя"
           },
           {
             "prop": "validated",
-            "description": "When set, adds the Bootstrap class 'was-validated' to the group wrapper"
+            "description": "Если установлено, добавляет класс Bootstrap 'was-validated' в оболочку группы"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Emitted when selected value(s) is changed due to user interaction",
+            "description": "Выдается, когда выбранное значение изменяется из-за взаимодействия с пользователем",
             "args": [
               {
                 "arg": "checked",
                 "type": "Array",
-                "description": "Value of checkboxes. Value will be an array"
+                "description": "Значение флажков. Значение будет массивом"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Emitted when the checked value is changed",
+            "description": "Выдается при изменении отмеченного значения",
             "args": [
               {
                 "arg": "checked",
                 "type": "Array",
-                "description": "Value of checkboxes. Value will be an array"
+                "description": "Значение флажков. Значение будет массивом"
               }
             ]
           }
@@ -72,11 +72,11 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content (form checkboxes) to place in the form checkbox group"
+            "description": "Контент (флажки формы) для размещения в группе флажков формы"
           },
           {
             "name": "first",
-            "description": "Slot to place b-form-checks so that they appear before checks generated from options prop"
+            "description": "Слот для размещения b-form-checks, чтобы они появлялись перед проверками, созданными из опций опций"
           }
         ]
       },
@@ -89,45 +89,45 @@
         "props": [
           {
             "prop": "button",
-            "description": "When set, renders the checkbox with the appearance of a button"
+            "description": "Когда установлено, отображает флажок в виде кнопки"
           },
           {
             "prop": "buttonVariant",
-            "description": "Applies on of Bootstrap's theme colors when in 'button' mode"
+            "description": "Применяется к цветам темы Bootstrap в режиме 'button'"
           },
           {
             "prop": "checked",
-            "description": "The current value of the checkbox(es). Must be an array when there are multiple checkboxes bound to the same v-model"
+            "description": "Текущее значение флажка (-ов). Должен быть массив, если к одной v-model привязано несколько флажков"
           },
           {
             "prop": "indeterminate",
-            "description": "Renders the checkbox in an indeterminate state. Syncable via the .sync modifier"
+            "description": "Переводит флажок в неопределенное состояние. Синхронизация с помощью модификатора .sync"
           },
           {
             "prop": "inline",
-            "description": "When set, renders the checkbox as an inline element rather than as a 100% width block"
+            "description": "Если установлено, отображает флажок как встроенный элемент, а не как блок шириной 100%"
           },
           {
             "prop": "size",
-            "description": "Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'"
+            "description": "Установите размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'"
           },
           {
             "prop": "switch",
-            "description": "When set, renders the checkbox with the appearance of a switch"
+            "description": "Когда установлено, отображает флажок в виде переключателя"
           },
           {
             "prop": "uncheckedValue",
-            "description": "Value returned when this checkbox is unchecked. Note not applicable when multiple checkboxes bound to the same v-model array"
+            "description": "Значение, возвращаемое, когда этот флажок снят. Примечание не применимо, если несколько флажков привязаны к одному и тому же массиву v-model"
           },
           {
             "prop": "value",
-            "description": "Value returned when this checkbox is checked"
+            "description": "Значение, возвращаемое, когда этот флажок установлен"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Emitted when selected value(s) is changed due to user interaction",
+            "description": "Выдается, когда выбранное значение изменяется из-за взаимодействия с пользователем",
             "args": [
               {
                 "arg": "checked",
@@ -138,13 +138,13 @@
                   "Object",
                   "Array"
                 ],
-                "description": "Value of checkbox(es). When bound to multiple checkboxes, value will be an array"
+                "description": "Значение флажка(ов). При привязке к нескольким флажкам значение будет массивом"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Emitted when the selected value(s) is changed",
+            "description": "Выдается при изменении выбранного значения (значений)",
             "args": [
               {
                 "arg": "checked",
@@ -155,7 +155,7 @@
                   "Object",
                   "Array"
                 ],
-                "description": "Value of checkbox(es). When bound to multiple checkboxes, value will be an array"
+                "description": "Значение флажка(ов). При привязке к нескольким флажкам значение будет массивом"
               }
             ]
           }
@@ -163,7 +163,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form checkbox"
+            "description": "Флажок для размещения в форме"
           }
         ]
       }
