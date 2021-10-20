@@ -1,18 +1,16 @@
-# Form Group
+# Группа формы
 
-> The `<b-form-group>` component is the easiest way to add some structure to forms. Its purpose is
-> to pair form controls with a legend or label, and to provide help text and invalid/valid feedback
-> text, as well as visual (color) contextual state feedback.
+> Компонент `<b-form-group>` - самый простой способ добавить некоторую структуру к формам. Его цель состоит в том, чтобы объединить элементы управления формы с легендой или меткой и предоставить текст справки и невалидный/валидный текст обратной связи, а также визуальную (цветную) обратную связь с контекстным состоянием.
 
 ```html
 <template>
   <div>
     <b-form-group
       id="fieldset-1"
-      description="Let us know your name."
-      label="Enter your name"
+      description="Дайте нам знать ваше имя."
+      label="Введите ваше имя"
       label-for="input-1"
-      valid-feedback="Thank you!"
+      valid-feedback="Спасибо!"
       :invalid-feedback="invalidFeedback"
       :state="state"
     >
@@ -29,9 +27,9 @@
       },
       invalidFeedback() {
         if (this.name.length > 0) {
-          return 'Enter at least 4 characters.'
+          return 'Введите не менее 4 символов.'
         }
-        return 'Please enter something.'
+        return 'Пожалуйста, введите что-нибудь.'
       }
     },
     data() {
@@ -47,57 +45,38 @@
 
 ## Label
 
-Use the prop `label` to set the content of the generated `<legend>` or `<label>` element, or by
-using the named slot `label`, You may optionally visually hide the label text while still making it
-available to screen readers by setting the prop `label-sr-only`.
+Используйте свойство `label`, чтобы установить содержимое сгенерированного элемента `<legend>` или `<label>`, или, используя именованный слот `label`, вы можете при желании визуально скрыть текст метки, оставив его доступным для программы чтения с экрана, установив свойство `label-sr-only`.
 
-`<b-form-group>` will render a `<fieldset>` with `<legend>` if the `label-for` prop is not set. If
-an input ID is provided to the `label-for` prop, then a `<div>` with `<label>` will be rendered.
+`<b-form-group>` будет отображать `<fieldset>` с `<legend>`, если свойство `label-for` не установлено. Если для свойства `label-for` предоставлен входной идентификатор, то будет отображаться `<div>` с `<label>`.
 
-If you provide an input `id` value to the `label-for` prop (the `id` must exist on the input
-contained within the `<b-form-group>`), a `<label>` element will be rendered instead of a `<legend>`
-element, and will have the `for` attribute set to the `id` specified. When specifying the id, **do
-not** prepend it with `#`. The `label-for` prop should only be used when you have a single form
-input inside the `<b-form-group>` component. Do not set the `label-for` prop when using
-`<b-form-radio-group>`, `<b-form-checkbox-group>`, `<b-form-radio>`, `<b-form-checkbox>` or
-`<b-form-file>` components (or when placing multiple inputs in the same form group), as these inputs
-include integrated label element(s) and the `<legend>` element is more suitable.
+Если вы предоставите входное значение `id` для свойства `label-for` (`id` должен существовать на входе, содержащемся внутри `<b-form-group>`), элемент `<label>` будет визуализируется вместо элемента `<legend>`, и для атрибута `for` будет задан указанный `id`. При указании идентификатора **не** добавляйте перед ним символ `#`. Свойство `label-for` следует использовать только тогда, когда у вас есть один ввод формы внутри компонента `<b-form-group>`. Не устанавливайте свойство `label-for` при использовании компонентов `<b-form-radio-group>`, `<b-form-checkbox-group>`, `<b-form-radio>`, `<b-form-checkbox>` или `<b-form-file>` (или при размещении нескольких входов в одной и той же группе форм), поскольку эти входы включают интегрированный элемент(ы) метки, а элемент `<legend>` более подходит.
 
-You can also apply additional classes to the label via the `label-class` prop, such as responsive
-padding and text alignment utility classes. The `label-class` prop accepts either a string or array
-of strings.
+Вы также можете применить к метке дополнительные классы с помощью свойства `label-class`, например вспомогательные классы адаптивного заполнения и выравнивания текста. Свойство `label-class` принимает либо строку, либо массив строк.
 
-### Horizontal layout
+### Горизонтальный макет
 
-By default, the label appears above the input element(s), but you may optionally render horizontal
-(label to the left of the input) at the various standard Bootstrap breakpoints.
+По умолчанию метка отображается над элементом (элементами) ввода, но вы можете при желании отобразить горизонтальную (метку слева от ввода) в различных стандартных контрольных точках Bootstrap.
 
-The props `label-cols` and `label-cols-{breakpoint}` allow you to specify how many columns the label
-should occupy in the row. The input will fill the rest of the row width. The value must be a number
-greater than `0`. Or you can set the prop to `true` to make the label and input(s) each occupy half
-of the width of the rendered row (handy if you have custom Bootstrap with an odd number of columns),
-or set the value to `'auto'` so that the label occupies only the width that is needed.
+Свойства `label-cols` и `label-cols-{breakpoint}` позволяют вам указать, сколько столбцов метка должна занимать в строке. Ввод заполнит оставшуюся часть ширины строки. Значение должно быть числом больше `0`. Или вы можете установить свойство в значение `true`, чтобы каждая метка и вход (ы) занимали половину ширины отображаемой строки (это удобно, если у вас есть собственный Bootstrap с нечетным числом столбцов), или установите значение в `'auto'`, чтобы метка занимала только необходимую ширину.
 
-Since BootstrapVue `v2.21.0` it is also possible to specify how many columns the content should
-occupy in the row via the `content-cols` and `content-cols-{breakpoint}` props.
+Начиная с BootstrapVue `v2.21.0`, также можно указать, сколько столбцов содержимое должно занимать в строке с помощью свойств `content-cols` и `content-cols-{breakpoint}`.
 
-When using both, the `label-cols` and `content-cols` props, make sure that the total amount of
-columns doesn't exceed `12`.
+При использовании обоих свойств: `label-cols` и `content-cols`, убедитесь, что общее количество столбцов не превышает `12`.
 
-See the [Layout and Grid System](/docs/components/layout#how-it-works) docs for further information.
+Дополнительную информацию смотрите в документации [Макет и Система сеток](/docs/components/layout#how-it-works).
 
-| Prop              | Description                                                                           |
-| ----------------- | ------------------------------------------------------------------------------------- |
-| `label-cols`      | Applies to breakpoint `xs` up                                                         |
-| `label-cols-sm`   | Applies to breakpoint `sm` and up                                                     |
-| `label-cols-md`   | Applies to breakpoint `md` and up                                                     |
-| `label-cols-lg`   | Applies to breakpoint `lg` and up                                                     |
-| `label-cols-xl`   | Applies to breakpoint `xl` and up                                                     |
-| `content-cols`    | <span class="badge badge-secondary">v2.21.0+</span> Applies to breakpoint `xs` up     |
-| `content-cols-sm` | <span class="badge badge-secondary">v2.21.0+</span> Applies to breakpoint `sm` and up |
-| `content-cols-md` | <span class="badge badge-secondary">v2.21.0+</span> Applies to breakpoint `md` and up |
-| `content-cols-lg` | <span class="badge badge-secondary">v2.21.0+</span> Applies to breakpoint `lg` and up |
-| `content-cols-xl` | <span class="badge badge-secondary">v2.21.0+</span> Applies to breakpoint `xl` and up |
+| Свойство          | Описание                                                                                        |
+| ----------------- | ----------------------------------------------------------------------------------------------- |
+| `label-cols`      | Применяется к контрольной точке выше `xs`                                                       |
+| `label-cols-sm`   | Применяется к контрольной точке `sm` и выше                                                     |
+| `label-cols-md`   | Применяется к контрольной точке `md` и выше                                                     |
+| `label-cols-lg`   | Применяется к контрольной точке `lg` и выше                                                     |
+| `label-cols-xl`   | Применяется к контрольной точке `xl` и выше                                                     |
+| `content-cols`    | <span class="badge badge-secondary">v2.21.0+</span> Применяется к контрольной точке выше `xs`   |
+| `content-cols-sm` | <span class="badge badge-secondary">v2.21.0+</span> Применяется к контрольной точке `sm` и выше |
+| `content-cols-md` | <span class="badge badge-secondary">v2.21.0+</span> Применяется к контрольной точке `md` и выше |
+| `content-cols-lg` | <span class="badge badge-secondary">v2.21.0+</span> Применяется к контрольной точке `lg` и выше |
+| `content-cols-xl` | <span class="badge badge-secondary">v2.21.0+</span> Применяется к контрольной точке `xl` и выше |
 
 ```html
 <div>
@@ -108,8 +87,8 @@ See the [Layout and Grid System](/docs/components/layout#how-it-works) docs for 
       label-cols-lg="3"
       content-cols-sm
       content-cols-lg="7"
-      description="Let us know your name."
-      label="Enter your name"
+      description="Дайте нам знать ваше имя."
+      label="Введите ваше имя"
       label-for="input-horizontal"
     >
       <b-form-input id="input-horizontal"></b-form-input>
@@ -120,25 +99,23 @@ See the [Layout and Grid System](/docs/components/layout#how-it-works) docs for 
 <!-- b-form-group-horizontal.vue -->
 ```
 
-The ability to set the label cols to `'auto'` was added in BootstrapVue version `v2.1.0`.
+В BootstrapVue версии `v2.1.0` была добавлена возможность устанавливать для столбцов меток значение `'auto'`.
 
-### Label size
+### Размер метки
 
-You can control the label text size match the size of your form input(s) via the optional
-`label-size` prop. Values can be `'sm'` or `'lg'` for small or large label, respectively. Sizes work
-for both horizontal and non-horizontal form groups.
+Вы можете управлять размером текста метки в соответствии с размером ввода(ов) вашей формы с помощью необязательного свойства `label-size`. Значения могут быть `'sm'` или `'lg'` для маленькой или большой метки соответственно. Размеры подходят как для горизонтальных, так и для негоризонтальных групп форм.
 
 ```html
 <div>
-  <b-form-group label-cols="4" label-cols-lg="2" label-size="sm" label="Small" label-for="input-sm">
+  <b-form-group label-cols="4" label-cols-lg="2" label-size="sm" label="Маленькая" label-for="input-sm">
     <b-form-input id="input-sm" size="sm"></b-form-input>
   </b-form-group>
 
-  <b-form-group label-cols="4" label-cols-lg="2" label="Default" label-for="input-default">
+  <b-form-group label-cols="4" label-cols-lg="2" label="По умолчанию" label-for="input-default">
     <b-form-input id="input-default"></b-form-input>
   </b-form-group>
 
-  <b-form-group label-cols="4" label-cols-lg="2" label-size="lg" label="Large" label-for="input-lg">
+  <b-form-group label-cols="4" label-cols-lg="2" label-size="lg" label="Большая" label-for="input-lg">
     <b-form-input id="input-lg" size="lg"></b-form-input>
   </b-form-group>
 </div>
@@ -146,44 +123,40 @@ for both horizontal and non-horizontal form groups.
 <!-- b-form-group-label-size.vue -->
 ```
 
-### Label text alignment
+### Выравнивание текста метки
 
-The label text may also optionally be aligned `left`, `center` or `right` by setting the respective
-value via the prop `label-text-align` and/or `label-align-{breakpoint}`.
+Текст метки также может быть выровнен `left`, `center` или `right`, задав соответствующее значение с помощью свойства `label-text-align` и/или `label-align-{breakpoint}`.
 
-| Prop             | Description                       |
-| ---------------- | --------------------------------- |
-| `label-align`    | Applies to breakpoint `xs` up     |
-| `label-align-sm` | Applies to breakpoint `sm` and up |
-| `label-align-md` | Applies to breakpoint `md` and up |
-| `label-align-lg` | Applies to breakpoint `lg` and up |
-| `label-align-xl` | Applies to breakpoint `xl` and up |
+| Свойство         | Описание                                    |
+| ---------------- | ------------------------------------------- |
+| `label-align`    | Применяется к контрольной точке выше `xs`   |
+| `label-align-sm` | Применяется к контрольной точке `sm` и выше |
+| `label-align-md` | Применяется к контрольной точке `md` и выше |
+| `label-align-lg` | Применяется к контрольной точке `lg` и выше |
+| `label-align-xl` | Применяется к контрольной точке `xl` и выше |
 
-Alignment has no effect if the `label-sr-only` prop is set.
+Выравнивание не действует, если задано свойство `label-sr-only`.
 
-## Description
+## Описание
 
-Optional descriptive text which is always shown with the `.text-muted` class by setting the
-`description` prop or using the named slot `description`. The description text is rendered using the
-[`<b-form-text>`](/docs/components/form#helper-components) form sub-component.
+Необязательный описательный текст, который всегда отображается с классом `.text-muted`, задав свойство `description` или используя именованный слот `description`. Текст описания отображается с помощью подкомпонента формы [`<b-form-text>`](/docs/components/form#helper-components).
 
-## Nested form groups
+## Вложенные группы форм
 
-Feel free to nest `<b-form-group>` components to produce advanced form layouts and semantic grouping
-of related form controls:
+Не стесняйтесь вкладывать компоненты `<b-form-group>` для создания расширенных макетов форм и семантической группировки связанных элементов управления формой:
 
 ```html
 <div>
   <b-card bg-variant="light">
     <b-form-group
       label-cols-lg="3"
-      label="Shipping Address"
+      label="Адрес доставки"
       label-size="lg"
       label-class="font-weight-bold pt-0"
       class="mb-0"
     >
       <b-form-group
-        label="Street:"
+        label="Улица:"
         label-for="nested-street"
         label-cols-sm="3"
         label-align-sm="right"
@@ -192,7 +165,7 @@ of related form controls:
       </b-form-group>
 
       <b-form-group
-        label="City:"
+        label="Город:"
         label-for="nested-city"
         label-cols-sm="3"
         label-align-sm="right"
@@ -201,7 +174,7 @@ of related form controls:
       </b-form-group>
 
       <b-form-group
-        label="State:"
+        label="Область:"
         label-for="nested-state"
         label-cols-sm="3"
         label-align-sm="right"
@@ -210,7 +183,7 @@ of related form controls:
       </b-form-group>
 
       <b-form-group
-        label="Country:"
+        label="Страна:"
         label-for="nested-country"
         label-cols-sm="3"
         label-align-sm="right"
@@ -219,7 +192,7 @@ of related form controls:
       </b-form-group>
 
       <b-form-group
-        label="Ship via:"
+        label="Доставить через:"
         label-cols-sm="3"
         label-align-sm="right"
         class="mb-0"
@@ -238,100 +211,60 @@ of related form controls:
 <!-- b-form-group-nested.vue -->
 ```
 
-## Disabled form group
+## Группа отключенных форм
 
-Setting the `disabled` prop will disable the rendered `<fieldset>` and, on most browsers, will
-disable all the input elements contained within the fieldset.
+Установка свойства `disabled` отключит отображаемый `<fieldset>` и в большинстве браузеров отключит все элементы ввода, содержащиеся в fieldset.
 
-`disabled` has no effect when `label-for` is set (as a `<fieldset>` element is not rendered).
+`disabled` не действует, если установлен `label-for` (поскольку элемент `<fieldset>` не отображается).
 
-## Validation state feedback
+## Обратная связь состояния валидации
 
-Bootstrap includes validation styles for `valid` and `invalid` states on most form controls.
+Bootstrap включает стили состояния валидации `valid` и `invalid` для большинства элементов управления формой.
 
-Generally speaking, you'll want to use a particular state for specific types of feedback:
+Вообще говоря, вы захотите использовать определенное состояние для определенных типов обратной связи:
 
-- `false` (denotes invalid state) is great for when there's a blocking or required field. A user
-  must fill in this field properly to submit the form.
-- `true` (denotes valid state) is ideal for situations when you have per-field validation throughout
-  a form and want to encourage a user through the rest of the fields.
-- `null` Displays no validation state (neither valid nor invalid)
+- `false` (обозначает недопустимое состояние) отлично подходит, когда есть блокирующее или обязательное поле. Пользователь должен правильно заполнить это поле, чтобы отправить форму.
+- `true` (обозначает действительное состояние) идеально подходит для ситуаций, когда у вас есть проверка по каждому полю во всей форме и вы хотите побудить пользователя пройти через остальные поля.
+- `null` Не отображает состояние проверки (ни действительное, ни недействительное)
 
-To apply one of the contextual state icons on `<b-form-group>`, set the `state` prop to `false` (for
-invalid), `true` (for valid), or `null` (no validation state).
+Чтобы применить один из значков контекстного состояния к `<b-form-group>` установите для свойства `state` значение `false` (для недопустимого), `true` (для действительного) или `null` (состояние проверки отсутствует).
 
-Bootstrap v4 uses sibling CSS selectors of `:invalid` or `:valid` inputs to show the feedback text.
-Some form controls (such as checkboxes, radios, and file inputs, or inputs inside input-groups) are
-wrapped in additional markup that will no longer make the feedback text a sibling of the input, and
-hence the feedback will not show. In these situations you will need to set the validity `state` on
-the `<b-form-group>` _as well as_ the input.
+Bootstrap v4 использует родственные CSS-селекторы инпутов `:invalid` или `:valid` для отображения текста отзыва. Некоторые элементы управления формы (такие как флажки, радио и входные данные файлов или входные данные внутри групп ввода) заключены в дополнительную разметку, которая больше не будет делать текст обратной связи аналогом ввода, и, следовательно, обратная связь не будет отображаться. В этих ситуациях вам нужно будет установить значение `state` для `<b-form-group>` _а также_ в инпуте.
 
-Feedback will be shown if the parent `<b-form>` component does _not_ have the `novalidate` prop set
-(or set to `false`) along with the `validated` prop set (and the input fails or passes native
-browser validation constraints such as `required`). Refer to Bootstrap v4's
-[Form component](https://getbootstrap.com/docs/4.5/components/forms/#validation) documentation for
-details on validation methods.
+Обратная связь будет показана, если родительский компонент `<b-form>` _не_ имеет свойство `novalidate`, установленное (или имеет значение `false`) вместе с набором свойств `validated` (и ввод не выполняется или проходит проверку в собственном браузере. ограничения, такие как `required`). Обратитесь к Bootstrap v4 [Компонент формы](https://getbootstrap.com/docs/4.5/components/forms/#validation) для получения подробной информации о методах проверки.
 
-You should always provide content via the `invalid-feedback` prop (or slot) to aid users using
-assistive technologies when setting a contextual `invalid` state.
+Вы всегда должны предоставлять контент через свойство `invalid-feedback` (или слот), чтобы помочь пользователям использовать вспомогательные технологии при установке контекстного состояния `invalid`.
 
-### Invalid feedback
+### Невалидная обратная связь
 
-Show optional invalid state feedback text to provide textual state feedback (html supported) by
-setting the prop `invalid-feedback` or using the named slot `invalid-feedback`.
+Показать необязательный текст обратной связи о недопустимом состоянии, чтобы обеспечить текстовую обратную связь о состоянии (поддерживается HTML), установив свойство `invalid-feedback` или используя именованный слот `invalid-feedback`.
 
-Invalid feedback is rendered using the
-[`<b-form-invalid-feedback>`](/docs/components/form#helper-components) form sub-component.
+Недопустимая обратная связь отображается с помощью подкомпонента формы [`<b-form-invalid-feedback>`](/docs/components/form#helper-components).
 
-### Valid feedback
+### Валидная обратная связь
 
-Show optional valid state feedback text to provide textual state feedback (html supported) by
-setting the prop `valid-feedback` or using the named slot `valid-feedback`.
+Показать необязательный действительный текст обратной связи о состоянии, чтобы обеспечить текстовую обратную связь о состоянии (поддерживается HTML), установив свойство `valid-feedback` или используя именованный `valid-feedback`.
 
-Valid feedback is rendered using the
-[`<b-form-valid-feedback>`](/docs/components/form#helper-components) form sub-component.
+Правильная обратная связь отображается с помощью подкомпонента формы[`<b-form-valid-feedback>`](/docs/components/form#helper-components).
 
-### Feedback style
+### Стиль обратной связи
 
-By default, when visible, feedback (valid or invalid) will show as a block of text. You can change
-the feedback so that it shows as a static tooltip when visible, by setting the prop `tooltip` to
-`true`.
+По умолчанию, когда он виден, отзыв (действительный или недействительный) отображается в виде блока текста. Вы можете изменить обратную связь так, чтобы она отображалась как статическая всплывающая подсказка, когда она видна, установив для свойства `tooltip` значение `true`.
 
-### Feedback limitations
+### Ограничения обратной связи
 
-**Note:** When using `<b-input-group>`, `<b-form-file>`, `<b-form-radio-group>`, `<b-form-radio>`,
-`<b-form-checkbox-group>` or `<b-form-checkbox>` inside a `<b-form-group>`, setting an invalid (or
-valid) `state` on the `input` alone will **not** trigger the invalid (or valid) feedback to show
-(due to limitations with the new Bootstrap v4 validation CSS). To get around this, **you must also**
-set the invalid/valid `state` on `<b-form-group>`. Native browser validation will **not** trigger
-the invalid feedback to show when using one of the above mentioned form controls.
+**Примечание:** При использовании `<b-input-group>`, `<b-form-file>`, `<b-form-radio-group>`, `<b-form-radio>`, `<b-form-checkbox-group>` или `<b-form-checkbox>` внутри `<b-form-group>`, установка недопустимого (или допустимого) состояния `state` на `input` **не** будет вызывает отображение недопустимой (или действительной) обратной связи (из-за ограничений, связанных с новым CSS для проверки Bootstrap v4). Чтобы обойти это, **вы также должны** установить недопустимое/допустимое состояние `state` в `<b-form-group>`. Встроенная проверка браузера **не** вызовет недопустимую обратную связь, отображаемую при использовании одного из вышеупомянутых элементов управления формой.
 
-## Accessibility
+## Доступность
 
-By default, when no `label-for` value is provided, `<b-form-group>` renders the input control(s)
-inside a an HTML `<fieldset>` element with the label content placed inside the fieldset's `<legend>`
-element. By nature of this markup, the legend content is automatically associated to the containing
-input control(s).
+По умолчанию, когда значение `label-for` не указано, `<b-form-group>` отображает элементы управления вводом внутри элемента HTML `<fieldset>` с содержимым метки, помещенным внутри поля элемента `<legend>`. По характеру этой разметки содержимое легенды автоматически связывается с содержащими элементами управления вводом.
 
-It is **highly recommended** that you provide a unique `id` prop on your input element and set the
-`label-for` prop to this ID, when you have only a single input in the `<b-form-group>`.
+**Настоятельно рекомендуется** предоставить уникальное свойство `id` для элемента ввода и установить свойство `label-for` для этого идентификатора, если у вас есть только один ввод в группе `<b-form-group>`.
 
-When multiple form controls are placed inside `<b-form-group>` (i.e. a series or radio or checkbox
-inputs, or a series of related inputs), **do not set** the `label-for` prop, as a label can only be
-associated with a single input. It is best to use the default rendered markup that produces a
-`<fieldset>` + `<legend>` which will describe the group of inputs.
+Когда несколько элементов управления формы помещаются внутри `<b-form-group>` (т. е. ряд или вводы радио или флажка, или ряд связанных вводов), **не устанавливайте** свойство `label-for`, поскольку метка может быть связана только с одним входом. Лучше всего использовать визуализированную разметку по умолчанию, которая создает `<fieldset>` + `<legend>`, который будет описывать группу входных данных.
 
-When placing multiple form controls inside a `<b-form-group>` (and you are not nesting
-`<b-form-group>` components), it is recommended to give each control its own associated `<label>`
-(which may be visually hidden using the `.sr-only` class) and set the labels `for` attribute to the
-`id` of the associated input control. Alternatively, you can set the `aria-label` attribute on each
-input control instead of using a `<label>`. For `<b-form-radio>` and `<b-form-checkbox>` (or the
-group versions), you do not need to set individual labels, as the rendered markup for these types of
-inputs already includes a `<label>` element.
+При размещении нескольких элементов управления формы внутри `<b-form-group>` (и вы не вкладываете компоненты `<b-form-group>`), рекомендуется предоставить каждому элементу управления свой собственный связанный `<label>` (который может быть визуально скрыт с помощью класса `.sr-only`) и установите для атрибута метки `for` значение `id` связанного элемента управления вводом. В качестве альтернативы вы можете установить атрибут `aria-label` для каждого элемента управления вводом вместо использования `<label>`. Для `<b-form-radio>` и `<b-form-checkbox>` (или групповых версий) вам не нужно устанавливать отдельные метки, поскольку визуализированная разметка для этих типов входов уже включает элемент `<label>`.
 
-When the `<b-form-group>` has a `label-for` prop set, the `aria-describedby` attribute will be
-auto-assigned to the input. When the form group has multiple form controls, make sure to set the
-attribute to each control yourself by using the `ariaDescribedby` prop value from the optionally
-scoped `default` slot.
+Когда для `<b-form-group>` задано свойство `label-for`, атрибут `aria-describedby`будет автоматически назначен входу. Если в группе форм есть несколько элементов управления, убедитесь, что вы установили атрибут для каждого элемента управления самостоятельно, используя значение свойства `ariaDescribedby` из необязательного слота `default` с областью действия.
 
 <!-- Component reference added automatically from component package.json -->

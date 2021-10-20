@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Form Group",
-    "description": "Easily add some structure to forms. Its purpose is to pair form controls with a legend or label, and to provide help text and invalid/valid feedback text, as well as visual (color) contextual state feedback.",
+    "description": "Легко добавляйте некоторую структуру к формам. Его цель состоит в том, чтобы объединить элементы управления формы с легендой или меткой и предоставить текст справки и недопустимый/действительный текст обратной связи, а также визуальную (цветную) обратную связь с контекстным состоянием.",
     "components": [
       {
         "component": "BFormGroup",
@@ -14,167 +14,167 @@
           {
             "prop": "contentCols",
             "version": "2.21.0",
-            "description": "Number of columns for the content width 'xs' screens and up"
+            "description": "Количество колонок для контента ширины экрана 'xs' и выше"
           },
           {
             "prop": "contentColsLg",
             "version": "2.21.0",
-            "description": "Number of columns for the content width 'lg' screens and up"
+            "description": "Количество колонок для контента ширины экрана 'lg' и выше"
           },
           {
             "prop": "contentColsMd",
             "version": "2.21.0",
-            "description": "Number of columns for the content width 'md' screens and up"
+            "description": "Количество колонок для контента ширины экрана 'md' и выше"
           },
           {
             "prop": "contentColsSm",
             "version": "2.21.0",
-            "description": "Number of columns for the content width 'sm' screens and up"
+            "description": "Количество колонок для контента ширины экрана 'sm' и выше"
           },
           {
             "prop": "contentColsXl",
             "version": "2.21.0",
-            "description": "Number of columns for the content width 'xl' screens and up"
+            "description": "Количество колонок для контента ширины экрана 'xl' и выше"
           },
           {
             "prop": "description",
-            "description": "Text to place in the help text area of the form group"
+            "description": "Текст для размещения в текстовой области справки группы форм"
           },
           {
             "prop": "disabled",
-            "description": "Disabled the fieldset element, which in turn disables the form controls (on browsers that support disabled fieldsets). Has no effect if `label-for` is set"
+            "description": "Отключен элемент fieldset, который, в свою очередь, отключает элементы управления формой (в браузерах, поддерживающих отключенные наборы полей). Не действует, если установлен `label-for`"
           },
           {
             "prop": "feedbackAriaLive",
-            "description": "Value to use for the `aria-live` attribute on the feedback text"
+            "description": "Значение для атрибута `aria-live` в тексте отзыва"
           },
           {
             "prop": "invalidFeedback",
-            "description": "Text to show when the form group has an invalid state"
+            "description": "Текст, отображаемый, когда группа форм имеет недопустимое состояние"
           },
           {
             "prop": "label",
-            "description": "Text to place in the label/legend of the form group"
+            "description": "Текст для размещения в метке/легенде группы форм"
           },
           {
             "prop": "labelAlign",
-            "description": "Text alignment 'left', 'center', 'right' for the label 'xs' screens and up"
+            "description": "Выравнивание текста 'left', 'center', 'right' для метки экранов 'xs' и выше"
           },
           {
             "prop": "labelAlignLg",
-            "description": "Text alignment 'left', 'center', 'right' for the label 'lg' screens and up"
+            "description": "Выравнивание текста 'left', 'center', 'right' для метки экранов 'lg' и выше"
           },
           {
             "prop": "labelAlignMd",
-            "description": "Text alignment 'left', 'center', 'right' for the label 'md' screens and up"
+            "description": "Выравнивание текста 'left', 'center', 'right' для метки экранов 'md' и выше"
           },
           {
             "prop": "labelAlignSm",
-            "description": "Text alignment 'left', 'center', 'right' for the label 'sm' screens and up"
+            "description": "Выравнивание текста 'left', 'center', 'right' для метки экранов 'sm' и выше"
           },
           {
             "prop": "labelAlignXl",
-            "description": "Text alignment 'left', 'center', 'right' for the label 'xl' screens and up"
+            "description": "Выравнивание текста 'left', 'center', 'right' для метки экранов 'xl' и выше"
           },
           {
             "prop": "labelClass",
-            "description": "CSS class (or classes) to add to the label/legend element"
+            "description": "Класс (или классы) CSS для добавления к элементу метки/легенды"
           },
           {
             "prop": "labelCols",
-            "description": "Number of columns for the label width 'xs' screens and up"
+            "description": "Количество колонок для метки label ширины экрана 'xs' и выше"
           },
           {
             "prop": "labelColsLg",
-            "description": "Number of columns for the label width 'lg' screens and up"
+            "description": "Количество колонок для метки label ширины экрана 'lg' и выше"
           },
           {
             "prop": "labelColsMd",
-            "description": "Number of columns for the label width 'md' screens and up"
+            "description": "Количество колонок для метки label ширины экрана 'md' и выше"
           },
           {
             "prop": "labelColsSm",
-            "description": "Number of columns for the label width 'sm' screens and up"
+            "description": "Количество колонок для метки label ширины экрана 'sm' и выше"
           },
           {
             "prop": "labelColsXl",
-            "description": "Number of columns for the label width 'xl' screens and up"
+            "description": "Количество колонок для метки label ширины экрана 'xl' и выше"
           },
           {
             "prop": "labelFor",
-            "description": "Set to the ID of the singular form control in the form group. Do not set a value if there is more than one form control in the group"
+            "description": "Задайте идентификатор элемента управления единственной формы в группе форм. Не устанавливайте значение, если в группе более одного элемента управления формой"
           },
           {
             "prop": "labelSize",
-            "description": "Sets the text size of the label: 'sm', 'md' (default) or 'lg'. Use this prop to have the label size match the form control size"
+            "description": "Устанавливает размер текста метки label: 'sm', 'md' (по умолчанию) или 'lg'. Используйте это свойство, чтобы размер этикетки соответствовал размеру элемента управления формы"
           },
           {
             "prop": "labelSrOnly",
-            "description": "Visually hides the label content, but makes it available to screen reader users"
+            "description": "Визуально скрывает содержимое ярлыка, но делает его доступным для пользователей программ чтения с экрана"
           },
           {
             "prop": "state",
-            "description": "Controls the validation state of the feedback. `true` force shows valid-feedback, `false` force shows invalid feedback, `null` does not force show the feedback"
+            "description": "Управляет состоянием проверки обратной связи. `true` форсированно показывает валидную обратную связь, `false` форсированно показывает недопустимую обратную связь, `null` не заставляет показывать обратную связь"
           },
           {
             "prop": "tooltip",
-            "description": "Renders the feedback text in a rudimentary tooltip style"
+            "description": "Отображает текст обратной связи в элементарном стиле всплывающей подсказки"
           },
           {
             "prop": "validFeedback",
-            "description": "Text to show when the form group has a valid state"
+            "description": "Текст, показывающий, когда группа форм имеет допустимое состояние"
           },
           {
             "prop": "validated",
-            "description": "When set, adds the Bootstrap validation trigger class 'was-validated' on the component"
+            "description": "Если установлено, добавляет класс триггера проверки Bootstrap 'was-validated' в компонент"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form group",
+            "description": "Контент для размещения в группе форм",
             "scope": [
               {
                 "prop": "ariaDescribedby",
                 "type": "String",
                 "version": "2.21.0",
-                "description": "The value for the `aria-describedby` attribute for input elements in the form group. Will be auto-assigned when `label-for` prop is given"
+                "description": "Значение атрибута `aria-describedby` для входных элементов в группе формы. Будет автоматически назначен, если задано свойство `label-for`"
               },
               {
                 "prop": "id",
                 "type": "String",
                 "version": "2.21.0",
-                "description": "The ID of the form group. Will equal `id` prop, when provided"
+                "description": "Идентификатор группы форм. Будет равно свойство `id`, если предоставлено"
               },
               {
                 "prop": "descriptionId",
                 "type": "String",
                 "version": "2.21.0",
-                "description": "The ID of the description element. Will be `null` when no description content given"
+                "description": "Идентификатор элемента описания. Будет иметь значение `null` если не указано содержание описания"
               },
               {
                 "prop": "labelId",
                 "type": "String",
                 "version": "2.21.0",
-                "description": "The ID of the label element. Will be `null` when no description content given"
+                "description": "Идентификатор элемента метки. Будет иметь значение `null` если не указано содержание описания"
               }
             ]
           },
           {
             "name": "description",
-            "description": "Content to place in the description area. Overrides the `description` prop"
+            "description": "Контент для размещения в области описания. Переопределяет свойство `description`"
           },
           {
             "name": "invalid-feedback",
-            "description": "Content to place in the invalid feedback area. Overrides the `invalid-feedback` prop"
+            "description": "Контент для размещения в недействительной области обратной связи. Переопределяет свойство `invalid-feedback`"
           },
           {
             "name": "label",
-            "description": "Content to place inside the label element. Overrides the `label` prop"
+            "description": "Контент для размещения внутри элемента метки. Переопределяет свойство `label`"
           },
           {
             "name": "valid-feedback",
-            "description": "Content to place in the valid feedback area. Overrides the `valid-feedback` prop"
+            "description": "Контент для размещения в действующей области обратной связи. Переопределяет свойство `valid-feedback`"
           }
         ]
       }
