@@ -1,13 +1,12 @@
-# Form Input
+# Поле ввода формы
 
-> Create various type inputs such as: `text`, `password`, `number`, `url`, `email`, `search`,
-> `range`, `date` and more.
+> Создавайте различные типы входных данных, такие как: `text`, `password`, `number`, `url`, `email`, `search`, `range`, `date` и другие.
 
 ```html
 <template>
   <div>
-    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
-    <div class="mt-2">Value: {{ text }}</div>
+    <b-form-input v-model="text" placeholder="Введите ваше имя"></b-form-input>
+    <div class="mt-2">Значение: {{ text }}</div>
   </div>
 </template>
 
@@ -24,18 +23,16 @@
 <!-- b-form-input.vue -->
 ```
 
-## Input type
+## Тип поля ввода
 
-`<b-form-input>` defaults to a `text` input, but you can set the `type` prop to one of the supported
-native browser HTML5 types: `text`, `password`, `email`, `number`, `url`, `tel`, `search`, `date`,
-`datetime`, `datetime-local`, `month`, `week`, `time`, `range`, or `color`.
+`<b-form-input>` по умолчанию используется для ввода `text`, но вы можете установить для свойства `type` один из поддерживаемых типов HTML5 собственного браузера: `text`, `password`, `email`, `number`, `url`, `tel`, `search`, `date`, `datetime`, `datetime-local`, `month`, `week`, `time`, `range`, или `color`.
 
 ```html
 <template>
   <b-container fluid>
     <b-row class="my-1" v-for="type in types" :key="type">
       <b-col sm="3">
-        <label :for="`type-${type}`">Type <code>{{ type }}</code>:</label>
+        <label :for="`type-${type}`">Тип <code>{{ type }}</code>:</label>
       </b-col>
       <b-col sm="9">
         <b-form-input :id="`type-${type}`" :type="type"></b-form-input>
@@ -69,55 +66,39 @@ native browser HTML5 types: `text`, `password`, `email`, `number`, `url`, `tel`,
 <!-- b-form-input-types.vue -->
 ```
 
-If the `type` prop is set to an input type that is not supported (see above), a `text` input will be
-rendered and a console warning will be issued.
+Если для свойства `type` задан неподдерживаемый тип ввода (смотрите выше), будет отображен ввод `text` и будет выдано предупреждение консоли.
 
-**Caveats with input types:**
+**Предостережения с типами ввода:**
 
-- Not all browsers support all input types, nor do some types render in the same format across
-  browser types/versions. Refer to [Can I use](https://caniuse.com/?search=input).
-- Browsers that do not support a particular type will fall back to a `text` input type (even though
-  the rendered `type` attribute markup shows the requested type).
-- No testing is performed to see if the requested input type is supported by the browser.
-- Chrome lost support for `datetime` in version 26, Opera in version 15, and Safari in iOS 7.
-  Instead of using `datetime`, since support should be deprecated, use `date` and `time` as two
-  separate inputs.
-- `date` and `time` inputs are native browser types, and are not a custom date/time picker.
-- For date and time style inputs, where supported, the displayed value in the GUI may be different
-  than what is returned by its value (i.e. ordering of year-month-date).
-- Regardless of input type, the value is **always** returned as a string representation.
-- `v-model.lazy` is not supported by `<b-form-input>` (nor any custom Vue component). Use the `lazy`
-  prop instead.
-- `v-model` modifiers `.number` and `.trim` can cause unexpected cursor jumps when the user is
-  typing (this is a Vue issue with `v-model` on custom components). _Avoid using these modifiers_.
-  Use the `number` or `trim` props instead.
-- Older version of Firefox may not support `readonly` for `range` type inputs.
-- Input types that do not support `min`, `max` and `step` (i.e. `text`, `password`, `tel`, `email`,
-  `url`, etc.) will silently ignore these values (although they will still be rendered on the input
-  markup) if values are provided.
+- Не все браузеры поддерживают все типы ввода, и некоторые типы не отображаются в одном и том же формате в разных типах/версиях браузеров. Смотрите [Can I use](https://caniuse.com/?search=input).
+- Браузеры, которые не поддерживают конкретный тип, вернутся к типу ввода `text` (даже если отображаемая разметка атрибута `type` показывает запрошенный тип).
+- Тестирование не проводится, чтобы узнать, поддерживается ли запрашиваемый тип ввода браузером.
+- Chrome потерял поддержку `datetime` в версии 26, Opera в версии 15, а Safari в iOS 7. Вместо использования `datetime`, поскольку поддержка должна быть прекращена, используйте `date` и `time` как два отдельных входа.
+- Вводы `date` и `time` являются собственными типами браузера и не являются настраиваемым средством выбора даты/времени.
+- Для входных данных в стиле даты и времени, если они поддерживаются, отображаемое значение в графическом интерфейсе пользователя может отличаться от того, что возвращается его значением (т. е. порядок год-месяц-дата).
+- Независимо от типа ввода значение **всегда** возвращается в виде строкового представления.
+- `v-model.lazy` не поддерживается `<b-form-input>` (ни каким-либо пользовательским компонентом Vue). Вместо этого используйте опцию `lazy`.
+- Модификаторы `v-model`, `.number` и `.trim` могут вызывать неожиданные скачки курсора, когда пользователь вводит текст (это проблема Vue `v-model` на пользовательских компонентах). _Избегайте использования этих модификаторов_. Вместо этого используйте свойства `number` или `trim`.
+- Более старая версия Firefox может не поддерживать `readonly` для входных данных типа `range`.
+- Типы ввода, которые не поддерживают `min`, `max` и `step` (т.е. `text`, `password`, `tel`, `email`, `url` и т. д.) будут игнорировать эти значения (хотя они все равно будут отображаться во входной разметке), если указаны значения.
 
-**Caveats with predictive text entry and IME composition entry:**
+**Предостережения в отношении интеллектуального ввода текста и ввода композиции IME:**
 
-- When using predictive text auto-suggested words, the `v-model` will not update until the
-  auto-suggested word is selected (or a space is typed). If an auto suggested word is not selected,
-  the v-model will update with the current _displayed text_ of the input when the input is blurred.
-- When using IME composition (ie. Chinese, Japanese, etc.), the `v-model` will not update until the
-  IME composition is completed.
+- При использовании слов с автоматическим предложением интеллектуального текста, `v-model` не будет обновляться до тех пор, пока автоматически предложенное слово не будет выбрано (или не будет введен пробел). Если автоматически предлагаемое слово не выбрано, v-model будет обновляться с текущим _отображаемым текстом_ ввода, когда ввод размыт.
+- При использовании композиции IME (например, китайский, японский и т. д.) `v-model` не будет обновляться, пока композиция IME не будет завершена.
 
-### Range type input
+### Ввод типа диапазона
 
-Inputs with type `range` render using Bootstrap v4's `.custom-range` class. The track (the
-background) and thumb (the value) are both styled to appear the same across browsers.
+Входные данные с типом `range` отображаются с использованием класса Bootstrap v4 `.custom-range`. Дорожка (фон) и ползунок (значение) имеют одинаковый стиль во всех браузерах.
 
-Range inputs have implicit values for `min` and `max` of `0` and `100` respectively. You may specify
-new values for those using the `min` and `max` props.
+Входы диапазона имеют неявные значения для `min` и `max`, равные `0` и `100` соответственно. Вы можете указать новые значения для тех, кто использует свойства `min` и `max`.
 
 ```html
 <template>
   <div>
-    <label for="range-1">Example range with min and max</label>
+    <label for="range-1">Пример диапазона с минимальным и максимальным</label>
     <b-form-input id="range-1" v-model="value" type="range" min="0" max="5"></b-form-input>
-    <div class="mt-2">Value: {{ value }}</div>
+    <div class="mt-2">Значение: {{ value }}</div>
   </div>
 </template>
 
@@ -134,15 +115,15 @@ new values for those using the `min` and `max` props.
 <!-- b-form-input-range.vue -->
 ```
 
-By default, range inputs "snap" to integer values. To change this, you can specify a `step` value.
-In the example below, we double the number of steps by using step="0.5".
+По умолчанию входные данные диапазона «привязываются» к целочисленным значениям. Чтобы изменить это, вы можете указать значение шага `step`.
+В приведенном ниже примере мы удваиваем количество шагов, используя `step="0.5"`.
 
 ```html
 <template>
   <div>
-    <label for="range-2">Example range with step value</label>
+    <label for="range-2">Пример диапазона со значением шага</label>
     <b-form-input id="range-2" v-model="value" type="range" min="0" max="5" step="0.5"></b-form-input>
-    <div class="mt-2">Value: {{ value }}</div>
+    <div class="mt-2">Значение: {{ value }}</div>
   </div>
 </template>
 
@@ -159,46 +140,42 @@ In the example below, we double the number of steps by using step="0.5".
 <!-- b-form-input-range-step.vue -->
 ```
 
-**Note:** Range inputs (as do all input types) return their value as a string. You may need to
-convert the value to a native number by using `Number(value)`, `parseInt(value, 10)`,
-`parseFloat(value)`, or use the `number` prop.
+**Примечание:** Входные значения диапазона (как и все типы входных данных) возвращают свое значение в виде строки. Возможно, вам потребуется преобразовать значение в собственное число с помощью `Number(value)`, `parseInt(value, 10)`, `parseFloat(value)` или использовать свойство `number`.
 
-**Note:** Bootstrap v4 CSS does not include styling for range inputs inside input groups, nor
-validation styling on range inputs. However, BootstrapVue includes custom styling to handle these
-situations until styling is included in Bootstrap v4.
+**Примечание:** CSS Bootstrap v4 не включает стили для входных данных диапазона внутри групп ввода, а также стиль проверки для входных данных диапазона. Однако BootstrapVue включает настраиваемые стили для обработки этих ситуаций, пока они не будут включены в Bootstrap v4.
 
-## Control sizing
+## Размер контролов
 
-Set heights using the `size` prop to `sm` or `lg` for small or large respectively.
+Установите высоту, используя свойство `size` на `sm` или `lg` для малых или больших соответственно.
 
-To control width, place the input inside standard Bootstrap grid column.
+Чтобы контролировать ширину, поместите ввод внутри стандартного столбца сетки Bootstrap.
 
 ```html
 <b-container fluid>
   <b-row class="my-1">
     <b-col sm="2">
-      <label for="input-small">Small:</label>
+      <label for="input-small">Маленький:</label>
     </b-col>
     <b-col sm="10">
-      <b-form-input id="input-small" size="sm" placeholder="Enter your name"></b-form-input>
+      <b-form-input id="input-small" size="sm" placeholder="Введите ваше имя"></b-form-input>
     </b-col>
   </b-row>
 
   <b-row class="my-1">
     <b-col sm="2">
-      <label for="input-default">Default:</label>
+      <label for="input-default">По умолчанию:</label>
     </b-col>
     <b-col sm="10">
-      <b-form-input id="input-default" placeholder="Enter your name"></b-form-input>
+      <b-form-input id="input-default" placeholder="Введите ваше имя"></b-form-input>
     </b-col>
   </b-row>
 
   <b-row class="my-1">
     <b-col sm="2">
-      <label for="input-large">Large:</label>
+      <label for="input-large">Большой:</label>
     </b-col>
     <b-col sm="10">
-      <b-form-input id="input-large" size="lg" placeholder="Enter your name"></b-form-input>
+      <b-form-input id="input-large" size="lg" placeholder="Введите ваше имя"></b-form-input>
     </b-col>
   </b-row>
 </b-container>
@@ -206,54 +183,48 @@ To control width, place the input inside standard Bootstrap grid column.
 <!-- b-form-input-size.vue -->
 ```
 
-**Note:** Input type `range` currently does not support control sizing unless it is placed inside a
-`<b-input-group>` which has its `size` prop set.
+**Примечание:** Тип ввода `range` в настоящее время не поддерживает изменение размера элемента управления, если он не помещен в `<b-input-group>`, у которого установлено его свойство `size`.
 
-**Note:** The native HTML `<input>` attribute `size` (which sets a horizontal width on the `<input>`
-in characters) is not supported. Use styling, utility classes, or the layout rows (`<b-row>`) and
-columns (`<b-col>`) to set the desired width.
+**Примечание:** Нативный атрибут HTML `size` поля ввода `<input>` (который устанавливает горизонтальную ширину для `<input>` в символах) не поддерживается. Используйте стили, служебные классы или строки макета (`<b-row>`) и столбцы (`<b-col>`), чтобы установить желаемую ширину.
 
-## Contextual states
+## Контекстные состояния
 
-Bootstrap includes validation styles for `valid` and `invalid` states on most form controls.
+Bootstrap включает стили проверки правильности `valid` и недопустимости `invalid` состояний для большинства элементов управления формой.
 
-Generally speaking, you'll want to use a particular state for specific types of feedback:
+Вообще говоря, вы захотите использовать определенное состояние для определенных типов обратной связи:
 
-- `false` (denotes invalid state) is great for when there's a blocking or required field. A user
-  must fill in this field properly to submit the form.
-- `true` (denotes valid state) is ideal for situations when you have per-field validation throughout
-  a form and want to encourage a user through the rest of the fields.
-- `null` Displays no validation state (neither valid nor invalid)
+- `false` (обозначает недопустимое состояние) отлично подходит, когда есть блокирующее или обязательное поле. Пользователь должен правильно заполнить это поле, чтобы отправить форму.
+- `true` (обозначает действительное состояние) идеально подходит для ситуаций, когда у вас есть проверка по каждому полю во всей форме и вы хотите поощрить пользователя через остальные поля.
+- `null` Не отображает состояние проверки (ни действительное, ни недействительное)
 
-To apply one of the contextual state icons on `<b-form-input>`, set the `state` prop to `false` (for
-invalid), `true` (for valid), or `null` (no validation state).
+Чтобы применить одну из иконок контекстного состояния к `<b-form-input>`, установите для свойства `state` значение `false` (для недопустимого), `true` (для действительного) или `null` (состояние проверки отсутствует).
 
 ```html
 <b-container fluid>
   <b-row class="my-1">
     <b-col sm="3">
-      <label for="input-none">No State:</label>
+      <label for="input-none">Без состояния:</label>
     </b-col>
     <b-col sm="9">
-      <b-form-input id="input-none" :state="null" placeholder="No validation"></b-form-input>
+      <b-form-input id="input-none" :state="null" placeholder="Без валидации"></b-form-input>
     </b-col>
   </b-row>
 
   <b-row class="my-1">
     <b-col sm="3">
-      <label for="input-valid">Valid State:</label>
+      <label for="input-valid">Валидное состояние:</label>
     </b-col>
     <b-col sm="9">
-      <b-form-input id="input-valid" :state="true" placeholder="Valid input"></b-form-input>
+      <b-form-input id="input-valid" :state="true" placeholder="Корректный ввод"></b-form-input>
     </b-col>
   </b-row>
 
   <b-row class="my-1">
     <b-col sm="3">
-      <label for="input-invalid">Invalid State:</label>
+      <label for="input-invalid">Невалидное состояние:</label>
     </b-col>
     <b-col sm="9">
-      <b-form-input id="input-invalid" :state="false" placeholder="Invalid input"></b-form-input>
+      <b-form-input id="input-invalid" :state="false" placeholder="Некорректный ввод"></b-form-input>
     </b-col>
   </b-row>
 </b-container>
@@ -261,28 +232,28 @@ invalid), `true` (for valid), or `null` (no validation state).
 <!-- b-form-input-states.vue -->
 ```
 
-**Live Example**
+**Живой пример**
 
 ```html
 <template>
   <div role="group">
-    <label for="input-live">Name:</label>
+    <label for="input-live">Имя:</label>
     <b-form-input
       id="input-live"
       v-model="name"
       :state="nameState"
       aria-describedby="input-live-help input-live-feedback"
-      placeholder="Enter your name"
+      placeholder="Введите ваше имя"
       trim
     ></b-form-input>
 
-    <!-- This will only be shown if the preceding input has an invalid state -->
+    <!-- Это будет показано только в том случае, если предыдущий ввод имеет недопустимое состояние -->
     <b-form-invalid-feedback id="input-live-feedback">
-      Enter at least 3 letters
+      Введите не менее 3 букв
     </b-form-invalid-feedback>
 
-    <!-- This is a form text block (formerly known as help block) -->
-    <b-form-text id="input-live-help">Your full name.</b-form-text>
+    <!-- Это текстовый блок формы (ранее известный как блок справки) -->
+    <b-form-text id="input-live-help">Ваше полное имя.</b-form-text>
   </div>
 </template>
 
@@ -304,84 +275,72 @@ invalid), `true` (for valid), or `null` (no validation state).
 <!-- b-form-input-states-feedback.vue -->
 ```
 
-> **Tip:** Use the [`<b-form-group>`](/docs/components/form-group) component to automatically
-> generate markup similar to above.
+> **Совет:** Используйте компонент [`<b-form-group>`](/docs/components/form-group) для автоматического создания разметки, подобной описанной выше.
 
-### Conveying contextual state to assistive technologies and colorblind users
+### Передача состояния контекста вспомогательным технологиям и дальтоникам
 
-Using these contextual states to denote the state of a form control only provides a visual,
-color-based indication, which will not be conveyed to users of assistive technologies - such as
-screen readers - or to colorblind users.
+Использование этих контекстных состояний для обозначения состояния элемента управления формы обеспечивает только визуальную цветовую индикацию, которая не будет передана пользователям вспомогательных технологий, таких как программы чтения с экрана, или пользователям с дальтонизмом.
 
-Ensure that an alternative indication of state is also provided. For instance, you could include a
-hint about state in the form control's `<label>` text itself, or by providing an additional help
-text block.
+Убедитесь, что также имеется альтернативная индикация состояния. Например, вы можете включить подсказку о состоянии в самом тексте `<label>` элемента управления формой или предоставив дополнительный текстовый блок справки.
 
-### ARIA `aria-invalid` attribute
+### Атрибут ARIA `aria-invalid`
 
-Specifically for assistive technologies, invalid form controls can also be assigned an
-`aria-invalid="true"` attribute.
+Специально для вспомогательных технологий недопустимым элементам управления формой также может быть назначен атрибут `aria-invalid="true"`.
 
-When `<b-form-input>` has an invalid contextual state (i.e. state is `false`) you may also want to
-set the `<b-form-input>` prop `aria-invalid` to `true`, or to one of the supported values:
+Когда `<b-form-input>` имеет недопустимое контекстное состояние (т. е. состояние `false`), вы также можете захотеть установить для свойства `aria-invalid` для `<b-form-input>` значение `true` или к одному из поддерживаемых значений:
 
-- `false`: Convey no errors detected (default)
-- `true` (or `'true'`): Convey that the value has failed validation.
-- `'grammar'` Convey that a grammatical error has been detected.
-- `'spelling'` Convey that a spelling error has been detected.
+- `false`: Сообщает, что ошибок не обнаружено (по умолчанию)
+- `true` (или `'true'`): Сообщает, что значение не прошло проверку.
+- `'grammar'` Сообщает, что была обнаружена грамматическая ошибка.
+- `'spelling'` Сообщает, что была обнаружена орфографическая ошибка.
 
-If `aria-invalid` is not explicitly set and `state` is set to `false`, then the `aria-invalid`
-attribute on the input will automatically be set to `'true'`;
+Если `aria-invalid` не задано явно, а `state` имеет значение `false`, тогда атрибуту `aria-invalid` на входе автоматически устанавливается значение `'true'`;
 
-## Formatter support
+## Поддержка форматтера
 
-`<b-form-input>` optionally supports formatting by passing a function reference to the `formatter`
-prop.
+`<b-form-input>` опционально поддерживает форматирование, передавая ссылку на функцию в свойство `formatter`.
 
-Formatting (when a formatter function is supplied) occurs when the control's native `input` and
-`change` events fire. You can use the boolean prop `lazy-formatter` to restrict the formatter
-function to being called on the control's native `blur` event.
+Форматирование (когда предоставляется функция форматирования) происходит, когда срабатывают собственные события элемента управления `input` и `change`. Вы можете использовать логическое свойство `lazy-formatter`, чтобы ограничить вызов функции форматирования для собственного события элемента управления `blur`.
 
-The `formatter` function receives two arguments: the raw `value` of the input element, and the
-native `event` object that triggered the format (if available).
+Функция `formatter` получает два аргумента: необработанное значение элемента `value` и нативный объект `event`, который инициировал форматирование (если доступно).
 
-The `formatter` function should return the formatted value as a _string_.
+Функция `formatter` должна возвращать отформатированное значение как _строка_.
 
-Formatting does not occur if a `formatter` is not provided.
+Форматирование не происходит, если не предоставлено средство форматирования `formatter`.
 
 ```html
 <template>
   <div>
     <b-form-group
-      label="Text input with formatter (on input)"
+      label="Ввод текста с помощью средства форматирования (при вводе)"
       label-for="input-formatter"
-      description="We will convert your name to lowercase instantly"
+      description="Мы мгновенно переведем ваше имя в нижний регистр"
       class="mb-0"
     >
       <b-form-input
         id="input-formatter"
         v-model="text1"
-        placeholder="Enter your name"
+        placeholder="Введите ваше имя"
         :formatter="formatter"
       ></b-form-input>
     </b-form-group>
-    <p><b>Value:</b> {{ text1 }}</p>
+    <p><b>Значение:</b> {{ text1 }}</p>
 
     <b-form-group
-      label="Text input with lazy formatter (on blur)"
+      label="Ввод текста с отложенным форматированием (при размытии)"
       label-for="input-lazy"
-      description="This one is a little lazy!"
+      description="Этот немного отложен!"
       class="mb-0"
     >
       <b-form-input
         id="input-lazy"
         v-model="text2"
-        placeholder="Enter your name"
+        placeholder="Введите ваше имя"
         lazy-formatter
         :formatter="formatter"
       ></b-form-input>
     </b-form-group>
-    <p class="mb-0"><b>Value:</b> {{ text2 }}</p>
+    <p class="mb-0"><b>Значение:</b> {{ text2 }}</p>
   </div>
 </template>
 
@@ -404,38 +363,25 @@ Formatting does not occur if a `formatter` is not provided.
 <!-- b-form-input-formatter.vue -->
 ```
 
-**Note:** When using a non-text-like input (i.e. `color`, `range`, `date`, `number`, `email` etc.),
-ensure that your formatter function returns the value in the expected format (`date` ->
-'2000-06-01', `color` -> '#ff0000', etc.) for the input type. The formatter **must** return the
-value as a _string_.
+**Примечание:** При использовании ввода, не похожего на текст (например, `color`, `range`, `date`, `number`, `email` и т. д.), убедитесь, что функция форматирования возвращает значение в ожидаемый формат (`date` -> '2000-06-01', `color` -> '#ff0000', и т. д.) для типа ввода. Средство форматирования **должно** возвращать значение как _строка_.
 
-**Note:** With non-lazy formatting, if the cursor is not at the end of the input value, the cursor
-may jump to the end _after_ a character is typed. You can use the provided event object and the
-`event.target` to access the native input's selection methods and properties to control where the
-insertion point is. This is left as an exercise for the reader.
+**Примечание:** При неотложенном форматировании, если курсор не находится в конце входного значения, он может переместиться в конец _после_ ввода символа. Вы можете использовать предоставленный объект события и `event.target` для доступа к собственным методам выбора и свойствам ввода, чтобы контролировать, где находится точка вставки. Это оставлено читателю в качестве упражнения.
 
-## Readonly plain text
+## Обычный текст только для чтения
 
-If you want to have `<b-form-input readonly>` elements in your form styled as plain text, set the
-`plaintext` prop (no need to set `readonly`) to remove the default form field styling and preserve
-the correct margin and padding.
+Если вы хотите, чтобы элементы `<b-form-input readonly>` в вашей форме были стилизованы как простой текст, установите свойство `plaintext` (нет необходимости устанавливать `readonly`), чтобы удалить стиль поля формы по умолчанию и сохранить правильный поля и отступы.
 
-The `plaintext` option is not supported by input types `color` or `range`.
+Опция `plaintext` не поддерживается типами ввода `color` или `range`.
 
-## Disabling mousewheel events on numeric-like inputs
+## Отключение событий колесика мыши для числовых входов
 
-On some browsers, scrolling the mousewheel while a numeric-like input is focused will increment or
-decrement the input's value. To disable this browser feature, just set the `no-wheel` prop to
-`true`.
+В некоторых браузерах прокрутка колесика мыши при фокусировке числового ввода будет увеличивать или уменьшать значение ввода. Чтобы отключить эту функцию браузера, просто установите для свойства `no-wheel` значение `true`.
 
-## Datalist support
+## Поддержка Datalist
 
-Datalists are a native HTML tag `<datalist>` that contains a list of `<option>` tags. By assigning
-an ID to the datalist tag, the list can be references from a text input by adding a `list`
-attribute.
+Списки данных - это собственный HTML-тег `<datalist>`, который содержит список тегов `<option>`. Путем присвоения идентификатора тегу datalist список может быть ссылками из текстового ввода путем добавления атрибута `list`.
 
-This gives the input the behavior of a combo box or auto-complete, allowing existing values to be
-chosen, or new values to be entered.
+Это придает вводу поведение поля со списком или автозаполнения, позволяя выбирать существующие значения или вводить новые значения.
 
 ```html
 <template>
@@ -443,7 +389,7 @@ chosen, or new values to be entered.
     <b-form-input list="my-list-id"></b-form-input>
 
     <datalist id="my-list-id">
-      <option>Manual Option</option>
+      <option>Ручной вариант</option>
       <option v-for="size in sizes">{{ size }}</option>
     </datalist>
   </div>
@@ -462,58 +408,39 @@ chosen, or new values to be entered.
 <!-- b-form-input-datalist.vue -->
 ```
 
-BootstrapVue provides the form helper component
-[`<b-form-datalist>`](/docs/components/form/#datalist-helper) for quickly creating a `<datalist>`
-from an array of options.
+BootstrapVue предоставляет вспомогательный компонент формы [`<b-form-datalist>`](/docs/components/form/#datalist-helper) для быстрого создания `<datalist>` из массива параметров.
 
-**Notes:**
+**Примечания:**
 
-- Datalists work in conjunction with the browser's built in auto-complete, displaying datalist
-  options first, followed by auto-complete options. To only display datalist options, set
-  `autocomplete="off"` on `<b-form-input>`.
-- Datalists **cannot** be applied to input fields with type `password`, `range` or `color`.
-- Not all browsers fully support `<datalist>` and implementations can be buggy. It is recommended
-  that datalists be treated as an enhancement and not be relied upon at this time. Check
-  [Can I use](https://caniuse.com/datalist) for full support details on all browsers.
+- Списки данных работают вместе со встроенной функцией автозаполнения браузера, сначала отображая опции списка данных, а затем опции автозаполнения. Чтобы отображать только параметры списка данных, установите `autocomplete="off"` в `<b-form-input>`.
+- Списки данных **нельзя** применять к полям ввода с типом `password`, `range` или `color`.
+- Не все браузеры полностью поддерживают `<datalist>`, и реализации могут содержать ошибки. Рекомендуется рассматривать списки данных как расширение и не полагаться на них в настоящее время. Проверьте [Can I use](https://caniuse.com/datalist) для получения полной информации о поддержке во всех браузерах.
 
-## `v-model` modifiers
+## Модификаторы `v-model`
 
-Vue does not officially support `.lazy`, `.trim`, and `.number` modifiers on the `v-model` of custom
-component based inputs, and may generate a bad user experience. Avoid using Vue's native modifiers.
+Vue официально не поддерживает модификаторы `.lazy`, `.trim` и `.number` в `v-model` входных данных на основе настраиваемых компонентов и может создавать неудобства для пользователей. Избегайте использования собственных модификаторов Vue.
 
-To get around this, `<b-form-input>` has three boolean props `trim`, `number`, and `lazy` which
-emulate the native Vue `v-model` modifiers `.trim` and `.number` and `.lazy` respectively. The
-`lazy` prop will update the v-model on `change`/`blur`events.
+Чтобы обойти это, в `<b-form-input>` есть три логических свойства `trim`, `number`и `lazy`, которые имитируют нативные модификаторы `v-model` Vue: `.trim` и `.number` и `.lazy` соответственно. Свойство `lazy` будет обновлять v-model при событиях `change`/`blur`.
 
-**Notes:**
+**Примечания:**
 
-- The `number` prop takes precedence over the `trim` prop (i.e. `trim` will have no effect when
-  `number` is set).
-- When using the `number` prop, and if the value can be parsed as a number (via `parseFloat`) it
-  will return a value of type `Number` to the `v-model`, otherwise the original input value is
-  returned as type `String`. This is the same behaviour as the native `.number` modifier.
-- The `trim` and `number` modifier props do not affect the value returned by the `input` or `change`
-  events. These events will always return the string value of the content of `<textarea>` after
-  optional formatting (which may not match the value returned via the `v-model` `update` event,
-  which handles the modifiers).
+- Свойство `number` имеет приоритет перед свойством `trim` (то есть `trim` не будет иметь никакого эффекта, если установлено `number`).
+- При использовании свойства `number`, и если значение может быть проанализировано как число (через `parseFloat`), оно вернет значение типа `Number` в `v-model`, в противном случае возвращается исходное входное значение как тип `String`. Это то же самое поведение, что и нативный модификатор `.number`.
+- Свойства модификаторов `trim` и `number` не влияют на значение, возвращаемое событиями `input` или `change`. Эти события всегда будут возвращать строковое значение содержимого `<textarea>` после необязательного форматирования (которое может не соответствовать значению, возвращаемому через событие `update` `v-model`, которое обрабатывает модификаторы).
 
-## Debounce support
+## Поддержка Debounce
 
-As an alternative to the `lazy` modifier prop, `<b-form-input>` optionally supports debouncing user
-input, updating the `v-model` after a period of idle time from when the last character was entered
-by the user (or a `change` event occurs). If the user enters a new character (or deletes characters)
-before the idle timeout expires, the timeout is re-started.
+В качестве альтернативы свойства модификатора `lazy`, `<b-form-input>` опционально поддерживает отладку пользовательского ввода, обновляя `v-model` после периода простоя с момента, когда последний символ был введен пользователем ( или происходит событие `change`). Если пользователь вводит новый символ (или удаляет символы) до истечения тайм-аута простоя, тайм-аут запускается повторно.
 
-To enable debouncing, set the prop `debounce` to any integer greater than zero. The value is
-specified in milliseconds. Setting `debounce` to `0` will disable debouncing.
+Чтобы включить debouncing, установите для свойства `debounce` любое целое число больше нуля. Значение указывается в миллисекундах. Установка `debounce` на `0` отключит debouncing.
 
-Note: debouncing will _not_ occur if the `lazy` prop is set.
+Примечание: устранение неполадок _не_ произойдет, если установлено свойство `lazy`.
 
 ```html
 <template>
   <div>
     <b-form-input v-model="value" type="text" debounce="500"></b-form-input>
-    <div class="mt-2">Value: "{{ value }}"</div>
+    <div class="mt-2">Значение: "{{ value }}"</div>
   </div>
 </template>
 
@@ -530,69 +457,60 @@ Note: debouncing will _not_ occur if the `lazy` prop is set.
 <!-- b-form-input-debounce.vue -->
 ```
 
-## Autofocus
+## Автофокус
 
-When the `autofocus` prop is set, the input will be auto-focused when it is inserted (i.e.
-**mounted**) into the document, or re-activated when inside a Vue `<keep-alive>` component. Note
-that this prop **does not** set the `autofocus` attribute on the input, nor can it tell when the
-input becomes visible.
+Когда свойство `autofocus` установлено, вход будет автоматически сфокусирован, когда он вставлен (т.е. **смонтирован**) в документ, или повторно активирован, когда он находится внутри компонента Vue `<keep-alive>`. Обратите внимание, что это свойство  **не** устанавливает атрибут `autofocus` на вводе и не может определить, когда ввод становится видимым.
 
-## Native and custom events
+## Собственные и пользовательские события
 
-All native events (other than the custom `input` and `change` events) are supported, without the
-need for the `.native` modifier.
+Поддерживаются все собственные события (кроме пользовательских событий `input` и `change`) без модификатора `.native`.
 
-The custom `input` and `change` events receive a single argument of the current `value` (after any
-formatting has been applied), and are triggered by user interaction.
+Пользовательские события `input` и `change` получают единственный аргумент текущего значения `value` (после применения любого форматирования) и запускаются при взаимодействии с пользователем.
 
-The custom `update` event is passed the input value, and is emitted whenever the `v-model` needs
-updating (it is emitted before `input`, `change`. and `blur` as needed).
+Пользовательскому событию `update` передается входное значение, и оно генерируется всякий раз, когда `v-model` нуждается в обновлении (оно генерируется перед `input`, `change` и `blur` по мере необходимости).
 
-You can always access the native `input` and `change` events by using the `.native` modifier.
+Вы всегда можете получить доступ к собственным событиям `input` и `change`, используя модификатор `.native`.
 
-## Exposed input properties and methods
+## Открытые свойства и методы полей ввода
 
-`<b-form-input>` exposes several of the native input element's properties and methods on the
-component reference (i.e. assign a `ref` to your `<b-form-input ref="foo" ...>` and use
-`this.$refs['foo'].propertyName` or `this.$refs['foo'].methodName(...)`).
+`<b-form-input>` предоставляет несколько свойств и методов встроенного элемента ввода в ссылке на компонент (т. е. присваивает `ref` вашему `<b-form-input ref="foo" ...>` и используйте `this.$refs['foo'].propertyName` или `this.$refs['foo'].methodName(...)`).
 
-### Input properties
+### Свойства полей ввода
 
-| Property              | Notes      |
-| --------------------- | ---------- |
-| `.selectionStart`     | Read/Write |
-| `.selectionEnd`       | Read/Write |
-| `.selectionDirection` | Read/Write |
-| `.validity`           | Read only  |
-| `.validationMessage`  | Read only  |
-| `.willValidate`       | Read only  |
+| Свойство              | Примечания    |
+| --------------------- | ------------- |
+| `.selectionStart`     | Чтение/Запись |
+| `.selectionEnd`       | Чтение/Запись |
+| `.selectionDirection` | Чтение/Запись |
+| `.validity`           | Только чтение |
+| `.validationMessage`  | Только чтение |
+| `.willValidate`       | Только чтение |
 
-### Input methods
+### Методы полей ввода
 
-| Method                 | Notes                             |
+| Метод                  | Примечания                             |
 | ---------------------- | --------------------------------- |
-| `.focus()`             | Focus the input                   |
-| `.blur()`              | Remove focus from the input       |
-| `.select()`            | Selects all text within the input |
+| `.focus()`             | Фокус на поле ввода               |
+| `.blur()`              | Убрать фокус с ввода              |
+| `.select()`            | Выбирает весь текст во вводе      |
 | `.setSelectionRange()` |                                   |
 | `.setRangeText()`      |                                   |
 | `.setCustomValidity()` |                                   |
 | `.checkValidity()`     |                                   |
 | `.reportValidity()`    |                                   |
 
-Refer to https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement for more information on
-these methods and properties. Support will vary based on input type.
+Обратитесь к https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement для получения дополнительной информации об этих методах и свойствах. Поддержка будет зависеть от типа ввода.
 
-## Using HTML5 `<input>` as an alternative
+## Использование HTML5 `<input>` в качестве альтернативы
 
-If you just need a simple input with basic Bootstrap styling, you can simply use the following:
+Если вам просто нужен простой ввод с базовым стилем Bootstrap, вы можете просто использовать следующее:
 
 ```html
 <template>
   <div>
     <input v-model="value" type="text" class="form-control">
     <br>
-    <p>Value: "{{ value }}"</p>
+    <p>Значение: "{{ value }}"</p>
   </div>
 </template>
 

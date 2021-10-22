@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "meta": {
     "title": "Form Input",
-    "description": "Create various type inputs such as: text, password, number, url, email, search, range, date and more.",
+    "description": "Создавайте различные типы входных данных, такие как: текст, пароль, номер, URL-адрес, адрес электронной почты, поиск, диапазон, дата и т. д.",
     "components": [
       {
         "component": "BFormInput",
@@ -13,82 +13,82 @@
         "props": [
           {
             "prop": "ariaInvalid",
-            "description": "Sets the 'aria-invalid' attribute with the specified value"
+            "description": "Устанавливает атрибут 'aria-invalid' с указанным значением"
           },
           {
             "prop": "debounce",
             "version": "2.1.0",
-            "description": "When set to a number of milliseconds greater than zero, will debounce the user input. Has no effect if prop 'lazy' is set"
+            "description": "Если установлено количество миллисекунд больше нуля, пользовательский ввод будет подавлен. Не действует, если задано свойство 'lazy'"
           },
           {
             "prop": "formatter",
-            "description": "Reference to a function for formatting the input"
+            "description": "Ссылка на функцию форматирования ввода"
           },
           {
             "prop": "lazy",
             "version": "2.1.0",
-            "description": "When set, updates the v-model on 'change'/'blur' events instead of 'input'. Emulates the Vue '.lazy' v-model modifier"
+            "description": "Если установлено, обновляет v-model при событиях 'change'/'blur' вместо 'input'. Эмулирует модификатор v-model Vue '.lazy'"
           },
           {
             "prop": "lazyFormatter",
-            "description": "When set, the input is formatted on blur instead of each keystroke (if there is a formatter specified)"
+            "description": "Когда установлено, ввод форматируется по размытию вместо каждого нажатия клавиши (если указано средство форматирования)"
           },
           {
             "prop": "list",
-            "description": "The ID of the associated datalist element or component"
+            "description": "Идентификатор связанного элемента или компонента списка данных"
           },
           {
             "prop": "max",
-            "description": "Value to set in the 'max' attribute on the input. Used by number-like inputs"
+            "description": "Значение, устанавливаемое в атрибуте 'max' в инпуте. Используется числовое поле ввода"
           },
           {
             "prop": "min",
-            "description": "Value to set in the 'min' attribute on the input. Used by number-like inputs"
+            "description": "Значение, устанавливаемое в атрибуте 'min' в инпуте. Используется числовое поле ввода"
           },
           {
             "prop": "noWheel",
-            "description": "For number-like inputs, disables the mouse wheel from incrementing or decrementing the value"
+            "description": "Для числовых входов отключает колесико мыши от увеличения или уменьшения значения"
           },
           {
             "prop": "number",
-            "description": "When set attempts to convert the input value to a native number. Emulates the Vue '.number' v-model modifier"
+            "description": "При установке пытается преобразовать входное значение в собственное число. Эмулирует модификатор Vue v-model '.number'"
           },
           {
             "prop": "size",
-            "description": "Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'"
+            "description": "Установите размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'"
           },
           {
             "prop": "step",
-            "description": "Value to set in the 'step' attribute on the input. Used by number-like inputs"
+            "description": "Значение, устанавливаемое в атрибуте 'step' на поле ввода. Используется числовое поле ввода"
           },
           {
             "prop": "trim",
-            "description": "When set, trims any leading and trailing white space from the input value. Emulates the Vue '.trim' v-model modifier"
+            "description": "Если установлено, обрезает все начальные и конечные пробелы входного значения. Эмулирует модификатор Vue v-model '.trim'"
           },
           {
             "prop": "type",
-            "description": "The type of input to render. See the docs for supported types"
+            "description": "Тип ввода для рендеринга. Смотрите документацию о поддерживаемых типах"
           },
           {
             "prop": "value",
-            "description": "The current value of the input. Result will always be a string, except when the `number` prop is used"
+            "description": "Текущее значение ввода. Результат всегда будет строкой, за исключением случаев, когда используется свойство `number`"
           }
         ],
         "events": [
           {
             "event": "blur",
-            "description": "Emitted after the input loses focus",
+            "description": "Испускается после того, как ввод теряет фокус",
             "args": [
               {
                 "arg": "event",
                 "type": "FocusEvent",
-                "description": "Native blur event (before any formatting)"
+                "description": "Собственное событие размытия (до любого форматирования)"
               }
             ]
           },
           {
             "event": "change",
-            "description": "Change event triggered by user interaction. Emitted after any formatting (not including 'trim' or 'number' props) and after the v-model is updated",
+            "description": "Событие ввода, вызванное взаимодействием с пользователем. Испускается после любого форматирования (не включая свойства 'trim' или 'number') и после обновления v-model",
             "args": [
               {
                 "arg": "value",
@@ -96,13 +96,13 @@
                   "String",
                   "Number"
                 ],
-                "description": "Current value of input"
+                "description": "Текущее значение ввода"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Input event triggered by user interaction. Emitted after any formatting (not including 'trim' or 'number' props) and after the v-model is updated",
+            "description": "Событие изменения, вызванное взаимодействием с пользователем. Испускается после любого форматирования (не включая свойства 'trim' или 'number') и после обновления v-model",
             "args": [
               {
                 "arg": "value",
@@ -110,13 +110,13 @@
                   "String",
                   "Number"
                 ],
-                "description": "Current value of input"
+                "description": "Текущее значение ввода"
               }
             ]
           },
           {
             "event": "update",
-            "description": "Emitted to update the v-model",
+            "description": "Выпущено для обновления v-model",
             "args": [
               {
                 "arg": "value",
@@ -124,7 +124,7 @@
                   "String",
                   "Number"
                 ],
-                "description": "Value of input, after any formatting. Not emitted if the value does not change"
+                "description": "Значение ввода после любого форматирования. Не выдается, если значение не меняется"
               }
             ]
           }
