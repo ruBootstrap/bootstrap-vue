@@ -131,15 +131,15 @@
           },
           {
             "prop": "dropleft",
-            "description": "When set, positions the menu to the left of the button"
+            "description": "Когда установлено, позиционирует меню слева от кнопки"
           },
           {
             "prop": "dropright",
-            "description": "When set, positions the menu to the right of the button"
+            "description": "Когда установлено, позиционирует меню справа от кнопки"
           },
           {
             "prop": "dropup",
-            "description": "When set, positions the menu on the top of the button"
+            "description": "Когда установлено, размещает меню в верхней части кнопки"
           },
           {
             "prop": "html",
@@ -168,7 +168,7 @@
           },
           {
             "prop": "right",
-            "description": "Align the right edge of the menu with the right of the button"
+            "description": "Выровняйте правый край меню по правому краю кнопки"
           },
           {
             "prop": "text",

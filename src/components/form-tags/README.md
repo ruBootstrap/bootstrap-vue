@@ -127,7 +127,7 @@ Several props are available to alter the basic styling of the default tagged int
 | ------------- | ----------------------------------------------------------------------------------------------------- |
 | `tag-pills`   | Renders the tags with the appearance of pills                                                         |
 | `tag-variant` | Applies one of the Bootstrap contextual variant theme colors to the tags                              |
-| `size`        | Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'                             |
+| `size`        | Установите размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'                             |
 | `placeholder` | The placeholder text for the new tag input element                                                    |
 | `state`       | Sets the contextual state of the control. Set to `true` (for valid), `false` (for invalid), or `null` |
 | `disabled`    | Places the component in a disabled state                                                              |

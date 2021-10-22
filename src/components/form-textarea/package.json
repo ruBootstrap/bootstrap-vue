@@ -55,7 +55,7 @@
           },
           {
             "prop": "size",
-            "description": "Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'"
+            "description": "Установите размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'"
           },
           {
             "prop": "trim",
@@ -84,7 +84,7 @@
           },
           {
             "event": "change",
-            "description": "Change event triggered by user interaction. Emitted after any formatting (not including 'trim' or 'number' props) and after the v-model is updated",
+            "description": "Событие ввода, вызванное взаимодействием с пользователем. Испускается после любого форматирования (не включая свойства 'trim' или 'number') и после обновления v-model",
             "args": [
               {
                 "arg": "value",
@@ -95,7 +95,7 @@
           },
           {
             "event": "input",
-            "description": "Input event triggered by user interaction. Emitted after any formatting (not including 'trim' or 'number' props) and after the v-model is updated",
+            "description": "Событие изменения, вызванное взаимодействием с пользователем. Испускается после любого форматирования (не включая свойства 'trim' или 'number') и после обновления v-model",
             "args": [
               {
                 "arg": "value",

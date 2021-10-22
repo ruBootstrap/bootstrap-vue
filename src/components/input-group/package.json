@@ -28,7 +28,7 @@
           },
           {
             "prop": "size",
-            "description": "Set the size of the component's appearance. 'sm', 'md' (default), or 'lg'"
+            "description": "Установите размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'"
           }
         ],
         "slots": [
