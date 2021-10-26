@@ -1,7 +1,6 @@
 # Выбор даты формы
 
-> `<b-form-datepicker>` is a BootstrapVue custom date picker input form control, which provides full
-> WAI-ARIA compliance and internationalization support.
+> `<b-form-datepicker>` - это элемент управления формы ввода настраиваемого средства выбора даты BootstrapVue, который обеспечивает полное соответствие WAI-ARIA и поддержку интернационализации.
 
 ## Обзор
 

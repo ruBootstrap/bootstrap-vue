@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Form Radio",
-    "description": "Cross browser consistent radio inputs and radio groups, using Bootstrap's custom radio input to replace the browser default radio input.",
+    "description": "Кроссбраузерные радиовводы и радиогруппы с использованием настраиваемого радиоввода Bootstrap для замены радиоввода браузера по умолчанию.",
     "components": [
       {
         "component": "BFormRadioGroup",
@@ -13,19 +13,19 @@
         "props": [
           {
             "prop": "ariaInvalid",
-            "description": "Sets the 'aria-invalid' attribute value on the wrapper element. When not provided, the 'state' prop will control the attribute"
+            "description": "Устанавливает значение атрибута 'aria-invalid' в элементе оболочки. Если не указано, свойство 'state' будет управлять атрибутом"
           },
           {
             "prop": "buttonVariant",
-            "description": "Specifies the Bootstrap contextual color theme variant the apply to the button style radios"
+            "description": "Определяет вариант контекстной цветовой темы Bootstrap, применяемый к стилям радио кнопки"
           },
           {
             "prop": "buttons",
-            "description": "When set, renderes the radios in this group with button styling"
+            "description": "Когда установлено, визуализирует радио в этой группе с помощью стиля кнопок"
           },
           {
             "prop": "checked",
-            "description": "The current value of the checked radio in the group"
+            "description": "Текущее значение отмеченного радио в группе"
           },
           {
             "prop": "size",
@@ -33,17 +33,17 @@
           },
           {
             "prop": "stacked",
-            "description": "When set, renders the radio group in stacked mode"
+            "description": "Когда установлено, рендерит радиогруппу в сложенном режиме"
           },
           {
             "prop": "validated",
-            "description": "When set, adds the Bootstrap class 'was-validated' to the group wrapper"
+            "description": "Если установлено, добавляет класс Bootstrap 'was-validated' в оболочку группы"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Emitted when selected value is changed due to user interaction",
+            "description": "Выдается, когда выбранное значение изменяется из-за взаимодействия с пользователем",
             "args": [
               {
                 "arg": "checked",
@@ -53,13 +53,13 @@
                   "Number",
                   "Object"
                 ],
-                "description": "Current selected Value of radio group"
+                "description": "Текущее выбранное значение радиогруппы"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Emitted when the selected value is changed",
+            "description": "Выдается при изменении выбранного значения",
             "args": [
               {
                 "arg": "checked",
@@ -69,7 +69,7 @@
                   "Number",
                   "Object"
                 ],
-                "description": "Current selected Value of radio group"
+                "description": "Текущее выбранное значение радиогруппы"
               }
             ]
           }
@@ -77,11 +77,11 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content (form radios) to place in the form radio group"
+            "description": "Контент (форма радио) для размещения в форме группа радио"
           },
           {
             "name": "first",
-            "description": "Slot to place b-form-radio's so that they appear before radios generated from options prop"
+            "description": "Слот для размещения b-form-radio, чтобы они появлялись перед радио, созданными из опций опций"
           }
         ]
       },
@@ -93,19 +93,19 @@
         "props": [
           {
             "prop": "button",
-            "description": "When set, renders the radio with the appearance of a button"
+            "description": "Когда установлено, отображает радио в виде кнопки"
           },
           {
             "prop": "buttonVariant",
-            "description": "Applies on of Bootstrap's theme colors when in 'button' mode"
+            "description": "Применяется к цветам темы Bootstrap в режиме 'button'"
           },
           {
             "prop": "checked",
-            "description": "The current value of the radio(s)"
+            "description": "Текущая стоимость радио"
           },
           {
             "prop": "inline",
-            "description": "When set, renders the radio as an inline element rather than as a 100% width block"
+            "description": "Если установлено, радио отображается как встроенный элемент, а не как блок шириной 100%"
           },
           {
             "prop": "size",
@@ -113,13 +113,13 @@
           },
           {
             "prop": "value",
-            "description": "Value returned when this radio is checked"
+            "description": "Значение, возвращаемое при включении этого радио"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Emitted when selected value is changed due to user interaction",
+            "description": "Выдается, когда выбранное значение изменяется из-за взаимодействия с пользователем",
             "args": [
               {
                 "arg": "checked",
@@ -129,13 +129,13 @@
                   "Number",
                   "Object"
                 ],
-                "description": "Current selected Value of radio group"
+                "description": "Текущее выбранное значение радиогруппы"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Emitted when the selected value is changed",
+            "description": "Выдается при изменении выбранного значения",
             "args": [
               {
                 "arg": "checked",
@@ -145,7 +145,7 @@
                   "Number",
                   "Object"
                 ],
-                "description": "Current selected Value of radio group"
+                "description": "Текущее выбранное значение радиогруппы"
               }
             ]
           }
@@ -153,7 +153,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form radio"
+            "description": "Контент для размещения в форме радио"
           }
         ]
       }
