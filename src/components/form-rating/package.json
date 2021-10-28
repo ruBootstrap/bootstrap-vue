@@ -4,7 +4,7 @@
   "meta": {
     "title": "Form Rating",
     "version": "2.12.0",
-    "description": "BootstrapVue custom star rating form control for ratings entry or aggregated display.",
+    "description": "BootstrapVue настраиваемый элемент управления формой рейтинга в звездах для ввода оценок или агрегированного отображения.",
     "components": [
       {
         "component": "BFormRating",
@@ -15,78 +15,78 @@
         "props": [
           {
             "prop": "color",
-            "description": "CSS color to use instead of variant. Accepts either a HEX or RGB/RGBA string"
+            "description": "Цвет CSS для использования вместо варианта. Принимает строку HEX или RGB/RGBA"
           },
           {
             "prop": "iconClear",
-            "description": "Bootstrap Icon name to use for the clear button. Note icon must be registered in your component or globally"
+            "description": "Иконка Bootstrap, которая будет использоваться для кнопки очистки. Иконка заметки должна быть зарегистрирована в вашем компоненте или глобально"
           },
           {
             "prop": "iconEmpty",
-            "description": "Bootstrap Icon name to use for the empty icon. Note icon must be registered in your component or globally"
+            "description": "Иконка Bootstrap, которая будет использоваться для пустой иконки. Иконка заметки должна быть зарегистрирована в вашем компоненте или глобально"
           },
           {
             "prop": "iconFull",
-            "description": "Bootstrap Icon name to use for the full icon. Note icon must be registered in your component or globally"
+            "description": "Иконка Bootstrap, которая будет использоваться для полной иконки. Иконка заметки должна быть зарегистрирована в вашем компоненте или глобально"
           },
           {
             "prop": "iconHalf",
-            "description": "Bootstrap Icon name to use for the half icon. Note icon must be registered in your component or globally"
+            "description": "Иконка Bootstrap, которая будет использоваться для половинки иконки. Иконка заметки должна быть зарегистрирована в вашем компоненте или глобально"
           },
           {
             "prop": "inline",
-            "description": "When `true` renders as an inline element rather than a blick (100% width) element"
+            "description": "Когда `true` отображается как встроенный элемент, а не как элемент blick (100% ширины)"
           },
           {
             "prop": "locale",
-            "description": "Locale (or locales) to use when showing the value when prop `show-value` is set. Defaults to the browser default locale"
+            "description": "Локаль (или локали) для использования при отображении значения, когда задано свойство `show-value`. По умолчанию используется локаль браузера по умолчанию"
           },
           {
             "prop": "noBorder",
-            "description": "When `true` disables the default border"
+            "description": "Когда `true` отключает границу по умолчанию"
           },
           {
             "prop": "precision",
-            "description": "Specify the number of digits after the decimal to show. Defaults to to no defined precision"
+            "description": "Укажите количество отображаемых цифр после десятичной дроби. По умолчанию нет определенной точности"
           },
           {
             "prop": "readonly",
-            "description": "When `true` makes the rating readonly. When `true`, fractional ratings values are allowed (half icons will be shown)"
+            "description": "Когда `true` делает рейтинг только для чтения. При значении `true` разрешены дробные значения оценок (будут отображаться половинные иконки)"
           },
           {
             "prop": "showClear",
-            "description": "When `true` shows the clear value icon button"
+            "description": "Когда `true` показывает кнопку со значком сброса значения"
           },
           {
             "prop": "showValue",
-            "description": "When `true` shows the current rating value in the control"
+            "description": "Когда `true` показывает текущее значение рейтинга в элементе управления"
           },
           {
             "prop": "showValueMax",
             "version": "2.13.0",
-            "description": "When set to `true` and prop `show-value` is `true`, includes the maximum star rating possible in the formatted value"
+            "description": "Если задано значение `true`, а свойство `show-value` равно `true`, включает максимально возможный звездный рейтинг в форматированное значение"
           },
           {
             "prop": "stars",
-            "description": "The number of stars to show. Minimum value is `3`, default is `5`"
+            "description": "Количество отображаемых звезд. Минимальное значение `3`, по умолчанию `5`"
           },
           {
             "prop": "value",
-            "description": "Rating value. This is the v-model"
+            "description": "Значение рейтинга. Это v-model"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из вариантов цвета темы Bootstrap"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Emitted to update the v-model",
+            "description": "Выпущено для обновления v-model",
             "args": [
               {
                 "arg": "value",
-                "description": "Current ratings value"
+                "description": "Текущее значение рейтинга"
               }
             ]
           }
@@ -94,26 +94,26 @@
         "slots": [
           {
             "name": "icon-clear",
-            "description": "Content for the optional clear button"
+            "description": "Контент для дополнительной кнопки очистки"
           },
           {
             "name": "icon-empty",
-            "description": "Content for the empty icon",
+            "description": "Контент для пустой иконки",
             "scope": [
               {
                 "prop": "variant",
                 "type": "String",
-                "description": "Value of the `variant` prop, or `null` if disabled"
+                "description": "Значение свойства `variant` или `null`, если отключено"
               },
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "Value of the `disabled` prop"
+                "description": "Значение свойства `disabled`"
               },
               {
                 "prop": "readonly",
                 "type": "Boolean",
-                "description": "Value of the `readonly` prop"
+                "description": "Значение свойства `readonly`"
               }
             ]
           },
@@ -124,17 +124,17 @@
               {
                 "prop": "variant",
                 "type": "String",
-                "description": "Value of the `variant` prop, or `null` if disabled"
+                "description": "Значение свойства `variant` или `null`, если отключено"
               },
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "Value of the `disabled` prop"
+                "description": "Значение свойства `disabled`"
               },
               {
                 "prop": "readonly",
                 "type": "Boolean",
-                "description": "Value of the `readonly` prop"
+                "description": "Значение свойства `readonly`"
               }
             ]
           },
@@ -145,17 +145,17 @@
               {
                 "prop": "variant",
                 "type": "String",
-                "description": "Value of the `variant` prop, or `null` if disabled"
+                "description": "Значение свойства `variant` или `null`, если отключено"
               },
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "Value of the `disabled` prop"
+                "description": "Значение свойства `disabled`"
               },
               {
                 "prop": "readonly",
                 "type": "Boolean",
-                "description": "Value of the `readonly` prop"
+                "description": "Значение свойства `readonly`"
               }
             ]
           }

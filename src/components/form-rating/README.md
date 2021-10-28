@@ -1,26 +1,22 @@
-# Form Rating
+# Рейтинг формы
 
-> BootstrapVue's custom star rating component, `<b-form-rating>`, is for entering or displaying a
-> rating value. The component is fully WAI-ARIA accessible and supports keyboard control.
+> Пользовательский компонент звездного рейтинга BootstrapVue, `<b-form-rating>`, предназначен для ввода или отображения значения рейтинга. Компонент полностью доступен по WAI-ARIA и поддерживает управление с клавиатуры.
 
-## Overview
+## Обзор
 
-Rating values range from `1` to the number of stars allowed (default stars is `5`, minimum stars is
-`3`). Since `<b-form-rating>` uses the Bootstrap class `form-control`, it can easily be placed
-inside [input groups](/docs/components/input-group).
+Значения рейтинга варьируются от `1` до разрешенного количества звезд (по умолчанию - `5`, минимальное количество звезд - `3`). Поскольку `<b-form-rating>` использует класс Bootstrap `form-control`, его можно легко разместить внутри [групп ввода](/docs/components/input-group).
 
-There are two main modes for `<b-form-rating>`: interactive and readonly.
+Для `<b-form-rating>` существует два основных режима: интерактивный и только для чтения.
 
-Interactive mode allows the user to chose a rating from `1` to the number of stars (default `5`) in
-_whole number_ increments.
+Интерактивный режим позволяет пользователю выбирать рейтинг от `1` до количества звезд (по умолчанию `5`) с _полным числом_ приращений.
 
-**Interactive rating (input mode):**
+**Интерактивный рейтинг (режим ввода):**
 
 ```html
 <template>
   <div>
     <b-form-rating v-model="value"></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -37,15 +33,15 @@ _whole number_ increments.
 <!-- b-form-rating.vue -->
 ```
 
-Readonly mode is used for displaying an aggregated rating, and supports `half` stars.
+Режим только для чтения используется для отображения агрегированного рейтинга и поддерживает `half` звездочки.
 
-**Readonly (non-interactive) rating:**
+**Рейтинг только для чтения (неинтерактивный):**
 
 ```html
 <template>
   <div>
     <b-form-rating v-model="value" readonly></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -62,12 +58,12 @@ Readonly mode is used for displaying an aggregated rating, and supports `half` s
 <!-- b-form-rating-non-interactive.vue -->
 ```
 
-## Styling
+## Стилизация
 
-### Variant and color
+### Вариант и цвет
 
-Easily apply one of the Bootstrap theme color variants to the rating icon via the `variant` prop.
-The default is to use the default form control text color.
+С легкостью примените один из вариантов цвета темы Bootstrap к значку рейтинга с помощью свойства `variant`.
+По умолчанию используется цвет текста элемента управления формы по умолчанию.
 
 ```html
 <template>
@@ -77,7 +73,7 @@ The default is to use the default form control text color.
     <b-form-rating v-model="value" variant="danger" class="mb-2"></b-form-rating>
     <b-form-rating v-model="value" variant="primary" class="mb-2"></b-form-rating>
     <b-form-rating v-model="value" variant="info" class="mb-2"></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -94,8 +90,7 @@ The default is to use the default form control text color.
 <!-- b-form-rating-variant.vue -->
 ```
 
-To apply a _custom color_, use the `color` prop which accepts a standard CSS color name, HEX color
-value (`#...`) or RGB/RGBA (`rgb(...)`/`rgba(...)`) color value:
+Чтобы применить _собственный цвет_, используйте свойство `color`, которое принимает стандартное имя цвета CSS, значение цвета HEX (`#...`) или RGB/RGBA (`rgb(...)`/`rgba(...)`):
 
 ```html
 <template>
@@ -104,7 +99,7 @@ value (`#...`) or RGB/RGBA (`rgb(...)`/`rgba(...)`) color value:
     <b-form-rating v-model="value" color="#ff00ff" class="mb-2"></b-form-rating>
     <b-form-rating v-model="value" color="rgb(64, 192, 128)" class="mb-2"></b-form-rating>
     <b-form-rating v-model="value" color="rgba(64, 192, 128, 0.75)" class="mb-2"></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -121,26 +116,25 @@ value (`#...`) or RGB/RGBA (`rgb(...)`/`rgba(...)`) color value:
 <!-- b-form-rating-color.vue -->
 ```
 
-**Notes:**
+**Примечания:**
 
-- The prop `color` takes precedence over the `variant` prop
-- Variants translate to the `text-{variant}` utility class on the icon
+- Свойство `color` имеет приоритет над свойством `variant`
+- Варианты переводятся в служебный класс `text-{variant}` на иконке
 
-### Number of stars
+### Количество звезд
 
-By default, `<b-form-rating>` defaults to `5` stars. You can change the number of stars via the
-`stars` prop. The minimum allowed stars is `3`.
+По умолчанию для `<b-form-rating>` количество звезд равно `5`. Вы можете изменить количество звезд с помощью свойства `stars`. Минимально допустимое количество звездочек `3`.
 
 ```html
 <template>
   <div>
-    <label for="rating-10">Rating with 10 stars:</label>
+    <label for="rating-10">Рейтинг с 10 звездами:</label>
     <b-form-rating id="rating-10" v-model="value10" stars="10"></b-form-rating>
-    <p class="mt-2">Value: {{ value10 }}</p>
+    <p class="mt-2">Значение: {{ value10 }}</p>
 
-    <label for="rating-7">Rating with 7 stars:</label>
+    <label for="rating-7">Рейтинг с 7 звездами:</label>
     <b-form-rating id="rating-7" v-model="value7" stars="7"></b-form-rating>
-    <p class="mt-2">Value: {{ value7 }}</p>
+    <p class="mt-2">Значение: {{ value7 }}</p>
   </div>
 </template>
 
@@ -158,18 +152,15 @@ By default, `<b-form-rating>` defaults to `5` stars. You can change the number o
 <!-- b-form-rating-stars.vue -->
 ```
 
-### Show value
+### Показать значение
 
-By default `<b-form-rating>` does not display the current numerical value. To show the current value
-simply set the `show-value` prop to `true`. To control the precision (number of digits after the
-decimal) simply set the `precision` prop to the number of digits after the decimal to show. The
-`precision` setting is useful when showing an aggregated or average rating value in `readonly` mode.
+По умолчанию `<b-form-rating>` не отображает текущее числовое значение. Чтобы показать текущее значение, просто установите для свойства `show-value` значение `true`. Чтобы контролировать точность (количество цифр после десятичной дроби), просто установите для параметра `precision` количество отображаемых цифр после десятичной дроби. Параметр `precision` полезен при отображении агрегированного или среднего значения рейтинга в режиме `readonly`.
 
 ```html
 <template>
   <div>
     <b-form-rating v-model="value" show-value></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -186,13 +177,13 @@ decimal) simply set the `precision` prop to the number of digits after the decim
 <!-- b-form-rating-value.vue -->
 ```
 
-**With precision set:**
+**С набором точности:**
 
 ```html
 <template>
   <div>
     <b-form-rating v-model="value" readonly show-value precision="2"></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -209,11 +200,11 @@ decimal) simply set the `precision` prop to the number of digits after the decim
 <!-- b-form-rating-value-precision.vue -->
 ```
 
-#### Show maximum value
+#### Показать максимальное значение
 
 <span class="badge badge-info small">2.13.0+</span>
 
-Optionally show the maximum rating possible by also setting the prop `show-value-max` to `true`:
+При желании можно показать максимально возможный рейтинг, установив для свойства `show-value-max` значение `true`:
 
 ```html
 <template>
@@ -225,7 +216,7 @@ Optionally show the maximum rating possible by also setting the prop `show-value
       show-value-max
       precision="2"
     ></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -242,24 +233,23 @@ Optionally show the maximum rating possible by also setting the prop `show-value
 <!-- b-form-rating-value-max.vue -->
 ```
 
-### Control sizing
+### Размеры элементов
 
-Fancy a small or large rating control? Simply set the prop `size` to either `'sm'` or `'lg'`
-respectively.
+Хотите маленький или большой рейтинг? Просто установите для свойства `size` значение `'sm'` или `'lg'` соответственно.
 
 ```html
 <template>
   <div>
-    <label for="rating-sm">Small rating</label>
+    <label for="rating-sm">Маленькие элементы рейтинга</label>
     <b-form-rating id="rating-sm" v-model="value" size="sm"></b-form-rating>
 
-    <label for="rating-md" class="mt-3">Default rating (medium)</label>
+    <label for="rating-md" class="mt-3">Элементы рейтинга по умолчанию (средний)</label>
     <b-form-rating id="rating-md" v-model="value"></b-form-rating>
 
-    <label for="rating-lg" class="mt-3">Large rating</label>
+    <label for="rating-lg" class="mt-3">Большие элементы рейтинга</label>
     <b-form-rating id="rating-lg" v-model="value" size="lg"></b-form-rating>
 
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -276,16 +266,14 @@ respectively.
 <!-- b-form-rating-size.vue -->
 ```
 
-### Inline mode
+### Инлайновый режим
 
-By default, `<b-form-rating>` occupies 100% width of the parent container. In some situations you
-may prefer the custom input to occupy on the space required for it's contents. Simply set the
-`inline` prop to `true` to render the component in inline mode:
+По умолчанию `<b-form-rating>` занимает 100% ширины родительского контейнера. В некоторых ситуациях вы можете предпочесть, чтобы пользовательский ввод занимал место, необходимое для его содержимого. Просто установите для свойства `inline` значение `true`, чтобы визуализировать компонент во встроенном режиме:
 
 ```html
 <template>
   <div>
-    <label for="rating-inline">Inline rating:</label>
+    <label for="rating-inline">Инлайновый рейтинг:</label>
     <b-form-rating id="rating-inline" inline value="4"></b-form-rating>
   </div>
 </template>
@@ -293,24 +281,23 @@ may prefer the custom input to occupy on the space required for it's contents. S
 <!-- b-form-rating-inline.vue -->
 ```
 
-### Borderless
+### Без границ
 
-By default, `<b-form-rating>` has standard Bootstrap form-control styling. To disable the default
-form-control border, simply set the `no-border` prop to `true`.
+По умолчанию `<b-form-rating>` имеет стандартный стиль элемента управления формы Bootstrap. Чтобы отключить стандартную границу элемента управления формой, просто установите для свойства `no-border` значение `true`.
 
 ```html
 <template>
   <div>
-    <label for="rating-sm-no-border">Small rating with no border</label>
+    <label for="rating-sm-no-border">Маленький рейтинг без рамки</label>
     <b-form-rating id="rating-sm-no-border" v-model="value" no-border size="sm"></b-form-rating>
 
-    <label for="rating-md-no-border" class="mt-3">Default rating (medium) with no border</label>
+    <label for="rating-md-no-border" class="mt-3">Рейтинг по умолчанию (средний) без рамки</label>
     <b-form-rating id="rating-md-no-border" v-model="value" no-border></b-form-rating>
 
-    <label for="rating-lg-no-border" class="mt-3">Large rating with no border</label>
+    <label for="rating-lg-no-border" class="mt-3">Большой рейтинг без рамки</label>
     <b-form-rating id="rating-lg-no-border" v-model="value" no-border size="lg"></b-form-rating>
 
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -327,20 +314,18 @@ form-control border, simply set the `no-border` prop to `true`.
 <!-- b-form-rating-no-border.vue -->
 ```
 
-**Notes:**
+**Примечания:**
 
-- For accessibility reasons a focus ring will show when the rating component has focus, regardless
-  of the `no-border` setting.
+- Из соображений доступности кольцо фокусировки будет отображаться, когда компонент оценки находится в фокусе, независимо от настройки `no-border`.
 
-### Disabled
+### Отключенный
 
-If you require additional information before a user can chose a ratings value, simply set the
-`disabled` prop to `true` to disable any user interactivity on the component:
+Если вам требуется дополнительная информация, прежде чем пользователь сможет выбрать значение рейтинга, просто установите для свойства `disabled` значение `true`, чтобы отключить любое взаимодействие пользователя с компонентом:
 
 ```html
 <template>
   <div>
-    <label for="rating-disabled">Disabled rating</label>
+    <label for="rating-disabled">Рейтинг отключен</label>
     <b-form-rating id="rating-disabled" value="2.75" disabled></b-form-rating>
   </div>
 </template>
@@ -348,16 +333,14 @@ If you require additional information before a user can chose a ratings value, s
 <!-- b-form-rating-disabled.vue -->
 ```
 
-### Readonly
+### Только чтение
 
-Readonly ratings remain focusable, but are not interactive. This state is useful for displaying an
-aggregated or average ratings value. Fractional values are allowed and will result in the displaying
-of _half icons_ when the `value` is not a whole number (the half icon threshold is `0.5`).
+Рейтинги только для чтения остаются настраиваемыми, но не интерактивными. Это состояние полезно для отображения агрегированного или среднего значения оценок. Допускаются дробные значения, которые будут приводить к отображению _половинных иконок_, если `value` не является целым числом (пороговое значение для половины значка равно `0.5`).
 
 ```html
 <template>
   <div>
-    <label for="rating-readonly">Readonly rating</label>
+    <label for="rating-readonly">Рейтинг только для чтения</label>
     <b-form-rating
       id="rating-readonly"
       value="3.6536"
@@ -371,16 +354,15 @@ of _half icons_ when the `value` is not a whole number (the half icon threshold 
 <!-- b-form-rating-readonly.vue -->
 ```
 
-### Clear button
+### Кнопка Очиститки
 
-Optionally show a clear icon via the `show-clear` prop. The value will be set to `null` when the
-clear icon is clicked.
+При желании можно показать значок очистки через свойство `show-clear`. При щелчке по значку очистки значение будет установлено в `null`.
 
 ```html
 <template>
   <div>
     <b-form-rating v-model="value" show-clear show-value></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -397,17 +379,13 @@ clear icon is clicked.
 <!-- b-form-rating-clear.vue -->
 ```
 
-**Notes:**
+**Примечания:**
 
-- The clear icon will _not_ be shown when the props `readonly` or `disabled` are set.
+- Иконка очистки _не_ будет отображаться, если заданы свойства `readonly` или `disabled`.
 
-### Icons
+### Иконки
 
-By default `<b-form-rating>` uses the [Bootstrap Icons](/docs/icons) icons `'star'`, `'star-half'`,
-`'star-fill'`, and the icon `'x'` (for the optional clear button). You can specify alternate
-Bootstrap Icons to use via the `icon-empty`, `icon-half`, `icon-full`, and `icon-clear` props. These
-props accept a Bootstrap Icon <samp>kebab-case</samp> name, and requires that the corresponding icon
-component be registered/installed either locally or globally.
+По умолчанию `<b-form-rating>` использует [Иконки Bootstrap](/docs/icons) `'star'`, `'star-half'`, `'star-fill'` и иконку `'x'` (для дополнительной кнопки очистки). Вы можете указать альтернативные значки начальной загрузки для использования с помощью свойств `icon-empty`, `icon-half`, `icon-full` и `icon-clear`. Эти свойства принимают имя Bootstrap Иконки <samp>kebab-case</samp> и требуют, чтобы соответствующий компонент иконки был зарегистрирован/установлен локально или глобально.
 
 ```html
 <template>
@@ -426,25 +404,22 @@ component be registered/installed either locally or globally.
 <!-- b-form-rating-icons.vue -->
 ```
 
-Alternatively, you an supply your own content via the `'icon-empty'`, `'icon-half'`, `'icon-full'`,
-and `'icon-clear'` scoped slots.
+В качестве альтернативы вы можете предоставить свой собственный контент через слоты с областью видимости `'icon-empty'`, `'icon-half'`, `'icon-full'` и `'icon-clear'`.
 
-## Form submission
+## Отправка формы
 
-If you intend to submit the rating value via standard form submission, set the `name` prop to the
-desired form field name. A hidden input will be generated with the current value (or an empty string
-if there is no value).
+Если вы собираетесь отправить значение рейтинга через стандартную отправку формы, установите для свойства `name` нужное имя поля формы. Будет создан скрытый ввод с текущим значением (или пустой строкой, если значение отсутствует).
 
-## Using in input groups
+## Использование в группах ввода
 
-The following is an example of placing `<b-form-rating>` in an input group:
+Ниже приведен пример помещения `<b-form-rating>` в группе ввода:
 
 ```html
 <template>
   <div>
     <b-input-group>
       <b-input-group-prepend>
-        <b-button @click="value = null">Clear</b-button>
+        <b-button @click="value = null">Очистить</b-button>
       </b-input-group-prepend>
       <b-form-rating v-model="value" color="#ff8800"></b-form-rating>
       <b-input-group-append>
@@ -469,19 +444,16 @@ The following is an example of placing `<b-form-rating>` in an input group:
 <!-- b-form-rating-input-group.vue -->
 ```
 
-## Internationalization
+## Интернационализация
 
-When a `locale` is specified, the displayed value (when the `show-value` prop is `true`) will be in
-the browser's default locale. To change the locale, simple set the `locale` prop to the preferred
-locale, or an array of preferred locales (most preferred locale first). This will affect the
-optional displayed value and the left-to-right or right-to-left orientation of the component.
+Когда указан `locale`, отображаемое значение (когда свойство `show-value` равно `true`) будет в локали браузера по умолчанию. Чтобы изменить языковой стандарт, просто установите свойство `locale` на предпочтительный языковой стандарт или массив предпочтительных языковых стандартов (сначала наиболее предпочтительный языковой стандарт). Это повлияет на необязательное отображаемое значение и ориентацию компонента слева направо или справа налево.
 
 ```html
 <template>
   <div>
     <b-form-select v-model="locale" :options="locales" class="mb-2"></b-form-select>
     <b-form-rating v-model="value" :locale="locale" show-value precision="1"></b-form-rating>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -493,6 +465,7 @@ optional displayed value and the left-to-right or right-to-left orientation of t
         locale: 'en-US',
         locales: [
           { text: 'English US (en-US)', value: 'en-US' },
+          { text: 'Русский (ru-RU)', value: 'ru-RU' },
           { text: 'French (fr)', value: 'fr' },
           { text: 'Persian (fa)', value: 'fa'},
           { text: 'Arabic Egyptian (ar-EG)', value: 'ar-EG' }
@@ -505,22 +478,18 @@ optional displayed value and the left-to-right or right-to-left orientation of t
 <!-- b-form-rating-i18n.vue -->
 ```
 
-## Implementation notes
+## Примечания по реализации
 
-The ratings control uses the Bootstrap v4 `form-control*`, `d-*` (display), `border-*` and
-`text-{variant}` classes, as well as BootstrapVue's custom CSS for proper styling.
+Элемент управления рейтингами использует классы Bootstrap v4 `form-control*`, `d-*` (отображение), `border-*` и `text-{variant}`, а также собственный CSS BootstrapVue для правильного оформления.
 
-The root element of the control is an `<output>` element, which allows a `<label>` element to be
-associated with it.
+Корневым элементом элемента управления является элемент `<output>`, который позволяет связать с ним элемент `<label>`.
 
-## Accessibility
+## Доступность
 
-To screen reader users `<b-form-rating>` appears as a _slider_ type input input.
+Для пользователей программ чтения с экрана `<b-form-rating>` отображается как входной ввод типа _ползунка_.
 
-Keyboard navigation is employed to select the rating value, and mimics the keyboard controls of
-`range` inputs:
+Клавиатурная навигация используется для выбора значения рейтинга и имитирует элементы управления с клавиатуры для входов `range`:
 
-- <kbd>Left</kbd> or <kbd>Down</kbd> will decrement the rating value by `1`
-- <kbd>Right</kbd> or <kbd>Up</kbd> will increment the rating value by `1`
-- When the [`locale`](#internationalization) resolves to a right-to-left language, the
-  <kbd>Left</kbd> and <kbd>Right</kbd> behaviour is reversed.
+- <kbd>Left</kbd> или <kbd>Down</kbd> уменьшит значение рейтинга на `1`
+- <kbd>Right</kbd> или <kbd>Up</kbd> увеличит значение рейтинга на `1`
+- Когда [`locale`](#интернационализация) преобразуется в язык с письмом справа налево, поведение <kbd>Left</kbd> и <kbd>Right</kbd> меняется на противоположное.
