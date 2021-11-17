@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Form Select",
-    "description": "Custom <select> component using cross-browser custom styles. Optionally generate <option> entries based on an array, array of objects.",
+    "description": "Пользовательский компонент <select> с использованием настраиваемых стилей для разных браузеров. При желании сгенерировать записи <option> на основе массива, массива объектов.",
     "components": [
       {
         "component": "BFormSelect",
@@ -13,23 +13,23 @@
         "props": [
           {
             "prop": "ariaInvalid",
-            "description": "Optional value to set for the 'aria-invalid' attribute. Supported values are 'true' and 'false'. If not set, the 'state' prop will dictate the value"
+            "description": "Необязательное значение для атрибута 'aria-invalid'. Поддерживаемые значения: 'true' и 'false'. Если не установлен, свойство 'state' будет определять значение"
           },
           {
             "prop": "labelField",
-            "description": "The key to use from the option object to get the label"
+            "description": "Ключ, который нужно использовать из объекта option для получения метки"
           },
           {
             "prop": "multiple",
-            "description": "When set, allows multiple options to be selected (multi-select)"
+            "description": "Когда установлено, позволяет выбрать несколько опций (множественный выбор)"
           },
           {
             "prop": "optionsField",
-            "description": "The key to use from the option object to get the options"
+            "description": "Ключ, который нужно использовать из объекта option для получения опций"
           },
           {
             "prop": "selectSize",
-            "description": "When set to a number larger than 0, will set the number of display option rows. Note not all browser will respect this setting"
+            "description": "Если установлено значение больше 0, будет установлено количество строк параметров отображения. Обратите внимание, что не все браузеры будут учитывать этот параметр"
           },
           {
             "prop": "size",
@@ -37,13 +37,13 @@
           },
           {
             "prop": "value",
-            "description": "Current value of the select. Should be set to an array when the 'multiple' prop is set"
+            "description": "Текущее значение выбора. Должен быть установлен в массив, если задано свойство 'multiple'"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Emitted when the select value changes via user interaction",
+            "description": "Генерируется, когда значение выбора изменяется в результате взаимодействия с пользователем",
             "args": [
               {
                 "arg": "value",
@@ -53,7 +53,7 @@
                   "Object",
                   "Array"
                 ],
-                "description": "Current selected value(s) of the select"
+                "description": "Текущее выбранное значение(я) выбранного"
               }
             ]
           },
@@ -69,7 +69,7 @@
                   "Object",
                   "Array"
                 ],
-                "description": "Current selected value(s) of the select"
+                "description": "Текущее выбранное значение(я) выбранного"
               }
             ]
           }
@@ -77,11 +77,11 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form select"
+            "description": "Контент для размещения в форме выберите"
           },
           {
             "name": "first",
-            "description": "Slot to place options or option groups above options provided via the 'options' prop"
+            "description": "Слот для размещения опций или групп опций над опциями, предоставленными через свойство 'options'"
           }
         ]
       },
@@ -94,13 +94,13 @@
         "props": [
           {
             "prop": "value",
-            "description": "The value of the option"
+            "description": "Значение опции"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form select option"
+            "description": "Контент для размещения в форме выберите вариант"
           }
         ]
       },
@@ -113,17 +113,17 @@
         "props": [
           {
             "prop": "label",
-            "description": "The label for the option group"
+            "description": "Ярлык для группы опций"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form select option group"
+            "description": "Контент для размещения в форме выберите группу опций"
           },
           {
             "name": "first",
-            "description": "Slot to place options above options provided via the 'options' prop"
+            "description": "Слот для размещения опций над опциями, предоставленными через свойство 'options'"
           }
         ]
       }
