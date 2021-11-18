@@ -4,7 +4,7 @@
   "meta": {
     "title": "Form Spinbutton",
     "version": "2.5.0",
-    "description": "BootstrapVue custom numerical spinbutton form input component, featuring WAI-ARIA accessibility (a11y) and internationalization (i18n).",
+    "description": "Компонент ввода настраиваемой числовой спин-кнопки BootstrapVue, обеспечивающий доступность WAI-ARIA (a11y) и интернационализацию (i18n).",
     "components": [
       {
         "component": "BFormSpinbutton",
@@ -15,107 +15,107 @@
         "props": [
           {
             "prop": "ariaLabel",
-            "description": "Value to place in the `aria-label` attribute of the spinbutton"
+            "description": "Значение для размещения в атрибуте `aria-label` кнопки spinbutton"
           },
           {
             "prop": "disabled",
-            "description": "Places the component in a disabled state"
+            "description": "Переводит компонент в отключенное состояние"
           },
           {
             "prop": "formatterFn",
-            "description": "A reference to a method to format the displayed value. It is passed a single argument which is the current value"
+            "description": "Ссылка на метод форматирования отображаемого значения. Ему передается единственный аргумент, который является текущим значением"
           },
           {
             "prop": "inline",
-            "description": "When set, renders the component as an inline element"
+            "description": "Когда установлено, визуализирует компонент как встроенный элемент"
           },
           {
             "prop": "labelDecrement",
-            "description": "Text to be used for the `aria-label` attribute on the decrement button"
+            "description": "Текст, который будет использоваться для атрибута `aria-label` на кнопке уменьшения"
           },
           {
             "prop": "labelIncrement",
-            "description": "Text to be used for the `aria-label` attribute on the increment button"
+            "description": "Текст, который будет использоваться для атрибута `aria-label` на кнопке увеличения"
           },
           {
             "prop": "locale",
-            "description": "Specify the local to use for formatting the number. Defaults to the browser locale. Only applicable when using the internal formatter"
+            "description": "Укажите местный язык, который будет использоваться для форматирования числа. По умолчанию используется локаль браузера. Применимо только при использовании внутреннего форматтера"
           },
           {
             "prop": "max",
-            "description": "The maximum value that can be selected. Must be greater than the `min` prop.. Negative numbers are allowed"
+            "description": "Максимальное значение, которое можно выбрать. Должно быть больше, чем свойство `min`. Допускаются отрицательные значения"
           },
           {
             "prop": "min",
-            "description": "The minimum value that can be selected. Negative numbers are allowed"
+            "description": "Минимальное значение, которое можно выбрать. Допускаются отрицательные числа"
           },
           {
             "prop": "placeholder",
-            "description": "Value to show when the v-model is `null`"
+            "description": "Значение, показываемое, когда v-model имеет значение `null`"
           },
           {
             "prop": "readonly",
-            "description": "Places the component in a readonly state"
+            "description": "Помещает компонент в состояние только для чтения"
           },
           {
             "prop": "repeatDelay",
-            "description": "Delay in milliseconds after before auto repeat increment or decrement happens. Must be a positive integer. Requires the user to click/keydown and hold"
+            "description": "Задержка в миллисекундах после того, как произойдет автоматическое увеличение или уменьшение повторения. Должно быть положительное целое число. Требует от пользователя щелчка/нажатия и удерживания"
           },
           {
             "prop": "repeatInterval",
-            "description": "Interval in milliseconds between increment or decrement repeats. Must be a positive integer"
+            "description": "Интервал в миллисекундах между повторениями увеличения или уменьшения. Должно быть положительное целое число"
           },
           {
             "prop": "repeatStepMultiplier",
-            "description": "Number of steps to jump by once the `repeat-threshold` has been reached. Must be a positive integer. This value is also used for the page up and down keys"
+            "description": "Количество шагов для перехода при достижении `repeat-threshold`. Должно быть положительное целое число. Это значение также используется для клавиш перехода на страницу вверх и вниз"
           },
           {
             "prop": "repeatThreshold",
-            "description": "Number of repeats to occur before increasing the step size by `repeat-step-multiplier`. Must be a positive integer"
+            "description": "Число повторов перед увеличением размера шага на `repeat-step-multiplier`. Должно быть положительное целое число"
           },
           {
             "prop": "required",
-            "description": "Adds the `aria-required=\"true\"` attribute on the component. Note this will not prevent for submission when the value is `null`"
+            "description": "Добавляет атрибут `aria-required=\"true\"` к компоненту. Обратите внимание, что это не помешает отправке, когда значение равно `null`"
           },
           {
             "prop": "step",
-            "description": "A positive number that specifies the granularity that the value must adhere to"
+            "description": "Положительное число, указывающее степень детализации, которой должно соответствовать значение"
           },
           {
             "prop": "value",
-            "description": "The value of the spinbutton. Bound to the v-model"
+            "description": "Значение кнопки вращения. Привязан к v-model"
           },
           {
             "prop": "vertical",
-            "description": "When set, renders the component with a vertical layout"
+            "description": "Если установлено, визуализирует компонент с вертикальной компоновкой"
           },
           {
             "prop": "wrap",
-            "description": "When set, allows the value to wrap around when reaching the minimum or maximum value"
+            "description": "Если установлено, позволяет циклически изменять значение при достижении минимального или максимального значения"
           }
         ],
         "slots": [
           {
             "name": "decrement",
             "version": "2.8.0",
-            "description": "Custom content to place in the decrement button",
+            "description": "Пользовательский контент для размещения на кнопке уменьшения",
             "scope": [
               {
                 "prop": "hasFocus",
                 "type": "Boolean",
-                "description": "`true` when the spinbutton has focus"
+                "description": "`true`, когда спиновая кнопка находится в фокусе"
               }
             ]
           },
           {
             "name": "increment",
             "version": "2.8.0",
-            "description": "Custom content to place in the increment button",
+            "description": "Пользовательский контент для размещения на кнопке увеличения",
             "scope": [
               {
                 "prop": "hasFocus",
                 "type": "Boolean",
-                "description": "`true` when the spinbutton has focus"
+                "description": "`true`, когда спиновая кнопка находится в фокусе"
               }
             ]
           }
@@ -123,23 +123,23 @@
         "events": [
           {
             "event": "change",
-            "description": "Emitted when the user releases the mouse button or key",
+            "description": "Выдается, когда пользователь отпускает кнопку или клавишу мыши",
             "args": [
               {
                 "arg": "value",
                 "type": "Number",
-                "description": "Current value of the spinbutton"
+                "description": "Текущее значение спин-кнопки"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Emitted to update the v-model on each value change",
+            "description": "Испускается для обновления v-model при каждом изменении значения",
             "args": [
               {
                 "arg": "value",
                 "type": "Number",
-                "description": "Current value of the spinbutton"
+                "description": "Текущее значение спин-кнопки"
               }
             ]
           }
