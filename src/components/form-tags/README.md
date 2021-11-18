@@ -1,28 +1,24 @@
-# Form Tags
+# Теги формы
 
-> Lightweight custom tagged input form control, with options for customized interface rendering,
-> duplicate tag detection and optional tag validation.
+> Легкий пользовательский элемент управления формой ввода с тегами, с параметрами для настраиваемого рендеринга интерфейса, обнаружения повторяющихся тегов и дополнительной проверки тегов.
 
-Tags are arrays of short strings, used in various ways such as assigning categories. Use the default
-user interface, or create your own custom interface via the use of the default scoped slot.
+Теги - это массивы коротких строк, которые используются различными способами, например, для присвоения категорий. Используйте пользовательский интерфейс по умолчанию или создайте свой собственный пользовательский интерфейс с помощью слота с заданной областью действия по умолчанию.
 
-## Basic usage
+## Базовое использование
 
-Tags will have any leading and tailing whitespace removed, and duplicate tags are not permitted.
-Tags that contain spaces are permitted by default.
+В тегах будут удалены все начальные и конечные пробелы, а дублирование тегов не допускается.
+Теги, содержащие пробелы, разрешены по умолчанию.
 
-Tags are added by clicking the **Add** button, pressing the <kbd>Enter</kbd> key or optionally when
-the `change` event fires on the new tag input (i.e. when focus moves from the input). The **Add**
-button will only appear when the user has entered a new tag value.
+Теги добавляются путем нажатия кнопки **Добавить**, нажатия клавиши <kbd>Enter</kbd> или, необязательно, когда событие `change` запускается на входе нового тега (т.е. когда фокус перемещается с ввода). Кнопка **Добавить** появится только тогда, когда пользователь ввел новое значение тега.
 
-**Default render:**
+**Рендеринг по умолчанию:**
 
 ```html
 <template>
   <div>
-    <label for="tags-basic">Type a new tag and press enter</label>
+    <label for="tags-basic">Введите новый тег и нажмите ввод</label>
     <b-form-tags input-id="tags-basic" v-model="value"></b-form-tags>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -39,32 +35,26 @@ button will only appear when the user has entered a new tag value.
 <!-- form-tags-example.vue -->
 ```
 
-You can disable adding a new tag when pressing <kbd>Enter</kbd> via the `no-add-on-enter` prop, and
-enable adding a tag on the input's `change` event via the `add-on-change` prop.
+Вы можете отключить добавление нового тега при нажатии <kbd>Enter</kbd> через свойство `no-add-on-enter` и включить добавление тега в событие ввода `change` через `add-on-change`.
 
-## Tag creation using separators
+## Создание тегов с использованием разделителей
 
-To auto create tags when a separator character is typed (i.e. <kbd>Space</kbd>, <kbd>,</kbd>, etc.),
-set the `separator` prop to the character that will trigger the tag to be added. If multiple
-separator characters are needed, then include them as a single string (i.e. `' ,;'`), or an array of
-characters (i.e. `[' ', ',', ';']`), which will trigger a new tag to be added when <kbd>Space</kbd>,
-<kbd>,</kbd>, _or_ <kbd>;</kbd> are typed). Separators must be a single character.
+Для автоматического создания тегов при вводе символа-разделителя (например, <kbd>Space</kbd>, <kbd>,</kbd>, и т. д.) Установите свойство `separator` на символ, который будет запускать тег добавлен. Если необходимо несколько символов-разделителей, включите их как одну строку (например, `' ,;'`) или массив символов (например, `[' ', ',', ';']`), что вызовет новый тег, который будет добавлен при вводе <kbd>Space</kbd>, <kbd>,</kbd> _или_ <kbd>;</kbd>. Разделители должны состоять из одного символа.
 
-The following example will auto create a tag when <kbd>Space</KBD>, <kbd>,</kbd>, or <kbd>;</kbd>
-are typed:
+В следующем примере тег автоматически создается при вводе <kbd>Space</KBD>, <kbd>,</kbd> или <kbd>;</kbd>:
 
 ```html
 <template>
   <div>
-    <label for="tags-separators">Enter tags separated by space, comma or semicolon</label>
+    <label for="tags-separators">Введите теги через пробел, запятую или точку с запятой</label>
     <b-form-tags
       input-id="tags-separators"
       v-model="value"
       separator=" ,;"
-      placeholder="Enter new tags separated by space, comma or semicolon"
+      placeholder="Введите новые теги через пробел, запятую или точку с запятой"
       no-add-on-enter
     ></b-form-tags>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -81,28 +71,27 @@ are typed:
 <!-- form-tags-separator.vue -->
 ```
 
-## Last tag removal via backspace keypress
+## Удаление последнего тега нажатием клавиши Backspace
 
-When the prop `remove-on-delete` is set, and the user presses <kbd>Backspace</kbd> (or
-<kbd>Del</kbd>) _and_ the input value is empty, the last tag in the tag list will be removed.
+Когда свойство `remove-on-delete` установлено, и пользователь нажимает <kbd>Backspace</kbd> (или <kbd>Del</kbd>) _и_ входное значение пусто, последний тег в списке тегов будет удален.
 
 ```html
 <template>
   <div>
-    <label for="tags-remove-on-delete">Enter new tags separated by space</label>
+    <label for="tags-remove-on-delete">Введите новые теги через пробел</label>
     <b-form-tags
       input-id="tags-remove-on-delete"
       :input-attrs="{ 'aria-describedby': 'tags-remove-on-delete-help' }"
       v-model="value"
       separator=" "
-      placeholder="Enter new tags separated by space"
+      placeholder="Введите новые теги через пробел"
       remove-on-delete
       no-add-on-enter
     ></b-form-tags>
     <b-form-text id="tags-remove-on-delete-help" class="mt-2">
-      Press <kbd>Backspace</kbd> to remove the last tag entered
+      Нажмите <kbd>Backspace</kbd>, чтобы удалить последний введенный тег
     </b-form-text>
-    <p>Value: {{ value }}</p>
+    <p>Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -119,27 +108,27 @@ When the prop `remove-on-delete` is set, and the user presses <kbd>Backspace</kb
 <!-- form-tags-remove-on-delete.vue -->
 ```
 
-## Styling Options
+## Стилизация опций
 
-Several props are available to alter the basic styling of the default tagged interface:
+Для изменения основного стиля интерфейса с тегами по умолчанию доступны несколько свойств:
 
-| Prop          | Description                                                                                           |
+| Свойство          | Описание                                                                                           |
 | ------------- | ----------------------------------------------------------------------------------------------------- |
-| `tag-pills`   | Renders the tags with the appearance of pills                                                         |
-| `tag-variant` | Applies one of the Bootstrap contextual variant theme colors to the tags                              |
+| `tag-pills`   | Отображает метки в виде таблеток                                                         |
+| `tag-variant` | Применяет один из цветов темы контекстного варианта Bootstrap к тегам                              |
 | `size`        | Установите размер внешнего вида компонента. 'sm', 'md' (по умолчанию) или 'lg'                             |
-| `placeholder` | The placeholder text for the new tag input element                                                    |
-| `state`       | Sets the contextual state of the control. Set to `true` (for valid), `false` (for invalid), or `null` |
-| `disabled`    | Places the component in a disabled state                                                              |
+| `placeholder` | Текст-заполнитель для нового элемента ввода тега                                                    |
+| `state`       | Устанавливает контекстное состояние элемента управления. Установите значение `true` (для действительного), `false` (для недопустимого) или `null` |
+| `disabled`    | Переводит компонент в отключенное состояние                                                              |
 
-For additional props, see the component reference section at the bottom of this page.
+Дополнительные сведения см. В разделе справки по компонентам внизу этой страницы.
 
-The focus and validation state styling of the component relies upon BootstrapVue's custom CSS.
+Стиль фокуса и состояния проверки компонента основан на настраиваемом CSS BootstrapVue.
 
 ```html
 <template>
   <div>
-    <label for="tags-pills">Enter tags</label>
+    <label for="tags-pills">Введите теги</label>
     <b-form-tags
       input-id="tags-pills"
       v-model="value"
@@ -147,9 +136,9 @@ The focus and validation state styling of the component relies upon BootstrapVue
       tag-pills
       size="lg"
       separator=" "
-      placeholder="Enter new tags separated by space"
+      placeholder="Введите новые теги через пробел"
     ></b-form-tags>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -166,33 +155,24 @@ The focus and validation state styling of the component relies upon BootstrapVue
 <!-- form-tags-style-options.vue -->
 ```
 
-## Using with native browser `<form>` submission
+## Использование с нативной отправкой браузера `<form>`
 
-The value of the tagged input will not be submitted via standard form `action` unless you provide a
-name via the `name` prop. When a name is provided, `<b-form-tags>` will create a hidden `<input>`
-for each tag. The hidden input will have the `name` attribute set to the value of the `name` prop.
+Значение помеченного ввода не будет отправлено через стандартную форму `action`, если вы не укажете имя через свойство `name`. Если указано имя, `<b-form-tags>` создает скрытый `<input>` для каждого тега. Скрытый ввод будет иметь атрибут `name`, установленный на значение свойства `name`.
 
-The hidden inputs will also be generated when using
-[custom rendering](#custom-rendering-with-default-scoped-slot) (when the `name` prop is set).
+Скрытые входные данные также будут сгенерированы при использовании [пользовательского рендеринга](#custom-rendering-with-default-scoped-slot) (когда задано свойство `name`).
 
-## Tag validation
+## Валидация тега
 
-By default, `<b-form-tags>` detects when the user is attempting to enter a (case-sensitive)
-duplicate tag, and will provide integrated feedback to the user.
+По умолчанию, `<b-form-tags>` определяет, когда пользователь пытается ввести (с учетом регистра) повторяющийся тег, и предоставляет пользователю интегрированную обратную связь.
 
-You can optionally provide a tag validator method via the `tag-validator` prop. The validator
-function will receive one argument which is the tag being added, and should return either `true` if
-the tag passes validation and can be added, or `false` if the tag fails validation (in which case it
-is not added to the array of tags). Integrated feedback will be provided to the user listing the
-invalid tag(s) that could not be added.
+При желании вы можете предоставить метод проверки тегов через свойство `tag-validator`. Функция валидатора получит один аргумент, который является добавляемым тегом, и должна возвращать либо `true`, если тег проходит проверку и может быть добавлен, либо `false`, если тег не прошел проверку (в этом случае он не добавляется в массив тегов). Интегрированная обратная связь будет предоставлена пользователю с указанием недействительных тегов, которые не удалось добавить.
 
-Tag validation occurs only for tags added via user input. Changes to the tags via the `v-model` are
-not validated.
+Проверка тега происходит только для тегов, добавленных с помощью пользовательского ввода. Изменения тегов через `v-model` не проверяются.
 
 ```html
 <template>
   <div>
-    <b-form-group label="Tags validation example" label-for="tags-validation" :state="state">
+    <b-form-group label="Пример проверки тегов" label-for="tags-validation" :state="state">
       <b-form-tags
         input-id="tags-validation"
         v-model="tags"
@@ -203,13 +183,12 @@ not validated.
       ></b-form-tags>
 
       <template #invalid-feedback>
-        You must provide at least 3 tags and no more than 8
+        Вы должны предоставить не менее 3 тегов и не более 8
       </template>
 
       <template #description>
         <div id="tags-validation-help">
-         Tags must be 3 to 5 characters in length and all lower
-         case. Enter tags separated by spaces or press enter.
+         Теги должны содержать от 3 до 5 символов в нижнем регистре. Введите теги через пробел или нажмите клавишу ВВОД.
         </div>
       </template>
     </b-form-group>
@@ -226,19 +205,19 @@ not validated.
     },
     computed: {
       state() {
-        // Overall component validation state
+        // Общее состояние проверки компонентов
         return this.dirty ? (this.tags.length > 2 && this.tags.length < 9) : null
       }
     },
     watch: {
       tags(newValue, oldValue) {
-        // Set the dirty flag on first change to the tags array
+        // Установить грязный флаг при первом изменении массива тегов
         this.dirty = true
       }
     },
     methods: {
       tagValidator(tag) {
-        // Individual tag validator function
+        // Функция проверки индивидуальных тегов
         return tag === tag.toLowerCase() && tag.length > 2 && tag.length < 6
       }
     }
@@ -248,30 +227,22 @@ not validated.
 <!-- b-form-tags-validation-feedback.vue -->
 ```
 
-### Detecting new, invalid, and duplicate tags
+### Обнаружение новых, недействительных и повторяющихся тегов
 
-The event `tag-state` will be emitted whenever new tags are entered into the new tag input element,
-tags that do not pass validation, or duplicate tags are detected. The event handler will receive
-three arrays as its arguments:
+Событие `tag-state` будет генерироваться всякий раз, когда новые теги вводятся в новый элемент ввода тега, теги, не прошедшие проверку, или обнаруживаются повторяющиеся теги. Обработчик событий получит в качестве аргументов три массива:
 
-- `validTags` (tags that pass validation)
-- `invalidTags` (tags that do not pass validation)
-- `duplicateTags` (tags that would be a duplicate of existing or validTags).
+- `validTags` (теги, которые проходят проверку)
+- `invalidTags` (теги, не прошедшие валидацию)
+- `duplicateTags` (теги, которые будут дублировать существующие или допустимые теги).
 
-The event will be emitted only when the new tag input changes (characters are entered that would be
-considered part of a tag), or when the user attempts to add a tag (i.e. via <kbd>Enter</kbd>,
-clicking the **Add** button, or entering a separator). The three arrays will be empty when the user
-clears the new tag input element (or contains just spaces).
+Событие будет сгенерировано только при изменении ввода нового тега (вводятся символы, которые будут считаться частью тега), или когда пользователь попытается добавить тег (например, с помощью <kbd>Enter</kbd>, кликнув по кнопке **Add** или ввести разделитель). Три массива будут пустыми, когда пользователь очистит новый элемент ввода тега (или будет содержать только пробелы).
 
-If you are providing your own feedback for duplicate and invalid tags (via the use of the
-`tag-state` event) outside of the `<b-form-tags>` component, you can disable the built in duplicate
-and invalid messages by setting the props `duplicate-tag-text` and `invalid-tag-text` (respectively)
-to either an empty string (`''`) or `null`.
+Если вы предоставляете свой собственный отзыв о повторяющихся и недействительных тегах (с помощью события `tag-state`) за пределами компонента `<b-form-tags>`, вы можете отключить встроенные повторяющиеся и недопустимые сообщения с помощью установка `duplicate-tag-text` и `invalid-tag-text` (соответственно) либо на пустую строку (`''`) или `null`.
 
 ```html
 <template>
   <div>
-    <label for="tags-state-event">Enter tags</label>
+    <label for="tags-state-event">Введите теги</label>
     <b-form-tags
       input-id="tags-state-event"
       v-model="tags"
@@ -280,8 +251,8 @@ to either an empty string (`''`) or `null`.
       separator=" "
       @tag-state="onTagState"
     ></b-form-tags>
-    <p class="mt-2">Tags: {{ tags }}</p>
-    <p>Event values:</p>
+    <p class="mt-2">Теги: {{ tags }}</p>
+    <p>Значения событий:</p>
     <ul>
         <li>validTags: {{ validTags }}</li>
         <li>invalidTags: {{ invalidTags }}</li>
@@ -316,24 +287,21 @@ to either an empty string (`''`) or `null`.
 <!-- b-form-tags-tags-state-event.vue -->
 ```
 
-## Limiting tags
+## Ограничение тегов
 
-If you want to limit the amount of tags the user is able to add use the `limit` prop. When
-configured, adding more tags than the `limit` allows is only possible by the `v-model`.
+Если вы хотите ограничить количество тегов, которые пользователь может добавить, используйте опцию `limit`. Когда настроено, добавление большего количества тегов, чем позволяет `limit`, возможно только с помощью `v-model`.
 
-When the limit of tags is reached, the user is still able to type but adding more tags is disabled.
-A message is shown to give the user feedback about the reached limit. This message can be configured
-by the `limit-tags-text` prop. Setting it to either an empty string (`''`) or `null` will disable
-the feedback.
+Когда лимит тегов достигнут, пользователь по-прежнему может печатать, но добавление дополнительных тегов отключено.
+Отображается сообщение с обратной связью пользователя о достигнутом пределе. Это сообщение можно настроить с помощью свойства `limit-tags-text`. Установка либо пустой строки (`''`) или `null` отключит обратную связь.
 
-Removing tags is unaffected by the `limit` prop.
+Свойство `limit` не влияет на удаление тегов.
 
 ```html
 <template>
   <div>
-    <label for="tags-limit">Enter tags</label>
+    <label for="tags-limit">Введите теги</label>
     <b-form-tags input-id="tags-limit" v-model="value" :limit="limit" remove-on-delete></b-form-tags>
-    <p class="mt-2">Value: {{ value }}</p>
+    <p class="mt-2">Значение: {{ value }}</p>
   </div>
 </template>
 
@@ -351,88 +319,81 @@ Removing tags is unaffected by the `limit` prop.
 <!-- b-form-tags-limit.vue -->
 ```
 
-## Custom rendering with default scoped slot
+## Пользовательский рендеринг со слотом по умолчанию
 
-If you fancy a different look and feel for the tags control, you can provide your own custom
-rendering via the default scoped slot. You can either create your own tags, or use our helper
-`<b-form-tag>` component.
+Если вам нравится другой внешний вид элемента управления тегами, вы можете предоставить свой собственный рендеринг через слот с заданной по умолчанию областью. Вы можете создать свои собственные теги или использовать наш вспомогательный компонент `<b-form-tag>`.
 
-### Scope properties
+### Свойства области
 
-The default scoped slot provides numerous properties and methods for use in rendering your custom
-interface. Not all properties or methods are required to generate your interface.
+Слот с заданной областью действия по умолчанию предоставляет множество свойств и методов для использования при рендеринге вашего пользовательского интерфейса. Не все свойства или методы требуются для создания вашего интерфейса.
 
-The default slot scope properties are as follows:
+Свойства области действия слота по умолчанию следующие:
 
-| Property           | Type                     | Description                                                                                                                                            |
+| Свойство           | Тип                     | Описание                                                                                                                                            |
 | ------------------ | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `addButtonText`    | String                   | The value of the `add-button-text` prop                                                                                                                |
-| `addButtonVariant` | String                   | The value of the `add-button-variant` prop                                                                                                             |
-| `addTag`           | Function                 | Method to add a new tag. Assumes the tag is the value of the input, but optionally accepts one argument which is the tag value to be added             |
-| `disableAddButton` | Boolean                  | Will be `true` if the tag(s) in the input cannot be added (all invalid and/or duplicates)                                                              |
-| `disabled`         | Boolean                  | `true` if the component is in the disabled state. Value of the `disabled` prop                                                                         |
-| `duplicateTagText` | String                   | The value of the `duplicate-tag-text` prop                                                                                                             |
-| `duplicateTags`    | Array                    | Array of the duplicate tag(s) the user has entered                                                                                                     |
-| `form`             | String                   | <span class="badge badge-secondary">v2.20.0+</span> The value of the `form` prop                                                                       |
-| `inputAttrs`       | Object                   | Object of attributes to apply to the new tag input element via `v-bind="inputAttrs"`. See below for details                                            |
-| `inputHandlers`    | Object                   | Object of event handlers to apply to the new tag input element via `v-on="inputHandlers"`. See below for details                                       |
-| `inputId`          | String                   | ID to add to the new tag input element. Defaults to prop `input-id`. If not provided a unique ID is auto-generated. Also available via 'inputAttrs.id' |
-| `inputType`        | String                   | <span class="badge badge-secondary">v2.3.0+</span> Type of input to render (normalized version of prop `input-type`)                                   |
-| `invalidTagText`   | String                   | The value of the `invalid-tag-text` prop                                                                                                               |
-| `invalidTags`      | Array                    | Array of the invalid tag(s) the user has entered                                                                                                       |
-| `isDuplicate`      | Boolean                  | `true` if the user input contains duplicate tag(s)                                                                                                     |
-| `isInvalid`        | Boolean                  | `true` if the user input contains invalid tag(s)                                                                                                       |
-| `isLimitReached`   | Boolean                  | <span class="badge badge-secondary">v2.17.0+</span> `true` if a `limit` is configured and the amount of tags has reached the limit                     |
-| `limitTagsText`    | String                   | <span class="badge badge-secondary">v2.17.0+</span> The value of the `limit-tags-text` prop                                                            |
-| `limit`            | String                   | <span class="badge badge-secondary">v2.17.0+</span> The value of the `limit` prop                                                                      |
-| `noTagRemove`      | Boolean                  | <span class="badge badge-secondary">v2.21.0+</span> The value of the `no-tag-remove` prop                                                              |
-| `placeholder`      | String                   | The value of the `placeholder` prop                                                                                                                    |
-| `removeTag`        | Function                 | Method to remove a tag. Accepts one argument which is the tag value to remove                                                                          |
-| `required`         | Boolean                  | <span class="badge badge-secondary">v2.20.0+</span> The value of the `required` prop                                                                   |
-| `separator`        | String                   | The value of the `separator` prop                                                                                                                      |
-| `size`             | String                   | The value of the `size` prop                                                                                                                           |
-| `state`            | Boolean                  | The contextual state of the component. Value of the `state` prop. Possible values are `true`, `false` or `null`                                        |
-| `tagClass`         | String, Array, or Object | The value of the `tag-variant` prop. Class (or classes) to apply to the tag elements                                                                   |
-| `tagPills`         | Boolean                  | The value of the `tag-pills` prop                                                                                                                      |
-| `tagRemoveLabel`   | String                   | Value of the `tag-remove-label` prop. Used as the `aria-label` attribute on the remove button of tags                                                  |
-| `tagVariant`       | String                   | The value of the `tag-variant` prop                                                                                                                    |
-| `tags`             | Array                    | Array of current tag strings                                                                                                                           |
+| `addButtonText`    | String                   | Значение свойства `add-button-text`                                                                                                                |
+| `addButtonVariant` | String                   | Значение свойства `add-button-variant`                                                                                                             |
+| `addTag`           | Function                 | Метод добавления нового тега. Предполагает, что тег является значением ввода, но дополнительно принимает один аргумент, который является значением тега, которое нужно добавить             |
+| `disableAddButton` | Boolean                  | Будет `true`, если тег(и) во входных данных не может быть добавлен (все недействительные и/или дублированные)                                                              |
+| `disabled`         | Boolean                  | `true`, если компонент находится в отключенном состоянии. Значение свойства `disabled`                                                                         |
+| `duplicateTagText` | String                   | Значение свойства `duplicate-tag-text`                                                                                                             |
+| `duplicateTags`    | Array                    | Массив повторяющихся тегов, введенных пользователем                                                                                                     |
+| `form`             | String                   | <span class="badge badge-secondary">v2.20.0+</span> Значение свойства `form`                                                                       |
+| `inputAttrs`       | Object                   | Объект атрибутов, применяемых к новому элементу ввода тега через `v-bind="inputAttrs"`. Смотрите ниже для деталей                                            |
+| `inputHandlers`    | Object                   | Объект обработчиков событий для применения к новому элементу ввода тега через`v-on="inputHandlers"`. Смотрите ниже для деталей                                       |
+| `inputId`          | String                   | ID для добавления к новому элементу ввода тега. По умолчанию используется параметр `input-id`. Если не указан, автоматически создается уникальный идентификатор. Также доступно через 'inputAttrs.id' |
+| `inputType`        | String                   | <span class="badge badge-secondary">v2.3.0+</span> Тип ввода для рендеринга (нормализованная версия свойства `input-type`)                                   |
+| `invalidTagText`   | String                   | Значение свойства `invalid-tag-text`                                                                                                               |
+| `invalidTags`      | Array                    | Массив недействительных тегов, введенных пользователем                                                                                                       |
+| `isDuplicate`      | Boolean                  | `true`, если пользовательский ввод содержит повторяющиеся теги                                                                                                     |
+| `isInvalid`        | Boolean                  | `true`, если пользовательский ввод содержит недопустимые теги                                                                                                       |
+| `isLimitReached`   | Boolean                  | <span class="badge badge-secondary">v2.17.0+</span> `true`, если `limit` настроен и количество тегов достигло лимита                     |
+| `limitTagsText`    | String                   | <span class="badge badge-secondary">v2.17.0+</span> Значение свойства `limit-tags-text`                                                            |
+| `limit`            | String                   | <span class="badge badge-secondary">v2.17.0+</span> Значение свойства `limit`                                                                      |
+| `noTagRemove`      | Boolean                  | <span class="badge badge-secondary">v2.21.0+</span> Значение свойства `no-tag-remove`                                                              |
+| `placeholder`      | String                   | Значение свойства `placeholder`                                                                                                                    |
+| `removeTag`        | Function                 | Способ удаления тега. Принимает один аргумент, который является значением тега для удаления                                                                          |
+| `required`         | Boolean                  | <span class="badge badge-secondary">v2.20.0+</span> Значение свойства `required`                                                                   |
+| `separator`        | String                   | Значение свойства `separator`                                                                                                                      |
+| `size`             | String                   | Значение свойства `size`                                                                                                                           |
+| `state`            | Boolean                  | Контекстное состояние компонента. Значение свойства `state`. Возможные значения: `true`, `false` или `null`                                        |
+| `tagClass`         | String, Array, or Object | Значение свойства `tag-variant`. Класс (или классы) для применения к тегу                                                                   |
+| `tagPills`         | Boolean                  | Значение свойства `tag-pills`                                                                                                                      |
+| `tagRemoveLabel`   | String                   | Значение свойства `tag-remove-label`. Используется как атрибут `aria-label` на кнопке удаления тегов                                                  |
+| `tagVariant`       | String                   | Значение свойства `tag-variant`                                                                                                                    |
+| `tags`             | Array                    | Массив текущих строк тегов                                                                                                                           |
 
-#### `inputAttrs` object properties
+#### Свойства объекта `inputAttrs`
 
-The `inputAttrs` object contains attributes to bind (`v-bind`) to the new tag input element.
+Объект `inputAttrs` содержит атрибуты для привязки (`v-bind`) к новому элементу ввода тега.
 
-| Property   | Type    | Description                                                                  |
+| Свойство   | Тип     | Описание                                                                  |
 | ---------- | ------- | ---------------------------------------------------------------------------- |
-| `disabled` | Boolean | The `disabled` attribute for the new tag input. Value of the `disabled` prop |
-| `form`     | String  | The `form` attribute for the new tag input. Value of the `form` prop         |
-| `id`       | String  | the `id` attribute for the new tag input                                     |
-| `value`    | String  | The `value` attribute for the new tag input                                  |
+| `disabled` | Boolean | Атрибут `disabled` для ввода нового тега. Значение свойства `disabled` |
+| `form`     | String  | Атрибут `form` для ввода нового тега. Значение свойства `form`         |
+| `id`       | String  | Атрибут `id` для ввода нового тега                                     |
+| `value`    | String  | Атрибут `value` для ввода нового тега                                  |
 
-The `inputAttrs` object will also include any attributes set via the `input-attrs` prop. Note that
-the above attributes take precedence over any of the same attributes specified in the `input-attrs`
+Объект `inputAttrs` также будет включать любые атрибуты, установленные через свойство `input-attrs`. Обратите внимание, что указанные выше атрибуты имеют приоритет над любыми из тех же атрибутов, указанных в свойстве `input-attrs`
 prop.
 
-#### `inputHandlers` object properties
+#### Свойства объекта `inputHandlers`
 
-The `inputHandlers` object contains event handlers to bind (`v-on`) to the new tag input element.
+Объект `inputHandlers` содержит обработчики событий для привязки (`v-on`) к новому элементу ввода тега.
 
-| Property  | Type     | Description                                                                                                                                                                    |
+| Свойство  | Тип      | Описание                                                                                                                                                                    |
 | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `change`  | Function | Event handler for the input element `change` event. Accepts a single argument of either an event object or a string. Change will trigger adding the tag.                       |
-| `input`   | Function | Event handler for the input element `input` event. Accepts a single argument of either an event object or a string. Updates the internal v-model for the new tag input element |
-| `keydown` | Function | Event handler for the input element `keydown` <kbd>Enter</kbd> and <kbd>Del</kbd> events. Accepts a single argument which is the native keydown event object                   |
+| `change`  | Function | Обработчик события элемента ввода `change`. Принимает один аргумент объекта события или строки. Изменение вызовет добавление тега.                       |
+| `input`   | Function | Обработчик события элемента ввода `input`. Принимает один аргумент объекта события или строки. Обновляет внутреннюю v-model для нового элемента ввода тега |
+| `keydown` | Function | Обработчик события элемента ввода `keydown` <kbd>Enter</kbd> и <kbd>Del</kbd>. Принимает единственный аргумент, который является собственным объектом события keydown                   |
 
-The `change` handler, when needed, must be enabled via the `add-on-change` prop, otherwise it is a
-noop method.
+При необходимости обработчик `change` должен быть включен через свойство `add-on-change`, в противном случае это метод noop.
 
-### Using native browser inputs
+### Использование собственных входов браузера
 
-The scope contains attributes and event handlers that can be directly bound to native `<input>` or
-`<select>` elements.
+Область содержит атрибуты и обработчики событий, которые могут быть напрямую привязаны к собственным элементам `<input>` или `<select>`.
 
-The following example includes the suggested ARIA attributes and roles needed for screen-reader
-support.
+В следующем примере представлены предлагаемые атрибуты и роли ARIA, необходимые для поддержки программы чтения с экрана.
 
 ```html
 <template>
@@ -443,10 +404,10 @@ support.
           <input
             v-bind="inputAttrs"
             v-on="inputHandlers"
-            placeholder="New tag - Press enter to add"
+            placeholder="Новый тег - нажмите клавишу ВВОД, чтобы добавить"
             class="form-control">
           <b-input-group-append>
-            <b-button @click="addTag()" variant="primary">Add</b-button>
+            <b-button @click="addTag()" variant="primary">Добавить</b-button>
           </b-input-group-append>
         </b-input-group>
         <ul
@@ -456,9 +417,8 @@ support.
           aria-atomic="false"
           aria-relevant="additions removals"
         >
-          <!-- Always use the tag value as the :key, not the index! -->
-          <!-- Otherwise screen readers will not read the tag
-               additions and removals correctly -->
+          <!-- Всегда используйте значение тега в качестве ключа:, а не индекса! -->
+          <!-- В противном случае программы чтения с экрана не будут правильно читать добавления и удаления тегов -->
           <b-card
             v-for="tag in tags"
             :key="tag"
@@ -494,16 +454,11 @@ support.
 <!-- form-tags-custom-native.vue -->
 ```
 
-### Using custom form components
+### Использование компонентов пользовательской формы
 
-The scope contains attributes and event handlers that can be directly bound to _most_ custom inputs
-or select components (the event handlers accept either a string tag value _or_ a native event
-object). Any component that emits `input` as characters are typed, and (optionally) emits `change`
-when the input value changes (i.e on blur or select), and uses the prop `value` as the v-model,
-should work without modification.
+Область содержит атрибуты и обработчики событий, которые могут быть напрямую привязаны к _ большинству_ настраиваемых входных данных или выбранным компонентам (обработчики событий принимают либо значение строкового тега _, либо_ собственный объект события). Любой компонент, который испускает `input` при вводе символов и (необязательно) испускает `change` при изменении входного значения (например, при размытии или выборе) и использует свойство `value` в качестве v-model, должен работать без изменений.
 
-In this example, we are using the [`<b-form-tag>` helper component](#b-form-tag-helper-component),
-but feel free to render tags using standard HTML or components.
+В этом примере мы используем вспомогательный компонент [`<b-form-tag>` helper component](#b-form-tag-helper-component), но не стесняйтесь отображать теги, используя стандартный HTML или компоненты.
 
 ```html
 <template>
@@ -514,11 +469,11 @@ but feel free to render tags using standard HTML or components.
           <b-form-input
             v-bind="inputAttrs"
             v-on="inputHandlers"
-            placeholder="New tag - Press enter to add"
+            placeholder="Новый тег - нажмите клавишу ВВОД, чтобы добавить"
             class="form-control"
           ></b-form-input>
           <b-input-group-append>
-            <b-button @click="addTag()" variant="primary">Add</b-button>
+            <b-button @click="addTag()" variant="primary">Добавить</b-button>
           </b-input-group-append>
         </b-input-group>
         <div class="d-inline-block" style="font-size: 1.5rem;">
@@ -549,8 +504,7 @@ but feel free to render tags using standard HTML or components.
 <!-- form-tags-custom-components-input.vue -->
 ```
 
-The following is an example of using a custom select component for choosing from a pre-defined set
-of tags:
+Ниже приведен пример использования настраиваемого компонента выбора для выбора из предопределенного набора тегов:
 
 ```html
 <template>
@@ -584,7 +538,7 @@ of tags:
           >
             <template #first>
               <!-- This is required to prevent bugs with Safari -->
-              <option disabled value="">Choose a tag...</option>
+              <option disabled value="">Выберите тег...</option>
             </template>
           </b-form-select>
         </template>
@@ -612,8 +566,7 @@ of tags:
 <!-- b-form-tags-components-select.vue -->
 ```
 
-If the custom input is using custom event names that mimic `input` and `change`, and/or needs the
-`.native` modifier for keydown, you can do something similar to below to bind the event handlers:
+Если пользовательский ввод использует пользовательские имена событий, имитирующие `input` и `change`, и/или требует модификатора `.native` для нажатия клавиши, вы можете сделать что-то похожее на приведенное ниже, чтобы связать обработчики событий:
 
 ```html
 <template #default="{ inputAttrs, inputHandlers, removeTag, tags }">
@@ -625,24 +578,23 @@ If the custom input is using custom event names that mimic `input` and `change`,
     @keydown.native="inputHandlers.keydown($event)"
   ></custom-input>
   <template v-for="tag in tags">
-    <!-- Your custom tag list here -->
+    <!-- Ваш список пользовательских тегов здесь -->
   </template>
 </template>
 ```
 
-The `inputHandlers.input` handler **must** be bound to an event that updates with each character
-entered by the user for the _as-you-type_ tag validation to work.
+Обработчик `inputHandlers.input` **должен** быть привязан к событию, которое обновляется с каждым введенным пользователем символом, чтобы проверка тега _пока-вы-набираете_ работала.
 
-### Advanced custom rendering usage
+### Расширенное использование пользовательского рендеринга
 
-In situations where the `inputHandlers` will not work with your custom input, or if you need greater
-control over tag creation, you can take advantage of the additional properties provided via the
-default slot's scope.
+В ситуациях, когда `inputHandlers` не будет работать с вашим пользовательским вводом, или если вам нужно больше
+контроля над созданием тегов, вы можете воспользоваться дополнительными свойствами, предоставляемыми через
+область действия слота по умолчанию.
 
 ```html
 <template>
   <div>
-    <b-form-checkbox switch size="lg" v-model="disabled">Disable</b-form-checkbox>
+    <b-form-checkbox switch size="lg" v-model="disabled">Отключено</b-form-checkbox>
     <b-form-tags
       v-model="value"
       @input="resetInputValue()"
@@ -655,7 +607,7 @@ default slot's scope.
     >
       <template v-slot="{tags, inputId, placeholder, disabled, addTag, removeTag }">
         <b-input-group>
-          <!-- Always bind the id to the input so that it can be focused when needed -->
+          <!-- Всегда привязывайте идентификатор к вводу, чтобы его можно было сфокусировать при необходимости -->
           <b-form-input
             v-model="newTag"
             :id="inputId"
@@ -664,7 +616,7 @@ default slot's scope.
             :formatter="formatter"
           ></b-form-input>
           <b-input-group-append>
-            <b-button @click="addTag(newTag)" :disabled="disabled" variant="primary">Add</b-button>
+            <b-button @click="addTag(newTag)" :disabled="disabled" variant="primary">Добавить</b-button>
           </b-input-group-append>
         </b-input-group>
         <b-form-invalid-feedback :state="state">
@@ -680,13 +632,13 @@ default slot's scope.
                 variant="outline-danger"
                 @click="removeTag(tag)"
               >
-                remove tag
+                Удалить тег
               </b-button>
             </span>
           </li>
         </ul>
         <b-form-text v-else>
-          There are no tags specified. Add a new tag above.
+          Теги не указаны. Добавьте новый тег выше.
         </b-form-text>
       </template>
     </b-form-tags>
@@ -722,13 +674,12 @@ default slot's scope.
 <!-- form-tags-custom-components-advanced.vue -->
 ```
 
-The following is an example of using the `<b-dropdown>` component for choosing or searching from a
-pre-defined set of tags:
+Ниже приведен пример использования компонента `<b-dropdown>` для выбора или поиска из заранее определенного набора тегов:
 
 ```html
 <template>
   <div>
-    <b-form-group label="Tagged input using dropdown" label-for="tags-with-dropdown">
+    <b-form-group label="Ввод тегов с использованием раскрывающегося списка" label-for="tags-with-dropdown">
       <b-form-tags id="tags-with-dropdown" v-model="value" no-outer-focus class="mb-2">
         <template v-slot="{ tags, disabled, addTag, removeTag }">
           <ul v-if="tags.length > 0" class="list-inline d-inline-block mb-2">
@@ -744,7 +695,7 @@ pre-defined set of tags:
 
           <b-dropdown size="sm" variant="outline-secondary" block menu-class="w-100">
             <template #button-content>
-              <b-icon icon="tag-fill"></b-icon> Choose tags
+              <b-icon icon="tag-fill"></b-icon> Выбрать теги
             </template>
             <b-dropdown-form @submit.stop.prevent="() => {}">
               <b-form-group
@@ -774,7 +725,7 @@ pre-defined set of tags:
               {{ option }}
             </b-dropdown-item-button>
             <b-dropdown-text v-if="availableOptions.length === 0">
-              There are no tags available to select
+              Нет тегов, доступных для выбора
             </b-dropdown-text>
           </b-dropdown>
         </template>
@@ -810,7 +761,7 @@ pre-defined set of tags:
       },
       searchDesc() {
         if (this.criteria && this.availableOptions.length === 0) {
-          return 'There are no tags matching your search criteria'
+          return 'Нет тегов, соответствующих вашим критериям поиска'
         }
         return ''
       }
@@ -827,9 +778,9 @@ pre-defined set of tags:
 <!-- b-form-tags-dropdown-example.vue -->
 ```
 
-### Creating wrapper components
+### Создание компонентов оболочки
 
-You can easily create a custom wrapper component with your preferred rendering style as follows:
+Вы можете легко создать настраиваемый компонент-оболочку с вашим предпочтительным стилем рендеринга следующим образом:
 
 ```html
 <template>
@@ -860,21 +811,16 @@ You can easily create a custom wrapper component with your preferred rendering s
 </script>
 ```
 
-## `<b-form-tag>` helper component
+## Вспомогательный компонент `<b-form-tag>`
 
-BootstrapVue provides the helper component `<b-form-tag>`, for use with the default scoped slot of
-`<b-form-tags>`. The component is based upon [`<b-badge>`](/docs/components/badge) and
-[`<b-button-close>`](/docs/components/button/#comp-ref-b-button-close).
+BootstrapVue предоставляет вспомогательный компонент `<b-form-tag>`, для использования со слотом с заданной областью действия по умолчанию `<b-form-tags>`. Компонент основан на [`<b-badge>`](/docs/components/badge) и [`<b-button-close>`](/docs/components/button/#comp-ref-b-button-close).
 
-`<b-form-tag>` supports the same variants as `<b-badge>` and also supports `pill` styling. Sizing is
-based on the containing element's font-size.
+`<b-form-tag>` поддерживает те же варианты, что и `<b-badge>`, а также поддерживает стили `pill`. Размер зависит от размера шрифта содержащего элемента.
 
-The `remove` event is emitted when the `<b-form-tag>` remove button is clicked.
+Событие `remove` генерируется при нажатии кнопки удаления `<b-form-tag>`.
 
-Tags that are too wide for their parent container will automatically have their text content
-truncated with an ellipsis. For this reason, it is always good practice to supply a title via the
-`title` prop when using the default slot of `<b-form-tag>` for the tag content.
+Теги, которые слишком велики для родительского контейнера, автоматически усекают текстовое содержимое с многоточием. По этой причине всегда рекомендуется указывать заголовок через свойство `title` при использовании слота по умолчанию `<b-form-tag>` для содержимого тега.
 
-Note `<b-form-tag>` requires BootstrapVue's custom CSS/SCSS for proper styling.
+Обратите внимание, что для `<b-form-tag>` требуется собственный CSS/SCSS BootstrapVue для правильного оформления.
 
 <!-- Component reference added automatically from component package.json -->

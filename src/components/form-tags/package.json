@@ -4,7 +4,7 @@
   "meta": {
     "title": "Form Tags",
     "version": "2.2.0",
-    "description": "Lightweight custom tagged input form control, with options for customized interface rendering, duplicate tag detection and optional tag validation.",
+    "description": "Легкий пользовательский элемент управления формой ввода с тегами, с параметрами для настраиваемого рендеринга интерфейса, обнаружения повторяющихся тегов и дополнительной проверки тегов.",
     "components": [
       {
         "component": "BFormTags",
@@ -15,194 +15,194 @@
         "props": [
           {
             "prop": "addButtonText",
-            "description": "Text for the built in 'Add' button. Slot `add-button-text' takes precedence"
+            "description": "Текст для встроенной кнопки 'Add'. Слот `add-button-text' имеет приоритет"
           },
           {
             "prop": "addButtonVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the 'Add' button"
+            "description": "Применяет один из вариантов цвета темы Bootstrap к кнопке 'Add'"
           },
           {
             "prop": "addOnChange",
-            "description": "When set, enables adding the tag on the input's 'change' event"
+            "description": "Если установлено, позволяет добавить тег к событию ввода 'change'"
           },
           {
             "prop": "duplicateTagText",
-            "description": "The message when duplicate tags are detected. Set to an empty string to disable the message"
+            "description": "Сообщение при обнаружении повторяющихся тегов. Установите пустую строку, чтобы отключить сообщение"
           },
           {
             "prop": "feedbackAriaLive",
             "version": "2.22.0",
-            "description": "Value to use for the `aria-live` attribute on the feedback text"
+            "description": "Значение для атрибута `aria-live` в тексте обратной связи"
           },
           {
             "prop": "ignoreInputFocusSelector",
             "version": "2.16.0",
-            "description": "Ignore certain elements from the click to focus input routine, specified by css selector(s)"
+            "description": "Игнорировать определенные элементы из процедуры ввода клика для фокусировки, заданной селектором (-ами) css"
           },
           {
             "prop": "inputAttrs",
-            "description": "Additional attributes to apply to the new tag input element"
+            "description": "Дополнительные атрибуты для применения к новому элементу ввода тега"
           },
           {
             "prop": "inputClass",
-            "description": "Class (or classes) to apply to the new tag input element"
+            "description": "Класс (или классы) для применения к новому элементу ввода тега"
           },
           {
             "prop": "inputId",
-            "description": "ID to apply to the new tag input element. If not provided, a unique ID will be auto generated"
+            "description": "Идентификатор, применяемый к новому элементу ввода тега. Если не указан, будет автоматически сгенерирован уникальный идентификатор"
           },
           {
             "prop": "inputType",
             "version": "2.3.0",
-            "description": "Specifies the type of input to use: 'text', 'email', 'tel', 'url', or 'number'. Default is 'text'"
+            "description": "Определяет используемый тип ввода: 'text', 'email', 'tel', 'url' или 'number'. По умолчанию 'text'"
           },
           {
             "prop": "invalidTagText",
-            "description": "The error message when invalid tags are detected. Set to an empty string to disable the message"
+            "description": "Сообщение об ошибке при обнаружении недействительных тегов. Установите пустую строку, чтобы отключить сообщение"
           },
           {
             "prop": "limit",
             "version": "2.17.0",
-            "description": "The maximum amount of tags that can be added. The limit can still be exceeded if manipulated outside of the component"
+            "description": "Максимальное количество тегов, которые можно добавить. Предел все еще может быть превышен, если манипулировать им за пределами компонента"
           },
           {
             "prop": "limitTagsText",
             "version": "2.17.0",
-            "description": "The message when the limit is reached. Set to an empty string to disable the message"
+            "description": "Сообщение о достижении лимита. Установите пустую строку, чтобы отключить сообщение"
           },
           {
             "prop": "name",
-            "description": "Sets the value of the 'name' attribute on the form control. When set, creates a hidden input for each tag"
+            "description": "Устанавливает значение атрибута 'name' в элементе управления формы. Когда установлено, создает скрытый ввод для каждого тега"
           },
           {
             "prop": "noAddOnEnter",
-            "description": "When set, disables adding the tag on the input's 'keydown.enter' event"
+            "description": "Если установлено, отключает добавление тега к событию ввода 'keydown.enter'"
           },
           {
             "prop": "noOuterFocus",
-            "description": "When set, disables the focus styling of the component root element"
+            "description": "Если установлено, отключает стиль фокуса корневого элемента компонента"
           },
           {
             "prop": "noTagRemove",
             "version": "2.21.0",
-            "description": "When set, the tags will not have a remove button"
+            "description": "Если установлено, у тегов не будет кнопки удаления"
           },
           {
             "prop": "placeholder",
-            "description": "Sets the 'placeholder' attribute value on the form control"
+            "description": "Устанавливает значение атрибута 'placeholder' в элементе управления формы"
           },
           {
             "prop": "removeOnDelete",
-            "description": "When set, enables removal of last tag in tags when user presses delete or backspace and the input is empty"
+            "description": "Если установлено, разрешает удаление последнего тега в тегах, когда пользователь нажимает клавишу delete или backspace, а ввод пуст"
           },
           {
             "prop": "separator",
-            "description": "Separator character(s) that will trigger a tag to be created"
+            "description": "Символ-разделитель, запускающий создание тега"
           },
           {
             "prop": "tagClass",
-            "description": "Class (or classes) to apply to the tags"
+            "description": "Класс (или классы) для применения к тегам"
           },
           {
             "prop": "tagPills",
-            "description": "Makes the built in tags have a pill appearance"
+            "description": "Делает встроенные метки похожими на таблетки"
           },
           {
             "prop": "tagRemoveLabel",
-            "description": "The value of the 'aria-label' attribute on the remove button in the tag"
+            "description": "Значение атрибута 'aria-label' на кнопке удаления в теге"
           },
           {
             "prop": "tagRemovedLabel",
             "version": "2.5.0",
-            "description": "Label for the aria-live region that announces removed tag(s) to screen reader users"
+            "description": "Ярлык для региона aria-live, который сообщает об удаленных тегах пользователям программ чтения с экрана"
           },
           {
             "prop": "tagValidator",
-            "description": "Optional tag validator method. Passed a single argument of tag being added. Should return 'true' if the tag passes validation, or 'false' if the tag cannot be added"
+            "description": "Необязательный метод проверки тегов. Передан единственный аргумент добавляемого тега. Должен возвращать 'true', если тег прошел проверку, или 'false', если тег не может быть добавлен"
           },
           {
             "prop": "tagVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the tags"
+            "description": "Применяет к тегам один из вариантов цвета темы Bootstrap"
           },
           {
             "prop": "value",
-            "description": "Array of current tags. This is the v-model"
+            "description": "Массив текущих тегов. Это v-model"
           }
         ],
         "events": [
           {
             "event": "blur",
-            "description": "Emitted when component loses focus",
+            "description": "Излучается, когда компонент теряет фокус",
             "args": [
               {
                 "arg": "event",
                 "type": "FocusEvent",
-                "description": "Native blur event (before any formatting)"
+                "description": "Собственное событие размытия (до любого форматирования)"
               }
             ]
           },
           {
             "event": "focus",
-            "description": "Emitted when component gains focus",
+            "description": "Излучается, когда компонент получает фокус",
             "args": [
               {
                 "arg": "event",
                 "type": "FocusEvent",
-                "description": "Native focus event (before any formatting)"
+                "description": "Событие нативного фокуса (до любого форматирования)"
               }
             ]
           },
           {
             "event": "focusin",
-            "description": "Emitted when internal elements of component gain focus.",
+            "description": "Излучается, когда внутренние элементы компонента получают фокус.",
             "args": [
               {
                 "arg": "event",
                 "type": "FocusEvent",
-                "description": "Native focusin event (before any formatting)"
+                "description": "Собственное событие focusin (до любого форматирования)"
               }
             ]
           },
           {
             "event": "focusout",
-            "description": "Emitted when internal elements of component lose focus.",
+            "description": "Излучается, когда внутренние элементы компонента теряют фокус",
             "args": [
               {
                 "arg": "event",
                 "type": "FocusEvent",
-                "description": "Native focusout event (before any formatting)"
+                "description": "Собственное событие фокусировки (до любого форматирования)"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Emitted when the tags changes. Updates the v-model",
+            "description": "Выдается при изменении тегов. Обновляет v-model",
             "args": [
               {
                 "arg": "value",
                 "type": "Array",
-                "description": "Array of current tags"
+                "description": "Массив текущих тегов"
               }
             ]
           },
           {
             "event": "tag-state",
-            "description": "Emitted when tags in the user input are parsed",
+            "description": "Излучается, когда теги в вводе пользователя анализируются",
             "args": [
               {
                 "arg": "validTags",
                 "type": "Array",
-                "description": "Array of new tag(s) added (or that will be added). Will be zero length if no tags added"
+                "description": "Массив новых добавленных тегов (или которые будут добавлены). Будет нулевой длиной, если не добавлены теги"
               },
               {
                 "arg": "invalidTags",
                 "type": "Array",
-                "description": "Array of tag(s) that can not added because they did not pass validation. Will be zero length if no invalid tags"
+                "description": "Массив тегов, которые нельзя добавить, потому что они не прошли проверку. Будет нулевой длиной, если нет недопустимых тегов"
               },
               {
                 "arg": "duplicateTags",
                 "type": "Array",
-                "description": "Array of tag(s) that can not added because they would be a duplicate tag. Will be zero length if no duplicate tags"
+                "description": "Массив тегов, которые нельзя добавить, потому что они могут быть дублирующимися тегами. Будет нулевой длины, если нет повторяющихся тегов"
               }
             ]
           }
@@ -210,56 +210,56 @@
         "slots": [
           {
             "name": "add-button-text",
-            "description": "Content to place in the built in  'Add' button. Takes precedence over the 'add-button-text' prop. Not used when the default scoped slot is provided"
+            "description": "Контент для размещения во встроенной кнопке 'Add'. Имеет приоритет над свойством 'add-button-text'. Не используется, если предоставлен слот с заданной областью действия по умолчанию"
           },
           {
             "name": "default",
-            "description": "Slot to override the default rendering of the tags component",
+            "description": "Слот для отмены рендеринга компонента тегов по умолчанию",
             "scope": [
               {
                 "prop": "addButtonText",
                 "type": "String",
-                "description": "Value of the 'add-button-text' prop"
+                "description": "Значение свойства 'add-button-text'"
               },
               {
                 "prop": "addButtonVariant",
                 "type": "String",
-                "description": "Value of the 'add-button-variant' prop"
+                "description": "Значение свойства 'add-button-variant'"
               },
               {
                 "prop": "addTag",
                 "type": "Function",
-                "description": "Method to add a new tag. Assumes the tag is the value of the input, but optionally accepts one argument which is the tag value to be added"
+                "description": "Метод добавления нового тега. Предполагает, что тег является значением ввода, но дополнительно принимает один аргумент, который является значением тега, которое нужно добавить"
               },
               {
                 "prop": "disableAddButton",
                 "type": "Boolean",
-                "description": "Will be `true` if the tag(s) in the input cannot be added (all invalid and/or duplicates)"
+                "description": "Будет `true`, если тег(и) во входных данных не может быть добавлен (все недействительные и/или дублированные)"
               },
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "If the component is in the disabled state. Value of the 'disabled' prop"
+                "description": "Если компонент находится в отключенном состоянии. Значение свойства 'disabled'"
               },
               {
                 "prop": "duplicateTagText",
                 "type": "String",
-                "description": "The value of the 'duplicate-tag-text' prop"
+                "description": "Значение свойства 'duplicate-tag-text'"
               },
               {
                 "prop": "duplicateTags",
                 "type": "Array",
-                "description": "Array of duplicate tag(s) that could not be added"
+                "description": "Массив повторяющихся тегов, которые не удалось добавить"
               },
               {
                 "prop": "form",
                 "type": "String",
-                "description": "Value of the 'form' prop"
+                "description": "Значение свойства 'form'"
               },
               {
                 "prop": "inputAttrs",
                 "type": "Object",
-                "description": "Object of attributes to apply to native input elements via 'v-bind=\"inputAttrs\"'"
+                "description": "Объект атрибутов для применения к собственным элементам ввода через 'v-bind=\"inputAttrs\"'"
               },
               {
                 "prop": "inputClass",
@@ -268,78 +268,78 @@
                   "Array",
                   "Object"
                 ],
-                "description": "Class (or classes) to apply to the new tag input element. Value of the 'input-class' prop"
+                "description": "Класс (или классы) для применения к новому элементу ввода тега. Значение свойства 'input-class'"
               },
               {
                 "prop": "inputHandlers",
                 "type": "Object",
-                "description": "Object of event handlers to apply to native input elements via 'v-on=\"inputHandlers\"'"
+                "description": "Объект обработчиков событий для применения к собственным элементам ввода через 'v-on=\"inputHandlers\"'"
               },
               {
                 "prop": "inputId",
                 "type": "String",
-                "description": "ID to add to the new tag input element. Defaults to prop 'input-id'. If not provided a unique ID is auto-generated. Also available via 'inputAttrs.id'"
+                "description": "ID для добавления к новому элементу ввода тега. По умолчанию прописан 'input-id'. Если не указан, автоматически создается уникальный идентификатор. Также доступно через 'inputAttrs.id'"
               },
               {
                 "prop": "inputType",
                 "version": "2.3.0",
-                "description": "The type of input to use: 'type', 'email', 'tel', 'url', or 'number'. Default is 'text'. Normalized value of the 'input-type' prop"
+                "description": "Тип используемого ввода: 'type', 'email', 'tel', 'url' или 'number'. По умолчанию 'text'. Нормализованное значение 'input-type'"
               },
               {
                 "prop": "invalidTagText",
                 "type": "String",
-                "description": "The value of the 'invalid-tag-text' prop"
+                "description": "Значение свойства 'invalid-tag-text'"
               },
               {
                 "prop": "invalidTags",
                 "type": "Array",
-                "description": "Array of invalid tag(s) that could not be added. Requires a validator function via the 'tag-validator' prop"
+                "description": "Массив недействительных тегов, которые не удалось добавить. Требуется функция валидатора через 'tag-validator'"
               },
               {
                 "prop": "isDuplicate",
                 "type": "Boolean",
-                "description": "Will be `true` if the user has attempted to add duplicate tag(s)"
+                "description": "Будет иметь значение `true`, если пользователь попытался добавить повторяющиеся теги"
               },
               {
                 "prop": "isInvalid",
                 "type": "Boolean",
-                "description": "Will be `true` if the input has invalid tag(s). Requires a validator function via the 'tag-validator' prop"
+                "description": "Будет иметь значение `true`, если на входе есть недопустимые теги. Требуется функция валидатора через 'tag-validator'"
               },
               {
                 "prop": "isLimitReached",
                 "type": "Boolean",
-                "description": "Will be `true` if the input has reached the maximum amount of tags defined by the 'limit' prop"
+                "description": "Будет иметь значение `true`, если на входе достигнуто максимальное количество тегов, определенное параметром 'limit'"
               },
               {
                 "prop": "limitTagsText",
                 "type": "String",
-                "description": "The value of the 'limit-tag-text' prop"
+                "description": "Значение свойства 'limit-tag-text'"
               },
               {
                 "prop": "noTagRemove",
                 "version": "2.21.0",
                 "type": "Boolean",
-                "description": "The value of the 'no-tag-remove' prop"
+                "description": "Значение свойства 'no-tag-remove'"
               },
               {
                 "prop": "placeholder",
                 "type": "String",
-                "description": "The value of the 'placeholder' prop"
+                "description": "Значение свойства 'placeholder'"
               },
               {
                 "prop": "remove",
                 "type": "Function",
-                "description": "Method to fully reset the tags input"
+                "description": "Метод полного сброса ввода тегов"
               },
               {
                 "prop": "removeTag",
                 "type": "Function",
-                "description": "Method to remove a tag. Accepts one argument which is the tag value to remove"
+                "description": "Способ удаления тега. Принимает один аргумент, который является значением тега для удаления"
               },
               {
                 "prop": "required",
                 "type": "Boolean",
-                "description": "Value of the 'required' prop"
+                "description": "Значение свойства 'required'"
               },
               {
                 "prop": "separator",
@@ -347,17 +347,17 @@
                   "String",
                   "Array"
                 ],
-                "description": "The value of the 'separator' prop"
+                "description": "Значение свойства 'separator'"
               },
               {
                 "prop": "size",
                 "type": "String",
-                "description": "The value of the 'size' prop"
+                "description": "Значение свойства 'size'"
               },
               {
                 "prop": "state",
                 "type": "Boolean",
-                "description": "The contextual state of the component. Value of the 'state' prop. Possible values are true, false or null"
+                "description": "Контекстное состояние компонента. Значение свойства 'state'. Возможные значения: true, false или null"
               },
               {
                 "prop": "tagClass",
@@ -366,27 +366,27 @@
                   "Array",
                   "Object"
                 ],
-                "description": "Class (or classes) to apply to the tag elements. Value of the 'tag-class' prop"
+                "description": "Класс (или классы) для применения к элементам тега. Значение свойства 'tag-class'"
               },
               {
                 "prop": "tagPills",
                 "type": "Boolean",
-                "description": "Value of the `tag-pills` prop"
+                "description": "Значение свойства`tag-pills`"
               },
               {
                 "prop": "tagRemoveLabel",
                 "type": "String",
-                "description": "ARIA label for the remove button on tags. Value of the 'tag-remove-label' prop"
+                "description": "Метка ARIA для кнопки удаления на тегах. Значение свойства 'tag-remove-label'"
               },
               {
                 "prop": "tagVariant",
                 "type": "String",
-                "description": "Value of the 'tag-variant' prop"
+                "description": "Значение свойства 'tag-variant'"
               },
               {
                 "prop": "tags",
                 "type": "Array",
-                "description": "Array of tags to render"
+                "description": "Массив тегов для рендеринга"
               }
             ]
           }
@@ -395,7 +395,7 @@
       {
         "component": "BFormTag",
         "version": "2.2.0",
-        "description": "Helper component for custom rending of tags in tagged input",
+        "description": "Компонент-помощник для настраиваемого отображения тегов во вводе с тегами",
         "aliases": [
           "BTag"
         ],
@@ -403,35 +403,35 @@
           {
             "prop": "noRemove",
             "version": "2.21.0",
-            "description": "When set, the tag will not have a remove button"
+            "description": "Если установлено, у тега не будет кнопки удаления"
           },
           {
             "prop": "pill",
-            "description": "Makes the tag have a pill appearance"
+            "description": "Делает бирку похожей на таблетку"
           },
           {
             "prop": "removeLabel",
-            "description": "The value of the 'aria-label' attribute on the remove button in the tag"
+            "description": "Значение атрибута 'aria-label' на кнопке удаления в теге"
           },
           {
             "prop": "title",
-            "description": "Value to place in the 'title' attribute of the tag. Will also be used for the tag content if no default slot provided"
+            "description": "Значение для размещения в атрибуте тега 'title'. Также будет использоваться для содержимого тега, если не предоставлен слот по умолчанию"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из вариантов цвета темы Bootstrap"
           }
         ],
         "events": [
           {
             "event": "remove",
-            "description": "Emitted when the remove button is clicked"
+            "description": "Выдается при нажатии кнопки удаления"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the tag. Overrides the `title` prop"
+            "description": "Контент для размещения в теге. Переопределяет свойство `title`"
           }
         ]
       }
