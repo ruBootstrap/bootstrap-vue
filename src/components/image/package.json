@@ -3,68 +3,68 @@
   "version": "1.0.0",
   "meta": {
     "title": "Image",
-    "description": "Create responsive images, optionally adding lightweight styles to them — all via props. Support for rounded images, thumbnail styling, alignment, and even the ability to create blank images with an optional solid background color, and lazy loaded images.",
+    "description": "Создавайте адаптивные изображения, при желании добавляя к ним легкие стили - и все это с помощью реквизита. Поддержка закругленных изображений, стили миниатюр, выравнивания и даже возможность создавать пустые изображения с дополнительным сплошным цветом фона и ленивыми загруженными изображениями.",
     "components": [
       {
         "component": "BImg",
         "props": [
           {
             "prop": "blank",
-            "description": "Creates a blank/transparent image via an SVG data URI"
+            "description": "Создает пустое/прозрачное изображение через URI данных SVG"
           },
           {
             "prop": "blankColor",
-            "description": "Sets the color of the blank image to the CSS color value specified"
+            "description": "Устанавливает цвет пустого изображения на указанное значение цвета CSS"
           },
           {
             "prop": "block",
-            "description": "Forces the image to display as a block element rather than the browser default of inline-block element"
+            "description": "Заставляет изображение отображаться как блочный элемент, а не как встроенный блочный элемент по умолчанию в браузере"
           },
           {
             "prop": "center",
-            "description": "Centers the image horizontally"
+            "description": "Центрирует изображение по горизонтали"
           },
           {
             "prop": "fluid",
-            "description": "Makes the image responsive. The image will shrink as needed or grow up the the image's native width"
+            "description": "Делает изображение отзывчивым. Изображение будет уменьшаться по мере необходимости или увеличиваться по ширине изображения"
           },
           {
             "prop": "fluidGrow",
-            "description": "Similar to the 'fluid' prop, but allows the image to scale up past its native width"
+            "description": "Похож на свойство 'fluid', но позволяет изображению увеличиваться по сравнению с исходной шириной"
           },
           {
             "prop": "height",
-            "description": "The value to set on the image's 'height' attribute"
+            "description": "Значение, устанавливаемое для атрибута высоты изображения 'height'"
           },
           {
             "prop": "left",
-            "description": "Floats the image to the left when set"
+            "description": "При установке перемещает изображение влево"
           },
           {
             "prop": "right",
-            "description": "Floats the image to the right when set"
+            "description": "При установке перемещает изображение вправо"
           },
           {
             "prop": "rounded",
-            "description": "When set to 'true', makes the image corners slightly rounded. Can also be used to disable rounded corners or make the image a circle/oval. See docs for details"
+            "description": "Если установлено значение 'true', углы изображения слегка закругляются. Также можно использовать, чтобы отключить закругленные углы или сделать изображение кругом/овалом. Подробности смотрите в документации"
           },
           {
             "prop": "sizes",
             "version": "2.1.0",
-            "description": "One or more strings separated by commas (or an array of strings), indicating a set of source sizes. Optionally used in combination with the srcset prop"
+            "description": "Одна или несколько строк, разделенных запятыми (или массив строк), указывающих набор размеров источника. Необязательно используется в сочетании со свойством srcset."
           },
           {
             "prop": "srcset",
             "version": "2.1.0",
-            "description": "One or more strings separated by commas (or an array of strings), indicating possible image sources for the user agent to use"
+            "description": "Одна или несколько строк, разделенных запятыми (или массив строк), указывающих возможные источники изображений для использования пользовательским агентом"
           },
           {
             "prop": "thumbnail",
-            "description": "Adds a thumbnail border around the image"
+            "description": "Добавляет рамку эскиза вокруг изображения"
           },
           {
             "prop": "width",
-            "description": "The value to set on the image's 'width' attribute"
+            "description": "Значение, устанавливаемое для атрибута ширины изображения 'width'"
           }
         ]
       },
@@ -73,77 +73,77 @@
         "props": [
           {
             "prop": "blankColor",
-            "description": "Sets the color of the blank placeholder image to the CSS color value specified"
+            "description": "Устанавливает цвет пустого изображения-заполнителя на указанное значение цвета CSS"
           },
           {
             "prop": "blankHeight",
-            "description": "The value to set on the placeholder image's 'height' attribute. Defaults to value of the 'height' prop"
+            "description": "Значение, которое нужно установить для атрибута «высота» изображения-заполнителя. По умолчанию значение свойства 'height'"
           },
           {
             "prop": "blankSrc",
-            "description": "Placeholder image instead of a blank image"
+            "description": "Изображение-заполнитель вместо пустого изображения"
           },
           {
             "prop": "blankWidth",
-            "description": "The value to set on the placeholder image's 'width' attribute. Defaults to value of the 'width' prop"
+            "description": "Значение, устанавливаемое для атрибута 'width' изображения заполнителя. По умолчанию значение свойства 'width'"
           },
           {
             "prop": "block",
-            "description": "Forces the image to display as a block element rather than the browser default of inline-block element"
+            "description": "Заставляет изображение отображаться как блочный элемент, а не как встроенный блочный элемент по умолчанию в браузере"
           },
           {
             "prop": "center",
-            "description": "Centers the image horizontally"
+            "description": "Центрирует изображение по горизонтали"
           },
           {
             "prop": "fluid",
-            "description": "Makes the image responsive. The image will shrink as needed or grow up the the image's native width"
+            "description": "Делает изображение отзывчивым. Изображение будет уменьшаться по мере необходимости или увеличиваться по ширине изображения"
           },
           {
             "prop": "fluidGrow",
-            "description": "Similar to the 'fluid' prop, but allows the image to scale up past its native width"
+            "description": "Похож на свойство 'fluid', но позволяет изображению увеличиваться по сравнению с исходной шириной"
           },
           {
             "prop": "height",
-            "description": "The value to set on the image's 'height' attribute"
+            "description": "Значение, устанавливаемое для атрибута высоты изображения 'height'"
           },
           {
             "prop": "left",
-            "description": "Floats the image to the left when set"
+            "description": "При установке перемещает изображение влево"
           },
           {
             "prop": "offset",
-            "description": "Number of pixels away from the viewport edge before the lazy image is loaded"
+            "description": "Количество пикселей от края области просмотра до загрузки отложенного изображения"
           },
           {
             "prop": "right",
-            "description": "Floats the image to the right when set"
+            "description": "При установке перемещает изображение вправо"
           },
           {
             "prop": "rounded",
-            "description": "When set to 'true', makes the image corners slightly rounded. Can also be used to disable rounded corners or make the image a circle/oval. See docs for details"
+            "description": "Если установлено значение 'true', углы изображения слегка закругляются. Также можно использовать, чтобы отключить закругленные углы или сделать изображение кругом/овалом. Подробности смотрите в документации"
           },
           {
             "prop": "show",
-            "description": "If set to true, will force show the image specified via the 'src' prop"
+            "description": "Если установлено значение true, заставит показывать изображение, указанное через свойство 'src'"
           },
           {
             "prop": "sizes",
             "version": "2.1.0",
-            "description": "One or more strings separated by commas (or an array of strings), indicating a set of source sizes. Optionally used in combination with the srcset prop"
+            "description": "Одна или несколько строк, разделенных запятыми (или массив строк), указывающих набор размеров источника. Необязательно используется в сочетании со свойством srcset."
           },
           {
             "prop": "srcset",
             "version": "2.1.0",
-            "description": "One or more strings separated by commas (or an array of strings), indicating possible image sources for the user agent to use"
+            "description": "Одна или несколько строк, разделенных запятыми (или массив строк), указывающих возможные источники изображений для использования пользовательским агентом"
           },
           {
             "prop": "thumbnail",
-            "description": "Adds a thumbnail border around the image"
+            "description": "Добавляет рамку эскиза вокруг изображения"
           },
           {
             "prop": "width",
-            "description": "The value to set on the image's 'width' attribute"
+            "description": "Значение, устанавливаемое для атрибута ширины изображения 'width'"
           }
         ]
       }

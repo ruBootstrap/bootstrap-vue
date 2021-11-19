@@ -1,76 +1,63 @@
-# Image
+# Изображение
 
-> Documentation and examples for opting images (via `<b-img>` component) into responsive behavior
-> (so they never become larger than their parent elements), optionally adding lightweight styles to
-> them — all via props.
+> Документация и примеры для выбора изображений (через компонент `<b-img>`) в адаптивное поведение (чтобы они никогда не становились больше, чем их родительские элементы), при необходимости добавляя к ним облегченные стили - все через свойства.
 
-BootstrapVue's image components support rounded images, thumbnail styling, alignment, and even the
-ability to create blank images with an optional solid background color. Support for lazy loaded
-images is available via the `<b-img-lazy>` complimentary component.
+Компоненты изображений BootstrapVue поддерживают округленные изображения, стили миниатюр, выравнивание и даже возможность создавать пустые изображения с дополнительным сплошным цветом фона. Поддержка отложенных изображений доступна через дополнительный компонент `<b-img-lazy>`.
 
-## Image src resolving
+## Разрешение изображения src
 
-The `src` prop (and `blank-src` prop of `<b-img-lazy>`), out of the box, works only with absolute or
-fully-qualified-domain-name URLs. If you are using project assets as image sources, please refer to
-[Component img src resolving](/docs/reference/images) for configuring `vue-loader` to understand
-custom component props that specify image sources.
+Свойство `src` (и свойство `blank-src` из `<b-img-lazy>`), из коробки работает только с абсолютными или полностью определенными URL-адресами доменного имени. Если вы используете ресурсы проекта в качестве источников изображений, обратитесь к [Component img src resolving](/docs/reference/images) для настройки `vue-loader`, чтобы понять свойства пользовательских компонентов, которые определяют источники изображений.
 
-## Styling images
+## Стилизация изображений
 
-Several props are available for styling the rendered image element. The following sub-sections cover
-the various options.
+Для стилизации визуализированного элемента изображения доступно несколько свойств. В следующих подразделах рассматриваются различные варианты.
 
-### Responsive images
+### Адаптивные изображения
 
-Images in BootstrapVue can be made responsive with the `fluid` prop (which sets
-`max-width: 100%; height: auto;` via CSS classes) so that it scales with the parent element - up to
-the maximum native width of the image.
+Изображения в BootstrapVue можно сделать адаптивными с помощью свойства `fluid` (которое устанавливает `max-width: 100%; height: auto;` через классы CSS), чтобы оно масштабировалось вместе с родительским элементом - до максимальной собственной ширины изображение.
 
 ```html
 <div>
-  <b-img src="https://picsum.photos/1024/400/?image=41" fluid alt="Responsive image"></b-img>
+  <b-img src="https://picsum.photos/1024/400/?image=41" fluid alt="Адаптивное изображение"></b-img>
 </div>
 
 <!-- b-img-fluid.vue -->
 ```
 
-To make a fluid image that will grow to fill the width of its container, use the `fluid-grow` prop.
-Note this may cause blurring on small bitmap images.
+Чтобы создать плавное изображение, которое будет расти до ширины своего контейнера, используйте свойство `fluid-grow`.
+Обратите внимание, что это может вызвать размытие небольших растровых изображений.
 
 ```html
 <div>
-  <h5>Small image with <code>fluid</code>:</h5>
-  <b-img src="https://picsum.photos/300/150/?image=41" fluid alt="Fluid image"></b-img>
+  <h5>Маленькое изображение с <code>fluid</code>:</h5>
+  <b-img src="https://picsum.photos/300/150/?image=41" fluid alt="Изображение Fluid"></b-img>
 
-  <h5 class="my-3">Small image with <code>fluid-grow</code>:</h5>
-  <b-img src="https://picsum.photos/300/150/?image=41" fluid-grow alt="Fluid-grow image"></b-img>
+  <h5 class="my-3">Маленькое изображение с <code>fluid-grow</code>:</h5>
+  <b-img src="https://picsum.photos/300/150/?image=41" fluid-grow alt="Изображение Fluid-grow"></b-img>
 </div>
 
 <!-- b-img-fluid-grow.vue -->
 ```
 
-Use the `block` prop to force the image to display as a block element rather than the browser
-default of inline-block element.
+Используйте свойство `block`, чтобы изображение отображалось как блочный элемент, а не как встроенный в браузере элемент встроенного блока по умолчанию.
 
-**Note:** _In Internet Explorer 10, SVG images with `fluid` are disproportionately sized. To fix
-this, add the style `width: 100% \9;` where necessary. This fix improperly sizes other image
-formats, so Bootstrap v4 doesn't apply it automatically._
+**Примечание:** _В Internet Explorer 10, изображения SVG с `fluid` имеют непропорционально большой размер. Чтобы исправить это, добавьте стиль `width: 100% \9;` там, где это необходимо. Это исправление неправильно изменяет размер других форматов изображений, поэтому Bootstrap v4 не применяет его автоматически._
 
-### Image thumbnails
+### Эскизы изображений
 
-You can use prop `thumbnail` to give an image a rounded light border appearance.
+Вы можете использовать свойство `thumbnail`, чтобы придать изображению округлую светлую границу.
 
 ```html
 <b-container fluid class="p-4 bg-dark">
   <b-row>
     <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Image 1"></b-img>
+      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=54" alt="Изображение 1"></b-img>
     </b-col>
     <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=58" alt="Image 2"></b-img>
+      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=58" alt="Изображение 2"></b-img>
     </b-col>
     <b-col>
-      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Image 3"></b-img>
+      <b-img thumbnail fluid src="https://picsum.photos/250/250/?image=59" alt="Изображение 3"></b-img>
     </b-col>
   </b-row>
 </b-container>
@@ -78,30 +65,29 @@ You can use prop `thumbnail` to give an image a rounded light border appearance.
 <!-- b-img-thumbnail.vue -->
 ```
 
-### Rounded corners
+### Закругленные углы
 
-You can control which corners are rounded by setting the rounded prop to one of the following
-values:
+Вы можете контролировать, какие углы будут скруглены, установив для закругленной опоры одно из следующих значений:
 
-- `true` (or prop present with no value): round all corners
-- `false` (or prop not present): no explicit rounding or corners (default)
-- `'top'`: round the top corners
-- `'right'`: round the right corners
-- `'bottom'`: round the bottom corners
-- `'left'`: round the left corners
-- `'circle'`: make a circle (if square image) or oval (if not square) border
-- `'0'`: explicitly turn off rounding of corners
+- `true` (или свойство присутствует без значения): закруглить все углы
+- `false` (или свойство отсутствует): без явного закругления или углов (по умолчанию)
+- `'top'`: закруглить верхние углы
+- `'right'`: закруглить правые углы
+- `'bottom'`: закруглить нижние углы
+- `'left'`: закруглить левые углы
+- `'circle'`: образует круг (если изображение квадратное) или овальную (если не квадратную) границу
+- `'0'`: явно отключить скругление углов
 
 ```html
 <template>
   <div>
-    <b-img v-bind="mainProps" rounded alt="Rounded image"></b-img>
-    <b-img v-bind="mainProps" rounded="top" alt="Top-rounded image"></b-img>
-    <b-img v-bind="mainProps" rounded="right" alt="Right-rounded image"></b-img>
-    <b-img v-bind="mainProps" rounded="bottom" alt="Bottom-rounded image"></b-img>
-    <b-img v-bind="mainProps" rounded="left" alt="Left-rounded image"></b-img>
-    <b-img v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
-    <b-img v-bind="mainProps" rounded="0" alt="Not rounded image"></b-img>
+    <b-img v-bind="mainProps" rounded alt="Закругленное изображение"></b-img>
+    <b-img v-bind="mainProps" rounded="top" alt="Закругленное сверху изображение"></b-img>
+    <b-img v-bind="mainProps" rounded="right" alt="Закругленное справа изображение"></b-img>
+    <b-img v-bind="mainProps" rounded="bottom" alt="Закругленное снизу изображение"></b-img>
+    <b-img v-bind="mainProps" rounded="left" alt="Закругленное слева изображение"></b-img>
+    <b-img v-bind="mainProps" rounded="circle" alt="Круглое изображение"></b-img>
+    <b-img v-bind="mainProps" rounded="0" alt="Не округленное изображение"></b-img>
   </div>
 </template>
 
@@ -118,62 +104,56 @@ values:
 <!-- b-img-rounded.vue -->
 ```
 
-### Aligning images
+### Выравнивание изображений
 
-Align images with the boolean props `left` (floats left) `right`(floats right), and `center` (auto
-left+right margins). You can also center images by placing them in a container that has the class
-`text-center`.
+Выровняйте изображения с помощью логических свойств `left` (смещается влево) `right`(смещается вправо) и `center` (автоматически влево + правые поля). Вы также можете центрировать изображения, помещая их в контейнер с классом `text-center`.
 
-**Left an Right aligned (float):**
+**С выравниванием по левому и правому краю (с плавающей точкой):**
 
 ```html
 <div class="clearfix">
-  <b-img left src="https://picsum.photos/125/125/?image=58" alt="Left image"></b-img>
-  <b-img right src="https://picsum.photos/125/125/?image=58" alt="Right image"></b-img>
+  <b-img left src="https://picsum.photos/125/125/?image=58" alt="Изображение слева"></b-img>
+  <b-img right src="https://picsum.photos/125/125/?image=58" alt="Изображение справа"></b-img>
 </div>
 
 <!-- b-img-left-right.vue -->
 ```
 
-**Center aligned (block):**
+**По центру (блочное):**
 
 ```html
 <div>
-  <b-img center src="https://picsum.photos/125/125/?image=58" alt="Center image"></b-img>
+  <b-img center src="https://picsum.photos/125/125/?image=58" alt="Изображение по центру"></b-img>
 </div>
 
 <!-- b-img-center.vue -->
 ```
 
-Note: `left` takes precedence over `right` which takes precedence over `center`.
+Примечание: `left` имеет приоритет перед `right`, которое имеет приоритет перед `center`.
 
-## Blank (or solid color) images
+## Пустые (или сплошные) изображения
 
-`<b-img>` provides built-in support for generating blank images (transparent by default) of any
-width and height, by setting the `blank` prop, and specifying `width` and `height` values (in
-pixels). You can apply any of the other `<b-img>` props to change the style/behavior of the
-generated image.
+`<b-img>` обеспечивает встроенную поддержку для создания пустых изображений (по умолчанию прозрачных) любой ширины и высоты, путем установки свойства `blank` и указания значений `width` и `height` (в пикселях). Вы можете применить любой из других свойств `<b-img>`, чтобы изменить стиль/поведение сгенерированного изображения.
 
-Use the `blank-color` prop to set the blank image color. The `blank-color`prop can accept any CSS
-color value:
+Используйте свойство `blank-color`, чтобы установить цвет пустого изображения. Свойство `blank-color` может принимать любое значение цвета CSS:
 
-- Named colors — i.e. `orange` or `blue`
-- Hex colors — i.e. `#FF9E2C`
-- RGB and RGBa colors — i.e. `rgb(255, 158, 44)` and `rgba(255, 158, 44, .5)`
-- HSL and HSLa colors — i.e. `hsl(32, 100%, 59%)` and `hsla(32, 100%, 59%, .5)`
+- Именованные цвета - например, `orange` или `blue`
+- Шестнадцатеричные цвета - например, `#FF9E2C`
+- Цвета RGB и RGBa - например, `rgb(255, 158, 44)` и `rgba(255, 158, 44, .5)`
+- Цвета HSL и HSLa - например, `hsl(32, 100%, 59%)` и `hsla(32, 100%, 59%, .5)`
 
-The default `blank-color` is `transparent`.
+По умолчанию `blank-color` является `transparent`.
 
 ```html
 <template>
   <div>
-    <b-img v-bind="mainProps" alt="Transparent image"></b-img>
-    <b-img v-bind="mainProps" blank-color="#777" alt="HEX shorthand color image (#777)"></b-img>
-    <b-img v-bind="mainProps" blank-color="red" alt="Named color image (red)"></b-img>
-    <b-img v-bind="mainProps" blank-color="black" alt="Named color image (black)"></b-img>
-    <b-img v-bind="mainProps" blank-color="#338833" alt="HEX color image"></b-img>
-    <b-img v-bind="mainProps" blank-color="rgba(128, 255, 255, 0.5)" alt="RGBa color image"></b-img>
-    <b-img v-bind="mainProps" blank-color="#88f" alt="HEX shorthand color (#88f)"></b-img>
+    <b-img v-bind="mainProps" alt="Прозрачное изображение"></b-img>
+    <b-img v-bind="mainProps" blank-color="#777" alt="Сокращенное цветное изображение HEX (#777)"></b-img>
+    <b-img v-bind="mainProps" blank-color="red" alt="Именованное цветное изображение (red)"></b-img>
+    <b-img v-bind="mainProps" blank-color="black" alt="Именованное цветное изображение (black)"></b-img>
+    <b-img v-bind="mainProps" blank-color="#338833" alt="Цветное изображение HEX"></b-img>
+    <b-img v-bind="mainProps" blank-color="rgba(128, 255, 255, 0.5)" alt="Цветное изображение RGBa"></b-img>
+    <b-img v-bind="mainProps" blank-color="#88f" alt="Сокращенный цвет HEX (#88f)"></b-img>
   </div>
 </template>
 
@@ -190,91 +170,66 @@ The default `blank-color` is `transparent`.
 <!-- b-img-blank.vue -->
 ```
 
-**Notes:**
+**Примечания:**
 
-- In blank image mode, if only one of width or height is set, the image will be have both width and
-  height set to the same value.
-- In blank image mode, if width and height are not set, both width and height will internally be set
-  to 1.
-- The `blank` prop takes precedence over the `src` prop. If you set both and later set `blank` to
-  `false` the image specified in `src` will then be displayed.
-- Blank images are rendered using SVG image data URLs.
-- The `width` and `height` props will also apply the `width` and `height` attributes to the rendered
-  `<img>` tag, even if `blank` is not set.
+- В режиме пустого изображения, если установлена только одна из ширины или высоты, для изображения будет установлено одинаковое значение для ширины и высоты.
+- В режиме пустого изображения, если ширина и высота не заданы, ширина и высота будут внутренне установлены на 1.
+- Свойство `blank` имеет приоритет перед свойством `src`. Если вы установите оба параметра, а затем установите `blank` в значение `false`, тогда будет отображаться изображение, указанное в `src`.
+- Пустые изображения отображаются с использованием URL-адресов данных изображения SVG.
+- Свойства `width` и `height` также будут применять атрибуты `width` и `height` к отображаемому тегу `<img>`, даже если `blank` не установлен.
 
-## `srcset` support
+## Поддержка `srcset`
 
-`<b-img>` supports the
-[`srcset` and `sizes` attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset)
-on images. The props accept either a string value, or an array of strings (the array of strings will
-be converted into a single string separated by commas).
+`<b-img>` поддерживает [атрибуты `srcset` и `sizes`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset) на изображениях.
+Свойства принимают либо строковое значение, либо массив строк (массив строк будет преобразован в одну строку, разделенную запятыми).
 
-For details on usage of these attributes, refer to
-[MDN's Responsive Images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
-guide.
+Подробнее об использовании этих атрибутов смотрите в руководстве [Адаптивные изображения MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images).
 
-**Notes:**
+**Примечания:**
 
-- If the `blank` prop is set, then `srcset` and `sizes` props are ignored
-- IE 11 does not support `srcset` and `sizes`, so ensure you have a value for the `src` prop
-- Vue-loader does not support project relative URLs (asset URLs) on the `srcset` attribute. Instead
-  use `require(...)` to resolve the individual URL paths. Be cautious of creating a string of data
-  URI's longer than supported by the maximum attribute value length of the browser. If your webpack
-  config has a limit for the `url-loader` and you want to prevent inline data-urls, you may have to
-  overwrite the loader limits: `require('!!url-loader?limit=0!./assets/photo.jpg')`
-- Support for `srcset` and `sizes` was added in release `2.1.0`
+- Если задано свойство `blank`, то свойства `srcset` и `sizes` игнорируются
+- IE 11 не поддерживает `srcset` и `sizes`, поэтому убедитесь, что у вас есть значение для свойства `src`
+- Vue-loader не поддерживает относительные URL-адреса проекта (URL-адреса ресурсов) в атрибуте `srcset`. Вместо этого используйте `require(...)` для разрешения отдельных путей URL. Будьте осторожны при создании строки URI данных, которая длиннее, чем поддерживается максимальной длиной значения атрибута браузера. Если в вашей конфигурации веб-пакета есть ограничение для `url-loader`, и вы хотите запретить встроенные URL-адреса данных, вам, возможно, придется перезаписать ограничения загрузчика: `require('!!url-loader?limit=0!./assets/photo.jpg')`
+- Поддержка `srcset` и `sizes` была добавлена в выпуске `2.1.0`
 
-## Lazy loaded images
+## Отложенная загрузка изображений
 
-> Use our complementary `<b-img-lazy>` image component (based on `<b-img>`) to lazy load images as
-> they are scrolled into view (or within `offset` pixels of the viewport).
+> Используйте наш дополнительный компонент изображения `<b-img-lazy>` (основанный на `<b-img>`) для отложенной загрузки изображений, когда они прокручиваются в область просмотра (или в пределах пикселей `offset` в области просмотра).
 
-Lazy loading images uses
-[`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
-if supported by the browser (or via a polyfill) to detect when the image should be shown. If
-`IntersectionObserver` support is _not detected_, then the image will _always_ be shown.
+При отложенной загрузке изображений используется [`IntersectionObserver`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), если это поддерживается браузером (или через полифил), чтобы определить, когда изображение должно быть показано. Если поддержка `IntersectionObserver` _не обнаружена_, то изображение будет _всегда_ отображаться.
 
-### Usage
+### Использование
 
-Set the `src` prop to the URL of the image you want loaded lazily, and either specify a placeholder
-image URL via the prop `blank-src`, or have a blank placeholder image generated for you by leaving
-`blank-src` as `null`.
+Установите свойство `src` на URL-адрес изображения, которое вы хотите лениво загружать, и либо укажите URL-адрес изображения-заполнителя через свойство `blank-src`, либо создайте для вас пустое изображение-заполнитель, оставив `blank-src` как `null`.
 
-Specify the width and height of the placeholder via the `blank-width` and `blank-height` props. If
-these props are not set, then they will fall back to the `width` and `height` props (which are
-applied to the image specified via `src`).
+Укажите ширину и высоту заполнителя с помощью свойств `blank-width` и `blank-height`. Если эти свойства не установлены, они вернутся к свойствам `width` и `height` (которые применяются к изображению, указанному через `src`).
 
-Control the generated blank image color by setting the prop `blank-color`.
+Управляйте цветом сгенерированного пустого изображения, установив свойство `blank-color`.
 
-Placeholder images (either explicitly provided, or dynamically generated) should have the same width
-and height values, or at least the same aspect ratio, as the `src` image.
+Изображения-заполнители (явно предоставленные или генерируемые динамически) должны иметь те же значения ширины и высоты или, по крайней мере, такое же соотношение сторон, что и изображение `src`.
 
-Feel free to use the `fluid`, `fluid-grow`, `thumbnail`, and `rounded` props of `<b-img>`.
+Не стесняйтесь использовать свойства `fluid`, `fluid-grow`, `thumbnail` и `rounded` для `<b-img>`.
 
-The `offset` prop specifies the number of pixels that an image needs to be near to the viewport to
+Свойство `offset` prop specifies the number of pixels that an image needs to be near to the viewport to
 trigger it to be shown. The default value is `360`.
 
-The `throttle` prop controls how long (in ms) after a `scroll` (or `resize`, or `orientationchange`,
-or `transitionend`) event happens before checking if the image has come within view (or within
-`offset` of view). The default is `100` (ms). `throttle` has no effect if IntersectionObserver
-support is detected.
+Свойство `throttle` контролирует, как долго (в мс) после события `scroll` (или `resize`, или `orientationchange`, или `transitionend`) происходит до проверки, попало ли изображение в поле зрения (или в пределах просмотра `offset`). По умолчанию `100` (ms). `throttle` не действует, если обнаружена поддержка IntersectionObserver.
 
-Once an image has come into view and is shown, the event listeners and/or Intersection Observer are
-removed.
+Как только изображение появится в поле зрения и отобразится, прослушиватели событий и/или наблюдатель пересечения удаляются.
 
-**Example usage:**
+**Пример использования:**
 
 ```html
 <template>
   <div>
-    <b-img-lazy v-bind="mainProps" :src="getImageUrl(80)" alt="Image 1"></b-img-lazy>
-    <b-img-lazy v-bind="mainProps" :src="getImageUrl(82)" alt="Image 2"></b-img-lazy>
-    <b-img-lazy v-bind="mainProps" :src="getImageUrl(84)" alt="Image 3"></b-img-lazy>
-    <b-img-lazy v-bind="mainProps" :src="getImageUrl(85)" alt="Image 4"></b-img-lazy>
-    <b-img-lazy v-bind="mainProps" :src="getImageUrl(88)" alt="Image 5"></b-img-lazy>
-    <b-img-lazy v-bind="mainProps" :src="getImageUrl(90)" alt="Image 6"></b-img-lazy>
-    <b-img-lazy v-bind="mainProps" :src="getImageUrl(92)" alt="Image 7"></b-img-lazy>
-    <b-img-lazy v-bind="mainProps" :src="getImageUrl(94)" alt="Image 8"></b-img-lazy>
+    <b-img-lazy v-bind="mainProps" :src="getImageUrl(80)" alt="Изображение 1"></b-img-lazy>
+    <b-img-lazy v-bind="mainProps" :src="getImageUrl(82)" alt="Изображение 2"></b-img-lazy>
+    <b-img-lazy v-bind="mainProps" :src="getImageUrl(84)" alt="Изображение 3"></b-img-lazy>
+    <b-img-lazy v-bind="mainProps" :src="getImageUrl(85)" alt="Изображение 4"></b-img-lazy>
+    <b-img-lazy v-bind="mainProps" :src="getImageUrl(88)" alt="Изображение 5"></b-img-lazy>
+    <b-img-lazy v-bind="mainProps" :src="getImageUrl(90)" alt="Изображение 6"></b-img-lazy>
+    <b-img-lazy v-bind="mainProps" :src="getImageUrl(92)" alt="Изображение 7"></b-img-lazy>
+    <b-img-lazy v-bind="mainProps" :src="getImageUrl(94)" alt="Изображение 8"></b-img-lazy>
   </div>
 </template>
 
@@ -305,18 +260,16 @@ removed.
 <!-- b-img-lazy.vue -->
 ```
 
-### Force show of lazy loaded image
+### Принудительно показать отложено загруженное изображение
 
-To force the final image to be shown, set the `show` prop to `true`. The `show` prop supports the
-Vue `.sync` modifier, and will be updated to `true` when the final image is shown.
+Чтобы принудительно показать финальное изображение, установите для свойства `show` значение `true`. Свойство `show` поддерживает модификатор Vue `.sync` и будет обновлена до `true`, когда будет показано окончательное изображение.
 
-### Lazy loaded `srcset` support
+### Поддержка отложенной загрузки `srcset`
 
-`<b-img-lazy>` supports setting the [`srcset` and `sizes`](#srcset-support) attributes on the
-rendered `<img>` element. These props will only be applied to the image once it has come into view.
+`<b-img-lazy>` поддерживает установку атрибутов [`srcset` и `sizes`](#srcset-support) для визуализированного элемента `<img>`. Эти свойства будут применены к изображению только после того, как оно появится в поле зрения.
 
-See [`srcset` support](#srcset-support) above for prop usage details and limitations.
+Смотрите [поддержку `srcset`](#srcset-support) выше для подробностей и ограничений использования свойств.
 
-Support for `srcset` and `sizes` was added in release `2.1.0`.
+Поддержка `srcset` и `sizes` была добавлена в выпуске `2.1.0`.
 
 <!-- Component reference added automatically from component package.json -->
