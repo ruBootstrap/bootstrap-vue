@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Form Timepicker",
-    "description": "BootstrapVue custom time picker input form control, which provides full WAI-ARIA accessibility (a11y) and supports internationalization (i18n).",
+    "description": "Элемент управления формы ввода настраиваемого средства выбора времени BootstrapVue, который обеспечивает полную доступность WAI-ARIA (a11y) и поддерживает интернационализацию (i18n).",
     "version": "2.6.0",
     "components": [
       {
@@ -15,25 +15,25 @@
         "props": [
           {
             "prop": "boundary",
-            "description": "The boundary constraint of the menu: `'scrollParent'`, `'window'`, `'viewport'`, or a reference to an `HTMLElement`"
+            "description": "Граничное ограничение меню: `'scrollParent'`, `'window'`, `'viewport'` или ссылка на `HTMLElement`"
           },
           {
             "prop": "buttonOnly",
             "version": "2.7.0",
-            "description": "Renders the datepicker as a dropdown button instead of a form-control"
+            "description": "Отображает datepicker как кнопку раскрывающегося списка вместо элемента управления формы"
           },
           {
             "prop": "buttonVariant",
             "version": "2.7.0",
-            "description": "The button variant to use when in `button-only` mode. Has no effect if prop `button-only` is not set"
+            "description": "Вариант кнопки для использования в режиме `button-only`. Не действует, если свойство `button-only` не установлено"
           },
           {
             "prop": "closeButtonVariant",
-            "description": "Button variant to use for the optional `close` button"
+            "description": "Вариант кнопки для использования для дополнительной кнопки `close`"
           },
           {
             "prop": "disabled",
-            "description": "Places the timepicker in a non-interactive disabled state"
+            "description": "Переводит таймер в неинтерактивное отключенное состояние"
           },
           {
             "prop": "dropleft",
@@ -49,127 +49,127 @@
           },
           {
             "prop": "hideHeader",
-            "description": "When set, visually hides the selected time header"
+            "description": "Когда установлено, визуально скрывает выбранный заголовок времени"
           },
           {
             "prop": "hideHeader",
-            "description": "When set, visually hides the selected date header"
+            "description": "Когда установлено, визуально скрывает выбранный заголовок даты"
           },
           {
             "prop": "hour12",
-            "description": "Tri-state prop. If `true` forces the interface to 12 hour format. If `false` forces the interface into 24 hour format. If `null` the current locale will determine the 12 or 24 hour interface (default)"
+            "description": "Свойство трех состояний. Если `true` переводит интерфейс в 12-часовой формат. Если `false` переводит интерфейс в 24-часовой формат. Если `null`, текущая локаль будет определять 12- или 24-часовой интерфейс (по умолчанию)"
           },
           {
             "prop": "labelAm",
-            "description": "Text to display in the AM/PM spinbutton when 'AM' is selected"
+            "description": "Текст для отображения на спин кнопке AM/PM, когда выбрано 'AM'"
           },
           {
             "prop": "labelAmpm",
-            "description": "Value of the `aria-label` attribute on the `AM/PM` spinbutton"
+            "description": "Значение атрибута `aria-label` на спин-кнопке `AM/PM`"
           },
           {
             "prop": "labelCloseButton",
-            "description": "Content for the `Close` button"
+            "description": "Контент для кнопки `Close`"
           },
           {
             "prop": "labelDecrement",
-            "description": "Value of the `aria-label` attribute on the spinbuttons `-` button"
+            "description": "Значение атрибута `aria-label` на спин-кнопке `-` кнопки"
           },
           {
             "prop": "labelHours",
-            "description": "Value of the `aria-label` attribute on the `Hours` spinbutton"
+            "description": "Значение атрибута `aria-label` на кнопке `Hours` спин-кнопке"
           },
           {
             "prop": "labelIncrement",
-            "description": "Value of the `aria-label` attribute on the spinbuttons `+` button"
+            "description": "Значение атрибута `aria-label` на спин-кнопке `+` кнопки"
           },
           {
             "prop": "labelMinutes",
-            "description": "Value of the `aria-label` attribute on the `Minutes` spinbutton"
+            "description": "Значение атрибута `aria-label` на кнопке `Minutes` спин-кнопке"
           },
           {
             "prop": "labelNoTimeSelected",
-            "description": "String to show when no time is selected"
+            "description": "Строка для отображения, когда время не выбрано"
           },
           {
             "prop": "labelNowButton",
-            "description": "Content for the optional `Select now` button"
+            "description": "Контент для дополнительной кнопки `Select now`"
           },
           {
             "prop": "labelPm",
-            "description": "Text to display in the AM/PM spinbutton when 'PM' is selected"
+            "description": "Текст, отображаемый на вращающейся кнопке AM/PM, когда выбрано 'PM'"
           },
           {
             "prop": "labelResetButton",
-            "description": "Content for the optional `Reset` button"
+            "description": "Контент для дополнительной кнопки `Reset`"
           },
           {
             "prop": "labelSeconds",
-            "description": "Value of the `aria-label` attribute on the `Seconds` spinbutton"
+            "description": "Значение атрибута `aria-label` на кнопке `Seconds` спин-кнопке"
           },
           {
             "prop": "labelSelected",
-            "description": "Hidden sr-only string when a time is selected"
+            "description": "Скрытая строка только для sr-only при выбранном времени"
           },
           {
             "prop": "locale",
-            "description": "Locale (or locales) for the component to use. When passing an array of locales, the order of the locales is from most preferred to least preferred. If not provided, defaults to the clients default locale"
+            "description": "Языковой стандарт (или языковые стандарты) для использования компонента. При передаче массива языковых стандартов порядок языков от наиболее предпочтительного до наименее предпочтительного. Если не указан, по умолчанию используется локаль по умолчанию клиента"
           },
           {
             "prop": "menuClass",
-            "description": "Class (or classes) to apply to to popup menu wrapper"
+            "description": "Класс (или классы) для применения к оболочке всплывающего меню"
           },
           {
             "prop": "minutesStep",
-            "description": "Step value for the minutes spinbutton. Should be a value evenly divided into 60"
+            "description": "Значение шага для кнопки вращения минут. Значение должно быть равномерно разделено на 60"
           },
           {
             "prop": "noCloseButton",
-            "description": "When set, disables showing the close button"
+            "description": "Когда установлено, отключает отображение кнопки закрытия"
           },
           {
             "prop": "noFlip",
-            "description": "Prevent the menu from auto flipping positions"
+            "description": "Предотвратить автоматическое переворачивание меню"
           },
           {
             "prop": "nowButton",
-            "description": "When set, shows the optional `select now` button"
+            "description": "Когда установлено, показывает необязательную кнопку `select now`"
           },
           {
             "prop": "nowButtonVariant",
-            "description": "Button variant to use for the optional `select today` button"
+            "description": "Вариант кнопки, используемый для дополнительной кнопки `select today`"
           },
           {
             "prop": "offset",
-            "description": "Specify the number of pixels to shift the menu by. Negative values supported"
+            "description": "Укажите количество пикселей, на которое нужно сдвинуть меню. Поддерживаются отрицательные значения"
           },
           {
             "prop": "placeholder",
-            "description": "Text so show in the form control when no date is selected. Defaults to the `label-no-date-selected` prop value"
+            "description": "Текст, отображаемый в элементе управления формы, если дата не выбрана. По умолчанию используется значение свойства `label-no-date-selected`"
           },
           {
             "prop": "popperOpts",
-            "description": "Additional configuration to pass to Popper.js"
+            "description": "Дополнительная конфигурация для передачи в Popper.js"
           },
           {
             "prop": "readonly",
-            "description": "Places the timepicker in an interactive readonly state. Disables updating the v-model, while still allowing focusing of spin buttons"
+            "description": "Переводит средство выбора времени в интерактивное состояние только для чтения. Отключает обновление v-model, при этом разрешая фокусировку кнопок вращения"
           },
           {
             "prop": "required",
-            "description": "When set, adds the `aria-required=\"true\"` attribute on the component. Required validation needs to be handled by your application"
+            "description": "Если установлено, добавляет к компоненту атрибут `aria-required=\"true\"`. Требуемая проверка должна выполняться вашим приложением"
           },
           {
             "prop": "resetButton",
-            "description": "When set, shows the optional `reset` button"
+            "description": "Когда установлено, показывает дополнительную кнопку `reset`"
           },
           {
             "prop": "resetButtonVariant",
-            "description": "Button variant to use for the optional `reset` button"
+            "description": "Вариант кнопки, используемый для дополнительной кнопки `reset`"
           },
           {
             "prop": "resetValue",
-            "description": "When the optional `reset` button is clicked, the selected time will be set to this value. Default is to clear the selected value"
+            "description": "При нажатии дополнительной кнопки `reset` выбранное время будет установлено на это значение. По умолчанию выбранное значение очищается"
           },
           {
             "prop": "right",
@@ -177,25 +177,25 @@
           },
           {
             "prop": "secondsStep",
-            "description": "Step value for the seconds spinbutton. Should be a value evenly divided into 60"
+            "description": "Значение шага для кнопки вращения секунд. Значение должно быть равномерно разделено на 60"
           },
           {
             "prop": "showSeconds",
-            "description": "When true, shows the seconds spinbutton. If `false` the seconds spin button will not be shown and the seconds portion of the time will always be `0`"
+            "description": "Если задано значение `true`, показывает вращающуюся кнопку секунд. Если `false`, кнопка вращения секунд не будет отображаться, а секундная часть времени всегда будет `0`"
           },
           {
             "prop": "value",
-            "description": "Initially selected time value. Accepts a `HH:mm:ss` string. Valid value ranges from `00:00:00` to `23:59:59`"
+            "description": "Первоначально выбранное значение времени. Принимает строку `HH:mm:ss`. Допустимые значения: от `00:00:00` до `23:59:59`"
           }
         ],
         "events": [
           {
             "event": "context",
-            "description": "`b-time` context event. Emitted when the user changes any spinbutton value via mouse or cursor control. Also emitted when the component is first instantiated, or the locale is changed",
+            "description": "Контекстное событие `b-time`. Выдается, когда пользователь изменяет любое значение спин-кнопки с помощью мыши или курсора. Также генерируется при первом создании экземпляра компонента или изменении локали",
             "args": [
               {
                 "arg": "context",
-                "description": "The `b-time` context object. See the `b-time` documentaion for details",
+                "description": "Контекстный объект `b-time`. Подробности смотрите в документации по `b-time`",
                 "type": "Object"
               }
             ]
@@ -203,15 +203,15 @@
           {
             "event": "hidden",
             "version": "2.9.0",
-            "description": "Emitted when the picker popup has hidden"
+            "description": "Выдается, когда всплывающее окно выбора скрыто"
           },
           {
             "event": "input",
-            "description": "Emitted when updating the v-model",
+            "description": "Выдается при обновлении v-model",
             "args": [
               {
                 "arg": "time",
-                "description": "A string in the format of `HH:mm:ss` (24 hour format)",
+                "description": "Строка в формате `HH:mm:ss` (24-часовой формат)",
                 "type": [
                   "String",
                   "Date"
@@ -228,12 +228,12 @@
         "slots": [
           {
             "name": "button-content",
-            "description": "Content to place in the timepicker's icon button",
+            "description": "Контент для размещения на кнопке с иконкой таймпикера",
             "scope": [
               {
                 "prop": "hasFocus",
                 "type": "Boolean",
-                "description": "`true` if the timepicker icon button has focus"
+                "description": "`true`, если кнопка с иконкой выбора времени находится в фокусе"
               },
               {
                 "prop": "isHovered",
@@ -243,12 +243,12 @@
               {
                 "prop": "open",
                 "type": "Boolean",
-                "description": "The visibility state of the popup. `true` if the popup is visible and `false` if not"
+                "description": "Состояние видимости всплывающего окна. `true`, если всплывающее окно видно, и `false`, если нет"
               },
               {
                 "prop": "state",
                 "type": "Boolean",
-                "description": "The value of the `state` prop. `true` (valid), `false` (invalid), or `null`"
+                "description": "Значение свойства `state`. `true` (действительный), `false` (недействительный) или `null`"
               }
             ]
           }
