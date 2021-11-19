@@ -1,16 +1,16 @@
-# Input Group
+# Группа ввода
 
 > Easily extend form controls by adding text, buttons, or button groups on either side of textual
 > inputs.
 
 ```html
 <div>
-  <!-- Using props -->
+  <!-- Использование свойств -->
   <b-input-group size="lg" prepend="$" append=".00">
     <b-form-input></b-form-input>
   </b-input-group>
 
-  <!-- Using slots -->
+  <!-- Использование слотов -->
   <b-input-group class="mt-3">
     <template #append>
       <b-input-group-text><strong class="text-danger">!</strong></b-input-group-text>
@@ -18,12 +18,12 @@
     <b-form-input></b-form-input>
   </b-input-group>
 
-  <!-- Using components -->
+  <!-- Использование компонентов -->
   <b-input-group prepend="Username" class="mt-3">
     <b-form-input></b-form-input>
     <b-input-group-append>
-      <b-button variant="outline-success">Button</b-button>
-      <b-button variant="info">Button</b-button>
+      <b-button variant="outline-success">Кнопка</b-button>
+      <b-button variant="info">Кнопка</b-button>
     </b-input-group-append>
   </b-input-group>
 </div>
@@ -31,13 +31,13 @@
 <!-- b-input-group.vue -->
 ```
 
-## Usage
+## Использование
 
-You can attach addons using either props, named slots and/or sub-components.
+Вы можете прикреплять надстройки, используя реквизиты, именованные слоты и/или субкомпоненты.
 
-### Using `prepend` and `append` props
+### Использование свойств `prepend` и `append`
 
-Values will be internally wrapped by a `<b-input-group-text>` to display correctly.
+Значения будут внутренне заключены в `<b-input-group-text>` для правильного отображения.
 
 ```html
 <div>
@@ -53,25 +53,24 @@ Values will be internally wrapped by a `<b-input-group-text>` to display correct
 <!-- b-input-group-using-props.vue -->
 ```
 
-### Using named slots
+### Использование именованных слотов
 
-if you want better control over addons, you can use `prepend` and `append` slots instead.
+Если вы хотите лучше контролировать надстройки, вы можете использовать вместо них слоты `prepend` и `append`.
 
-The slot content will automatically be wrapped by
-[`<b-input-group-prepend>` or `<b-input-group-append>`](#using-sub-components) to display correctly.
+Содержимое слота будет автоматически заключено в [`<b-input-group-prepend>` или `<b-input-group-append>`](#using-sub-components) для правильного отображения.
 
 ```html
 <div>
   <b-input-group>
     <template #prepend>
-      <b-input-group-text >Username</b-input-group-text>
+      <b-input-group-text>Имя пользователя</b-input-group-text>
     </template>
     <b-form-input></b-form-input>
 
     <template #append>
-      <b-dropdown text="Dropdown" variant="success">
-        <b-dropdown-item>Action A</b-dropdown-item>
-        <b-dropdown-item>Action B</b-dropdown-item>
+      <b-dropdown text="Выпадающий список" variant="success">
+        <b-dropdown-item>Действие A</b-dropdown-item>
+        <b-dropdown-item>Действие B</b-dropdown-item>
       </b-dropdown>
     </template>
   </b-input-group>
@@ -80,24 +79,22 @@ The slot content will automatically be wrapped by
 <!-- b-input-group-using-slots.vue -->
 ```
 
-### Using sub-components
+### Использование подкомпонентов
 
-Use the `<b-input-group-prepend>` or `<b-input-group-append>` to add arbitrary addons wherever you
-like, and use these components to group buttons in your input group. Single buttons must always be
-wrapped in these components for proper styling.
+Используйте `<b-input-group-prepend>` или `<b-input-group-append>` для добавления произвольных надстроек, где хотите, и используйте эти компоненты для группировки кнопок в вашей группе ввода. Отдельные кнопки всегда должны быть обернуты этими компонентами для правильного стиля.
 
 ```html
 <div>
   <b-input-group>
     <b-input-group-prepend>
-      <b-button variant="outline-info">Button</b-button>
+      <b-button variant="outline-info">Кнопка</b-button>
     </b-input-group-prepend>
 
     <b-form-input type="number" min="0.00"></b-form-input>
 
     <b-input-group-append>
-      <b-button variant="outline-secondary">Button</b-button>
-      <b-button variant="outline-primary">Button</b-button>
+      <b-button variant="outline-secondary">Кнопка</b-button>
+      <b-button variant="outline-primary">Кнопка</b-button>
       <b-input-group-text>
         <b-icon icon="x" />
       </b-input-group-text>
@@ -108,14 +105,11 @@ wrapped in these components for proper styling.
 <!-- b-input-group-addons-placement.vue -->
 ```
 
-Set the `is-text` prop on `<b-input-group-prepend>` or `<b-input-group-append>` if the content is
-textual in nature to apply proper styling. Alternatively, place the `<b-input-group-text>`
-subcomponent inside of the `<b-input-group-prepend>` or `<b-input-group-append>`. This also applies
-when you want to use on of [BootstrapVue's icons](/docs/icons).
+Установите свойство `is-text` в `<b-input-group-prepend>` или `<b-input-group-append>`, если содержимое является текстовым по своей природе, чтобы применить правильный стиль. В качестве альтернативы поместите подкомпонент `<b-input-group-text>` внутри `<b-input-group-prepend>` или `<b-input-group-append>`. Это также применимо, когда вы хотите использовать один из [иконок BootstrapVue](/docs/icons).
 
-## Supported form-controls
+## Поддерживаемые формы-элементы управления
 
-The following are the form controls supported as the input-group's _main_ input element:
+Следующие элементы управления формами поддерживаются в качестве входного _главного_ элемента входной группы:
 
 - [`<b-form-input>`](/docs/components/form-input)
 - [`<b-form-textarea>`](/docs/components/form-textarea)
@@ -127,138 +121,128 @@ The following are the form controls supported as the input-group's _main_ input 
 - [`<b-form-datepicker>`](/docs/components/form-datepicker)
 - [`<b-form-timepicker>`](/docs/components/form-timepicker)
 
-**Notes:**
+**Примечания:**
 
-- BootstrapVue uses custom SCSS/CSS to handling sizing the `<b-form-file>` input when it is placed
-  in a `<b-input-group>` which has a [`size`](#control-sizing) specified.
-- BootstrapVue uses custom SCSS/CSS when `<b-form-input type="range">` is placed in a
-  `<b-input-group>`.
-- BootstrapVue's custom components (i.e. `<b-form-spinbutton>`, `<b-form-rating>`, `<b-form-tags>`,
-  etc.) require BootstrapVue's custom SCSS/CSS.
+- BootstrapVue использует пользовательский SCSS/CSS для обработки размера ввода `<b-form-file>`, когда он помещается в `<b-input-group>`, который имеет [`size`](#control-sizing).
+- BootstrapVue использует пользовательский SCSS/CSS, когда `<b-form-input type="range">` помещается в `<b-input-group>`.
+- Пользовательские компоненты BootstrapVue (например, `<b-form-spinbutton>`, `<b-form-rating>`, `<b-form-tags>` и т. д.) Требуют настраиваемого SCSS/CSS BootstrapVue.
 
-## Checkbox and radio addons
+## Аддоны флажок и радио
 
-Place any checkbox or radio within an input group's addon instead of text.
+Поместите любой флажок или переключатель в надстройку группы ввода вместо текста.
 
-**Note:** Bootstrap v4.x recommends using native radio and checkbox inputs over custom radios and
-checkboxes, but it is possible to use as `<b-form-radio>` and `<b-form-checkbox>` with a few utility
-classes applied.
+**Примечание:** Bootstrap v4.x рекомендует использовать встроенные радиомодули и входы флажков вместо настраиваемых радиомодулей и флажков, но можно использовать как `<b-form-radio>` и `<b-form-checkbox>` с применено несколько служебных классов.
 
-### Native checkbox and radio addons
+### Нативные аддоны флажок и радио
 
 ```html
 <div>
   <b-input-group class="mb-2">
     <b-input-group-prepend is-text>
-      <input type="checkbox" aria-label="Checkbox for following text input">
+      <input type="checkbox" aria-label="Флажок для следующего ввода текста">
     </b-input-group-prepend>
-    <b-form-input aria-label="Text input with checkbox"></b-form-input>
+    <b-form-input aria-label="Ввод текста с флажком"></b-form-input>
   </b-input-group>
 
   <b-input-group>
     <b-input-group-prepend is-text>
-      <input type="radio" aria-label="Radio for following text input">
+      <input type="radio" aria-label="Радио для последующего ввода текста">
     </b-input-group-prepend>
-    <b-form-input aria-label="Text input with radio input"></b-form-input>
+    <b-form-input aria-label="Ввод текста с радио-вводом"></b-form-input>
   </b-input-group>
 </div>
 
 <!-- b-input-group-checks-radios.vue -->
 ```
 
-### Custom radio, checkbox, and switch addons
+### Пользовательские аддоны радио, флажки и переключатели
 
-Using `<b-form-checkbox>` and `<b-form-radio>` components as addons, using Bootstrap
-[utility classes](/docs/reference/utility-classes) for additional styling to get them to "fit" in
-the addon:
+Использование компонентов `<b-form-checkbox>` и `<b-form-radio>` в качестве надстроек, использование Bootstrap [служебных классов](/docs/reference/utility-classes) для дополнительной стилизации, чтобы они "соответствовали" в аддоне:
 
 ```html
 <div>
   <b-input-group class="mb-2">
     <b-input-group-prepend is-text>
       <b-form-checkbox class="mr-n2">
-        <span class="sr-only">Checkbox for following text input</span>
+        <span class="sr-only">Флажок для следующего ввода текста</span>
       </b-form-checkbox>
     </b-input-group-prepend>
-    <b-form-input aria-label="Text input with checkbox"></b-form-input>
+    <b-form-input aria-label="Ввод текста с флажком"></b-form-input>
   </b-input-group>
 
   <b-input-group class="mb-2">
     <b-input-group-prepend is-text>
       <b-form-radio class="mr-n2">
-        <span class="sr-only">Radio for following text input</span>
+        <span class="sr-only">Радио для последующего ввода текста</span>
       </b-form-radio>
     </b-input-group-prepend>
-    <b-form-input aria-label="Text input with radio input"></b-form-input>
+    <b-form-input aria-label="Ввод текста с радио-вводом"></b-form-input>
   </b-input-group>
 
   <b-input-group>
     <b-input-group-prepend is-text>
       <b-form-checkbox switch class="mr-n2">
-        <span class="sr-only">Switch for following text input</span>
+        <span class="sr-only">Переключиться на следующий ввод текста</span>
       </b-form-checkbox>
     </b-input-group-prepend>
-    <b-form-input aria-label="Text input with switch"></b-form-input>
+    <b-form-input aria-label="Ввод текста с переключателем"></b-form-input>
   </b-input-group>
 </div>
 
 <!-- b-input-group-custom-checks-radios.vue -->
 ```
 
-In the above example, we have use the `.sr-only` class on a `<span>` to visually hide the custom
-control's label content (while making them still accessible to screen reader users), and used the
-utility class `.mr-n2` to add a negative right margin to compensate for the "gutter" space between
-the control and the hidden label.
+В приведенном выше примере мы использовали класс `.sr-only` в `<span>`, чтобы визуально скрыть содержимое метки настраиваемого элемента управления (при этом сделав его доступным для пользователей программ чтения с экрана), и использовали служебный класс `.mr-n2`, чтобы добавить отрицательное правое поле, чтобы компенсировать "промежуток" между элементом управления и скрытой меткой.
 
-## Multiple inputs
+## Мультивводы
 
 ```html
 <div>
-  <b-input-group prepend="First and last name" class="mb-2">
-    <b-form-input aria-label="First name"></b-form-input>
-    <b-form-input aria-label="Last name"></b-form-input>
+  <b-input-group prepend="Имя и фамилия" class="mb-2">
+    <b-form-input aria-label="Имя"></b-form-input>
+    <b-form-input aria-label="Фамилия"></b-form-input>
   </b-input-group>
 </div>
 
 <!-- input-group-multiple-inputs.vue -->
 ```
 
-## Multiple addons
+## Множественные дополнения
 
-Multiple add-ons are supported and can be mixed with checkbox and radio input versions.
+Поддерживаются несколько надстроек, которые можно комбинировать с версиями флажков и радиовходов.
 
 ```html
 <div>
   <b-input-group prepend="Item">
     <b-input-group-prepend is-text>
-      <input type="checkbox" aria-label="Checkbox for following text input">
+      <input type="checkbox" aria-label="Флажок для следующего ввода текста">
     </b-input-group-prepend>
     <b-input-group-prepend is-text><b>$</b></b-input-group-prepend>
-    <b-form-input type="number" aria-label="Text input with checkbox"></b-form-input>
+    <b-form-input type="number" aria-label="Ввод текста с флажком"></b-form-input>
   </b-input-group>
 </div>
 
 <!-- b-input-group-multiple-addons.vue -->
 ```
 
-## Dropdown addons
+## Выпадающие дополнения
 
 ```html
 <div>
   <b-input-group>
     <template #prepend>
-      <b-dropdown text="Dropdown" variant="info">
-        <b-dropdown-item>Action A</b-dropdown-item>
-        <b-dropdown-item>Action B</b-dropdown-item>
+      <b-dropdown text="Выпадающий список" variant="info">
+        <b-dropdown-item>Действие A</b-dropdown-item>
+        <b-dropdown-item>Действие B</b-dropdown-item>
       </b-dropdown>
     </template>
 
     <b-form-input></b-form-input>
 
     <template #append>
-      <b-dropdown text="Dropdown" variant="outline-secondary" v-for="i in 2" :key="i">
-        <b-dropdown-item>Action C</b-dropdown-item>
-        <b-dropdown-item>Action D</b-dropdown-item>
+      <b-dropdown text="Выпадающий список" variant="outline-secondary" v-for="i in 2" :key="i">
+        <b-dropdown-item>Действие C</b-dropdown-item>
+        <b-dropdown-item>Действие D</b-dropdown-item>
       </b-dropdown>
     </template>
   </b-input-group>
@@ -267,11 +251,9 @@ Multiple add-ons are supported and can be mixed with checkbox and radio input ve
 <!-- b-input-group-dropdown.vue -->
 ```
 
-## Control sizing
+## Размеры элементов
 
-Set height using the `size` prop to `sm` or `lg` for small or large respectively. There is no need
-to set size on the individual inputs or buttons. Note however, you _will be required_ to also set
-the size on dropdowns.
+Установите высоту, используя свойство `size`, на `sm` или `lg` для маленьких или больших соответственно. Нет необходимости устанавливать размер отдельных входов или кнопок. Обратите внимание, однако, что вам _обязательно_ также установить размер в раскрывающихся списках.
 
 ```html
 <div>
@@ -280,11 +262,11 @@ the size on dropdowns.
     :key="size"
     :size="size"
     class="mb-3"
-    prepend="Label"
+    prepend="Метка"
   >
     <b-form-input></b-form-input>
     <b-input-group-append>
-      <b-button size="sm" text="Button" variant="success">Button</b-button>
+      <b-button size="sm" text="Кнопка" variant="success">Кнопка</b-button>
     </b-input-group-append>
   </b-input-group>
 </div>
@@ -292,29 +274,28 @@ the size on dropdowns.
 <!-- b-input-group-size.vue -->
 ```
 
-To control width, place the input inside standard Bootstrap grid column.
+Чтобы контролировать ширину, поместите ввод внутри стандартного столбца сетки Bootstrap.
 
-### Sizing custom radio, checkbox and switch addons
+### Настройка настраиваемого радио, флажка и переключателей аддонов
 
-If using `<b-form-radio>` or `<b-form-checkbox>` as addons, additional utility classes may be
-required to make everything fit correctly, depending on the size chosen:
+При использовании `<b-form-radio>` или `<b-form-checkbox>` в качестве дополнений могут потребоваться дополнительные служебные классы, чтобы все подходило правильно, в зависимости от выбранного размера:
 
 ```html
 <div>
   <b-input-group size="sm" prepend="Small" class="mb-2">
-    <b-form-input aria-label="Small text input with custom switch"></b-form-input>
+    <b-form-input aria-label="Ввод небольшого текста с настраиваемым переключателем"></b-form-input>
     <b-input-group-append is-text>
       <b-form-checkbox switch class="mr-n2 mb-n1">
-        <span class="sr-only">Checkbox for previous text input</span>
+        <span class="sr-only">Флажок для предыдущего ввода текста</span>
       </b-form-checkbox>
     </b-input-group-append>
   </b-input-group>
 
   <b-input-group size="lg" prepend="Large" class="mb-2">
-    <b-form-input aria-label="Large text input with switch"></b-form-input>
+    <b-form-input aria-label="Большой ввод текста с переключателем"></b-form-input>
     <b-input-group-append is-text>
       <b-form-checkbox switch class="mr-n2">
-        <span class="sr-only">Switch for previous text input</span>
+        <span class="sr-only">Переключатель к предыдущему вводу текста</span>
       </b-form-checkbox>
     </b-input-group-append>
   </b-input-group>
@@ -323,12 +304,10 @@ required to make everything fit correctly, depending on the size chosen:
 <!-- b-input-group-custom-checks-radios-sizing.vue -->
 ```
 
-Specifically, when using the `sm` size on `<b-input-group>` you will need to add a negative bottom
-margin, via the use of the `.mb-n1` [utility class](/docs/reference/utility-classes).
+В частности, при использовании размера `sm` в `<b-input-group>` вам нужно будет добавить отрицательное нижнее поле, используя `.mb-n1` [класс утилит](/docs/reference/utility-classes).
 
-## Contextual states
+## Контекстные состояния
 
-Bootstrap v4 currently **does not** support contextual state styling (i.e. valid or invalid) of
-input groups. However, the inputs inside the input group do support contextual state.
+Bootstrap v4 в настоящее время **не** поддерживает контекстную стилизацию состояния (т.е. допустимую или недопустимую) групп ввода. Однако входы внутри группы ввода действительно поддерживают контекстное состояние.
 
 <!-- Component reference added automatically from component package.json -->
