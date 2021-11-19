@@ -1,7 +1,6 @@
-# Form Textarea
+# Текстовая область формы
 
-> Create multi-line text inputs with support for auto height sizing, minimum and maximum number of
-> rows, and contextual states.
+> Создавайте многострочные текстовые поля ввода с поддержкой автоматического изменения размера, минимального и максимального количества строк и контекстных состояний.
 
 ```html
 <template>
@@ -9,7 +8,7 @@
     <b-form-textarea
       id="textarea"
       v-model="text"
-      placeholder="Enter something..."
+      placeholder="Введите что-нибудь..."
       rows="3"
       max-rows="6"
     ></b-form-textarea>
@@ -31,48 +30,48 @@
 <!-- b-form-textarea.vue -->
 ```
 
-## Control sizing
+## Размеры элементов управления
 
-Set text height using the `size` prop to `sm` or `lg` for small or large respectively.
+Установите высоту текста с помощью свойства `size` на `sm` или `lg` для маленьких или больших соответственно.
 
-To control width, place the input inside standard Bootstrap grid column.
+Чтобы контролировать ширину, поместите ввод внутри стандартного столбца сетки Bootstrap.
 
 ```html
 <b-container fluid>
   <b-row>
     <b-col sm="2">
-      <label for="textarea-small">Small:</label>
+      <label for="textarea-small">Маленький:</label>
     </b-col>
     <b-col sm="10">
       <b-form-textarea
         id="textarea-small"
         size="sm"
-        placeholder="Small textarea"
+        placeholder="Маленькая текстовая область"
       ></b-form-textarea>
     </b-col>
   </b-row>
 
   <b-row class="mt-2">
     <b-col sm="2">
-      <label for="textarea-default">Default:</label>
+      <label for="textarea-default">По умолчанию:</label>
     </b-col>
     <b-col sm="10">
       <b-form-textarea
         id="textarea-default"
-        placeholder="Default textarea"
+        placeholder="Текстовая область по умолчанию"
       ></b-form-textarea>
     </b-col>
   </b-row>
 
   <b-row class="mt-2">
     <b-col sm="2">
-      <label for="textarea-large">Large:</label>
+      <label for="textarea-large">Большой:</label>
     </b-col>
     <b-col sm="10">
       <b-form-textarea
         id="textarea-large"
         size="lg"
-        placeholder="Large textarea"
+        placeholder="Большая текстовая область"
       ></b-form-textarea>
     </b-col>
   </b-row>
@@ -81,17 +80,15 @@ To control width, place the input inside standard Bootstrap grid column.
 <!-- b-form-textarea-sizes.vue -->
 ```
 
-## Displayed rows
+## Отображаемые строки
 
-To set the height of `<b-form-textarea>`, set the `rows` prop to the desired number of rows. If no
-value is provided to `rows`, then it will default to `2` (the browser default and minimum acceptable
-value). Setting it to null or a value below 2 will result in the default of `2` being used.
+Чтобы установить высоту `<b-form-textarea>`, установите свойство `rows` на желаемое количество строк. Если для `rows`, не задано значение, то по умолчанию будет `2` (значение по умолчанию для браузера и минимально допустимое значение). Если задать для него значение null или значение ниже 2, будет использоваться значение по умолчанию `2`.
 
 ```html
 <div>
   <b-form-textarea
     id="textarea-rows"
-    placeholder="Tall textarea"
+    placeholder="Высокое текстовое поле"
     rows="8"
   ></b-form-textarea>
 </div>
@@ -99,16 +96,15 @@ value). Setting it to null or a value below 2 will result in the default of `2` 
 <!-- b-form-textarea-rows.vue -->
 ```
 
-### Disable resize handle
+### Отключить маркер изменения размера
 
-Some web browsers will allow the user to re-size the height of the textarea. To disable this
-feature, set the `no-resize` prop to `true`.
+Некоторые веб-браузеры позволяют пользователю изменять высоту текстового поля. Чтобы отключить эту функцию, установите для свойства `no-resize` значение `true`.
 
 ```html
 <div>
   <b-form-textarea
     id="textarea-no-resize"
-    placeholder="Fixed height textarea"
+    placeholder="Текстовое поле с фиксированной высотой"
     rows="3"
     no-resize
   ></b-form-textarea>
@@ -117,32 +113,26 @@ feature, set the `no-resize` prop to `true`.
 <!-- b-form-textarea-no-resize.vue -->
 ```
 
-### Auto height
+### Автоматическая высота
 
-`<b-form-textarea>` can also automatically adjust its height (text rows) to fit the content, even as
-the user enters or deletes text. The height of the textarea will either grow or shrink to fit the
-content (grow to a maximum of `max-rows` or shrink to a minimum of `rows`).
+`<b-form-textarea>` также может автоматически регулировать свою высоту (текстовые строки) в соответствии с содержимым, даже когда пользователь вводит или удаляет текст. Высота текстового поля будет либо увеличиваться, либо уменьшаться, чтобы соответствовать содержимому (увеличиваться до максимума `max-rows` или уменьшаться до минимального `rows`).
 
-To set the initial minimum height (in rows), set the `rows` prop to the desired number of lines (or
-leave it at the default of `2`), And then set maximum rows that the text area will grow to (before
-showing a scrollbar) by setting the `max-rows` prop to the maximum number of lines of text.
+Чтобы установить начальную минимальную высоту (в строках), установите свойство `rows` на желаемое количество строк (или оставьте значение по умолчанию `2`), а затем установите максимальное количество строк, до которых будет увеличиваться текстовая область (до показывая полосу прокрутки), установив для свойства `max-rows` максимальное количество строк текста.
 
-To make the height `sticky` (i.e. never shrink), set the `no-auto-shrink` prop to `true`. The
-`no-auto-shrink` props has no effect if `max-rows` is not set or is equal to or less than `rows`.
+Чтобы сделать высоту `sticky` (т.е. никогда не уменьшаться), установите для свойства `no-auto-shrink` значение `true`. Свойства `no-auto-shrink` не действуют, если `max-rows` не задано или равно или меньше `rows`.
 
-Note that the resize handle of the textarea (if supported by the browser) will automatically be
-disabled in auto-height mode.
+Обратите внимание, что дескриптор изменения размера текстового поля (если он поддерживается браузером) будет автоматически отключен в режиме автоматической высоты.
 
 ```html
 <b-container fluid>
   <b-row>
     <b-col sm="2">
-      <label for="textarea-auto-height">Auto height:</label>
+      <label for="textarea-auto-height">Автоматическая высота:</label>
     </b-col>
     <b-col sm="10">
       <b-form-textarea
         id="textarea-auto-height"
-        placeholder="Auto height textarea"
+        placeholder="Текстовое поле с автоматической высотой"
         rows="3"
         max-rows="8"
       ></b-form-textarea>
@@ -151,12 +141,12 @@ disabled in auto-height mode.
 
   <b-row class="mt-2">
     <b-col sm="2">
-      <label for="textarea-no-auto-shrink">No auto-shrink:</label>
+      <label for="textarea-no-auto-shrink">Без автоматического сжатия:</label>
     </b-col>
     <b-col sm="10">
       <b-form-textarea
         id="textarea-no-auto-shrink"
-        placeholder="Auto height (no-shrink) textarea"
+        placeholder="Текстовое поле с автоматической высотой (без сжатия)"
         rows="3"
         max-rows="8"
         no-auto-shrink
@@ -168,29 +158,22 @@ disabled in auto-height mode.
 <!-- b-form-textarea-auto-height.vue -->
 ```
 
-#### Auto height implementation note
+#### Примечание о реализации автоматической высоты
 
-Auto-height works by computing the resulting height via CSS queries, hence the input has to be in
-document (DOM) and visible (not hidden via `display: none`). Initial height is computed on mount. If
-the browser client supports [`IntersectionObserver`](https://caniuse.com/intersectionobserver)
-(either natively or via [a polyfill](/docs#js)), `<b-form-textarea>` will take advantage of this to
-determine when the textarea becomes visible and will then compute the height. Refer to the
-[Browser support](/docs#browser) section on the getting started page.
+Автоматическая высота работает путем вычисления результирующей высоты с помощью запросов CSS, поэтому ввод должен быть в документе (DOM) и видимым (не скрытым с помощью `display: none`). Начальная высота рассчитывается на креплении. Если клиент браузера поддерживает [`IntersectionObserver`](https://caniuse.com/intersectionobserver) (либо изначально, либо через [a polyfill](/docs#js)), то `<b-form-textarea>` воспользуется преимуществом. этого, чтобы определить, когда текстовое поле станет видимым, и затем вычислит высоту. Смотрите раздел [Поддержка браузера](/docs#browser) на странице начала работы.
 
-## Contextual states
+## Контекстные состояния
 
-Bootstrap includes validation styles for `valid` and `invalid` states on most form controls.
+Bootstrap включает стили валидации для состояний `valid` и `invalid` для большинства элементов управления формой.
 
-Generally speaking, you'll want to use a particular state for specific types of feedback:
+Вообще говоря, вы захотите использовать определенное состояние для определенных типов обратной связи:
 
-- `false` (denotes invalid state) is great for when there's a blocking or required field. A user
-  must fill in this field properly to submit the form.
-- `true` (denotes valid state) is ideal for situations when you have per-field validation throughout
-  a form and want to encourage a user through the rest of the fields.
-- `null` Displays no validation state (neither valid nor invalid)
+- `false` (обозначает недопустимое состояние) отлично подходит, когда есть блокирующее или обязательное поле. Пользователь должен правильно заполнить это поле, чтобы отправить форму.
+- `true` (обозначает допустимое состояние) идеально подходит для ситуаций, когда у вас есть проверка по каждому полю во всей форме и вы хотите побудить пользователя пройти через остальные поля.
+- `null` Не отображает состояние проверки (ни действительное, ни недействительное)
 
-To apply one of the contextual state icons on `<b-form-textarea>`, set the `state` prop to `false`
-(for invalid), `true` (for valid), or `null` (no validation state).
+Чтобы применить один из значков контекстного состояния к `<b-form-textarea>`, установите для свойства `state` значение `false`
+(для недопустимого), `true` (для действительного) или `null` (без состояния проверки).
 
 ```html
 <template>
@@ -199,7 +182,7 @@ To apply one of the contextual state icons on `<b-form-textarea>`, set the `stat
       id="textarea-state"
       v-model="text"
       :state="text.length >= 10"
-      placeholder="Enter at least 10 characters"
+      placeholder="Введите не менее 10 символов"
       rows="3"
     ></b-form-textarea>
   </div>
@@ -218,52 +201,42 @@ To apply one of the contextual state icons on `<b-form-textarea>`, set the `stat
 <!-- b-form-textarea-state.vue -->
 ```
 
-### Conveying contextual state to assistive technologies and colorblind users
+### Передача состояния контекста вспомогательным технологиям и дальтоникам
 
-Using these contextual states to denote the state of a form control only provides a visual,
-color-based indication, which will not be conveyed to users of assistive technologies - such as
-screen readers - or to colorblind users.
+Использование этих контекстных состояний для обозначения состояния элемента управления формы обеспечивает только визуальную цветовую индикацию, которая не будет передана пользователям вспомогательных технологий, таких как программы чтения с экрана, или пользователям с дальтонизмом.
 
-Ensure that an alternative indication of state is also provided. For instance, you could include a
-hint about state in the form control's `<label>` text itself, or by providing an additional help
-text block.
+Убедитесь, что также имеется альтернативная индикация состояния. Например, вы можете включить подсказку о состоянии в самом тексте `<label>` элемента управления формой или предоставив дополнительный текстовый блок справки.
 
-### `aria-invalid` attribute
+### Атрибут `aria-invalid`
 
-When `<b-form-textarea>` has an invalid contextual state (i.e. state is `false`) you may also want
-to set the prop `aria-invalid` to `true`, or one of the supported values:
+Когда `<b-form-textarea>` имеет недопустимое контекстное состояние (т.е. состояние `false`), вы также можете захотеть установить для свойства `aria-invalid` значение `true` или одно из поддерживаемых значений:
 
-- `false`: No errors (default)
-- `true` or `'true'`: The value has failed validation.
-- `'grammar'`: A grammatical error has been detected.
-- `'spelling'` A spelling error has been detected.
+- `false`: Без ошибок (по умолчанию)
+- `true` или `'true'`: Значение не прошло проверку.
+- `'grammar'`: Обнаружена грамматическая ошибка.
+- `'spelling'` Обнаружена орфографическая ошибка.
 
-If the `state` prop is set to `false`, and the `aria-invalid` prop is not explicitly set,
-`<b-form-textarea>` will automatically set the `aria-invalid` attribute to `'true'`.
+Если для свойства `state` задано значение `false`, а свойство `aria-invalid` явно не установлено, `<b-form-textarea>` автоматически установит для атрибута `aria-invalid` значение `'true'`.
 
-## Formatter support
+## Поддержка форматтера
 
-`<b-form-textarea>` optionally supports formatting by passing a function reference to the
-`formatter` prop.
+`<b-form-textarea>` опционально поддерживает форматирование, передавая ссылку на функцию в свойство `formatter`.
 
-Formatting (when a formatter function is supplied) occurs when the control's native `input` and
-`change` events fire. You can use the boolean prop `lazy-formatter` to restrict the formatter
-function to being called on the control's native `blur` event.
+Форматирование (когда предоставляется функция форматирования) происходит, когда срабатывают собственные события элемента управления `input` и `change`. Вы можете использовать логическое свойство `lazy-formatter`, чтобы ограничить вызов функции форматирования для собственного события элемента управления `blur`.
 
-The `formatter` function receives two arguments: the raw `value` of the input element, and the
-native `event` object that triggered the format (if available).
+Функция `formatter` получает два аргумента: необработанное `value` элемента ввода и нативный объект `event`, который инициировал форматирование (если доступно).
 
-The `formatter` function should return the formatted value as a _string_.
+Функция `formatter` должна возвращать отформатированное значение как _строка_.
 
-Formatting does not occur if a `formatter` is not provided.
+Форматирование не происходит, если не предоставлено средство форматирования `formatter`.
 
 ```html
 <template>
   <div>
     <b-form-group
-      label="Textarea with formatter (on input)"
+      label="Текстовая область с форматеров (при вводе)"
       label-for="textarea-formatter"
-      description="We will convert your text to lowercase instantly"
+      description="Мы мгновенно переведем ваш текст в нижний регистр"
       class="mb-0"
     >
       <b-form-textarea
@@ -273,12 +246,12 @@ Formatting does not occur if a `formatter` is not provided.
         :formatter="formatter"
       ></b-form-textarea>
     </b-form-group>
-    <p style="white-space: pre-line"><b>Value:</b> {{ text1 }}</p>
+    <p style="white-space: pre-line"><b>Значение:</b> {{ text1 }}</p>
 
     <b-form-group
-      label="Textarea with lazy formatter (on blur)"
+      label="Текстовая область с отложенным форматеров (при блюре)"
       label-for="textarea-lazy"
-      description="This one is a little lazy!"
+      description="Этот немного поленился!"
       class="mb-0"
     >
       <b-form-textarea
@@ -289,7 +262,7 @@ Formatting does not occur if a `formatter` is not provided.
         :formatter="formatter"
       ></b-form-textarea>
     </b-form-group>
-    <p class="mb-0" style="white-space: pre-line"><b>Value:</b> {{ text2 }}</p>
+    <p class="mb-0" style="white-space: pre-line"><b>Значение:</b> {{ text2 }}</p>
   </div>
 </template>
 
@@ -312,16 +285,11 @@ Formatting does not occur if a `formatter` is not provided.
 <!-- b-form-textarea-formatter.vue -->
 ```
 
-**Note:** With non-lazy formatting, if the cursor is not at the end of the input value, the cursor
-may jump to the end _after_ a character is typed. You can use the provided event object and the
-`event.target` to access the native input's selection methods and properties to control where the
-insertion point is. This is left as an exercise for the reader.
+**Примечание:** При неленивом форматировании, если курсор не находится в конце входного значения, он может переместиться в конец _после_ ввода символа. Вы можете использовать предоставленный объект события и `event.target` для доступа к собственным методам выбора и свойствам ввода, чтобы контролировать, где находится точка вставки. Это оставлено читателю в качестве упражнения.
 
-## Readonly plain text
+## Обычный текст только для чтения
 
-If you want to have `<b-form-textarea readonly>` elements in your form styled as plain text, set the
-`plaintext` prop (no need to set `readonly` as it will be set automatically) to remove the default
-form field styling and preserve the correct text size, margin, padding and height.
+Если вы хотите, чтобы элементы `<b-form-textarea readonly>` в вашей форме были стилизованы как простой текст, установите свойство `plaintext` (не нужно устанавливать `readonly`, так как она будет установлена автоматически), чтобы удалить форму по умолчанию стиль поля и сохранить правильный размер текста, поля, отступы и высоту.
 
 ```html
 <template>
@@ -334,7 +302,7 @@ form field styling and preserve the correct text size, margin, padding and heigh
   export default {
     data() {
       return {
-        text: "This is some text.\nIt is read only and doesn't look like an input."
+        text: "Это какой-то текст.\nОн доступен только для чтения и не похож на ввод."
       }
     }
   }
@@ -343,38 +311,25 @@ form field styling and preserve the correct text size, margin, padding and heigh
 <!-- b-form-textarea-plaintext.vue -->
 ```
 
-## `v-model` modifiers
+## Модификаторы `v-model`
 
-Vue does not officially support `.lazy`, `.trim`, and `.number` modifiers on the `v-model` of custom
-component based inputs, and may generate a bad user experience. Avoid using Vue's native modifiers.
+Vue официально не поддерживает модификаторы `.lazy`, `.trim` и `.number` в `v-model` входных данных на основе настраиваемых компонентов и может создавать неудобства для пользователей. Избегайте использования собственных модификаторов Vue.
 
-To get around this, `<b-form-textarea>` has three boolean props `trim`, `number`, and `lazy` which
-emulate the native Vue `v-model` modifiers `.trim` and `.number` and `.lazy` respectively. The
-`lazy` prop will update the v-model on `change`/`blur`events.
+Чтобы обойти это, в `<b-form-textarea>` есть три логических свойства `trim`, `number` и `lazy`, которые имитируют встроенные модификаторы Vue `v-model` `.trim` и `.number` и `.lazy` соответственно. Свойство `lazy` будет обновлять v-model при событиях `change`/`blur`.
 
-**Notes:**
+**Примечания:**
 
-- The `number` prop takes precedence over the `trim` prop (i.e. `trim` will have no effect when
-  `number` is set).
-- When using the `number` prop, and if the value can be parsed as a number (via `parseFloat`) it
-  will return a value of type `Number` to the `v-model`, otherwise the original input value is
-  returned as type `String`. This is the same behaviour as the native `.number` modifier.
-- The `trim` and `number` modifier props do not affect the value returned by the `input` or `change`
-  events. These events will always return the string value of the content of `<textarea>` after
-  optional formatting (which may not match the value returned via the `v-model` `update` event,
-  which handles the modifiers).
+- Свойство `number` имеет приоритет перед свойством `trim` (то есть `trim` не будет иметь никакого эффекта, если установлено `number`).
+- При использовании свойства `number` и если значение может быть проанализировано как число (через `parseFloat`), оно вернет значение типа `Number` в `v-model`, в противном случае возвращается исходное входное значение, как тип `String`. Это то же самое поведение, что и собственный модификатор `.number`.
+- Свойства модификаторов `trim` и `number` не влияют на значение, возвращаемое событиями `input` или `change`. Эти события всегда будут возвращать строковое значение содержимого `<textarea>` после необязательного форматирования (которое может не соответствовать значению, возвращаемому через событие `update` в `v-model`, которое обрабатывает модификаторы).
 
-## Debounce support
+## Поддержка Debounce
 
-As an alternative to the `lazy` modifier prop, `<b-form-textarea>` optionally supports debouncing
-user input, updating the `v-model` after a period of idle time from when the last character was
-entered by the user (or a `change` event occurs). If the user enters a new character (or deletes
-characters) before the idle timeout expires, the timeout is re-started.
+В качестве альтернативы опоре модификатора `lazy`, `<b-form-textarea>` опционально поддерживает отладку пользовательского ввода, обновляя `v-model` после периода простоя с момента, когда последний символ был введен пользователем ( или происходит событие `change`). Если пользователь вводит новый символ (или удаляет символы) до истечения тайм-аута простоя, тайм-аут запускается повторно.
 
-To enable debouncing, set the prop `debounce` to any integer greater than zero. The value is
-specified in milliseconds. Setting `debounce` to `0` will disable debouncing.
+Чтобы включить debouncing, установите для свойства `debounce` любое целое число больше нуля. Значение указывается в миллисекундах. Установка `debounce` на `0` отключит debouncing.
 
-Note: debouncing will _not_ occur if the `lazy` prop is set.
+Примечание: устранение неполадок _не_ произойдет, если установлено свойство `lazy`.
 
 ```html
 <template>
@@ -397,57 +352,48 @@ Note: debouncing will _not_ occur if the `lazy` prop is set.
 <!-- b-form-textarea-debounce.vue -->
 ```
 
-## Autofocus
+## Автофокус
 
-When the `autofocus` prop is set on `<b-form-textarea>`, the textarea will be auto-focused when it
-is inserted (i.e. **mounted**) into the document or re-activated when inside a Vue `<keep-alive>`
-component. Note that this prop **does not** set the `autofocus` attribute on the textarea, nor can
-it tell when the textarea becomes visible.
+Когда свойство `autofocus` установлено на `<b-form-textarea>`, текстовое поле будет автоматически сфокусировано, когда оно вставлено (т.е. **mounted**) в документ или повторно активировано, когда оно находится внутри компонента Vue `<keep-alive>`. Обратите внимание, что это свойство **не** устанавливает атрибут `autofocus` в текстовом поле и не может определить, когда текстовое поле станет видимым.
 
-## Native and custom events
+## Собственные и пользовательские события
 
-All native events (other than the custom `input` and `change` events) are supported, without the
-need for the `.native` modifier.
+Поддерживаются все собственные события (кроме настраиваемых событий `input` и `change`) без модификатора `.native`.
 
-The custom `input` and `change` events receive a single argument of the current `value` (after any
-formatting has been applied), and are triggered by user interaction.
+Пользовательские события `input` и `change` получают единственный аргумент текущего значения `value` (после применения любого форматирования) и запускаются при взаимодействии с пользователем.
 
-The custom `update` event is passed the input value, and is emitted whenever the `v-model` needs
-updating (it is emitted before `input`, `change`. and `blur` as needed).
+Пользовательские события `update` передается входное значение, и оно генерируется всякий раз, когда `v-model` нуждается в обновлении (оно генерируется перед `input`, `change` и `blur` по мере необходимости).
 
-You can always access the native `input` and `change` events by using the `.native` modifier.
+Вы всегда можете получить доступ к собственным событиям `input` и `change` с помощью модификатора `.native`.
 
-## Exposed input properties and methods
+## Открытые входные свойства и методы
 
-`<b-form-textarea>` exposes several of the native input element's properties and methods on the
-component reference (i.e. assign a `ref` to your `<b-form-textarea ref="foo" ...>` and use
-`this.$refs['foo'].propertyName` or `this.$refs['foo'].methodName(...)`).
+`<b-form-textarea>` предоставляет несколько свойств и методов встроенного элемента ввода в ссылке на компонент (т.е. присваивает `ref` вашему `<b-form-textarea ref="foo" ...>` и используйте `this.$refs['foo'].propertyName` или `this.$refs['foo'].methodName(...)`).
 
-### Input properties
+### Свойства ввода
 
-| Property              | Notes      |
-| --------------------- | ---------- |
-| `.selectionStart`     | Read/Write |
-| `.selectionEnd`       | Read/Write |
-| `.selectionDirection` | Read/Write |
-| `.validity`           | Read only  |
-| `.validationMessage`  | Read only  |
-| `.willValidate`       | Read only  |
+| Свойство              | Примечания     |
+| --------------------- | -------------- |
+| `.selectionStart`     | Чтение/Запись  |
+| `.selectionEnd`       | Чтение/Запись  |
+| `.selectionDirection` | Чтение/Запись  |
+| `.validity`           | Только чтение  |
+| `.validationMessage`  | Только чтение  |
+| `.willValidate`       | Только чтение  |
 
-### Input methods
+### Методы ввода
 
-| Method                 | Notes                             |
+| Метод                  | Примечания                        |
 | ---------------------- | --------------------------------- |
-| `.focus()`             | Focus the input                   |
-| `.blur()`              | Remove focus from the input       |
-| `.select()`            | Selects all text within the input |
+| `.focus()`             | Фокус на вводе                    |
+| `.blur()`              | Убрать фокус с ввода              |
+| `.select()`            | Выбирает весь текст в поле ввода  |
 | `.setSelectionRange()` |                                   |
 | `.setRangeText()`      |                                   |
 | `.setCustomValidity()` |                                   |
 | `.checkValidity()`     |                                   |
 | `.reportValidity()`    |                                   |
 
-Refer to https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement for more information on
-these methods and properties. Support will vary based on input type.
+Обратитесь к https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement для получения дополнительной информации об этих методах и свойствах. Поддержка будет зависеть от типа ввода.
 
 <!-- Component reference added automatically from component package.json -->
