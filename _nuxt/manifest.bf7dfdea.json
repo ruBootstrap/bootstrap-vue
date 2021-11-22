@@ -1,7 +1,7 @@
 {
   "name": "BootstrapVue",
   "short_name": "BootstrapVue",
-  "description": "Quickly integrate Bootstrap v4 components with Vue.js",
+  "description": "Быстрая интеграция компонентов Bootstrap v4 с Vue.js",
   "icons": [
     {
       "src": "/_nuxt/icons/icon_64x64.67aef2.png",
