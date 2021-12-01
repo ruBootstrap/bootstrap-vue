@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Layout and Grid System",
-    "description": "Use the powerful mobile-first flexbox grid (via the <b-container>, <b-row>, <b-form-row> and <b-col> components) to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, CSS Sass variables and mixins, and dozens of predefined classes.",
+    "description": "Используйте мощную сетку flexbox для мобильных устройств (с помощью компонентов <b-container>, <b-row>, <b-form-row> и <b-col>) для создания макетов всех форм и размеров благодаря двенадцати система столбцов, пять адаптивных уровней по умолчанию, переменные и примеси CSS Sass и десятки предопределенных классов.",
     "slug": "layout",
     "components": [
       {
@@ -11,13 +11,13 @@
         "props": [
           {
             "prop": "fluid",
-            "description": "When set to true, makes the row 100% wide all the time, or set to one of the Bootstrap breakpoint names for 100% width up to the breakpoint (requires Bootstrap v4.4+ CSS for breakpoint specific value)"
+            "description": "Если установлено значение true, ширина строки постоянно увеличивается на 100% или устанавливается одно из имен контрольных точек Bootstrap для ширины 100% до контрольной точки (требуется Bootstrap v4.4+ CSS для конкретного значения контрольной точки)"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the container"
+            "description": "Контент для размещения в контейнере"
           }
         ]
       },
@@ -26,50 +26,50 @@
         "props": [
           {
             "prop": "alignContent",
-            "description": "Align columns items together on the cross axis: 'start', 'center', 'end', 'around', 'between' or 'stretch'. Has no effect on single rows of items"
+            "description": "Совместите элементы столбцов по поперечной оси: 'start', 'center', 'end', 'around', 'between' или 'stretch'. Не влияет на отдельные строки элементов"
           },
           {
             "prop": "alignH",
-            "description": "Horizontal alignment/spacing of all columns: 'start', 'center', 'end', 'around', or 'between'"
+            "description": "Горизонтальное выравнивание/интервал всех столбцов: 'start', 'center', 'end', 'around', или 'between'"
           },
           {
             "prop": "alignV",
-            "description": "Vertical alignment of all columns in a row: 'start', 'center', 'end', 'baseline', or 'stretch'"
+            "description": "Вертикальное выравнивание всех столбцов в строке: 'start', 'center', 'end', 'baseline' или 'stretch'"
           },
           {
             "prop": "cols",
             "version": "2.2.0",
-            "description": "The number row columns to create at the 'xs' breakpoint. Requires Bootstrap v4.4 CSS"
+            "description": "Столбцы числовой строки, которые нужно создать в контрольной точке 'xs'. Требуется Bootstrap v4.4 CSS"
           },
           {
             "prop": "colsLg",
             "version": "2.2.0",
-            "description": "The number row columns to create at the 'lg' breakpoint. Requires Bootstrap v4.4 CSS"
+            "description": "Столбцы числовой строки, которые нужно создать в контрольной точке 'lg'. Требуется Bootstrap v4.4 CSS"
           },
           {
             "prop": "colsMd",
             "version": "2.2.0",
-            "description": "The number row columns to create at the 'md' breakpoint. Requires Bootstrap v4.4 CSS"
+            "description": "Столбцы числовой строки, которые нужно создать в контрольной точке 'md'. Требуется Bootstrap v4.4 CSS"
           },
           {
             "prop": "colsSm",
             "version": "2.2.0",
-            "description": "The number row columns to create at the 'sm' breakpoint. Requires Bootstrap v4.4 CSS"
+            "description": "Столбцы числовой строки, которые нужно создать в контрольной точке 'sm'. Требуется Bootstrap v4.4 CSS"
           },
           {
             "prop": "colsXl",
             "version": "2.2.0",
-            "description": "The number row columns to create at the 'xl' breakpoint. Requires Bootstrap v4.4 CSS"
+            "description": "Столбцы числовой строки, которые нужно создать в контрольной точке 'xl'. Требуется Bootstrap v4.4 CSS"
           },
           {
             "prop": "noGutters",
-            "description": "When set, removes the margin from the row and removes the padding from the child columns"
+            "description": "Когда установлено, удаляет поле из строки и удаляет отступы из дочерних столбцов"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the row"
+            "description": "Контент для размещения в строке"
           }
         ]
       },
@@ -78,77 +78,77 @@
         "props": [
           {
             "prop": "alignSelf",
-            "description": "Vertical alignment of the grid cell with respect to the row: 'start', 'center', 'end', 'baseline', or 'stretch'"
+            "description": "Вертикальное выравнивание ячейки сетки относительно строки: 'start', 'center', 'end', 'baseline' или 'stretch'"
           },
           {
             "prop": "col",
-            "description": "When true makes an equal width column grid cell spans for xs and up breakpoints"
+            "description": "Когда `true`, ячейки сетки столбцов с одинаковой шириной перекрываются для контрольных точек `xs` и выше"
           },
           {
             "prop": "cols",
-            "description": "Number of columns the grid cell spans for xs and up breakpoints"
+            "description": "Количество столбцов, охватываемых ячейкой сетки для контрольных точек `xs` и выше"
           },
           {
             "prop": "lg",
-            "description": "Number of columns the grid cell spans for lg and up breakpoints"
+            "description": "Количество столбцов, охватываемых ячейкой сетки для контрольных точек `lg` и выше"
           },
           {
             "prop": "md",
-            "description": "Number of columns the grid cell spans for md and up breakpoints"
+            "description": "Количество столбцов, охватываемых ячейкой сетки для контрольных точек `md` и выше"
           },
           {
             "prop": "offset",
-            "description": "Number of columns the grid cell is offset for xs and up breakpoints"
+            "description": "Количество столбцов, на которые смещена ячейка сетки для контрольных точек `xs` и выше"
           },
           {
             "prop": "offsetLg",
-            "description": "Number of columns the grid cell is offset for lg and up breakpoints"
+            "description": "Количество столбцов, на которые смещена ячейка сетки для контрольных точек `lg` и выше"
           },
           {
             "prop": "offsetMd",
-            "description": "Number of columns the grid cell is offset for md and up breakpoints"
+            "description": "Количество столбцов, на которые смещена ячейка сетки для контрольных точек `md` и выше"
           },
           {
             "prop": "offsetSm",
-            "description": "Number of columns the grid cell is offset for sm and up breakpoints"
+            "description": "Количество столбцов, на которые смещена ячейка сетки для контрольных точек `sm` и выше"
           },
           {
             "prop": "offsetXl",
-            "description": "Number of columns the grid cell is offset for xl and up breakpoints"
+            "description": "Количество столбцов, на которые смещена ячейка сетки для контрольных точек `xl` и выше"
           },
           {
             "prop": "order",
-            "description": "Flex order of the grid cell for xs and up breakpoints"
+            "description": "Гибкий порядок ячейки сетки для контрольных точек `xs` и выше"
           },
           {
             "prop": "orderLg",
-            "description": "Flex order of the grid cell for lg and up breakpoints"
+            "description": "Гибкий порядок ячейки сетки для контрольных точек `lg` и выше"
           },
           {
             "prop": "orderMd",
-            "description": "Flex order of the grid cell for md and up breakpoints"
+            "description": "Гибкий порядок ячейки сетки для контрольных точек `md` и выше"
           },
           {
             "prop": "orderSm",
-            "description": "Flex order of the grid cell for sm and up breakpoints"
+            "description": "Гибкий порядок ячейки сетки для контрольных точек `sm` и выше"
           },
           {
             "prop": "orderXl",
-            "description": "Flex order of the grid cell for xl and up breakpoints"
+            "description": "Гибкий порядок ячейки сетки для контрольных точек `xl` и выше"
           },
           {
             "prop": "sm",
-            "description": "Number of columns the grid cell spans for sm and up breakpoints"
+            "description": "Количество столбцов, охватываемых ячейкой сетки для контрольных точек `sm` и выше"
           },
           {
             "prop": "xl",
-            "description": "Number of columns the grid cell spans for xl and up breakpoints"
+            "description": "Количество столбцов, охватываемых ячейкой сетки для контрольных точек `xl` и выше"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the col"
+            "description": "Контент для размещения в столбце"
           }
         ]
       },
@@ -157,7 +157,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the form row"
+            "description": "Контент для размещения в строке формы"
           }
         ]
       }
