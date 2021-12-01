@@ -1,27 +1,25 @@
-# Jumbotron
+# Джамботрон
 
-> A lightweight, flexible component that can optionally extend the entire viewport to showcase key
-> marketing messages on your site.
+> Легкий и гибкий компонент, который при желании может расширять всю область просмотра для демонстрации ключевых маркетинговых сообщений на вашем сайте.
 
-You can set the heading and lead text via the `header` and `lead` props, or use the named slots
-`header` and `lead` if you need HTML support.
+Вы можете установить заголовок и текст лида через свойства `header` и `lead` или использовать именованные слоты `header` и `lead`, если вам нужна поддержка HTML.
 
-Anything else between the opening and closing tags will be rendered at the bottom of the jumbotron.
+Все остальное между открывающим и закрывающим тегами будет отображаться в нижней части jumbotron.
 
-**Usage with props:**
+**Использование со свойством:**
 
 ```html
 <div>
-  <b-jumbotron header="BootstrapVue" lead="Bootstrap v4 Components for Vue.js 2">
-    <p>For more information visit website</p>
-    <b-button variant="primary" href="#">More Info</b-button>
+  <b-jumbotron header="BootstrapVue" lead="Компоненты Bootstrap v4 для Vue.js 2">
+    <p>Для получения дополнительной информации посетите веб-сайт</p>
+    <b-button variant="primary" href="#">Больше информации</b-button>
   </b-jumbotron>
 </div>
 
 <!-- b-jumbotron.vue -->
 ```
 
-**Usage with slots:**
+**Использование со слотами:**
 
 ```html
 <div>
@@ -29,60 +27,47 @@ Anything else between the opening and closing tags will be rendered at the botto
     <template #header>BootstrapVue</template>
 
     <template #lead>
-      This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-      featured content or information.
+      Это простой герой, простой компонент в стиле jumbotron для привлечения дополнительного внимания к избранному контенту или информации.
     </template>
 
     <hr class="my-4">
 
     <p>
-      It uses utility classes for typography and spacing to space content out within the larger
-      container.
+      Он использует служебные классы для типографики и интервалов для размещения содержимого в более крупном контейнере.
     </p>
 
-    <b-button variant="primary" href="#">Do Something</b-button>
-    <b-button variant="success" href="#">Do Something Else</b-button>
+    <b-button variant="primary" href="#">Сделай что-нибудь</b-button>
+    <b-button variant="success" href="#">Сделай что-нибудь еще</b-button>
   </b-jumbotron>
 </div>
 
 <!-- b-jumbotron-using-slots.vue -->
 ```
 
-## Options
+## Параметры
 
-### Header
+### Заголовок
 
-Control which tag is rendered for the header by setting the `header-tag` to the appropriate HTML
-element. The default is `h1`. Both the prop `header` and slot `header` will be rendered inside this
-tag. If both the prop and the slot are specified, the slot will be shown.
+Управляйте тем, какой тег будет отображаться для заголовка, установив `header-tag` для соответствующего элемента HTML. По умолчанию это `h1`. Внутри этого тега будут отображаться как свойство `header`, так и слот `header`. Если указаны и опора, и слот, слот будет показан.
 
-Control the overall size of the header text by setting the `header-level` prop to a value between
-`1` and `4` - with `1` being the largest and `4` being smallest. The default value is `3`.
+Управляйте общим размером текста заголовка, задав для свойства `header-level` значение от `1` до `4`, где `1` - самый большой, а `4` - самый маленький. Значение по умолчанию - `3`.
 
-### Lead text
+### Ведущий текст
 
-Control which tag is rendered for the lead text by setting the `lead-tag` to the desired HTML
-element. The default is `p`. Both the prop `lead` and slot `lead` will be rendered inside this tag.
-If both the prop and the slot are specified, the slot will be shown.
+Управляйте тем, какой тег будет отображаться для текста лида, установив в теге `lead-tag` нужный HTML-элемент. По умолчанию это `p`. Внутри этого тега будут отображаться как свойство `lead`, так и слот `lead`.
+Если указаны и опора, и слот, слот будет показан.
 
-## Fluid width
+## Текучая ширина
 
-To make `<b-jumbotron>` full width, and without rounded corners, set the `fluid` prop. The inner
-content will automatically be placed into a `<b-container>` (fixed width at the various
-breakpoints). To change this to a fluid container, set the `container-fluid` prop. The
-`container-fluid` prop has no effect if the `fluid` prop is not set
+Чтобы сделать `<b-jumbotron>` на всю ширину и без закругленных углов, установите свойство `fluid`. Внутреннее содержимое будет автоматически помещено в `<b-container>` (фиксированной ширины в различных контрольных точках). Чтобы заменить его на fluid-контейнер, установите свойство `container-fluid`. Свойство `container-fluid` не действует, если свойство `fluid` не установлено.
 
-## Component tag
+## Тег компоненты
 
-By default, `<b-jumbotron>` will render its root element as a `div`. Change the element tag to any
-other appropriate element by setting the `tag` prop to the desired element tag name.
+По умолчанию, `<b-jumbotron>` отображает свой корневой элемент как `div`. Измените тег элемента на любой другой подходящий элемент, установив свойство `tag` на желаемое имя тега элемента.
 
-## Variants
+## Варианты
 
-Control the overall background variant with the `bg-variant` prop ( set to `info`, `danger`,
-`warning`, `light`, `dark`, etc.), the border variant with the `border-variant` prop, and the text
-variant with `text-variant` prop. All three props default to `null`, which will instruct the
-jumbotron to use the default styling.
+Управляйте общим вариантом фона с помощью свойства `bg-variant` ( установите значение `info`, `danger`, `warning`, `light`, `dark`, и т. д.), вариант границы с помощью свойства `border-variant` и текстовый вариант с помощью свойства `text-variant`. Все три свойства по умолчанию равны `null`, что заставит jumbotron использовать стиль по умолчанию.
 
 ```html
 <div>
@@ -90,15 +75,13 @@ jumbotron to use the default styling.
     <template #header>BootstrapVue</template>
 
     <template #lead>
-      This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-      featured content or information.
+      Это простой герой, простой компонент в стиле jumbotron для привлечения дополнительного внимания к избранному контенту или информации.
     </template>
 
     <hr class="my-4">
 
     <p>
-      It uses utility classes for typography and spacing to space content out within the larger
-      container.
+      Он использует служебные классы для типографики и интервалов для размещения содержимого в более крупном контейнере.
     </p>
   </b-jumbotron>
 </div>
