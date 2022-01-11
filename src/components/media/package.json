@@ -3,22 +3,22 @@
   "version": "1.0.0",
   "meta": {
     "title": "Media",
-    "description": "The media object helps build complex and repetitive components where some media is positioned alongside content that doesn't wrap around said media.",
+    "description": "Медиа-объект помогает создавать сложные и повторяющиеся компоненты, в которых некоторые медиафайлы располагаются рядом с содержимым, которое не обертывается вокруг указанного медиафайла.",
     "components": [
       {
         "component": "BMedia",
         "props": [
           {
             "prop": "noBody",
-            "description": "When set, does not render a 'b-media-body' wrapper around the default slot content"
+            "description": "Если установлено, не отображает оболочку 'b-media-body' вокруг содержимого слота по умолчанию"
           },
           {
             "prop": "rightAlign",
-            "description": "Render the 'aside' slot on the right. Default is on the left"
+            "description": "Расположите слот 'aside' справа. По умолчанию слева"
           },
           {
             "prop": "verticalAlign",
-            "description": "Vertical alignment of the 'aside' slot: 'start' (or 'top'), 'center', or 'end' (or 'bottom')"
+            "description": "Вертикальное выравнивание слота 'aside': 'start' (или 'top'), 'center', или 'end' (или 'bottom')"
           }
         ],
         "slots": [
@@ -28,7 +28,7 @@
           },
           {
             "name": "default",
-            "description": "Content to place in the media element"
+            "description": "Контент для размещения в медиа-элементе"
           }
         ]
       },
@@ -37,17 +37,17 @@
         "props": [
           {
             "prop": "right",
-            "description": "Position the 'aside' on the right. Default is on the left"
+            "description": "Расположите 'aside' справа. По умолчанию слева"
           },
           {
             "prop": "verticalAlign",
-            "description": "Vertical alignment of the aside: 'start' (or 'top'), 'center', or 'end' (or 'bottom')"
+            "description": "Вертикальное выравнивание 'aside': 'start' (или 'top'), 'center', или 'end' (или 'bottom')"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the media aside"
+            "description": "Контент для размещения в медиа-стороне"
           }
         ]
       },
@@ -56,7 +56,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the media body"
+            "description": "Контент для размещения в медиа-теле"
           }
         ]
       }

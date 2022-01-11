@@ -1,8 +1,6 @@
-# Media
+# Медиа
 
-> The media object helps build complex and repetitive components where some media is positioned
-> alongside content that doesn't wrap around said media. Plus, it does this with only two required
-> classes thanks to flexbox.
+> Медиа-объект помогает создавать сложные и повторяющиеся компоненты, в которых некоторые медиафайлы располагаются рядом с содержимым, которое не окружает упомянутые медиафайлы. Кроме того, благодаря flexbox он делает это всего с двумя обязательными классами.
 
 ```html
 <div>
@@ -12,7 +10,7 @@
         <b-img blank blank-color="#ccc" width="64" alt="placeholder"></b-img>
       </template>
 
-      <h5 class="mt-0">Media Title</h5>
+      <h5 class="mt-0">Заголовок медиа</h5>
       <p>
         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
         Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
@@ -28,7 +26,7 @@
           <b-img blank blank-color="#ccc" width="64" alt="placeholder"></b-img>
         </template>
 
-        <h5 class="mt-0">Nested Media</h5>
+        <h5 class="mt-0">Вложенное медиа</h5>
         <p class="mb-0">
           Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
           faucibus.
@@ -41,7 +39,7 @@
 <!-- b-media.vue -->
 ```
 
-## Usage
+## Использование
 
 ```html
 <div>
@@ -50,15 +48,15 @@
       <img src="..." alt="Media Aside">
     </template>
 
-    <h2>Media Body</h2>
-    <p>Some text</p>
+    <h2>Тело медиа</h2>
+    <p>Какой-то текст</p>
 
     <!-- b-[Optional: add media children here for nesting] -->
   </b-media>
 </div>
 ```
 
-## No body (with sub-components)
+## Без тела (с подкомпонентами)
 
 ```html
 <div>
@@ -69,7 +67,7 @@
       </b-media-aside>
 
       <b-media-body>
-        <h5 class="mt-0">Media Title</h5>
+        <h5 class="mt-0">Заголовок медиа</h5>
         <p>
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
           sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
@@ -84,7 +82,7 @@
           <template #aside>
             <b-img blank blank-color="#ccc" width="64" alt="placeholder"></b-img>
           </template>
-          <h5 class="mt-0">Nested Media</h5>
+          <h5 class="mt-0">Вложенное медиа</h5>
           Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
           faucibus.
         </b-media>
@@ -96,9 +94,9 @@
 <!-- b-media-no-body.vue -->
 ```
 
-## Order
+## Порядок
 
-Change the order of content in media objects by adding `right-align` property.
+Измените порядок содержимого в медиа-объектах, добавив свойство `right-align`.
 
 ```html
 <div>
@@ -106,7 +104,7 @@ Change the order of content in media objects by adding `right-align` property.
     <template #aside>
       <b-img blank blank-color="#ccc" width="80" alt="placeholder"></b-img>
     </template>
-    <h5 class="mt-0 mb-1">Media object</h5>
+    <h5 class="mt-0 mb-1">Медиа-объект</h5>
     <p class="mb-0">
       Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
       Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
@@ -118,21 +116,17 @@ Change the order of content in media objects by adding `right-align` property.
 <!-- b-media-order.vue -->
 ```
 
-## Nesting
+## Вложенность
 
-You can easily nest media objects by including another `<b-media>` inside parent's body.
+Вы можете легко вложить медиа-объекты, включив другой `<b-media>` в тело родителя.
 
-## Vertical align
+## Вертикальное выравнивание
 
-Aside can be vertical aligned using `vertical-align` should be either `top`, `center` or `end`.
-Default is `top`.
+Aside может быть выровнен по вертикали с помощью `vertical-align`, должно быть либо `top`, `center` или `end`. По умолчанию `top`.
 
-## Media list
+## Медиа-список
 
-Because the media object has so few structural requirements, you can also use these component as
-list HTML elements. On your `<ul>` or `<ol>`, add the class `list-unstyled` to remove any browser
-default list styles, and then use the `<b-media>` component with `tag` prop set to `li`. As always,
-use spacing utilities wherever needed to fine tune.
+Поскольку у медиа-объекта очень мало структурных требований, вы также можете использовать эти компоненты в качестве HTML-элементов списка. В вашем `<ul>` или `<ol>` добавьте класс `list-unstyled`, чтобы удалить все стили списка браузера по умолчанию, а затем используйте компонент `<b-media>` со свойством `tag`, установленным в `li`. Как всегда, используйте утилиты интервалов везде, где это необходимо для точной настройки.
 
 ```html
 <div>
@@ -141,7 +135,7 @@ use spacing utilities wherever needed to fine tune.
       <template #aside>
         <b-img blank blank-color="#abc" width="64" alt="placeholder"></b-img>
       </template>
-      <h5 class="mt-0 mb-1">List-based media object</h5>
+      <h5 class="mt-0 mb-1">Медиа-объект на основе списка</h5>
       <p class="mb-0">
         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
         Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
@@ -154,7 +148,7 @@ use spacing utilities wherever needed to fine tune.
        <b-img blank blank-color="#cba" width="64" alt="placeholder"></b-img>
       </template>
 
-      <h5 class="mt-0 mb-1">List-based media object</h5>
+      <h5 class="mt-0 mb-1">Медиа-объект на основе списка</h5>
       <p class="mb-0">
         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
         Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
@@ -167,7 +161,7 @@ use spacing utilities wherever needed to fine tune.
         <b-img blank blank-color="#bac" width="64" alt="placeholder"></b-img>
       </template>
 
-      <h5 class="mt-0 mb-1">List-based media object</h5>
+      <h5 class="mt-0 mb-1">Медиа-объект на основе списка</h5>
       <p class="mb-0">
         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
         Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
