@@ -3,24 +3,24 @@
   "version": "1.0.0",
   "meta": {
     "title": "List Group",
-    "description": "List Groups are a flexible and powerful component for displaying a series of content. List Group items can be modified to support just about any content within. They can also be used as navigation via various props.",
+    "description": "Группы списков — это гибкий и мощный компонент для отображения серии содержимого. Элементы группы списка могут быть изменены для поддержки практически любого содержимого внутри. Их также можно использовать в качестве навигации с помощью различных свойств.",
     "components": [
       {
         "component": "BListGroup",
         "props": [
           {
             "prop": "flush",
-            "description": "When set, renders a flush list group with no left and right borders"
+            "description": "Если установлено, отображает группу списка в виде сплошного списка без левой и правой границ"
           },
           {
             "prop": "horizontal",
-            "description": "When set, renders the list-group horizontally rather than the default of vertical"
+            "description": "Если установлено, группа списка отображается горизонтально, а не вертикально по умолчанию"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content (items) to place in the list group"
+            "description": "Содержимое (элементы) для размещения в группе списка"
           }
         ]
       },
@@ -29,21 +29,21 @@
         "props": [
           {
             "prop": "action",
-            "description": "When set, give the item the appearance of having an action. Not needed when props 'to', 'href' or 'button' are used"
+            "description": "Когда установлено, придайте элементу видимость наличия действия. Не требуется, когда используются свойства 'to', 'href' или 'button'"
           },
           {
             "prop": "button",
-            "description": "When true renders the list-group-item as a button element"
+            "description": "При значении true элемент списка-группы отображается как элемент кнопки"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из цветовых вариантов темы Bootstrap"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the list group item"
+            "description": "Содержимое для размещения в элементе группы списка"
           }
         ]
       }
