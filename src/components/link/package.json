@@ -3,44 +3,44 @@
   "version": "1.0.0",
   "meta": {
     "title": "Link",
-    "description": "Use BootstrapVue's custom <b-link> component for generating a standard <a> link or <router-link>. <b-link> supports the disabled state and click event propagation.",
+    "description": "Используйте настраиваемый компонент BootstrapVue <b-link> для создания стандартной ссылки <a> или <router-link>. <b-link> поддерживает отключенное состояние и распространение события клика.",
     "components": [
       {
         "component": "BLink",
         "props": [
           {
             "prop": "href",
-            "description": "Denotes the target URL of the link for standard a links"
+            "description": "Обозначает целевой URL ссылки для стандартных ссылок"
           },
           {
             "prop": "rel",
-            "description": "Sets the 'rel' attribute on the rendered link"
+            "description": "Устанавливает атрибут 'rel' отображаемой ссылки"
           },
           {
             "prop": "target",
-            "description": "Sets the 'target' attribute on the rendered link"
+            "description": "Устанавливает атрибут 'target' отображаемой ссылки"
           }
         ],
         "events": [
           {
             "event": "bv::link::clicked",
-            "description": "Emitted on `$root` when link was clicked",
+            "description": "Испускается на `$root` при нажатии на ссылку",
             "args": [
               {
                 "name": "event",
                 "type": "MouseEvent",
-                "description": "Native click event"
+                "description": "Нативное событие клика"
               }
             ]
           },
           {
             "event": "click",
-            "description": "Emitted when link was clicked",
+            "description": "Испускается при нажатии на ссылку",
             "args": [
               {
                 "name": "event",
                 "type": "MouseEvent",
-                "description": "Native click event"
+                "description": "Нативное событие клика"
               }
             ]
           }
@@ -48,7 +48,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the link"
+            "description": "Контент для размещения в ссылке"
           }
         ]
       }

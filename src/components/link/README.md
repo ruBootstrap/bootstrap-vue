@@ -1,69 +1,54 @@
-# Link
+# Ссылка
 
-> Use BootstrapVue's custom `b-link` component for generating a standard `<a>` link or
-> `<router-link>`. `<b-link>` supports the `disabled` state and `click` event propagation.
+> Используйте пользовательский компонент BootstrapVue `b-link` для создания стандартной ссылки `<a>` или `<router-link>`. `<b-link>` поддерживает состояние `disabled` и распространение события `click`.
 
-`<b-link>` is the building block for most BootstrapVue components that offer link functionality.
+`<b-link>` это строительный блок для большинства компонентов BootstrapVue, предлагающих функциональность ссылок.
 
 ```html
 <div>
-  <b-link href="#foo">Link</b-link>
+  <b-link href="#foo">Ссылка</b-link>
 </div>
 
 <!-- b-link.vue -->
 ```
 
-## Link type
+## Тип ссылки
 
-By specifying a value in the `href` prop, a standard link (`<a>`) element will be rendered. To
-generate a `<router-link>` instead, specify the route location via the `to` prop.
+Указав значение в свойстве `href`, будет отображаться стандартный элемент ссылки (`<a>`). Чтобы вместо этого сгенерировать `<router-link>`, укажите местоположение маршрута через свойство `to`.
 
-Router links support various additional props. Refer to the
-[Router support](/docs/reference/router-links) reference section for details.
+Ссылки маршрутизатора поддерживают различные дополнительные свойства. Дополнительные сведения смотрите в справочном разделе [Поддержка маршрутизатора](/docs/reference/router-links).
 
-If your app is running under [Nuxt.js](https://nuxtjs.org), the
-[`<nuxt-link>`](https://nuxtjs.org/api/components-nuxt-link) component will be used instead of
-`<router-link>`. The `<nuxt-link>` component supports all the same features as `<router-link>` (as
-it is a wrapper component for `<router-link>`) and more.
+Если ваше приложение работает под управлением [Nuxt.js](https://nuxtjs.org), компонент [`<nuxt-link>`](https://nuxtjs.org/api/components-nuxt-link) будет использоваться вместо `<router-link>`. Компонент `<nuxt-link>` поддерживает все те же функции, что и `<router-link>` (поскольку это компонент-оболочка для `<router-link>`) и многое другое.
 
-### Third party router links
+### Ссылки на сторонние маршрутизаторы
 
-BootstrapVue auto detects using `<router-link>` and `<nuxt-link>` link components. Some 3rd party
-frameworks also provide customized versions of `<router-link>`, such as
-[Gridsome's `<g-link>` component](https://gridsome.org/docs/linking/). `<b-link>` can support these
-third party `<router-link>` compatible components via the use of the `router-component-name` prop.
-All `vue-router` props (excluding `<nuxt-link>` specific props) will be passed to the specified
-router link component.
+BootstrapVue автоматически определяет использование компонентов ссылки `<router-link>` и `<nuxt-link>`. Некоторые сторонние платформы также предоставляют настраиваемые версии `<router-link>`, такие как [компонент `<g-link>` от Gridsome](https://gridsome.org/docs/linking/). `<b-link>` может поддерживать эти сторонние совместимые компоненты `<router-link>` с помощью свойства `router-component-name`.
+Все свойства `vue-router` (за исключением конкретных свойств `<nuxt-link>`) будут переданы указанному компоненту ссылки на маршрутизатор.
 
-Note that the 3rd party component will only be used when the `to` prop is set.
+Обратите внимание, что сторонний компонент будет использоваться только в том случае, если установлен параметр `to`.
 
-## Links with `href="#"`
+## Ссылки с `href="#"`
 
-Typically `<a href="#">` will cause the document to scroll to the top of page when clicked.
-`<b-link>` addresses this by preventing the default action (scroll to top) when `href` is set to
-`#`.
+Обычно `<a href="#">` вызывает прокрутку документа вверх страницы при нажатии.
+`<b-link>` решает эту проблему, предотвращая действие по умолчанию (прокрутка вверх), когда для `href` установлено значение `#`.
 
-If you need scroll to top behaviour, use a standard `<a href="#">...</a>` tag.
+Если вам нужно прокрутить страницу вверх, используйте стандартный тег `<a href="#">...</a>`.
 
-## Link disabled state
+## Состояние ссылка отключена
 
-Disable link functionality by setting the `disabled` prop to true.
+Отключите функциональность ссылки, установив свойство `disabled` в значение `true`.
 
 ```html
 <div>
-  <b-link href="#foo" disabled>Disabled Link</b-link>
+  <b-link href="#foo" disabled>Отключенная ссылка</b-link>
 </div>
 
 <!-- b-link-disabled.vue -->
 ```
 
-Disabling a link will set the Bootstrap v4 `.disabled` class on the link as well as handles stopping
-event propagation, preventing the default action from occurring, and removing the link from the
-document tab sequence (`tabindex="-1"`).
+Отключение ссылки установит класс Bootstrap v4 `.disabled` для ссылки, а также остановит распространение событий, предотвратит выполнение действия по умолчанию и удалит ссылку из последовательности вкладок документа (`tabindex="-1"`).
 
-**Note:** Bootstrap v4 CSS currently does not style disabled links differently than non-disabled
-links. You can use the following custom CSS to style disabled links (by preventing hover style
-changes):
+**Примечание:** Bootstrap v4 CSS в настоящее время стилизует отключенные ссылки не иначе, чем обычные ссылки. Вы можете использовать следующий пользовательский CSS для стилизации отключенных ссылок (предотвратив изменение стиля при наведении):
 
 ```css
 a.disabled {
