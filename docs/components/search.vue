@@ -8,8 +8,8 @@
       id="bd-search-input"
       autocomplete="off"
       type="search"
-      placeholder="Search..."
-      aria-label="Search docs"
+      placeholder="Поиск..."
+      aria-label="Поиск по документации"
     ></b-form-input>
   </form>
 </template>
@@ -70,6 +70,7 @@ export default {
       }
       // Initialize docsearch
       this.docsearch = window.docsearch({
+        appId: 'OPPH7VYZ15',
         apiKey: '8db8f080dda4de386bf585d70483f095',
         indexName: 'bootstrap-vue-ru',
         inputSelector: '#bd-search-input',
