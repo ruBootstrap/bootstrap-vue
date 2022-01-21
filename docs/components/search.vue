@@ -70,8 +70,8 @@ export default {
       }
       // Initialize docsearch
       this.docsearch = window.docsearch({
-        apiKey: 'c816d3054b015320f0cfb40042f7e2bc',
-        indexName: 'bootstrap-vue',
+        apiKey: '8db8f080dda4de386bf585d70483f095',
+        indexName: 'bootstrap-vue-ru',
         inputSelector: '#bd-search-input',
         transformData(hits) {
           return hits.map(function(hit) {
