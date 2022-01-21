@@ -3,25 +3,25 @@
   "version": "1.0.0",
   "meta": {
     "title": "Modal",
-    "description": "Modals are streamlined, but flexible dialog prompts powered by JavaScript and CSS. They support a number of use cases from user notification to completely custom content and feature a handful of helpful sub-components, sizes, variants, accessibility, and more.",
+    "description": "Модальные окна оптимизированы, но гибкие диалоговые подсказки основаны на JavaScript и CSS. Они поддерживают ряд вариантов использования, от уведомлений пользователей до полностью настраиваемого контента, и содержат несколько полезных подкомпонентов, размеров, вариантов, доступности и многого другого.",
     "plugins": [
       "BVModalPlugin"
     ],
     "directives": [
       {
         "directive": "VBModal",
-        "description": "Directive for opening a modal by ID",
+        "description": "Директива для открытия модального окна по ID",
         "expression": "String",
         "arg": {
           "pattern": "[a-zA-Z][a-zA-Z0-9_\\-]*",
-          "description": "Modal ID to open",
+          "description": "Модальный идентификатор для открытия",
           "required": false
         },
         "modifiers": [
           {
             "name": "{modalId}",
             "pattern": "[a-zA-Z][a-zA-Z0-9_\\-]*",
-            "description": "Modal ID to open. Replace `{modalId}` with the modal's ID"
+            "description": "Модальный идентификатор для открытия. Замените `{modalId}` на идентификатор модального окна"
           }
         ]
       }
@@ -32,212 +32,212 @@
         "props": [
           {
             "prop": "ariaLabel",
-            "description": "Explicitly supply an 'aria-label' attribute for the modal. Should be set when the modal has no title. When not set 'aria-labelledby' will point to the modal's title"
+            "description": "Явно укажите атрибут 'aria-label' для модального окна. Должен быть установлен, когда у модального окна нет заголовка. Если не установлено 'aria-labelledby' будет указывать на заголовок модального окна"
           },
           {
             "prop": "autoFocusButton",
             "version": "2.0.0",
-            "description": "Specify which built-in button to focus once the modal opens: 'ok', 'cancel', or 'close'"
+            "description": "Укажите, какая встроенная кнопка должна быть сфокусирована после открытия модального окна: 'ok', 'cancel' или 'close'"
           },
           {
             "prop": "bodyBgVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the body background"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к фону тела"
           },
           {
             "prop": "bodyClass",
-            "description": "CSS class (or classes) to apply to the '.modal-body' wrapper element"
+            "description": "Класс (или классы) CSS для применения к элементу-оболочке '.modal-body'"
           },
           {
             "prop": "bodyTextVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the body text"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к основному тексту"
           },
           {
             "prop": "busy",
-            "description": "Places the built in default footer OK and Cancel buttons in the disabled state"
+            "description": "Помещает встроенные по умолчанию кнопки OK и Cancel в нижнем колонтитуле в отключенное состояние"
           },
           {
             "prop": "buttonSize",
-            "description": "Size of the built in footer buttons: 'sm', 'md' (default), or 'lg'"
+            "description": "Размер встроенных кнопок нижнего колонтитула: 'sm', 'md' (по умолчанию) или 'lg'"
           },
           {
             "prop": "cancelDisabled",
-            "description": "Places the default footer Cancel button in the disabled state"
+            "description": "Помещает кнопку Cancel в нижнем колонтитуле по умолчанию в неактивное состояние"
           },
           {
             "prop": "cancelTitle",
-            "description": "Text string to place in the default footer Cancel button"
+            "description": "Текстовая строка для размещения в нижнем колонтитуле кнопки Cancel по умолчанию"
           },
           {
             "prop": "cancelTitleHtml",
-            "description": "HTML string to place in the default footer Cancel button",
+            "description": "Строка HTML для размещения в нижнем колонтитуле по умолчанию с кнопкой Cancel",
             "xss": true
           },
           {
             "prop": "cancelVariant",
-            "description": "Button color theme variant to apply to the default footer Cancel button"
+            "description": "Вариант цветовой темы кнопки для применения к кнопке Cancel нижнего колонтитула по умолчанию"
           },
           {
             "prop": "centered",
-            "description": "Vertically centers the modal in the viewport"
+            "description": "Вертикально центрирует модальное окно в окне просмотра"
           },
           {
             "prop": "contentClass",
-            "description": "CSS class (or classes) to apply to the '.modal-content' wrapper element"
+            "description": "CSS-класс (или классы) для применения к элементу-оболочке '.modal-content'"
           },
           {
             "prop": "dialogClass",
-            "description": "CSS class (or classes) to apply to the '.modal-dialog' wrapper element"
+            "description": "CSS-класс (или классы) для применения к элементу-оболочке '.modal-dialog'"
           },
           {
             "prop": "footerBgVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the footer background"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к фону нижнего колонтитула"
           },
           {
             "prop": "footerBorderVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the footer border"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к границе нижнего колонтитула"
           },
           {
             "prop": "footerClass",
-            "description": "CSS class (or classes) to apply to the '.modal-footer' wrapper element"
+            "description": "CSS-класс (или классы) для применения к элементу-оболочке '.modal-footer'"
           },
           {
             "prop": "footerTextVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the footer text"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к тексту нижнего колонтитула"
           },
           {
             "prop": "footerTag",
             "version": "2.22.0",
-            "description": "Specify the HTML tag to render instead of the default tag for the footer"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для нижнего колонтитула"
           },
           {
             "prop": "headerBgVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the header background"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к фону заголовка"
           },
           {
             "prop": "headerBorderVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the header border"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к границе заголовка"
           },
           {
             "prop": "headerClass",
-            "description": "CSS class (or classes) to apply to the '.modal-header' wrapper element"
+            "description": "CSS-класс (или классы) для применения к элементу-оболочке '.modal-header'"
           },
           {
             "prop": "headerCloseContent",
             "version": "2.3.0",
-            "description": "Content of the header close button"
+            "description": "Содержимое кнопки закрытия шапки"
           },
           {
             "prop": "headerCloseLabel",
-            "description": "Value of the 'aria-label' on the header close button"
+            "description": "Значение 'aria-label' на кнопке закрытия заголовка"
           },
           {
             "prop": "headerCloseVariant",
-            "description": "Text theme color variant to apply to the header close button"
+            "description": "Вариант цвета темы текста для применения к кнопке закрытия заголовка"
           },
           {
             "prop": "headerTextVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the header text"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к тексту заголовка"
           },
           {
             "prop": "headerTag",
             "version": "2.22.0",
-            "description": "Specify the HTML tag to render instead of the default tag for the footer"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для нижнего колонтитула"
           },
           {
             "prop": "hideBackdrop",
-            "description": "Disables rendering of the modal backdrop"
+            "description": "Отключить рендеринг модального фона"
           },
           {
             "prop": "hideFooter",
-            "description": "Disables rendering of the modal footer"
+            "description": "Отключить рендеринг модального нижнего колонтитула"
           },
           {
             "prop": "hideHeader",
-            "description": "Disables rendering of the modal header"
+            "description": "Отключает рендеринг модального заголовка"
           },
           {
             "prop": "hideHeaderClose",
-            "description": "Disables rendering of the modal header's close button"
+            "description": "Отключить отрисовку кнопки закрытия модального заголовка"
           },
           {
             "prop": "ignoreEnforceFocusSelector",
             "version": "2.4.0",
-            "description": "Ignore certain elements from the enforce focus routine, specified by css selector(s)"
+            "description": "Игнорировать определенные элементы из процедуры принудительного фокуса, указанные селекторами css"
           },
           {
             "prop": "lazy",
-            "description": "When the modal has the `static` prop set, renders the modal content lazily"
+            "description": "Когда модальное окно имеет набор свойств `static`, модальное содержимое отображается лениво"
           },
           {
             "prop": "modalClass",
-            "description": "CSS class (or classes) to apply to the '.modal' wrapper element"
+            "description": "CSS-класс (или классы) для применения к элементу-оболочке '.modal'"
           },
           {
             "prop": "noCloseOnBackdrop",
-            "description": "Disables the ability to close the modal by clicking the backdrop"
+            "description": "Отключает возможность закрыть модальное окно, кликнув на задний фон"
           },
           {
             "prop": "noCloseOnEsc",
-            "description": "Disables the ability to close the modal by pressing ESC"
+            "description": "Отключает возможность закрыть модальное окно нажатием ESC"
           },
           {
             "prop": "noEnforceFocus",
-            "description": "Disables the enforce focus routine which maintains focus inside the modal"
+            "description": "Отключает процедуру принудительного фокуса, которая поддерживает фокус внутри модального окна"
           },
           {
             "prop": "noStacking",
-            "description": "Prevents other modals from stacking over this one"
+            "description": "Предотвращает наложение других модальных окон поверх этого"
           },
           {
             "prop": "okDisabled",
-            "description": "Places the default footer OK button in the disabled state"
+            "description": "Помещает кнопку OK по умолчанию в нижнем колонтитуле в неактивное состояние"
           },
           {
             "prop": "okOnly",
-            "description": "Disables rendering of the default footer Cancel button"
+            "description": "Отключает отрисовку кнопки Cancel нижнего колонтитула по умолчанию"
           },
           {
             "prop": "okTitle",
-            "description": "Text string to place in the default footer OK button"
+            "description": "Текстовая строка для размещения в нижнем колонтитуле по умолчанию с кнопкой OK"
           },
           {
             "prop": "okTitleHtml",
-            "description": "HTML string to place in the default footer OK button",
+            "description": "Строка HTML для размещения в нижнем колонтитуле по умолчанию с кнопкой OK",
             "xss": true
           },
           {
             "prop": "okVariant",
-            "description": "Button color theme variant to apply to the default footer OK button"
+            "description": "Вариант цветовой темы кнопки для применения к кнопке OK нижнего колонтитула по умолчанию"
           },
           {
             "prop": "returnFocus",
-            "description": "HTML Element reference, CSS selector, or component reference to return focus to when the modal closes. When not set, will return focus to the element that last had focus before the modal opened"
+            "description": "Ссылка на элемент HTML, селектор CSS или ссылка на компонент для возврата фокуса при закрытии модального окна. Если не установлено, вернет фокус элементу, который последним был в фокусе перед открытием модального окна"
           },
           {
             "prop": "scrollable",
-            "description": "Enables scrolling of the modal body"
+            "description": "Включает прокрутку тела модального окна"
           },
           {
             "prop": "size",
-            "description": "Set the size of the modal's width. 'sm', 'md' (default), 'lg', or 'xl'"
+            "description": "Установите размер ширины модального окна. 'sm', 'md' (по умолчанию), 'lg' или 'xl'"
           },
           {
             "prop": "titleSrOnly",
-            "description": "Wraps the title in an '.sr-only' wrapper"
+            "description": "Оборачивает заголовок в оболочку '.sr-only'"
           },
           {
             "prop": "titleTag",
-            "description": "Specify the HTML tag to render instead of the default tag for the title"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для заголовка"
           },
           {
             "prop": "visible",
-            "description": "The current visibility state of the modal"
+            "description": "Текущее состояние видимости модального окна"
           }
         ],
         "events": [
           {
             "event": "bv::modal::hidden",
-            "description": "Emitted on `$root` when modal is hidden",
+            "description": "Выдается на `$root`, когда модальное окно скрыто",
             "args": [
               {
                 "arg": "bvModalEvent",
@@ -253,12 +253,12 @@
           },
           {
             "event": "bv::modal::hide",
-            "description": "Emitted on `$root` when modal is about to be hidden. Cancelable (as long as modal wasn't forcibly hidden)",
+            "description": "Генерируется в `$root`, когда модальное окно должно быть скрыто. Отменяемо (если модальное окно не было принудительно скрыто)",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object. Call `bvModalEvent.preventDefault()` to cancel hide"
+                "description": "Объект BvModalEvent. Вызовите `bvModalEvent.preventDefault()`, чтобы отменить скрытие"
               },
               {
                 "arg": "modalId",
@@ -269,12 +269,12 @@
           },
           {
             "event": "bv::modal::show",
-            "description": "Emitted on `$root` when modal is about to be shown. Cancelable",
+            "description": "Генерируется в `$root`, когда модальное окно вот-вот будет показано. Отменяемый",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object. Call `bvModalEvent.preventDefault()` to cancel show"
+                "description": "Объект BvModalEvent. Вызовите `bvModalEvent.preventDefault()`, чтобы отменить показ"
               },
               {
                 "arg": "modalId",
@@ -285,12 +285,12 @@
           },
           {
             "event": "bv::modal::shown",
-            "description": "Emitted on `$root` when modal is shown",
+            "description": "Генерируется в `$root`, когда отображается модальное окно",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object"
+                "description": "Объект BvModalEvent"
               },
               {
                 "arg": "modalId",
@@ -301,89 +301,89 @@
           },
           {
             "event": "cancel",
-            "description": "When default CANCEL button pressed, just before modal has hidden. Cancelable",
+            "description": "Когда кнопка CANCEL по умолчанию нажата, как раз перед тем, как модальное окно скрыто. Отменяемый",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object. Call `bvModalEvent.preventDefault()` to cancel hide"
+                "description": "Объект BvModalEvent. Вызовите `bvModalEvent.preventDefault()`, чтобы отменить скрытие"
               }
             ]
           },
           {
             "event": "change",
-            "description": "New modal visibility state. Used to update the v-model",
+            "description": "Новое модальное состояние видимости. Используется для обновления v-model",
             "args": [
               {
                 "arg": "isVisible",
                 "type": "Boolean",
-                "description": "The visibility state of the modal. `true` if the modal is visible and `false` if not visible"
+                "description": "Состояние видимости модального окна. `true`, если модальное окно видимо, и `false`, если не видно"
               }
             ]
           },
           {
             "event": "close",
-            "description": "When default header close button pressed, just before modal has hidden. Cancelable",
+            "description": "Когда нажата кнопка закрытия заголовка по умолчанию, непосредственно перед тем, как модальное окно скрыто. Отменяемый",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object. Call `bvModalEvent.preventDefault()` to cancel hide"
+                "description": "Объект BvModalEvent. Вызовите `bvModalEvent.preventDefault()`, чтобы отменить скрытие"
               }
             ]
           },
           {
             "event": "hidden",
-            "description": "Always emits after modal is hidden",
+            "description": "Всегда испускает после того, как модальное скрыто",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object"
+                "description": "Объект BvModalEvent"
               }
             ]
           },
           {
             "event": "hide",
-            "description": "Always emits just before modal has hidden. Cancelable (as long as modal wasn't forcibly hidden)",
+            "description": "Всегда испускается непосредственно перед тем, как модальное спряталось. Отменяемо (если модальное окно не было принудительно скрыто)",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object. Inspect `bvModalEvent.trigger` to find out what action triggered the hide. Call `bvModalEvent.preventDefault()` to cancel hide"
+                "description": "Объект BvModalEvent. Проверьте `bvModalEvent.trigger`, чтобы узнать, какое действие вызвало скрытие. Вызовите `bvModalEvent.preventDefault()` , чтобы отменить скрытие"
               }
             ]
           },
           {
             "event": "ok",
-            "description": "When default OK button pressed, just before modal has hidden. Cancelable",
+            "description": "Когда кнопка OK по умолчанию нажата, как раз перед тем, как модальное окно спряталось. Отменяемый",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object. Call `bvModalEvent.preventDefault()` to cancel hide"
+                "description": "Объект BvModalEvent. Вызовите `bvModalEvent.preventDefault()`, чтобы отменить скрытие"
               }
             ]
           },
           {
             "event": "show",
-            "description": "Always emits just before modal is shown. Cancelable",
+            "description": "Всегда испускается непосредственно перед показом модального окна. Отменяемый",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object. Call `bvModalEvent.preventDefault()` to cancel show"
+                "description": "Объект BvModalEvent. Вызовите `bvModalEvent.preventDefault()`, чтобы отменить показ"
               }
             ]
           },
           {
             "event": "shown",
-            "description": "Always emits when modal is shown",
+            "description": "Всегда испускает, когда отображается модальное окно",
             "args": [
               {
                 "arg": "bvModalEvent",
                 "type": "BvModalEvent",
-                "description": "BvModalEvent object"
+                "description": "Объект BvModalEvent"
               }
             ]
           }
@@ -391,23 +391,23 @@
         "rootEventListeners": [
           {
             "event": "bv::hide::modal",
-            "description": "Hide modal with specified ID when this event is emitted on `root`",
+            "description": "Скрыть модальное окно с указанным идентификатором, когда это событие генерируется на `root`",
             "args": [
               {
                 "arg": "modalId",
                 "type": "String",
-                "description": "ID of modal to hide"
+                "description": "Идентификатор модального окна, которое нужно скрыть"
               }
             ]
           },
           {
             "event": "bv::show::modal",
-            "description": "Show modal with specified ID when this event is emitted on `$root`",
+            "description": "Показать модальное окно с указанным идентификатором, когда это событие генерируется в `$root`",
             "args": [
               {
                 "arg": "modalId",
                 "type": "String",
-                "description": "Modal ID to show"
+                "description": "Идентификатор модального окна для отображения"
               },
               {
                 "arg": "elIDtoFocusOnClose",
@@ -415,18 +415,18 @@
                   "String",
                   "HTMLElement"
                 ],
-                "description": "Specify the element reference, or CSS selector, to return focus to once the modal is closed (optional)"
+                "description": "Укажите ссылку на элемент или селектор CSS, чтобы вернуть фокус после закрытия модального окна (необязательно)"
               }
             ]
           },
           {
             "event": "bv::toggle::modal",
-            "description": "Toggle a modal's visibility given its ID",
+            "description": "Переключить видимость модального окна с учетом его идентификатора",
             "args": [
               {
                 "arg": "modalId",
                 "type": "String",
-                "description": "ID of modal to toggle visibility"
+                "description": "Идентификатор модального окна для переключения видимости"
               },
               {
                 "arg": "elIDtoFocusOnClose",
@@ -434,7 +434,7 @@
                   "String",
                   "HTMLElement"
                 ],
-                "description": "Specify the element reference, or CSS selector, to return focus to once the modal is closed (optional)"
+                "description": "Укажите ссылку на элемент или селектор CSS, чтобы вернуть фокус после закрытия модального окна (необязательно)"
               }
             ]
           }
@@ -442,141 +442,141 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content of modal body. Optionally scoped",
+            "description": "Содержимое модального тела. Опционально ограниченный",
             "scope": [
               {
                 "prop": "cancel",
                 "type": "Function",
-                "description": "Closes the modal and fires the 'cancel' and 'hide' events, with `bvModalEvent.trigger = 'cancel'`"
+                "description": "Закрывает модальное окно и запускает события 'cancel' и 'hide', с помощью `bvModalEvent.trigger = 'cancel'`"
               },
               {
                 "prop": "close",
                 "type": "Function",
-                "description": "Closes the modal and fires the close and hide events, with `bvModalEvent.trigger = 'headerclose'`"
+                "description": "Закрывает модальное окно и запускает события 'close' и 'hide', с помощью `bvModalEvent.trigger = 'headerclose'`"
               },
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "Accepts one argument `trigger`. Closes the modal and fires the 'hide' event, with the `bvModalEvent.trigger = trigger` (`trigger` is optional)"
+                "description": "Принимает один аргумент `trigger`. Закрывает модальное окно и запускает событие 'hide', с помощью `bvModalEvent.trigger = trigger` (`trigger` не является обязательным)"
               },
               {
                 "prop": "ok",
                 "type": "Function",
-                "description": "Closes the modal and fires the 'ok' and 'hide' events, with `bvModalEvent.trigger = 'ok'`"
+                "description": "Закрывает модальное окно и запускает события 'ok' и 'hide', с помощью `bvModalEvent.trigger = 'ok'`"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "The visibility state of the modal. `true` if the modal is visible and `false` if not visible"
+                "description": "Состояние видимости модального окна. `true` если модальное окно видимо, и `false`, если не видно"
               }
             ]
           },
           {
             "name": "modal-backdrop",
-            "description": "Modal Backdrop content"
+            "description": "Содержимое модального фона"
           },
           {
             "name": "modal-cancel",
-            "description": "Modal CANCEL button content"
+            "description": "Содержимое модальной кнопки ОТМЕНА"
           },
           {
             "name": "modal-footer",
-            "description": "Modal footer content. Also removes default OK and Cancel buttons. Optionally scoped",
+            "description": "Содержимое модального футера. Также удаляются стандартные кнопки OK и Cancel. Опционально ограниченный",
             "scope": [
               {
                 "prop": "cancel",
                 "type": "Function",
-                "description": "Closes the modal and fires the 'cancel' and 'hide' events, with `vModalEvent.trigger = 'cancel'`"
+                "description": "Закрывает модальное окно и запускает события 'cancel' и 'hide', с помощью `vModalEvent.trigger = 'cancel'`"
               },
               {
                 "prop": "close",
                 "type": "Function",
-                "description": "Closes the modal and fires the close and hide events, with `vModalEvent.trigger = 'headerclose'`"
+                "description": "Закрывает модальное окно и запускает события 'close' и 'hide', с помощью `vModalEvent.trigger = 'headerclose'`"
               },
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "Accepts one argument `trigger`. Closes the modal and fires the 'hide' event, with the `bvModalEvent.trigger = trigger` (`trigger` is optional)"
+                "description": "Принимает один аргумент `trigger`. Закрывает модальное окно и запускает события 'hide' event, с помощью the `bvModalEvent.trigger = trigger` (`trigger` не является обязательным)"
               },
               {
                 "prop": "ok",
                 "type": "Function",
-                "description": "Closes the modal and fires the 'ok' and 'hide' events, with `bvModalEvent.trigger = 'ok'`"
+                "description": "Закрывает модальное окно и запускает события 'ok' и 'hide', с помощью `bvModalEvent.trigger = 'ok'`"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "The visibility state of the modal. `true` if the modal is visible and `false` if not visible"
+                "description": "Состояние видимости модального окна. `true`, если модальное окно видимо, и `false`, если не видно"
               }
             ]
           },
           {
             "name": "modal-header",
-            "description": "Entire modal header container contents. Also removes the top right X close button. Optionally scoped",
+            "description": "Все содержимое контейнера модального заголовка. Также удаляет верхнюю правую кнопку закрытия X. Опционально ограниченный",
             "scope": [
               {
                 "prop": "cancel",
                 "type": "Function",
-                "description": "Closes the modal and fires the 'cancel' and 'hide' events, with `bvModalEvent.trigger = 'cancel'`"
+                "description": "Закрывает модальное окно и запускает события 'cancel' и 'hide', с помощью `bvModalEvent.trigger = 'cancel'`"
               },
               {
                 "prop": "close",
                 "type": "Function",
-                "description": "Closes the modal and fires the close and hide events, with `bvModalEvent.trigger = 'headerclose'`"
+                "description": "Закрывает модальное окно и запускает события 'close' и 'hide', с помощью `bvModalEvent.trigger = 'headerclose'`"
               },
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "Accepts one argument `trigger`. Closes the modal and fires the 'hide' event, with the `bvModalEvent.trigger = trigger` (`trigger` is optional)"
+                "description": "Принимает один аргумент `trigger`. Закрывает модальное окно и запускает события 'hide' event, с помощью the `bvModalEvent.trigger = trigger` (`trigger` не является обязательным)"
               },
               {
                 "prop": "ok",
                 "type": "Function",
-                "description": "Closes the modal and fires the 'ok' and 'hide' events, with `bvModalEvent.trigger = 'ok'`"
+                "description": "Закрывает модальное окно и запускает события 'ok' и 'hide', с помощью `bvModalEvent.trigger = 'ok'`"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "The visibility state of the modal. `true` if the modal is visible and `false` if not visible"
+                "description": "Состояние видимости модального окна. `true`, если модальное окно видимо, и `false`, если не видно"
               }
             ]
           },
           {
             "name": "modal-header-close",
-            "description": "Content of Modal header close button. If `modal-header` slot is used, this slot will not be shown"
+            "description": "Содержимое кнопки закрытия модального заголовка. Если используется слот `modal-header`, этот слот не будет отображаться"
           },
           {
             "name": "modal-ok",
-            "description": "Modal OK button content"
+            "description": "Содержимое модальной кнопки OK"
           },
           {
             "name": "modal-title",
-            "description": "Modal title. If `modal-header` slot is used, this slot will not be shown. Optionally scoped",
+            "description": "Заголовок модального окна. Если используется слот `modal-header`, этот слот не будет отображаться. Опционально ограниченный",
             "scope": [
               {
                 "prop": "cancel",
                 "type": "Function",
-                "description": "Closes the modal and fires the 'cancel' and 'hide' events, with `vModalEvent.trigger = 'cancel'`"
+                "description": "Закрывает модальное окно и запускает события 'cancel' и 'hide', с помощью `vModalEvent.trigger = 'cancel'`"
               },
               {
                 "prop": "close",
                 "type": "Function",
-                "description": "Closes the modal and fires the close and hide events, with `vModalEvent.trigger = 'headerclose'`"
+                "description": "Закрывает модальное окно и запускает события 'close' и 'hide', с помощью `vModalEvent.trigger = 'headerclose'`"
               },
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "Accepts one argument `trigger`. Closes the modal and fires the 'hide' event, with the `bvModalEvent.trigger = trigger` (`trigger` is optional)"
+                "description": "Принимает один аргумент `trigger`. Закрывает модальное окно и запускает события 'hide' event, с помощью the `bvModalEvent.trigger = trigger` (`trigger` не является обязательным)"
               },
               {
                 "prop": "ok",
                 "type": "Function",
-                "description": "Closes the modal and fires the 'ok' and 'hide' events, with `bvModalEvent.trigger = 'ok'`"
+                "description": "Закрывает модальное окно и запускает события 'ok' и 'hide', с помощью `bvModalEvent.trigger = 'ok'`"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "The visibility state of the modal. `true` if the modal is visible and `false` if not visible"
+                "description": "Состояние видимости модального окна. `true`, если модальное окно видимо, и `false`, если не видно"
               }
             ]
           }

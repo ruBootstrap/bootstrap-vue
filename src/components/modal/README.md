@@ -1,111 +1,91 @@
-# Modal
+# Модальное окно
 
-> Modals are streamlined, but flexible dialog prompts powered by JavaScript and CSS. They support a
-> number of use cases from user notification to completely custom content and feature a handful of
-> helpful sub-components, sizes, variants, accessibility, and more.
+> Модальные окна оптимизированы, но гибкие диалоговые подсказки основаны на JavaScript и CSS. Они поддерживают ряд вариантов использования, от уведомлений пользователей до полностью настраиваемого контента, и содержат несколько полезных подкомпонентов, размеров, вариантов, доступности и многого другого.
 
 ```html
 <div>
-  <b-button v-b-modal.modal-1>Launch demo modal</b-button>
+  <b-button v-b-modal.modal-1>Запустить демонстрацию модального окна</b-button>
 
   <b-modal id="modal-1" title="BootstrapVue">
-    <p class="my-4">Hello from modal!</p>
+    <p class="my-4">Привет из модального окна!</p>
   </b-modal>
 </div>
 
 <!-- b-modal.vue -->
 ```
 
-## Overview
+## Обзор
 
-`<b-modal>`, by default, has an **OK** and **Cancel** buttons in the footer. These buttons can be
-customized by setting various props on the component. You can customize the size of the buttons,
-disable buttons, hide the **Cancel** button (i.e. `ok-only`), choose a variant (e.g. `danger` for a
-red OK button) using the `ok-variant` and `cancel-variant` props, and provide custom button content
-using the `ok-title` and `cancel-title` props, or using the named slots `modal-ok` and
-`modal-cancel`.
+`<b-modal>` по умолчанию имеет кнопки **OK** и **Cancel** в нижнем колонтитуле. Эти кнопки можно настроить, установив различные свойства компонента. Вы можете настроить размер кнопок, отключить кнопки, скрыть кнопку **Cancel** (т. е. `ok-only`), выбрать вариант (например, `danger` для красной кнопки **OK**) с помощью свойств `ok-variant` и `cancel-variant`, а также предоставлять настраиваемое содержимое кнопки, используя свойства `ok-title` и `cancel-title`, или используя именованные слоты `modal-ok` и `modal-cancel`.
 
-`<b-modal>` supports close on ESC (enabled by default), close on backdrop click (enabled by
-default), and the `X` close button in the header (enabled by default). These features may be
-disabled by setting the props `no-close-on-esc`, `no-close-on-backdrop`, and `hide-header-close`
-respectively.
+`<b-modal>` поддерживает закрытие по ESC (включено по умолчанию), закрытие по щелчку фона (включено по умолчанию) и кнопку закрытия `X` в заголовке (включено по умолчанию). Эти функции можно отключить, установив параметры `no-close-on-esc`, `no-close-on-backdrop` и `hide-header-close` соответственно.
 
-You can override the modal title via the named slot `modal-title`, override the header completely
-via the `modal-header` slot, and override the footer completely via the `modal-footer` slot.
+Вы можете переопределить модальный заголовок с помощью именованного слота `modal-title`, полностью переопределить заголовок с помощью слота `modal-header` и полностью переопределить нижний колонтитул с помощью слота `modal-footer`.
 
-**Note**: when using the `modal-footer` slot, the default **OK** and **Cancel** buttons will not be
-present. Also, if you use the `modal-header` slot, the default header `X` close button will not be
-present, nor can you use the `modal-title` slot.
+**Примечание**: при использовании слота `modal-footer` кнопки **OK** и **Cancel** по умолчанию не будут присутствовать. Кроме того, если вы используете слот `modal-header`, кнопка закрытия заголовка по умолчанию `X` не будет присутствовать, и вы не сможете использовать слот `modal-title`.
 
-Modals will not render their content in the document until they are shown (lazily rendered). Modals,
-when visible, are rendered **appended to the `<body>` element**. The placement of the `<b-modal>`
-component will not affect layout, as it always renders as a placeholder comment node (`<!---->`).
-You can revert to the behaviour of older BootstrapVue versions via the use of the
-[`static` prop](#lazy-loading-and-static-modals).
+Модальные окна не будут отображать свое содержимое в документе до тех пор, пока они не будут показаны (отложено отрисованы). Видимые модальные окна отображаются **добавленными к элементу `<body>`**. Размещение компонента `<b-modal>` не повлияет на макет, так как он всегда отображается как узел комментария-заполнителя (`<!---->`).
+Вы можете вернуться к поведению более старых версий BootstrapVue с помощью [свойства `static`](#lazy-loading-and-static-modals).
 
-## Toggle modal visibility
+## Переключатель видимости модального окна
 
-There are several methods that you can employ to toggle the visibility of `<b-modal>`.
+Есть несколько методов, которые вы можете использовать для переключения видимости `<b-modal>`.
 
-### Using `v-b-modal` directive
+### Использование директивы `v-b-modal`
 
-Other elements can easily show modals using the `v-b-modal` directive.
+Другие элементы могут легко отображать модальные окна с помощью директивы `v-b-modal`.
 
 ```html
 <div>
   <!-- Using modifiers -->
-  <b-button v-b-modal.my-modal>Show Modal</b-button>
+  <b-button v-b-modal.my-modal>Показать модалку</b-button>
 
   <!-- Using value -->
-  <b-button v-b-modal="'my-modal'">Show Modal</b-button>
+  <b-button v-b-modal="'my-modal'">Показать модалку</b-button>
 
   <!-- The modal -->
-  <b-modal id="my-modal">Hello From My Modal!</b-modal>
+  <b-modal id="my-modal">Привет из моей модалки!</b-modal>
 </div>
 
 <!-- b-modal-directive.vue -->
 ```
 
-This approach will automatically return focus to the trigger element once the modal closes (similar
-to default Bootstrap functionality). Other approaches for toggling modal visibility may require
-additional code to implement this accessibility feature.
+Этот подход автоматически вернет фокус на элемент триггера после закрытия модального окна (аналогично функциональности Bootstrap по умолчанию). Другие подходы к переключению модальной видимости могут потребовать дополнительного кода для реализации этой функции специальных возможностей.
 
-See the [Accessibility](#accessibility) section below for details.
+Дополнительные сведения см. в разделе [Специальные возможности](#accessibility) ниже.
 
-### Using `this.$bvModal.show()` and `this.$bvModal.hide()` instance methods
+### Использование методов экземпляра `this.$bvModal.show()` и `this.$bvModal.hide()`
 
-When BootstrapVue is installed as a plugin, or the `ModalPlugin` plugin is used, BootstrapVue will
-inject a `$bvModal` object into every Vue instance (components, apps). `this.$bvModal` exposes
-several methods, of which two are for showing and hiding modals:
+Когда BootstrapVue установлен как плагин или используется плагин `ModalPlugin`, BootstrapVue будет внедрять объект `$bvModal` в каждый экземпляр Vue (компоненты, приложения). `this.$bvModal` предоставляет несколько методов, два из которых предназначены для отображения и скрытия модальных окон:
 
-| Method                   | Description                            |
+| Метод                    | Описание                               |
 | ------------------------ | -------------------------------------- |
-| `this.$bvModal.show(id)` | Show the modal with the specified `id` |
-| `this.$bvModal.hide(id)` | Hide the modal with the specified `id` |
+| `this.$bvModal.show(id)` | Показать модальное окно с указанным `id` |
+| `this.$bvModal.hide(id)` | Скрыть модальное окно с указанным `id` |
 
-Both methods return immediately after being called.
+Оба метода возвращаются сразу после вызова.
 
 ```html
 <div>
-  <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')">Open Modal</b-button>
+  <b-button id="show-btn" @click="$bvModal.show('bv-modal-example')">Открыть модальное окно</b-button>
 
   <b-modal id="bv-modal-example" hide-footer>
     <template #modal-title>
-      Using <code>$bvModal</code> Methods
+      Использование методов <code>$bvModal</code>
     </template>
     <div class="d-block text-center">
-      <h3>Hello From This Modal!</h3>
+      <h3>Привет из этого модального окна!</h3>
     </div>
-    <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')">Close Me</b-button>
+    <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')">Закрой меня</b-button>
   </b-modal>
 </div>
 
 <!-- b-modal-bv-modal-hide-show.vue -->
 ```
 
-The `this.$bvModal` object is also used for displaying [modal message boxes](#modal-message-boxes).
+Объект `this.$bvModal` также используется для отображения [модальных окон сообщений](#modal-message-boxes).
 
-### Using `show()`, `hide()`, and `toggle()` component methods
+### Использование методов компонента `show()`, `hide()` и `toggle()`
 
 You can access modal using `ref` attribute and then call the `show()`, `hide()` or `toggle()`
 methods.
@@ -113,15 +93,15 @@ methods.
 ```html
 <template>
   <div>
-    <b-button id="show-btn" @click="showModal">Open Modal</b-button>
-    <b-button id="toggle-btn" @click="toggleModal">Toggle Modal</b-button>
+    <b-button id="show-btn" @click="showModal">Открыть модальное окно</b-button>
+    <b-button id="toggle-btn" @click="toggleModal">Переключить модальное окно</b-button>
 
-    <b-modal ref="my-modal" hide-footer title="Using Component Methods">
+    <b-modal ref="my-modal" hide-footer title="Использование методов компонента">
       <div class="d-block text-center">
-        <h3>Hello From My Modal!</h3>
+        <h3>Привет из моей модалки!</h3>
       </div>
-      <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Close Me</b-button>
-      <b-button class="mt-2" variant="outline-warning" block @click="toggleModal">Toggle Me</b-button>
+      <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Закрой меня</b-button>
+      <b-button class="mt-2" variant="outline-warning" block @click="toggleModal">Переключи меня</b-button>
     </b-modal>
   </div>
 </template>
@@ -136,8 +116,8 @@ methods.
         this.$refs['my-modal'].hide()
       },
       toggleModal() {
-        // We pass the ID of the button that we want to return focus to
-        // when the modal has hidden
+        // Мы передаем идентификатор кнопки, на которую мы хотим вернуть фокус,
+        // когда модальное окно скрыто
         this.$refs['my-modal'].toggle('#toggle-btn')
       }
     }
@@ -147,23 +127,20 @@ methods.
 <!-- b-modal-methods.vue -->
 ```
 
-The `hide()` method accepts an optional string `trigger` argument for defining what triggered the
-modal to close. See section [Prevent Closing](#prevent-closing) below for details.
+Метод `hide()` принимает необязательный строковый аргумент `trigger` для определения того, что вызвало закрытие модального окна. См. подробности в разделе [Предотвращение закрытия](#prevent-closing) ниже.
 
-**Note:** It is recommended to use the `this.$bvModal.show()` and `this.$bvModal.hide()` methods
-(mentioned in the previous section) instead of using `$ref` methods.
+**Примечание:** Рекомендуется использовать методы `this.$bvModal.show()` и `this.$bvModal.hide()` (упомянутые в предыдущем разделе) вместо методов `$ref`.
 
-### Using `v-model` property
+### Использование свойства `v-model`
 
-`v-model` property is always automatically synced with `<b-modal>` visible state and you can
-show/hide using `v-model`.
+Свойство `v-model` всегда автоматически синхронизируется с видимым состоянием `<b-modal>`, и вы можете показать/скрыть его с помощью `v-model`.
 
 ```html
 <template>
   <div>
-    <b-button @click="modalShow = !modalShow">Open Modal</b-button>
+    <b-button @click="modalShow = !modalShow">Открыть модальное окно</b-button>
 
-    <b-modal v-model="modalShow">Hello From Modal!</b-modal>
+    <b-modal v-model="modalShow">Привет из модального окна!</b-modal>
   </div>
 </template>
 
@@ -180,29 +157,25 @@ show/hide using `v-model`.
 <!-- b-modal-v-model.vue -->
 ```
 
-When using the `v-model` prop, **do not** use the `visible` prop at the same time.
+При использовании свойства `v-model` **не** используйте свойство `visible` одновременно.
 
-### Using scoped slot scope methods
+### Использование методов области видимости слота
 
-Refer to the [Custom rendering with slots](#custom-rendering-with-slots) section on using the
-various methods passed to scoped slots for closing modals.
+Обратитесь к разделу [Пользовательский рендеринг со слотами](#custom-rendering-with-slots) по использованию различных методов, передаваемых слотам с заданной областью действия для закрытия модальных окон.
 
-### Emitting events on \$root
+### Отправка событий на \$root
 
-You can emit `bv::show::modal`, `bv::hide::modal`, and `bv::toggle::modal` events on `$root` with
-the first argument set to the modal's id. An optional second argument can specify the element to
-return focus to once the modal is closed. The second argument can be a CSS selector, an element
-reference, or a component reference (the root element of the component will be focused).
+Вы можете генерировать события `bv::show::modal`, `bv::hide::modal` и `bv::toggle::modal` в `$root` с первым аргументом, установленным в идентификатор модального окна. Необязательный второй аргумент может указать элемент, на который нужно вернуть фокус после закрытия модального окна. Вторым аргументом может быть селектор CSS, ссылка на элемент или ссылка на компонент (корневой элемент компонента будет сфокусирован).
 
 ```html
 <div>
-  <b-button @click="showModal" ref="btnShow">Open Modal</b-button>
-  <b-button @click="toggleModal" ref="btnToggle">Toggle Modal</b-button>
+  <b-button @click="showModal" ref="btnShow">Открыть модальное окно</b-button>
+  <b-button @click="toggleModal" ref="btnToggle">Переключить модальное окно</b-button>
 
   <b-modal id="modal-1">
-    <div class="d-block">Hello From My Modal!</div>
-    <b-button @click="hideModal">Close Me</b-button>
-    <b-button @click="toggleModal">Toggle Me</b-button>
+    <div class="d-block">Привет из моей модалки!</div>
+    <b-button @click="hideModal">Закрой меня</b-button>
+    <b-button @click="toggleModal">Переключи меня</b-button>
   </b-modal>
 </div>
 ```
@@ -223,23 +196,19 @@ export default {
 }
 ```
 
-**Note:** It is recommended to use the `this.$bvModal.show()` and `this.$bvModal.hide()` methods
-(mentioned in a previous section) instead of emitting `$root` events.
+**Примечание:** Рекомендуется использовать методы `this.$bvModal.show()` и `this.$bvModal.hide()` (упомянутые в предыдущем разделе) вместо генерации событий `$root`.
 
-### Prevent closing
+### Предотвратить закрытие
 
-To prevent `<b-modal>` from closing (for example when validation fails). you can call the
-`.preventDefault()` method of the event object passed to your `ok` (**OK** button), `cancel`
-(**Cancel** button), `close` (modal header close button) and `hide` event handlers. Note that
-`.preventDefault()`, when used, **must** be called synchronously, as async is not supported.
+Чтобы предотвратить закрытие `<b-modal>` (например, при сбое проверки). вы можете вызвать метод `.preventDefault()` объекта события, переданного вашему `ok` (кнопка **OK**), `cancel` (кнопка **Cancel**), `close` (кнопка закрытия модального заголовка ) и `hide` обработчики событий. Обратите внимание, что `.preventDefault()`, при использовании **должен** вызываться синхронно, так как асинхронность не поддерживается.
 
 ```html
 <template>
   <div>
-    <b-button v-b-modal.modal-prevent-closing>Open Modal</b-button>
+    <b-button v-b-modal.modal-prevent-closing>Открыть модальное окно</b-button>
 
     <div class="mt-3">
-      Submitted Names:
+      Представленные имена:
       <div v-if="submittedNames.length === 0">--</div>
       <ul v-else class="mb-0 pl-3">
         <li v-for="name in submittedNames">{{ name }}</li>
@@ -249,16 +218,16 @@ To prevent `<b-modal>` from closing (for example when validation fails). you can
     <b-modal
       id="modal-prevent-closing"
       ref="modal"
-      title="Submit Your Name"
+      title="Введите ваше имя"
       @show="resetModal"
       @hidden="resetModal"
       @ok="handleOk"
     >
       <form ref="form" @submit.stop.prevent="handleSubmit">
         <b-form-group
-          label="Name"
+          label="Имя"
           label-for="name-input"
-          invalid-feedback="Name is required"
+          invalid-feedback="Имя обязательно"
           :state="nameState"
         >
           <b-form-input
@@ -293,19 +262,19 @@ To prevent `<b-modal>` from closing (for example when validation fails). you can
         this.nameState = null
       },
       handleOk(bvModalEvent) {
-        // Prevent modal from closing
+        // Предотвратить закрытие модального окна
         bvModalEvent.preventDefault()
-        // Trigger submit handler
+        // Обработчик отправки триггера
         this.handleSubmit()
       },
       handleSubmit() {
-        // Exit when the form isn't valid
+        // Выйти, если форма недействительна
         if (!this.checkFormValidity()) {
           return
         }
-        // Push the name to submitted names
+        // Вставьте имя в представленные имена
         this.submittedNames.push(this.name)
-        // Hide the modal manually
+        // Скрыть модальное окно вручную
         this.$nextTick(() => {
           this.$bvModal.hide('modal-prevent-closing')
         })
@@ -317,58 +286,44 @@ To prevent `<b-modal>` from closing (for example when validation fails). you can
 <!-- b-modal-prevent-closing.vue -->
 ```
 
-**Note**: events `ok`, `cancel`, and `close` are emitted by modal's built in **OK**, **Cancel**, and
-header close (**X**) buttons respectively. These events will not be emitted, by default, if you have
-provided your own buttons in the `modal-footer` slot or have hidden the footer. In this case use the
-`hide` event to control cancelling of the modal close. Event `hide` is always emitted, even if `ok`,
-`cancel`, and `close` are emitted.
+**Примечание**: события `ok`, `cancel` и `close` генерируются модальными встроенными кнопками **OK**, **Cancel** и закрытие заголовка (**X**) соответственно. Эти события не будут генерироваться по умолчанию, если вы разместили свои собственные кнопки в слоте `modal-footer` или скрыли нижний колонтитул. В этом случае используйте событие `hide` для управления отменой закрытия модального окна. Событие `hide` генерируется всегда, даже если генерируются `ok`, `cancel` и `close`.
 
-The `ok`, `cancel`, `close` and `hide` event object (`BvModalEvent`) contains several properties and
-methods:
+Объект событий `ok`, `cancel`, `close` и `hide` (`BvModalEvent`) содержит несколько свойств и методов:
 
-| Property or Method | Type     | Description                                                                                                                                                                                                                                                                                                 |
+| Свойство или метод | Тип     | Описание                                                                                                                                                                                                                                                                                                 |
 | ------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `preventDefault()` | Method   | When called prevents the modal from closing                                                                                                                                                                                                                                                                 |
-| `trigger`          | Property | Will be one of: `ok` (Default **OK** Clicked), `cancel` (Default **Cancel** clicked), `esc` (if the <kbd>Esc</kbd> key was pressed), `backdrop` (if the backdrop was clicked), `headerclose` (if the header X button was clicked), the first argument provided to the `hide()` method, or `null` otherwise. |
-| `target`           | Property | A reference to the modal element                                                                                                                                                                                                                                                                            |
-| `vueTarget`        | property | A reference to the modal's Vue VM instance                                                                                                                                                                                                                                                                  |
-| `componentId`      | property | The modal's ID                                                                                                                                                                                                                                                                                              |
+| `preventDefault()` | Метод   | При вызове предотвращает закрытие модального окна                                                                                                                                                                                                                                                                 |
+| `trigger`          | Свойство | Будет одним из: `ok` (по умолчанию нажато **OK**), `cancel` (по умолчанию нажато **Cancel**), `esc` (если была нажата клавиша <kbd>Esc</kbd>), `backdrop` (если был нажат фон), `headerclose` (если была нажата кнопка X в заголовке), первый аргумент, предоставленный методу `hide()` или `null` в противном случае. |
+| `target`           | Свойство | Ссылка на модальный элемент                                                                                                                                                                                                                                                                            |
+| `vueTarget`        | Свойство | Ссылка на модальный экземпляр Vue VM                                                                                                                                                                                                                                                                  |
+| `componentId`      | Свойство | Идентификатор модального окна                                                                                                                                                                                                                                                                                              |
 
-You can set the value of `trigger` by passing an argument to the component's `hide()` method for
-advanced control (i.e. detecting what button or action triggered the modal to hide).
+Вы можете установить значение `trigger`, передав аргумент методу `hide()` компонента для расширенного управления (т.е. определения того, какая кнопка или действие вызвало скрытие модального окна).
 
-**Note:** `ok`, `cancel`, or `close` events will be only emitted when the argument to `hide()` is
-strictly `'ok'`, `'cancel'`, or `'headerclose'` respectively. The argument passed to `hide()` will
-be placed into the `trigger` property of the event object.
+**Примечание:** `ok`, `cancel` или `close` будут генерироваться только в том случае, если аргумент `hide()` строго равен `'ok'`, `'cancel'` или `'headerclose'` соответственно. Аргумент, переданный в `hide()` будет помещен в свойство `trigger` объекта события.
 
-## Modal content
+## Модальное содержимое
 
-### Using the grid
+### Использование сетки
 
-Utilize the Bootstrap grid system within a modal by nesting `<b-container fluid>` within the
-modal-body. Then, use the normal grid system `<b-row>` (or `<b-form-row>`) and `<b-col>` as you
-would anywhere else.
+Используйте сетку Bootstrap внутри модального окна, вставив `<b-container fluid>` внутри модального тела. Затем используйте обычную систему сетки `<b-row>` (или `<b-form-row>`) и `<b-col>` как и везде.
 
-### Tooltips and popovers
+### Подсказки и всплывающие окна
 
-Tooltips and popovers can be placed within modals as needed. When modals are closed, any tooltips
-and popovers within are also automatically dismissed. Tooltips and popovers are automatically
-appended to the modal element (to ensure correct z-indexing), although you can override where they
-are appended by specifying a container ID (refer to tooltip and popover docs for details).
+Подсказки и всплывающие окна могут быть размещены в модальных окнах по мере необходимости. Когда модальные окна закрыты, любые всплывающие подсказки и всплывающие окна также автоматически закрываются. Всплывающие подсказки и всплывающие окна автоматически добавляются к модальному элементу (для обеспечения правильной z-индексации), хотя вы можете переопределить, где они добавляются, указав идентификатор контейнера (подробности см. в документации по всплывающим подсказкам и всплывающим окнам).
 
 ```html
 <div>
-  <b-button v-b-modal.modalPopover>Show Modal</b-button>
+  <b-button v-b-modal.modalPopover>Показать модалку</b-button>
 
   <b-modal id="modalPopover" title="Modal with Popover" ok-only>
     <p>
       This
-      <b-button v-b-popover="'Popover inside a modal!'" title="Popover">Button</b-button>
-      triggers a popover on click.
+      <b-button v-b-popover="'Popover inside a modal!'" title="Popover">Кнопка</b-button>
+      вызывает всплывающее окно при нажатии.
     </p>
     <p>
-      This <a href="#" v-b-tooltip title="Tooltip in a modal!">Link</a> will show a tooltip on
-      hover.
+      Эта <a href="#" v-b-tooltip title="Подсказка в модальном окне!">ссылка</a> будет показывать всплывающую подсказку при наведении.
     </p>
   </b-modal>
 </div>
@@ -376,31 +331,19 @@ are appended by specifying a container ID (refer to tooltip and popover docs for
 <!-- b-modal-popover.vue -->
 ```
 
-## Lazy loading and static modals
+## Отложенная загрузка и статические модальные окна
 
-By default, modals will not render their content in the document until they are shown (lazily
-rendered). Modals that, when visible, are rendered appended to the `<body>` element. The `<b-modal>`
-component will not affect layout, as they render as a placeholder comment node (`<!---->`) in the
-DOM position they are placed. Due to the portalling process, it can take two or more `$nextTick`s to
-render changes of the content into the target.
+По умолчанию модальные окна не будут отображать свое содержимое в документе, пока они не будут показаны (лениво отрисованы). Модальные окна, которые при отображении добавляются к элементу `<body>`. Компонент `<b-modal>` не повлияет на макет, так как он отображается как узел комментария-заполнителя (`<!---->`) в позиции DOM, в которой он размещен. Из-за процесса портала может потребоваться два или более `$nextTick` для отображения изменений содержимого в цели.
 
-Modals can be rendered _in-place_ in the document (i.e. where the `<b-modal>` component is placed in
-the document) by setting the `static` prop to `true`. Note that the content of the modal will be
-rendered in the DOM even if the modal is not visible/shown when `static` is `true`. To make `static`
-modals lazy rendered, also set the `lazy` prop to `true`. The modal will then appear in the document
-_only_ when it is visible. Note, when in `static` mode, placement of the `<b-modal>` component _may
-affect layout_ of your document and the modal.
+Модальные окна могут отображаться _на месте_ в документе (т. е. там, где в документе находится компонент `<b-modal>` ), установив свойство `static` в значение `true`. Обратите внимание, что содержимое модального окна будет отображаться в DOM, даже если модальное окно не отображается/не отображается, когда `static` равно `true`. Чтобы статические модальные окна `static` отображались лениво, также установите параметр `lazy` в значение `true`. Затем модальное окно появится в документе _только_ когда оно будет видимым. Обратите внимание, что в статическом режиме `static` размещение компонента `<b-modal>` _может повлиять на макет_ вашего документа и модального окна.
 
-The `lazy` prop will have no effect if the prop `static` is not `true` (non-static modals will
-_always_ be lazily rendered).
+Свойство `lazy` не будет иметь никакого эффекта, если свойство `static` не равно `true` (нестатические модальные окна будут _всегда_ отображаться лениво).
 
-## Styling, options, and customization
+## Стиль, опции и персонализация
 
-### Modal sizing
+### Модальный размер
 
-Modals have three optional sizes, available via the prop `size`. These sizes kick in at certain
-breakpoints to avoid horizontal scrollbars on narrower viewports. Valid optional sizes are `sm`,
-`lg`, and `xl`.
+Модальные окна имеют три необязательных размера, доступных через свойство `size`. Эти размеры срабатывают в определенных точках останова, чтобы избежать горизонтальных полос прокрутки на более узких окнах просмотра. Допустимые необязательные размеры: `sm`, `lg` и `xl`.
 
 ```html
 <div>
@@ -408,24 +351,23 @@ breakpoints to avoid horizontal scrollbars on narrower viewports. Valid optional
   <b-button v-b-modal.modal-lg variant="primary">lg modal</b-button>
   <b-button v-b-modal.modal-sm variant="primary">sm modal</b-button>
 
-  <b-modal id="modal-xl" size="xl" title="Extra Large Modal">Hello Extra Large Modal!</b-modal>
-  <b-modal id="modal-lg" size="lg" title="Large Modal">Hello Large Modal!</b-modal>
-  <b-modal id="modal-sm" size="sm" title="Small Modal">Hello Small Modal!</b-modal>
+  <b-modal id="modal-xl" size="xl" title="Extra Large Modal">Привет, очень большое модальное окно!</b-modal>
+  <b-modal id="modal-lg" size="lg" title="Large Modal">Привет, большое модальное окно!</b-modal>
+  <b-modal id="modal-sm" size="sm" title="Small Modal">Привет, маленькое модальное окно!</b-modal>
 </div>
 
 <!-- b-modal-sizes.vue -->
 ```
 
-The `size` prop maps the size to the `.modal-<size>` classes.
+Свойство `size` сопоставляет размер с классами `.modal-<size>`.
 
-### Scrolling long content
+### Прокрутка длинного контента
 
-When modals become too long for the user's viewport or device, they scroll independent of the page
-itself. Try the demo below to see what we mean.
+Когда модальные окна становятся слишком длинными для области просмотра или устройства пользователя, они прокручиваются независимо от самой страницы. Попробуйте демо ниже, чтобы увидеть, что мы имеем в виду.
 
 ```html
 <div>
-  <b-button v-b-modal.modal-tall>Launch overflowing modal</b-button>
+  <b-button v-b-modal.modal-tall>Запустить переполненное модальное окно</b-button>
 
   <b-modal id="modal-tall" title="Overflowing Content">
     <p class="my-4" v-for="i in 20" :key="i">
@@ -438,12 +380,11 @@ itself. Try the demo below to see what we mean.
 <!-- b-modal-scroll-overflow.vue -->
 ```
 
-You can also create a scrollable modal that allows the scrolling of the modal body by setting the
-prop `scrollable` to `true`.
+Вы также можете создать модальное окно с возможностью прокрутки, которое позволяет прокручивать тело модального окна, установив для параметра `scrollable` значение `true`.
 
 ```html
 <div>
-  <b-button v-b-modal.modal-scrollable>Launch scrolling modal</b-button>
+  <b-button v-b-modal.modal-scrollable>Запустить модальное окно с прокруткой</b-button>
 
   <b-modal id="modal-scrollable" scrollable title="Scrollable Content">
     <p class="my-4" v-for="i in 20" :key="i">
@@ -456,38 +397,34 @@ prop `scrollable` to `true`.
 <!-- b-modal-scrollable-content.vue -->
 ```
 
-### Vertically centered modal
+### Вертикально центрированное модальное окно
 
-Vertically center your modal in the viewport by setting the `centered` prop.
+Вертикально центрируйте ваш модальный экран в окне просмотра, установив свойство `centered`.
 
 ```html
 <div>
-  <b-button v-b-modal.modal-center>Launch centered modal</b-button>
+  <b-button v-b-modal.modal-center>Запуск по центру модального окна</b-button>
 
   <b-modal id="modal-center" centered title="BootstrapVue">
-    <p class="my-4">Vertically centered modal!</p>
+    <p class="my-4">Вертикально центрированное модальное окно!</p>
   </b-modal>
 </div>
 
 <!-- b-modal-center-vertically.vue -->
 ```
 
-Feel free to mix vertically `centered` with `scrollable`.
+Не стесняйтесь смешивать вертикальное `centered` с `scrollable`.
 
-### Variants
+### Варианты
 
-Control the header, footer, and body background and text variants by setting the
-`header-bg-variant`, `header-text-variant`, `body-bg-variant`, `body-text-variant`,
-`footer-bg-variant`, and `footer-text-variant` props. Use any of the standard Bootstrap variants
-such as `danger`, `warning`, `info`, `success`, `dark`, `light`, etc.
+Управляйте заголовком, нижним колонтитулом, фоном и текстом основного текста, устанавливая свойства `header-bg-variant`, `header-text-variant`, `body-bg-variant`, `body-text-variant`, `footer-bg-variant` и `footer-text-variant`. Используйте любой из стандартных вариантов Bootstrap, таких как `danger`, `warning`, `info`, `success`, `dark`, `light` и т. д.
 
-The variants for the bottom border of the header and top border of the footer can be controlled by
-the `header-border-variant` and `footer-border-variant` props respectively.
+Варианты нижней границы заголовка и верхней границы нижнего колонтитула можно контролировать с помощью свойств `header-border-variant` и `footer-border-variant` соответственно.
 
 ```html
 <template>
   <div>
-    <b-button @click="show=true" variant="primary">Show Modal</b-button>
+    <b-button @click="show=true" variant="primary">Показать модалку</b-button>
 
     <b-modal
       v-model="show"
@@ -502,12 +439,12 @@ the `header-border-variant` and `footer-border-variant` props respectively.
       <b-container fluid>
         <b-row class="mb-1 text-center">
           <b-col cols="3"></b-col>
-          <b-col>Background</b-col>
-          <b-col>Text</b-col>
+          <b-col>Фон</b-col>
+          <b-col>Текст</b-col>
         </b-row>
 
         <b-row class="mb-1">
-          <b-col cols="3">Header</b-col>
+          <b-col cols="3">Хедер</b-col>
           <b-col>
             <b-form-select
               v-model="headerBgVariant"
@@ -523,7 +460,7 @@ the `header-border-variant` and `footer-border-variant` props respectively.
         </b-row>
 
         <b-row class="mb-1">
-          <b-col cols="3">Body</b-col>
+          <b-col cols="3">Боди</b-col>
           <b-col>
             <b-form-select
               v-model="bodyBgVariant"
@@ -539,7 +476,7 @@ the `header-border-variant` and `footer-border-variant` props respectively.
         </b-row>
 
         <b-row>
-          <b-col cols="3">Footer</b-col>
+          <b-col cols="3">Футер</b-col>
           <b-col>
             <b-form-select
               v-model="footerBgVariant"
@@ -557,14 +494,14 @@ the `header-border-variant` and `footer-border-variant` props respectively.
 
       <template #modal-footer>
         <div class="w-100">
-          <p class="float-left">Modal Footer Content</p>
+          <p class="float-left">Содержимое модального нижнего колонтитула</p>
           <b-button
             variant="primary"
             size="sm"
             class="float-right"
             @click="show=false"
           >
-            Close
+            Закрыть
           </b-button>
         </div>
       </template>
@@ -592,22 +529,19 @@ the `header-border-variant` and `footer-border-variant` props respectively.
 <!-- b-modal-variants.vue -->
 ```
 
-You can also apply arbitrary classes to the modal dialog container, content (modal window itself),
-header, body and footer via the `modal-class`, `content-class`, `header-class`, `body-class` and
-`footer-class` props, respectively. The props accept either a string or array of strings.
+Вы также можете применять произвольные классы к контейнеру модального диалога, содержимому (само модальное окно), заголовку, телу и нижнему колонтитулу через свойства `modal-class`, `content-class`, `header-class`, `body-class` и `footer-class` соответственно. Свойства принимают либо строку, либо массив строк.
 
-### Hiding the backdrop
+### Скрытие фона
 
-Hide the modal's backdrop via setting the `hide-backdrop` prop.
+Скройте фон модального окна, установив свойство `hide-backdrop`.
 
 ```html
 <div>
-  <b-button v-b-modal.modal-no-backdrop>Open modal</b-button>
+  <b-button v-b-modal.modal-no-backdrop>Открыть модальное окно</b-button>
 
   <b-modal id="modal-no-backdrop" hide-backdrop content-class="shadow" title="BootstrapVue">
     <p class="my-2">
-      We've added the utility class <code>'shadow'</code>
-      to the modal content for added effect.
+      Мы добавили служебный класс <code>'shadow'</code> в модальное содержимое для дополнительного эффекта.
     </p>
   </b-modal>
 </div>
@@ -615,106 +549,99 @@ Hide the modal's backdrop via setting the `hide-backdrop` prop.
 <!-- modal-no-backdrop.vue -->
 ```
 
-Note that clicking outside of the modal will still close the modal even though the backdrop is
-hidden. You can disable this behaviour by setting the `no-close-on-backdrop` prop on `<b-modal>`.
+Обратите внимание, что щелчок за пределами модального окна все равно закроет модальное окно, даже если фон скрыт. Вы можете отключить это поведение, установив свойство `no-close-on-backdrop` на `<b-modal>`.
 
-### Disable open and close animation
+### Отключить анимацию открытия и закрытия
 
-To disable the fading transition/animation when modal opens and closes, just set the prop `no-fade`
-on the `<b-modal>` component.
+Чтобы отключить затухающий переход/анимацию при открытии и закрытии модального окна, просто установите свойство `no-fade` в компоненте `<b-modal>`.
 
-### Footer button sizing
+### Размер кнопки нижнего колонтитула
 
-Fancy smaller or larger buttons in the default footer? Simply set the `button-size` prop to `'sm'`
-for small buttons, or `'lg'` for larger buttons.
+Хотите маленькие или большие кнопки в нижнем колонтитуле по умолчанию? Просто установите свойство `button-size` в `'sm'` для маленьких кнопок или `'lg'` для больших кнопок.
 
 ```html
 <div>
-  <b-button v-b-modal.modal-footer-sm>Small Footer Buttons</b-button>
-  <b-button v-b-modal.modal-footer-lg>Large Footer Buttons</b-button>
+  <b-button v-b-modal.modal-footer-sm>Маленькие кнопки нижнего колонтитула</b-button>
+  <b-button v-b-modal.modal-footer-lg>Большие кнопки нижнего колонтитула</b-button>
 
   <b-modal id="modal-footer-sm" title="BootstrapVue" button-size="sm">
-    <p class="my-2">This modal has small footer buttons</p>
+    <p class="my-2">Этот модал имеет маленькие кнопки нижнего колонтитула</p>
   </b-modal>
 
   <b-modal id="modal-footer-lg" title="BootstrapVue" button-size="lg">
-    <p class="my-2">This modal has large footer buttons</p>
+    <p class="my-2">У этого модального окна большие кнопки нижнего колонтитула</p>
   </b-modal>
 </div>
 
 <!-- modal-footer-btn-sizes.vue -->
 ```
 
-The prop `button-size` has no effect if you have provided your own footer via the
-[`modal-footer`](#custom-rendering-with-slots) slot.
+Свойство `button-size` не действует, если вы предоставили свой собственный нижний колонтитул через слот [`modal-footer`](#custom-rendering-with-slots).
 
-### Disabling built-in footer buttons
+### Отключение встроенных кнопок нижнего колонтитула
 
-You can disable the built-in footer buttons programmatically.
+Вы можете программно отключить встроенные кнопки нижнего колонтитула.
 
-You can disable the **Cancel** and **OK** buttons individually by setting the `cancel-disabled` and
-`ok-disabled` props, respectively, to `true`. Set the prop to `false` to re-enable the button.
+Вы можете отключить кнопки **Cancel** и **OK** по отдельности, установив для свойств `cancel-disabled` и `ok-disabled` соответственно значение `true`. Установите свойство на `false`, чтобы снова активировать кнопку.
 
-To disable both **Cancel** and **OK** buttons at the same time, simply set the `busy` prop to
-`true`. Set it to `false` to re-enable both buttons.
+Чтобы одновременно отключить кнопки **Cancel** и **OK**, просто установите для свойства `busy` значение `true`. Установите значение `false`, чтобы снова активировать обе кнопки.
 
-### Custom rendering with slots
+### Пользовательский рендеринг со слотами
 
-`<b-modal>` provides several named slots (of which some are optionally scoped) that you can use to
-customize the content of various sections of the modal.
+`<b-modal>` предоставляет несколько именованных слотов (некоторые из которых не являются обязательными), которые вы можете использовать для настройки содержимого различных разделов модального окна.
 
-| Slot                 | Optionally Scoped | Description                                                                           |
+| Слот                 | Необязательно | Описание                                                                           |
 | -------------------- | ----------------- | ------------------------------------------------------------------------------------- |
-| `default`            | Yes               | Main content of the modal                                                             |
-| `modal-title`        | Yes               | Content to place in the modal's title                                                 |
-| `modal-header`       | Yes               | Content to place in the header. Replaces the entire header including the close button |
-| `modal-footer`       | Yes               | Content to place in the footer. Replaces the entire footer including the button(s)    |
-| `modal-ok`           | No                | Content to place inside the footer OK button                                          |
-| `modal-cancel`       | No                | Content to place inside the footer CANCEL button                                      |
-| `modal-header-close` | No                | Content to place inside the header CLOSE (`x`) button                                 |
+| `default`            | Да                | Основное содержание модального окна                                                             |
+| `modal-title`        | Да                | Контент для размещения в заголовке модального окна                                                 |
+| `modal-header`       | Да                | Контент разместить в шапке. Заменяет весь заголовок, включая кнопку закрытия |
+| `modal-footer`       | Да                | Контент для размещения в футере. Заменяет весь нижний колонтитул, включая кнопки    |
+| `modal-ok`           | Нет               | Содержимое для размещения внутри кнопки OK нижнего колонтитула                                          |
+| `modal-cancel`       | Нет               | Содержимое для размещения внутри кнопки CANCEL нижнего колонтитула                                     |
+| `modal-header-close` | Нет               | Содержимое для размещения в заголовке кнопка CLOSE (`x`)                                 |
 
-The scope available to the slots that support optional scoping are:
+Область действия, доступная для слотов, которые поддерживают необязательную область видимости:
 
-| Method or Property | Description                                                                                                  |
+| Метод или Свойство | Описание                                                                                                  |
 | ------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `ok()`             | Closes the modal and fires the `ok` and `hide` events, with `bvModalEvent.trigger = 'ok'`                    |
-| `cancel()`         | Closes the modal and fires the `cancel` and `hide` events, with `bvModalEvent.trigger = 'cancel'`            |
-| `close()`          | Closes the modal and fires the `close` and `hide` events, with `bvModalEvent.trigger = 'headerclose'`        |
-| `hide(trigger)`    | Closes the modal and fires the `hide` event, with the `bvModalEvent.trigger = trigger` (trigger is optional) |
-| `visible`          | The visibility state of the modal. `true` if the modal is visible and `false` if not visible                 |
+| `ok()`             | Закрывает модальное окно и запускает события `ok` и `hide`, с `bvModalEvent.trigger = 'ok'`                    |
+| `cancel()`         | Закрывает модальное окно и запускает события `cancel` и `hide`, с `bvModalEvent.trigger = 'cancel'`            |
+| `close()`          | Закрывает модальное окно и запускает события `close` и `hide`, с `bvModalEvent.trigger = 'headerclose'`        |
+| `hide(trigger)`    | Закрывает модальное окно и запускает событие `hide`, с `bvModalEvent.trigger = trigger` (триггер не является обязательным) |
+| `visible`          | Состояние видимости модального окна. `true` если модальное окно видимо, и `false`, если не видно                 |
 
-#### Example modal using custom scoped slots
+#### Пример модального окна с использованием слотов с пользовательской областью действия
 
 ```html
 <template>
-  <b-button @click="$bvModal.show('modal-scoped')">Open Modal</b-button>
+  <b-button @click="$bvModal.show('modal-scoped')">Открыть модальное окно</b-button>
 
   <b-modal id="modal-scoped">
     <template #modal-header="{ close }">
-      <!-- Emulate built in modal header close button action -->
+      <!-- Эмулировать встроенное модальное действие кнопки закрытия заголовка -->
       <b-button size="sm" variant="outline-danger" @click="close()">
-        Close Modal
+        Закрыть модальное кно
       </b-button>
-      <h5>Modal Header</h5>
+      <h5>Заголовок модального окна</h5>
     </template>
 
     <template #default="{ hide }">
-      <p>Modal Body with button</p>
-      <b-button @click="hide()">Hide Modal</b-button>
+      <p>Тело модального окна с кнопкой</p>
+      <b-button @click="hide()">Скрыть модальное окно</b-button>
     </template>
 
     <template #modal-footer="{ ok, cancel, hide }">
-      <b>Custom Footer</b>
-      <!-- Emulate built in modal footer ok and cancel button actions -->
+      <b>Кастомный футер</b>
+      <!-- Эмулировать встроенный модальный нижний колонтитул в порядке и отменить действия кнопки -->
       <b-button size="sm" variant="success" @click="ok()">
-        OK
+        Сохранить
       </b-button>
       <b-button size="sm" variant="danger" @click="cancel()">
-        Cancel
+        Отменить
       </b-button>
-      <!-- Button with custom close trigger value -->
+      <!-- Кнопка с пользовательским значением триггера закрытия -->
       <b-button size="sm" variant="outline-secondary" @click="hide('forget')">
-        Forget it
+        Забыть это
       </b-button>
     </template>
   </b-modal>
@@ -723,81 +650,71 @@ The scope available to the slots that support optional scoping are:
 <!-- b-modal-scoped-slots.vue -->
 ```
 
-## Multiple modal support
+## Множественная модальная поддержка
 
-Unlike native Bootstrap v4, BootstrapVue supports multiple modals opened at the same time.
+В отличие от родного Bootstrap v4, BootstrapVue поддерживает одновременное открытие нескольких модальных окон.
 
-To disable stacking for a specific modal, just set the prop `no-stacking` on the `<b-modal>`
-component. This will hide the modal before another modal is shown.
+Чтобы отключить стек для определенного модального окна, просто установите свойство `no-stacking` в компоненте `<b-modal>`. Это скроет модальное окно до того, как будет показано другое модальное окно.
 
 ```html
 <div>
-  <b-button v-b-modal.modal-multi-1>Open First Modal</b-button>
+  <b-button v-b-modal.modal-multi-1>Открыть Первое модальное окно</b-button>
 
-  <b-modal id="modal-multi-1" size="lg" title="First Modal" ok-only no-stacking>
-    <p class="my-2">First Modal</p>
-    <b-button v-b-modal.modal-multi-2>Open Second Modal</b-button>
+  <b-modal id="modal-multi-1" size="lg" title="Первое модальное окно" ok-only no-stacking>
+    <p class="my-2">Первое модальное окно</p>
+    <b-button v-b-modal.modal-multi-2>Открыть Второе модальное окно</b-button>
   </b-modal>
 
-  <b-modal id="modal-multi-2" title="Second Modal" ok-only>
-    <p class="my-2">Second Modal</p>
-    <b-button v-b-modal.modal-multi-3 size="sm">Open Third Modal</b-button>
+  <b-modal id="modal-multi-2" title="Второе модальное окно" ok-only>
+    <p class="my-2">Второе модальное окно</p>
+    <b-button v-b-modal.modal-multi-3 size="sm">Открыть Третье модальное окно</b-button>
   </b-modal>
 
-  <b-modal id="modal-multi-3" size="sm" title="Third Modal" ok-only>
-    <p class="my-1">Third Modal</p>
+  <b-modal id="modal-multi-3" size="sm" title="Третье модальное окно" ok-only>
+    <p class="my-1">Третье модальное окно</p>
   </b-modal>
 </div>
 
 <!-- b-modal-multiple.vue -->
 ```
 
-**Notes:**
+**Примечания:**
 
-- Avoid nesting a `<b-modal>` _inside_ another `<b-modal>`, as it may get "constrained" to the
-  boundaries of the parent modal dialog (specifically when static modals are used).
-- The opaque backdrop will appear progressively darker for each modal that is opened. This is
-  expected behaviour as each backdrop is opened over top the other modals and backdrops.
+- Избегайте вложения `<b-modal>` _внутри_ другого `<b-modal>`, так как он может быть "ограничен" границами родительского модального диалога (особенно при использовании статических модальных окон).
+- Непрозрачный фон будет казаться темнее для каждого открытого модального окна. Это ожидаемое поведение, так как каждый фон открывается поверх других модальных окон и фонов.
 
-## Modal message boxes
+## Модальные окна сообщений
 
-BootstrapVue provides a few built in Message Box methods on the exposed `this.$bvModal` object.
-These methods provide a way to generate simple OK and Confirm style modal messages, from anywhere in
-your app without having to explicitly place a `<b-modal>` component in your pages.
+BootstrapVue предоставляет несколько встроенных методов Message Box для открытого объекта `this.$bvModal`.
+Эти методы позволяют генерировать простые модальные сообщения в стиле OK и Confirm из любой точки вашего приложения без необходимости явного размещения компонента `<b-modal>` на ваших страницах.
 
-| Method                                          | Description                                                          |
+| Метод                                           | Описание                                                          |
 | ----------------------------------------------- | -------------------------------------------------------------------- |
-| `this.$bvModal.msgBoxOk(message, options)`      | Open a modal with `message` as the content and a single OK button    |
-| `this.$bvModal.msgBoxConfirm(message, options)` | Open a modal with `message` as the content and CANCEL and OK buttons |
+| `this.$bvModal.msgBoxOk(message, options)`      | Откройте модальное окно с `message` в качестве содержимого и одной кнопкой OK    |
+| `this.$bvModal.msgBoxConfirm(message, options)` | Откройте модальное окно с `message` в качестве содержимого и кнопками CANCEL и OK |
 
-The `options` argument is an optional configuration object for adding titles and styling the Message
-Box modal. The object properties correspond to `<b-modal>` props, except in <samp>camelCase</samp>
-format instead of <samp>kebab-case</samp>.
+Аргумент `options` — это необязательный объект конфигурации для добавления заголовков и оформления модального окна сообщения. Свойства объекта соответствуют свойствам `<b-modal>`, за исключением формата <samp>camelCase</samp> вместо <samp>kebab-case</samp>.
 
-Both methods return a `Promise` (requires a polyfill for IE 11 and older browser support) which
-resolve into a value when the modal hides. `.msgBoxOk()` always resolves to the value `true`, while
-`.msgBoxConfirm()` resolves to either `true` (OK button pressed), `false` (CANCEL button pressed),
-or `null` (if the modal was closed via backdrop click, <kbd>Esc</kbd> press, or some other means.
+Оба метода возвращают `Promise` (требуется полифилл для поддержки IE 11 и более старых браузеров), который преобразуется в значение, когда модальное окно скрывается. `.msgBoxOk()` всегда принимает значение `true`, тогда как `.msgBoxConfirm()` принимает значение `true` (нажата кнопка OK), `false` (нажата кнопка CANCEL) или `null` (если модальное окно было закрыто щелчком фона, нажатием <kbd>Esc</kbd> или каким-либо другим способом.
 
-If `message` is not provided, both methods will return immediately with the value `undefined`.
+Если `message` не указано, оба метода немедленно вернутся со значением `undefined`.
 
-You can use either the `.then(..).catch(...)` or async `await` code styles (async `await` requires
-modern browsers or a transpiler).
+Вы можете использовать стили кода `.then(..).catch(...)` или асинхронный `await` (асинхронный `await` требует современных браузеров или транспилера).
 
-### OK message box
+### Окно сообщения OK
 
-Example OK Message boxes
+Пример окон сообщений OK
 
 ```html
 <template>
   <div>
     <div class="mb-2">
-     <b-button @click="showMsgBoxOne">Simple msgBoxOk</b-button>
-     Return value: {{ String(boxOne) }}
+     <b-button @click="showMsgBoxOne">Простой msgBoxOk</b-button>
+     Возвращаемое значение: {{ String(boxOne) }}
     </div>
     <div class="mb-1">
-     <b-button @click="showMsgBoxTwo">msgBoxOk with options</b-button>
-     Return value: {{ String(boxTwo) }}
+     <b-button @click="showMsgBoxTwo">msgBoxOk с опциями</b-button>
+     Возвращаемое значение: {{ String(boxTwo) }}
     </div>
   </div>
 </template>
@@ -813,7 +730,7 @@ Example OK Message boxes
     methods: {
       showMsgBoxOne() {
         this.boxOne = ''
-        this.$bvModal.msgBoxOk('Action completed')
+        this.$bvModal.msgBoxOk('Действие завершено')
           .then(value => {
             this.boxOne = value
           })
@@ -823,8 +740,8 @@ Example OK Message boxes
       },
       showMsgBoxTwo() {
         this.boxTwo = ''
-        this.$bvModal.msgBoxOk('Data was submitted successfully', {
-          title: 'Confirmation',
+        this.$bvModal.msgBoxOk('Данные успешно отправлены', {
+          title: 'Подтверждение',
           size: 'sm',
           buttonSize: 'sm',
           okVariant: 'success',
@@ -836,7 +753,7 @@ Example OK Message boxes
             this.boxTwo = value
           })
           .catch(err => {
-            // An error occurred
+            // Произошла ошибка
           })
       }
     }
@@ -846,20 +763,20 @@ Example OK Message boxes
 <!-- b-modal-msg-box-ok.vue -->
 ```
 
-### Confirm message box
+### Окно сообщения Confirm
 
-Example Confirm Message boxes
+Пример окна сообщения Confirm
 
 ```html
 <template>
   <div>
     <div class="mb-2">
-     <b-button @click="showMsgBoxOne">Simple msgBoxConfirm</b-button>
-     Return value: {{ String(boxOne) }}
+     <b-button @click="showMsgBoxOne">Простой msgBoxConfirm</b-button>
+     Возвращаемое значение: {{ String(boxOne) }}
     </div>
     <div class="mb-1">
      <b-button @click="showMsgBoxTwo">msgBoxConfirm with options</b-button>
-     Return value: {{ String(boxTwo) }}
+     Возвращаемое значение: {{ String(boxTwo) }}
     </div>
   </div>
 </template>
@@ -875,7 +792,7 @@ Example Confirm Message boxes
     methods: {
       showMsgBoxOne() {
         this.boxOne = ''
-        this.$bvModal.msgBoxConfirm('Are you sure?')
+        this.$bvModal.msgBoxConfirm('Уверены ли вы?')
           .then(value => {
             this.boxOne = value
           })
@@ -885,8 +802,8 @@ Example Confirm Message boxes
       },
       showMsgBoxTwo() {
         this.boxTwo = ''
-        this.$bvModal.msgBoxConfirm('Please confirm that you want to delete everything.', {
-          title: 'Please Confirm',
+        this.$bvModal.msgBoxConfirm('Пожалуйста, подтвердите, что вы хотите удалить все.', {
+          title: 'Пожалуйста, подтвердите',
           size: 'sm',
           buttonSize: 'sm',
           okVariant: 'danger',
@@ -910,54 +827,29 @@ Example Confirm Message boxes
 <!-- b-modal-msg-box-confirm.vue -->
 ```
 
-### Message box notes
+### Примечания к окну сообщения
 
-- The `this.$bvModal` injection is only available when using the full `BootstrapVue` plugin or the
-  `ModalPlugin` plugin. It is not available if importing just the `b-modal` component. To just
-  import the injection, use the `BVModalPlugin` plugin.
-- A new `$bvModal` injection (mixin) is created for each Vue virtual machine (i.e. each instantiated
-  component), and is not usable via direct access to the `Vue.prototype`, as it needs access to the
-  instance's `this` and `$root` contexts.
-- Message Boxes require `Promise` support in the browser. If targeting your app for older browsers,
-  such as IE 11, please include a polyfill that provides `Promise` support. If `Promise` support is
-  not detected, then the message box methods will immediately return `undefined`.
-- Message Boxes are an extension of the `<b-modal>` component, and hence support the majority of
-  `<b-modal>` props (using <samp>camelCase</samp> format), with the exception of the following
-  props: `lazy`, `static`, `busy`, `visible`, `noStacking`, `okOnly`, `okDisabled`, and
-  `cancelDisabled`.
-- When a `title` (or `titleHtml`) _is not_ provided in the options, the header will not be shown.
-- When a `title` (or `titleHtml`) _is_ provided in the options, the header close button is not shown
-  by default. You can enable the header close button by setting `hideHeaderClose: false` in the
-  options.
-- Message Boxes will throw an error (promise rejection) if they are closed/destroyed before they are
-  hidden. Always include a `.catch(errHandler)` reject handler, event if using the async `await`
-  style code.
-- When using Vue Router (or similar), Message Boxes will close and reject if the route changes
-  before the modal hides. If you wish for the message box to remain open when the route changes, use
-  `this.$root.$bvModal` instead of `this.$bvModal`.
-- Message boxes cannot be generated during Server Side Rendering (SSR).
-- The Message Box `message` currently does not support HTML strings, however, you can pass an
-  _array_ of `VNodes` as the `message` for fine grained control of the markup. You can use Vue's
-  [`this.$createElement`](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments)
-  method to generate VNodes. This can also be done for the modal title (by passing VNodes to the
-  `title` option), OK button text (via the `okTitle` option), and the CANCEL button text (via the
-  `cancelTitle` option).
+- Внедрение `this.$bvModal` доступно только при использовании полного плагина `BootstrapVue` или плагина `ModalPlugin`. Он недоступен при импорте только компонента `b-modal`. Чтобы просто импортировать инъекцию, используйте плагин `BVModalPlugin`.
+- Новая инъекция `$bvModal` (примесь) создается для каждой виртуальной машины Vue (т. е. каждого экземпляра компонента), и ее нельзя использовать через прямой доступ к `Vue.prototype`, так как ей нужен доступ к контексту `this` и `$root`.
+- Окна сообщений требуют поддержки `Promise` в браузере. Если ваше приложение предназначено для старых браузеров, таких как IE 11, включите полифилл, обеспечивающий поддержку `Promise`. Если поддержка `Promise` не обнаружена, то методы окна сообщения немедленно вернут `undefined`.
+- Окна сообщений являются расширением компонента `<b-modal>` и, следовательно, поддерживают большинство реквизитов `<b-modal>` (в формате <samp>camelCase</samp>), за исключением следующих свойств: `lazy`, `static`, `busy`, `visible`, `noStacking`, `okOnly`, `okDisabled` и `cancelDisabled`.
+- Когда `title` (или `titleHtml`) _не указан_ в опциях, заголовок не будет отображаться.
+- Когда `title` (или `titleHtml`) _указан_ в опциях, кнопка закрытия заголовка не отображается по умолчанию. Вы можете включить кнопку закрытия заголовка, установив `hideHeaderClose: false` в параметрах.
+- Окна сообщений будут выдавать ошибку (отклонение обещания), если они будут закрыты/уничтожены до того, как они будут скрыты. Всегда включайте обработчик отклонения `.catch(errHandler)`, если используется асинхронный код стиля `await`.
+- При использовании Vue Router (или аналогичного) окна сообщений будут закрываться и отклоняться, если маршрут изменится до того, как модальное окно скроется. Если вы хотите, чтобы окно сообщения оставалось открытым при изменении маршрута, используйте `this.$root.$bvModal` insвместо `this.$bvModal`.
+- Окна сообщений не могут быть созданы во время рендеринга на стороне сервера (SSR).
+- Окно сообщения `message` в настоящее время не поддерживает строки HTML, однако вы можете передать _массив_ из `VNodes` в качестве `message` для точного управления разметкой. Вы можете использовать метод Vue [`this.$createElement`](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments) для создания VNodes. Это также можно сделать для модального заголовка (путем передачи VNodes в параметр `title`), текста кнопки OK (через опцию `okTitle`), и текста кнопки CANCEL (через опцию `cancelTitle`).
 
-### Message box advanced usage
+### Расширенное использование окна сообщений
 
-When using the `this.$bvModal.msgBoxOk(...)` or `this.$bvModal.msgBoxConfirm(...)` methods for
-generating modals, you may want the modal content to be more than just a string message. As
-mentioned in the [message box notes](#message-box-notes) section above, you can pass _arrays_ of
-VNodes as the message and title for more complex content.
+При использовании методов `this.$bvModal.msgBoxOk(...)` или `this.$bvModal.msgBoxConfirm(...)` для создания модальных окон вы можете захотеть, чтобы модальное содержимое было чем-то большим, чем просто строковое сообщение. Как упоминалось в разделе [заметки окна сообщения](#message-box-notes) выше, вы можете передать _массивы_ виртуальных узлов в качестве сообщения и заголовка для более сложного содержимого.
 
-Use Vue's
-[`this.$createElement`](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments)
-method to generate VNodes.
+Используйте метод Vue [`this.$createElement`](https://vuejs.org/v2/guide/render-function.html#createElement-Arguments) для создания VNodes.
 
 ```html
 <template>
   <div>
-    <b-button @click="showMsgOk">Show OK message box with custom content</b-button>
+    <b-button @click="showMsgOk">Показать окно сообщения OK с пользовательским содержимым</b-button>
   </div>
 </template>
 
@@ -966,9 +858,9 @@ method to generate VNodes.
     methods: {
       showMsgOk() {
         const h = this.$createElement
-        // Using HTML string
+        // Использование строки HTML
         const titleVNode = h('div', { domProps: { innerHTML: 'Title from <i>HTML<i> string' } })
-        // More complex structure
+        // Более сложная структура
         const messageVNode = h('div', { class: ['foobar'] }, [
           h('p', { class: ['text-center'] }, [
             ' Flashy ',
@@ -985,7 +877,7 @@ method to generate VNodes.
             }
           })
         ])
-        // We must pass the generated VNodes as arrays
+        // Мы должны передать сгенерированные VNodes как массивы
         this.$bvModal.msgBoxOk([messageVNode], {
           title: [titleVNode],
           buttonSize: 'sm',
@@ -999,61 +891,48 @@ method to generate VNodes.
 <!-- modal-msg-box-advanced.vue -->
 ```
 
-## Listening to modal changes via \$root events
+## Прослушивание модальных изменений через события \$root
 
-To listen to any modal opening, use:
+Чтобы прослушать любое модальное открытие, используйте:
 
 ```js
 export default {
   mounted() {
     this.$root.$on('bv::modal::show', (bvEvent, modalId) => {
-      console.log('Modal is about to be shown', bvEvent, modalId)
+      console.log('Модальное окно скоро будет показано', bvEvent, modalId)
     })
   }
 }
 ```
 
-Refer to the [Events](#comp-ref-b-modal) section of this documentation for the full list of events
-emitted.
+Обратитесь к разделу [События](#comp-ref-b-modal) этой документации для получения полного списка генерируемых событий.
 
-## Accessibility
+## Доступность
 
-`<b-modal>` provides several accessibility features, including auto focus, return focus, keyboard
-(tab) _focus containment_, and automated `aria-*` attributes.
+`<b-modal>` предоставляет несколько функций специальных возможностей, включая автофокус, возврат фокуса, _фиксацию_ фокуса клавиатуры (вкладки) и автоматические атрибуты `aria-*`.
 
-**Note:** The animation effect of this component is dependent on the `prefers-reduced-motion` media
-query. See the
-[reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
-additional details.
+**Примечание:** Эффект анимации этого компонента зависит от медиа-запроса `prefers-reduced-motion`. Дополнительную информацию см. в [разделе с уменьшенным движением в нашей документации по специальным возможностям](/docs/reference/accessibility).
 
-### Modal ARIA attributes
+### Модальные атрибуты ARIA
 
-The `aria-labelledby` and `aria-describedby` attributes will appear on the modal automatically in
-most cases.
+Атрибуты `aria-labelledby` и `aria-describedby` автоматически появляются в модальном окне в большинстве случаев.
 
-- The `aria-labelledby` attribute will **not** be present if you have the header hidden, or supplied
-  your own header, or have not supplied a modal title. It is recommended to supply a title for your
-  modals (when using the built in header). You can visually hide the header title, but still make it
-  available to screen readers by setting the `title-sr-only` prop. If you do not have a header, you
-  can supply a label for the modal by passing a string to the `aria-label` prop.
-- The `aria-describedby` attribute will always point to the modal's body content.
-- If the `aria-label` prop is specified with a string value, the `aria-labelledby` attribute will
-  not be rendered, even if you have a title/header for your modal.
+- Атрибут `aria-labelledby` **отсутствует**, если вы скрыли заголовок, указали свой собственный заголовок или не указали модальный заголовок. Рекомендуется указать заголовок для ваших модальных окон (при использовании встроенного заголовка). Вы можете визуально скрыть заголовок заголовка, но сделать его доступным для программ чтения с экрана, установив свойство `title-sr-only`. Если у вас нет заголовка, вы можете указать метку для модального окна, передав строку в свойство `aria-label`.
+- Атрибут `aria-describedby` всегда будет указывать на содержимое тела модального окна.
+- Если свойство `aria-label` указано со строковым значением, атрибут `aria-labelledby` не будет отображаться, даже если у вас есть заголовок/заголовок для вашего модального окна.
 
-The `aria-label` and `title-sr-only` props were added in version `v2.0.0-rc.27`.
+Свойства `aria-label` и `title-sr-only` были добавлены в версии `v2.0.0-rc.27`.
 
-### Auto focus on open
+### Автофокус при открытии
 
-`<b-modal>` will autofocus the modal _container_ when opened.
+`<b-modal>` будет автоматически фокусировать модальный _контейнер_ при открытии.
 
-You can pre-focus an element within the `<b-modal>` by listening to the `<b-modal>` `shown` event,
-and call the element's `focus()` method. `<b-modal>` will not attempt to autofocus if an element
-already has focus within the `<b-modal>`.
+Вы можете предварительно сфокусировать элемент внутри `<b-modal>`, прослушивая событие `shown` и вызывая метод `focus()` элемента `<b-modal>`. `<b-modal>` не будет пытаться сфокусироваться, если элемент уже имеет фокус внутри `<b-modal>`.
 
 ```html
 <b-modal @shown="focusMyElement">
   <div>
-    <b-button>I Don't Have Focus</b-button>
+    <b-button>У меня нет фокуса</b-button>
   </div>
 
   <div>
@@ -1061,7 +940,7 @@ already has focus within the `<b-modal>`.
   </div>
 
   <div>
-    <!-- Element to gain focus when modal is opened -->
+    <!-- Элемент для получения фокуса при открытии модального окна -->
     <b-form-input ref="focusThis"></b-form-input>
   </div>
 
@@ -1081,89 +960,61 @@ export default {
 }
 ```
 
-Alternatively, if using `b-form-*` form controls, you can use the `autofocus` prop to automatically
-focus a form control when the modal opens. Note that the `autofocus` prop will not work with
-`b-modal` if the `static` prop is used without the `lazy` prop set, as `autofocus` happens when the
-`b-form-*` controls are _mounted in the DOM_.
+В качестве альтернативы, если вы используете элементы управления формы `b-form-*`, вы можете использовать свойство `autofocus`, чтобы автоматически фокусировать элемент управления формы при открытии модального окна. Обратите внимание, что свойство `autofocus` не будет работать с `b-modal`, если свойство `static` используется без набора свойств `lazy`, так как `autofocus` происходит, когда элементы управления `b-form-*` _монтируются в ДОМ_.
 
-If you want to auto focus one of the _built-in_ modal buttons (`ok`, `cancel` or the header `close`
-button, you can set the prop `auto-focus-button` to one of the values `'ok'`, `'cancel'` or
-`'close'` and `<b-modal>` will focus the specified button if it exists. This feature is also
-available for modal message boxes.
+Если вы хотите автоматически сфокусировать одну из _встроенных_ модальных кнопок (`ok`, `cancel` или кнопку `close` в заголовке, вы можете установить свойство `auto-focus-button` в одно из значений `'ok'`, `'cancel'` или `'close'` и `<b-modal>` будут фокусировать указанную кнопку, если она существует. Эта функция также доступна для модальных окон сообщений.
 
 <p class="alert alert-warning">
-  <strong>Note:</strong> it is <strong>not recommended</strong> to autofocus an input or control
-  inside of a modal for accessibility reasons, as screen reader users will not know the context of
-  where the input is (the announcement of the modal may not be spoken). It is best to let
-  <code>&lt;b-modal&gt;</code> focus the modal's container, allowing the modal information to be
-  spoken to the user, and then allow the user to tab into the input.
+  <strong>Примечание:</strong> <strong>не рекомендуется</strong> автофокусировать ввод или элемент управления внутри модального окна по соображениям доступности, так как пользователи программ чтения с экрана не будут знать контекст того, где находится ввод (объявление модального окна может не произноситься) . Лучше всего позволить <code>&lt;b-modal&gt;</code> сфокусировать контейнер модального окна, позволяя сообщить модальную информацию пользователю, а затем позволить пользователю перейти к вводу с помощью табуляции.
 </p>
 
-### Returning focus to the triggering element
+### Возврат фокуса к элементу запуска
 
-For accessibility reasons, it is desirable to return focus to the element that triggered the opening
-of the modal, when the modal closes.
+Из соображений доступности желательно возвращать фокус элементу, вызвавшему открытие модального окна, когда оно закрывается.
 
-`<b-modal>` will try and automatically determine which element had focus before the modal was
-opened, and will return the focus to that element when the modal has hidden if possible. However,
-several methods and options are provided to allow you to specify the element to return focus to once
-the modal has hidden.
+`<b-modal>` попытается автоматически определить, какой элемент имел фокус до того, как модальное окно было открыто, и вернет фокус этому элементу, когда модальное окно скроется, если это возможно. Однако предоставляется несколько методов и опций, позволяющих вам указать элемент, на который нужно вернуть фокус после того, как модальное окно скрыто.
 
-#### Specify return focus element via the `return-focus` prop
+#### Укажите элемент возврата фокуса с помощью свойства `return-focus`
 
-You can also specify an element to return focus to, when modal closes, by setting the `return-focus`
-prop to one of the following:
+Вы также можете указать элемент, на который будет возвращаться фокус при закрытии модального окна, установив для свойства `return-focus` одно из следующих значений:
 
-- A CSS Query Selector string (or an element ID prepended with `#`)
-- A component reference (which is mounted on a focusable element, such as `<b-button>`)
-- A reference to a DOM element that is focusable
+- Строка селектора запросов CSS (или идентификатор элемента с префиксом `#`)
+- Ссылка на компонент (которая монтируется на фокусируемом элементе, таком как `<b-button>`)
+- Ссылка на элемент DOM, который можно сфокусировать
 
-If the passed in element is not focusable, then the browser will determine what has focus (usually
-`<body>`, which is not desirable)
+Если переданный элемент не может быть сфокусирован, тогда браузер определит, что имеет фокус (обычно `<body>`, что нежелательно)
 
-This method for returning focus is handy when you use the `<b-modal>` methods `show()` and `hide()`,
-or the `v-model` prop. Note this property takes precedence over other methods of specifying the
-return focus element.
+Этот метод возврата фокуса удобен, когда вы используете методы `show()` и `hide()` или свойство `v-model` элемента `<b-modal>`. Обратите внимание, что это свойство имеет приоритет над другими методами указания возвращаемого элемента фокуса.
 
-#### Auto return focus
+#### Автоматический возврат фокуса
 
-When `<b-modal>` is opened via the `v-b-modal` directive on an element, focus will be returned to
-this element automatically when `<b-modal>` closes, unless an element has been specified via the
-`return-focus` prop.
+Когда `<b-modal>` открывается с помощью директивы `v-b-modal` для элемента, фокус автоматически возвращается к этому элементу при закрытии `<b-modal>`, если элемент не был указан через свойство `return-focus`.
 
-#### Specify return focus via event
+#### Укажите возврат фокуса через событие
 
-When using the `bv::show::modal` event (emitted on `$root`), you can specify a second argument which
-is the element to return focus to. This argument accepts the same types as the `return-focus` prop.
+При использовании события `bv::show::modal` (генерируемого в `$root`) вы можете указать второй аргумент, который является элементом, на который нужно вернуть фокус. Этот аргумент принимает те же типы, что и свойство `return-focus`.
 
 ```js
 this.$root.$emit('bv::show::modal', 'modal-1', '#focusThisOnClose')
 ```
 
-_Tip:_ if using a click event (or similar) to trigger modal to open, pass the event's `target`
-property:
+_Совет:_ если вы используете событие клика (или подобное) для запуска модального окна для открытия, передайте свойство события `target`:
 
 ```html
 <div>
-  <b-button @click="$root.$emit('bv::show::modal', 'modal-1', $event.target)">Open Modal</b-button>
+  <b-button @click="$root.$emit('bv::show::modal', 'modal-1', $event.target)">Открыть модальное окно</b-button>
 </div>
 ```
 
-**Note:** If the `<b-modal>` has the `return-focus` prop set, then the element specified via the
-event will be ignored.
+**Примечание:** Если для `<b-modal>` установлено свойство `return-focus`, то элемент, указанный в событии, будет проигнорирован.
 
-### Keyboard navigation
+### Клавиатурная навигация
 
-When tabbing through elements within a `<b-modal>`, if focus attempts to leave the modal into the
-document, it will be brought back into the modal.
+При перемещении по элементам внутри `<b-modal>`, если фокус попытается оставить модальное окно в документе, он вернется в модальное окно.
 
-Avoid setting `tabindex` on elements within the modal to any value other than `0` or `-1`. Doing so
-will make it difficult for people who rely on assistive technology to navigate and operate page
-content and can make some of your elements unreachable via keyboard navigation.
+Избегайте установки `tabindex` для элементов внутри модального окна на любое значение, отличное от `0` или `-1`. Это затруднит навигацию и работу с содержимым страницы для людей, которые полагаются на вспомогательные технологии, и может сделать некоторые из ваших элементов недоступными с помощью навигации с помощью клавиатуры.
 
-If some elements outside the modal need to be focusable (i.e. for TinyMCE), you can add them as CSS
-selectors to the `ignore-enforce-focus-selector` prop
-<span class="badge badge-secondary">2.4.0+</span>, e.g.:
+Если некоторые элементы за пределами модального окна должны быть сфокусированы (например, для TinyMCE), вы можете добавить их в качестве селекторов CSS в свойство `ignore-enforce-focus-selector` <span class="badge badge-secondary">2.4.0+</span>, например:
 
 ```html
 <b-modal
@@ -1171,23 +1022,17 @@ selectors to the `ignore-enforce-focus-selector` prop
   title="Modal with TinyMCE Editor"
   ignore-enforce-focus-selector=".tox-tinymce-aux, .moxman-window, .tam-assetmanager-root"
 >
-  <!-- Modal content with TinyMCE editor here -->
+  <!-- Модальный контент с редактором TinyMCE здесь -->
 </b-modal>
 ```
 
-In some circumstances, you may need to disable the enforce focus feature completely. You can do this
-by setting the prop `no-enforce-focus`, although this is _highly discouraged_ for accessibility
-reasons.
+В некоторых случаях может потребоваться полностью отключить функцию принудительного фокуса. Вы можете сделать это, установив свойство `no-enforce-focus`, хотя это _крайне не рекомендуется_ из соображений доступности.
 
-### `v-b-modal` directive accessibility
+### Доступность директивы `v-b-modal`
 
-Notes on `v-b-modal` directive accessibility:
+Примечания о доступности директивы `v-b-modal`:
 
-- If the element is anything other than a `<button>` (or component that renders a `<button>`), the
-  ARIA `role` will be set to `button`, and a keydown event listeners for <kbd>Enter</kbd> and
-  <kbd>Space</kbd> will be added, along with a `click` listener.
-- If the element is anything other than a `<button>` or `<a>` (or a component that renders either),
-  then a `tabindex` of `0` will be added to the element to ensure accessibility, unless there is
-  already a `tabindex` set.
+- Если элемент не является `<button>` (или компонентом, который отображает `<button>`), ARIA `role` будет установлена на `button`, а прослушиватели событий нажатия клавиши для <kbd>Enter</kbd> и <kbd>Space</kbd> будут добавлены вместе с прослушивателем кликов `click`.
+- Если элемент не является `<button>` или `<a>` (или компонентом, который отображает любой из них), то к элементу будет добавлен `tabindex` равный `0`, чтобы обеспечить доступность, если нет уже является набором `tabindex`.
 
 <!-- Component reference added automatically from component package.json -->
