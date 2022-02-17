@@ -290,88 +290,66 @@ const options = [
 <!-- b-form-checkbox-stacked.vue -->
 ```
 
-## Control sizing
+## Размеры
 
-Use the `size` prop to control the size of the checkbox. The default size is medium. Supported size
-values are `sm` (small) and `lg` (large).
+Используйте свойство `size` для управления размером флажка. Размер по умолчанию средний. Поддерживаемые значения размера: `sm` (маленький) и `lg` (большой).
 
 ```html
 <div>
-  <b-form-checkbox size="sm">Small</b-form-checkbox>
-  <b-form-checkbox>Default</b-form-checkbox>
-  <b-form-checkbox size="lg">Large</b-form-checkbox>
+  <b-form-checkbox size="sm">Маленький</b-form-checkbox>
+  <b-form-checkbox>По умолчанию</b-form-checkbox>
+  <b-form-checkbox size="lg">Большой</b-form-checkbox>
 </div>
 
 <!-- form-checkbox-sizes.vue -->
 ```
 
-Sizes can be set on individual `<b-form-checkbox>` components, or inherited from the size setting of
-`<b-form-checkbox-group>`.
+Размеры могут быть установлены для отдельных компонентов `<b-form-checkbox>` или унаследованы от настройки размера `<b-form-checkbox-group>`.
 
-**Note:** Bootstrap v4.x does not natively support sizes for the custom checkbox control. However,
-BootstrapVue includes custom SCSS/CSS that adds support for sizing the custom checkboxes.
+**Примечание:** Bootstrap v4.x изначально не поддерживает размеры для пользовательского элемента управления флажком. Однако BootstrapVue включает настраиваемые SCSS/CSS, в которых добавлена поддержка изменения размеров настраиваемых флажков.
 
-## Checkbox values and `v-model`
+## Значения флажков и `v-model`
 
-By default, `<b-form-checkbox>` value will be `true` when checked and `false` when unchecked. You
-can customize the checked and unchecked values by specifying the `value` and `unchecked-value`
-properties, respectively.
+По умолчанию значение `<b-form-checkbox>` будет равно `true`, если флажок выбран, и `false`, если флажок снят. Вы можете настроить проверенные и непроверенные значения, указав свойства `value` и `unchecked-value` соответственно.
 
-The `v-model` binds to the `checked` prop. When you have multiple checkboxes that bind to a single
-data state variable, you **must** provide an array reference (`[]`) to your `v-model`. Do not use
-the `checked` prop directly.
+`v-model` привязывается к свойству `checked`. Если у вас есть несколько флажков, привязанных к одной переменной состояния данных, вы **должны** указать ссылку на массив (`[]`) для вашей `v-model`. Не используйте свойство `checked` напрямую.
 
-Note that when `v-model` is bound to multiple checkboxes (i.e an array ref), the `unchecked-value`
-is **not used**. Only the value(s) of the checked checkboxes will be returned in the `v-model` bound
-array. You should provide a unique value for each checkbox's `value` prop (the default of `true`
-will not work when bound to an array)
+Обратите внимание, что когда `v-model` привязан к нескольким флажкам (т. е. ссылка на массив), `unchecked-value` **не используется**. В связанном массиве `v-model` будут возвращены только значения отмеченных флажков. Вы должны указать уникальное значение для свойства `value` каждого флажка (значение по умолчанию `true` не будет работать при привязке к массиву).
 
-To pre-check any radios, set the `v-model` to the value(s) of the checks that you would like
-pre-selected.
+Чтобы предварительно проверить любые радиостанции, установите `v-model` на значение(я) проверок, которые вы хотели бы предварительно выбрать.
 
-When placing individual `<b-form-checkbox>` components within a `<b-form-checkbox-group>`, most
-props and the `v-model` are inherited from the `<b-form-checkbox-group>`.
+При размещении отдельных компонентов `<b-form-checkbox>` в `<b-form-checkbox-group>`, большинство свойств и `v-model` наследуются от `<b-form-checkbox-group>`.
 
-**Note:** the `unchecked-value` prop _does not_ affect the native `<input>`'s `value` attribute,
-because browsers don't include unchecked boxes in form submissions. To guarantee that one of two
-values is submitted in a native `<form>` submit (e.g. `'yes'` or `'no'`), use radio inputs instead.
-This is the same limitation that
-[Vue has with native checkbox inputs](https://vuejs.org/v2/guide/forms.html#Checkbox-1).
+**Примечание:** свойство `unchecked-value` _не_ влияет на собственный атрибут `<input>` `value`, потому что браузеры не включают неотмеченные флажки при отправке форм. Чтобы гарантировать, что одно из двух значений будет отправлено в исходной форме `<form>` (например, `'yes'` или `'no'`), вместо этого используйте радио-вводы. Это то же самое ограничение, которое [Vue имеет с собственным вводом флажков](https://vuejs.org/v2/guide/forms.html#Checkbox-1).
 
-### Multiple checkboxes and accessibility
+### Мультивыбор флажков и доступность
 
-When binding multiple checkboxes together, you must set the `name` prop to the same value for all
-`<b-form-checkbox>`s in the group individually or via the `name` prop of `<b-form-checkbox-group>`.
-This will inform users of assistive technologies that the checkboxes are related and enables native
-browser keyboard navigation.
+При связывании нескольких флажков вместе вы должны установить для свойства `name` одно и то же значение для всех `<b-form-checkbox>` в группе по отдельности или через свойство `name` элемента `<b-form-checkbox-group>`.
+Это проинформирует пользователей вспомогательных технологий о том, что флажки связаны между собой, и активирует навигацию с помощью встроенной клавиатуры браузера.
 
-Whenever using multiple checkboxes, it is recommended that the checkboxes be placed in a
-[`<b-form-group>`](/docs/components/form-group) component to associate a label with the entire group
-of checkboxes. See examples above.
+При использовании нескольких флажков рекомендуется размещать флажки в компоненте
+[`<b-form-group>`](/docs/components/form-group), чтобы связать метку со всей группой флажков. Смотрите примеры выше.
 
-## Button style checkboxes
+## Флажки стиля кнопки
 
-You can optionally render checkboxes to appear as buttons, either individually, or in a group.
+При желании вы можете отобразить флажки в виде кнопок по отдельности или в группе.
 
-Button style checkboxes will have the class `.active` automatically applied to the label when they
-are in the _checked_ state.
+Флажки стиля кнопки будут иметь класс `.active`, автоматически применяемый к метке, когда они находятся в состоянии _выбрано_.
 
-### Individual checkbox button style
+### Индивидуальный стиль кнопки флажка
 
-A single checkbox can be rendered with a button appearance by setting the prop `button` to `true`
+Один флажок можно отобразить с помощью кнопки, установив для свойства `button` значение `true`
 
-Change the button variant by setting the `button-variant` prop to one of the standard Bootstrap
-button variants (see [`<b-button>`](/docs/components/button) for supported variants). The default
-variant is `secondary`.
+Измените вариант кнопки, установив свойство `button-variant` на один из стандартных вариантов кнопки Bootstrap (поддерживаемые варианты смотрите в [`<b-button>`](/docs/components/button)). Вариант по умолчанию: `secondary`.
 
 ```html
 <template>
   <div>
     <b-form-checkbox v-model="checked1" name="check-button" button>
-      Button Checkbox <b>(Checked: {{ checked1 }})</b>
+      Кнопка Флажок <b>(Выбрано: {{ checked1 }})</b>
     </b-form-checkbox>
     <b-form-checkbox v-model="checked2" name="check-button" button button-variant="info">
-      Button Checkbox <b>(Checked: {{ checked2 }})</b>
+      Кнопка Флажок <b>(Выбрано: {{ checked2 }})</b>
     </b-form-checkbox>
   </div>
 </template>
@@ -390,14 +368,11 @@ variant is `secondary`.
 <!-- b-form-checkbox-button.vue -->
 ```
 
-The `inline` prop has no effect on individual button-style checkboxes.
+Свойство `inline` не влияет на отдельные флажки в стиле кнопок.
 
-### Grouped button style checkboxes
+### Флажки сгруппированного стиля кнопок
 
-Render groups of checkboxes with the look of a button-group by setting the prop `buttons` on
-`<b-form-checkbox-group>`. Change the button variant by setting the `button-variant` prop to one of
-the standard Bootstrap button variants (see [`<b-button>`](/docs/components/button) for supported
-variants). The default `button-variant` is `secondary`.
+Визуализируйте группы флажков в виде группы кнопок, установив свойство `buttons` в `<b-form-checkbox-group>`. Измените вариант кнопки, установив свойство `button-variant` на один из стандартных вариантов кнопки Bootstrap (поддерживаемые варианты смотрите в [`<b-button>`](/docs/components/button)). По умолчанию `button-variant` является `secondary`.
 
 ```html
 <template>
