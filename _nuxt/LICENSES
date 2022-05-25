@@ -5,18 +5,25 @@
   */
 
 /*!
- * BootstrapVue Icons, generated from Bootstrap Icons 1.3.0
- *
- * @link https://icons.getbootstrap.com/
- * @license MIT
- * https://github.com/twbs/icons/blob/master/LICENSE.md
- */
-
-/*!
  * Vue.js v2.6.12
  * (c) 2014-2020 Evan You
  * Released under the MIT License.
  */
+
+
+/*
+	object-assign
+	(c) Sindre Sorhus
+	@license MIT
+	*/
+
+/*!
+	   * The buffer module from node.js, for the browser.
+	   *
+	   * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	   * @license  MIT
+	   */
+
 
 /*!
  * vue-client-only v2.0.0

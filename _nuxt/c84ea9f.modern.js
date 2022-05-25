@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[88],{511:function(e,c,t){"use strict";t.r(c),c.default={fetch(e){var{redirect:c,route:t={}}=e;c(301,"/docs/reference/settings".concat(t.hash||""))}}}}]);
