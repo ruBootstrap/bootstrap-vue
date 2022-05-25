@@ -108,7 +108,7 @@ yarn add vue bootstrap bootstrap-vue
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
-// Импортировать файлы CSS Bootstrap и Bootstrap Vue (порядок важен)
+// Импортируйте файлы CSS Bootstrap и BootstrapVue (порядок важен)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
@@ -131,7 +131,7 @@ Vue.use(IconsPlugin)
 $body-bg: #000;
 $body-color: #111;
 
-// Затем импортируйте файлы Bootstrap и BootstrapVue SCSS (порядок важен)
+// Затем импортируйте файлы SCSS Bootstrap и BootstrapVue  (порядок важен)
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 ```
@@ -611,19 +611,19 @@ vue add bootstrap-vue
 ```html
 <!-- Добавьте это в <head> -->
 
-<!-- Загрузите необходимые Bootstrap и BootstrapVue CSS -->
-<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
-<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+<!-- Загрузите необходимые CSS Bootstrap и BootstrapVue -->
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
 
 <!-- Загрузите полифиллы для поддержки старых браузеров -->
-<script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
 
 <!-- Загрузите Vue, а затем BootstrapVue -->
-<script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
-<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+<script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 
 <!-- Загрузите следующее для поддержки BootstrapVueIcons -->
-<script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
 ```
 
 ## Варианты сборки

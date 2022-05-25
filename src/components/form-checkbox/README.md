@@ -734,14 +734,14 @@ _Визуально_, на самом деле есть три состояни�
           aria-label="Individual flavours"
           stacked
         ></b-form-checkbox-group>
-      </b-form-group>
+      </template>
+    </b-form-group>
 
-      <div>
-        Выбрано: <strong>{{ selected }}</strong><br>
-        Всего выбрано: <strong>{{ allSelected }}</strong><br>
-        Неопределенно: <strong>{{ indeterminate }}</strong>
-      </div>
-    </template>
+    <div>
+      Выбрано: <strong>{{ selected }}</strong><br>
+      Всего выбрано: <strong>{{ allSelected }}</strong><br>
+      Неопределенно: <strong>{{ indeterminate }}</strong>
+    </div>
   </div>
 </template>
 
