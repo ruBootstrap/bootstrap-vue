@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Nav",
-    "description": "Navigation components that share general markup and styles, from the base <b-nav> class to the active and disabled states. Swap modifier props to switch between each style.",
+    "description": "Компоненты навигации, использующие общую разметку и стили, от базового класса <b-nav> до активных и отключенных состояний. Меняйте свойства модификатора, чтобы переключаться между каждым стилем.",
     "plugins": [
       "DropdownPlugin"
     ],
@@ -13,42 +13,42 @@
         "props": [
           {
             "prop": "align",
-            "description": "Align the nav items in the nav: 'start' (or 'left'), 'center', 'end' (or 'right')"
+            "description": "Выровняйте элементы навигации в навигации: 'start' (или 'left'), 'center', 'end' (или 'right')"
           },
           {
             "prop": "cardHeader",
             "version": "2.0.0",
-            "description": "Set this prop when the nav is placed inside a card header"
+            "description": "Установите это свойство, когда навигация находится внутри заголовка карточки"
           },
           {
             "prop": "fill",
-            "description": "Proportionately fills all horizontal space with nav items. All horizontal space is occupied, but not every nav item has the same width"
+            "description": "Пропорционально заполняет все горизонтальное пространство элементами навигации. Все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину"
           },
           {
             "prop": "justified",
-            "description": "Fills all horizontal space with nav items, but unlike 'fill', every nav item will be the same width"
+            "description": "Заполняет все горизонтальное пространство элементами навигации, но, в отличие от 'fill', все элементы навигации имеют одинаковую ширину"
           },
           {
             "prop": "pills",
-            "description": "Renders the nav items with the appearance of pill buttons"
+            "description": "Отображает элементы навигации в виде кнопок-таблеток"
           },
           {
             "prop": "small",
-            "description": "Makes the nav smaller"
+            "description": "Делает навигацию меньше"
           },
           {
             "prop": "tabs",
-            "description": "Renders the nav items with the appearance of tabs"
+            "description": "Отображает элементы навигации в виде вкладок"
           },
           {
             "prop": "vertical",
-            "description": "Renders the nav vertically"
+            "description": "Отображает навигацию вертикально"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the nav"
+            "description": "Контент для размещения в навигации"
           }
         ]
       },
@@ -57,17 +57,17 @@
         "props": [
           {
             "prop": "linkAttrs",
-            "description": "Additional attributes to place on the nested link element"
+            "description": "Дополнительные атрибуты для размещения во вложенном элементе ссылки"
           },
           {
             "prop": "linkClasses",
-            "description": "CSS class (or classes) to place on the nested link element"
+            "description": "Класс (или классы) CSS для размещения во вложенном элементе ссылки"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the nav item"
+            "description": "Содержимое для размещения в элементе навигации"
           }
         ]
       },
@@ -76,7 +76,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the nav text"
+            "description": "Содержимое для размещения в навигационном тексте"
           }
         ]
       },
@@ -85,21 +85,21 @@
         "props": [
           {
             "prop": "formClass",
-            "description": "CSS class (or classes) to add to the form"
+            "description": "Класс CSS (или классы) для добавления в форму"
           },
           {
             "prop": "novalidate",
-            "description": "When set, disables browser native HTML5 validation on controls in the form"
+            "description": "Если установлено, отключает встроенную в браузер проверку HTML5 для элементов управления в форме"
           },
           {
             "prop": "validated",
-            "description": "When set, adds the Bootstrap class 'was-validated' on the form, triggering the native browser validation states"
+            "description": "Если установлено, добавляет класс Bootstrap 'was-validated' в форму, вызывая собственные состояния проверки браузера"
           }
         ],
         "events": [
           {
             "event": "submit",
-            "description": "Emitted when the form is being submitted",
+            "description": "Выдается при отправке формы",
             "args": [
               {
                 "arg": "event",
@@ -112,7 +112,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the nav form"
+            "description": "Контент для размещения в форме навигации"
           }
         ]
       },
@@ -127,7 +127,7 @@
           {
             "prop": "boundary",
             "version": "2.4.0",
-            "description": "The boundary constraint of the menu: 'scrollParent', 'window', 'viewport', or a reference to an HTMLElement. Has no effect when dropdown is inside a `<b-navbar>`"
+            "description": "Граничное ограничение меню: 'scrollParent', 'window', 'viewport' или ссылка на HTMLElement. Не действует, если раскрывающийся список находится внутри `<b-navbar>`"
           },
           {
             "prop": "dropleft",
@@ -143,28 +143,28 @@
           },
           {
             "prop": "html",
-            "description": "HTML string to place in the toggle element (link)",
+            "description": "Строка HTML для размещения в элементе переключения (ссылка)",
             "xss": true
           },
           {
             "prop": "lazy",
-            "description": "When set, will only mount the menu content into the DOM when the menu is open"
+            "description": "Если установлено, содержимое меню будет монтироваться в DOM только тогда, когда меню открыто"
           },
           {
             "prop": "menuClass",
-            "description": "CSS class (or classes) to add to the menu container"
+            "description": "CSS-класс (или классы) для добавления в контейнер меню"
           },
           {
             "prop": "noCaret",
-            "description": "Hide the caret indicator on the toggle element (link)"
+            "description": "Скрыть индикатор вставки на переключателе (ссылка)"
           },
           {
             "prop": "noFlip",
-            "description": "Prevent the menu from auto flipping positions"
+            "description": "Предотвратить автоматическое перелистывание меню"
           },
           {
             "prop": "popperOpts",
-            "description": "Additional configuration to pass to Popper.js"
+            "description": "Дополнительная конфигурация для передачи в Popper.js"
           },
           {
             "prop": "right",
@@ -172,62 +172,62 @@
           },
           {
             "prop": "text",
-            "description": "Text to place in the toggle element (link)"
+            "description": "Текст для размещения в элементе переключения (ссылка)"
           },
           {
             "prop": "toggleClass",
-            "description": "CSS class (or classes) to add to the toggle element (link)"
+            "description": "Класс CSS (или классы) для добавления к элементу переключения (ссылка)"
           }
         ],
         "events": [
           {
             "event": "hidden",
-            "description": "Emitted when dropdown is hidden"
+            "description": "Выдается, когда раскрывающийся список скрыт"
           },
           {
             "event": "hide",
-            "description": "Emitted just before dropdown is hidden. Cancelable",
+            "description": "Выдается непосредственно перед тем, как раскрывающийся список скрыт. Отменяемый",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object. Call bvEvent.preventDefault() to cancel hide"
+                "description": "Объект BvEvent. Вызовите bvEvent.preventDefault(), чтобы отменить скрытие"
               }
             ]
           },
           {
             "event": "show",
-            "description": "Emitted just before dropdown is shown. Cancelable",
+            "description": "Выдается непосредственно перед отображением раскрывающегося списка. Отменяемый",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object. Call bvEvent.preventDefault() to cancel show"
+                "description": "Объект BvEvent. Вызовите bvEvent.preventDefault(), чтобы отменить показ"
               }
             ]
           },
           {
             "event": "shown",
-            "description": "Emitted when dropdown is shown"
+            "description": "Выдается при отображении выпадающего списка"
           },
           {
             "event": "toggle",
-            "description": "Emitted when toggle button is clicked"
+            "description": "Выдается при нажатии кнопки переключения"
           }
         ],
         "slots": [
           {
             "name": "button-content",
-            "description": "Can be used to implement custom text with icons and more styling"
+            "description": "Может использоваться для реализации пользовательского текста с помощью иконок и других стилей"
           },
           {
             "name": "default",
-            "description": "Optionally scoped default slot for dropdown menu content",
+            "description": "Необязательный слот по умолчанию для содержимого раскрывающегося меню",
             "scope": [
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "Can be used to close the dropdown menu. Accepts an optional boolean argument, which if true returns focus to the toggle button"
+                "description": "Может использоваться для закрытия выпадающего меню. Принимает необязательный логический аргумент, который, если он равен true, возвращает фокус на кнопку-переключатель"
               }
             ]
           }
