@@ -1,45 +1,47 @@
-# Overlay
+# Оверлей
 
-> BootstrapVue's custom `b-overlay` component is used to _visually obscure_ a particular element or
-> component and its content. It signals to the user of a state change within the element or
-> component and can be used for creating loaders, warnings/alerts, prompts, and more.
+> Пользовательский компонент BootstrapVue `b-overlay` используется для _визуального скрытия_
+> определенного элемента или компонента и его содержимого. Он сигнализирует пользователю об
+> изменении состояния внутри элемента или компонента и может использоваться для создания
+> загрузчиков, предупреждений/предупреждений, подсказок и многого другого.
 
-## Overview
+## Обзор
 
-`<b-overlay>` can be used to obscure almost anything. [Example use cases](#use-case-examples) would
-be forms, tables, delete confirmation dialogs, or anywhere you need to signal that the application
-is busy performing a background task, to signal that a certain component is unavailable, or to
-provide additional context to the end user.
+`<b-overlay>` можно использовать, чтобы скрыть почти что угодно.
+[Примерами использования](#use-case-examples) могут быть формы, таблицы, диалоговые окна
+подтверждения удаления или любое другое место, где вам нужно указать, что приложение занято
+выполнением фоновой задачи, сообщить, что определенный компонент недоступен, или предоставлять
+дополнительный контекст конечному пользователю.
 
-`<b-overlay>` can be used to overlay (wrap) an element or component (the default behaviour), or can
-be placed as a descendant of a `position: relative` element
-([non-wrapping mode](#non-wrapping-mode)).
+`<b-overlay>` можно использовать для наложения (обтекания) элемента или компонента (поведение по
+умолчанию) или можно поместить в качестве потомка элемента `position: relative`
+([режим без переноса](#non-wrapping-mode)).
 
-The overlay visibility is controlled via the `show` prop. By default the overlay is _not_ shown.
+Видимость наложения контролируется с помощью свойства `show`. По умолчанию оверлей _не_
+отображается.
 
 <div class="alert alert-info">
   <p class="mb-0">
-    Note that this component only <em>visually obscures</em> its content (or the page). Refer to the
-    <a href="#accessibility" class="alert-link">Accessibility section</a> below for additional
-    accessibility details and concerns.
+    Обратите внимание, что этот компонент только <em>визуально скрывает</em> свое содержимое (или страницу). Смотрите
+    <a href="#accessibility" class="alert-link">раздел специальных возможностей</a> ниже, чтобы получить дополнительные сведения о специальных возможностях и проблемы.
   </p>
 </div>
 
-**Default wrapping mode example:**
+**Пример режима переноса по умолчанию:**
 
 ```html
 <template>
   <div>
     <b-overlay :show="show" rounded="sm">
-      <b-card title="Card with overlay" :aria-hidden="show ? 'true' : null">
+      <b-card title="Карточка с наложением" :aria-hidden="show ? 'true' : null">
         <b-card-text>Laborum consequat non elit enim exercitation cillum.</b-card-text>
-        <b-card-text>Click the button to toggle the overlay:</b-card-text>
+        <b-card-text>Нажмите кнопку, чтобы переключить наложение:</b-card-text>
         <b-button :disabled="show" variant="primary" @click="show = true">
-          Show overlay
+          Показать наложение
         </b-button>
       </b-card>
     </b-overlay>
-    <b-button class="mt-3" @click="show = !show">Toggle overlay</b-button>
+    <b-button class="mt-3" @click="show = !show">Переключить наложение</b-button>
   </div>
 </template>
 
@@ -56,18 +58,17 @@ The overlay visibility is controlled via the `show` prop. By default the overlay
 <!-- b-overlay.vue -->
 ```
 
-## Options
+## Опции
 
-There are many options available for styling the overlay, and for providing custom content within
-the overlay.
+Существует множество вариантов оформления оверлея и предоставления пользовательского содержимого
+внутри оверлея.
 
-### Overlay backdrop color
+### Цвет фона наложения
 
-You can control the backdrop background color via the `variant` prop. The variant is translated into
-one of Bootstrap's
-[background variant utility classes](/docs/reference/color-variants#background-and-border-variants).
-Control the opacity of the backdrop via the `opacity` prop (opacity values can range from `0` to
-`1`). And background blurring can be controlled via the `blur` prop.
+Вы можете управлять цветом фона фона через свойство `variant`. Вариант переводится в один из
+[служебных классов фонового варианта Bootstrap](/docs/reference/color-variants#background-and-border-variants).
+Управляйте непрозрачностью фона с помощью свойства `opacity` (значения непрозрачности могут
+варьироваться от `0` до `1`). А размытие фона можно контролировать с помощью свойства `blur`.
 
 ```html
 <template>
@@ -109,14 +110,14 @@ Control the opacity of the backdrop via the `opacity` prop (opacity values can r
           :blur="blur"
           rounded="sm"
         >
-          <b-card title="Card with overlay" aria-hidden="true">
+          <b-card title="Карточка с наложением" aria-hidden="true">
             <b-card-text>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
               exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </b-card-text>
 
-            <b-button disabled variant="primary">Button</b-button>
+            <b-button disabled variant="primary">Кнопка</b-button>
           </b-card>
         </b-overlay>
       </b-col>
@@ -144,7 +145,7 @@ Control the opacity of the backdrop via the `opacity` prop (opacity values can r
           'info',
         ],
         blurs: [
-          { text: 'None', value: '' },
+          { text: 'Отсутствуют', value: '' },
           '1px',
           '2px',
           '5px',
@@ -159,28 +160,28 @@ Control the opacity of the backdrop via the `opacity` prop (opacity values can r
 <!-- b-overlay-background.vue -->
 ```
 
-As an alternative to the `variant` prop, you can specify a CSS color string value via the `bg-color`
-prop. When a value is provided for `bg-color`, the `variant` prop value is ignored.
+В качестве альтернативы свойству `variant` вы можете указать строковое значение цвета CSS через
+свойство `bg-color`. Когда для `bg-color` указано значение, свойство `variant` игнорируется.
 
-**Notes:**
+**Примечания:**
 
-- Background blurring is not available on some browsers (e.g. IE 11).
-- Blurring requires that the opacity level be relatively high for the effect to be visible.
+- Размытие фона недоступно в некоторых браузерах (например, IE 11).
+- Размытие требует, чтобы уровень непрозрачности был относительно высоким, чтобы эффект был виден.
 
-### Fade transition
+### Плавный переход
 
-By default, the overlay uses Bootstrap's fade transition when showing or hiding. You can disable the
-fade transition via adding the `no-fade` prop to `<b-overlay>`.
+По умолчанию наложение использует плавный переход Bootstrap при отображении или скрытии. Вы можете
+отключить переход затухания, добавив свойство `no-fade` в `<b-overlay>`.
 
-### Default spinner styling
+### Стиль спиннера по умолчанию
 
-The default overlay content is a [`<b-spinner>`](/docs/components/spinner) of type `'border'`. You
-can control the appearance of the spinner via the following props:
+Содержимое наложения по умолчанию — это [`<b-spinner>`](/docs/components/spinner) типа `'border'`.
+Вы можете управлять внешним видом спиннера с помощью следующих свойств:
 
-- `spinner-type`: Currently supported values are `'border'` (the default) or `'grow'`.
-- `spinner-variant`: Variant theme color for the spinner. Default is `null` which inherits the
-  current font color.
-- `spinner-small`: Set to `true` to render a small size spinner.
+- `spinner-type`: В настоящее время поддерживаются значения `'border'` (по умолчанию) или `'grow'`.
+- `spinner-variant`: Вариант цвета темы для спиннера. Значение по умолчанию — `null`, которое
+  наследует текущий цвет шрифта.
+- `spinner-small`: Установите значение `true` для рендеринга спиннера небольшого размера.
 
 ```html
 <template>
@@ -193,13 +194,13 @@ can control the appearance of the spinner via the following props:
       rounded="sm"
       style="max-width: 320px;"
     >
-      <b-card title="Card with spinner style" aria-hidden="true">
+      <b-card title="Карта в стиле спиннера" aria-hidden="true">
         <b-card-text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
           exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </b-card-text>
-        <b-button disabled variant="primary">Button</b-button>
+        <b-button disabled variant="primary">Кнопка</b-button>
       </b-card>
     </b-overlay>
   </div>
@@ -208,40 +209,40 @@ can control the appearance of the spinner via the following props:
 <!-- b-overlay-spinner-style.vue -->
 ```
 
-### Overlay corner rounding
+### Скругление углов наложения
 
-By default, the overlay backdrop has square corners. If the content you are wrapping has rounded
-corners, you can use the `rounded` prop to apply rounding to the overlay's corners to match the
-obscured content's rounded corners.
+По умолчанию фон наложения имеет квадратные углы. Если содержимое, которое вы оборачиваете, имеет
+закругленные углы, вы можете использовать свойство `rounded`, чтобы применить закругление к углам
+наложения, чтобы оно соответствовало закругленным углам закрытого содержимого.
 
-Possible values are:
+Возможные значения:
 
-- `true` (or the empty string `''`) to apply default (medium) rounding
-- `false` (the default) applies no rounding to the backdrop overlay
-- `'sm'` for small rounded corners
-- `'lg'` for large rounded corners
-- `'pill'` for pill style rounded corners
-- `'circle'` for circular (or oval) rounding
-- `'top'` for rounding only the top two corners
-- `'bottom'` for rounding only the bottom two corners
-- `'left'` for rounding only the two left corners
-- `'right'` for rounding only the two right corners
+- `true` (или пустая строка `''`), чтобы применить округление по умолчанию (среднее)
+- `false` (по умолчанию) не применяет округление к наложению фона
+- `'sm'` для маленьких закругленных углов
+- `'lg'` для больших закругленных углов
+- `'pill'` для закругленных углов в стиле пилюли
+- `'circle'` для круглого (или овального) закругления
+- `'top'` для скругления только двух верхних углов
+- `'bottom'` для скругления только двух нижних углов
+- `'left'` для скругления только двух левых углов
+- `'right'` для скругления только двух правых углов
 
 ```html
 <template>
   <div>
-    <b-button @click="show = !show">Toggle overlay</b-button>
+    <b-button @click="show = !show">Переключить наложение</b-button>
     <b-row class="text-center mt-3">
       <b-col md="6">
-        <p>With rounding</p>
+        <p>С закруглением</p>
         <b-overlay :show="show" class="d-inline-block" rounded="circle">
-          <b-img thumbnail rounded="circle" fluid src="https://picsum.photos/200/200/?image=54" alt="Image 1"></b-img>
+          <b-img thumbnail rounded="circle" fluid src="https://picsum.photos/200/200/?image=54" alt="Изображение 1"></b-img>
         </b-overlay>
       </b-col>
       <b-col md="6">
-        <p>Without rounding</p>
+        <p>Без закругления</p>
         <b-overlay :show="show" class="d-inline-block">
-          <b-img thumbnail rounded="circle" fluid src="https://picsum.photos/200/200/?image=54" alt="Image 1"></b-img>
+          <b-img thumbnail rounded="circle" fluid src="https://picsum.photos/200/200/?image=54" alt="Изображение 1"></b-img>
         </b-overlay>
       </b-col>
     </b-row>
@@ -261,26 +262,26 @@ Possible values are:
 <!-- b-overlay-rounded.vue -->
 ```
 
-### Custom overlay content
+### Пользовательский оверлейный контент
 
-Place custom content in the overlay (replacing the default spinner) via the optionally scoped slot
-`overlay`.
+Поместите пользовательский контент в оверлей (заменив спиннер по умолчанию) через опционально
+ограниченный слот `overlay`.
 
 ```html
 <template>
   <div>
     <b-overlay :show="show" rounded="sm" @shown="onShown" @hidden="onHidden">
-      <b-card title="Card with custom overlay content" :aria-hidden="show ? 'true' : null">
+      <b-card title="Карточка с пользовательским оверлейным содержимым" :aria-hidden="show ? 'true' : null">
         <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
-        <b-card-text>Click the button to toggle the overlay:</b-card-text>
+        <b-card-text>Нажмите кнопку, чтобы переключить наложение:</b-card-text>
         <b-button ref="show" :disabled="show" variant="primary" @click="show = true">
-          Show overlay
+          Показать наложение
         </b-button>
       </b-card>
       <template #overlay>
         <div class="text-center">
           <b-icon icon="stopwatch" font-scale="3" animation="cylon"></b-icon>
-          <p id="cancel-label">Please wait...</p>
+          <p id="cancel-label">Пожалуйста, подождите...</p>
           <b-button
             ref="cancel"
             variant="outline-danger"
@@ -288,7 +289,7 @@ Place custom content in the overlay (replacing the default spinner) via the opti
             aria-describedby="cancel-label"
             @click="show = false"
           >
-            Cancel
+            Отменить
           </b-button>
         </div>
       </template>
@@ -305,11 +306,11 @@ Place custom content in the overlay (replacing the default spinner) via the opti
     },
     methods: {
       onShown() {
-        // Focus the cancel button when the overlay is showing
+        // Сфокусируйте кнопку отмены, когда отображается наложение
         this.$refs.cancel.focus()
       },
       onHidden() {
-        // Focus the show button when the overlay is removed
+        // Сфокусируйте кнопку показа, когда наложение удалено
         this.$refs.show.focus()
       }
     }
@@ -319,26 +320,26 @@ Place custom content in the overlay (replacing the default spinner) via the opti
 <!-- b-overlay-overlay-slot.vue -->
 ```
 
-The following scope properties are available to the `overlay` slot:
+Для слота `overlay` доступны следующие свойства области видимости:
 
-| Property         | Description                         |
+| Свойство         | Описание                            |
 | ---------------- | ----------------------------------- |
-| `spinnerVariant` | Value of the `spinner-variant` prop |
-| `spinnerType`    | Value of the `spinner-type` prop    |
-| `spinnerSmall`   | Value of the `spinner-small` prop   |
+| `spinnerVariant` | Значение свойства `spinner-variant` |
+| `spinnerType`    | Значение свойства `spinner-type`    |
+| `spinnerSmall`   | Значение свойства `spinner-small`   |
 
-When placing interactive content in the overlay, you should focus the container of the custom
-content or one of the focusable controls in the overlay content for accessibility reasons. You can
-listen for the `<b-overlay>` `'shown'` event to know when the overlay content is available in the
-document.
+При размещении интерактивного содержимого в оверлее следует сфокусировать контейнер
+пользовательского содержимого или один из фокусируемых элементов управления в оверлейном содержимом
+из соображений доступности. Вы можете прослушивать событие `'shown'` в `<b-overlay>`, чтобы узнать,
+когда содержимое наложения доступно в документе.
 
-### Overlay content centering
+### Центрирование содержимого наложения
 
-By default the overlay content will be horizontally and vertically centered within the overlay
-region. To disable centering, set the `no-center` prop to `true`.
+По умолчанию содержимое наложения будет центрировано по горизонтали и вертикали в области наложения.
+Чтобы отключить центрирование, установите свойство `no-center` в значение `true`.
 
-In the following example, we have set the `no-center` prop, and absolutely positioned the custom
-overlay slot content at the top right.
+В следующем примере мы установили свойство `no-center` и абсолютно разместили содержимое
+пользовательского слота оверлея в правом верхнем углу.
 
 ```html
 <template>
@@ -355,12 +356,12 @@ overlay slot content at the top right.
           style="top: 0; right: 0"
         ></b-icon>
       </template>
-      <b-card title="Card with no-center overlay" aria-hidden="true">
+      <b-card title="Карточка с наложением без центра" aria-hidden="true">
         <b-card-text>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           incididunt ut labore et dolore magna aliqua.
         </b-card-text>
-        <b-button disabled variant="primary">Button</b-button>
+        <b-button disabled variant="primary">Кнопка</b-button>
       </b-card>
     </b-overlay>
   </div>
@@ -369,21 +370,22 @@ overlay slot content at the top right.
 <!-- b-overlay-no-center.vue -->
 ```
 
-### Width
+### Ширина
 
-`<b-overlay>` defaults to a width of `100%`. When wrapping an inline or inline-block element, you
-will need to add the class `d-inline-block` (e.g. `<b-overlay class="d-inline-block">`).
+`<b-overlay>` по умолчанию имеет ширину `100%`. При обертывании встроенного элемента или встроенного
+блока вам нужно будет добавить класс `d-inline-block` (например,
+`<b-overlay class="d-inline-block">`).
 
-You can also use the width [utility classes](/docs/reference/utility-classes) or CSS styles to
-control the width of the overlay's wrapping container element.
+Вы также можете использовать ширину [служебные классы](/docs/reference/utility-classes) или стили
+CSS для управления шириной элемента-контейнера оверлея.
 
-### Non-wrapping mode
+### Режим без обертки
 
-By default, `<b-overlay>` wraps the content of the default slot. In some cases you may want to
-obscure a parent container. Use the `no-wrap` prop to disable rendering of the wrapping (and ignore
-the default slot). Note that this requires that the ancestor element that is to be obscured to have
-relative positioning (either via the utility class `'position-relative'`, or CSS style
-`'position: relative;'`).
+По умолчанию `<b-overlay>` оборачивает содержимое слота по умолчанию. В некоторых случаях вы можете
+захотеть скрыть родительский контейнер. Используйте свойство `no-wrap`, чтобы отключить рендеринг
+упаковки (и игнорировать слот по умолчанию). Обратите внимание, что для этого требуется, чтобы
+элемент-предок, который должен быть скрыт, имел относительное позиционирование (либо с помощью
+служебного класса `'position-relative'`, либо с помощью стиля CSS `'position: relative;'`).
 
 ```html
 <template>
@@ -392,11 +394,11 @@ relative positioning (either via the utility class `'position-relative'`, or CSS
       <p class="text-light font-weight-bold">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
-      <b-card title="Card with parent overlay">
+      <b-card title="Карточка с родительским оверлеем">
         <b-card-text>Laborum consequat non elit enim exercitation cillum.</b-card-text>
-        <b-card-text>Click the button to toggle the overlay:</b-card-text>
+        <b-card-text>Нажмите кнопку, чтобы переключить наложение:</b-card-text>
         <b-button :disabled="show" variant="primary" @click="show = true">
-          Show overlay
+          Показать наложение
         </b-button>
       </b-card>
       <p class="text-light font-weight-bold mb-0">
@@ -405,7 +407,7 @@ relative positioning (either via the utility class `'position-relative'`, or CSS
       <b-overlay :show="show" no-wrap>
       </b-overlay>
     </div>
-    <b-button class="mt-3" @click="show = !show">Toggle overlay</b-button>
+    <b-button class="mt-3" @click="show = !show">Переключить наложение</b-button>
   </div>
 </template>
 
@@ -422,16 +424,17 @@ relative positioning (either via the utility class `'position-relative'`, or CSS
 <!-- b-overlay-nowrap.vue -->
 ```
 
-Note that some of Bootstrap v4's component styles have relative positioning defined (e.g. cards,
-cols, etc.). You may need to adjust the placement of `<b-overlay>` in your markup.
+Обратите внимание, что для некоторых стилей компонентов Bootstrap v4 определено относительное
+позиционирование (например, карточки, столбцы и т. д.). Возможно, вам потребуется изменить
+размещение `<b-overlay>` в вашей разметке.
 
-For example, `<b-card>` has relative positioning, so you can place the `<b-overlay no-wrap>` as a
-descendant of `<b-card>`:
+Например, `<b-card>` имеет относительное позиционирование, поэтому вы можете поместить
+`<b-overlay no-wrap>` как потомка `<b-card>`:
 
 ```html
 <template>
   <div>
-    <b-card header="Card header" footer="Card footer">
+    <b-card header="Хедер карточки" footer="Футер карточки">
       <b-media>
         <template #aside>
           <b-img
@@ -449,7 +452,7 @@ descendant of `<b-card>`:
       </b-media>
       <b-overlay :show="show" no-wrap></b-overlay>
     </b-card>
-    <b-button @click="show = !show" class="mt-3">Toggle overlay</b-button>
+    <b-button @click="show = !show" class="mt-3">Переключить наложение</b-button>
   </div>
 </template>
 
@@ -466,69 +469,77 @@ descendant of `<b-card>`:
 <!-- b-overlay-card-relative.vue -->
 ```
 
-When in `no-wrap` mode, `<b-overlay>` will not set the `aria-busy` attribute on the obscured
-element. You may also want to use an `aria-live` region in your app that announces to screen reader
-users that the page is busy.
+В режиме `no-wrap`, `<b-overlay>` не будет устанавливать атрибут `aria-busy` для скрытого элемента.
+Вы также можете использовать область `aria-live` в своем приложении, которая сообщает пользователям
+программ чтения с экрана, что страница занята.
 
-Refer to the [Accessibility section](#accessibility) below for additional details and concerns.
+Обратитесь к [разделу «Специальные возможности»](#accessibility) ниже для получения дополнительной
+информации и проблем.
 
-#### Absolute vs fixed positioning for `no-wrap`
+#### Абсолютное и фиксированное позиционирование для `no-wrap`
 
-In cases where you want to obscure the entire app or page, when using the `no-wrap` prop, you can
-switch to viewport fixed positioning via setting the prop `fixed` on `<b-overlay>`. Note that this
-does not disable scrolling of the page, and note that any interactive elements on the page will
-still be in the document tab sequence.
+В случаях, когда вы хотите скрыть все приложение или страницу, при использовании свойства `no-wrap`
+вы можете переключиться на фиксированное позиционирование области просмотра, установив свойство
+`fixed` на `<b-overlay>`. Обратите внимание, что это не отключает прокрутку страницы, и обратите
+внимание, что любые интерактивные элементы на странице по-прежнему будут находиться в
+последовательности вкладок документа.
 
-You may also need to adjust the [z-index of the overlay](#overlay-z-index) to ensure that the
-backdrop appears above all other page elements. Use the `z-index` property to override the default
-`z-index` value.
+Вам также может понадобиться настроить [z-индекс оверлея](#overlay-z-index), чтобы фон отображался
+над всеми остальными элементами страницы. Используйте свойство `z-index`, чтобы переопределить
+значение по умолчанию `z-index`.
 
-Refer to the [Accessibility section](#accessibility) below for additional details and concerns.
+Обратитесь к [разделу «Специальные возможности»](#accessibility) ниже для получения дополнительной
+информации и проблем.
 
-### Overlay z-index
+### Оверлей z-index
 
-In some circumstances, you may need to adjust the `z-index` used by the overlay (depending on
-positioning in the DOM or the content being obscured). Simply set the `z-index` prop with a value
-suitable for your application or use case. The default `z-index` is `10`.
+В некоторых случаях вам может потребоваться настроить `z-index`, используемый наложением (в
+зависимости от позиционирования в DOM или скрытого содержимого). Просто установите свойство
+`z-index` со значением, подходящим для вашего приложения или варианта использования. `z-index` по
+умолчанию равен `10`.
 
-## Accessibility
+## Доступность
 
-Note that the overlay is visual only. You **must** disable any interactive elements (buttons, links,
-etc.) when the overlay is showing, otherwise the obscured elements will still be reachable via
-keyboard navigation (i.e. still in the document tab sequence).
+Обратите внимание, что наложение является только визуальным. Вы **должны** отключить любые
+интерактивные элементы (кнопки, ссылки и т. д.) при отображении оверлея, иначе скрытые элементы
+по-прежнему будут доступны с помощью навигации с помощью клавиатуры (т. е. все еще будут находиться
+в последовательности вкладок документа).
 
-If you have any links in the obscured content, we recommend using the
-[`<b-link>` component](/docs/components/link), as it supports the `disabled` state, as native links
-(`<a href="...">`) and `<router-link>` components do not support the disabled state.
+Если у вас есть какие-либо ссылки в скрытом контенте, мы рекомендуем использовать
+[компонент `<b-link>`](/docs/components/link), так как он поддерживает состояние `disabled`, в
+качестве нативных ссылок (`<a href="...">`) и `<router-link>` не поддерживают отключенное состояние.
 
-It is also recommended to add either the `aria-hidden="true"` or `aria-busy="true"` attribute to
-your obscured content when the overlay is visible. Just be careful not to add `aria-hidden="true"`
-to the wrapper that contains the `<b-overlay>` component (when using `no-wrap`), as that would hide
-any interactive content in the `overlay` slot for screen reader users.
+Также рекомендуется добавить атрибут `aria-hidden="true"` или `aria-busy="true"` к скрытому
+содержимому, когда оверлей виден. Просто будьте осторожны и не добавляйте `aria-hidden="true"` в
+оболочку, содержащую компонент `<b-overlay>` (при использовании `no-wrap`), так как это скроет любой
+интерактивный контент в `overlay` для пользователей программ чтения с экрана.
 
-If you are placing interactive content in the `overlay` slot, you should focus the content once the
-`'shown'` event has been emitted. You can use the `hidden` event to trigger returning focus to an
-element as needed when the overlay is no longer visible.
+Если вы помещаете интерактивный контент в слот `overlay`, вы должны сфокусировать содержимое после
+того, как будет сгенерировано событие `'shown'`. Вы можете использовать событие `hidden`, чтобы
+инициировать возврат фокуса к элементу по мере необходимости, когда оверлей больше не виден.
 
-When using the wrapping mode (prop `no-wrap` is not set), the wrapper will have the attribute
-`aria-busy="true"` set, to allow screen reader users to know that the wrapped content is in a busy
-or loading state. When prop `no-wrap` is set, the attribute will _not_ be applied.
+При использовании режима упаковки (свойство `no-wrap` не установлено) оболочка будет иметь
+установленный атрибут `aria-busy="true"`, чтобы пользователи программ чтения с экрана знали, что
+упакованное содержимое занято или состояние загрузки. Когда установлено свойство `no-wrap`, атрибут
+_не_ будет применяться.
 
-When using the `no-wrap` prop, and potentially the `fixed` prop, to obscure the entire application
-or page, you must ensure that all internative page elements (other than the content of the overlay)
-have been disabled and are _not_ in the document tab sequence.
+При использовании свойства `no-wrap` и, возможно, свойства `fixed`, чтобы скрыть все приложение или
+страницу, вы должны убедиться, что все интерактивные элементы страницы (кроме содержимого оверлея)
+отключены и _не_ находятся в последовательность вкладок документа.
 
-## Use case examples
+## Примеры использования
 
-Here are just a few examples of common use cases of `<b-overlay>`. In all cases, we disable any
-interactive elements in the obscured area to prevent reachability via keyboard navigation (i.e.
-<kbd>Tab</kbd> key) or screen reader access.
+Вот лишь несколько примеров распространенных вариантов использования `<b-overlay>`. Во всех случаях
+мы отключаем любые интерактивные элементы в скрытой области, чтобы предотвратить доступ к ним с
+помощью навигации с помощью клавиатуры (например, клавиши <kbd>Tab</kbd>) или доступа к программе
+чтения с экрана.
 
-Please refer to the [Accessibility section](#accessibility) for additional details and concerns.
+Пожалуйста, обратитесь к [разделу специальных возможностей](#accessibility) для получения
+дополнительной информации и проблем.
 
-### Loading button
+### Кнопка загрузки
 
-Easily create a loading button:
+Легко создать кнопку загрузки:
 
 ```html
 <template>
@@ -548,7 +559,7 @@ Easily create a loading button:
         variant="primary"
         @click="onClick"
       >
-        Do something
+        Сделай что-нибудь
       </b-button>
     </b-overlay>
   </div>
@@ -580,12 +591,12 @@ Easily create a loading button:
         }, 5000)
       },
       onHidden() {
-        // Return focus to the button once hidden
+        // Вернуть фокус скрытой кнопке
         this.$refs.button.focus()
       },
       onClick() {
         this.busy = true
-        // Simulate an async request
+        // Имитация асинхронного запроса
         this.setTimeout(() => {
           this.busy = false
         })
@@ -597,9 +608,9 @@ Easily create a loading button:
 <!-- b-overlay-example-loading-button.vue -->
 ```
 
-### Busy state input group
+### Группа ввода состояния занятости
 
-In this example, we obscure the input and button:
+В этом примере мы скрываем ввод и кнопку:
 
 ```html
 <template>
@@ -610,15 +621,15 @@ In this example, we obscure the input and button:
           <b-spinner small type="grow" variant="secondary"></b-spinner>
           <b-spinner type="grow" variant="dark"></b-spinner>
           <b-spinner small type="grow" variant="secondary"></b-spinner>
-          <!-- We add an SR only text for screen readers -->
-          <span class="sr-only">Please wait...</span>
+          <!-- Мы добавляем только текст SR для программ чтения с экрана -->
+          <span class="sr-only">Пожалуйста, подождите...</span>
         </div>
       </template>
       <b-input-group size="lg" :aria-hidden="busy ? 'true' : null">
         <b-form-input v-model="value" :disabled="busy"></b-form-input>
         <b-input-group-append>
           <b-button ref="button" :disabled="busy" variant="primary"  @click="onClick">
-            Do something
+            Сделай что-нибудь
           </b-button>
         </b-input-group-append>
       </b-input-group>
@@ -630,7 +641,7 @@ In this example, we obscure the input and button:
   export default {
     data() {
       return {
-        value: 'Some value',
+        value: 'Некоторое значение',
         busy: false,
         timeout: null
       }
@@ -653,12 +664,12 @@ In this example, we obscure the input and button:
         }, 5000)
       },
       onHidden() {
-        // Return focus to the button
+        // Вернуть фокус на кнопку
         this.$refs.button.focus()
       },
       onClick() {
         this.busy = true
-        // Simulate an async request
+        // Имитация асинхронного запроса
         this.setTimeout(() => {
           this.busy = false
         })
@@ -670,17 +681,18 @@ In this example, we obscure the input and button:
 <!-- b-overlay-example-input-group.vue -->
 ```
 
-### Form confirmation prompt and upload status
+### Запрос подтверждения формы и статус загрузки
 
-This example is a bit more complex, but shows the use of `no-wrap`, and using the `overlay` slot to
-present the user with a prompt dialog, and once confirmed it shows a uploading status indicator.
-This example also demonstrates additional accessibility markup.
+Этот пример немного сложнее, но показывает использование `no-wrap` и использование слота `overlay`
+для представления пользователю диалогового окна с подсказкой, и после подтверждения он показывает
+индикатор состояния загрузки. В этом примере также демонстрируется дополнительная разметка
+специальных возможностей.
 
 ```html
 <template>
   <div>
     <b-form class="position-relative p-3" @submit.prevent="onSubmit">
-      <b-form-group label="Name" label-for="form-name" label-cols-lg="2">
+      <b-form-group label="Имя" label-for="form-name" label-cols-lg="2">
         <b-input-group>
           <b-input-group-prepend is-text>
             <b-icon icon="person-fill"></b-icon>
@@ -689,7 +701,7 @@ This example also demonstrates additional accessibility markup.
         </b-input-group>
       </b-form-group>
 
-      <b-form-group label="Email" label-for="form-mail" label-cols-lg="2">
+      <b-form-group label="Эл. Почта" label-for="form-mail" label-cols-lg="2">
         <b-input-group>
           <b-input-group-prepend is-text>
             <b-icon icon="envelope-fill"></b-icon>
@@ -698,7 +710,7 @@ This example also demonstrates additional accessibility markup.
         </b-input-group>
       </b-form-group>
 
-      <b-form-group label="Image" label-for="form-image" label-cols-lg="2">
+      <b-form-group label="Изображение" label-for="form-image" label-cols-lg="2">
         <b-input-group>
           <b-input-group-prepend is-text>
             <b-icon icon="image-fill"></b-icon>
@@ -708,14 +720,14 @@ This example also demonstrates additional accessibility markup.
       </b-form-group>
 
       <div class="d-flex justify-content-center">
-         <b-button ref="submit" type="submit" :disabled="busy">Submit</b-button>
+         <b-button ref="submit" type="submit" :disabled="busy">Отправить</b-button>
       </div>
 
       <b-overlay :show="busy" no-wrap @shown="onShown" @hidden="onHidden">
         <template #overlay>
           <div v-if="processing" class="text-center p-4 bg-primary text-light rounded">
             <b-icon icon="cloud-upload" font-scale="4"></b-icon>
-            <div class="mb-3">Processing...</div>
+            <div class="mb-3">Обработка...</div>
             <b-progress
               min="1"
               max="20"
@@ -734,12 +746,12 @@ This example also demonstrates additional accessibility markup.
             aria-labelledby="form-confirm-label"
             class="text-center p-3"
           >
-            <p><strong id="form-confirm-label">Are you sure?</strong></p>
+            <p><strong id="form-confirm-label">Ты уверен?</strong></p>
             <div class="d-flex">
               <b-button variant="outline-danger" class="mr-3" @click="onCancel">
-                Cancel
+                Отменить
               </b-button>
-              <b-button variant="outline-success" @click="onOK">OK</b-button>
+              <b-button variant="outline-success" @click="onOK">Хорошо</b-button>
             </div>
           </div>
         </template>
@@ -769,12 +781,12 @@ This example also demonstrates additional accessibility markup.
         }
       },
       onShown() {
-        // Focus the dialog prompt
+        // Сфокусируйте диалоговое окно
         this.$refs.dialog.focus()
       },
       onHidden() {
-        // In this case, we return focus to the submit button
-        // You may need to alter this based on your application requirements
+        // В этом случае мы возвращаем фокус на кнопку отправки
+        // Возможно, вам придется изменить это в зависимости от требований вашего приложения
         this.$refs.submit.focus()
       },
       onSubmit() {
@@ -787,7 +799,7 @@ This example also demonstrates additional accessibility markup.
       onOK() {
         this.counter = 1
         this.processing = true
-        // Simulate an async request
+        // Имитация асинхронного запроса
         this.clearInterval()
         this.interval = setInterval(() => {
           if (this.counter < 20) {
@@ -807,9 +819,10 @@ This example also demonstrates additional accessibility markup.
 <!-- b-overlay-example-form.vue -->
 ```
 
-### Using in `<b-modal>`
+### Использование в `<b-modal>`
 
-The modal body has `position: relative;` set, so when using `<b-overlay no-wrap ...>` in the modal
-body only the modal body will be obscured. If you wish to obscure the entire modal (including the
-header and footer), you will need to set the `<b-modal>` prop `body-class` to `position-static`, and
-also set the `rounded` prop on `<b-overlay>`.
+В теле модального окна задано `position: relative;`, поэтому при использовании
+`<b-overlay no-wrap ...>` в теле модального окна будет скрыто только само тело модального окна. Если
+вы хотите скрыть все модальное окно (включая верхний и нижний колонтитулы), вам нужно будет
+установить свойство `body-class` на `position-static` в `<b-modal>`, а также установить свойство
+`rounded` в `<b-overlay>`.

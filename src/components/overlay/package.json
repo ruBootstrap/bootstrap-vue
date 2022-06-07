@@ -4,7 +4,7 @@
   "meta": {
     "title": "Overlay",
     "version": "2.7.0",
-    "description": "The b-overlay component is used to visually obscure a particular element or component and its content. It signals to the user of a state change within the element or component and can be used for creating loaders, warnings/alerts and more.",
+    "description": "Компонент b-overlay используется для визуального скрытия определенного элемента или компонента и его содержимого. Он сигнализирует пользователю об изменении состояния элемента или компонента и может использоваться для создания загрузчиков, предупреждений/предупреждений и многого другого.",
     "components": [
       {
         "component": "BOverlay",
@@ -12,99 +12,99 @@
         "props": [
           {
             "prop": "bgColor",
-            "description": "CSS color to use as the opaque overlay backdrop color. If set, overrides the `variant` prop"
+            "description": "Цвет CSS для использования в качестве цвета фона непрозрачного наложения. Если установлено, переопределяет свойство `variant`"
           },
           {
             "prop": "blur",
-            "description": "Value for the CSS blur backdrop-filter. Be sure to include the CSS units. Not supported in IE 11. Set to null or an empty string to disable blurring"
+            "description": "Значение фонового фильтра размытия CSS. Не забудьте включить единицы CSS. Не поддерживается в IE 11. Установите значение null или пустую строку, чтобы отключить размытие"
           },
           {
             "prop": "fixed",
-            "description": "When prop `no-wrap` is set, will use fixed positioning instead of absolute positioning. Handy if you want to obscure the entire application page"
+            "description": "Когда установлено свойство `no-wrap`, будет использоваться фиксированное позиционирование вместо абсолютного позиционирования. Удобно, если вы хотите скрыть всю страницу приложения"
           },
           {
             "prop": "noCenter",
-            "description": "When set, disables the vertical and horizontal centering of the overlay content"
+            "description": "Если установлено, отключает вертикальное и горизонтальное центрирование содержимого наложения"
           },
           {
             "prop": "noFade",
-            "description": "Disables the fade transition of the overlay"
+            "description": "Отключает плавный переход наложения"
           },
           {
             "prop": "noWrap",
-            "description": "Disabled generating the wrapper element, and ignored the default slot. Requires that `<b-overlay>` be placed in an element with position relative set"
+            "description": "Отключено создание элемента-оболочки и игнорирование слота по умолчанию. Требуется, чтобы `<b-overlay>` был помещен в элемент с заданной относительной позицией"
           },
           {
             "prop": "opacity",
-            "description": "Opacity of the overlay backdrop. Valid range is `0` to `1`"
+            "description": "Непрозрачность фона наложения. Допустимый диапазон: от `0` до `1`"
           },
           {
             "prop": "overlayTag",
-            "description": "Element tag to use as for the overlay element"
+            "description": "Тег элемента для использования в качестве элемента наложения"
           },
           {
             "prop": "rounded",
-            "description": "Apply rounding to the overlay to match your content routing. Valid values are `true`, `'sm'`, `lg`, `circle`, `pill`, `top`, `right`, `bottom`, or `left`"
+            "description": "Примените округление к наложению, чтобы оно соответствовало маршрутизации вашего контента. Допустимые значения: `true`, `'sm'`, `lg`, `circle`, `pill`, `top`, `right`, `bottom` или `left`"
           },
           {
             "prop": "show",
-            "description": "When set, shows the overlay"
+            "description": "Когда установлено, показывает наложение"
           },
           {
             "prop": "spinnerSmall",
-            "description": "When set, renders the default spinner in a smaller size"
+            "description": "Если установлено, отображает спиннер по умолчанию в меньшем размере"
           },
           {
             "prop": "spinnerType",
-            "description": "Type of the default spinner to show. Current supported types are 'border' and 'grow'"
+            "description": "Тип спиннера по умолчанию для отображения. Текущие поддерживаемые типы: 'border' и 'grow'"
           },
           {
             "prop": "spinnerVariant",
-            "description": "Applies one of the Bootstrap theme color variants to the default spinner. Default is to use the current font color"
+            "description": "Применяет один из цветовых вариантов темы Bootstrap к спиннеру по умолчанию. По умолчанию используется текущий цвет шрифта"
           },
           {
             "prop": "variant",
-            "description": "Background theme color variant to use for the overlay backdrop"
+            "description": "Вариант цвета фоновой темы для использования в качестве фона наложения"
           },
           {
             "prop": "wrapTag",
-            "description": "Element tag to use for the overall wrapper element. Has no effect if prop `no-wrap` is set"
+            "description": "Тег элемента, используемый для всего элемента-оболочки. Не имеет эффекта, если установлено свойство `no-wrap`"
           },
           {
             "prop": "zIndex",
-            "description": "Z-index value to apply to the overlay. You may need to increase this value to suit your content or placement"
+            "description": "Значение Z-индекса для применения к наложению. Возможно, вам придется увеличить это значение в соответствии с вашим контентом или местом размещения"
           }
         ],
         "events": [
           {
             "event": "click",
             "version": "2.13.0",
-            "description": "Emitted when overlay is clicked",
+            "description": "Выдается при нажатии на оверлей",
             "args": [
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native click event object"
+                "description": "Собственный объект события клика"
               }
             ]
           },
           {
             "event": "hidden",
-            "description": "Emitted when the overlay has been hidden"
+            "description": "Выдается, когда оверлей был скрыт"
           },
           {
             "event": "shown",
-            "description": "Emitted when the overlay has been shown"
+            "description": "Выдается, когда оверлей был показан"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "The content to be overlayed. The default slot is ignored if the prop `no-wrap` is set"
+            "description": "Содержимое для наложения. Слот по умолчанию игнорируется, если установлено свойство `no-wrap`"
           },
           {
             "name": "overlay",
-            "description": "Custom content to replace the default overlay spinner",
+            "description": "Пользовательский контент для замены спиннера оверлея по умолчанию",
             "scope": [
               {
                 "prop": "spinnerSmall",
