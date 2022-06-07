@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Navbar",
-    "description": "The component <b-navbar> is a responsive wrapper that positions branding, navigation, and other elements into a concise header. It's easily extensible and thanks to the <b-collapse> component.",
+    "description": "Компонент <b-navbar> — это адаптивная оболочка, которая размещает брендинг, навигацию и другие элементы в сжатом заголовке. Его легко расширять благодаря компоненту <b-collapse>.",
     "plugins": [
       "NavPlugin",
       "DropdownPlugin",
@@ -15,33 +15,33 @@
         "props": [
           {
             "prop": "fixed",
-            "description": "Set to 'top' for fixed to the top of the viewport, or 'bottom' for fixed to the bottom of the viewport"
+            "description": "Установите значение 'top', чтобы зафиксировать в верхней части окна просмотра, или 'bottom', чтобы зафиксировать в нижней части окна просмотра"
           },
           {
             "prop": "print",
-            "description": "Navbars are hidden by default when printing. When this prop is set it will be printed"
+            "description": "Панели навигации по умолчанию скрыты при печати. Когда это свойство установлено, она будет напечатана"
           },
           {
             "prop": "sticky",
-            "description": "Set to true to make the navbar stick to the top of the viewport (or parent container that has 'position: relative' set) when scrolled"
+            "description": "Установите значение true, чтобы при прокрутке панель навигации оставалась в верхней части области просмотра (или родительского контейнера с установленным положением: относительное)"
           },
           {
             "prop": "toggleable",
-            "description": "Set to 'true' for an always collapsed navbar, or to a specific breakpoint at which point the navbar will be expanded: 'sm', 'md', 'lg' or 'xl'"
+            "description": "Установите значение 'true' для всегда свернутой панели навигации или для определенной контрольной точки, в которой панель навигации будет развернута: 'sm', 'md', 'lg' или 'xl'"
           },
           {
             "prop": "type",
-            "description": "Control the text color by setting to 'light' for use with light background color variants, or 'dark' for dark background color variants"
+            "description": "Управляйте цветом текста, установив значение 'light' для использования со светлыми вариантами цвета фона или 'dark' для вариантов темного цвета фона"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из цветовых вариантов темы Bootstrap"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the navbar"
+            "description": "Контент для размещения на панели навигации"
           }
         ]
       },
@@ -50,25 +50,25 @@
         "props": [
           {
             "prop": "align",
-            "description": "Align the nav items in the nav: 'start' (or 'left'), 'center', 'end' (or 'right')"
+            "description": "Выровняйте элементы навигации в навигации: 'start' (или 'left'), 'center', 'end' (или 'right')"
           },
           {
             "prop": "fill",
-            "description": "Proportionately fills all horizontal space with nav items. All horizontal space is occupied, but not every nav item has the same width"
+            "description": "Пропорционально заполняет все горизонтальное пространство элементами навигации. Все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину"
           },
           {
             "prop": "justified",
-            "description": "Fills all horizontal space with nav items, but unlike 'fill', every nav item will be the same width"
+            "description": "Заполняет все горизонтальное пространство элементами навигации, но, в отличие от 'fill', все элементы навигации имеют одинаковую ширину"
           },
           {
             "prop": "small",
-            "description": "Makes the nav smaller"
+            "description": "Делает навигацию меньше"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the navbar nav"
+            "description": "Контент для размещения на панели навигации"
           }
         ]
       },
@@ -77,7 +77,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the navbar brand"
+            "description": "Контент для размещения на панели навигации в бренде"
           }
         ]
       },
@@ -90,21 +90,21 @@
           {
             "prop": "disabled",
             "version": "2.15.0",
-            "description": "When `true`, disables the navbar toggle button, and adds class `disabled` to the button"
+            "description": "Когда `true`, отключает кнопку переключения панели навигации и добавляет к кнопке класс `disabled`"
           },
           {
             "prop": "label",
-            "description": "String to place in the toggle's 'aria-label' attribute"
+            "description": "Строка для размещения в атрибуте переключателя 'aria-label'"
           },
           {
             "prop": "target",
-            "description": "ID (or array of IDs) of the collapse/sidebar components that should be toggled"
+            "description": "ID (или массив ID) компонентов сворачивания/боковой панели, которые следует переключать"
           }
         ],
         "events": [
           {
             "event": "click",
-            "description": "Emitted when the toggle is clicked",
+            "description": "Выдается при нажатии на переключатель",
             "args": [
               {
                 "name": "event",
@@ -117,13 +117,13 @@
         "slots": [
           {
             "name": "default",
-            "description": "Alternate content to replace the default Bootstrap hamburger",
+            "description": "Альтернативный контент для замены гамбургера Bootstrap по умолчанию",
             "scope": [
               {
                 "prop": "expanded",
                 "version": "2.9.0",
                 "type": "Boolean",
-                "description": "`true` if the collapse is expanded, `false` otherwise"
+                "description": "`true`, если коллапс раскрыт, `false` в противном случае"
               }
             ]
           }

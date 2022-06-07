@@ -1,32 +1,32 @@
-# Navbar
+# Панель навигации
 
-> The component `<b-navbar>` is a wrapper that positions branding, navigation, and other elements
-> into a concise header. It's easily extensible and thanks to the `<b-collapse>` component, it can
-> easily integrate responsive behaviors.
+> Компонент `<b-navbar>` представляет собой оболочку, которая размещает брендинг, навигацию и другие
+> элементы в сжатом заголовке. Его легко расширять, а благодаря компоненту `<b-collapse>` он может
+> легко интегрировать адаптивное поведение.
 
-**Example:**
+**Пример:**
 
 ```html
 <div>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+    <b-navbar-brand href="#">Панель навигации</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item href="#">Link</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
+        <b-nav-item href="#">Ссылка</b-nav-item>
+        <b-nav-item href="#" disabled>Отключено</b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+          <b-form-input size="sm" class="mr-sm-2" placeholder="Поиск"></b-form-input>
+          <b-button size="sm" class="my-2 my-sm-0" type="submit">Поиск</b-button>
         </b-nav-form>
 
-        <b-nav-item-dropdown text="Lang" right>
+        <b-nav-item-dropdown text="Язык" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
           <b-dropdown-item href="#">ES</b-dropdown-item>
           <b-dropdown-item href="#">RU</b-dropdown-item>
@@ -36,10 +36,10 @@
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>User</em>
+            <em>Пользователь</em>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          <b-dropdown-item href="#">Профиль</b-dropdown-item>
+          <b-dropdown-item href="#">Выйти</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -49,51 +49,53 @@
 <!-- b-navbar.vue -->
 ```
 
-## Color schemes
+## Цветовые схемы
 
-`<b-navbar>` supports the standard Bootstrap v4 available background color variants. Set the
-`variant` prop to one of the following values to change the background color: `primary`, `success`,
-`info`, `warning`, `danger`, `dark`, or `light`.
+`<b-navbar>` поддерживает стандартные доступные варианты цвета фона Bootstrap v4. Установите
+свойство `variant` на одно из следующих значений, чтобы изменить цвет фона: `primary`, `success`,
+`info`, `warning`, `danger`, `dark` или `light`.
 
-Control the text color by setting `type` prop to `light` for use with light background color
-variants, or `dark` for dark background color variants.
+Управляйте цветом текста, установив свойство `type` в значение `light` для использования со светлыми
+вариантами цвета фона или `dark` для вариантов цвета темного фона.
 
-## Placement
+## Размещение
 
-Control the placement of the navbar by setting one of two props:
+Управляйте размещением панели навигации, установив один из двух свойств:
 
-| prop     | type    | default | description                                                                                                                              |
-| -------- | ------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `fixed`  | String  | `null`  | Set to `top` for fixed to the top of the viewport, or `bottom` for fixed to the `bottom` of the viewport.                                |
-| `sticky` | Boolean | `false` | Set to `true` to make the navbar stick to the top of the viewport (or parent container that has `position: relative` set) when scrolled. |
+| свойство | тип     | по умолчанию | описание                                                                                                                                                                                     |
+| -------- | ------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fixed`  | String  | `null`       | Установите `top` для закрепления в верхней части области просмотра или `bottom`, для фиксации в нижней части области просмотра.                                                              |
+| `sticky` | Boolean | `false`      | Установите значение `true`, чтобы при прокрутке панель навигации оставалась в верхней части области просмотра (или родительского контейнера, для которого установлено `position: relative`). |
 
-**Notes:**
+**Примечания:**
 
-- Fixed positioning uses CSS `position: fixed`. You may need to adjust your document top/bottom
-  padding or margin.
-- CSS `position: sticky` (used for `sticky`) is not fully supported in every browser. For browsers
-  that do not support `position: sticky`, it will fallback natively to `position: relative`.
+- Фиксированное позиционирование использует CSS `position: fixed`. Возможно, вам потребуется
+  настроить верхний/нижний отступ или поля документа.
+- CSS `position: sticky` (используется для `sticky`) не полностью поддерживается в каждом браузере.
+  Для браузеров, которые не поддерживают `position: sticky`, будет изначально использоваться
+  `position: relative`.
 
-## Supported content
+## Поддерживаемый контент
 
-Navbars come with built-in support for a handful of sub-components. Choose from the following as
-needed:
+Панели навигации поставляются со встроенной поддержкой нескольких подкомпонентов. При необходимости
+выберите из следующего:
 
-- `<b-navbar-brand>` for your company, product, or project name.
-- `<b-navbar-toggle>` for use with the `<b-collapse is-nav>` component.
-- `<b-collapse is-nav>` for grouping and hiding navbar contents by a parent breakpoint.
-- `<b-navbar-nav>` for a full-height and lightweight navigation (including support for dropdowns).
-  The following sub-components inside `<b-navbar-nav>` are supported:
-  - `<b-nav-item>` for link (and router-link) action items
-  - `<b-nav-item-dropdown>` for nav dropdown menus
-  - `<b-nav-text>` for adding vertically centered strings of text.
-  - `<b-nav-form>` for any form controls and actions.
+- `<b-navbar-brand>` для названия вашей компании, продукта или проекта.
+- `<b-navbar-toggle>` для использования с компонентом `<b-collapse is-nav>`.
+- `<b-collapse is-nav>` для группировки и скрытия содержимого панели навигации родительской
+  контрольной точкой.
+- `<b-navbar-nav>` для полноразмерной и облегченной навигации (включая поддержку раскрывающихся
+  списков). Поддерживаются следующие подкомпоненты внутри `<b-navbar-nav>`:
+  - `<b-nav-item>` для действий по ссылке (и ссылке-роутера)
+  - `<b-nav-item-dropdown>` для выпадающих меню навигации
+  - `<b-nav-text>` для добавления вертикально центрированных строк текста.
+  - `<b-nav-form>` для любых элементов управления и действий формы.
 
 ### `<b-navbar-brand>`
 
-The `<b-navbar-brand>` generates a link if `href` is provided, or a `<router-link>` if `to` is
-provided. If neither is given it renders as a `<div>` tag. You can override the tag type by setting
-the `tag` prop to the element you would like rendered:
+`<b-navbar-brand>` создает ссылку, если указано `href`, или `<router-link>`, если указано `to`. Если
+ни один из них не указан, он отображается как тег `<div>`. Вы можете переопределить тип тега,
+установив свойство `tag` для элемента, который вы хотите отобразить:
 
 ```html
 <div>
@@ -117,8 +119,8 @@ the `tag` prop to the element you would like rendered:
 <!-- b-navbar-brand-heading.vue -->
 ```
 
-Adding images to the `<b-navbar-brand>` will likely always require custom styles or utilities to
-properly size. Here are some examples to demonstrate:
+Добавление изображений в `<b-navbar-brand>`, скорее всего, всегда потребует пользовательских стилей
+или утилит для правильного размера. Вот несколько примеров для демонстрации:
 
 ```html
 <div>
@@ -149,32 +151,34 @@ properly size. Here are some examples to demonstrate:
 
 ### `<b-navbar-nav>`
 
-Navbar navigation links build on the `<b-navbar-nav>` parent component and requires the use of
-`<b-collapse is-nav>` and `<b-nav-toggle>` toggler for proper responsive styling. Navigation in
-navbars will also grow to occupy as much horizontal space as possible to keep your navbar contents
-securely aligned.
+Навигационные ссылки на панели навигации основаны на родительском компоненте `<b-navbar-nav>` и
+требуют использования переключателя `<b-collapse is-nav>` и `<b-nav-toggle>` для правильного
+адаптивного стиля. Навигация в навигационных панелях также будет увеличиваться, чтобы занимать как
+можно больше горизонтального пространства, чтобы содержимое вашей навигационной панели было надежно
+выровнено.
 
-`<b-navbar-nav>` supports the following child components:
+`<b-navbar-nav>` поддерживает следующие дочерние компоненты:
 
-- `<b-nav-item>` for link (and router-link) action items
-- `<b-nav-text>` for adding vertically centered strings of text.
-- `<b-nav-item-dropdown>` for navbar dropdown menus
-- `<b-nav-form>` for adding simple forms to the navbar.
+- `<b-nav-item>` для действий по ссылке (и router-link).
+- `<b-nav-text>` для добавления вертикально центрированных строк текста.
+- `<b-nav-item-dropdown>` для выпадающих меню панели навигации.
+- `<b-nav-form>` для добавления простых форм на панель навигации.
 
 ### `<b-nav-item>`
 
-`<b-nav-item>` is the primary link (and `<router-link>`) component. Providing a `to` prop value will
-generate a `<router-link>` while providing an `href` prop value will generate a standard link.
+`<b-nav-item>` — это компонент основной ссылки (и `<router-link>`). Предоставление значения свойства
+`to` будет генерировать `<router-link>`, а предоставление значения свойства `href` будет
+генерировать стандартную ссылку.
 
-Set the `<b-nav-item>` `active` prop will highlight the item as being the active page, Disable a
-`<b-nav-item>` by setting the prop `disabled` to true.
+Установите свойство `active` для `<b-nav-item>`, чтобы выделить элемент как активную страницу.
+Отключите элемент `<b-nav-item>`, установив для свойства `disabled` значение `true`.
 
-Handle click events by specifying a handler for the `@click` event on `<b-nav-item>`.
+Обрабатывайте события кликов, указав обработчик для события `@click` на `<b-nav-item>`.
 
 ### `<b-nav-text>`
 
-Navbars may contain bits of text with the help of `<b-nav-text>`. This component adjusts vertical
-alignment and horizontal spacing for strings of text.
+Панели навигации могут содержать фрагменты текста с помощью `<b-nav-text>`. Этот компонент
+регулирует вертикальное выравнивание и горизонтальный интервал для строк текста.
 
 ```html
 <div>
@@ -196,26 +200,27 @@ alignment and horizontal spacing for strings of text.
 
 ### `<b-nav-item-dropdown>`
 
-For `<b-nav-item-dropdown>` usage, see the [`<b-dropdown>`](/docs/components/dropdown) docs. Note
-split dropdowns are not supported in `<b-navbar>` and `<b-navbar-nav>`.
+Информацию об использовании `<b-nav-item-dropdown>` смотрите в документации
+[`<b-dropdown>`](/docs/components/dropdown). Обратите внимание, что раздельные раскрывающиеся списки
+не поддерживаются в `<b-navbar>` и `<b-navbar-nav>`.
 
 ```html
 <div>
   <b-navbar type="dark" variant="dark">
     <b-navbar-nav>
-      <b-nav-item href="#">Home</b-nav-item>
+      <b-nav-item href="#">Главная</b-nav-item>
 
       <!-- Navbar dropdowns -->
-      <b-nav-item-dropdown text="Lang" right>
+      <b-nav-item-dropdown text="Язык" right>
         <b-dropdown-item href="#">EN</b-dropdown-item>
         <b-dropdown-item href="#">ES</b-dropdown-item>
         <b-dropdown-item href="#">RU</b-dropdown-item>
         <b-dropdown-item href="#">FA</b-dropdown-item>
       </b-nav-item-dropdown>
 
-      <b-nav-item-dropdown text="User" right>
-        <b-dropdown-item href="#">Account</b-dropdown-item>
-        <b-dropdown-item href="#">Settings</b-dropdown-item>
+      <b-nav-item-dropdown text="Пользователь" right>
+        <b-dropdown-item href="#">Аккаунт</b-dropdown-item>
+        <b-dropdown-item href="#">Настройки</b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>
   </b-navbar>
@@ -226,14 +231,15 @@ split dropdowns are not supported in `<b-navbar>` and `<b-navbar-nav>`.
 
 ### `<b-nav-form>`
 
-Use `<b-nav-form>` to place inline form controls into your navbar
+Используйте `<b-nav-form>`, чтобы разместить встроенные элементы управления формой на панели
+навигации.
 
 ```html
 <div>
   <b-navbar type="light" variant="light">
     <b-nav-form>
-      <b-form-input class="mr-sm-2" placeholder="Search"></b-form-input>
-      <b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Search</b-button>
+      <b-form-input class="mr-sm-2" placeholder="Поиск"></b-form-input>
+      <b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Поиск</b-button>
     </b-nav-form>
   </b-navbar>
 </div>
@@ -241,7 +247,7 @@ Use `<b-nav-form>` to place inline form controls into your navbar
 <!-- b-navbar-form.vue -->
 ```
 
-Input Groups work as well:
+Группы ввода также работают:
 
 ```html
 <div>
@@ -257,50 +263,52 @@ Input Groups work as well:
 <!-- b-navbar-form-inputs.vue -->
 ```
 
-### `<b-navbar-toggle>` and `<b-collapse is-nav>`
+### `<b-navbar-toggle>` и `<b-collapse is-nav>`
 
-Navbars are not responsive by default, but you can easily modify them to change that. Responsive
-behavior depends on our `<b-collapse>` component.
+Панели навигации по умолчанию не реагируют, но вы можете легко изменить их, чтобы изменить это.
+Отзывчивое поведение зависит от нашего компонента `<b-collapse>`.
 
-Wrap `<b-navbar-nav>` components in a `<b-collapse is-nav>` (**remember to set the `is-nav` prop!**)
-to specify content that will collapse based on a particular breakpoint. Assign a document unique
-`id` value on the `<b-collapse>`.
+Оберните компоненты `<b-navbar-nav>` в `<b-collapse is-nav>` (**не забудьте установить свойство
+`is-nav`!**), чтобы указать содержимое, которое будет сворачиваться на основе определенной
+контрольной точки. Присвойте документу уникальное значение `id` в `<b-collapse>`.
 
-Use the `<b-navbar-toggle>` component to control the collapse component, and set the `target` prop
-of `<b-navbar-toggle>` to the `id` of `<b-collapse>`.
+Используйте компонент `<b-navbar-toggle>`, чтобы управлять компонентом сворачивания, и установите
+свойство `target` в `<b-navbar-toggle>` на `id` в `<b-collapse>`.
 
-Set the `toggleable` prop on `<b-navbar>` to the desired breakpoint you would like content to
-automatically expand at. Possible `toggleable` values are `sm`, `md`, `lg` and `xl`. Setting
-`toggleable` to `true` (or an empty string) will set the navbar to be always collapsed, while
-setting it to `false` (the default) will disable collapsing (always expanded).
+Установите свойство `toggleable` на `<b-navbar>` на желаемую контрольную точку, в которой вы хотите,
+чтобы контент автоматически расширялся. Возможные значения `toggleable`: `sm`, `md`, `lg` и `xl`.
+Установка `toggleable` в `true` (или пустая строка) приведет к тому, что панель навигации всегда
+будет свернута, а установка ее в `false` (по умолчанию) отключит свертывание (всегда раскрывается).
 
-`<b-navbar-toggle>` components are left-aligned by default, but should they follow a sibling element
-like `<b-navbar-brand>`, they'll automatically be aligned to the far right. Reversing your markup
-will reverse the placement of the toggler.
+Компоненты `<b-navbar-toggle>` по умолчанию выравниваются по левому краю, но если они следуют за
+родственным элементом, например `<b-navbar-brand>`, они автоматически выравниваются по правому краю.
+Изменение разметки на противоположное приведет к обратному размещению переключателя.
 
-See the first example on this page for reference, and also refer to
-[`<b-collapse>`](/docs/components/collapse) for details on the collapse component.
+Смотрите первый пример на этой странице для справки, а также смотрите
+[`<b-collapse>`](/docs/components/collapse) для получения подробной информации о компоненте
+сворачивания.
 
-Besides being used to control a collapse, the `<b-navbar-toggle>` can also be used to toggle
-visibility of the [`<b-sidebar>`](/docs/components/sidebar) component. Just specify the ID of the
-`<b-sidebar>` via the `target` prop.
+Помимо управления сворачиванием, `<b-navbar-toggle>` можно также использовать для переключения
+видимости компонента [`<b-sidebar>`](/docs/components/sidebar). Просто укажите идентификатор
+`<b-sidebar>` через свойство `target`.
 
-Internally, `<b-navbar-toggle>` uses the [`v-b-toggle` directive](/docs/directives/toggle).
+Внутри `<b-navbar-toggle>` используется [директива `v-b-toggle`](/docs/directives/toggle).
 
-#### Custom navbar toggle
+#### Пользовательский переключатель панели навигации
 
-`<b-navbar-toggle>` renders the default Bootstrap v4 _hamburger_ (which is a background SVG image).
-You can supply your own content (such as an icon) via the optionally scoped `default` slot. The
-default slot scope contains the property `expanded`, which will be `true` when the collapse is
-expanded, or `false` when the collapse is collapsed.
+`<b-navbar-toggle>` отображает по умолчанию Bootstrap v4 _гамбургер_ (который является фоновым
+изображением SVG). Вы можете предоставить свой собственный контент (например, значок) через слот
+`default` с необязательной областью действия. Область слота по умолчанию содержит свойство
+`expanded`, которое будет `true`, когда свертывание расширяется, или `false`, когда сворачивание
+свертывается.
 
-Note that the `expanded` scope property only works when supplying the `target` prop as a `string`,
-and not an `array`.
+Обратите внимание, что свойство `expanded` область видимости работает только при предоставлении
+свойства `target` в виде `string`, а не `array`.
 
 ```html
 <template>
   <b-navbar toggleable type="dark" variant="dark">
-    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+    <b-navbar-brand href="#">Панель навигации</b-navbar-brand>
 
     <b-navbar-toggle target="navbar-toggle-collapse">
       <template #default="{ expanded }">
@@ -311,9 +319,9 @@ and not an `array`.
 
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#">Link 1</b-nav-item>
-        <b-nav-item href="#">Link 2</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
+        <b-nav-item href="#">Ссылка 1</b-nav-item>
+        <b-nav-item href="#">Ссылка 2</b-nav-item>
+        <b-nav-item href="#" disabled>Отключено</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -321,19 +329,20 @@ and not an `array`.
 <!-- b-navbar-toggle-slot.vue -->
 ```
 
-## Printing
+## Печать
 
-Navbars are hidden by default when printing. Force them to be printed by setting the `print` prop.
+Панели навигации по умолчанию скрыты при печати. Заставьте их распечатать, установив свойство
+`print`.
 
-## See also
+## Смотрите также
 
-- [`<b-collapse>` component](/docs/components/collapse)
-- [`<b-sidebar>` component](/docs/components/sidebar)
-- [`v-b-toggle` directive](/docs/directives/toggle)
-- [`<b-nav>` documentation](/docs/components/nav) for additional components and sub-component
-  aliases
+- [Компонент `<b-collapse>`](/docs/components/collapse)
+- [Компонент `<b-sidebar>`](/docs/components/sidebar)
+- [Директива `v-b-toggle`](/docs/directives/toggle)
+- [Документация `<b-nav>`](/docs/components/nav) для дополнительных компонентов и псевдонимов
+  подкомпонентов
 
-Refer to the [Router support](/docs/reference/router-links) reference page for router-link specific
-props.
+Обратитесь к справочной странице [Поддержка маршрутизатора](/docs/reference/router-links) для
+конкретных свойств маршрутизатора.
 
 <!-- Component reference added automatically from component package.json -->
