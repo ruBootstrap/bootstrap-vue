@@ -22,7 +22,7 @@
 <!-- b-popover.vue -->
 ```
 
-## Overview
+## Обзор
 
 Things to know when using popover component:
 
@@ -50,7 +50,7 @@ specified via the `target` prop, and can be any of the following:
 For more information on references, see the official
 [Vue documentation](https://vuejs.org/v2/api/#vm-refs).
 
-**Notes:**
+**Примечания:**
 
 The target element **must** exist in the document before `<b-popover>` is mounted. If the target
 element is not found during mount, the popover will never open. Always place your `<b-popover>`
@@ -916,7 +916,7 @@ export default {
 Refer to the [Events](/docs/components/popover#component-reference) section of documentation for the
 full list of events.
 
-## Accessibility
+## Доступность
 
 Popovers, in their current implementation, are not overly accessible when used as interactive
 components. Content may not be actively read to screen reader users, and the popover markup might

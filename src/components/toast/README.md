@@ -10,7 +10,7 @@ Toasts are intended to be small interruptions to your visitors or users, and the
 contain minimal, to-the-point, non-interactive content. Please refer to the
 [Accessibility tips](#accessibility-tips) section below for **important** usage information.
 
-## Overview
+## Обзор
 
 To encourage extensible and predictable toasts, we recommend providing a header (title) and body.
 Toast headers use the style `'display: flex'`, allowing easy alignment of content thanks to
@@ -119,7 +119,7 @@ exception of `static`, and `visible`) in <samp>camelCase</samp> name format inst
 Once a toast which was generated using `this.$bvToast.toast()` has been hidden, it will
 automatically be destroyed and removed from the document.
 
-**Notes:**
+**Примечания:**
 
 - The `this.$bvToast` injection is only available when using the full `BootstrapVue` plugin or the
   `ToastPlugin` plugin. It is not available if importing just the `b-toast` or `b-toaster`
@@ -135,7 +135,7 @@ automatically be destroyed and removed from the document.
   `this.$root.$bvToast.toast()` instead to make the toast's parent the root of your app.
 - Toasts require a message. Toasts on demand with an empty message will silently not be shown.
 
-## Options
+## Опции
 
 Toasts have various options that can control their style and behaviour. Options are available both
 as props on the `<b-toast>` component and as properties of the options object passed to
@@ -247,7 +247,7 @@ SCSS):
 <!-- toast-targets.vue -->
 ```
 
-**Notes:**
+**Примечания:**
 
 - Toaster target names that have not been defined in CSS will render at the bottom of the document,
   stacked and not positioned (appended to `<body>` inside a `<b-toaster>` with class name and ID set
@@ -448,7 +448,7 @@ toasts are closed/hidden.
 
 `<b-toast>` uses the `b-toaster-top-right` toaster by default.
 
-**Notes:**
+**Примечания:**
 
 - If a `<b-toaster>` with the same name already exists in document (either auto-created by
   `<b-toast>`, `this.$bvToast.toast()`, or manually placed), then `<b-toaster>` will just render an
@@ -595,7 +595,7 @@ Since the alert markup remains in the DOM where you placed the `<b-alert>` compo
 sequence (for accessing the dismiss button) is easily accessible to screen reader and keyboard-only
 users.
 
-## Accessibility
+## Доступность
 
 Toasts are intended to be **small interruptions** to your visitors or users, so to help those with
 screen readers and similar assistive technologies, toasts are wrapped in an aria-live region.
@@ -609,7 +609,7 @@ a later point in time).
 If you just need a single simple message to appear along the bottom or top of the user's window, use
 a [fixed position `<b-alert>`](#alerts-versus-toasts) instead.
 
-### Accessibility tips
+### Доступность tips
 
 Typically, toast messages should display one or two-line non-critical messages that **do not**
 require user interaction. Without taking extra steps, toasts can have numerous accessibility issues

@@ -195,7 +195,7 @@ the viewport, Nuxt.js will automatically prefetch the code splitted page. Settin
 `true` or `false` will overwrite the default value of `router.prefetchLinks` configured in the
 `nuxt.config.js` configuration file.
 
-**Notes:**
+**Примечания:**
 
 - If you have are using a version of Nuxt.js `< 2.10.0`, then this prop will have no effect.
 - Remember to `v-bind` the prop value (e.g. `:prefetch="true"` or `:prefetch="false"`).
@@ -244,7 +244,7 @@ these third party `<router-link>` compatible components via the use of the `rout
 prop. All `vue-router` props (excluding `<nuxt-link>` specific props) will be passed to the
 specified router link component.
 
-**Notes:**
+**Примечания:**
 
 - The 3rd party component will only be used when the `to` prop is set.
 - Not all 3rd party components support all props supported by `<router-link>`, nor do not support

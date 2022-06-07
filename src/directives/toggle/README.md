@@ -3,7 +3,7 @@
 > `v-b-toggle` is a light-weight directive for toggling the visibility of collapses and sidebars,
 > and includes automated [WAI-ARIA accessibility](/docs/reference/accessibility) attribute handling.
 
-## Overview
+## Обзор
 
 The `v-b-toggle` directive can be used on interactive elements, such as buttons, to toggle the
 visibility state of the [`<b-collapse>`](/docs/components/collapse) and
@@ -134,7 +134,7 @@ To prevent the trigger element from toggling the target, set the `disabled` prop
 `<b-button>`, or `<b-link>` (or components based on from `<b-link>`) and the toggle event will _not_
 dispatched to the target(s).
 
-## Accessibility
+## Доступность
 
 The directive, for accessibility reasons, should be placed on an clickable interactive element such
 as a `<button>` or `<b-button>`, which can easily be accessed by keyboard-only users and screen
@@ -156,7 +156,7 @@ When multiple targets are specified, the value of the `aria-expanded` attribute 
 if the individual target components can have their collapsed state controlled independently (either
 via `v-model`, other controls with `v-b-toggle` directive, or CSS visibility).
 
-## See also
+## Смотрите также
 
 - [`<b-collapse>`](/docs/components/collapse) Collapsible content with accordion support
 - [`<b-sidebar>`](/docs/components/sidebar) Off-canvas sidebar

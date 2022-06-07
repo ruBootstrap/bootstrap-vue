@@ -4,7 +4,7 @@
 > which can be used to control other components, or can be used to create customized time picker
 > inputs.
 
-## Overview
+## Обзор
 
 `<b-time>` is WAI-ARIA accessibility compliant, optimized for keyboard control (arrow, page up/down,
 home, and end keys). Internationalization is also supported, and default's to the browser's or
@@ -390,7 +390,7 @@ limitations in the client `Intl.DateTimeFormat` support for a particular locale.
 **recommended to leave the `hour12` prop set to `null` (default)**, so show the locale default
 time/hour formatting.
 
-## Accessibility
+## Доступность
 
 `<b-time>` provides many accessibility features, such as `aria-live` regions, roles, aria labeling,
 shortcut keys and full keyboard navigation to work with most screen readers.
@@ -424,7 +424,7 @@ The `<b-time>` component is based upon the custom BootstrapVue component
 `<b-time>` uses Bootstrap's border and flex utility classes, along with button (`btn-*`) classes and
 the `form-control` class. BootstrapVue's custom SCSS/CSS is also required for proper styling.
 
-## See also
+## Смотрите также
 
 - [`<b-form-timepicker>` Time picker custom form input](/docs/components/form-timepicker)
 - [`<b-calendar>` Calendar date selection widget](/docs/components/calendar)

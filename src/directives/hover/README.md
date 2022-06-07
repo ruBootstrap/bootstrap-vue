@@ -3,7 +3,7 @@
 > `v-b-hover` is a lightweight directive that allows you to react when an element either becomes
 > hovered or unhovered.
 
-## Overview
+## Обзор
 
 The `v-b-hover` directive can be used as an alternative to using custom CSS to handle hover states.
 
@@ -81,7 +81,7 @@ In the following, we are swapping icons and text color depending on the hover st
 <!-- b-v-hover-example.vue -->
 ```
 
-## Accessibility concerns
+## Доступность concerns
 
 Hover state should not be used to convey special meaning, as screen reader users and keyboard only
 users typically can not trigger hover state on elements.

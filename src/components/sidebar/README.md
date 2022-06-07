@@ -5,7 +5,7 @@
 > can be positioned on either the left (default) or right of the viewport, with optional backdrop
 > support.
 
-## Overview
+## Обзор
 
 You can place almost any content inside the `<b-sidebar>`
 [optionally scoped default slot](#scoped-default-slot), such as text, buttons, forms, images, or
@@ -57,7 +57,7 @@ If you do not provide a title, use either the `aria-label` or `aria-labelledby` 
 accessible title for the sidebar. See the [Accessibility section](#accessibility) below for
 additional details.
 
-### Placement
+### Размещение
 
 By default the sidebar will be placed on the left side of the viewport. Set the `right` prop to
 `true` to have the sidebar appear on the right side of the viewport.
@@ -365,7 +365,7 @@ sidebar has closed.
 The `change` event is used to update the `v-model` and is emitted whenever the visibility state of
 the sidebar changes.
 
-## Accessibility
+## Доступность
 
 `<b-sidebar>` provides several accessibility features.
 
@@ -399,7 +399,7 @@ controlling the background and font color, respectively.
 Some of the default styling for `<b-sidebar>` can be customized via the use of SASS variables. Refer
 to the [theming documentation](/docs/reference/theming) for additional details.
 
-## See also
+## Смотрите также
 
 - [`v-b-toggle` directive](/docs/directives/toggle)
 - [`<b-collapse>` component](/docs/components/collapse)

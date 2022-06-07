@@ -3,7 +3,7 @@
 > `v-b-visible` is a lightweight directive that allows you to react when an element becomes visible
 > in the viewport and/or when it moves out of the viewport (or is no longer visible).
 
-## Overview
+## Обзор
 
 - `v-b-visible` will call your callback method with a boolean value indicating if the element is
   visible (intersecting with the viewport) or not.
@@ -238,7 +238,7 @@ if the element is scrolled out of the viewport.
 <!-- v-b-visible-display.vue -->
 ```
 
-## See also
+## Смотрите также
 
 For more details on `IntersectionObserver`, refer to the
 [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)

@@ -20,7 +20,7 @@
 <!-- b-tooltip.vue -->
 ```
 
-## Overview
+## Обзор
 
 Things to know when using tooltip component:
 
@@ -546,7 +546,7 @@ export default {
 Refer to the [Events](/docs/components/tooltip#component-reference) section of documentation for the
 full list of events.
 
-## Accessibility
+## Доступность
 
 The trigger element, when the tooltip is showing, will have the attribute `aria-describedby` set
 with the auto generated ID of the tooltip.

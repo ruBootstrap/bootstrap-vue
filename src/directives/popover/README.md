@@ -5,7 +5,7 @@
 > clicking an element, and can contain both content and a title heading. Popovers are tooltips on
 > steroids.
 
-## Overview
+## Обзор
 
 Use the `v-b-popover` directive on any **element** or **component** where you would like a popover
 to appear.
@@ -639,7 +639,7 @@ These events work for both the component and directive versions of popover.
 Note the **trigger element** must exist in the DOM in order for the popover to be enabled or
 disabled.
 
-## See also
+## Смотрите также
 
 - [`v-b-tooltip` directive](/docs/directives/tooltip)
 - [`<b-popover>` component](/docs/components/popover)

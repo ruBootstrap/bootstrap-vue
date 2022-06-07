@@ -140,7 +140,7 @@ Use margin utilities like `.m-5` for easy spacing.
 <!-- b-spinner-margin.vue -->
 ```
 
-## Placement
+## Размещение
 
 Use flexbox utilities, float utilities, or text alignment utility classes to place spinners exactly
 where you need them in any situation.
@@ -222,7 +222,7 @@ label is provided. You can easily customize the role if required via prop `role`
 As well, when no label is provided, the spinner will automatically have the attribute
 `aria-hidden="true"` to hide the spinner from screen reader users.
 
-## See also
+## Смотрите также
 
 An alternative to the `<b-spinner>` component are [animated icons](/docs/icons/#animated-icons).
 

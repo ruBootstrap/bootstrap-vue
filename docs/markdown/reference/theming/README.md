@@ -279,7 +279,7 @@ a {
 }
 ```
 
-## See also
+## Смотрите также
 
 - For premium dashboards and themes, please refer to the [`Themes section`](/themes) of the
   documentation.

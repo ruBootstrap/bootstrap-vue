@@ -3,7 +3,7 @@
 > Add custom BootstrapVue tooltips to any element. Tooltips can be triggered by hovering, focusing,
 > or clicking an element.
 
-## Overview
+## Обзор
 
 Use the `v-b-tooltip` directive on any element or component where you would like a tooltip to
 appear.
@@ -513,7 +513,7 @@ These events work for both the component **and** directive versions of tooltip.
 Note the **trigger element** must exist in the DOM in order for the tooltip to be enabled or
 disabled.
 
-## See also
+## Смотрите также
 
 - [`v-b-popover` directive](/docs/directives/popover)
 - [`<b-tooltip>` component](/docs/components/tooltip)

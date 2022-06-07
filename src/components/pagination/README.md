@@ -3,7 +3,7 @@
 > Quick first, previous, next, last, and page buttons for pagination control of another component
 > (such as `<b-table>` or lists).
 
-## Overview
+## Обзор
 
 `<b-pagination>` is a custom input component that provides a current page number input control. The
 value should be bound via `v-model` in your app. Page numbers are indexed from 1. The number of
@@ -377,7 +377,7 @@ you should provide some means of notification to the user as to why the page is 
 selected. It is recommended to use the `disabled` attribute on the `<b-pagination>` component
 instead of using the `page-click` event (as `disabled` is more intuitive for screen reader users).
 
-## Accessibility
+## Доступность
 
 The `<b-pagination>` component provides many features to support assistive technology users, such as
 `aria-` attributes and keyboard navigation.
@@ -422,7 +422,7 @@ pattern.
 - Pressing <kbd>Tab</kbd> will move to the next control or link on the page, while pressing
   <kbd>Shift</kbd>+<kbd>Tab</kbd> will move to the previous control or link on the page.
 
-## See also
+## Смотрите также
 
 For navigation based pagination, please see the
 [`<b-pagination-nav>`](/docs/components/pagination-nav) component.

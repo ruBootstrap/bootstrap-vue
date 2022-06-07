@@ -255,7 +255,7 @@ The following field properties are recognized:
 | `isRowHeader`       | Boolean                     | When set to `true`, the field's item data cell will be rendered with `<th>` rather than the default of `<td>`.                                                                                                                                                                                                                                                                                                                    |
 | `stickyColumn`      | Boolean                     | When set to `true`, and the table in [responsive](#responsive-tables) mode or has [sticky headers](#sticky-headers), will cause the column to become fixed to the left when the table's horizontal scrollbar is scrolled. See [Sticky columns](#sticky-columns) for more details                                                                                                                                                  |
 
-**Notes:**
+**Примечания:**
 
 - Field properties, if not present, default to `null` (falsey) unless otherwise stated above.
 - `class`, `thClass`, `tdClass` etc. will not work with classes that are defined in scoped CSS,
@@ -825,7 +825,7 @@ the table's busy state is `true`. The slot will be placed in a `<tr>` element wi
 Also see the [Using Items Provider Functions](#using-items-provider-functions) below for additional
 information on the `busy` state.
 
-**Notes:**
+**Примечания:**
 
 - All click related and hover events, and sort-changed events will **not** be emitted when the table
   is in the `busy` state.
@@ -922,7 +922,7 @@ The slot's scope variable (`data` in the above sample) will have the following p
 | `selectRow`      | Function | When called, selects the current row. See section [Row select support](#row-select-support) for additional information                                                    |
 | `unselectRow`    | Function | When called, unselects the current row. See section [Row select support](#row-select-support) for additional information                                                  |
 
-**Notes:**
+**Примечания:**
 
 - `index` will not always be the actual row's index number, as it is computed after filtering,
   sorting and pagination have been applied to the original table data. The `index` value will refer
@@ -1133,7 +1133,7 @@ When placing inputs, buttons, selects or links within a `head(...)` or `foot(...
 are disabled). `head-clicked` will never be emitted when clicking on links or buttons inside the
 scoped slots (even when disabled)
 
-**Notes:**
+**Примечания:**
 
 - When using the new Vue 2.6 `v-slot` syntax, note that slot names **cannot** contain spaces, and
   when using in-browser DOM templates the slot names will _always_ be lower cased. To get around
@@ -1219,7 +1219,7 @@ Slot `custom-foot` can be optionally scoped, receiving an object with the follow
 | `fields`  | Array  | Array of field definition objects (normalized to the array of objects format)              |
 | `items`   | Array  | Array of the currently _displayed_ items records - after filtering, sorting and pagination |
 
-**Notes:**
+**Примечания:**
 
 - The `custom-foot` slot will **not** be rendered if the `foot-clone` prop has been set.
 - `head-clicked` events are not be emitted when clicking on `custom-foot` cells.
@@ -1900,7 +1900,7 @@ data in the underlying record object (or by formatted value if a field has a for
 the field has its `sortByFormatted` property is set to `true`). The field value is first stringified
 if it is an object and then sorted.
 
-**Notes:**
+**Примечания:**
 
 - The built-in `sort-compare` routine **cannot** sort based on the custom rendering of the field
   data: scoped slots are used only for _presentation only_, and do not affect the underlying data.
@@ -1943,7 +1943,7 @@ The `sort-compare-options` prop accepts an object containing any of the followin
   [MDN Intl page](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#Locale_negotiation)
   for details.
 - `sensitivity`: Which differences in the strings should lead to _non-zero_ compare result values.
-  Possible values are:
+  Возможные значения:
   - `'base'`: Only strings that differ in base letters compare as unequal. Examples: `a ≠ b`,
     `a = á`, `a = A`.
   - `'accent'`: Only strings that differ in base letters or accents and other diacritic marks
@@ -1972,7 +1972,7 @@ sorts _before_ `z`) or Swedish set `sort-compare-locale="sv"` (in Swedish, `ä` 
 <b-table :sort-compare-options="{ numeric: true, sensitivity: 'base' }" ...>
 ```
 
-**Notes:**
+**Примечания:**
 
 - Refer to
   [MDN `String.prototype.localeCompare()` documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)
@@ -2384,7 +2384,7 @@ async function myProvider(ctx) {
 }
 ```
 
-**Notes:**
+**Примечания:**
 
 - If you manually place the table in the `busy` state, the items provider will **not** be
   called/refreshed until the `busy` state has been set to `false`.
@@ -2408,7 +2408,7 @@ You can disable provider paging, filtering, and sorting (individually) by settin
 When `no-provider-paging` is `false` (default), you should only return at maximum, `perPage` number
 of records.
 
-**Notes:**
+**Примечания:**
 
 - `<b-table>` needs reference to your pagination and filtering values in order to trigger the
   calling of the provider function. So be sure to bind to the `per-page`, `current-page` and
@@ -2822,7 +2822,7 @@ helper components. Note that there are no helper components for `<caption>`, `<c
   `tbody-transition-props` and `tbody-transition-handlers` props are used. See the
   [Table body transition support](#table-body-transition-support) section for more details.
 
-## Accessibility
+## Доступность
 
 The `<b-table>` and `<b-table-lite>` components, when using specific features, will attempt to
 provide the best accessibility markup possible.

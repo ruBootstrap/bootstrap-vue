@@ -3,7 +3,7 @@
 > Quick first, previous, next, last, and page buttons for navigation based pagination, supporting
 > regular links or router links.
 
-## Overview
+## Обзор
 
 `<b-pagination-nav>` is a custom input component that provides navigational pagination. The total
 number of pages set with the `number-of-pages` prop. Page numbers are indexed from 1 through
@@ -503,7 +503,7 @@ you should provide some means of notification to the user as to why the page is 
 selected. It is recommended to use the `disabled` attribute on the `<b-pagination-nav>` component
 instead of using the `page-click` event (as `disabled` is more intuitive for screen reader users).
 
-## Accessibility
+## Доступность
 
 The `<b-pagination-nav>` component provides many features to support assistive technology users,
 such as `aria-` attributes and keyboard navigation.
@@ -533,7 +533,7 @@ recommended unless the content of the button textually conveys its purpose.
 
 `<b-pagination-nav>` supports standard <kbd>Tab</kbd> key navigation.
 
-## See also
+## Смотрите также
 
 Refer to the [Router support](/docs/reference/router-links) reference page for router-link specific
 props.
