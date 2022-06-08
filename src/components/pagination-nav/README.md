@@ -1,21 +1,21 @@
-# Pagination Nav
+# Пагинация навигации
 
-> Quick first, previous, next, last, and page buttons for navigation based pagination, supporting
-> regular links or router links.
+> Быстрые кнопки «первая», «предыдущая», «следующая», «последняя» и «к странице» для разбиения на
+> страницы на основе навигации, поддерживающие обычные ссылки или ссылки маршрутизатора.
 
 ## Обзор
 
-`<b-pagination-nav>` is a custom input component that provides navigational pagination. The total
-number of pages set with the `number-of-pages` prop. Page numbers are indexed from 1 through
-`number-of-pages`.
+`<b-pagination-nav>` – это настраиваемый компонент ввода, обеспечивающий разбиение на страницы
+навигации. Общее количество страниц, заданное свойством `number-of-pages`. Номера страниц
+индексируются от 1 до `number-of-pages`.
 
-`b-pagination-nav` will try and auto-detect which page link is active page button based on the
-current page's URL (via either `$route` detection or, if no `$router` detected, the browser location
-URL).
+`b-pagination-nav` попытается автоматически определить, какая ссылка страницы является активной
+кнопкой страницы, на основе URL-адреса текущей страницы (либо с помощью обнаружения `$route`, либо,
+если `$router` не обнаружен, URL-адрес местоположения браузера).
 
-**Note:** `<b-pagination-nav>` is used for navigating to new page URLs. For controlling in page
-component pagination (such as table or list pagination), use the
-[`<b-pagination>`](/docs/components/pagination) component instead.
+**Примечание:** `<b-pagination-nav>` используется для перехода к новым URL-адресам страниц. Для
+управления нумерацией страниц компонентов страницы (например, нумерация таблиц или списков) вместо
+этого используйте компонент [`<b-pagination>`](/docs/components/pagination).
 
 ```html
 <template>
@@ -37,46 +37,49 @@ component pagination (such as table or list pagination), use the
 <!-- b-pagination-nav-lead.vue -->
 ```
 
-## Page link and number generation
+## Ссылка на страницу и генерация номера
 
-By default, `<b-pagination-nav>` generates plain link tags, setting the HREF attribute to `base-url`
-concatenated with the page number. The `base-url` prop defaults to '/'. The number of pages is
-specified via the `number-of-pages` prop. Pages are numbers from `1` through to `number-of-pages`.
+По умолчанию `<b-pagination-nav>` генерирует простые теги ссылок, устанавливая для атрибута HREF
+значение `base-url`, связанное с номером страницы. Свойство `base-url` по умолчанию имеет значение
+`/`. Количество страниц указывается с помощью свойства `number-of-pages`. Страницы — это числа от
+`1` до `number-of-pages`.
 
-### Router links
+### Ссылки роутера
 
-To generate page links as [`<router link>`](https://router.vuejs.org/api/#router-link) components
-(or [`<nuxt-link>`](https://nuxtjs.org/api/components-nuxt-link#the-lt-nuxt-link-gt-component) if
-[Nuxt.js](https://nuxtjs.org/) is detected), set the `use-router` prop. The HREF will then become
-the `to` prop of the router link. Or, optionally, use a link generator function to return a
-router-link [`to` location](https://router.vuejs.org/api/#to) object.
+Чтобы сгенерировать ссылки на страницы в виде компонентов
+[`<router link>`](https://router.vuejs.org/api/#router-link) (или
+[`<nuxt-link>`](https://nuxtjs.org/api/components-nuxt-link#the-lt-nuxt-link-gt-component), если
+обнаружен [Nuxt.js](https://nuxtjs.org/)), установите свойство `use-router`. Затем HREF станет
+свойством `to` ссылки маршрутизатора. Или, при желании, используйте функцию генератора ссылок, чтобы
+вернуть объект [`to` location](https://router.vuejs.org/api/#to).
 
-If a `$router` is not detected on your app, `<b-pagination-nav>` will fallback to regular `<a>`
-elements, and any `to` location object will be converted to a standard URL (if possible).
+Если в вашем приложении не обнаружен `$router`, `<b-pagination-nav>` будет использовать обычные
+элементы `<a>`, а любой объект местоположения `to` будет преобразован в стандартный URL-адрес (если
+возможно).
 
-The following router link specific props are supported:
+Поддерживаются следующие свойства ссылок маршрутизатора:
 
 - `active-class`
 - `exact`
 - `exact-active-class`
-- `prefetch` (`<nuxt-link>` specific prop)
-- `no-prefetch` (`<nuxt-link>` specific prop)
+- `prefetch` (`<nuxt-link>` специфическое свойство)
+- `no-prefetch` (`<nuxt-link>` специфическое свойство)
 
-For details on the above props, refer to the [Router Link Support](/docs/reference/router-links)
-reference section.
+Для получения подробной информации о вышеуказанных свойствах обратитесь к справочному разделу
+[Поддержка Router Link](/docs/reference/router-links).
 
-### Link generator function
+### Функция генератора ссылок
 
-If you need finer grained control over the generated link URLs or `<router-link>` `to` props, you
-may set the `link-gen` prop to a function reference that receives two arguments: the page number,
-and an object containing two fields (`link` and `page`), where `page` is the page number and `link`
-is the internally generated link.
+Если вам нужен более тонкий контроль над сгенерированными URL-адресами ссылок или свойствами
+`<router-link>` и `to`, вы можете установить свойство `link-gen` на ссылку на функцию, которая
+получает два аргумента: номер страницы и объект. содержит два поля (`link` и `page`), где `page` —
+это номер страницы, а `link` — это внутренняя ссылка.
 
-The `link-gen` function should return either a string (for HREF) or a router `to` object. If the
-returned value is an object, then a router-link will always be generated (if a `$router` is
-detected). If the return value is a string, a standard link is generated by default unless the
-`use-router` prop is set. If a `to` location object is used, then the `base-url` prop will have no
-effect.
+Функция `link-gen` должна возвращать либо строку (для HREF), либо объект маршрутизатора `to`. Если
+возвращаемое значение является объектом, то всегда будет генерироваться маршрутизатор-ссылка (если
+обнаружен `$router`). Если возвращаемое значение является строкой, по умолчанию генерируется
+стандартная ссылка, если только не задан параметр `use-router`. Если используется объект
+местоположения `to`, то свойство `base-url` не будет иметь никакого эффекта.
 
 <!-- eslint-disable no-dupe-keys -->
 
@@ -112,26 +115,27 @@ export default {
 }
 ```
 
-**Note:** when falling back from a `to` location object to a standard link (when no `$router` is
-available), only the following location properties are used to generate the URL:
+**Примечание:** При возврате от объекта местоположения `to` к стандартной ссылке (когда нет
+доступного `$router`), для создания URL-адреса используются только следующие свойства
+местоположения:
 
-- `path` (if not provided defaults to the page's current URL path)
+- `path` (если не указан, по умолчанию используется текущий URL-адрес страницы)
 - `query`
-- `hash` (must include the leading `#` if used)
+- `hash` (должен включать `#` в начале, если используется)
 
-The conversion of `name` routes and `params` is not supported.
+Преобразование маршрутов `name` и `params` не поддерживается.
 
-### Page number generation
+### Генерация номера страницы
 
-By default, `<b-pagination-nav>` renders page numbers (1-N) in the page link buttons. You can
-override this behaviour by supplying a function reference to the `page-gen` property. The function
-reference should accept a single argument which is a page number (1-N). The `page-gen` function
-should return a string.
+По умолчанию `<b-pagination-nav>` отображает номера страниц (1-N) в кнопках ссылок на страницы. Вы
+можете переопределить это поведение, указав ссылку на функцию для свойства `page-gen`. Ссылка на
+функцию должна принимать единственный аргумент, который является номером страницы (1-N). Функция
+`page-gen` должна возвращать строку.
 
-**Note:** HTML content in generated page number strings is **not** supported. For basic HTML, you
-can use the scoped slot `page` for finer-grained formatting.
+**Примечание:** Содержимое HTML в сгенерированных строках номеров страниц **не** поддерживается. Для
+базового HTML вы можете использовать область действия `page` для более тонкого форматирования.
 
-**Example: Using an array of links to generate pagination:**
+**Пример: использование массива ссылок для создания пагинации:**
 
 ```html
 <template>
@@ -165,27 +169,28 @@ can use the scoped slot `page` for finer-grained formatting.
 <!-- b-pagination-nav-links.vue -->
 ```
 
-### Providing an array of pages
+### Предоставление массива страниц
 
-Rather than using `number-of-pages` to auto generate page links, you can pass an array of links via
-the `pages` prop. When the `pages` prop has an array of length `1` or greater, it will be used to
-generate the page links.
+Вместо того, чтобы использовать `number-of-pages` для автоматического создания ссылок на страницы,
+вы можете передать массив ссылок через свойство `pages`. Когда свойство `pages` имеет массив длины
+`1` или больше, он будет использоваться для генерации ссылок на страницы.
 
-The array can be one of two formats:
+Массив может быть одного из двух форматов:
 
-- Array of strings, where each entry is a link. in this mode, the page button numbers will
-  automatically be set to `1` through to the number of entries in the array.
-- Array of objects, where each object has two fields: `link` (required) and `text` (optional). Link
-  can be be either a string specifying the link, or a `to` location object. `text` will be the
-  content of the page link buttons. If `text` is omitted, page button content will default to the
-  page number.
+- Массив строк, где каждая запись является ссылкой. в этом режиме номера кнопок страниц будут
+  автоматически установлены от `1` до количества записей в массиве.
+- Массив объектов, где каждый объект имеет два поля: `link` (обязательно) и `text` (необязательно).
+  Ссылка может быть либо строкой, указывающей ссылку, либо объектом местоположения `to`. `text`
+  будет содержимым кнопок ссылок на страницы. Если `text` не указан, по умолчанию содержимое кнопки
+  страницы будет содержать номер страницы.
 
-When a string link is provided, `<b-pagination-nav>` will use regular `<a>` elements, unless the
-`use-router` prop is set. When link (in the array of objects form) is a `to` location object, then a
-router link will automatically be generated (if a `$router` is detected).
+Когда предоставлена строковая ссылка, `<b-pagination-nav>` будет использовать обычные элементы
+`<a>`, если только не установлено свойство `use-router`. Когда ссылка (в форме массива объектов)
+является объектом местоположения `to`, тогда ссылка на маршрутизатор будет автоматически
+сгенерирована (если обнаружен `$router`).
 
-With the array format, link strings (and/or location objects) are used as-as and `base-url` prop
-will be ignored.
+В формате массива строки ссылок (и/или объекты местоположения) используются как есть, а свойство
+`base-url` будет игнорироваться.
 
 ```html
 <template>
@@ -220,38 +225,38 @@ export default {
 <!-- pagination-nav-array.vue -->
 ```
 
-## Customizing appearance
+## Настройка внешнего вида
 
-### Limiting the number of displayed buttons
+### Ограничение количества отображаемых кнопок
 
-To restrict the number of page buttons (including the ellipsis, but excluding the first, prev, next,
-and last buttons) shown, use the `limit` prop to specify the desired number of page buttons
-(including the ellipsis, if shown). The default `limit` is `5`. The minimum supported value is `3`.
-When `limit` is set to `3`, no ellipsis indicators will be shown for practical purposes.
+Чтобы ограничить количество отображаемых кнопок страницы (включая многоточие, но исключая первую,
+предыдущую, следующую и последнюю кнопки), используйте свойство `limit` , чтобы указать желаемое
+количество кнопок страницы (включая многоточие, если оно показано). Ограничение `limit` по умолчанию
+равно `5`. Минимальное поддерживаемое значение — `3`. Когда для `limit` установлено значение `3`,
+для практических целей индикаторы с многоточием отображаться не будут.
 
-The `first` and `last` buttons can be optionally hidden by setting the `hide-goto-end-buttons` prop.
+Кнопки `first` и `last` могут быть дополнительно скрыты, установив свойство `hide-goto-end-buttons`.
 
-The showing of the `ellipsis` can be optionally disabled by setting the `hide-ellipsis` prop.
+Отображение `ellipsis` можно отключить, установив свойство `hide-ellipsis`.
 
-#### Small screen support
+#### Поддержка маленького экрана
 
-On smaller screens (i.e. mobile), some of the `<b-pagination-nav>` buttons will be hidden to
-minimize the potential of the pagination interface wrapping onto multiple lines:
+На небольших экранах (например, мобильных) некоторые из кнопок `<b-pagination>` будут скрыты, чтобы
+свести к минимуму возможность переноса интерфейса на несколько строк:
 
-- The ellipsis indicators will be hidden on screens `xs` and smaller.
-- Page number buttons will be limited to a maximum of 3 visible on `xs` screens and smaller.
+- Индикаторы многоточия будут скрыты на экранах `xs` и меньше.
+- Кнопки с номерами страниц будут ограничены максимум тремя видимыми на экранах `xs` и меньше.
 
-This ensures that no more than 3 page number buttons are visible, along with the goto _first_,
-_prev_, _next_, and _last_ buttons.
+Это гарантирует, что будут видны не более 3 кнопок с номерами страниц, а также кнопки перехода
+_первая_, _предыдущая_, _следующая_ и _последняя_.
 
-### Button content
+### Содержимое кнопки
 
-`<b-pagination-nav>` supports several props/slots that allow you to customize the appearance. All
-`*-text` props are text-only and strip out HTML but you can use their equally named slot
-counterparts for that.
+`<b-pagination-nav>` поддерживает несколько свойств/слотов, которые позволяют настраивать внешний
+вид. Все свойства `*-text` содержат только текст и не содержат HTML, но вы можете использовать для
+этого аналоги слотов с одинаковыми именами.
 
-For a full list of all available slots see the [Slots](#comp-ref-b-pagination-nav-slots) section
-below.
+Полный список всех доступных слотов смотрите в разделе [Слоты](#comp-ref-b-pagination-slots) ниже.
 
 ```html
 <template>
@@ -283,10 +288,10 @@ below.
       base-url="#"
       class="mt-4"
     >
-      <template #first-text><span class="text-success">First</span></template>
-      <template #prev-text><span class="text-danger">Prev</span></template>
-      <template #next-text><span class="text-warning">Next</span></template>
-      <template #last-text><span class="text-info">Last</span></template>
+      <template #first-text><span class="text-success">Первая</span></template>
+      <template #prev-text><span class="text-danger">Предыдущая</span></template>
+      <template #next-text><span class="text-warning">Следующая</span></template>
+      <template #last-text><span class="text-info">Последняя</span></template>
       <template #ellipsis-text>
         <b-spinner small type="grow"></b-spinner>
         <b-spinner small type="grow"></b-spinner>
@@ -303,38 +308,38 @@ below.
 <!-- b-pagination-nav-appearance.vue -->
 ```
 
-The slot `page` is always scoped, while the slots `first-text`, `prev-text`, `next-text` and
-`last-text` are optionally scoped. The `ellipsis-text` slot is not scoped.
+Область действия слота `page` всегда ограничена, а слоты `first-text`, `prev-text`, `next-text` и
+`last-text` опционально. Слот `ellipsis-text` не ограничен.
 
-**Scoped variables properties available to the `page` slot:**
+**Свойства переменных области, доступные для слота `page`:**
 
-| Property   | Type    | Description                                               |
-| ---------- | ------- | --------------------------------------------------------- |
-| `page`     | Number  | Page number (from `1` to `numberOfPages`)                 |
-| `index`    | Number  | Page number (indexed from `0` to `numberOfPages -1`)      |
-| `active`   | Boolean | If the page is the active page                            |
-| `disabled` | Boolean | If the page button is disabled                            |
-| `content`  | String  | default content, or the result of the `page-gen` function |
+| Свойство   | Тип     | Описание                                                    |
+| ---------- | ------- | ----------------------------------------------------------- |
+| `page`     | Number  | Номер страницы (от `1` до `numberOfPages`)                  |
+| `index`    | Number  | Номер страницы (индексируется от `0` до `numberOfPages -1`) |
+| `active`   | Boolean | Если страница является активной страницей                   |
+| `disabled` | Boolean | Если кнопка страницы отключена                              |
+| `content`  | String  | Содержимое по умолчанию или результат функции `page-gen`    |
 
-**Scoped variables properties available to the `first-text`, `prev-text`, `next-text` and
-`last-text` slots:**
+**Свойства переменных области, доступные для слота `first-text`, `prev-text`, `next-text` и
+`last-text`:**
 
-| Property   | Type    | Description                                          |
-| ---------- | ------- | ---------------------------------------------------- |
-| `page`     | Number  | Page number (from `1` to `numberOfPages`)            |
-| `index`    | Number  | Page number (indexed from `0` to `numberOfPages -1`) |
-| `disabled` | Boolean | If the page button is disabled                       |
+| Свойство   | Тип     | Описание                                                    |
+| ---------- | ------- | ----------------------------------------------------------- |
+| `page`     | Number  | Номер страницы (от `1` до `numberOfPages`)                  |
+| `index`    | Number  | Номер страницы (индексируется от `0` до `numberOfPages -1`) |
+| `disabled` | Boolean | Если кнопка страницы отключена                              |
 
-### Goto first/last button type
+### Тип кнопки перейти к первому/последнему
 
-If you prefer to have buttons with the first and last page number to go to the corresponding page,
-use the `first-number` and `last-number` props.
+Если вы предпочитаете иметь кнопки с первым и последним номером страницы для перехода на
+соответствующую страницу, используйте свойства `first-number` и `last-number` props.
 
 ```html
 <template>
   <div class="overflow-auto">
     <div>
-      <h6>Goto first button number</h6>
+      <h6>Перейти к первому номеру кнопки</h6>
       <b-pagination-nav
         v-model="currentPage"
         :number-of-pages="pages"
@@ -344,7 +349,7 @@ use the `first-number` and `last-number` props.
     </div>
 
     <div class="mt-3">
-      <h6>Goto last button number</h6>
+      <h6>Перейти к последнему номеру кнопки</h6>
       <b-pagination-nav
         v-model="currentPage"
         :number-of-pages="pages"
@@ -354,7 +359,7 @@ use the `first-number` and `last-number` props.
     </div>
 
     <div class="mt-3">
-      <h6>Goto first and last button number</h6>
+      <h6>Перейти к первому и последнему номеру кнопки</h6>
       <b-pagination-nav
         v-model="currentPage"
         :number-of-pages="pages"
@@ -380,26 +385,26 @@ use the `first-number` and `last-number` props.
 <!-- b-pagination-nav-goto-first-last-number.vue -->
 ```
 
-### Button size
+### Размер кнопки
 
-Optionally change from the default button size by setting the `size` prop to either `'sm'` for
-smaller buttons or `'lg'` for larger buttons.
+При желании измените размер кнопки по умолчанию, установив свойство `size` либо на `'sm'` для кнопок
+меньшего размера, либо на `'lg'` для кнопок большего размера.
 
 ```html
 <template>
   <div class="overflow-auto">
     <div>
-      <h6>Small</h6>
+      <h6>Маленькая</h6>
       <b-pagination-nav size="sm" number-of-pages="10" base-url="#"></b-pagination-nav>
     </div>
 
     <div class="mt-3">
-      <h6>Default</h6>
+      <h6>По умолчанию</h6>
       <b-pagination-nav number-of-pages="10" base-url="#"></b-pagination-nav>
     </div>
 
     <div class="mt-3">
-      <h6>Large</h6>
+      <h6>Большая</h6>
       <b-pagination-nav size="lg" number-of-pages="10" base-url="#"></b-pagination-nav>
     </div>
   </div>
@@ -408,25 +413,25 @@ smaller buttons or `'lg'` for larger buttons.
 <!-- b-pagination-nav-size.vue -->
 ```
 
-### Pill style
+### Стиль таблетки
 
-Easily switch to pill style buttons by setting the `pills` prop
+Легко переключайтесь на кнопки в стиле таблеток, установив свойство `pills`
 
 ```html
 <template>
   <div class="overflow-auto">
     <div>
-      <h6>Small Pills</h6>
+      <h6>Маленькая таблетка</h6>
       <b-pagination-nav pills size="sm" number-of-pages="10" base-url="#"></b-pagination-nav>
     </div>
 
     <div class="mt-3">
-      <h6>Default Pills</h6>
+      <h6>Таблетка по умолчанию</h6>
       <b-pagination-nav pills number-of-pages="10" base-url="#"></b-pagination-nav>
     </div>
 
     <div class="mt-3">
-      <h6>Large Pills</h6>
+      <h6>Большая таблетка</h6>
       <b-pagination-nav pills size="lg" number-of-pages="10" base-url="#"></b-pagination-nav>
     </div>
   </div>
@@ -435,33 +440,34 @@ Easily switch to pill style buttons by setting the `pills` prop
 <!-- b-pagination-nav-pills.vue -->
 ```
 
-**Note:** Pill styling requires BootstrapVue's custom CSS/SCSS.
+**Примечание:** Для стиля таблетки требуется пользовательский CSS/SCSS BootstrapVue.
 
-### Alignment
+### Выравнивание
 
-By default the pagination component is left aligned. Change the alignment to `center`, `right`
-(`right` is an alias for `end`), or 'fill' by setting the prop `align` to the appropriate value.
+По умолчанию компонент пагинации выравнивается по левому краю. Измените выравнивание на `center`,
+`right` (`right` - это псевдоним для `end`) или `fill`, установив свойство `align` на
+соответствующее значение.
 
 ```html
 <template>
   <div class="overflow-auto">
     <div>
-      <h6>Left alignment (default)</h6>
+      <h6>Выравнивание по левому краю (по умолчанию)</h6>
       <b-pagination-nav number-of-pages="10" base-url="#"></b-pagination-nav>
     </div>
 
     <div class="mt-3">
-      <h6 class="text-center">Center alignment</h6>
+      <h6 class="text-center">Выравнивание по центру</h6>
       <b-pagination-nav number-of-pages="10" base-url="#" align="center"></b-pagination-nav>
     </div>
 
     <div class="mt-3">
-      <h6 class="text-right">Right (end) alignment</h6>
+      <h6 class="text-right">Выравнивание по правому краю (концу)</h6>
       <b-pagination-nav number-of-pages="10" base-url="#" align="right"></b-pagination-nav>
     </div>
 
     <div class="mt-3">
-      <h6 class="text-center">Fill alignment</h6>
+      <h6 class="text-center">Выравнивание на всю ширину</h6>
       <b-pagination-nav number-of-pages="10" base-url="#" align="fill"></b-pagination-nav>
     </div>
   </div>
@@ -470,75 +476,79 @@ By default the pagination component is left aligned. Change the alignment to `ce
 <!-- b-pagination-nav-alignment.vue -->
 ```
 
-## Auto current page detection and `v-model` support
+## Автоматическое определение текущей страницы и поддержка `v-model`
 
-`<b-pagination-nav>` will try and automatically detect which page button should be active, based on
-the page's current URL or `$route` (if a router is detected). In cases where it cannot detect the
-page, no page number buttons will be in the active state, and the first, previous, next and last
-buttons will be in the disabled state until a page button is clicked.
+`<b-pagination-nav>` попытается автоматически определить, какая кнопка страницы должна быть
+активной, на основе текущего URL-адреса страницы или `$route` (если обнаружен маршрутизатор). В тех
+случаях, когда он не может обнаружить страницу, никакие кнопки номеров страниц не будут в активном
+состоянии, а первая, предыдущая, следующая и последняя кнопки будут в отключенном состоянии до тех
+пор, пока не будет нажата кнопка страницы.
 
-`v-model` is optionally supported (updated by the `input` event, and tied to the `value` prop).
-Setting the `v-model` to `null` (the default) initially will trigger auto active page detection, and
-will subsequently be updated with the current page number (indexed from `1` to number of pages). If
-you initially set the `v-model` to a value of `1` or greater, auto page detection will not occur
-(until after a user clicks a page button), and the page specified by the `v-model` will be set as
-`active`.
+Опционально поддерживается `v-model` (обновляется событием `input` и привязывается к свойству
+`value`). Установка для `v-model` значения `null` (по умолчанию) первоначально вызовет
+автоматическое обнаружение активной страницы, а затем будет обновлен номер текущей страницы
+(индексируется от `1` до количества страниц). Если вы изначально установили для `v-model` значение
+`1` или больше, автоматическое определение страницы не произойдет (пока пользователь не нажмет
+кнопку страницы), а страница, указанная `v-model`, будет установить как `active`.
 
-To disable auto active page detection, set the `no-page-detect` prop to `true`.
+Чтобы отключить автоматическое обнаружение активной страницы, установите свойство `no-page-detect` в
+значение `true`.
 
-**Note:** Auto page detection needs to loop through all possible page links until a match is
-detected. For larger `number-of-pages`, this check can take some time so you may want to manually
-control which page is the active via the `v-model` and the `no-page-detect` prop.
+**Примечание:** Автоматическое обнаружение страниц должно перебирать все возможные ссылки на
+страницы, пока не будет обнаружено совпадение. Для большего `number-of-pages`, эта проверка может
+занять некоторое время, поэтому вы можете вручную контролировать, какая страница является активной с
+помощью `v-model` и свойства `no-page-detect`.
 
-## Preventing a page from being selected
+## Предотвращение выбора страницы
 
-You can listen for the `page-click` event, which provides an option to prevent the page from being
-selected. The event is emitted with two arguments:
+Вы можете прослушивать событие `page-click`, которое позволяет предотвратить выбор страницы. Событие
+генерируется с двумя аргументами:
 
-- `bvEvent`: The `BvEvent` object. Call `bvEvent.preventDefault()` to cancel page selection
-- `page`: Page number to select (starting with `1`)
+- `bvEvent`: Объект `BvEvent`. Вызовите`bvEvent.preventDefault()`, чтобы отменить выбор страницы
+- `page`: Номер страницы для выбора (начиная с `1`)
 
-For accessibility reasons, when using the `page-click` event to prevent a page from being selected,
-you should provide some means of notification to the user as to why the page is not able to be
-selected. It is recommended to use the `disabled` attribute on the `<b-pagination-nav>` component
-instead of using the `page-click` event (as `disabled` is more intuitive for screen reader users).
+Из соображений доступности при использовании события `page-click` для предотвращения выбора страницы
+вы должны предоставить пользователю некоторые средства уведомления о том, почему страница не может
+быть выбрана. Рекомендуется использовать атрибут `disabled` в компоненте `<b-pagination-nav>` вместо
+использования события `page-click` (поскольку `disabled` более интуитивно понятен для пользователей
+программ чтения с экрана).
 
 ## Доступность
 
-The `<b-pagination-nav>` component provides many features to support assistive technology users,
-such as `aria-` attributes and keyboard navigation.
+Компонент `<b-pagination-nav>` предоставляет множество функций для поддержки пользователей
+вспомогательных технологий, таких как атрибуты `aria-` и навигация с помощью клавиатуры.
 
-### ARIA labels
+### ARIA метки
 
-`<b-pagination-nav>` provides various `*-label-*` props which are used to set the `aria-label`
-attributes on the various elements within the component, which will help users of assistive
-technology.
+`<b-pagination-nav>` предоставляет различные свойства `*-label-*`, которые используются для
+установки атрибутов `aria-label` для различных элементов внутри компонента, что поможет
+пользователям вспомогательных технологий.
 
-| Prop               | `aria-label` content default                            |
-| ------------------ | ------------------------------------------------------- |
-| `label-first-page` | "Goto first page"                                       |
-| `label-prev-page`  | "Goto previous page"                                    |
-| `label-next-page`  | "Goto next page"                                        |
-| `label-last-page`  | "Goto last page"                                        |
-| `label-page`       | "Goto page", appended with the page number              |
-| `aria-label`       | "Pagination", applied to the outer pagination container |
+| Свойство           | `aria-label` содержимое по умолчанию                                 |
+| ------------------ | -------------------------------------------------------------------- |
+| `label-first-page` | "Перейти на первую страницу"                                         |
+| `label-prev-page`  | "Перейти на предыдущую страницу"                                     |
+| `label-next-page`  | "Перейти на следующую страницу"                                      |
+| `label-last-page`  | "Перейти на последнюю страницу"                                      |
+| `label-page`       | "Перейти к странице" с добавлением номера страницы                   |
+| `aria-label`       | "Пагинация", примененная к внешнему контейнеру разбиения на страницы |
 
-The `label-page` will optionally accept a function to generate the aria-label. The function is
-passed a single argument which is the page number (indexed from 1 to number of pages).
+`label-page` может дополнительно принимать функцию для создания aria-label. В функцию передается
+единственный аргумент — номер страницы (индексируется от 1 до количества страниц).
 
-You can remove any label by setting the prop to an empty string (`''`), although this is not
-recommended unless the content of the button textually conveys its purpose.
+Вы можете удалить любую метку, установив свойство в пустую строку (`''`), хотя это не рекомендуется,
+если только содержимое кнопки текстом не передает ее назначение.
 
-### Keyboard navigation
+### Навигация с помощью клавиатуры
 
-`<b-pagination-nav>` supports standard <kbd>Tab</kbd> key navigation.
+`<b-pagination-nav>` поддерживает стандартную навигацию с помощью клавиш <kbd>Tab</kbd>.
 
 ## Смотрите также
 
-Refer to the [Router support](/docs/reference/router-links) reference page for router-link specific
-props.
+Обратитесь к справочной странице [Поддержка маршрутизатора](/docs/reference/router-links) для
+конкретных свойств маршрутизатора.
 
-For pagination control of a component (such as `<b-table>`) or a pagination list, use the
-[`<b-pagination>`](/docs/components/pagination) component instead.
+Для управления нумерацией страниц компонента (например, `<b-table>`) или списка страниц используйте
+компонент [`<b-pagination>`](/docs/components/pagination).
 
 <!-- Component reference added automatically from component package.json -->

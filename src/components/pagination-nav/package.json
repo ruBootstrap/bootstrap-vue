@@ -3,187 +3,187 @@
   "version": "1.0.0",
   "meta": {
     "title": "Pagination Nav",
-    "description": "Quick first, previous, next, last, and page buttons for navigation based pagination, supporting regular links or router links.",
+    "description": "Быстрые кнопки первая, предыдущая, следующая, последняя и страница для разбиения на страницы на основе навигации, поддерживающие обычные ссылки или ссылки маршрутизатора.",
     "components": [
       {
         "component": "BPaginationNav",
         "props": [
           {
             "prop": "align",
-            "description": "Alignment of the page buttons: 'start' (or 'left'), 'center', 'end' (or 'right'), or 'fill'"
+            "description": "Выравнивание кнопок страницы: 'start' (или 'left'), 'center', 'end' (или 'right') или 'fill'"
           },
           {
             "prop": "ariaLabel",
-            "description": "Value to place in the 'aria-label' attribute of the pagination control"
+            "description": "Значение для размещения в атрибуте 'aria-label' элемента управления разбиением на страницы"
           },
           {
             "prop": "baseUrl",
-            "description": "Base URL to use when auto generating page links"
+            "description": "Базовый URL для использования при автоматическом создании ссылок на страницы"
           },
           {
             "prop": "ellipsisClass",
             "version": "2.3.0",
-            "description": "Class(es) to apply to the 'ellipsis' placeholders"
+            "description": "Класс(ы) для применения к заполнителям 'ellipsis'"
           },
           {
             "prop": "ellipsisText",
-            "description": "Content to place in the ellipsis placeholder"
+            "description": "Содержимое для размещения в заполнителе с многоточием"
           },
           {
             "prop": "firstClass",
             "version": "2.3.0",
-            "description": "Class(es) to apply to the 'Go to first page' button"
+            "description": "Класс(ы) для применения к кнопке 'Перейти на первую страницу'"
           },
           {
             "prop": "firstNumber",
             "version": "2.3.0",
-            "description": "Display first page number instead of Goto First button"
+            "description": "Отображать номер первой страницы вместо кнопки Перейти к первой"
           },
           {
             "prop": "firstText",
-            "description": "Content to place in the goto first page button"
+            "description": "Содержимое для размещения на кнопке перехода на первую страницу"
           },
           {
             "prop": "hideEllipsis",
-            "description": "Do not show ellipsis buttons"
+            "description": "Не показывать кнопки с многоточием"
           },
           {
             "prop": "hideGotoEndButtons",
-            "description": "Hides the goto first and goto last page buttons"
+            "description": "Скрывать кнопки перехода на первую и последнюю страницу"
           },
           {
             "prop": "labelFirstPage",
-            "description": "Value to place in the 'aria-label' attribute of the goto first page button"
+            "description": "Значение для размещения в атрибуте 'aria-label' кнопки перехода на первую страницу"
           },
           {
             "prop": "labelLastPage",
-            "description": "Value to place in the 'aria-label' attribute of the goto last page button"
+            "description": "Значение для размещения в атрибуте 'aria-label' кнопки перехода на последнюю страницу"
           },
           {
             "prop": "labelNextPage",
-            "description": "Value to place in the 'aria-label' attribute of the goto next page button"
+            "description": "Значение для размещения в атрибуте 'aria-label' кнопки перехода на следующую страницу"
           },
           {
             "prop": "labelPage",
-            "description": "Value to place in the 'aria-label' attribute of the goto page button. Page number will be prepended automatically"
+            "description": "Значение для размещения в атрибуте 'aria-label' кнопки перехода на страницу. Номер страницы будет добавлен автоматически"
           },
           {
             "prop": "labelPrevPage",
-            "description": "Value to place in the 'aria-label' attribute of the goto previous page button"
+            "description": "Значение для размещения в атрибуте 'aria-label' кнопки перехода на предыдущую страницу"
           },
           {
             "prop": "lastClass",
             "version": "2.3.0",
-            "description": "Class(es) to apply to the 'Go to last page' button"
+            "description": "Класс(ы) для применения к кнопке 'Перейти к последней странице'"
           },
           {
             "prop": "lastNumber",
             "version": "2.3.0",
-            "description": "Display last page number instead of Goto Last button"
+            "description": "Отображать номер последней страницы вместо кнопки Перейти к последней"
           },
           {
             "prop": "lastText",
-            "description": "Content to place in the goto last page button"
+            "description": "Содержимое для размещения на кнопке перехода на последнюю страницу"
           },
           {
             "prop": "limit",
-            "description": "Maximum number of buttons to show (including ellipsis if shown, but excluding the bookend buttons)"
+            "description": "Максимальное количество отображаемых кнопок (включая многоточие, если оно отображается, но исключая кнопки на форзаце)"
           },
           {
             "prop": "linkGen",
-            "description": "Link generator function. See docs for details"
+            "description": "Функция генератора ссылок. Подробнее смотрите документацию"
           },
           {
             "prop": "nextClass",
             "version": "2.3.0",
-            "description": "Class(es) to apply to the 'Go to next page' button"
+            "description": "Класс(ы) для применения к кнопке 'Перейти к следующей странице'"
           },
           {
             "prop": "nextText",
-            "description": "Content to place in the goto next page button"
+            "description": "Содержимое для размещения на кнопке перехода на следующую страницу"
           },
           {
             "prop": "noPageDetect",
-            "description": "Disable of auto detection of current page"
+            "description": "Отключить автоматическое определение текущей страницы"
           },
           {
             "prop": "numberOfPages",
-            "description": "Total number of pages"
+            "description": "Общее количество страниц"
           },
           {
             "prop": "pageClass",
             "version": "2.3.0",
-            "description": "Class(es) to apply to the 'Go to page #' buttons"
+            "description": "Класс(ы) для применения к кнопкам 'Перейти на страницу #'"
           },
           {
             "prop": "pageGen",
-            "description": "Page number generator function. See docs for details"
+            "description": "Функция генератора номеров страниц. Подробнее смотрите документацию"
           },
           {
             "prop": "pages",
-            "description": "Array of page numbers and links"
+            "description": "Массив номеров страниц и ссылок"
           },
           {
             "prop": "pills",
             "version": "2.1.0",
-            "description": "Applies pill styling to the pagination buttons"
+            "description": "Применяет стиль пилюли к кнопкам пагинации"
           },
           {
             "prop": "prevClass",
             "version": "2.3.0",
-            "description": "Class(es) to apply to the 'Go to previous page' button"
+            "description": "Класс(ы) для применения к кнопке 'Перейти на предыдущую страницу'"
           },
           {
             "prop": "prevText",
-            "description": "Content to place in the goto previous page button"
+            "description": "Содержимое для размещения на кнопке перехода на предыдущую страницу"
           },
           {
             "prop": "size",
-            "description": "Size of the rendered buttons: 'sm', 'md' (default), or 'lg'"
+            "description": "Размер отображаемых кнопок: 'sm', 'md' (по умолчанию) или 'lg'"
           },
           {
             "prop": "useRouter",
-            "description": "Render router-links instead of links when auto generating the page links"
+            "description": "Визуализация ссылок маршрутизатора вместо ссылок при автоматической генерации ссылок на страницы"
           },
           {
             "prop": "value",
-            "description": "Current page number, starting from 1"
+            "description": "Текущий номер страницы, начиная с 1"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Emitted when page changes via user interaction",
+            "description": "Генерируется при изменении страницы посредством взаимодействия с пользователем",
             "args": [
               {
                 "arg": "page",
-                "description": "Selected page number (starting with `1`)"
+                "description": "Номер выбранной страницы (начиная с `1`)"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Emitted when page changes via user interaction or programmatically",
+            "description": "Генерируется при изменении страницы посредством взаимодействия с пользователем или программно",
             "args": [
               {
                 "arg": "page",
-                "description": "Selected page number (starting with `1`), or `null` if no page found"
+                "description": "Номер выбранной страницы (начиная с `1`) или `null` если страница не найдена"
               }
             ]
           },
           {
             "event": "page-click",
-            "description": "Emitted when a page button was clicked. Cancelable",
+            "description": "Генерируется при нажатии кнопки страницы. Отменяемый",
             "version": "2.17.0",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "The `BvEvent` object. Call `bvEvent.preventDefault()` to cancel page selection"
+                "description": "Объект `BvEvent`. Вызовите`bvEvent.preventDefault()`, чтобы отменить выбор страницы"
               },
               {
                 "arg": "page",
-                "description": "Page number to select (starting with `1`)"
+                "description": "Номер страницы для выбора (начиная с `1`)"
               }
             ]
           }
@@ -191,120 +191,120 @@
         "slots": [
           {
             "name": "ellipsis-text",
-            "description": "The '...' indicator content. Not scoped"
+            "description": "Содержимое индикатора '...'. Не ограничено"
           },
           {
             "name": "first-text",
-            "description": "The \"go to first page\" button content. Optionally scoped",
+            "description": "Содержимое кнопки \"перейти на первую страницу\". Опционально ограничено",
             "scope": [
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "Will be true if this button is disabled (non-clickable)"
+                "description": "Будет true, если эта кнопка отключена (некликабельна)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "Page number (indexed from 0 to numberOfPages -1)"
+                "description": "Номер страницы (индексируется от 0 до numberOfPages -1)"
               },
               {
                 "prop": "page",
                 "type": "Number",
-                "description": "Page number (from 1 to numberOfPages)"
+                "description": "Номер страницы (от 1 до numberOfPages)"
               }
             ]
           },
           {
             "name": "last-text",
-            "description": "The \"go to last page\" button content. Optionally scoped",
+            "description": "Содержимое кнопки \"перейти на последнюю страницу\". Опционально ограничено",
             "scope": [
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "Will be true if this button is disabled (non-clickable)"
+                "description": "Будет true, если эта кнопка отключена (некликабельна)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "Page number (indexed from 0 to numberOfPages -1)"
+                "description": "Номер страницы (индексируется от 0 до numberOfPages -1)"
               },
               {
                 "prop": "page",
                 "type": "Number",
-                "description": "Page number (from 1 to numberOfPages)"
+                "description": "Номер страницы (от 1 до numberOfPages)"
               }
             ]
           },
           {
             "name": "next-text",
-            "description": "The \"go to next page\" button content. Optionally scoped",
+            "description": "Содержимое кнопки \"перейти на следующую страницу\". Опционально ограничено",
             "scope": [
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "Will be true if this button is disabled (non-clickable)"
+                "description": "Будет true, если эта кнопка отключена (некликабельна)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "Page number (indexed from 0 to numberOfPages -1)"
+                "description": "Номер страницы (индексируется от 0 до numberOfPages -1)"
               },
               {
                 "prop": "page",
                 "type": "Number",
-                "description": "Page number (from 1 to numberOfPages)"
+                "description": "Номер страницы (от 1 до numberOfPages)"
               }
             ]
           },
           {
             "name": "page",
-            "description": "Page number button content. Always scoped",
+            "description": "Содержимое кнопки номера страницы. Always scoped",
             "scope": [
               {
                 "prop": "active",
                 "type": "Boolean",
-                "description": "If the page is the active page"
+                "description": "Если страница является активной страницей"
               },
               {
                 "prop": "content",
                 "type": "String",
-                "description": "Default button content, or the result of the page-gen function"
+                "description": "Содержимое кнопки по умолчанию или результат функции page-gen"
               },
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "Will be true if this button is disabled (non-clickable)"
+                "description": "Будет true, если эта кнопка отключена (некликабельна)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "Page number (indexed from 0 to numberOfPages -1)"
+                "description": "Номер страницы (индексируется от 0 до numberOfPages -1)"
               },
               {
                 "prop": "page",
                 "type": "Number",
-                "description": "Page number (from 1 to numberOfPages)"
+                "description": "Номер страницы (от 1 до numberOfPages)"
               }
             ]
           },
           {
             "name": "prev-text",
-            "description": "The \"go to previous page\" button content. Optionally scoped",
+            "description": "Содержимое кнопки \"перейти на предыдущую страницу\". Опционально ограничено",
             "scope": [
               {
                 "prop": "disabled",
                 "type": "Boolean",
-                "description": "Will be true if this button is disabled (non-clickable)"
+                "description": "Будет true, если эта кнопка отключена (некликабельна)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "Page number (indexed from 0 to numberOfPages -1)"
+                "description": "Номер страницы (индексируется от 0 до numberOfPages -1)"
               },
               {
                 "prop": "page",
                 "type": "Number",
-                "description": "Page number (from 1 to numberOfPages)"
+                "description": "Номер страницы (от 1 до numberOfPages)"
               }
             ]
           }
