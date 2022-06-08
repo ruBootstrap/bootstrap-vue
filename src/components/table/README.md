@@ -61,10 +61,10 @@ These titles will be displayed in the table header, in the order they appear in 
 of data. See the [Fields](#fields-column-definitions) section below for customizing how field
 headings appear.
 
-**Note:** Field order is not guaranteed. Fields will typically appear in the order they were defined
-in the first row, but this may not always be the case depending on the version of browser in use.
-See section [Fields (column definitions)](#fields-column-definitions) below to see how to guarantee
-the order of fields, and to override the headings generated.
+**Примечание:** Field order is not guaranteed. Fields will typically appear in the order they were
+defined in the first row, but this may not always be the case depending on the version of browser in
+use. See section [Fields (column definitions)](#fields-column-definitions) below to see how to
+guarantee the order of fields, and to override the headings generated.
 
 Record data may also have additional special reserved name keys for colorizing rows and individual
 cells (variants), and for triggering additional row detail. The supported optional item record
@@ -349,8 +349,8 @@ details.
 | `no-footer-sorting`  | Boolean           | When `foot-clone` is true and the table is sortable, disables the sorting icons and click behaviour on the footer heading cells. Refer to the [Sorting](#sorting) section below for more details.                                                                                                                                              |
 | `no-border-collapse` | Boolean           | Disables the default of collapsing of the table borders. Mainly for use with [sticky headers](#sticky-headers) and/or [sticky columns](#sticky-columns). Will cause the appearance of double borders in some situations.                                                                                                                       |
 
-**Note:** The table style options `fixed`, `stacked`, `caption-top`, `no-border-collapse`, sticky
-headers, sticky columns and the table sorting feature, all require BootstrapVue's custom CSS.
+**Примечание:** The table style options `fixed`, `stacked`, `caption-top`, `no-border-collapse`,
+sticky headers, sticky columns and the table sorting feature, all require BootstrapVue's custom CSS.
 
 **Example: Basic table styles**
 
@@ -362,7 +362,7 @@ headers, sticky columns and the table sorting feature, all require BootstrapVue'
       <b-form-checkbox v-model="bordered" :aria-describedby="ariaDescribedby" inline>Bordered</b-form-checkbox>
       <b-form-checkbox v-model="borderless" :aria-describedby="ariaDescribedby" inline>Borderless</b-form-checkbox>
       <b-form-checkbox v-model="outlined" :aria-describedby="ariaDescribedby" inline>Outlined</b-form-checkbox>
-      <b-form-checkbox v-model="small" :aria-describedby="ariaDescribedby" inline>Small</b-form-checkbox>
+      <b-form-checkbox v-model="small" :aria-describedby="ariaDescribedby" inline>Маленькая</b-form-checkbox>
       <b-form-checkbox v-model="hover" :aria-describedby="ariaDescribedby" inline>Hover</b-form-checkbox>
       <b-form-checkbox v-model="dark" :aria-describedby="ariaDescribedby" inline>Dark</b-form-checkbox>
       <b-form-checkbox v-model="fixed" :aria-describedby="ariaDescribedby" inline>Fixed</b-form-checkbox>
@@ -1427,9 +1427,9 @@ In the scoped field slot, you can toggle the visibility of the row's `row-detail
 calling the `toggleDetails` function passed to the field's scoped slot variable. You can use the
 scoped fields slot variable `detailsShowing` to determine the visibility of the `row-details` slot.
 
-**Note:** If manipulating the `_showDetails` property directly on the item data (i.e. not via the
-`toggleDetails` function reference), the `_showDetails` properly **must** exist in the items data
-for proper reactive detection of changes to its value. Read more about
+**Примечание:** If manipulating the `_showDetails` property directly on the item data (i.e. not via
+the `toggleDetails` function reference), the `_showDetails` properly **must** exist in the items
+data for proper reactive detection of changes to its value. Read more about
 [Vue's reactivity limitations](https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats).
 
 **Available `row-details` scoped variable properties:**
@@ -1760,7 +1760,7 @@ changes to a record's properties in the `v-model` will be reflected in the origi
 **not** remove the record from the original items array nor will it remove it from the displayed
 rows.
 
-**Note:** Do not bind any value directly to the `value` prop. Use the `v-model` binding.
+**Примечание:** Do not bind any value directly to the `value` prop. Use the `v-model` binding.
 
 ## Sorting
 
@@ -2220,14 +2220,14 @@ provider(ctx, [callback])
 The `ctx` is the context object associated with the table state, and contains the following
 properties:
 
-| Property      | Type                       | Description                                                                       |
-| ------------- | -------------------------- | --------------------------------------------------------------------------------- |
-| `currentPage` | Number                     | The current page number (starting from 1, the value of the `current-page` prop)   |
-| `perPage`     | Number                     | The maximum number of rows per page to display (the value of the `per-page` prop) |
-| `filter`      | String or RegExp or Object | The value of the `filter` prop                                                    |
-| `sortBy`      | String                     | The current column key being sorted, or an empty string if not sorting            |
-| `sortDesc`    | Boolean                    | The current sort direction (`true` for descending, `false` for ascending)         |
-| `apiUrl`      | String                     | The value provided to the `api-url` prop. `null` if none provided.                |
+| Property      | Type                       | Description                                                                            |
+| ------------- | -------------------------- | -------------------------------------------------------------------------------------- |
+| `currentPage` | Number                     | The current page number (starting from 1, the value of the `current-page` prop)        |
+| `perPage`     | Number                     | The maximum Количество строк на странице to display (the value of the `per-page` prop) |
+| `filter`      | String or RegExp or Object | The value of the `filter` prop                                                         |
+| `sortBy`      | String                     | The current column key being sorted, or an empty string if not sorting                 |
+| `sortDesc`    | Boolean                    | The current sort direction (`true` for descending, `false` for ascending)              |
+| `apiUrl`      | String                     | The value provided to the `api-url` prop. `null` if none provided.                     |
 
 The second argument `callback` is an optional parameter for when using the callback asynchronous
 method.
@@ -2316,8 +2316,8 @@ however it also provides a `busy` prop that can be used either to override the i
 or to monitor `<b-pagination>`'s current busy state in your application using the 2-way `.sync`
 modifier.
 
-**Note:** in order to allow `<b-table>` fully track its `busy` state, the custom items provider
-function should handle errors from data sources and return an empty array to `<b-table>`.
+**Примечание:** in order to allow `<b-table>` fully track its `busy` state, the custom items
+provider function should handle errors from data sources and return an empty array to `<b-table>`.
 
 **Example: usage of busy state**
 
@@ -2442,9 +2442,9 @@ Or by calling the `refresh()` method on the table reference
 this.$refs.table.refresh()
 ```
 
-**Note:** If the table is in the `busy` state (i.e. a provider update is currently running), the
-refresh will wait until the current update is completed. If there is currently a refresh pending and
-a new refresh is requested, then only one refresh will occur.
+**Примечание:** If the table is in the `busy` state (i.e. a provider update is currently running),
+the refresh will wait until the current update is completed. If there is currently a refresh pending
+and a new refresh is requested, then only one refresh will occur.
 
 ### Detection of sorting change
 
@@ -2718,7 +2718,7 @@ should match the stacked table breakpoint you have set), i.e. `<b-tr class="d-md
 the row on medium and wider screens, while `<b-tbody class="d-md-none">` would hide the row group on
 medium and wider screens.
 
-**Note:** stacked mode with `<b-table-simple>` requires that you use the BootstrapVue
+**Примечание:** stacked mode with `<b-table-simple>` requires that you use the BootstrapVue
 [table helper components](#table-helper-components). Use of the regular `<tbody>`, `<tr>`, `<td>`
 and `<th>` element tags will not work as expected, nor will they automatically apply any of the
 required accessibility attributes.

@@ -88,8 +88,8 @@ When `<b-tabs>` is in `card` mode, each `<b-tab>` sub-component will automatical
 <!-- b-tabs-card-no-body.vue -->
 ```
 
-**Note:** Setting the `no-body` prop on `<b-tab>` will have no affect when `<b-tabs>` is not in
-`card` mode (as the `card-body` class is only set when in `card` mode).
+**Примечание:** Setting the `no-body` prop on `<b-tab>` will have no affect when `<b-tabs>` is not
+in `card` mode (as the `card-body` class is only set when in `card` mode).
 
 Refer to the [Cards documentation](/docs/components/card) for more details on card components.
 
@@ -151,7 +151,7 @@ the controls, but unlike using `fill` above, every control will be the same widt
 <!-- b-tabs-justified.vue -->
 ```
 
-## Alignment
+## Выравнивание
 
 To align your tab controls, use the `align` prop. Available values are `left`, `center` and `right`.
 
@@ -251,8 +251,8 @@ Vertical placement visually works best with the `pills` variant. When using the 
 variant, you may want to provided your own custom styling classes, as Bootstrap v4 CSS assumes the
 tab controls will always be placed on the top of the tabs content.
 
-**Note:** _overflowing text may occur if your width is narrower than the tab title. You may need
-additional custom styling._
+**Примечание:** _overflowing text may occur if your width is narrower than the tab title. You may
+need additional custom styling._
 
 ## Active classes
 
@@ -301,7 +301,7 @@ If you want to add extra tabs that do not have any content, you can put them in 
 Use the `tabs-start` slot to place extra tab buttons before the content tab buttons, and use the
 `tabs-end` slot to place extra tab buttons after the content tab buttons.
 
-**Note:** extra (contentless) tab buttons should be a `<b-nav-item>` or have a root element of
+**Примечание:** extra (contentless) tab buttons should be a `<b-nav-item>` or have a root element of
 `<li>` and class `nav-item` for proper rendering and semantic markup.
 
 ## Add custom content to tab title
@@ -342,8 +342,8 @@ The tab selectors are based on Bootstrap v4's `nav` markup ( i.e.
 the `title-item-class` prop (for the `<li>` element) or `title-link-class` prop (for the `<a>`
 element). Value's can be passed as a string or array of strings.
 
-**Note:** _The `active` class is automatically applied to the active tabs `<a>` element. You may
-need to accommodate your custom classes for this._
+**Примечание:** _The `active` class is automatically applied to the active tabs `<a>` element. You
+may need to accommodate your custom classes for this._
 
 ```html
 <template>

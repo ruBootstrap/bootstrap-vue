@@ -185,8 +185,8 @@ of the icon names listed in the [Icons](#icons) section above.
 <!-- icons-helper-usage.vue -->
 ```
 
-**Note:** when using `<b-icon>`, you **must** also import the required individual icon components,
-unless you are using the `IconsPlugin` or `BootstrapVueIcons` plugin.
+**Примечание:** when using `<b-icon>`, you **must** also import the required individual icon
+components, unless you are using the `IconsPlugin` or `BootstrapVueIcons` plugin.
 
 ## Variants
 

@@ -48,7 +48,7 @@ specified via the `target` prop, and can be any of the following:
 For more information on references, see the official
 [Vue documentation](https://vuejs.org/v2/api/#vm-refs).
 
-**Note:**
+**Примечание:**
 
 The target element **must** exist in the document before `<b-tooltip>` is mounted. If the target
 element is not found during mount, the tooltip will never open. Always place your `<b-tooltip>`
@@ -422,8 +422,9 @@ long as you have provided the `.sync` prop modifier.
 <!-- b-tooltip-disable.vue -->
 ```
 
-**Note:** _In the above example, since we are using the default tooltip triggers of `focus hover`,
-the tooltip will close before it is disabled due to losing focus (and hover) to the toggle button._
+**Примечание:** _In the above example, since we are using the default tooltip triggers of
+`focus hover`, the tooltip will close before it is disabled due to losing focus (and hover) to the
+toggle button._
 
 You can also emit `$root` events to trigger disabling and enabling of tooltip(s). See the
 **Disabling and enabling tooltips via \$root events** section below for details.
@@ -495,8 +496,8 @@ event.
 
 These events work for both the component **and** directive versions of tooltip.
 
-**Note:** _the **trigger element** must exist in the DOM and be in a visible state in order for the
-tooltip to show._
+**Примечание:** _the **trigger element** must exist in the DOM and be in a visible state in order
+for the tooltip to show._
 
 ### Disabling and enabling tooltips via \$root events
 
@@ -526,8 +527,8 @@ To enable all tooltips simultaneously, omit the `id` argument when emitting the
 
 These events work for both the component **and** directive versions of tooltip.
 
-**Note:** _The **trigger element** must exist in the DOM in order for the tooltip to be enabled or
-disabled._
+**Примечание:** _The **trigger element** must exist in the DOM in order for the tooltip to be
+enabled or disabled._
 
 ### Listening to tooltip changes via \$root events
 
@@ -551,8 +552,8 @@ full list of events.
 The trigger element, when the tooltip is showing, will have the attribute `aria-describedby` set
 with the auto generated ID of the tooltip.
 
-**Note:** The animation effect of this component is dependent on the `prefers-reduced-motion` media
-query. See the
+**Примечание:** The animation effect of this component is dependent on the `prefers-reduced-motion`
+media query. See the
 [reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
 additional details.
 

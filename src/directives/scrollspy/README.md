@@ -261,9 +261,9 @@ Where:
 - `option` can be a string identifying the `element` to monitor scrolling on, a numeric `offset`, or
   a configuration object (see below). Optional
 
-**Note:** The directive is applied backwards compared to native Bootstrap v4. In **BootstrapVue**
-the `v-b-scrollspy` directive is applied to the target element that has the links to be activated,
-and the arg or option specifies which element to monitor (spy) scrolling on.
+**Примечание:** The directive is applied backwards compared to native Bootstrap v4. In
+**BootstrapVue** the `v-b-scrollspy` directive is applied to the target element that has the links
+to be activated, and the arg or option specifies which element to monitor (spy) scrolling on.
 
 The directive an be applied to any containing element or component that has `<nav-item>`,
 `<b-dropdown-item>`, `<b-list-group-item>` (or `<a>` tags with the appropriate classes), a long as

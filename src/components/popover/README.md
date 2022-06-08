@@ -865,8 +865,8 @@ event.
 
 These events work for both the component **and** directive versions of popover.
 
-**Note:** _The **trigger element** must exist in the DOM and be in a visible state in order for the
-popover to instantiate and show._
+**Примечание:** _The **trigger element** must exist in the DOM and be in a visible state in order
+for the popover to instantiate and show._
 
 ### Disabling and enabling popovers via \$root events
 
@@ -896,8 +896,8 @@ To enable all popovers simultaneously, omit the `id` argument when emitting the
 
 These events work for both the component and directive versions of popover.
 
-**Note:** _The **trigger element** must exist in the DOM in order for the popover to be enabled or
-disabled._
+**Примечание:** _The **trigger element** must exist in the DOM in order for the popover to be
+enabled or disabled._
 
 ### Listening to popover changes via \$root events
 
@@ -930,8 +930,8 @@ possible. When the popover is closed, you should return focus back to your trigg
 You may also want to implement focus containment in the popover content while the user is
 interacting with it (keeping focus inside the popover until it is closed by the user).
 
-**Note:** The animation effect of this component is dependent on the `prefers-reduced-motion` media
-query. See the
+**Примечание:** The animation effect of this component is dependent on the `prefers-reduced-motion`
+media query. See the
 [reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
 additional details.
 

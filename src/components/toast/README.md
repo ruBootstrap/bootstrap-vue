@@ -35,10 +35,10 @@ under the toast.
 <!-- toast-intro.vue -->
 ```
 
-**Note:** we are using the `static` prop in the above example to render the toast in-place in the
-document, rather than transporting it to a `<b-toaster>` target container. And we have added classes
-`bg-secondary` and `progress-bar-striped` to the outer `<div>` for illustrative purposes of toast
-transparency only.
+**Примечание:** we are using the `static` prop in the above example to render the toast in-place in
+the document, rather than transporting it to a `<b-toaster>` target container. And we have added
+classes `bg-secondary` and `progress-bar-striped` to the outer `<div>` for illustrative purposes of
+toast transparency only.
 
 ### Toast features and notes
 
@@ -168,7 +168,7 @@ toast custom SCSS will automatically create toast variants for you (refer to the
 ```html
 <template>
   <div>
-    <b-button @click="makeToast()" class="mb-2">Default</b-button>
+    <b-button @click="makeToast()" class="mb-2">По умолчанию</b-button>
     <b-button variant="primary" @click="makeToast('primary')" class="mb-2">Primary</b-button>
     <b-button variant="secondary" @click="makeToast('secondary')" class="mb-2">Secondary</b-button>
     <b-button variant="danger" @click="makeToast('danger')" class="mb-2">Danger</b-button>

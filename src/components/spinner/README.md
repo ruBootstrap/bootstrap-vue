@@ -123,7 +123,7 @@ Or, use custom CSS or inline styles to change the dimensions as needed.
 <!-- b-spinner-sizes-custom.vue -->
 ```
 
-## Alignment
+## Выравнивание
 
 Spinners in Bootstrap are built with `rem`s, `currentColor`, and `display: inline-flex`. This means
 they can easily be resized, recolored, and quickly aligned.

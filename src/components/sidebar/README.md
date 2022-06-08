@@ -159,7 +159,7 @@ margin/padding utility classes to the content of the sidebar.
 By default the sidebar will use a sliding transition when showing and hiding. You can disable the
 slide transition via the `no-slide` prop.
 
-**Note:** The BootstrapVue defined transition effect of this component is dependent on the
+**Примечание:** The BootstrapVue defined transition effect of this component is dependent on the
 `prefers-reduced-motion` media query. See the
 [reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
 additional details.

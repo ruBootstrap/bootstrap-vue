@@ -373,8 +373,8 @@ returns the v-model in the `'h23'` format. This value may differ from what is pr
 via the GUI (spin buttons) of the `<b-time>` component, dependent upon the
 [locale selected](#internationalization).
 
-**Note:** IE 11 _does not support_ resolving the `hourCycle` value of a locale, so we assume either
-`h12` or `h23` based on the resolved `hour12` value.
+**Примечание:** IE 11 _does not support_ resolving the `hourCycle` value of a locale, so we assume
+either `h12` or `h23` based on the resolved `hour12` value.
 
 ### Forcing 12 or 24 hour interface
 

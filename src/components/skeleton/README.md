@@ -262,7 +262,7 @@ you can pass them via the `icon-props` property.
 <!-- b-skeleton-helper-card-icon.vue -->
 ```
 
-**Note:** The `throb` animation does not work with `b-skeleton-icon`.
+**Примечание:** The `throb` animation does not work with `b-skeleton-icon`.
 
 ## Styling and customization
 
