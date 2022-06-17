@@ -25,7 +25,7 @@
         "events": [
           {
             "event": "submit",
-            "description": "Выдается при отправке формы",
+            "description": "Генерируется при отправке формы",
             "args": [
               {
                 "arg": "event",

@@ -24,7 +24,7 @@
         "events": [
           {
             "event": "bv::link::clicked",
-            "description": "Выдается на `$root` при нажатии на ссылку",
+            "description": "Генерируется на `$root` при нажатии на ссылку",
             "args": [
               {
                 "name": "event",
@@ -35,7 +35,7 @@
           },
           {
             "event": "click",
-            "description": "Выдается при нажатии на ссылку",
+            "description": "Генерируется при нажатии на ссылку",
             "args": [
               {
                 "name": "event",

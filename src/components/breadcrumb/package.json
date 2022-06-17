@@ -40,7 +40,7 @@
         "events": [
           {
             "event": "click",
-            "description": "Выдается при нажатии",
+            "description": "Генерируется при нажатии",
             "args": [
               {
                 "arg": "event",
