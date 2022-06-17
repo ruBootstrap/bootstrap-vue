@@ -1,19 +1,19 @@
-# Tooltip
+# Всплывающая подсказка
 
-> Easily add tooltips to elements or components via the `<b-tooltip>` component or
-> [`v-b-tooltip`](/docs/directives/tooltip) directive (preferred method).
+> Легко добавляйте всплывающие подсказки к элементам или компонентам с помощью компонента
+> `<b-tooltip>` или директивы [`v-b-tooltip`](/docs/directives/tooltip) (предпочтительный метод).
 
 ```html
 <div class="text-center my-3">
   <b-button v-b-tooltip.hover title="Tooltip directive content">
-    Hover Me
+    Наведите на меня
   </b-button>
 
   <b-button id="tooltip-target-1">
-    Hover Me
+    Наведите на меня
   </b-button>
   <b-tooltip target="tooltip-target-1" triggers="hover">
-    I am tooltip <b>component</b> content!
+    Я <b>компонентный</b> тултип контент!
   </b-tooltip>
 </div>
 
@@ -22,47 +22,52 @@
 
 ## Обзор
 
-Things to know when using tooltip component:
+Что нужно знать при использовании компонента всплывающей подсказки:
 
-- Tooltips rely on the 3rd party library [Popper.js](https://popper.js.org/) for positioning.
-- Tooltips require BootstrapVue's custom SCSS/CSS in order to function correctly, and for variants.
-- Triggering tooltips on hidden elements will not work.
-- Specify `container` as `null` (default, appends to `<body>`) to avoid rendering problems in more
-  complex components (like input groups, button groups, etc.). You can use container to optionally
-  specify a different element to append the rendered tooltip to.
-- Tooltips for `disabled` elements must be triggered on a wrapper element.
-- When triggered from hyperlinks that span multiple lines, tooltips will be centered. Use
-  white-space: nowrap; on your `<a>`s, `<b-link>`s and `<router-link>`s to avoid this behavior.
+- Тултипы полагаются на стороннюю библиотеку [Popper.js](https://popper.js.org/) для
+  позиционирования.
+- Тултипы требуют пользовательского SCSS/CSS BootstrapVue для правильной работы и для вариантов.
+- Укажите `container` как `null` (по умолчанию, добавляется к `<body>`), чтобы избежать проблем с
+  рендерингом в более сложных компонентах (таких как группы ввода, группы кнопок и т. д.). Вы можете
+  использовать `container`, чтобы дополнительно указать другой элемент, к которому нужно добавить
+  отображаемую всплывающую подсказку.
+- Запуск всплывающих окон на скрытых элементах не будет работать.
+- Тултипы для `disabled` элементов должны запускаться для элемента-оболочки.
+- При запуске из гиперссылок, которые охватывают несколько строк, всплывающие подсказки будут
+  центрированы. Используйте `white-space: nowrap;` для `<a>`, `<b-link>` и `<router-link>`, чтобы
+  избежать такого поведения.
 
-## Target
+## Цель
 
-The target is the _trigger_ element (or component) that will trigger the tooltip. The target is
-specified via the `target` prop, and can be any of the following:
+Целью является элемент _триггер_ (или компонент), который вызовет всплывающее сообщение. Цель
+указывается с помощью свойства `target` и может быть любой из следующих:
 
-- A string identifying the ID of the trigger element (or ID of the root element of a component)
-- A reference (ref) to an `HTMLElement` or an `SVGElement` (e.g. `this.$refs.refName`)
-- A reference (ref) to a component that has either an `HTMLElement` or `SVGElement` as its root
-  element (e.g. `this.$refs.refName`)
-- A function (callback) that returns a reference to an `HTMLElement` or `SVGElement`
+- Строка, идентифицирующая идентификатор триггерного элемента (или идентификатор корневого элемента
+  компонента)
+- Ссылка (ref) на `HTMLElement` или `SVGElement` (например, через `this.$refs.refName`)
+- Ссылка (ref) на компонент, который имеет либо `HTMLElement`, либо `SVGElement` в качестве
+  корневого элемента (например, через `this.$refs.refName`)
+- Функция (callback), которая возвращает ссылку на `HTMLElement` или `SVGElement`
 
-For more information on references, see the official
-[Vue documentation](https://vuejs.org/v2/api/#vm-refs).
+Для получения дополнительной информации о ссылках см. официальную
+[документацию Vue](https://vuejs.org/v2/api/#vm-refs).
 
 **Примечание:**
 
-The target element **must** exist in the document before `<b-tooltip>` is mounted. If the target
-element is not found during mount, the tooltip will never open. Always place your `<b-tooltip>`
-component lower in the DOM than your target element. This rule also applies if a callback function
-is used as target element, since that callback is called only once on mount.
+Целевой элемент **должен** существовать в документе, прежде чем `<b-tooltip>` будет смонтирован.
+Если целевой элемент не найден во время монтирования, всплывающая подсказка никогда не откроется.
+Всегда размещайте компонент `<b-tooltip>` ниже в DOM, чем целевой элемент. Это правило также
+применяется, если функция обратного вызова используется в качестве целевого элемента, поскольку этот
+обратный вызов вызывается только один раз при монтировании.
 
-`HTMLElement` refers to standard HTML elements such as `<div>`, `<button>`, etc, while `SVGElement`
-refers to `<svg>` or supported child elements of SVGs.
+`HTMLElement` относится к стандартным элементам HTML, таким как `<div>`, `<button>` и т. д., а
+`SVGElement` относится к `<svg>` или поддерживаемым дочерним элементам SVG.
 
-## Positioning
+## Позиционирование
 
-Twelve options are available for positioning: `top`, `topleft`, `topright`, `right`, `righttop`,
-`rightbottom`, `bottom`, `bottomleft`, `bottomright`, `left`, `lefttop`, and `leftbottom` aligned.
-The default position is `top`. Positioning is relative to the trigger element.
+Для позиционирования доступны двенадцать вариантов выравнивания: `top`, `topleft`, `topright`,
+`right`, `righttop`, `rightbottom`, `bottom`, `bottomleft`, `bottomright`, `left`, `lefttop` и
+`leftbottom`. Позиционирование относительно триггерного элемента.
 
 <div class="bd-example bd-example-tooltip-static">
   <div class="tooltip b-tooltip bs-tooltip-top bs-tooltip-top-docs" role="tooltip">
@@ -115,196 +120,204 @@ The default position is `top`. Positioning is relative to the trigger element.
   </div>
 </div>
 
-Refer to the [Tooltip directive](/docs/directives/tooltip/#positioning) documentation for live
-examples of positioning.
+Смотрите документацию [Директива Tooltip](/docs/directives/tooltip/#positioning) для живых примеров
+позиционирования.
 
-## Triggers
+## Триггеры
 
-Tooltips can be triggered (opened/closed) via any combination of `click`, `hover` and `focus`. The
-default trigger is `hover focus`. Or a trigger of `manual` can be specified, where the popover can
-only be opened or closed [programmatically](#programmatically-disabling-tooltip).
+Всплывающие подсказки могут запускаться (открываться/закрываться) с помощью любой комбинации
+`click`, `hover` и `focus`. Триггер по умолчанию — `hover focus`. Или можно указать триггер
+`manual`, где всплывающее окно можно открыть или закрыть только
+[программно](#programmatically-disabling-tooltip).
 
-If a tooltip has more than one trigger, then all triggers must be cleared before the tooltip will
-close. I.e. if a tooltip has the trigger `focus click`, and it was opened by `focus`, and the user
-then clicks the trigger element, they must click it again **and** move focus to close the tooltip.
+Если всплывающая подсказка имеет более одного триггера, все триггеры должны быть очищены, прежде чем
+всплывающая подсказка закроется. Т.е. если всплывающая подсказка имеет триггер `focus click` и она
+была открыта `focus`, а затем пользователь щелкает элемент триггера, он должен щелкнуть его еще раз
+**и** переместить фокус, чтобы закрыть всплывающую подсказку.
 
-### Caveats with `focus` trigger on `<button>` elements
+### Предостережения с триггером `focus` на элементах `<button>`
 
-For proper cross-browser and cross-platform behavior when using only the `focus` trigger, you must
-use an element that renders the `<a>` tag, not the `<button>` tag, and you also must include a
-`tabindex="0"` attribute.
+Для правильного кросс-браузерного и кросс-платформенного поведения при использовании только триггера
+`focus` вы должны использовать элемент, который отображает тег `<a>`, а не тег `<button>`, и вы
+также должны включить атрибут `tabindex="0"`.
 
-The following will generate an `<a>` that looks like a button:
+Следующее сгенерирует `<a>`, который выглядит как кнопка:
 
 ```html
 <b-button
   href="#"
   tabindex="0"
   v-b-tooltip.focus
-  title="Tooltip title"
+  title="Заголовок всплывающей подсказки"
 >
-  Link button with tooltip directive
+  Кнопка ссылки с директивой тултипа
 </b-button>
 
 <b-button id="link-button" href="#" tabindex="0">
-  Link button with tooltip component
+  Кнопка ссылки с компонентом тултипа
 </b-button>
-<b-tooltip target="link-button" title="Tooltip title" triggers="focus">
-  Tooltip title
+<b-tooltip target="link-button" title="Заголовок всплывающей подсказки" triggers="focus">
+  Заголовок всплывающей подсказки
 </b-tooltip>
 ```
 
-### Making tooltips work for keyboard and assistive technology users
+### Заставить всплывающие подсказки работать с клавиатурой и пользователями вспомогательных технологий
 
-You should only add tooltips to HTML elements that are traditionally keyboard-focusable and
-interactive (such as links, buttons, or form controls). Although arbitrary HTML elements (such as
-`<span>`s) can be made focusable by adding the `tabindex="0"` attribute, this will add potentially
-annoying and confusing tab stops on non-interactive elements for keyboard users. In addition, most
-assistive technologies currently do not announce the tooltip in this situation.
+Вы должны добавлять всплывающие подсказки только к элементам HTML, которые традиционно активны с
+помощью клавиатуры и являются интерактивными (например, ссылки, кнопки или элементы управления
+формы). Хотя произвольные элементы HTML (такие как `<span>`) можно сделать фокусируемыми, добавив
+атрибут `tabindex="0"`, это добавит потенциально раздражающие и запутанные позиции табуляции на
+неинтерактивных элементах для пользователей клавиатуры. Кроме того, большинство вспомогательных
+технологий в настоящее время не объявляют всплывающую подсказку в этой ситуации.
 
-Additionally, do not rely solely on `hover` as the trigger for your tooltip, as this will make your
-tooltips _impossible to trigger for keyboard-only users_.
+Кроме того, не полагайтесь исключительно на `hover` в качестве триггера для всплывающей подсказки,
+так как это сделает ваши всплывающие подсказки _невозможными для срабатывания для пользователей,
+использующих только клавиатуру_.
 
-### Disabled elements
+### Отключенные элементы
 
-Elements with the `disabled` attribute aren’t interactive, meaning users cannot focus, hover, or
-click them to trigger a tooltip (or popover). As a workaround, you’ll want to trigger the tooltip
-from a wrapper `<div>` or `<span>`, ideally made keyboard-focusable using `tabindex="0"`, and
-override the `pointer-events` on the disabled element.
+Элементы с атрибутом `disabled` не являются интерактивными, то есть пользователи не могут
+сфокусироваться, навести курсор или щелкнуть их, чтобы вызвать всплывающую подсказку (или
+всплывающее окно). В качестве обходного пути вы захотите вызвать всплывающую подсказку из оболочки
+`<div>` или `<span>`, в идеале сфокусируемой на клавиатуре с помощью `tabindex="0"` и переопределить
+`pointer-events` на отключенный элемент.
 
 ```html
 <div>
   <span id="disabled-wrapper" class="d-inline-block" tabindex="0">
-    <b-button variant="primary" style="pointer-events: none;" disabled>Disabled button</b-button>
+    <b-button variant="primary" style="pointer-events: none;" disabled>Отключенная кнопка</b-button>
   </span>
-  <b-tooltip target="disabled-wrapper">Disabled tooltip</b-tooltip>
+  <b-tooltip target="disabled-wrapper">Отключенная подсказка</b-tooltip>
 </div>
 
 <!-- disabled-trigger-element.vue -->
 ```
 
-## `<b-tooltip>` component usage
+## Использование компонента `<b-tooltip>`
 
 ```html
 <b-container fluid>
   <b-row>
     <b-col md="4" class="py-4">
-      <b-button id="button-1" variant="outline-success">Live chat</b-button>
+      <b-button id="button-1" variant="outline-success">Живой чат</b-button>
     </b-col>
     <b-col md="4" class="py-4">
-      <b-button id="button-2" variant="outline-success">Html chat</b-button>
+      <b-button id="button-2" variant="outline-success">Html-чат</b-button>
     </b-col>
     <b-col md="4" class="py-4">
-      <b-button ref="button-3" variant="outline-success">Alternative chat</b-button>
+      <b-button ref="button-3" variant="outline-success">Альтернативный чат</b-button>
     </b-col>
   </b-row>
 
   <!-- Tooltip title specified via prop title -->
-  <b-tooltip target="button-1" title="Online!"></b-tooltip>
+  <b-tooltip target="button-1" title="Онлайн!"></b-tooltip>
 
   <!-- HTML title specified via default slot -->
   <b-tooltip target="button-2" placement="bottom">
-    Hello <strong>World!</strong>
+    Привет <strong>Мир!</strong>
   </b-tooltip>
 
   <!-- Tooltip for an element identified by ref -->
-  <b-tooltip :target="() => $refs['button-3']" title="Alternative!"></b-tooltip>
+  <b-tooltip :target="() => $refs['button-3']" title="Альтернатива!"></b-tooltip>
 </b-container>
 
 <!-- b-tooltip-component.vue -->
 ```
 
-### Component options
+### Варианты компонентов
 
-| Prop                 | Default          | Description                                                                                                                                                                                                | Supported values                                                                                                                                 |
-| -------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `target`             | `null`           | Element String ID, or a reference to an element or component, or a function returning either of them, that you want to trigger the tooltip **Required**                                                    | Any valid, in-document unique element ID, element reference or component reference or a function returning any such ID / reference               |
-| `title`              | `null`           | Tooltip content (text only, no HTML). if HTML is required, place it in the default slot                                                                                                                    | Plain text                                                                                                                                       |
-| `placement`          | `'top'`          | Tooltip position, relative to the trigger element                                                                                                                                                          | `top`, `bottom`, `left`, `right`, `auto`, `topleft`, `topright`, `bottomleft`, `bottomright`, `lefttop`, `leftbottom`, `righttop`, `rightbottom` |
-| `fallback-placement` | `'flip'`         | Auto-flip placement behaviour of the tooltip, relative to the trigger element                                                                                                                              | `flip`, `clockwise`, `counterclockwise`, or an array of valid placements evaluated from left to right                                            |
-| `triggers`           | `'hover focus'`  | Space separated list of event(s), which will trigger open/close of tooltip                                                                                                                                 | `hover`, `focus`, `click`. Note `blur` is a special use case to close tooltip on next click, usually used in conjunction with `click`.           |
-| `no-fade`            | `false`          | Disable fade animation when set to `true`                                                                                                                                                                  | `true` or `false`                                                                                                                                |
-| `delay`              | `50`             | Delay showing and hiding of tooltip by specified number of milliseconds. Can also be specified as an object in the form of `{ show: 100, hide: 400 }` allowing different show and hide delays              | `0` and up, integers only.                                                                                                                       |
-| `offset`             | `0`              | Shift the center of the tooltip by specified number of pixels                                                                                                                                              | Any negative or positive integer                                                                                                                 |
-| `container`          | `null`           | Element string ID to append rendered tooltip into. If `null` or element not found, tooltip is appended to `<body>` (default)                                                                               | Any valid in-document unique element ID.                                                                                                         |
-| `boundary`           | `'scrollParent'` | The container that the tooltip will be constrained visually. The default should suffice in most cases, but you may need to change this if your target element is in a small container with overflow scroll | `'scrollParent'` (default), `'viewport'`, `'window'`, or a reference to an HTML element.                                                         |
-| `boundary-padding`   | `5`              | Amount of pixel used to define a minimum distance between the boundaries and the tooltip. This makes sure the tooltip always has a little padding between the edges of its container                       | Any positive number                                                                                                                              |
-| `noninteractive`     | `false`          | Whether the tooltip should not be user-interactive                                                                                                                                                         | `true` or `false`                                                                                                                                |
-| `variant`            | `null`           | Contextual color variant for the tooltip                                                                                                                                                                   | Any contextual theme color variant name                                                                                                          |
-| `custom-class`       | `null`           | A custom classname to apply to the tooltip outer wrapper element                                                                                                                                           | A string                                                                                                                                         |
-| `id`                 | `null`           | An ID to use on the tooltip root element. If none is provided, one will automatically be generated. If you do provide an ID, it _must_ be guaranteed to be unique on the rendered page                     | A valid unique element ID string                                                                                                                 |
+| Свойство             | По умолчанию     | Описание                                                                                                                                                                                                                                                                | Поддерживаемые значения                                                                                                                                                                              |
+| -------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `target`             | `null`           | Идентификатор строки элемента, или ссылка на элемент или компонент, или функция, возвращающая любой из них, для которых вы хотите вызвать всплывающую подсказку **Обязательно**                                                                                         | Любой допустимый уникальный идентификатор элемента в документе, ссылка на элемент или компонент или функция, возвращающая любой такой идентификатор/ссылку                                           |
+| `title`              | `null`           | Содержимое всплывающей подсказки (только текст, без HTML). если требуется HTML, поместите его в слот по умолчанию                                                                                                                                                       | Обычный текст                                                                                                                                                                                        |
+| `placement`          | `'top'`          | Положение всплывающей подсказки относительно триггерного элемента                                                                                                                                                                                                       | `top`, `bottom`, `left`, `right`, `auto`, `topleft`, `topright`, `bottomleft`, `bottomright`, `lefttop`, `leftbottom`, `righttop`, `rightbottom`                                                     |
+| `fallback-placement` | `'flip'`         | Автоматическое переворачивание поведения всплывающей подсказки относительно триггерного элемента                                                                                                                                                                        | `flip`, `clockwise`, `counterclockwise` или массив допустимых мест размещения, оцениваемых слева направо                                                                                             |
+| `triggers`           | `'hover focus'`  | Разделенный пробелами список событий, которые вызовут открытие/закрытие всплывающей подсказки                                                                                                                                                                           | `hover`, `focus`, `click`. Обратите внимание, что `blur` — это специальный вариант использования для закрытия всплывающей подсказки при следующем щелчке, обычно используемый в сочетании с `click`. |
+| `no-fade`            | `false`          | Отключить анимацию затухания, если установлено значение `true`                                                                                                                                                                                                          | `true` или `false`                                                                                                                                                                                   |
+| `delay`              | `50`             | Задержка отображения и скрытия всплывающей подсказки на указанное количество миллисекунд. Также может быть указан как объект в форме `{ show: 100, hide: 400 }`, что позволяет отображать и скрывать различные задержки.                                                | `0` и выше, только целые числа.                                                                                                                                                                      |
+| `offset`             | `0`              | Сместить центр всплывающей подсказки на указанное количество пикселей                                                                                                                                                                                                   | Любое отрицательное или положительное целое число                                                                                                                                                    |
+| `container`          | `null`           | Идентификатор строки элемента, к которому добавляется визуализированная всплывающая подсказка. Если `null` или элемент не найден, всплывающая подсказка добавляется к `<body>` (по умолчанию)                                                                           | Любой действительный уникальный идентификатор элемента в документе.                                                                                                                                  |
+| `boundary`           | `'scrollParent'` | Контейнер, в котором всплывающая подсказка будет визуально ограничена. В большинстве случаев должно быть достаточно значения по умолчанию, но вам может потребоваться изменить его, если ваш целевой элемент находится в небольшом контейнере с прокруткой переполнения | `'scrollParent'` (по умолчанию), `'viewport'`, `'window'` или ссылка на элемент HTML.                                                                                                                |
+| `boundary-padding`   | `5`              | Количество пикселей, используемое для определения минимального расстояния между границами и всплывающей подсказкой. Это гарантирует, что всплывающая подсказка всегда имеет небольшой отступ между краями своего контейнера                                             | Любое положительное число                                                                                                                                                                            |
+| `noninteractive`     | `false`          | Должна ли всплывающая подсказка быть интерактивной с пользователем                                                                                                                                                                                                      | `true` или `false`                                                                                                                                                                                   |
+| `variant`            | `null`           | Контекстный вариант цвета всплывающей подсказки                                                                                                                                                                                                                         | Название любого контекстного варианта цвета темы                                                                                                                                                     |
+| `custom-class`       | `null`           | Пользовательское имя класса для применения к элементу внешней оболочки всплывающей подсказки                                                                                                                                                                            | Строка                                                                                                                                                                                               |
+| `id`                 | `null`           | Идентификатор для использования в корневом элементе всплывающей подсказки. Если ничего не указано, оно будет сгенерировано автоматически. Если вы предоставляете идентификатор, он _должен_ быть уникальным на отображаемой странице                                    | Действительная строка уникального идентификатора элемента                                                                                                                                            |
 
-### Noninteractive tooltips
+### Неинтерактивные всплывающие подсказки
 
-BootstrapVue's tooltips are user-interactive by default for accessibility reasons. To restore
-Bootstraps default behavior apply the `noninteractive` prop:
+Подсказки BootstrapVue по умолчанию интерактивны для пользователя из соображений доступности. Чтобы
+восстановить поведение Bootstrap по умолчанию, примените свойство `noninteractive`:
 
 ```html
 <div class="text-center">
   <div>
-    <b-button id="tooltip-button-interactive">My tooltip is interactive</b-button>
-    <b-tooltip target="tooltip-button-interactive">I will stay open when hovered</b-tooltip>
+    <b-button id="tooltip-button-interactive">Моя подсказка интерактивна</b-button>
+    <b-tooltip target="tooltip-button-interactive">Я буду оставаться открытым при наведении</b-tooltip>
   </div>
 
   <div class="mt-3">
-    <b-button id="tooltip-button-not-interactive">Mine is not...</b-button>
-    <b-tooltip target="tooltip-button-not-interactive" noninteractive>Catch me if you can!</b-tooltip>
+    <b-button id="tooltip-button-not-interactive">Мой не...</b-button>
+    <b-tooltip target="tooltip-button-not-interactive" noninteractive>Поймай меня, если сможешь!</b-tooltip>
   </div>
 </div>
 
 <!-- b-tooltip-interactive.vue -->
 ```
 
-### Variants and custom class
+### Варианты и пользовательский класс
 
-BootstrapVue's tooltips support contextual color variants via our custom CSS, via the `variant`
-prop:
+Всплывающие окна BootstrapVue поддерживают контекстные цветовые варианты через наш собственный CSS,
+через свойство `variant`:
 
 ```html
 <div class="text-center">
-  <b-button id="tooltip-button-variant">Button</b-button>
-  <b-tooltip target="tooltip-button-variant" variant="danger">Danger variant tooltip</b-tooltip>
+  <b-button id="tooltip-button-variant">Кнопка</b-button>
+  <b-tooltip target="tooltip-button-variant" variant="danger">Подсказка об опасности</b-tooltip>
 </div>
 
 <!-- b-tooltip-variant.vue -->
 ```
 
-Bootstrap default theme variants are: `danger`, `warning`, `success`, `primary`, `secondary`,
-`info`, `light`, and `dark`. You can change or add additional variants via Bootstrap
-[SCSS variables](/docs/reference/theming)
+Варианты темы Bootstrap по умолчанию: `danger`, `warning`, `success`, `primary`, `secondary`,
+`info`, `light` и `dark`. Вы можете изменить или добавить дополнительные варианты через Bootstrap
+[переменные SCSS](/docs/reference/theming)
 
-A custom class can be applied to the tooltip outer wrapper `<div>` by using the `custom-class` prop:
+Пользовательский класс можно применить к внешней оболочке всплывающей подсказки `<div>` с помощью
+свойства `custom-class`:
 
 ```html
 <div class="text-center">
-  <b-button id="my-button">Button</b-button>
-  <b-tooltip target="my-button" custom-class="my-tooltip-class">Tooltip Title</b-tooltip>
+  <b-button id="my-button">Кнопка</b-button>
+  <b-tooltip target="my-button" custom-class="my-tooltip-class">Заголовок всплывающей подсказки</b-tooltip>
 </div>
 ```
 
-`variant` and `custom-class` are reactive and can be changed while the tooltip is open.
+`variant` и `custom-class` являются реактивными и могут быть изменены, когда всплывающая подсказка
+открыта.
 
-Refer to the [tooltip directive](/docs/directives/tooltip) docs on applying variants and custom
-class to the directive version.
+Смотрите документацию [директива всплывающей подсказки](/docs/directives/tooltip) о применении
+вариантов и пользовательского класса к версии директивы.
 
-### Programmatically show and hide tooltip
+### Программно показать и скрыть всплывающую подсказку
 
-You can manually control the visibility of a tooltip via the syncable Boolean `show` prop. Setting
-it to `true` will show the tooltip, while setting it to `false` will hide the tooltip.
+Вы можете вручную управлять видимостью всплывающей подсказки с помощью синхронизируемой логической
+переменной `show`. Установка значения `true` покажет всплывающую подсказку, а установка значения
+`false` скроет всплывающую подсказку.
 
 ```html
 <template>
   <div class="text-center">
     <div>
-      <b-button id="tooltip-button-1" variant="primary">I have a tooltip</b-button>
+      <b-button id="tooltip-button-1" variant="primary">У меня есть подсказка</b-button>
     </div>
 
     <div class="mt-3">
-      <b-button @click="show = !show">Toggle Tooltip</b-button>
+      <b-button @click="show = !show">Переключить подсказку</b-button>
     </div>
 
     <b-tooltip :show.sync="show" target="tooltip-button-1" placement="top">
-      Hello <strong>World!</strong>
+      Привет <strong>Мир!</strong>
     </b-tooltip>
   </div>
 </template>
@@ -319,34 +332,35 @@ it to `true` will show the tooltip, while setting it to `false` will hide the to
 <!-- b-tooltip-show-sync.vue -->
 ```
 
-To make the tooltip shown on initial render, simply add the `show` prop on `<b-tooltip>`:
+Чтобы всплывающая подсказка отображалась при начальном рендеринге, просто добавьте параметр `show` в
+`<b-tooltip>`:
 
 ```html
 <div class="text-center">
-  <b-button id="tooltip-button-2" variant="primary">Button</b-button>
-  <b-tooltip show target="tooltip-button-2">I start open</b-tooltip>
+  <b-button id="tooltip-button-2" variant="primary">Кнопка</b-button>
+  <b-tooltip show target="tooltip-button-2">Я начинаю открывать</b-tooltip>
 </div>
 
 <!-- b-tooltip-show-open.vue -->
 ```
 
-Programmatic control can also be affected by submitting `'open'` and `'close'` events to the tooltip
-by reference.
+На программное управление также можно воздействовать, отправляя события `'open'` и `'close'` во
+всплывающую подсказку по ссылке.
 
 ```html
 <template>
   <div class="d-flex flex-column text-md-center">
     <div class="p-2">
-      <b-button id="tooltip-button-show-event" variant="primary">I have a tooltip</b-button>
+      <b-button id="tooltip-button-show-event" variant="primary">У меня есть подсказка</b-button>
     </div>
 
     <div class="p-2">
-      <b-button class="px-1" @click="onOpen">Open</b-button>
-      <b-button class="px-1" @click="onClose">Close</b-button>
+      <b-button class="px-1" @click="onOpen">Открыть</b-button>
+      <b-button class="px-1" @click="onClose">Закрыть</b-button>
     </div>
 
     <b-tooltip ref="tooltip" target="tooltip-button-show-event">
-      Hello <strong>World!</strong>
+      Привет <strong>Мир!</strong>
     </b-tooltip>
   </div>
 </template>
@@ -367,34 +381,36 @@ by reference.
 <!-- b-tooltip-show-ref-event.vue -->
 ```
 
-You can also use `$root` events to trigger the showing and hiding of tooltip(s). See the **Hiding
-and showing tooltips via \$root events** section below for details.
+Вы также можете использовать события `$root`, чтобы активировать отображение и скрытие всплывающих
+подсказок. Дополнительные сведения смотрите в разделе **Скрытие и отображение всплывающих подсказок
+с помощью \$root событий** ниже.
 
-### Programmatically disabling tooltip
+### Программное отключение всплывающей подсказки
 
-You can disable tooltip via the syncable Boolean prop `disabled` (default is `false`) Setting it to
-`true` will disable the tooltip. If the tooltip is currently visible when disabled is set to
-`false`, the tooltip will remain visible until it is enabled or programmatically closed. If the
-tooltip is disabled/enabled via \$root events (see below), your `disabled` value will be updated as
-long as you have provided the `.sync` prop modifier.
+Вы можете отключить всплывающую подсказку с помощью синхронизируемой логического свойства `disabled`
+(по умолчанию `false`) установка значения `true` отключит всплывающую подсказку. Если всплывающая
+подсказка в настоящее время видна, когда для параметра `disabled` установлено значение `false`,
+всплывающая подсказка будет оставаться видимой до тех пор, пока она не будет включена или программно
+закрыта. Если всплывающая подсказка отключена/включена с помощью событий \$root (смотрите ниже),
+ваше значение `disabled` будет обновлено, если вы указали модификатор свойства `.sync`.
 
 ```html
 <template>
   <div class="d-flex flex-column text-md-center">
     <div class="p-2">
-      <b-button id="tooltip-button-disable" variant="primary">I have a tooltip</b-button>
+      <b-button id="tooltip-button-disable" variant="primary">У меня есть подсказка</b-button>
     </div>
 
     <div class="p-2">
       <b-button @click="disabled = !disabled">
-        {{ disabled ? 'Enable' : 'Disable' }} Tooltip by prop
+        {{ disabled ? 'Enable' : 'Disable' }} Подсказка по свойству
       </b-button>
       <b-button @click="disableByRef">
-        {{ disabled ? 'Enable' : 'Disable' }} Tooltip by $ref event
+        {{ disabled ? 'Enable' : 'Disable' }} Подсказка по событию $ref
       </b-button>
 
       <b-tooltip :disabled.sync="disabled" ref="tooltip" target="tooltip-button-disable">
-        Hello <strong>World!</strong>
+        Привет <strong>Мир!</strong>
       </b-tooltip>
     </div>
   </div>
@@ -422,35 +438,37 @@ long as you have provided the `.sync` prop modifier.
 <!-- b-tooltip-disable.vue -->
 ```
 
-**Примечание:** _In the above example, since we are using the default tooltip triggers of
-`focus hover`, the tooltip will close before it is disabled due to losing focus (and hover) to the
-toggle button._
+**Примечание:** _В приведенном выше примере, поскольку мы используем триггеры всплывающей подсказки
+по умолчанию `focus hover`, всплывающая подсказка закроется до того, как она будет отключена из-за
+потери фокуса (и наведения) на кнопку-переключатель._
 
-You can also emit `$root` events to trigger disabling and enabling of tooltip(s). See the
-**Disabling and enabling tooltips via \$root events** section below for details.
+Вы также можете генерировать события `$root`, чтобы активировать отключение и включение всплывающих
+подсказок. Дополнительные сведения смотрите в разделе **Отключение и включение всплывающих подсказок
+с помощью \$root событий** ниже.
 
-You can also emit `$root` events to trigger disabling and enabling of popover(s). See the
-**Disabling and enabling tooltips via \$root events** section below for details.
+Вы также можете генерировать события `$root`, чтобы активировать отключение и включение всплывающих
+окон. Дополнительные сведения смотрите в разделе **Отключение и включение всплывающих подсказок с
+помощью \$root событий** ниже.
 
-## `v-b-tooltip` directive usage
+## Использование директивы `v-b-tooltip`
 
-The `v-b-tooltip` directive makes adding tooltips even easier, without additional placeholder
-markup:
+Директива `v-b-tooltip` делает добавление всплывающих подсказок еще проще без дополнительной
+разметки-заполнителя:
 
 ```html
 <b-container fluid>
   <b-row>
     <b-col md="6" class="py-4">
-      <b-button v-b-tooltip title="Online!" variant="outline-success">Live chat</b-button>
+      <b-button v-b-tooltip title="Онлайн!" variant="outline-success">Живой чат</b-button>
     </b-col>
 
     <b-col md="6" class="py-4">
       <b-button
         v-b-tooltip.html
-        title="Hello <strong>World!</strong>"
+        title="Привет <strong>Мир!</strong>"
         variant="outline-success"
       >
-        Html chat
+        Html-чат
       </b-button>
     </b-col>
   </b-row>
@@ -459,80 +477,83 @@ markup:
 <!-- b-tooltip-directive.vue -->
 ```
 
-Refer to the [`v-b-tooltip` documentation](/docs/directives/tooltip) for more information and
-features of the directive format.
+Обратитесь к [документации `v-b-tooltip`](/docs/directives/tooltip) для получения дополнительной
+информации и функций формата директивы.
 
-## 'Global' \$root instance events
+## 'Global' события экземпляра \$root
 
-Using `$root` instance it is possible to emit and listen events somewhere out of a component, where
-`<b-collapse>` is used. In short, `$root` behaves like a global event emitters and listener. Details
-about `$root` instance can be found in
-[the official Vue docs](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-the-Root-Instance).
+Используя экземпляр `$root`, можно генерировать и прослушивать события где-то вне компонента, где
+используется `<b-collapse>`. Короче говоря, `$root` ведет себя как глобальный источник и слушатель
+событий. Подробности об экземпляре `$root` можно найти в
+[официальной документации Vue](https://vuejs.org/v2/guide/components-edge-cases.html#Accessing-the-Root-Instance).
 
-### Hiding and showing tooltips via \$root events
+### Скрытие и отображение всплывающих подсказок с помощью событий \$root
 
-You can close (hide) **all open tooltips** by emitting the `bv::hide::tooltip` event on \$root:
+Вы можете закрыть (скрыть) **все открытые всплывающие подсказки**, создав событие
+`bv::hide::tooltip` на \$root:
 
 ```js
 this.$root.$emit('bv::hide::tooltip')
 ```
 
-To close a **specific tooltip**, pass the trigger element's `id`, or the `id` of the tooltip (if one
-was provided via the `id` prop), as the argument:
+Чтобы закрыть **конкретную всплывающую подсказку**, передайте `id` элемента триггера или `id`
+всплывающей подсказки (если он был предоставлен через свойство `id`) в качестве аргумента:
 
 ```js
 this.$root.$emit('bv::hide::tooltip', 'my-trigger-button-id')
 ```
 
-To open a **specific tooltip**, pass the trigger element's `id`, or the `id` of the tooltip (if one
-was provided via the `id` prop), as the argument when emitting the `bv::show::tooltip` \$root event:
+Чтобы открыть **конкретную всплывающую подсказку**, передайте `id` элемента триггера или `id`
+всплывающей подсказки (если он был предоставлен через свойство `id`) в качестве аргумента при
+запуске \$root события `bv::show::tooltip`:
 
 ```js
 this.$root.$emit('bv::show::tooltip', 'my-trigger-button-id')
 ```
 
-To open all tooltips simultaneously, omit the `id` argument when emitting the `bv::show::tooltip`
-event.
+Чтобы открыть все всплывающие подсказки одновременно, опустите аргумент `id` при генерации события
+`bv::show::tooltip`.
 
-These events work for both the component **and** directive versions of tooltip.
+Эти события работают как для версии компонента, **так и для** директивы всплывающей подсказки.
 
-**Примечание:** _the **trigger element** must exist in the DOM and be in a visible state in order
-for the tooltip to show._
+**Примечание:** _**Триггерный элемент** должен существовать в DOM и быть видимым, чтобы всплывающая
+подсказка отображалась._
 
-### Disabling and enabling tooltips via \$root events
+### Отключение и включение всплывающих подсказок с помощью событий \$root
 
-You can disable **all open tooltips** by emitting the `bv::disable::tooltip` event on \$root:
+Вы можете отключить **все открытые всплывающие подсказки**, создав событие `bv::disable::tooltip` в
+\$root:
 
 ```js
 this.$root.$emit('bv::disable::tooltip')
 ```
 
-To disable a **specific tooltip**, pass the trigger element's `id`, or the `id` of the tooltip (if
-one was provided via the `id` prop), as the argument:
+Чтобы отключить **конкретную всплывающую подсказку**, передайте `id` элемента триггера или `id`
+всплывающей подсказки (если он был предоставлен через свойство `id`) в качестве аргумента:
 
 ```js
 this.$root.$emit('bv::disable::tooltip', 'my-trigger-button-id')
 ```
 
-To enable a **specific tooltip**, pass the trigger element's `id`, or the `id` of the tooltip (if
-one was provided via the `id` prop), as the argument when emitting the `bv::enable::tooltip` \$root
-event:
+Чтобы включить **конкретную всплывающую подсказку**, передайте `id` элемента триггера или `id`
+всплывающей подсказки (если он был предоставлен через свойство `id`) в качестве аргумента при
+генерировании \$root события `bv::enable::tooltip` :
 
 ```js
 this.$root.$emit('bv::enable::tooltip', 'my-trigger-button-id')
 ```
 
-To enable all tooltips simultaneously, omit the `id` argument when emitting the
-`bv::enable::tooltip` event.
+Чтобы включить все всплывающие подсказки одновременно, опустите аргумент `id` при генерации события
+`bv::enable::tooltip`.
 
-These events work for both the component **and** directive versions of tooltip.
+Эти события работают как для версии компонента, **так и для** директивы всплывающей подсказки.
 
-**Примечание:** _The **trigger element** must exist in the DOM in order for the tooltip to be
-enabled or disabled._
+**Примечание:** _Элемент **триггера** должен существовать в DOM, чтобы всплывающая подсказка была
+включена или отключена._
 
-### Listening to tooltip changes via \$root events
+### Прослушивание изменений всплывающей подсказки с помощью событий \$root
 
-To listen to any tooltip opening, use:
+Чтобы прослушать любое открытие всплывающей подсказки, используйте:
 
 ```js
 export default {
@@ -544,17 +565,16 @@ export default {
 }
 ```
 
-Refer to the [Events](/docs/components/tooltip#component-reference) section of documentation for the
-full list of events.
+Полный список событий смотрите в документации вразделе
+[События](/docs/components/tooltip#component-reference).
 
 ## Доступность
 
-The trigger element, when the tooltip is showing, will have the attribute `aria-describedby` set
-with the auto generated ID of the tooltip.
+Элемент триггера, когда отображается всплывающая подсказка, будет иметь атрибут `aria-describedby`,
+установленный с автоматически сгенерированным идентификатором всплывающей подсказки.
 
-**Примечание:** The animation effect of this component is dependent on the `prefers-reduced-motion`
-media query. See the
-[reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
-additional details.
+**Примечание:** Эффект анимации этого компонента зависит от медиа-запроса `prefers-reduced-motion`.
+Дополнительную информацию смотрите в
+[разделе с уменьшенным движением в нашей документации по специальным возможностям](/docs/reference/accessibility).
 
 <!-- Component reference added automatically from component package.json -->
