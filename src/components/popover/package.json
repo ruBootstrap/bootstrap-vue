@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Popover",
-    "description": "The Popover feature provides a tooltip-like behavior, can be easily applied to any interactive element via the <b-popover> component or v-b-popover directive.",
+    "description": "Функция Popover обеспечивает поведение всплывающей подсказки, ее можно легко применить к любому интерактивному элементу с помощью компонента <b-popover> или директивы v-b-popover.",
     "plugins": [
       "VBPopoverPlugin"
     ],
@@ -13,191 +13,191 @@
         "props": [
           {
             "prop": "boundary",
-            "description": "The boundary constraint of the popover: 'scrollParent', 'window', 'viewport', or a reference to an HTMLElement or component"
+            "description": "Граничное ограничение всплывающего окна: 'scrollParent', 'window', 'viewport' или ссылка на HTMLElement или компонент."
           },
           {
             "prop": "boundaryPadding",
-            "description": "The popover will try and stay away from the edge of the boundary element by the number of pixels specified"
+            "description": "Всплывающее окно попытается держаться подальше от края граничного элемента на указанное количество пикселей"
           },
           {
             "prop": "container",
-            "description": "The container element to append the rendered popover when visible. Default's to the body element"
+            "description": "Элемент контейнера для добавления визуализированного всплывающего окна, когда оно видимо. По умолчанию для элемента body"
           },
           {
             "prop": "content",
-            "description": "Text to place in the body of the popover"
+            "description": "Текст для размещения в теле всплывающего окна"
           },
           {
             "prop": "customClass",
-            "description": "CSS class (or classes) to apply to the popover's root element"
+            "description": "Класс (или классы) CSS для применения к корневому элементу всплывающего окна"
           },
           {
             "prop": "delay",
-            "description": "Value for the show and hide delay. Applies to both show and hide when specified as a number or string. Use object form to set show and hide delays individually"
+            "description": "Значение для отображения и скрытия задержки. Применяется как для отображения, так и для скрытия, если указано как число или строка. Используйте форму объекта, чтобы настроить отображение и скрытие задержек по отдельности"
           },
           {
             "prop": "fallbackPlacement",
-            "description": "Placement to use when the popover would be out of boundaries. Refer to the docs for more details"
+            "description": "Место для использования, когда всплывающее окно выходит за границы. Обратитесь к документации для более подробной информации"
           },
           {
             "prop": "offset",
-            "description": "Offset (in pixels) for the arrow center compared to the trigger target element"
+            "description": "Смещение (в пикселях) центра стрелки по сравнению с целевым элементом триггера"
           },
           {
             "prop": "placement",
-            "description": "Placement of the popover: One of 'top', 'bottom', 'right', 'left', 'topleft', 'topright', 'bottomleft', 'bottomright', 'lefttop', 'leftbottom', 'righttop', 'rightbottom'"
+            "description": "Размещение всплывающего окна: Одно из 'top', 'bottom', 'right', 'left', 'topleft', 'topright', 'bottomleft', 'bottomright', 'lefttop', 'leftbottom', 'righttop', 'rightbottom'"
           },
           {
             "prop": "show",
-            "description": "When set will show the popover"
+            "description": "Когда установлено, будет отображаться всплывающее окно"
           },
           {
             "prop": "target",
-            "description": "Element string ID, or a reference to an element or component, that you want to trigger the popover"
+            "description": "Идентификатор строки элемента или ссылка на элемент или компонент, для которого вы хотите вызвать всплывающее окно"
           },
           {
             "prop": "title",
-            "description": "Text to place in the popovers title"
+            "description": "Текст для размещения в заголовке всплывающего окна"
           },
           {
             "prop": "triggers",
-            "description": "Specify which triggers will show the popover. Supported values are 'click', 'hover', 'focus'. Refer to the docs for special triggers 'blur' and 'manual'"
+            "description": "Укажите, какие триггеры будут отображать всплывающее окно. Поддерживаемые значения: 'click', 'hover', 'focus'. Обратитесь к документации для специальных триггеров 'blur' и 'manual'"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из цветовых вариантов темы Bootstrap"
           }
         ],
         "events": [
           {
             "event": "bv::popover::disabled",
-            "description": "Emitted on $root when popover becomes disabled",
+            "description": "Генерируется в $root, когда всплывающее окно становится отключенным",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "bv::popover::enabled",
-            "description": "Emitted on $root when popover becomes enabled",
+            "description": "Генерируется в $root, когда всплывающее окно становится включенным",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "bv::popover::hidden",
-            "description": "Emitted on $root when popover is hidden",
+            "description": "Генерируется в $root, когда всплывающее окно скрыто",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "bv::popover::hide",
-            "description": "Emitted on $root when popover is about to be hidden. Cancelable. Call bvEvent.preventDefault() to cancel hide",
+            "description": "Генерируется в $root, когда всплывающее окно должно быть скрыто. Отменяемый. Вызовите bvEvent.preventDefault(), чтобы отменить скрытие",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "bv::popover::show",
-            "description": "Emitted on $root when popover is about to be shown. Cancelable. Call bvEvent.preventDefault() to cancel show",
+            "description": "Генерируется в $root, когда всплывающее окно вот-вот будет показано. Отменяемый. Вызовите bvEvent.preventDefault(), чтобы отменить показ",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "bv::popover::shown",
-            "description": "Emitted on $root when popover is shown",
+            "description": "Генерируется в $root при отображении всплывающего окна",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "disabled",
-            "description": "Emitted when popover becomes disabled",
+            "description": "Генерируется, когда всплывающее окно становится отключенным",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "enabled",
-            "description": "Emitted when popover becomes enabled",
+            "description": "Генерируется, когда всплывающее окно становится включенным",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "hidden",
-            "description": "Emitted when popover is hidden",
+            "description": "Генерируется, когда всплывающее окно скрыто",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "hide",
-            "description": "Emitted when popover is about to be hidden. Cancelable. Call bvEvent.preventDefault() to cancel hide",
+            "description": "Генерируется, когда всплывающее окно должно быть скрыто. Отменяемый. Вызовите bvEvent.preventDefault(), чтобы отменить скрытие",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "show",
-            "description": "Emitted when popover is about to be shown. Cancelable. Call bvEvent.preventDefault() to cancel show",
+            "description": "Генерируется, когда всплывающее окно вот-вот будет показано. Отменяемый. Вызовите bvEvent.preventDefault(), чтобы отменить показ",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "shown",
-            "description": "Emitted when popover is shown",
+            "description": "Генерируется при отображении всплывающего окна",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           }
@@ -205,45 +205,45 @@
         "rootEventListeners": [
           {
             "event": "bv::disable::popover",
-            "description": "Disable all or a specific popover when this event is emitted on $root",
+            "description": "Отключить все или определенное всплывающее окно, когда это событие генерируется в $root",
             "args": [
               {
                 "arg": "id",
                 "type": "String",
-                "description": "Popover ID to disable (optional)"
+                "description": "Идентификатор всплывающего окна для отключения (необязательно)"
               }
             ]
           },
           {
             "event": "bv::enable::popover",
-            "description": "Enable all or a specific popover when this event is emitted on $root",
+            "description": "Включить все или определенное всплывающее окно, когда это событие генерируется в $root",
             "args": [
               {
                 "arg": "id",
                 "type": "String",
-                "description": "Popover ID to enable (optional)"
+                "description": "Идентификатор всплывающего окна для включения (необязательно)"
               }
             ]
           },
           {
             "event": "bv::hide::popover",
-            "description": "Close (hide) all or a specific open popover when this event is emitted on $root",
+            "description": "Закрыть (скрыть) все или определенное открытое всплывающее окно, когда это событие генерируется в $root",
             "args": [
               {
                 "arg": "id",
                 "type": "String",
-                "description": "Popover ID to hide (optional)"
+                "description": "Идентификатор всплывающего окна, которое нужно скрыть (необязательно)"
               }
             ]
           },
           {
             "event": "bv::show::popover",
-            "description": "Open (show) all or a specific popover when this event is emitted on $root",
+            "description": "Открыть (показать) все или конкретное всплывающее окно, когда это событие генерируется в $root",
             "args": [
               {
                 "arg": "id",
                 "type": "String",
-                "description": "Popover ID to show (optional)"
+                "description": "Идентификатор всплывающего окна для отображения (необязательно)"
               }
             ]
           }
@@ -251,11 +251,11 @@
         "slots": [
           {
             "name": "default",
-            "description": "Slot for content (HTML/components supported)"
+            "description": "Слот для содержимого (поддерживается HTML/компоненты)"
           },
           {
             "name": "title",
-            "description": "Optional slot for title (HTML/components supported)"
+            "description": "Необязательный слот для заголовка (поддерживается HTML/компоненты)"
           }
         ]
       }
