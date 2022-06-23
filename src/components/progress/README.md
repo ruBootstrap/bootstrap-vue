@@ -1,7 +1,7 @@
-# Progress
+# Прогресс
 
-> Use our custom progress component for displaying simple or complex progress bars, featuring
-> support for horizontally stacked bars, animated backgrounds, and text labels.
+> Используйте наш настраиваемый компонент прогресса для отображения простых или сложных индикаторов
+> выполнения с поддержкой горизонтальных полос, анимированных фонов и текстовых меток.
 
 ```html
 <template>
@@ -13,7 +13,7 @@
       <b-progress-bar :value="value * (1.5 / 10)" variant="danger"></b-progress-bar>
     </b-progress>
 
-    <b-button class="mt-3" @click="randomValue">Click me</b-button>
+    <b-button class="mt-3" @click="randomValue">Нажми на меня</b-button>
   </div>
 </template>
 
@@ -36,36 +36,36 @@
 <!-- b-progress.vue -->
 ```
 
-## Value
+## Значение
 
-Set the maximum value with the `max` prop (default is `100`), and the current value via the `value`
-prop (default `0`).
+Установите максимальное значение с помощью свойства `max` (по умолчанию `100`) и текущее значение с
+помощью свойства `value` (по умолчанию `0`).
 
-When creating multiple bars in a single process, place the value prop on the individual
-`<b-progress-bar>` sub components (see the **Multiple Bars** section below for more details)
+При создании нескольких баров в одном процессе поместите свойство `value` в отдельные подкомпоненты
+`<b-progress-bar>` (подробнее смотрите в разделе **МультиБары** ниже)
 
-## Labels
+## Метки
 
-Add labels to your progress bars by either enabling `show-progress` (percentage of max) or
-`show-value`for the current absolute value. You may also set the precision (number of digits after
-the decimal) via the `precision` prop (default is `0`digits after the decimal).
+Добавьте метки к своим индикаторам выполнения, включив `show-progress` (процент от максимума) или
+`show-value` для текущего абсолютного значения. Вы также можете установить точность (количество цифр
+после запятой) с помощью свойства `precision` (по умолчанию `0` цифр после запятой).
 
 ```html
 <template>
   <div>
-    <h5>No label</h5>
+    <h5>Без метки</h5>
     <b-progress :value="value" :max="max" class="mb-3"></b-progress>
 
-    <h5>Value label</h5>
+    <h5>Метка значения</h5>
     <b-progress :value="value" :max="max" show-value class="mb-3"></b-progress>
 
-    <h5>Progress label</h5>
+    <h5>Метка прогресса</h5>
     <b-progress :value="value" :max="max" show-progress class="mb-3"></b-progress>
 
-    <h5>Value label with precision</h5>
+    <h5>Метка значения с точностью</h5>
     <b-progress :value="value" :max="max" :precision="2" show-value class="mb-3"></b-progress>
 
-    <h5>Progress label with precision</h5>
+    <h5>Метка прогресса с точностью</h5>
     <b-progress :value="value" :max="max" :precision="2" show-progress class="mb-3"></b-progress>
   </div>
 </template>
@@ -84,28 +84,28 @@ the decimal) via the `precision` prop (default is `0`digits after the decimal).
 <!-- b-progress-labels.vue -->
 ```
 
-### Custom progress label
+### Пользовательская метка прогресса
 
-Need more control over the label? Provide your own label by using the default slot within a
-`<b-progress-bar>` sub-component, or by using the `label` or `label-html` property on
+Нужен больший контроль над этикеткой? Укажите свою собственную метку, используя слот по умолчанию в
+подкомпоненте `<b-progress-bar>` или используя свойство `label` или `label-html` в
 `<b-progress-bar>`:
 
 ```html
 <template>
   <div>
-    <h5>Custom label via default slot</h5>
+    <h5>Пользовательская метка через слот по умолчанию</h5>
     <b-progress :max="max" height="2rem">
       <b-progress-bar :value="value">
-        <span>Progress: <strong>{{ value.toFixed(2) }} / {{ max }}</strong></span>
+        <span>Прогресс: <strong>{{ value.toFixed(2) }} / {{ max }}</strong></span>
       </b-progress-bar>
     </b-progress>
 
-    <h5 class="mt-3">Custom label via property</h5>
+    <h5 class="mt-3">Пользовательская метка через свойство</h5>
     <b-progress :max="max">
       <b-progress-bar :value="value" :label="`${((value / max) * 100).toFixed(2)}%`"></b-progress-bar>
     </b-progress>
 
-    <h5 class="mt-3">Custom label via property (HTML support)</h5>
+    <h5 class="mt-3">Пользовательская метка через свойство (поддержка HTML)</h5>
     <b-progress :max="max">
       <b-progress-bar :value="value" :label-html="`<del>${value}</del>`"></b-progress-bar>
     </b-progress>
@@ -126,29 +126,29 @@ Need more control over the label? Provide your own label by using the default sl
 <!-- b-progress-custom-labels.vue -->
 ```
 
-Precedence order for label methods (top-most has precedence):
+Порядок приоритета для методов меток (самый верхний имеет приоритет):
 
-- default slot of `<b-progress-bar>`
-- `label` prop of `<b-progress-bar>`
-- `show-progress` prop of `<b-progress-bar>`
-- `show-value` prop of `<b-progress-bar>`
-- `show-progress` prop of `<b-progress>`
-- `show-value` prop of `<b-progress>`
-- no label
+- слот по умолчанию `<b-progress-bar>`
+- `label` свойство от `<b-progress-bar>`
+- `show-progress` свойство от `<b-progress-bar>`
+- `show-value` свойство от `<b-progress-bar>`
+- `show-progress` свойство от `<b-progress>`
+- `show-value` свойство от `<b-progress>`
+- без метки
 
-## Width and height
+## Ширина и высота
 
-`<b-progress>` will always expand to the maximum with of its parent container. To change the width,
-place `<b-progress>` in a standard Bootstrap column or apply one of the standard Bootstrap width
-classes.
+`<b-progress>` всегда будет расширяться до максимума своего родительского контейнера. Чтобы изменить
+ширину, поместите `<b-progress>` в стандартный столбец Bootstrap или примените один из стандартных
+классов ширины Bootstrap.
 
 ```html
 <template>
   <div>
-    <h5>Default width</h5>
+    <h5>Ширина по умолчанию</h5>
     <b-progress :value="value" class="mb-3"></b-progress>
 
-    <h5>Custom widths</h5>
+    <h5>Настраиваемая ширина</h5>
     <b-progress :value="value" class="w-75 mb-2"></b-progress>
     <b-progress :value="value" class="w-50 mb-2"></b-progress>
     <b-progress :value="value" class="w-25"></b-progress>
@@ -168,16 +168,16 @@ classes.
 <!-- b-progress-width.vue -->
 ```
 
-The height of the progress bar can be controlled with the `height` prop. The height value should be
-a standard CSS dimension (`px`, `rem`, `em`, etc.). The default height is `1rem`.
+Высоту индикатора выполнения можно контролировать с помощью свойства `height`. Значение высоты
+должно быть стандартным размером CSS (`px`, `rem`, `em`, и т. д.). Высота по умолчанию `1rem`.
 
 ```html
 <template>
   <div>
-    <h5>Default height</h5>
+    <h5>Высота по умолчанию</h5>
     <b-progress :value="value" show-progress class="mb-3"></b-progress>
 
-    <h5>Custom heights</h5>
+    <h5>Настраиваемая высота</h5>
     <b-progress height="2rem" :value="value" show-progress class="mb-2"></b-progress>
     <b-progress height="20px" :value="value" show-progress class="mb-2"></b-progress>
     <b-progress height="2px" :value="value"></b-progress>
@@ -197,12 +197,12 @@ a standard CSS dimension (`px`, `rem`, `em`, etc.). The default height is `1rem`
 <!-- b-progress-height.vue -->
 ```
 
-## Backgrounds
+## Фоны
 
-Use background variants to change the appearance of individual progress bars. The default variant is
-`primary`.
+Используйте варианты фона, чтобы изменить внешний вид отдельных индикаторов выполнения. Вариант по
+умолчанию — `primary`.
 
-### Solid background variants
+### Варианты сплошного фона
 
 ```html
 <template>
@@ -247,9 +247,10 @@ Use background variants to change the appearance of individual progress bars. Th
 <!-- b-progress-backgrounds.vue -->
 ```
 
-### Striped backgrounds
+### Полосатые фоны
 
-Set `striped` to apply a stripe via CSS gradient over the progress bar's background variant.
+Установите `striped`, чтобы применить полосу с помощью градиента CSS поверх варианта фона индикатора
+выполнения.
 
 ```html
 <template>
@@ -260,7 +261,7 @@ Set `striped` to apply a stripe via CSS gradient over the progress bar's backgro
     <b-progress :value="100" variant="danger" :striped="striped" class="mt-2"></b-progress>
 
     <b-button variant="secondary" @click="striped = !striped" class="mt-3">
-      {{ striped ? 'Remove' : 'Add' }} Striped
+      {{ striped ? 'Удалить' : 'Добавить' }} Полоски
     </b-button>
   </div>
 </template>
@@ -278,9 +279,9 @@ Set `striped` to apply a stripe via CSS gradient over the progress bar's backgro
 <!-- b-progress-striped.vue -->
 ```
 
-### Animated backgrounds
+### Анимированные фоны
 
-The striped gradient can also be animated by setting the `animated`prop.
+Полосатый градиент также можно анимировать, установив свойство `animated`.
 
 ```html
 <template>
@@ -291,7 +292,7 @@ The striped gradient can also be animated by setting the `animated`prop.
     <b-progress :value="100" variant="danger" :animated="animate" class="mt-3"></b-progress>
 
     <b-button variant="secondary" @click="animate = !animate" class="mt-3">
-      {{ animate ? 'Stop' : 'Start' }} Animation
+      {{ animate ? 'Остановить' : 'Запустить' }} Анимацию
     </b-button>
   </div>
 </template>
@@ -309,18 +310,19 @@ The striped gradient can also be animated by setting the `animated`prop.
 <!-- b-progress-animated.vue -->
 ```
 
-Notes:
+Заметки:
 
-- if `animated` is true, `striped` will automatically be enabled.
-- Animated progress bars don't work in Opera 12 — as they don't support CSS3 animations.
-- The animation effect of this component is dependent on the `prefers-reduced-motion` media query.
-  See the [reduced motion section of our accessibility documentation](/docs/reference/accessibility)
-  for additional details.
+- Если для `animated` установлено значение `true`, `striped` будет автоматически включен.
+- Анимированные индикаторы выполнения не работают в Opera 12, так как они не поддерживают анимацию
+  CSS3.
+- Эффект анимации этого компонента зависит от медиа-запроса `prefers-reduced-motion`. Дополнительную
+  информацию смотрите в
+  [разделе с уменьшенным движением в нашей документации по специальным возможностям](/docs/reference/accessibility).
 
-## Multiple bars
+## Мульти Бары
 
-Include multiple `<b-progress-bar>` sub-components in a `<b-progress>` component to build a
-horizontally stacked set of progress bars.
+Включите несколько подкомпонентов `<b-progress-bar>` в компонент `<b-progress>`, чтобы создать набор
+индикаторов выполнения, расположенных горизонтально.
 
 ```html
 <template>
@@ -365,12 +367,12 @@ horizontally stacked set of progress bars.
 <!-- b-progress-multiple.vue -->
 ```
 
-`<b-progress-bar>` will inherit most of the props from the `<b-progress>` parent component, but you
-can override any of the props by setting them on the `<b-progress-bar>`
+`<b-progress-bar>` унаследует большинство свойств от родительского компонента `<b-progress>`, но вы
+можете переопределить любой из свойств, установив их на `<b-progress-bar>`
 
-Notes:
+Заметки:
 
-- `height`, if specified, should always set on the `<b-progress>` component.
-- `<b-progress-bar>` will not inherit `value` from `<b-progress>`.
+- `height`, если он указан, всегда должен устанавливаться для компонента `<b-progress>`.
+- `<b-progress-bar>` не будет наследовать `value` от `<b-progress>`.
 
 <!-- Component reference added automatically from component package.json -->

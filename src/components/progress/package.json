@@ -3,52 +3,52 @@
   "version": "1.0.0",
   "meta": {
     "title": "Progress",
-    "description": "A custom progress component for displaying simple or complex progress bars, featuring support for horizontally stacked bars, animated backgrounds, and text labels.",
+    "description": "Пользовательский компонент прогресса для отображения простых или сложных индикаторов выполнения с поддержкой горизонтальных полос, анимированных фонов и текстовых меток.",
     "components": [
       {
         "component": "BProgress",
         "props": [
           {
             "prop": "animated",
-            "description": "Enable the animated background. Also automatically sets 'striped'"
+            "description": "Включает анимированный фон. Также автоматически устанавливает 'striped'"
           },
           {
             "prop": "height",
-            "description": "Override the default height by specifying a CSS height value (including units)"
+            "description": "Переопределяет высоту по умолчанию, указав значение высоты CSS (включая единицы измерения)."
           },
           {
             "prop": "max",
-            "description": "Set the maximum value"
+            "description": "Устанавливает максимальное значение"
           },
           {
             "prop": "precision",
-            "description": "The number of digits after the decimal to round the value to"
+            "description": "Количество знаков после запятой, чтобы округлить значение до"
           },
           {
             "prop": "showProgress",
-            "description": "Displays the current progress value as a percentage"
+            "description": "Отображает текущее значение прогресса в процентах"
           },
           {
             "prop": "showValue",
-            "description": "Displays the current progress value"
+            "description": "Отображает текущее значение прогресса"
           },
           {
             "prop": "striped",
-            "description": "Enable the striped background"
+            "description": "Включает полосатый фон"
           },
           {
             "prop": "value",
-            "description": "The current value of the progress bar"
+            "description": "Текущее значение индикатора выполнения"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из цветовых вариантов темы Bootstrap"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content (progress bars) to place in the progress element"
+            "description": "Содержимое (индикаторы прогресса) для размещения в элементе прогресса"
           }
         ]
       },
@@ -57,50 +57,50 @@
         "props": [
           {
             "prop": "animated",
-            "description": "Enable the animated background. Also automatically sets 'striped'"
+            "description": "Включает анимированный фон. Также автоматически устанавливает 'striped'"
           },
           {
             "prop": "label",
-            "description": "Text string to explicitly set the label as"
+            "description": "Текстовая строка для явного задания метки как"
           },
           {
             "prop": "labelHtml",
-            "description": "HTML string to explicitly set the label as",
+            "description": "Строка HTML, чтобы явно установить метку как",
             "xss": true
           },
           {
             "prop": "max",
-            "description": "Set the maximum value"
+            "description": "Устанавливает максимальное значение"
           },
           {
             "prop": "precision",
-            "description": "The number of digits after the decimal to round the value to"
+            "description": "Количество знаков после запятой, чтобы округлить значение до"
           },
           {
             "prop": "showProgress",
-            "description": "Displays the current progress value as a percentage"
+            "description": "Отображает текущее значение прогресса в процентах"
           },
           {
             "prop": "showValue",
-            "description": "Displays the current progress value"
+            "description": "Отображает текущее значение прогресса"
           },
           {
             "prop": "striped",
-            "description": "Enable the striped background"
+            "description": "Включает полосатый фон"
           },
           {
             "prop": "value",
-            "description": "The current value of the progress bar"
+            "description": "Текущее значение индикатора выполнения"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из цветовых вариантов темы Bootstrap"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the progress bar. Overrides the `label`, `label-html`, `show-progress` and `show-value` props"
+            "description": "Контент для размещения в индикаторе выполнения. Переопределяет свойства `label`, `label-html`, `show-progress` и `show-value`"
           }
         ]
       }
