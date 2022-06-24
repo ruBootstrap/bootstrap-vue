@@ -1,27 +1,27 @@
-# Sidebar
+# Боковая панель
 
-> Otherwise known as off-canvas or a side drawer, BootstrapVue's custom `<b-sidebar>` component is a
-> fixed-position toggleable slide out box, which can be used for navigation, menus, details, etc. It
-> can be positioned on either the left (default) or right of the viewport, with optional backdrop
-> support.
+> Пользовательский компонент BootstrapVue `<b-sidebar>`, также известный как off-canvas или side
+> drawer, представляет собой переключаемое выдвижное поле с фиксированным положением, которое можно
+> использовать для навигации, меню, деталей и т. д. Его можно расположить на любом слева (по
+> умолчанию) или справа от области просмотра с дополнительной поддержкой фона.
 
 ## Обзор
 
-You can place almost any content inside the `<b-sidebar>`
-[optionally scoped default slot](#scoped-default-slot), such as text, buttons, forms, images, or
-[vertical navs](/docs/components/nav#vertical-variation).
+В `<b-sidebar>` [слот по умолчанию с опциональной областью действия](#scoped-default-slot) можно
+поместить практически любое содержимое, например текст, кнопки, формы, изображения или
+[вертикальные элементы навигации](/docs/components/nav#vertical-variation).
 
-The component supports a header and built in close button, of which you can optionally disable and
-provide your own header (if needed), and can be easily toggled with our
-[`v-b-toggle` directive](/docs/directives/toggle).
+Компонент поддерживает заголовок и встроенную кнопку закрытия, которую вы можете при желании
+отключить и указать свой собственный заголовок (при необходимости), и его можно легко переключать с
+помощью нашей [директивы `v-b-toggle`](/docs/directives/toggle).
 
-The component has minimal default styling, which provides you with great flexibility in laying out
-the content of the sidebar.
+Компонент имеет минимальный стиль по умолчанию, что дает вам большую гибкость в размещении
+содержимого боковой панели.
 
 ```html
 <template>
   <div>
-    <b-button v-b-toggle.sidebar-1>Toggle Sidebar</b-button>
+    <b-button v-b-toggle.sidebar-1>Переключить боковую панель</b-button>
     <b-sidebar id="sidebar-1" title="Sidebar" shadow>
       <div class="px-3 py-2">
         <p>
@@ -37,35 +37,35 @@ the content of the sidebar.
 <!-- b-sidebar.vue -->
 ```
 
-If the content is taller than the available viewport height, vertical scrolling will automatically
-be enabled via CSS on the body of the sidebar.
+Если содержимое выше доступной высоты области просмотра, вертикальная прокрутка будет автоматически
+включена с помощью CSS в теле боковой панели.
 
-## Styling
+## Стайлинг
 
-Several props are provided for controlling the appearance of the sidebar.
+Для управления внешним видом боковой панели предусмотрено несколько свойств.
 
-### Title
+### Тайтл
 
-Sidebars should have a title (specifically for accessibility reasons). Easily set the title that
-appears in the header either via the `title` prop or the `title` slot. Note the `title` slot takes
-precedence over the `title` prop.
+Боковые панели должны иметь заголовок (особенно из соображений доступности). Легко установите
+заголовок, который появляется в заголовке, либо с помощью свойства `title`, либо через слот `title`.
+братите внимание, что слот `title` имеет приоритет над свойством `title`.
 
-If the [`no-header` prop](#hiding-the-header) is set, then neither the `title` prop or `title` slot
-have any effect.
+Если установлено [свойство `no-header`](#hiding-the-header), то ни свойство `title`, ни слот `title`
+не действуют.
 
-If you do not provide a title, use either the `aria-label` or `aria-labelledby` props to provide an
-accessible title for the sidebar. See the [Accessibility section](#accessibility) below for
-additional details.
+Если вы не указываете заголовок, используйте свойства `aria-label` или `aria-labelledby`, чтобы
+указать доступный заголовок для боковой панели. Дополнительную информацию смотрите в разделе
+[Специальные возможности](#accessibility) ниже.
 
 ### Размещение
 
-By default the sidebar will be placed on the left side of the viewport. Set the `right` prop to
-`true` to have the sidebar appear on the right side of the viewport.
+По умолчанию боковая панель будет размещена в левой части окна просмотра. Установите для свойства
+`right` значение `true`, чтобы боковая панель отображалась с правой стороны окна просмотра.
 
 ```html
 <template>
   <div>
-    <b-button v-b-toggle.sidebar-right>Toggle Sidebar</b-button>
+    <b-button v-b-toggle.sidebar-right>Переключить боковую панель</b-button>
     <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
       <div class="px-3 py-2">
         <p>
@@ -81,16 +81,16 @@ By default the sidebar will be placed on the left side of the viewport. Set the 
 <!-- b-sidebar-right.vue -->
 ```
 
-### Variants
+### Варианты
 
-Use the props `bg-variant` and `text-variant` to control the theme color variant of the background
-and text, respectively. Alternatively, you can apply styles or classes to specify the background and
-text colors.
+Используйте свойства `bg-variant` и `text-variant`, чтобы управлять вариантом цвета темы фона и
+текста соответственно. Кроме того, вы можете применить стили или классы, чтобы задать цвет фона и
+текста.
 
 ```html
 <template>
   <div>
-    <b-button v-b-toggle.sidebar-variant>Toggle Sidebar</b-button>
+    <b-button v-b-toggle.sidebar-variant>Переключить боковую панель</b-button>
     <b-sidebar id="sidebar-variant" title="Sidebar" bg-variant="dark" text-variant="light" shadow>
       <div class="px-3 py-2">
         <p>
@@ -106,28 +106,28 @@ text colors.
 <!-- b-sidebar-variant.vue -->
 ```
 
-The standard Bootstrap theme variants are `'white'`, `'light'`, `'dark'`, `'primary'`,
-`'secondary'`, `'success'`, `'danger'`, `'warning'`, and `'info'`.
+Стандартные варианты темы Bootstrap: `'white'`, `'light'`, `'dark'`, `'primary'`, `'secondary'`,
+`'success'`, `'danger'`, `'warning'` и `'info'`.
 
-The default background variant is `'light'` and the default text variant is `'dark'`.
+Вариант фона по умолчанию — `'light'`, а вариант текста по умолчанию — `'dark'`.
 
-### Shadow
+### Тень
 
-Prefer a sidebar with a backdrop shadow? Set the `shadow` prop to either boolean `true` for a medium
-shadow, `'sm'` for a small shadow, or `'lg'` for a larger shadow. Set it to `false` (the default)
-for no shadow.
+Предпочитаете боковую панель с фоновой тенью? Установите свойство `shadow` в логическое значение
+`true` для средней тени, `'sm'` для маленькой тени или `'lg'` для большей тени. Установите значение
+`false` (по умолчанию) для отсутствия тени.
 
-### Borders
+### Границы
 
-By default, `<b-sidebar>` has no borders. Use
-[border utility classes](/docs/reference/utility-classes) to add border(s) to `<b-sidebar>` (via the
-`sidebar-class` prop <span class="badge badge-secondary">2.12.0+</span>), or use CSS style
-overrides.
+По умолчанию `<b-sidebar>` не имеет границ. Используйте
+[классы вспомогательных бордеров](/docs/reference/utility-classes), чтобы добавить границы к
+`<b-sidebar>` (через свойство `sidebar-class` <span class="badge badge-secondary">2.12.0+</span>),
+или используйте переопределения стилей CSS.
 
 ```html
 <template>
   <div>
-    <b-button v-b-toggle.sidebar-border>Toggle Sidebar</b-button>
+    <b-button v-b-toggle.sidebar-border>Переключить боковую панель</b-button>
     <b-sidebar id="sidebar-border" sidebar-class="border-right border-danger">
       <div class="px-3 py-2">
         <p>
@@ -143,79 +143,81 @@ overrides.
 <!-- b-sidebar-border.vue -->
 ```
 
-### Width
+### Ширина
 
-By default the width of `<b-sidebar>` is set to `320px` (100% on 'xs' screens). Simply provide a
-value via the `width` prop (i.e. `'180px'`, `'20em'`, etc.) to override this default. The max width
-is set to `100%` via CSS.
+По умолчанию ширина `<b-sidebar>` установлена на `320px` (100% на экранах 'xs'). Просто укажите
+значение через свойство `width` (например, `'180px'`, `'20em'` и т. д.), чтобы переопределить это
+значение по умолчанию. Максимальная ширина устанавливается на `100%` через CSS.
 
-### Padding
+### Отступы
 
-The sidebar by default has no padding. You can apply padding utility classes to the component, or
-margin/padding utility classes to the content of the sidebar.
+Боковая панель по умолчанию не имеет отступов. Вы можете применить служебные классы отступов к
+компоненту или служебные классы полей/отступов к содержимому боковой панели.
 
-### Disable slide transition
+### Отключить переход между слайдами
 
-By default the sidebar will use a sliding transition when showing and hiding. You can disable the
-slide transition via the `no-slide` prop.
+По умолчанию боковая панель будет использовать скользящий переход при отображении и скрытии. Вы
+можете отключить переход слайдов с помощью свойства `no-slide`.
 
-**Примечание:** The BootstrapVue defined transition effect of this component is dependent on the
-`prefers-reduced-motion` media query. See the
-[reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
-additional details.
+**Примечание:** Определенный BootstrapVue эффект перехода этого компонента зависит от медиа-запроса
+`prefers-reduced-motion`. Дополнительную информацию смотрите в
+[разделе с уменьшенным движением в нашей документации по специальным возможностям](/docs/reference/accessibility).
 
-When disabling the slide transition, the fade transition of the [optional backdrop](#backdrop) will
-also be disabled.
+При отключении перехода слайдов также будет отключен плавный переход
+[необязательный фон](#backdrop).
 
-### Z-index
+### Z-индекс
 
-The sidebar has a default `z-index` defined in SCSS/CSS. In some situations you may need to use a
-different `z-index` to ensure the sidebar appears over or under other content. You can do so either
-via CSS styles, or via the `z-index` prop.
+Боковая панель имеет `z-index` по умолчанию, определенный в SCSS/CSS. В некоторых ситуациях вам
+может понадобиться использовать другой `z-index`, чтобы боковая панель отображалась поверх или под
+другим содержимым. Вы можете сделать это либо с помощью стилей CSS, либо с помощью свойства
+`z-index`.
 
-### Scoped default slot
+### Слот по умолчанию с ограниченной областью действия
 
-The `default` slot allows you to provide the body content for your sidebar. It is optionally scoped.
-The examples in the following sections demonstrate the use of the default slot scope
+Слот `default` позволяет вам предоставить основной контент для вашей боковой панели. Это
+опционально. Примеры в следующих разделах демонстрируют использование области слота по умолчанию.
 
-You can apply arbitrary classes to the body section via the `body-class` prop.
+Вы можете применять произвольные классы к разделу `body` через свойство `body-class`.
 
-### Header
+### Хедер
 
-By default, `<b-sidebar>` has a header with optional title and a close button. You can supply a
-title via the `title` prop, or via the optionally scoped slot `title`.
+По умолчанию `<b-sidebar>` имеет заголовок с необязательным заголовком и кнопку закрытия. Вы можете
+указать заголовок через свойство `title` или через опционально ограниченный слот `title`.
 
-If you want to provide a completely custom header, you can use the optionally scoped `header` slot.
+Если вы хотите предоставить полностью настраиваемый заголовок, вы можете использовать слот `header`
+с опциональной областью действия.
 
-You can apply arbitrary classes to the header section via the `header-class` prop, to override the
-default padding, etc.
+Вы можете применить произвольные классы к разделу заголовка с помощью свойства `header-class`, чтобы
+переопределить заполнение по умолчанию и т. д.
 
-#### Hiding the default header
+#### Скрытие заголовка по умолчанию
 
-You can disable the default header (including the close button) via the `no-header` prop. Note that
-you will need to provide a method of closing the sidebar. The `default` slot is scoped, which
-includes a `hide()` method that can be used to close the sidebar.
+Вы можете отключить заголовок по умолчанию (включая кнопку закрытия) с помощью параметра
+`no-header`. Обратите внимание, что вам нужно будет указать способ закрытия боковой панели. Слот
+`default` имеет область действия, которая включает метод `hide()`, который можно использовать для
+закрытия боковой панели.
 
 ```html
 <template>
   <div>
-    <b-button v-b-toggle.sidebar-no-header>Toggle Sidebar</b-button>
+    <b-button v-b-toggle.sidebar-no-header>Переключить боковую панель</b-button>
     <b-sidebar id="sidebar-no-header" aria-labelledby="sidebar-no-header-title" no-header shadow>
       <template #default="{ hide }">
         <div class="p-3">
-          <h4 id="sidebar-no-header-title">Custom header sidebar</h4>
+          <h4 id="sidebar-no-header-title">Пользовательский хедер боковой панели</h4>
           <p>
             Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
             in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
           </p>
           <nav class="mb-3">
             <b-nav vertical>
-              <b-nav-item active @click="hide">Active</b-nav-item>
-              <b-nav-item href="#link-1" @click="hide">Link</b-nav-item>
-              <b-nav-item href="#link-2" @click="hide">Another Link</b-nav-item>
+              <b-nav-item active @click="hide">Активная</b-nav-item>
+              <b-nav-item href="#link-1" @click="hide">Ссылка</b-nav-item>
+              <b-nav-item href="#link-2" @click="hide">Другая ссылка</b-nav-item>
             </b-nav>
           </nav>
-          <b-button variant="primary" block @click="hide">Close Sidebar</b-button>
+          <b-button variant="primary" block @click="hide">Закрыть сайдбар</b-button>
         </div>
       </template>
     </b-sidebar>
@@ -225,21 +227,21 @@ includes a `hide()` method that can be used to close the sidebar.
 <!-- b-sidebar-no-header.vue -->
 ```
 
-### Footer
+### Футер
 
-`<b-sidebar>` provides a `footer` slot (optionally scoped), to allow you to provide content that
-appears at the bottom of the sidebar. The `footer` slot is scoped, which includes a `hide()` method
-that can be used to close the sidebar.
+`<b-sidebar>` предоставляет слот `footer` (необязательно с ограниченной областью действия), чтобы вы
+могли предоставить контент, который отображается внизу боковой панели. Слот `footer` имеет область
+действия, которая включает метод `hide()`, который можно использовать для закрытия боковой панели.
 
 ```html
 <template>
   <div>
-    <b-button v-b-toggle.sidebar-footer>Toggle Sidebar</b-button>
+    <b-button v-b-toggle.sidebar-footer>Переключить боковую панель</b-button>
     <b-sidebar id="sidebar-footer" aria-label="Sidebar with custom footer" no-header shadow>
       <template #footer="{ hide }">
        <div class="d-flex bg-dark text-light align-items-center px-3 py-2">
-        <strong class="mr-auto">Footer</strong>
-        <b-button size="sm" @click="hide">Close</b-button>
+        <strong class="mr-auto">Футер</strong>
+        <b-button size="sm" @click="hide">Закрыть</b-button>
        </div>
       </template>
       <div class="px-3 py-2">
@@ -256,33 +258,35 @@ that can be used to close the sidebar.
 <!-- b-sidebar-footer.vue -->
 ```
 
-You can apply arbitrary classes to the footer section via the `footer-class` prop.
+Вы можете применять произвольные классы к разделу нижнего колонтитула с помощью свойства
+`footer-class`.
 
-### Lazy rendering
+### Отложенный рендеринг
 
-In some instances, you may not want the content rendered when the sidebar is not visible. Simply set
-the `lazy` prop on `<b-sidebar>`. When `lazy` is `true`, the body and optional footer will _not_ be
-rendered (removed from DOM) whenever the sidebar is closed.
+В некоторых случаях вы можете не захотеть, чтобы содержимое отображалось, когда боковая панель не
+видна. Просто установите свойство `lazy` на `<b-sidebar>`. Когда `lazy` равно `true`, `body` и
+необязательный футер _не_ будут отображаться (удалены из DOM) всякий раз, когда боковая панель
+закрыта.
 
-### Backdrop
+### Подложка
 
 <span class="badge badge-info small">2.12.0+</span>
 
-Add a basic backdrop when the side bar is open via the `backdrop` prop. When set to `true`, the
-sidebar will show an opaque backdrop. Clicking on the backdrop will close the sidebar, unless the
-`no-close-on-backdrop` prop is set to `true`.
+Добавьте базовый фон, когда боковая панель открыта, с помощью свойства `backdrop`. Если установлено
+значение `true`, боковая панель будет показывать непрозрачный фон. Щелчок по фону закроет боковую
+панель, если для параметра `no-close-on-backdrop` не установлено значение `true`.
 
-Optionally (as of BootstrapVue v2.15.0+) you can use the `backdrop-variant` prop to control the
-theme color variant of the backdrop. The default backdrop variant is `dark`.
+При желании (начиная с BootstrapVue v2.15.0+) вы можете использовать свойство `backdrop-variant` для
+управления вариантом цвета темы фона. Вариант фона по умолчанию — `dark`.
 
 ```html
 <template>
   <div>
-    <b-button v-b-toggle.sidebar-backdrop>Toggle Sidebar</b-button>
+    <b-button v-b-toggle.sidebar-backdrop>Переключить боковую панель</b-button>
 
     <b-sidebar
       id="sidebar-backdrop"
-      title="Sidebar with backdrop"
+      title="Боковая панель с фоном"
       :backdrop-variant="variant"
       backdrop
       shadow
@@ -321,83 +325,85 @@ theme color variant of the backdrop. The default backdrop variant is `dark`.
 <!-- b-sidebar-backdrop.vue -->
 ```
 
-Note that when the sidebar is open, it may still be possible to scroll the body (unlike the
-behaviour of modals). When the backdrop in enabled, focus constraint will attempt to keep focus
-within the sidebar. Note that in rare circumstances it might be possible for users to move focus to
-elements outside of the sidebar.
+Обратите внимание, что когда боковая панель открыта, все еще можно прокручивать тело (в отличие от
+поведения модальных окон). Когда фон включен, ограничение фокуса будет пытаться удерживать фокус в
+пределах боковой панели. Обратите внимание, что в редких случаях пользователи могут переместить
+фокус на элементы за пределами боковой панели.
 
-## Visibility control
+## Управление видимостью
 
-### `v-b-toggle` directive
+### Директива `v-b-toggle`
 
-Using the [`v-b-toggle` directive](/docs/directives/toggle) is the preferred method for _opening_
-the sidebar, as it automatically handles applying the `aria-controls` and `aria-expanded`
-accessibility attributes on the trigger element.
+Использование [директивы `v-b-toggle`](/docs/directives/toggle) является предпочтительным методом
+для _открытия_ боковой панели, так как он автоматически обрабатывает применение атрибутов
+доступности `aria-controls` и `aria-expanded` для триггерного элемента. .
 
-The majority of examples on this page use the `v-b-toggle` directive.
+В большинстве примеров на этой странице используется директива `v-b-toggle`.
 
 ### `v-model`
 
-The `v-model` reflects the current visibility state of the sidebar. While it can be used to control
-the visibility state of the sidebar, it is recommended to use the
-[`v-b-toggle` directive](#v-b-toggle-directive) to _show_ the sidebar for accessibility reasons. If
-you do use the `v-model` to show the sidebar, you should place the `aria-controls="id"` attribute
-(where `id` is the ID of the sidebar) on the trigger element, and also set the `aria-expanded`
-attribute (also on the trigger element) to either the string `'true'` (if the sidebar is open) or
-`'false`' (if the sidebar is closed).
+`v-model` отражает текущее состояние видимости боковой панели. Хотя его можно использовать для
+управления состоянием видимости боковой панели, рекомендуется использовать
+[директиву `v-b-toggle`](#v-b-toggle-directive), чтобы _показать_ боковую панель по соображениям
+доступности. Если вы используете `v-model` для отображения боковой панели, вы должны поместить
+атрибут `aria-controls="id"` (где `id` – это идентификатор боковой панели) в элементе триггера, а
+также установить `aria-expanded` (также в элементе триггера) в строку `'true'` (если боковая панель
+открыта) или `'false`' (если боковая панель закрыта).
 
-The `v-model` is internally bound to the `visible` prop, and the `change` event updates the
-`v-model`.
+`v-model` внутренне связана со свойством `visible`, а событие `change` обновляет `v-model`.
 
-### Closing on $route change
+### Закрытие при изменении $route
 
-By default, `<b-sidebar>` will close itself when the `$route` changes (full path including query and
-hash). This can be particularly handy if the sidebar is placed outside of your `<router-view>` and
-is used for navigation.
+По умолчанию `<b-sidebar>` закрывается при изменении `$route` полный путь, включая запрос и хэш).
+Это может быть особенно удобно, если боковая панель находится за пределами вашего `<router-view>` и
+используется для навигации.
 
-You can disable this behaviour by setting the `no-close-on-route-change` prop to `true`.
+Вы можете отключить это поведение, установив для свойства `no-close-on-route-change` значение
+`true`.
 
-## Events
+## События
 
-The sidebar will emit the `shown` event once the sidebar has opened, and the `hidden` event when the
-sidebar has closed.
+Боковая панель будет генерировать событие `shown`, когда боковая панель откроется, и событие
+`hidden`, когда боковая панель будет закрыта.
 
-The `change` event is used to update the `v-model` and is emitted whenever the visibility state of
-the sidebar changes.
+Событие `change` используется для обновления `v-model` и генерируется всякий раз, когда изменяется
+состояние видимости боковой панели.
 
 ## Доступность
 
-`<b-sidebar>` provides several accessibility features.
+`<b-sidebar>` предоставляет несколько специальных возможностей.
 
-When the sidebar is opened, the entire sidebar will receive focus, which is desirable for screen
-reader and keyboard-only users. When the sidebar is closed, the element that previously had focus
-before the sidebar was opened will be re-focused.
+Когда боковая панель открыта, вся боковая панель получает фокус, что желательно для программ чтения
+с экрана и пользователей, использующих только клавиатуру. Когда боковая панель закрыта, элемент,
+который ранее был в фокусе до того, как боковая панель была открыта, будет перефокусирован.
 
-In some circumstances, you may need to disable the enforce focus feature completely. You can do this
-by setting the prop `no-enforce-focus`, although this is generally discouraged for accessibility
-reasons.
+В некоторых случаях может потребоваться полностью отключить функцию принудительного фокуса. Вы
+можете сделать это, установив свойство `no-enforce-focus`, хотя обычно это не рекомендуется из
+соображений доступности.
 
-When the sidebar is open, users can press <kbd>Esc</kbd> to close the sidebar. To disable this
-feature, set the `no-close-on-esc` prop to `true`. with the backdrop enabled, you can use the prop
-`no-close-on-backdrop` to disable the close on backdrop click feature.
+Когда боковая панель открыта, пользователи могут нажать <kbd>Esc</kbd>, чтобы закрыть боковую
+панель. Чтобы отключить эту функцию, установите свойство `no-close-on-esc` в значение `true`. С
+включенным фоном вы можете использовать свойство `no-close-on-backdrop`, чтобы отключить функцию
+закрытия при щелчке фона.
 
-When the `backdrop` prop is `true`, the sidebar will attempt to constrain focus within the sidebar,
-and the sidebar will have the attribute `aria-modal="true"` set.
+Когда свойство `backdrop` имеет значение `true`, боковая панель будет пытаться ограничить фокус
+внутри боковой панели, а для боковой панели будет установлен атрибут `aria-modal="true"`.
 
-When you have hidden the header, or do not have a title for the sidebar, set either `aria-label` to
-a string that describes the sidebar, or set `aria-labelledby` to an ID of an element that contains
-the title. When using the `lazy` prop _and_ you do not have a header, use the `aria-label` prop to
-provide an appropriate string to label the sidebar.
+Если вы скрыли заголовок или не имеете заголовка для боковой панели, задайте либо строку
+`aria-label`, описывающую боковую панель, либо задайте `aria-labelledby` идентификатор элемента,
+содержащего заголовок. При использовании `lazy` свойства _и_ у вас нет заголовка, используйте
+свойство `aria-label`, чтобы предоставить соответствующую строку для маркировки боковой панели.
 
-## Implementation notes
+## Замечания по реализации
 
-BootstrapVue's custom SCSS/CSS is required for proper styling, and positioning of the sidebar.
+Пользовательский SCSS/CSS BootstrapVue требуется для правильного стиля и позиционирования боковой
+панели.
 
-The Bootstrap v4 background (`'bg-*'`) and text (`'text-*'`) utility classes are used for
-controlling the background and font color, respectively.
+Вспомогательные классы Bootstrap v4 фона (`'bg-*'`) и текста (`'text-*'`) используются для
+управления цветом фона и шрифта соответственно.
 
-Some of the default styling for `<b-sidebar>` can be customized via the use of SASS variables. Refer
-to the [theming documentation](/docs/reference/theming) for additional details.
+Некоторые стили по умолчанию для `<b-sidebar>` можно настроить с помощью переменных SASS.
+Дополнительные сведения смотрите в [документации по темам](/docs/reference/theming).
 
 ## Смотрите также
 

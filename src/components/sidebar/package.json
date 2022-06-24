@@ -4,7 +4,7 @@
   "meta": {
     "title": "Sidebar",
     "version": "2.10.0",
-    "description": "The `<b-sidebar>` component creates a fixed viewport, left or right, sliding popout drawer.",
+    "description": "Компонент `<b-sidebar>` создает фиксированное окно просмотра, левое или правое, скользящее всплывающее окно.",
     "plugins": [
       "VBTogglePlugin"
     ],
@@ -16,219 +16,219 @@
           {
             "prop": "backdrop",
             "version": "2.12.0",
-            "description": "When `true`, shows a backdrop when the sidebar is open"
+            "description": "Когда `true`, показывает фон, когда боковая панель открыта"
           },
           {
             "prop": "backdropVariant",
             "version": "2.15.0",
-            "description": "Theme variant color for the backdrop of the sidebar. Defaults to 'dark'"
+            "description": "Цвет варианта темы для фона боковой панели. По умолчанию 'dark'"
           },
           {
             "prop": "bgVariant",
-            "description": "Theme variant color for the background of the sidebar"
+            "description": "Цвет варианта темы для фона боковой панели"
           },
           {
             "prop": "bodyClass",
-            "description": "Class, or classes, to apply to the body (default slot) of the sidebar"
+            "description": "Класс или классы, применяемые к основной части (ячейка по умолчанию) боковой панели"
           },
           {
             "prop": "closeLabel",
-            "description": "`aria-label` to apply to the built-in close button. Defaults to 'Close'"
+            "description": "`aria-label` для применения к встроенной кнопке закрытия. По умолчанию 'Close'"
           },
           {
             "prop": "footerClass",
-            "description": "Class, or classes, to apply to the optional `footer` slot"
+            "description": "Класс или классы, применяемые к необязательному слоту `footer`"
           },
           {
             "prop": "footerTag",
             "version": "2.22.0",
-            "description": "Specify the HTML tag to render instead of the default tag for the footer"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для футера"
           },
           {
             "prop": "headerClass",
-            "description": "Class, or classes, to apply to the built in header. Has no effect if prop `no-header` is set"
+            "description": "Класс или классы для применения к встроенному хедеру. Не действует, если установлен параметр `no-header`"
           },
           {
             "prop": "headerTag",
             "version": "2.22.0",
-            "description": "Specify the HTML tag to render instead of the default tag for the footer"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для футера"
           },
           {
             "prop": "lazy",
-            "description": "When set to `true`, the content of the sidebar will only be rendered while the sidebar is open"
+            "description": "Если установлено значение `true`, содержимое боковой панели будет отображаться только тогда, когда боковая панель открыта"
           },
           {
             "prop": "noCloseOnBackdrop",
             "version": "2.12.0",
-            "description": "When set to `true`, disables closing the sidebar when the user clicks on the backdrop. Requires that the prop `backdrop` be set"
+            "description": "Если установлено значение `true`, отключает закрытие боковой панели, когда пользователь кликает фон. Требуется, чтобы свойство `backdrop` было установлено"
           },
           {
             "prop": "noCloseOnEsc",
-            "description": "When set to `true`, disables closing the sidebar when the user presses ESC"
+            "description": "Если установлено значение `true`, отключает закрытие боковой панели, когда пользователь нажимает ESC."
           },
           {
             "prop": "noCloseOnRouteChange",
-            "description": "When set to `true`, disables closing of the sidebar on route change"
+            "description": "Если установлено значение `true`, отключает закрытие боковой панели при изменении маршрута"
           },
           {
             "prop": "noEnforceFocus",
             "version": "2.17.0",
-            "description": "Disables the enforce focus routine which maintains focus inside the sidebar"
+            "description": "Отключает процедуру принудительного фокуса, которая поддерживает фокус внутри боковой панели"
           },
           {
             "prop": "noHeader",
-            "description": "When set to `true` disables rendering of the default header (including close button)"
+            "description": "Если установлено значение `true` отключает отображение заголовка по умолчанию (включая кнопку закрытия)"
           },
           {
             "prop": "noHeaderClose",
-            "description": "When set to `true` disables rendering of the header close button"
+            "description": "Если установлено значение `true` отключает отображение кнопки закрытия заголовка"
           },
           {
             "prop": "noSlide",
-            "description": "When set, disables the default sliding animation"
+            "description": "Если установлено, отключает скользящую анимацию по умолчанию"
           },
           {
             "prop": "right",
-            "description": "When `true`, positions the sidebar on the right of the viewport"
+            "description": "Когда `true`, боковая панель размещается справа от области просмотра"
           },
           {
             "prop": "shadow",
-            "description": "Set to boolean `true` for medium shadow, 'sm' for small shadow, 'lg' for large shadow, or boolean `false` for no shadow. Default is no shadow"
+            "description": "Установите логическое значение `true` для средней тени, 'sm' для маленькой тени, 'lg' для большой тени или логическое значение `false` для отсутствия тени. По умолчанию нет тени"
           },
           {
             "prop": "sidebarClass",
             "version": "2.12.0",
-            "description": "Class, or classes, to apply to the sidebar content wrapper"
+            "description": "Класс или классы, применяемые к оболочке содержимого боковой панели"
           },
           {
             "prop": "textVariant",
-            "description": "Theme variant color for the text of the sidebar"
+            "description": "Цвет варианта темы для текста боковой панели"
           },
           {
             "prop": "title",
-            "description": "Text content to place in the default header. The `title` slot takes precedence"
+            "description": "Текстовое содержимое для размещения в заголовке по умолчанию. Слот title имеет приоритет"
           },
           {
             "prop": "visible",
-            "description": "When `true`, opens the sidebar. This is the `v-model`"
+            "description": "Когда `true`, открывается боковая панель. Это `v-model`"
           },
           {
             "prop": "width",
-            "description": "CSS width for the sidebar. Defaults to '320px' as defined by SCSS/CSS"
+            "description": "Ширина CSS для боковой панели. По умолчанию '320px', как определено SCSS/CSS"
           },
           {
             "prop": "zIndex",
-            "description": "Specify an arbitrary z-index value to override the value defined by SCSS/CSS"
+            "description": "Укажите произвольное значение z-индекса, чтобы переопределить значение, определенное SCSS/CSS"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Emitted whenever the visibility of the sidebar changes. Used to update the `v-model`",
+            "description": "Генерируется всякий раз, когда изменяется видимость боковой панели. Используется для обновления `v-model`",
             "args": [
               {
                 "arg": "visible",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is open, `false` if it is closed (or in the process of closing)"
+                "description": "`true`, если боковая панель открыта, `false`, если она закрыта (или в процессе закрытия)"
               }
             ]
           },
           {
             "event": "hidden",
-            "description": "Emitted when the sidebar has been hidden"
+            "description": "Выдается, когда боковая панель скрыта"
           },
           {
             "event": "shown",
-            "description": "Emitted when the sidebar has opened"
+            "description": "Выдается при открытии боковой панели"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the body of the sidebar",
+            "description": "Контент для размещения в теле боковой панели",
             "scope": [
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "When called, will close the sidebar"
+                "description": "При вызове закроет боковую панель"
               },
               {
                 "prop": "right",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is on the right"
+                "description": "`true`, если боковая панель находится справа"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is open"
+                "description": "`true`, если боковая панель открыта"
               }
             ]
           },
           {
             "name": "footer",
-            "description": "Content to place in the optional footer",
+            "description": "Содержимое для размещения в дополнительном футере",
             "scope": [
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "When called, will close the sidebar"
+                "description": "При вызове закроет боковую панель"
               },
               {
                 "prop": "right",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is on the right"
+                "description": "`true`, если боковая панель находится справа"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is open"
+                "description": "`true`, если боковая панель открыта"
               }
             ]
           },
           {
             "name": "header",
             "version": "2.21.0",
-            "description": "Content to place in the header",
+            "description": "Контент для размещения в хедере",
             "scope": [
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "When called, will close the sidebar"
+                "description": "При вызове закроет боковую панель"
               },
               {
                 "prop": "right",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is on the right"
+                "description": "`true`, если боковая панель находится справа"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is open"
+                "description": "`true`, если боковая панель открыта"
               }
             ]
           },
           {
             "name": "header-close",
-            "description": "Content of the header close button. Defaults to `<b-icon-x>`"
+            "description": "Содержимое кнопки закрытия заголовка. По умолчанию `<b-icon-x>`"
           },
           {
             "name": "title",
-            "description": "Content to place in the title of the built-in header. Takes precedence over the `title` prop",
+            "description": "Контент разместить в заголовке встроенной шапки. Имеет приоритет над свойством `title` prop",
             "scope": [
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "When called, will close the sidebar"
+                "description": "При вызове закроет боковую панель"
               },
               {
                 "prop": "right",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is on the right"
+                "description": "`true`, если боковая панель находится справа"
               },
               {
                 "prop": "visible",
                 "type": "Boolean",
-                "description": "`true` if the sidebar is open"
+                "description": "`true`, если боковая панель открыта"
               }
             ]
           }
