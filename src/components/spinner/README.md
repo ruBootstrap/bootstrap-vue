@@ -1,12 +1,12 @@
-# Spinner
+# Спиннер
 
-> The `<b-spinner>` component can be used to show the loading state in your projects. They're
-> rendered only with basic HTML and CSS as a lightweight Vue functional component. Their appearance,
-> alignment, and sizing can be easily customized with a few built-in props and/or Bootstrap v4
-> utility classes.
+> Компонент `<b-spinner>` можно использовать для отображения состояния загрузки в ваших проектах.
+> Они отображаются только с помощью базовых HTML и CSS в качестве облегченного функционального
+> компонента Vue. Их внешний вид, выравнивание и размер можно легко настроить с помощью нескольких
+> встроенных свойств и/или служебных классов Bootstrap v4.
 
-Spinners can be placed just about anywhere, including inside buttons, alerts, and even `<b-table>`'s
-busy slot.
+Спиннеры можно размещать где угодно, включая внутренние кнопки, оповещения и даже занятый слот
+`<b-table>`.
 
 ```html
 <div class="text-center">
@@ -21,44 +21,45 @@ busy slot.
 <!-- b-spinners.vue -->
 ```
 
-## Spinner types
+## Типы спиннеров
 
-Bootstrap includes two types of spinners. The default spinner type is called `border` (spinning
-circle border), and the optional type `grow` (a throbber style indicator).
+Bootstrap включает в себя два типа спиннеров. Тип спиннера по умолчанию называется `border` (граница
+вращающегося круга), а необязательный тип `grow` (индикатор в стиле пульсатора).
 
-### Border spinner
+### Спиннер Border
 
-Use the default `border` type spinners for a lightweight loading indicator.
+Используйте спиннер типа `border` по умолчанию для легкого индикатора загрузки.
 
 ```html
 <div>
-  <b-spinner label="Loading..."></b-spinner>
+  <b-spinner label="Загрузка..."></b-spinner>
 </div>
 
 <!-- b-spinner-border.vue -->
 ```
 
-### Grow spinner
+### Спиннер Grow
 
-If you don't fancy a `border` spinner, switch to the `grow` spinner by setting the prop `type` to
-`'grow'`. While it doesn't technically spin, it does repeatedly grow!
+Если вам не нравится спиннер `border`, переключитесь на спиннер `grow`, установив свойство`type` на
+`'grow'`. Хотя технически он не вращается, он постоянно растет!
 
 ```html
 <div>
-  <b-spinner type="grow" label="Loading..."></b-spinner>
+  <b-spinner type="grow" label="Загрузка..."></b-spinner>
 </div>
 
 <!-- b-spinner-grow.vue -->
 ```
 
-## Spinner color variants
+## Цветовые варианты спиннера
 
-Spinners use `currentColor` for their color, meaning it inherits the current font color. You can
-customize the color using the standard text color variants using the `variant` prop, or place
-classes or styles on the component to change its color.
+Спиннеры используют `currentColor` для своего цвета, что означает, что он наследует текущий цвет
+шрифта. Вы можете настроить цвет, используя стандартные варианты цвета текста, используя свойство
+`variant`, или поместить классы или стили в компонент, чтобы изменить его цвет.
 
-The `variant` prop translates the variant name to the Bootstrap v4 class `.text-{variant}`, so if
-you have custom defined text color variants, feel free to use them via the `variant` prop.
+Свойство `variant` переводит имя варианта в класс Bootstrap v4 `.text-{variant}`, поэтому, если у
+вас есть настраиваемые варианты цвета текста, не стесняйтесь использовать их через свойство
+`variant`.
 
 ```html
 <template>
@@ -95,24 +96,26 @@ you have custom defined text color variants, feel free to use them via the `vari
 <!-- b-spinner-variants.vue -->
 ```
 
-**Why not use `border-color` utilities?** Each `border` spinner specifies a `transparent` border for
-at least one side, so `.border-{color}` utilities would override that.
+**Почему бы не использовать утилиты `border-color`?** Каждый спиннер `border` указывает
+`transparent` рамку по крайней мере для одной стороны, поэтому утилиты `.border-{color}`
+переопределяют это.
 
-## Size
+## Размер
 
-Set the prop `small` to `true` to make a smaller spinner that can quickly be used within other
-components.
+Установите для свойства `small` значение `true`, чтобы сделать спиннер меньшего размера, который
+можно будет быстро использовать в других компонентах.
 
 ```html
 <div>
-  <b-spinner small label="Small Spinner"></b-spinner>
-  <b-spinner small label="Small Spinner" type="grow"></b-spinner>
+  <b-spinner small label="Маленький спиннер"></b-spinner>
+  <b-spinner small label="Маленький спиннер" type="grow"></b-spinner>
 </div>
 
 <!-- b-spinner-sizes.vue -->
 ```
 
-Or, use custom CSS or inline styles to change the dimensions as needed.
+Или используйте собственные стили CSS или встроенные стили, чтобы изменить размеры по мере
+необходимости.
 
 ```html
 <div>
@@ -125,16 +128,16 @@ Or, use custom CSS or inline styles to change the dimensions as needed.
 
 ## Выравнивание
 
-Spinners in Bootstrap are built with `rem`s, `currentColor`, and `display: inline-flex`. This means
-they can easily be resized, recolored, and quickly aligned.
+Спиннеры в Bootstrap создаются с помощью `rem`, `currentColor` и `display: inline-flex`. Это
+означает, что их можно легко изменить в размере, перекрасить и быстро выровнять.
 
 ### Margin
 
-Use margin utilities like `.m-5` for easy spacing.
+Используйте утилиты для отступов, такие как `.m-5`, чтобы упростить интервалы.
 
 ```html
 <div>
-  <b-spinner class="m-5" label="Busy"></b-spinner>
+  <b-spinner class="m-5" label="Занятой"></b-spinner>
 </div>
 
 <!-- b-spinner-margin.vue -->
@@ -142,21 +145,21 @@ Use margin utilities like `.m-5` for easy spacing.
 
 ## Размещение
 
-Use flexbox utilities, float utilities, or text alignment utility classes to place spinners exactly
-where you need them in any situation.
+Используйте утилиты flexbox, утилиты float или классы утилит выравнивания текста, чтобы размещать
+спиннеры именно там, где они вам нужны в любой ситуации.
 
 ### Flex
 
-Using flex utility classes:
+Использование флекс классов утилит:
 
 ```html
 <div>
   <div class="d-flex justify-content-center mb-3">
-    <b-spinner label="Loading..."></b-spinner>
+    <b-spinner label="Загрузка..."></b-spinner>
   </div>
 
   <div class="d-flex align-items-center">
-    <strong>Loading...</strong>
+    <strong>Загрузка...</strong>
     <b-spinner class="ml-auto"></b-spinner>
   </div>
 </div>
@@ -166,7 +169,7 @@ Using flex utility classes:
 
 ### Floats
 
-Using float utility classes:
+Использование флоат классов утилит:
 
 ```html
 <div class="clearfix">
@@ -176,9 +179,9 @@ Using float utility classes:
 <!-- b-spinner-floats.vue -->
 ```
 
-### Text align
+### Выравнивание текста
 
-Using text alignment utility classes:
+Использование классов утилит выравнивания текста:
 
 ```html
 <div class="text-center">
@@ -188,42 +191,44 @@ Using text alignment utility classes:
 <!-- b-spinner-text-align.vue -->
 ```
 
-## Spinners in buttons
+## Спиннеры в кнопках
 
-Use spinners within buttons to indicate an action is currently processing or taking place. You may
-also swap the label text out of the spinner element and utilize button text as needed.
+Используйте спиннеры внутри кнопок, чтобы указать, что действие в настоящее время обрабатывается или
+происходит. Вы также можете заменить текст метки из элемента счетчика и использовать текст кнопки по
+мере необходимости.
 
 ```html
 <div>
   <b-button variant="primary" disabled>
     <b-spinner small></b-spinner>
-    <span class="sr-only">Loading...</span>
+    <span class="sr-only">Загрузка...</span>
   </b-button>
 
   <b-button variant="primary" disabled>
     <b-spinner small type="grow"></b-spinner>
-    Loading...
+    Загрузка...
   </b-button>
 </div>
 
 <!-- b-spinner-buttons.vue -->
 ```
 
-## Spinner accessibility
+## Доступность спиннера
 
-Place a hidden label text inside the spinner for screen reader users, via the `label` prop or
-`label` slot. The content will be placed _inside_ the spinner wrapped in a `<span>` element that has
-the class `sr-only`, which will make the label available to screen reader users.
+Поместите скрытый текст метки внутрь спиннера для пользователей программ чтения с экрана через
+свойство `label` или слот `label`. Содержимое будет помещено внутри спиннера, заключенного в элемент
+`<span>` с классом `sr-only`, что сделает метку доступной для пользователей программ чтения с
+экрана.
 
-For accessibility purposes, each spinner will automatically have a `role="status"` attribute when a
-label is provided. You can easily customize the role if required via prop `role`. The specified
-`role` will not be applied when no label is provided.
+В целях доступности каждый счетчик будет автоматически иметь атрибут `role="status"` при
+предоставлении метки. Вы можете легко настроить роль, если это необходимо, с помощью свойства
+`role`. Указанная `role` не будет применяться, если не указана метка.
 
-As well, when no label is provided, the spinner will automatically have the attribute
-`aria-hidden="true"` to hide the spinner from screen reader users.
+Кроме того, когда метка не указана, счетчик автоматически получает атрибут `aria-hidden="true"`,
+чтобы скрыть счетчик от пользователей программ чтения с экрана.
 
 ## Смотрите также
 
-An alternative to the `<b-spinner>` component are [animated icons](/docs/icons/#animated-icons).
+Альтернативой компоненту `<b-spinner>` являются [анимированные иконки](/docs/icons/#animated-icons).
 
 <!-- Component reference added automatically from component package.json -->

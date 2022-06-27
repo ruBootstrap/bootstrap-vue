@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Spinner",
-    "description": "The <b-spinner> component can be used to show the loading state in your projects. They're rendered only with basic HTML and CSS as a lightweight Vue functional component.",
+    "description": "Компонент <b-spinner> можно использовать для отображения состояния загрузки в ваших проектах. Они отображаются только с помощью базовых HTML и CSS в качестве облегченного функционального компонента Vue.",
     "slug": "spinner",
     "components": [
       {
@@ -11,25 +11,25 @@
         "props": [
           {
             "prop": "label",
-            "description": "Text content to place in the sr-only label"
+            "description": "Текстовое содержимое для размещения на этикетке только для sr"
           },
           {
             "prop": "small",
-            "description": "When set, rendered a smaller spinner suitable for placing in buttons"
+            "description": "Если установлено, меньший спиннер отображается для размещения на кнопках"
           },
           {
             "prop": "type",
-            "description": "Type of spinner to show. Current supported types are 'border' and 'grow'"
+            "description": "Тип спиннера для отображения. Текущие поддерживаемые типы: 'border' и 'grow'"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из цветовых вариантов темы Bootstrap"
           }
         ],
         "slots": [
           {
             "name": "label",
-            "description": "Content to place in the sr-only label"
+            "description": "Контент для размещения на метке sr-only"
           }
         ]
       }
