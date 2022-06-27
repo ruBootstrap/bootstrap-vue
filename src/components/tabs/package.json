@@ -3,131 +3,131 @@
   "version": "1.0.0",
   "meta": {
     "title": "Tabs",
-    "description": "Create a widget of tabbable panes of local content. The tabs component is built upon navs and cards internally, and provides full keyboard navigation control of the tabs.",
+    "description": "Создайте виджет вкладок с локальным контентом. Компонент вкладок построен на внутренних элементах навигации и карточках и обеспечивает полное управление навигацией по вкладкам с помощью клавиатуры.",
     "components": [
       {
         "component": "BTabs",
         "props": [
           {
             "prop": "activeNavItemClass",
-            "description": "CSS class (or classes) to apply to the active nav item tab control"
+            "description": "Класс (или классы) CSS для применения к активному элементу управления вкладкой элемента навигации"
           },
           {
             "prop": "activeTabClass",
-            "description": "CSS class (or classes) to apply to the currently active tab"
+            "description": "Класс (или классы) CSS для применения к текущей активной вкладке"
           },
           {
             "prop": "align",
-            "description": "Align the nav items in the nav: 'start' (or 'left'), 'center', 'end' (or 'right')"
+            "description": "Выровняйте элементы навигации в навигации: 'start' (или 'left'), 'center', 'end' (или 'right')"
           },
           {
             "prop": "card",
-            "description": "When set to true, renders the tabs the the appropriate styles to be placed into a 'b-card'"
+            "description": "Если установлено значение true, вкладки отображают соответствующие стили, которые будут помещены в 'b-card'"
           },
           {
             "prop": "contentClass",
-            "description": "CSS class (or classes) to apply to the tab-content wrapper"
+            "description": "Класс (или классы) CSS для применения к оболочке содержимого вкладки"
           },
           {
             "prop": "end",
-            "description": "Place the tab controls at the bottom (horizontal tabs), or right (vertical tabs)"
+            "description": "Поместите элементы управления вкладками внизу (горизонтальные вкладки) или справа (вертикальные вкладки)"
           },
           {
             "prop": "fill",
-            "description": "Proportionately fills all horizontal space with nav items. All horizontal space is occupied, but not every nav item has the same width"
+            "description": "Пропорционально заполняет все горизонтальное пространство элементами навигации. Все горизонтальное пространство занято, но не каждый элемент навигации имеет одинаковую ширину"
           },
           {
             "prop": "justified",
-            "description": "Fills all horizontal space with nav items, but unlike 'fill', every nav item will be the same width"
+            "description": "Заполняет все горизонтальное пространство элементами навигации, но, в отличие от 'fill', все элементы навигации имеют одинаковую ширину"
           },
           {
             "prop": "lazy",
-            "description": "Lazily render the b-tab contents when shown"
+            "description": "Лениво визуализировать содержимое b-tab при отображении"
           },
           {
             "prop": "navClass",
-            "description": "CSS class (or classes) to apply to the tablist (nav) wrapper"
+            "description": "CSS-класс (или классы) для применения к оболочке списка вкладок (nav)"
           },
           {
             "prop": "navWrapperClass",
-            "description": "CSS class (or classes) to apply to the tab controls wrapper element"
+            "description": "CSS-класс (или классы) для применения к элементу-оболочке элементов управления вкладками"
           },
           {
             "prop": "noKeyNav",
-            "description": "Disable keyboard navigation of the tab controls"
+            "description": "Отключить навигацию с помощью клавиатуры для элементов управления вкладками"
           },
           {
             "prop": "noNavStyle",
-            "description": "Do not render the tab controls with tab styling"
+            "description": "Не отображать элементы управления вкладками со стилем вкладок"
           },
           {
             "prop": "pills",
-            "description": "Renders the nav items with the appearance of pill buttons"
+            "description": "Отображает элементы навигации в виде кнопок-таблеток"
           },
           {
             "prop": "small",
-            "description": "Makes the nav smaller"
+            "description": "Делает навигацию меньше"
           },
           {
             "prop": "value",
-            "description": "Currently visible tab index (zero-based)"
+            "description": "В настоящее время видимый индекс вкладки (отсчитывается от нуля)"
           },
           {
             "prop": "vertical",
-            "description": "Renders the nav vertically"
+            "description": "Отображает навигацию вертикально"
           },
           {
             "prop": "vertical",
-            "description": "Renders the tab controls vertically"
+            "description": "Отображает элементы управления вкладками вертикально"
           }
         ],
         "events": [
           {
             "event": "activate-tab",
             "version": "2.1.0",
-            "description": "Emitted just before a tab is shown/activated. Cancelable",
+            "description": "Генерируется непосредственно перед отображением/активацией вкладки. Отменяемый",
             "args": [
               {
                 "arg": "newTabIndex",
                 "type": "Number",
-                "description": "Tab being activated (0-based index)"
+                "description": "Вкладка активируется (индекс на основе 0)"
               },
               {
                 "arg": "prevTabIndex",
                 "type": "Number",
-                "description": "Tab that is currently active (0-based index). Will be -1 if no current active tab"
+                "description": "Активная в данный момент вкладка (индекс отсчитывается от 0). Будет -1, если нет текущей активной вкладки"
               },
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object. Call bvEvent.preventDefault() to cancel"
+                "description": "Объект BvEvent. Вызов bvEvent.preventDefault() для отмены"
               }
             ]
           },
           {
             "event": "changed",
-            "description": "Emitted when a tab is added, removed, or tabs are re-ordered",
+            "description": "Генерируется при добавлении, удалении вкладки или изменении порядка вкладок",
             "args": [
               {
                 "arg": "currentTabs",
                 "type": "Array",
-                "description": "Array of the current b-tab instances, in document order"
+                "description": "Массив текущих экземпляров b-tab в порядке документа"
               },
               {
                 "arg": "previousTabs",
                 "type": "Array",
-                "description": "Array of the previous b-tab instances, in document order"
+                "description": "Массив предыдущих экземпляров b-tab в порядке документа"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Emitted when a tab is shown. Used to update the v-model",
+            "description": "Генерируется при отображении вкладки. Используется для обновления v-model",
             "args": [
               {
                 "arg": "tabIndex",
                 "type": "Number",
-                "description": "Current selected tab index (0-based index)"
+                "description": "Индекс текущей выбранной вкладки (индекс на основе 0)"
               }
             ]
           }
@@ -135,19 +135,19 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content (tabs) to place in the tabs element"
+            "description": "Содержимое (вкладки) для размещения в элементе вкладок"
           },
           {
             "name": "empty",
-            "description": "Renders this slot if no tabs are present"
+            "description": "Отображает этот слот, если нет вкладок"
           },
           {
             "name": "tabs-end",
-            "description": "Additional tab buttons without tab content placed after content tab buttons"
+            "description": "Дополнительные кнопки вкладок без содержимого вкладок, размещенные после кнопок вкладок содержимого"
           },
           {
             "name": "tabs-start",
-            "description": "Additional tab buttons without tab content placed before content tab buttons"
+            "description": "Дополнительные кнопки вкладок без содержимого вкладок, размещенные перед кнопками вкладок содержимого"
           }
         ]
       },
@@ -156,39 +156,39 @@
         "props": [
           {
             "prop": "buttonId",
-            "description": "Use a specific ID for this tab's tab control button. If not provided, one will automatically be generated"
+            "description": "Используйте определенный идентификатор для кнопки управления вкладками этой вкладки. Если он не указан, он будет сгенерирован автоматически"
           },
           {
             "prop": "lazy",
-            "description": "Lazily render this tab's content when shown"
+            "description": "Лениво визуализировать содержимое этой вкладки при отображении"
           },
           {
             "prop": "noBody",
-            "description": "When the parent b-tabs has the 'card' prop set, do not render a card-body wrapper"
+            "description": "Когда для родительских b-tabs установлено свойство 'card', не отображает оболочку тела карточки"
           },
           {
             "prop": "titleItemClass",
-            "description": "CSS class (or classes) to apply to the tab's control button 'li' element"
+            "description": "CSS-класс (или классы) для применения к элементу 'li' кнопки управления вкладки"
           },
           {
             "prop": "titleLinkAttributes",
             "version": "2.6.0",
-            "description": "Attributes to apply to the tab's control button inner link element"
+            "description": "Атрибуты для применения к элементу внутренней ссылки кнопки управления вкладки"
           },
           {
             "prop": "titleLinkClass",
-            "description": "CSS class (or classes) to apply to the tab's control button inner link element"
+            "description": "CSS-класс (или классы) для применения к элементу внутренней ссылки кнопки управления вкладки"
           }
         ],
         "events": [
           {
             "event": "click",
-            "description": "Emitted when a tab is clicked, or is activated by keyboard navigation",
+            "description": "Испускается при нажатии на вкладку или активируется навигацией с помощью клавиатуры",
             "args": [
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Original event object"
+                "description": "Исходный объект события"
               }
             ]
           }
@@ -196,7 +196,7 @@
         "slots": [
           {
             "name": "title",
-            "description": "Slot for custom tab title"
+            "description": "Слот для пользовательского заголовка вкладки"
           }
         ]
       }

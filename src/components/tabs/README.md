@@ -1,45 +1,46 @@
-# Tabs
+# Табы
 
-> Create a widget of tabbable panes of _local content_. The tabs component is built upon navs and
-> cards internally, and provides full keyboard navigation control of the tabs.
+> Создайте виджет вкладок с _локальным содержимым_. Компонент вкладок построен на внутренних
+> элементах навигации и карточках и обеспечивает полное управление навигацией по вкладкам с помощью
+> клавиатуры.
 
-For navigation based tabs (i.e. tabs that would change the URL), use the
-[`<b-nav>`](/docs/components/nav) component instead.
+Для вкладок на основе навигации (т. е. вкладок, которые могут изменить URL-адрес) вместо этого
+используйте компонент [`<b-nav>`](/docs/components/nav).
 
-## Basic usage
+## Простое использование
 
 ```html
 <div>
   <b-tabs content-class="mt-3">
-    <b-tab title="First" active><p>I'm the first tab</p></b-tab>
-    <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-    <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
+    <b-tab title="First" active><p>я первая вкладка</p></b-tab>
+    <b-tab title="Second"><p>я вторая вкладка</p></b-tab>
+    <b-tab title="Disabled" disabled><p>я отключенная вкладка!</p></b-tab>
   </b-tabs>
 </div>
 
 <!-- b-tabs.vue -->
 ```
 
-**Tip:** You should supply each child `<b-tab>` component a unique `key` value if dynamically adding
-or removing `<b-tab>` components (i.e. `v-if` or for loops). The `key` attribute is a special Vue
-attribute, see https://vuejs.org/v2/api/#key.
+**Совет:** Вы должны предоставить каждому дочернему компоненту `<b-tab>` уникальное значение `key`
+при динамическом добавлении или удалении компонентов `<b-tab>` (например, `v-if` или циклы). Атрибут
+`key`— это специальный атрибут Vue, смотрите https://vuejs.org/v2/api/#key.
 
-## Cards integration
+## Интеграция карточек
 
-Tabs support integrating with Bootstrap cards. Just add the `card` property to `<b-tabs>` and place
-it inside a `<b-card>` component. Note that you should add the`no-body` prop on the `<b-card>`
-component in order to properly decorate the card header and remove the extra padding introduced by
-`card-body`.
+Вкладки поддерживают интеграцию с карточками Bootstrap. Просто добавьте свойство `card` в `<b-tabs>`
+и поместите его внутрь компонента `<b-card>`. Обратите внимание, что вы должны добавить свойство
+`no-body` к компоненту `<b-card>`, чтобы правильно украсить заголовок карты и удалить лишнее
+заполнение, введенное `card-body`.
 
 ```html
 <div>
   <b-card no-body>
     <b-tabs card>
-      <b-tab title="Tab 1" active>
-        <b-card-text>Tab contents 1</b-card-text>
+      <b-tab title="Вкладка 1" active>
+        <b-card-text>Содержимое вкладки 1</b-card-text>
       </b-tab>
-      <b-tab title="Tab 2">
-        <b-card-text>Tab contents 2</b-card-text>
+      <b-tab title="Вкладка 2">
+        <b-card-text>Содержимое вкладки 2</b-card-text>
       </b-tab>
     </b-tabs>
   </b-card>
@@ -48,31 +49,31 @@ component in order to properly decorate the card header and remove the extra pad
 <!-- b-tabs-card.vue -->
 ```
 
-When `<b-tabs>` is in `card` mode, each `<b-tab>` sub-component will automatically have the
-`card-body` class applied (this class provides the padding around the tab content). To disable the
-`card-body` class, set the `no-body` prop on the `<b-tab>` sub component.
+Когда `<b-tabs>` находится в режиме `card`, к каждому подкомпоненту `<b-tab>` автоматически
+применяется класс `card-body` (этот класс обеспечивает отступ вокруг содержимого вкладки). Чтобы
+отключить класс `card-body`, установите свойство `no-body` в подкомпоненте `<b-tab>`.
 
 ```html
 <div>
   <b-card no-body>
     <b-tabs card>
-      <b-tab no-body title="Picture 1">
-        <b-card-img bottom src="https://picsum.photos/600/200/?image=21" alt="Image 21"></b-card-img>
-        <b-card-footer>Picture 1 footer</b-card-footer>
+      <b-tab no-body title="Картинка 1">
+        <b-card-img bottom src="https://picsum.photos/600/200/?image=21" alt="Изображение 21"></b-card-img>
+        <b-card-footer>Картинка 1 футер</b-card-footer>
       </b-tab>
 
-      <b-tab no-body title="Picture 2">
-        <b-card-img bottom src="https://picsum.photos/600/200/?image=25" alt="Image 25"></b-card-img>
-        <b-card-footer>Picture 2 footer</b-card-footer>
+      <b-tab no-body title="Картинка 2">
+        <b-card-img bottom src="https://picsum.photos/600/200/?image=25" alt="Изображение 25"></b-card-img>
+        <b-card-footer>Картинка 2 футер</b-card-footer>
       </b-tab>
 
-      <b-tab no-body title="Picture 3">
-        <b-card-img bottom src="https://picsum.photos/600/200/?image=26" alt="Image 26"></b-card-img>
-        <b-card-footer>Picture 3 footer</b-card-footer>
+      <b-tab no-body title="Картинка 3">
+        <b-card-img bottom src="https://picsum.photos/600/200/?image=26" alt="Изображение 26"></b-card-img>
+        <b-card-footer>Картинка 3 футер</b-card-footer>
       </b-tab>
 
       <b-tab title="Text">
-        <b-card-title>This tab does not have the <code>no-body</code> prop set</b-card-title>
+        <b-card-title>На этой вкладке не установлено свойство <code>no-body</code></b-card-title>
         <b-card-text>
           Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum
           consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex
@@ -88,22 +89,23 @@ When `<b-tabs>` is in `card` mode, each `<b-tab>` sub-component will automatical
 <!-- b-tabs-card-no-body.vue -->
 ```
 
-**Примечание:** Setting the `no-body` prop on `<b-tab>` will have no affect when `<b-tabs>` is not
-in `card` mode (as the `card-body` class is only set when in `card` mode).
+**Примечание:** Установка свойства `no-body` на `<b-tab>` не повлияет, если `<b-tabs>` не находится
+в режиме `card` (поскольку класс `card-body` устанавливается только в режиме `card`).
 
-Refer to the [Cards documentation](/docs/components/card) for more details on card components.
+Смотрите [Документацию по карточкам](/docs/components/card) для получения более подробной информации
+о компонентах карточки.
 
-## Pills variant
+## Вариант таблеток
 
-Tabs use the `tabs` styling by default. Just add `pills` property to `<b-tabs>` for the pill style
-variant.
+Вкладки по умолчанию используют стиль `tabs`. Просто добавьте свойство `pills` в `<b-tabs>` для
+варианта в стиле таблетки.
 
 ```html
 <div>
   <b-card no-body>
     <b-tabs pills card>
-      <b-tab title="Tab 1" active><b-card-text>Tab contents 1</b-card-text></b-tab>
-      <b-tab title="Tab 2"><b-card-text>Tab contents 2</b-card-text></b-tab>
+      <b-tab title="Вкладка 1" active><b-card-text>Содержимое вкладки 1</b-card-text></b-tab>
+      <b-tab title="Вкладка 2"><b-card-text>Содержимое вкладки 2</b-card-text></b-tab>
     </b-tabs>
   </b-card>
 </div>
@@ -111,22 +113,23 @@ variant.
 <!-- b-tabs-pills.vue -->
 ```
 
-## Fill and justify
+## Fill и justify
 
-Force your `<b-tabs>` controls to extend the full available width.
+Заставьте ваши элементы управления `<b-tabs>` увеличить всю доступную ширину.
 
 ### Fill
 
-To proportionately fill all available space with your tab controls, set the `fill` prop. Notice that
-all horizontal space is occupied, but not every control has the same width.
+Чтобы пропорционально заполнить все доступное пространство элементами управления вкладками,
+установите свойство `fill`. Обратите внимание, что все горизонтальное пространство занято, но не все
+элементы управления имеют одинаковую ширину.
 
 ```html
 <div>
   <b-tabs content-class="mt-3" fill>
-    <b-tab title="First" active><p>I'm the first tab</p></b-tab>
-    <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-    <b-tab title="Very, very long title"><p>I'm the tab with the very, very long title</p></b-tab>
-    <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
+    <b-tab title="First" active><p>я первая вкладка</p></b-tab>
+    <b-tab title="Second"><p>я вторая вкладка</p></b-tab>
+    <b-tab title="Very, very long title"><p>Я вкладка с очень-очень длинным названием</p></b-tab>
+    <b-tab title="Disabled" disabled><p>я отключенная вкладка!</p></b-tab>
   </b-tabs>
 </div>
 
@@ -135,16 +138,17 @@ all horizontal space is occupied, but not every control has the same width.
 
 ### Justified
 
-For equal-width controls, use the `justified` prop instead. All horizontal space will be occupied by
-the controls, but unlike using `fill` above, every control will be the same width.
+Для элементов управления одинаковой ширины используйте вместо этого свойство `justified`. Все
+горизонтальное пространство будет занято элементами управления, но в отличие от использования `fill`
+выше, все элементы управления будут иметь одинаковую ширину.
 
 ```html
 <div>
   <b-tabs content-class="mt-3" justified>
-    <b-tab title="First" active><p>I'm the first tab</p></b-tab>
-    <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-    <b-tab title="Very, very long title"><p>I'm the tab with the very, very long title</p></b-tab>
-    <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
+    <b-tab title="First" active><p>я первая вкладка</p></b-tab>
+    <b-tab title="Second"><p>я вторая вкладка</p></b-tab>
+    <b-tab title="Very, very long title"><p>Я вкладка с очень-очень длинным названием</p></b-tab>
+    <b-tab title="Disabled" disabled><p>я отключенная вкладка!</p></b-tab>
   </b-tabs>
 </div>
 
@@ -153,30 +157,31 @@ the controls, but unlike using `fill` above, every control will be the same widt
 
 ## Выравнивание
 
-To align your tab controls, use the `align` prop. Available values are `left`, `center` and `right`.
+Чтобы выровнять элементы управления вкладками, используйте свойство `align`. Доступные значения:
+`left`, `center` и `right`.
 
 ```html
 <div>
   <b-tabs content-class="mt-3" align="center">
-    <b-tab title="First" active><p>I'm the first tab</p></b-tab>
-    <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-    <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
+    <b-tab title="First" active><p>я первая вкладка</p></b-tab>
+    <b-tab title="Second"><p>я вторая вкладка</p></b-tab>
+    <b-tab title="Disabled" disabled><p>я отключенная вкладка!</p></b-tab>
   </b-tabs>
 </div>
 
 <!-- b-tabs-alignment.vue -->
 ```
 
-## Bottom placement of tab controls
+## Нижнее размещение элементов управления вкладками
 
-Visually move the tab controls to the bottom by setting the prop `end`.
+Визуально переместите элементы управления вкладками вниз, установив свойство `end`.
 
 ```html
 <div>
   <b-card no-body>
     <b-tabs pills card end>
-      <b-tab title="Tab 1" active><b-card-text>Tab contents 1</b-card-text></b-tab>
-      <b-tab title="Tab 2"><b-card-text>Tab contents 2</b-card-text></b-tab>
+      <b-tab title="Вкладка 1" active><b-card-text>Содержимое вкладки 1</b-card-text></b-tab>
+      <b-tab title="Вкладка 2"><b-card-text>Содержимое вкладки 2</b-card-text></b-tab>
     </b-tabs>
   </b-card>
 </div>
@@ -184,27 +189,29 @@ Visually move the tab controls to the bottom by setting the prop `end`.
 <!-- b-tabs-bottom.vue -->
 ```
 
-**Caveats:**
+**Предостережения:**
 
-- Bottom placement visually works best with the `pills` variant. When using the default `tabs`
-  variant, you may want to provided your own custom styling classes, as Bootstrap v4 CSS assumes the
-  tabs will always be placed on the top of the tabs content.
-- To provide a better user experience with bottom placed controls, ensure that the content of each
-  tab pane is the same height and fits completely within the visible viewport, otherwise the user
-  will need to scroll up to read the start of the tabbed content.
+- Нижнее размещение визуально лучше всего работает с вариантом `pills`. При использовании варианта
+  `tabs` по умолчанию вы можете захотеть предоставить свои собственные настраиваемые классы стилей,
+  поскольку Bootstrap v4 CSS предполагает, что вкладки всегда будут размещаться в верхней части
+  содержимого вкладок.
+- Чтобы обеспечить лучший пользовательский интерфейс с расположенными внизу элементами управления,
+  убедитесь, что содержимое каждой панели вкладок имеет одинаковую высоту и полностью помещается в
+  видимом окне просмотра, в противном случае пользователю потребуется прокрутить вверх, чтобы
+  прочитать начало содержимого вкладок.
 
-## Vertical tabs
+## Вертикальные вкладки
 
-Have the tab controls placed on the lefthand side by setting the `vertical` prop to `true`. Vertical
-tabs work with or without `card` mode enabled.
+Разместите элементы управления вкладками с левой стороны, установив для свойства `vertical` значение
+`true`. Вертикальные вкладки работают как с включенным режимом `card`, так и без него.
 
 ```html
 <div>
   <b-card no-body>
     <b-tabs pills card vertical>
-      <b-tab title="Tab 1" active><b-card-text>Tab contents 1</b-card-text></b-tab>
-      <b-tab title="Tab 2"><b-card-text>Tab contents 2</b-card-text></b-tab>
-      <b-tab title="Tab 3"><b-card-text>Tab contents 3</b-card-text></b-tab>
+      <b-tab title="Вкладка 1" active><b-card-text>Содержимое вкладки 1</b-card-text></b-tab>
+      <b-tab title="Вкладка 2"><b-card-text>Содержимое вкладки 2</b-card-text></b-tab>
+      <b-tab title="Вкладка 3"><b-card-text>Содержимое вкладки 3</b-card-text></b-tab>
     </b-tabs>
   </b-card>
 </div>
@@ -212,15 +219,15 @@ tabs work with or without `card` mode enabled.
 <!-- b-tabs-vertical.vue -->
 ```
 
-Visually move the tab controls to the right hand side by setting the `end` prop:
+Визуально переместите элементы управления вкладками вправо, установив свойство `end`:
 
 ```html
 <div>
   <b-card no-body>
     <b-tabs pills card vertical end>
-      <b-tab title="Tab 1" active><b-card-text>Tab contents 1</b-card-text></b-tab>
-      <b-tab title="Tab 2"><b-card-text>Tab contents 2</b-card-text></b-tab>
-      <b-tab title="Tab 3"><b-card-text>Tab contents 3</b-card-text></b-tab>
+      <b-tab title="Вкладка 1" active><b-card-text>Содержимое вкладки 1</b-card-text></b-tab>
+      <b-tab title="Вкладка 2"><b-card-text>Содержимое вкладки 2</b-card-text></b-tab>
+      <b-tab title="Вкладка 3"><b-card-text>Содержимое вкладки 3</b-card-text></b-tab>
     </b-tabs>
   </b-card>
 </div>
@@ -228,18 +235,19 @@ Visually move the tab controls to the right hand side by setting the `end` prop:
 <!-- b-tabs-vertical-end.vue -->
 ```
 
-The width of the vertical tab controls will expand to fit the width of the tab title. To control the
-width, set a [width utility class](/docs/reference/size-props#sizing-utility-classes) via the prop
-`nav-wrapper-class`. You can use values such as `w-25` (25% width), `w-50` (50% width), etc., or
-column classes such as `col-2`, `col-3`, etc.
+Ширина элементов управления вертикальной вкладкой увеличится, чтобы соответствовать ширине заголовка
+вкладки. Чтобы контролировать ширину, установите
+[класс утилиты ширины](/docs/reference/size-props#sizing-utility-classes) через свойство
+`nav-wrapper-class`. Вы можете использовать такие значения, как `w-25` (25% ширина), `w-50` (50%
+ширина), и т. д., или классы столбцов, такие как `col-2`, `col-3`, и т. д.
 
 ```html
 <div>
   <b-card no-body>
     <b-tabs pills card vertical nav-wrapper-class="w-50">
-      <b-tab title="Tab 1" active><b-card-text>Tab contents 1</b-card-text></b-tab>
-      <b-tab title="Tab 2"><b-card-text>Tab contents 2</b-card-text></b-tab>
-      <b-tab title="Tab 3"><b-card-text>Tab contents 3</b-card-text></b-tab>
+      <b-tab title="Вкладка 1" active><b-card-text>Содержимое вкладки 1</b-card-text></b-tab>
+      <b-tab title="Вкладка 2"><b-card-text>Содержимое вкладки 2</b-card-text></b-tab>
+      <b-tab title="Вкладка 3"><b-card-text>Содержимое вкладки 3</b-card-text></b-tab>
     </b-tabs>
   </b-card>
 </div>
@@ -247,17 +255,18 @@ column classes such as `col-2`, `col-3`, etc.
 <!-- b-tabs-vertical-width.vue -->
 ```
 
-Vertical placement visually works best with the `pills` variant. When using the default `tabs`
-variant, you may want to provided your own custom styling classes, as Bootstrap v4 CSS assumes the
-tab controls will always be placed on the top of the tabs content.
+Вертикальное размещение визуально лучше всего работает с вариантом `pills`. При использовании
+варианта `tabs` по умолчанию вы можете захотеть предоставить свои собственные классы стилей,
+поскольку Bootstrap v4 CSS предполагает, что элементы управления вкладками всегда будут размещаться
+в верхней части содержимого вкладок.
 
-**Примечание:** _overflowing text may occur if your width is narrower than the tab title. You may
-need additional custom styling._
+**Примечание:** _переполнение текста может произойти, если ваша ширина меньше, чем заголовок
+вкладки. Вам может понадобиться дополнительный индивидуальный стиль._
 
-## Active classes
+## Активные классы
 
-To apply classes to the currently active control or tab use the `active-nav-item-class` and
-`active-tab-class` props.
+Чтобы применить классы к текущему активному элементу управления или вкладке, используйте свойства
+`active-nav-item-class` и `active-tab-class`.
 
 ```html
 <div>
@@ -266,31 +275,31 @@ To apply classes to the currently active control or tab use the `active-nav-item
     active-tab-class="font-weight-bold text-success"
     content-class="mt-3"
   >
-    <b-tab title="First" active><p>I'm the first tab</p></b-tab>
-    <b-tab title="Second"><p>I'm the second tab</p></b-tab>
-    <b-tab title="Disabled" disabled><p>I'm a disabled tab!</p></b-tab>
+    <b-tab title="First" active><p>я первая вкладка</p></b-tab>
+    <b-tab title="Second"><p>я вторая вкладка</p></b-tab>
+    <b-tab title="Disabled" disabled><p>я отключенная вкладка!</p></b-tab>
   </b-tabs>
 </div>
 
 <!-- b-tabs-classes.vue -->
 ```
 
-## Fade animation
+## Анимация затухания
 
-Fade is enabled by default when changing tabs. It can disabled with `no-fade` property.
+Затухание включено по умолчанию при смене вкладок. Его можно отключить с помощью свойства `no-fade`.
 
-## Add tabs without content
+## Добавить вкладки без содержимого
 
-If you want to add extra tabs that do not have any content, you can put them in `tabs-start` or
-`tabs-end` slot(s):
+Если вы хотите добавить дополнительные вкладки, у которых нет содержимого, вы можете поместить их в
+слоты `tabs-start` или `tabs-end`:
 
 ```html
 <div>
   <b-tabs>
     <!-- Add your b-tab components here -->
     <template #tabs-end>
-      <b-nav-item href="#" role="presentation" @click="() => {}">Another tab</b-nav-item>
-      <li role="presentation" class="nav-item align-self-center">Plain text</li>
+      <b-nav-item href="#" role="presentation" @click="() => {}">Другая вкладка</b-nav-item>
+      <li role="presentation" class="nav-item align-self-center">Простой текст</li>
     </template>
   </b-tabs>
 </div>
@@ -298,32 +307,34 @@ If you want to add extra tabs that do not have any content, you can put them in 
 <!-- b-tabs-item-slot.vue -->
 ```
 
-Use the `tabs-start` slot to place extra tab buttons before the content tab buttons, and use the
-`tabs-end` slot to place extra tab buttons after the content tab buttons.
+Используйте слот `tabs-start`, чтобы разместить дополнительные кнопки вкладок перед кнопками вкладок
+содержимого, и используйте слот `tabs-end`, чтобы разместить дополнительные кнопки вкладок после
+кнопок вкладок содержимого.
 
-**Примечание:** extra (contentless) tab buttons should be a `<b-nav-item>` or have a root element of
-`<li>` and class `nav-item` for proper rendering and semantic markup.
+**Примечание:** дополнительные (бессодержательные) кнопки вкладок должны быть `<b-nav-item>` или
+иметь корневой элемент `<li>` и класс `nav-item` для правильного рендеринга и семантической
+разметки.
 
-## Add custom content to tab title
+## Добавить пользовательский контент в заголовок вкладки
 
-If you want to add custom content to tab title, like HTML code, icons, or another non-interactive
-Vue component, this possible by using `title` slot of `<b-tab>`.
+Если вы хотите добавить пользовательский контент в заголовок вкладки, например HTML-код, иконки или
+другой неинтерактивный компонент Vue, это возможно с помощью слота `title` в `<b-tab>`.
 
 ```html
 <div>
   <b-tabs>
     <b-tab active>
       <template #title>
-        <b-spinner type="grow" small></b-spinner> I'm <i>custom</i> <strong>title</strong>
+        <b-spinner type="grow" small></b-spinner> Я <i>кастомный</i> <strong>тайтл</strong>
       </template>
-      <p class="p-3">Tab contents 1</p>
+      <p class="p-3">Содержимое вкладки 1</p>
     </b-tab>
 
     <b-tab>
       <template #title>
-        <b-spinner type="border" small></b-spinner> Tab 2
+        <b-spinner type="border" small></b-spinner> Вкладка 2
       </template>
-      <p class="p-3">Tab contents 2</p>
+      <p class="p-3">Содержимое вкладки 2</p>
     </b-tab>
   </b-tabs>
 </div>
@@ -331,28 +342,30 @@ Vue component, this possible by using `title` slot of `<b-tab>`.
 <!-- b-tabs-title-slot.vue -->
 ```
 
-**Do not** place interactive elements/components inside the title slot. The tab button is a link
-which does not support child interactive elements per the HTML5 spec.
+**Не** размещайте интерактивные элементы/компоненты внутри слота заголовка. Кнопка вкладки — это
+ссылка, которая не поддерживает дочерние интерактивные элементы в соответствии со спецификацией
+HTML5.
 
-## Apply custom classes to the generated nav-tabs or pills
+## Применение пользовательских классов к сгенерированным навигационным вкладкам или таблеткам
 
-The tab selectors are based on Bootstrap v4's `nav` markup ( i.e.
-`ul.nav > li.nav-item > a.nav-link`). In some situations, you may want to add classes to the `<li>`
-(nav-item) and/or the `<a>` (nav-link) on a per tab basis. To do so, simply supply the classname to
-the `title-item-class` prop (for the `<li>` element) or `title-link-class` prop (for the `<a>`
-element). Value's can be passed as a string or array of strings.
+Селекторы вкладок основаны на разметке `nav` Bootstrap v4 (например,
+`ul.nav > li.nav-item > a.nav-link`). В некоторых ситуациях вам может понадобиться добавить классы в
+`<li>` (элемент навигации) и/или `<a>` (ссылка навигации) для каждой вкладки отдельно. Для этого
+просто укажите имя класса в свойстве `title-item-class` (для элемента `<li>`) или в свойстве
+`title-link-class` (для элемента `<a>`). Значение может быть передано в виде строки или массива
+строк.
 
-**Примечание:** _The `active` class is automatically applied to the active tabs `<a>` element. You
-may need to accommodate your custom classes for this._
+**Примечание:** _Класс `active` автоматически применяется к элементу активных вкладок `<a>`. Для
+этого вам может потребоваться приспособить свои пользовательские классы._
 
 ```html
 <template>
   <div>
     <b-card no-body>
       <b-tabs v-model="tabIndex" card>
-        <b-tab title="Tab 1" :title-link-class="linkClass(0)">Tab contents 1</b-tab>
-        <b-tab title="Tab 2" :title-link-class="linkClass(1)">Tab contents 2</b-tab>
-        <b-tab title="Tab 3" :title-link-class="linkClass(2)">Tab contents 3</b-tab>
+        <b-tab title="Вкладка 1" :title-link-class="linkClass(0)">Содержимое вкладки 1</b-tab>
+        <b-tab title="Вкладка 2" :title-link-class="linkClass(1)">Содержимое вкладки 2</b-tab>
+        <b-tab title="Вкладка 3" :title-link-class="linkClass(2)">Содержимое вкладки 3</b-tab>
       </b-tabs>
     </b-card>
   </div>
@@ -380,98 +393,101 @@ may need to accommodate your custom classes for this._
 <!-- b-tabs-with-classes.vue -->
 ```
 
-## Lazy loading tab content
+## Отложенная загрузка содержимого вкладки
 
-Sometimes it's preferred to load components & data only when activating a tab, instead of loading
-all tabs (and associated data) when rendering the `<b-tabs>` set.
+Иногда предпочтительнее загружать компоненты и данные только при активации вкладки, а не загружать
+все вкладки (и связанные с ними данные) при рендеринге набора `<b-tabs>`.
 
-Individual `<b-tab>` components can be lazy loaded via the `lazy` prop, which when set doesn't mount
-the content of the `<b-tab>` until it is activated (shown), and will be un-mounted when the tab is
-deactivated (hidden):
+Отдельные компоненты `<b-tab>` могут быть лениво загружены через свойство `lazy`, которое, если
+установлено, не монтирует содержимое `<b-tab>` пока оно не будет активировано (показано), и будет
+удалено. размонтируется, когда вкладка деактивирована (скрыта):
 
 ```html
 <b-tabs content-class="mt-3">
   <!-- This tabs content will always be mounted -->
-  <b-tab title="Regular tab"><b-alert show>I'm always mounted</b-alert></b-tab>
+  <b-tab title="Regular tab"><b-alert show>Я всегда смонтирован</b-alert></b-tab>
 
   <!-- This tabs content will not be mounted until the tab is shown -->
   <!-- and will be un-mounted when hidden -->
-  <b-tab title="Lazy tab" lazy><b-alert show>I'm lazy mounted!</b-alert></b-tab>
+  <b-tab title="Lazy tab" lazy><b-alert show>Я смонтирован отложено!</b-alert></b-tab>
 </b-tabs>
 
 <!-- b-tabs-lazy-tab.vue -->
 ```
 
-One can also make all tab's lazy by setting the `lazy` prop on the parent `<b-tabs>` component:
+Также можно сделать все вкладки ленивыми, установив свойство `lazy` для родительского компонента
+`<b-tabs>`:
 
 ```html
 <b-tabs content-class="mt-3" lazy>
-  <b-tab title="Tab 1"><b-alert show>I'm lazy mounted!</b-alert></b-tab>
-  <b-tab title="Tab 2"><b-alert show>I'm lazy mounted too!</b-alert></b-tab>
+  <b-tab title="Вкладка 1"><b-alert show>Я смонтирован отложено!</b-alert></b-tab>
+  <b-tab title="Вкладка 2"><b-alert show>Я смонтирован отложено тоже!</b-alert></b-tab>
 </b-tabs>
 
 <!-- b-tabs-lazy.vue -->
 ```
 
-## Keyboard navigation
+## Клавиатурная навигация
 
-Keyboard navigation is enabled by default for ARIA compliance with tablists when a tab button has
-focus.
+Навигация с помощью клавиатуры включена по умолчанию для соответствия ARIA спискам таблиц, когда
+кнопка вкладки находится в фокусе.
 
-| Keypress                                                              | Action                                         |
-| --------------------------------------------------------------------- | ---------------------------------------------- |
-| <kbd>Left</kbd> or <kbd>Up</kbd>                                      | Activate the previous non-disabled tab         |
-| <kbd>Right</kbd> or <kbd>Down</kbd>                                   | Activate the next non-disabled tab             |
-| <kbd>Shift</kbd>+<kbd>Left</kbd> or <kbd>Shift</kbd>+<kbd>Up</kbd>    | Activate the first non-disabled tab            |
-| <kbd>Home</kbd>                                                       | Activate the first non-disabled tab            |
-| <kbd>Shift</kbd>+<kbd>Right</kbd> or <kbd>Shift</kbd>+<kbd>Down</kbd> | Activate the last non-disabled tab             |
-| <kbd>End</kbd>                                                        | Activate the last non-disabled tab             |
-| <kbd>Tab</kbd>                                                        | Move focus to the active tab content           |
-| <kbd>Shift</kbd>+<kbd>Tab</kbd>                                       | Move focus to the previous control on the page |
+| Нажатие клавиши                                                        | Действие                                                       |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------- |
+| <kbd>Left</kbd> или <kbd>Up</kbd>                                      | Активировать предыдущую неотключенную вкладку                  |
+| <kbd>Right</kbd> или <kbd>Down</kbd>                                   | Активировать следующую неотключенную вкладку                   |
+| <kbd>Shift</kbd>+<kbd>Left</kbd> или <kbd>Shift</kbd>+<kbd>Up</kbd>    | Активировать первую неотключенную вкладку                      |
+| <kbd>Home</kbd>                                                        | Активировать первую неотключенную вкладку                      |
+| <kbd>Shift</kbd>+<kbd>Right</kbd> или <kbd>Shift</kbd>+<kbd>Down</kbd> | Активировать последнюю неотключенную вкладку                   |
+| <kbd>End</kbd>                                                         | Активировать последнюю неотключенную вкладку                   |
+| <kbd>Tab</kbd>                                                         | Переместить фокус на содержимое активной вкладки               |
+| <kbd>Shift</kbd>+<kbd>Tab</kbd>                                        | Переместить фокус на предыдущий элемент управления на странице |
 
-Disable keyboard navigation by setting the prop `no-key-nav`. Behavior will now default to regular
-browser navigation with TAB key.
+Отключите навигацию с помощью клавиатуры, установив параметр `no-key-nav`. Поведение теперь по
+умолчанию будет обычной навигацией в браузере с помощью клавиши TAB.
 
-| Keypress                             | Action                                                 |
-| ------------------------------------ | ------------------------------------------------------ |
-| <kbd>Tab</kbd>                       | Move to the next tab button or control on the page     |
-| <kbd>Shift</kbd>+<kbd>Tab</kbd>      | Move to the previous tab button or control on the page |
-| <kbd>Enter</kbd> or <kbd>Space</kbd> | Activate current focused button's tab                  |
+| Нажатие клавиши                       | Действие                                                                 |
+| ------------------------------------- | ------------------------------------------------------------------------ |
+| <kbd>Tab</kbd>                        | Кнопка перехода к следующей вкладке или элемент управления на странице   |
+| <kbd>Shift</kbd>+<kbd>Tab</kbd>       | Кнопка перехода на предыдущую вкладку или элемент управления на странице |
+| <kbd>Enter</kbd> или <kbd>Space</kbd> | Активировать вкладку текущей сфокусированной кнопки                      |
 
-## Programmatically activating and deactivating tabs
+## Программная активация и деактивация вкладок
 
-Use the `<b-tabs>` `v-model` to control which tab is active by setting the `v-model` to the index
-(zero-based) of the tab to be shown (see example below).
+Используйте `<b-tabs>` `v-model`, чтобы контролировать, какая вкладка активна, установив `v-model`
+на индекс (отсчитываемый от нуля) отображаемой вкладки (см. пример ниже).
 
-Alternatively, you can use the `active` prop on each `<b-tab>` with the `.sync` modifier to activate
-the tab, or to detect if a particular tab is active.
+В качестве альтернативы, вы можете использовать свойство `active` для каждой `<b-tab>` с
+модификатором `.sync`, чтобы активировать вкладку или определить, активна ли конкретная вкладка.
 
-Each `<b-tab>` instance also provides two public methods to activate or deactivate the tab. The
-methods are `.activate()` and `.deactivate()`, respectively. If activation or deactivation fails
-(i.e. a tab is disabled or no tab is available to move activation to), then the currently active tab
-will remain active and the method will return `false`. You will need a reference to the `<b-tab>` in
-order to use these methods.
+Каждый экземпляр `<b-tab>` также предоставляет два общедоступных метода для активации или
+деактивации вкладки. Это методы `.activate()` и `.deactivate()` соответственно. Если активация или
+деактивация не удалась (т. е. вкладка отключена или нет доступной вкладки для перемещения
+активации), то текущая активная вкладка останется активной, и метод вернет `false`. Вам понадобится
+ссылка на `<b-tab>`, чтобы использовать эти методы.
 
-## Preventing a `<b-tab>` from being activated
+## Предотвращение активации `<b-tab>`
 
-To prevent a tab from activating, simply set the `disabled` prop on the `<b-tab>` component.
+Чтобы предотвратить активацию вкладки, просто установите свойство `disabled` в компоненте `<b-tab>`.
 
-Alternatively, you can listen for the `activate-tab` event, which provides an option to prevent the
-tab from activating. The `activate-tab` event is emitted with three arguments:
+В качестве альтернативы вы можете прослушивать событие `activate-tab`, которое предоставляет
+возможность предотвратить активацию вкладки. Событие `activate-tab` генерируется с тремя
+аргументами:
 
-- `newTabIndex`: The index of the tab that is going to be activated
-- `prevTabIndex`: The index of the currently active tab
-- `bvEvent`: The `BvEvent` object. Call `bvEvent.preventDefault()` to prevent `newTabIndex` from
-  being activated
+- `newTabIndex`: Индекс вкладки, которая будет активирована
+- `prevTabIndex`: Индекс текущей активной вкладки
+- `bvEvent`: Объект `BvEvent`. Вызов `bvEvent.preventDefault()`, чтобы предотвратить активацию
+  `newTabIndex`
 
-For accessibility reasons, when using the `activate-tab` event to prevent a tab from activating, you
-should provide some means of notification to the user as to why the tab is not able to be activated.
-It is recommended to use the `disabled` attribute on the `<b-tab>` component instead of using the
-`activate-tab` event (as `disabled` is more intuitive for screen reader users).
+По соображениям доступности при использовании события `activate-tab` для предотвращения активации
+вкладки вы должны предоставить пользователю некоторые средства уведомления о том, почему вкладка не
+может быть активирована. Рекомендуется использовать атрибут `disabled` компонента `<b-tab>` вместо
+использования события `activate-tab` (поскольку `disabled` более интуитивно понятен для
+пользователей программ чтения с экрана).
 
-## Advanced examples
+## Расширенные примеры
 
-### External controls using `v-model`
+### Внешние элементы управления с использованием `v-model`
 
 ```html
 <template>
@@ -479,24 +495,24 @@ It is recommended to use the `disabled` attribute on the `<b-tab>` component ins
     <!-- Tabs with card integration -->
     <b-card no-body>
       <b-tabs v-model="tabIndex" small card>
-        <b-tab title="General">I'm the first fading tab</b-tab>
+        <b-tab title="General">Я первая исчезающая вкладка</b-tab>
         <b-tab title="Edit profile">
-          I'm the second tab
-          <b-card>I'm the card in tab</b-card>
+          я вторая вкладка
+          <b-card>Я карточка во вкладке</b-card>
         </b-tab>
-        <b-tab title="Premium Plan" disabled>Sibzamini!</b-tab>
-        <b-tab title="Info">I'm the last tab</b-tab>
+        <b-tab title="Premium Plan" disabled>Сибзамини!</b-tab>
+        <b-tab title="Info">Я последняя вкладка</b-tab>
       </b-tabs>
     </b-card>
 
     <!-- Control buttons-->
     <div class="text-center">
       <b-button-group class="mt-2">
-        <b-button @click="tabIndex--">Previous</b-button>
-        <b-button @click="tabIndex++">Next</b-button>
+        <b-button @click="tabIndex--">Предыдущая</b-button>
+        <b-button @click="tabIndex++">Следующая</b-button>
       </b-button-group>
 
-      <div class="text-muted">Current Tab: {{ tabIndex }}</div>
+      <div class="text-muted">Текущая вкладка: {{ tabIndex }}</div>
     </div>
   </div>
 </template>
@@ -514,7 +530,7 @@ It is recommended to use the `disabled` attribute on the `<b-tab>` component ins
 <!-- b-tabs-controls.vue -->
 ```
 
-### Dynamic tabs + tabs-end slot
+### Динамические вкладки + вкладки в конце слота
 
 ```html
 <template>
@@ -523,9 +539,9 @@ It is recommended to use the `disabled` attribute on the `<b-tab>` component ins
       <b-tabs card>
         <!-- Render Tabs, supply a unique `key` to each tab -->
         <b-tab v-for="i in tabs" :key="'dyn-tab-' + i" :title="'Tab ' + i">
-          Tab contents {{ i }}
+          Содержимое вкладки {{ i }}
           <b-button size="sm" variant="danger" class="float-right" @click="closeTab(i)">
-            Close tab
+            Закрыть вкладку
           </b-button>
         </b-tab>
 
@@ -537,8 +553,8 @@ It is recommended to use the `disabled` attribute on the `<b-tab>` component ins
         <!-- Render this if no tabs -->
         <template #empty>
           <div class="text-center text-muted">
-            There are no open tabs<br>
-            Open a new tab using the <b>+</b> button above.
+            Нет открытых вкладок<br>
+            Откройте новую вкладку с помощью <b>+</b> кнопки выше.
           </div>
         </template>
       </b-tabs>
