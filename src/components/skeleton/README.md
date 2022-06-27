@@ -1,9 +1,9 @@
-# Skeleton
+# Скелет
 
-> `<b-skeleton>` is a BootstrapVue custom component, that allows you to display a loading state for
-> several component types while your data is being fetched or computed.
+> `<b-skeleton>` — это настраиваемый компонент BootstrapVue, который позволяет отображать состояние
+> загрузки для нескольких типов компонентов во время выборки или вычисления данных.
 
-**Example: Basic usage**
+**Пример: Простое использование**
 
 ```html
 <template>
@@ -13,7 +13,7 @@
         <b-progress-bar :value="loadingTime" :label="`${((loadingTime / maxLoadingTime) * 100).toFixed(2)}%`"></b-progress-bar>
       </b-progress>
 
-      <b-button class="ml-3" @click="startLoading()">Reload</b-button>
+      <b-button class="ml-3" @click="startLoading()">Перезагрузить</b-button>
     </div>
 
     <b-skeleton-wrapper :loading="loading">
@@ -88,33 +88,34 @@
 <!-- b-skeleton.vue -->
 ```
 
-## Types
+## Типы
 
-`<b-skeleton>` supports various basic types, to represent various components in your project.
+`<b-skeleton>` поддерживает различные базовые типы для представления различных компонентов в вашем
+проекте.
 
 ```html
 <h5>Text (default)</h5>
 <b-skeleton></b-skeleton>
 
-<h5 class="mt-3">Avatar</h5>
+<h5 class="mt-3">Аватар</h5>
 <b-skeleton type="avatar"></b-skeleton>
 
-<h5 class="mt-3">Input</h5>
+<h5 class="mt-3">Ввод</h5>
 <b-skeleton type="input"></b-skeleton>
 
-<h5 class="mt-3">Button</h5>
+<h5 class="mt-3">Кнопка</h5>
 <b-skeleton type="button"></b-skeleton>
 
 <!-- b-skeleton-types.vue -->
 ```
 
-## Skeleton animations
+## Анимация скелета
 
-`<b-skeleton>` supports different animations. You can set them per component or change it globally
-in the [settings](/docs/reference/settings).
+`<b-skeleton>` поддерживает различные анимации. Вы можете установить их для каждого компонента или
+изменить глобально в [настройках](/docs/reference/settings).
 
 ```html
-<h5>Wave (default)</h5>
+<h5>Wave (по умолчанию)</h5>
 <b-card>
   <b-skeleton animation="wave" width="85%"></b-skeleton>
   <b-skeleton animation="wave" width="55%"></b-skeleton>
@@ -135,7 +136,7 @@ in the [settings](/docs/reference/settings).
   <b-skeleton animation="throb" width="70%"></b-skeleton>
 </b-card>
 
-<h5 class="mt-3">None</h5>
+<h5 class="mt-3">Ничего</h5>
 <b-card>
   <b-skeleton animation width="85%"></b-skeleton>
   <b-skeleton animation width="55%"></b-skeleton>
@@ -145,17 +146,17 @@ in the [settings](/docs/reference/settings).
 <!-- b-skeleton-animations.vue -->
 ```
 
-## Helper components
+## Вспомогательные компоненты
 
-Utilize `<b-skeleton>` helper components to quickly scaffold existing components.
+Используйте вспомогательные компоненты `<b-skeleton>` для быстрого создания шаблонов существующих
+компонентов.
 
-### Table
+### Таблица
 
-`<b-skeleton-table>` allows you to scaffold a basic table structure by utilizing the `rows` and
-`columns` props to define the size of the table. You can pass props directly to the table via the
-`table-props` property, which supports the same props as `<b-table-simple>`. Refer to the
-`<b-table-simple>` [documentation](/docs/components/table#comp-ref-b-table-simple) for a complete
-list.
+`<b-skeleton-table>` позволяет вам создавать базовую структуру таблицы, используя свойства `rows` и
+`columns` для определения размера таблицы. Вы можете передавать свойства непосредственно в таблицу
+через свойство `table-props`, которое поддерживает те же свойства, что и `<b-table-simple>`. Полный
+список смотрите в `<b-table-simple>` [документации](/docs/components/table#comp-ref-b-table-simple).
 
 ```html
 <b-skeleton-table
@@ -167,11 +168,11 @@ list.
 <!-- b-skeleton-helper-table.vue -->
 ```
 
-### Image
+### Изображение
 
-Utilize `<b-skeleton-img>` to represent images. It utilizes a 16:9 aspect ratio by default, for a
-responsive sizing. You can overwrite this by applying `no-aspect` and utilize the `height` and
-`width` props to set your own sizing.
+Используйте `<b-skeleton-img>` для представления изображений. По умолчанию используется соотношение
+сторон 16:9 для адаптивного размера. Вы можете перезаписать это, применив `no-aspect` и используя
+свойства `height` и `width`, чтобы установить свой собственный размер.
 
 ```html
 <b-row>
@@ -189,10 +190,10 @@ responsive sizing. You can overwrite this by applying `no-aspect` and utilize th
 <!-- b-skeleton-helper-img.vue -->
 ```
 
-#### Card Image
+#### Изображение карточки
 
-Use `<b-skeleton-img>` to represent images in `<b-card>`. Remember to set the `card-img` prop to the
-position of the image. This will apply the proper border-radius.
+Используйте `<b-skeleton-img>` для представления изображений в `<b-card>`. Не забудьте установить
+свойство `card-img` в положение изображения. Это применит правильный радиус границы.
 
 ```html
 <b-row>
@@ -243,10 +244,10 @@ position of the image. This will apply the proper border-radius.
 <!-- b-skeleton-helper-card-img.vue -->
 ```
 
-## Icons
+## Иконки
 
-`<b-skeleton-icon>` can also be used as placeholder for icons. If you need to use any icon props,
-you can pass them via the `icon-props` property.
+`<b-skeleton-icon>` также можно использовать в качестве заполнителя для иконок. Если вам нужно
+использовать какие-либо свойства иконок, вы можете передать их через свойство `icon-props`.
 
 ```html
 <b-skeleton-icon
@@ -262,14 +263,15 @@ you can pass them via the `icon-props` property.
 <!-- b-skeleton-helper-card-icon.vue -->
 ```
 
-**Примечание:** The `throb` animation does not work with `b-skeleton-icon`.
+**Примечание:** Анимация `throb` не работает с `b-skeleton-icon`.
 
-## Styling and customization
+## Стилизация и персонализация
 
-The `<b-skeleton>` component and helper components utilizes Bootstrap SCSS variables, as much as
-possible to best match the styling and sizing of the native components. This means if you've
-customized Bootstrap SCSS, the skeleton components should adapt to fit your custom theming.
+Компонент `<b-skeleton>` и вспомогательные компоненты используют переменные Bootstrap SCSS,
+насколько это возможно, чтобы наилучшим образом соответствовать стилю и размеру собственных
+компонентов. Это означает, что если вы настроили Bootstrap SCSS, компоненты скелета должны
+адаптироваться к вашей пользовательской теме.
 
-We've also provided a few custom SCSS variables, that can be used to further customize the styling
-of the various `<b-skeleton>` components. You can read more about how to change these variables in
-the [theming section](/docs/reference/theming#bootstrapvue-sass-variables).
+Мы также предоставили несколько пользовательских переменных SCSS, которые можно использовать для
+дальнейшей настройки стиля различных компонентов `<b-skeleton>`. Вы можете узнать больше о том, как
+изменить эти переменные, в [разделе тем](/docs/reference/theming#bootstrapvue-sass-variables).
