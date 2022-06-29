@@ -1,33 +1,35 @@
-# Toast
+# Тост
 
-> Push notifications to your visitors with a `<b-toast>` and `<b-toaster>`, lightweight components
-> which are easily customizable for generating alert messages.
+> Отправляйте своим посетителям push-уведомления с помощью `<b-toast>` и `<b-toaster>`, легких
+> компонентов, которые легко настраиваются для создания предупреждающих сообщений.
 
-Toasts are lightweight notifications designed to mimic the push notifications that have been
-popularized by mobile and desktop operating systems.
+Тосты — это легкие уведомления, имитирующие push-уведомления, популярные в мобильных и настольных
+операционных системах.
 
-Toasts are intended to be small interruptions to your visitors or users, and therefore should
-contain minimal, to-the-point, non-interactive content. Please refer to the
-[Accessibility tips](#accessibility-tips) section below for **important** usage information.
+Тосты предназначены для небольшого прерывания ваших посетителей или пользователей и поэтому должны
+содержать минимум неинтерактивного контента по существу. Обратитесь к разделу
+[Советы по специальным возможностям](#accessibility-tips) ниже для получения **важной** информации
+об использовании.
 
 ## Обзор
 
-To encourage extensible and predictable toasts, we recommend providing a header (title) and body.
-Toast headers use the style `'display: flex'`, allowing easy alignment of content thanks to
-Bootstrap's [margin and flexbox utility classes](/docs/reference/utility-classes).
+Чтобы поощрять расширяемые и предсказуемые всплывающие уведомления, мы рекомендуем предоставить
+заголовок (название) и тело. Заголовки всплывающих сообщений используют стиль `'display: flex'`, что
+позволяет легко выравнивать содержимое благодаря
+[служебным классам маржин и флексбокс Bootstrap](/docs/reference/utility-classes).
 
-Toasts are slightly translucent, too, so they blend over whatever they might appear over. For
-browsers that support the `backdrop-filter` CSS property, they also attempt to blur the elements
-under the toast.
+Тосты также слегка полупрозрачны, поэтому они сливаются с тем, на чем могут появиться. Браузеры,
+поддерживающие CSS-свойство `backdrop-filter`, также пытаются размыть элементы всплывающего
+уведомления.
 
 ```html
 <template>
   <div class="p-3 bg-secondary progress-bar-striped" style="min-height: 170px;">
     <b-button class="mb-2" variant="primary" @click="$bvToast.show('example-toast')">
-      Show toast
+      Показать тост
     </b-button>
     <b-toast id="example-toast" title="BootstrapVue" static no-auto-hide>
-      Hello, world! This is a toast message.
+      Привет, мир! Это тост-сообщение.
     </b-toast>
   </div>
 </template>
@@ -35,61 +37,68 @@ under the toast.
 <!-- toast-intro.vue -->
 ```
 
-**Примечание:** we are using the `static` prop in the above example to render the toast in-place in
-the document, rather than transporting it to a `<b-toaster>` target container. And we have added
-classes `bg-secondary` and `progress-bar-striped` to the outer `<div>` for illustrative purposes of
-toast transparency only.
+**Примечание:** мы используем свойство `static` в приведенном выше примере для рендеринга
+всплывающего уведомления на месте в документе, а не для его транспортировки в целевой контейнер
+`<b-toaster>`. И мы добавили классы `bg-secondary` и `progress-bar-striped` к внешнему `<div>`
+только для иллюстративных целей прозрачности тостов.
 
-### Toast features and notes
+### Функции всплывающих уведомлений и заметки
 
-- Toasts can be generated on demand via the injection `this.$bvToast` object, or manually created
-  using the `<b-toast>` component.
-- Titles are optional, but should be included, titles are rendered inside a `<strong>` element,
-  unless using the `toast-title` slot.
-- The close button at the top right of the toast can be removed via the `no-close-button` prop.
-- A title bar is shown, unless you give no title and set the `no-close-button` prop.
-- Auto-hiding occurs after 5000 ms, which can be changed via the `auto-hide-delay` prop, or disabled
-  with the `no-auto-hide` prop.
-- When auto-hide is enabled, while you hover over the toast, the auto-hide countdown will pause. You
-  can disable this feature by setting the `no-hover-pause` prop to `true`.
-- If you disable the auto-hide feature, avoid hiding the close button, or if you hide the close
-  button be sure to allow the toast to auto-dismiss. Please refer to the
-  [Accessibility tips](#accessibility-tips) section below for **important** usage information.
-- Toast transparency can be disabled by setting the `solid` prop to `true`.
-- Toasts will show inside a named `<b-toaster>` target component. BootstrapVue comes with several
-  pre-defined toaster targets. Toasts will check for the named toaster in the document before they
-  are shown, and will dynamically create the named toaster target if one is not found.
-- Toaster targets are defined completely with CSS for controlling the positioning of the contained
-  `<b-toast>` components.
-- Toasts can can targeted to any named toaster.
-- Toasts are wrapped in a `<div>` with class `b-toast` to allow for Vue list-transition support when
-  displayed in a toaster component.
+- Тосты могут генерироваться по запросу с помощью объекта внедрения `this.$bvToast` или создаваться
+  вручную с помощью компонента `<b-toast>`.
+- Заголовки необязательны, но должны быть включены, заголовки отображаются внутри элемента
+  `<strong>`, если только не используется слот `toast-title`.
+- Кнопку закрытия в правом верхнем углу всплывающего уведомления можно удалить с помощью параметра
+  `no-close-button`.
+- Отображается строка заголовка, если вы не укажете заголовок и не установите свойство
+  `no-close-button`.
+- Автоматическое скрытие происходит через 5000 мс, что можно изменить с помощью параметра
+  `auto-hide-delay` или отключить с помощью параметра `no-auto-hide`.
+- Когда автоматическое скрытие включено, пока вы наводите курсор на всплывающее уведомление,
+  обратный отсчет автоматического скрытия будет приостановлен. Вы можете отключить эту функцию,
+  установив для параметра `no-hover-pause` значение `true`.
+- Если вы отключите функцию автоматического скрытия, не скрывайте кнопку закрытия, а если вы
+  скрываете кнопку закрытия, обязательно разрешите автоматическое закрытие всплывающего уведомления.
+  Обратитесь к разделу [Советы по специальным возможностям](#accessibility-tips) ниже для получения
+  **важной** информации об использовании.
+- Прозрачность тостов можно отключить, установив для параметра `solid` значение `true`.
+- Тосты будут отображаться внутри целевого компонента с именем `<b-toaster>`. BootstrapVue
+  поставляется с несколькими предопределенными целями тостера. Тосты будут проверять наличие
+  именованного тостера в документе, прежде чем они будут показаны, и динамически создавать
+  именованный целевой тостер, если он не найден.
+- Цели тостера полностью определены с помощью CSS для управления позиционированием содержащихся
+  компонентов `<b-toast>`.
+- Тосты могут быть нацелены на любой названный тостер.
+- Тосты заключены в `<div>` с классом `b-toast`, чтобы обеспечить поддержку перехода списка Vue при
+  отображении в компоненте тостера.
 
-BootstrapVue uses [PortalVue](https://portal-vue.linusb.org/) to transport toasts into the toasters.
+BootstrapVue использует [PortalVue](https://portal-vue.linusb.org/) для переноса тостов в тостеры.
 
-## Toasts on demand
+## Тосты по требованию
 
-Generate a dynamic toast from anywhere in your app via the `this.$bvToast` Vue component _instance_
-injection, without the need to place a [`<b-toast>`](#b-toast-component) component in your app.
+Создавайте динамические всплывающие уведомления из любого места вашего приложения с помощью
+внедрения _инстанса_ компонента Vue `this.$bvToast` без необходимости размещать в приложении
+компонент [`<b-toast>`](#b-toast-component).
 
-Use the `this.$bvToast.toast()` method to generate on demand toasts. The method accepts two
-arguments:
+Используйте метод `this.$bvToast.toast()` для создания тостов по запросу. Метод принимает два
+аргумента:
 
-- `message`: the content of the toast body (either a string, or an array of `VNodes`). Required.
-  Toasts with an empty message will not be shown. See the [Advanced usage](#advanced-usage) section
-  for an example of passing an array of `VNodes` as the message.
-- `options`: an optional options object for providing a title and/or additional configuration
-  options. The `title` option can be either a string or an array of `VNodes`
+- `message`: содержимое тела всплывающего уведомления (либо строка, либо массив `VNodes`).
+  Обязательный. Тосты с пустым сообщением отображаться не будут. Смотрите раздел
+  [Расширенное использование](#advanced-usage) для примера передачи массива `VNodes` в качестве
+  сообщения.
+- `options`: необязательный объект опций для предоставления заголовка и/или дополнительных опций
+  конфигурации. Опция `title` может быть либо строкой, либо массивом `VNodes`
 
-The options argument accepts most of the props that the `<b-toast>` component accepts (with the
-exception of `static`, and `visible`) in <samp>camelCase</samp> name format instead of
+Аргумент options принимает большинство реквизитов, которые принимает компонент `<b-toast>` (за
+исключением `static` и `visible`) в формате имени <samp>camelCase</samp> вместо
 <samp>kebab-case</samp>.
 
 ```html
 <template>
   <div>
-    <b-button @click="makeToast()">Show Toast</b-button>
-    <b-button @click="makeToast(true)">Show Toast (appended)</b-button>
+    <b-button @click="makeToast()">Показать тост</b-button>
+    <b-button @click="makeToast(true)">Показать тост (добавленный)</b-button>
   </div>
 </template>
 
@@ -103,7 +112,7 @@ exception of `static`, and `visible`) in <samp>camelCase</samp> name format inst
     methods: {
       makeToast(append = false) {
         this.toastCount++
-        this.$bvToast.toast(`This is toast number ${this.toastCount}`, {
+        this.$bvToast.toast(`Это тост номер ${this.toastCount}`, {
           title: 'BootstrapVue Toast',
           autoHideDelay: 5000,
           appendToast: append
@@ -116,54 +125,57 @@ exception of `static`, and `visible`) in <samp>camelCase</samp> name format inst
 <!-- toasts-bv-toast-example.vue -->
 ```
 
-Once a toast which was generated using `this.$bvToast.toast()` has been hidden, it will
-automatically be destroyed and removed from the document.
+Как только всплывающее уведомление, созданное с помощью `this.$bvToast.toast()`, будет скрыто, оно
+будет автоматически уничтожено и удалено из документа.
 
 **Примечания:**
 
-- The `this.$bvToast` injection is only available when using the full `BootstrapVue` plugin or the
-  `ToastPlugin` plugin. It is not available if importing just the `b-toast` or `b-toaster`
-  components. To just import the `$bvToast` injection, use the `BVToastPlugin` plugin.
-- A new `$bvToast` injection (mixin) is created for each Vue virtual machine instance (i.e. each
-  instantiated component), and is not usable via direct access to the `Vue.prototype`, as it needs
-  access to the instance's `this` and `$root` contexts.
-- Toasts generated via `this.$bvToast.toast()` are children of the Vue instance that calls the
-  `this.$bvToast.toast()` method, and will be hidden and destroyed if that Vue instance (i.e. your
-  component or app) is also destroyed. If the vm context is inside a `<router-view>`, and the
-  `$route` changes, the toast will also be destroyed (as all the children of `<router-view>` are
-  destroyed. To make on-demand toasts persist across router `$route` changes, use
-  `this.$root.$bvToast.toast()` instead to make the toast's parent the root of your app.
-- Toasts require a message. Toasts on demand with an empty message will silently not be shown.
+- Внедрение `this.$bvToast` доступно только при использовании полного плагина `BootstrapVue` или
+  плагина `ToastPlugin`. Он недоступен при импорте только компонентов `b-toast` или `b-toaster`.
+  Чтобы просто импортировать инъекцию `$bvToast`, используйте плагин `BVToastPlugin`.
+- Новая инъекция `$bvToast` (примесь) создается для каждого экземпляра виртуальной машины Vue (т. е.
+  каждого созданного компонента), и ее нельзя использовать через прямой доступ к `Vue.prototype`,
+  так как ему нужен доступ к контекстам `this` и `$root`.
+- Тосты, созданные с помощью `this.$bvToast.toast()`, являются дочерними элементами экземпляра Vue,
+  вызывающего метод `this.$bvToast.toast()`, и будут скрыты и уничтожены, если этот экземпляр Vue
+  (т.е. ваш компонент или приложение) также уничтожается. Если контекст vm находится внутри
+  `<router-view>`, а `$route` изменяется, всплывающее уведомление также будет уничтожено (поскольку
+  все дочерние элементы `<router-view>` уничтожаются. Чтобы сделать запрос по запросу тосты
+  сохраняются при изменении маршрутизатора `$route`, вместо этого используйте
+  `this.$root.$bvToast.toast()`, чтобы сделать родителем всплывающего уведомления корень вашего
+  приложения.
+- Тосты требуют сообщения. Тосты по запросу с пустым сообщением не будут отображаться.
 
 ## Опции
 
-Toasts have various options that can control their style and behaviour. Options are available both
-as props on the `<b-toast>` component and as properties of the options object passed to
-`this.$bvToast.toast()`. When passing options to `this.$bvToast.toast()`, use the
-<samp>camelCase</samp> version of the component prop name, i.e. use `noAutoHide` instead of
+Тосты имеют различные параметры, которые могут управлять их стилем и поведением. Параметры доступны
+как в качестве свойств компонента `<b-toast>`, так и в качестве свойств объекта параметров,
+переданного в `this.$bvToast.toast()`. При передаче опций в `this.$bvToast.toast()`, используйте
+<samp>camelCase</samp> версию имени свойства компонента, т.е. используйте `noAutoHide` вместо
 `no-auto-hide`.
 
-### Title
+### Заголовок
 
-Add a title to your toast via the `title` option. Just like the toast `message`, the title can be a
-simple string, or an array of VNodes. See the [Advanced usage](#advanced-usage) section for an
-example of passing an array of `VNodes` as the message and title.
+Добавьте заголовок к вашему тосту с помощью опции `title`. Как и всплывающее сообщение `message`,
+заголовок может быть простой строкой или массивом VNodes. Смотрите раздел
+[Расширенное использование](#advanced-usage) для примера передачи массива `VNodes` в качестве
+сообщения и заголовка.
 
-### Transparency
+### Прозрачность
 
-Toasts have a semi-transparent background by default. To disable the default transparency, just set
-the `solid` prop to `true` to remove the alpha channel from the background color.
+Тосты по умолчанию имеют полупрозрачный фон. Чтобы отключить прозрачность по умолчанию, просто
+установите свойство `solid` в значение `true`, чтобы удалить альфа-канал из цвета фона.
 
-Transparency can also be altered via the BootstrapVue custom SCSS variable
-`$b-toast-background-opacity` when using the SCSS files rather than CSS files. Refer to the
-[Theming](/docs/reference/theming) reference section.
+Прозрачность также можно изменить с помощью пользовательской переменной SCSS BootstrapVue
+`$b-toast-background-opacity` при использовании файлов SCSS, а не файлов CSS. Смотрите справочный
+раздел [Тематика](/docs/reference/theming).
 
-### Variants
+### Варианты
 
-BootstrapVue toasts provide custom CSS to define color variants. Variants follow the standard
-Bootstrap v4 variant names. If you have custom SCSS defined Bootstrap color theme variants, the
-toast custom SCSS will automatically create toast variants for you (refer to the
-[Theming](/docs/reference/theming) reference section).
+Тосты BootstrapVue предоставляют настраиваемый CSS для определения цветовых вариантов. Варианты
+следуют стандартным именам вариантов Bootstrap v4. Если у вас есть определенные в SCSS варианты
+цветовой темы Bootstrap, пользовательский SCSS всплывающих уведомлений автоматически создаст для вас
+варианты всплывающих уведомлений (смотрите справочный раздел [Тематика](/docs/reference/theming)).
 
 ```html
 <template>
@@ -195,10 +207,10 @@ toast custom SCSS will automatically create toast variants for you (refer to the
 <!-- toast-variants.vue -->
 ```
 
-### Toaster target
+### Цель тостера
 
-BootstrapVue comes with the following "built-in" toaster names (and associated styles defined in
-SCSS):
+BootstrapVue поставляется со следующими «встроенными» именами тостеров (и связанными стилями,
+определенными в SCSS):
 
 - `b-toaster-top-right`
 - `b-toaster-top-left`
@@ -249,41 +261,45 @@ SCSS):
 
 **Примечания:**
 
-- Toaster target names that have not been defined in CSS will render at the bottom of the document,
-  stacked and not positioned (appended to `<body>` inside a `<b-toaster>` with class name and ID set
-  to the toaster target name). The only default styling the toaster will have is a `z-index` of
-  `1100`.
-- Avoid using `b-toaster-top-*` toasters together, or `b-toaster-bottom-*` toasters together, at the
-  same time in your app as notifications could be obscured/overlap on small screens (i.e. `xs`).
+- Имена целей тостера, которые не были определены в CSS, будут отображаться в нижней части
+  документа, сгруппированы и не позиционированы (добавлены к `<body>` внутри `<b-toaster>` с именем
+  класса и идентификатором, установленными для тостера). имя цели). Единственный стиль по умолчанию,
+  который будет иметь тостер, — это `z-index` равный `1100`.
+- Избегайте одновременного использования тостеров `b-toaster-top-*` или `b-toaster-bottom-*` вместе
+  в вашем приложении, так как уведомления могут быть скрыты/перекрываться на маленьких экранах
+  (например, `xs`).
 
-### Prepend and append
+### Подготовка и добавление
 
-Toasts default to prepending themselves to the top of the toasts shown in the specified toaster in
-the order they were created. To append new toasts to the bottom, set the `append-toast` prop to
-`true`.
+Тосты по умолчанию добавляются в начало всплывающих уведомлений, отображаемых в указанном тостере, в
+порядке их создания. Чтобы добавить новые всплывающие уведомления в конец, установите для свойства
+`append-toast` значение `true`.
 
-### Auto-hide
+### Авто-скрытие
 
-Change to auto hide delay time via the `auto-hide-delay` prop (value is in milliseconds), which
-defaults to `5000` (minimum value `1000`). Or, disable the auto-hide feature completely by setting
-the `no-auto-hide` prop to `true`.
+Измените время задержки автоматического скрытия с помощью свойства `auto-hide-delay` (значение в
+миллисекундах), которое по умолчанию равно `5000` (минимальное значение `1000`). Или полностью
+отключите функцию автоматического скрытия, установив для параметра `no-auto-hide` значение `true`.
 
-When auto-hide is enabled, hovering over the toast will pause the auto-hide timer. When you un-hover
-the toast, the auto-hide timer will be resumed. You can disable this feature by setting the
-`no-hover-pause` prop to `true`.
+Когда автоматическое скрытие включено, наведение курсора на всплывающее уведомление приостанавливает
+таймер автоматического скрытия. Когда вы уберете всплывающее уведомление, таймер автоматического
+скрытия будет возобновлен. Вы можете отключить эту функцию, установив для параметра `no-hover-pause`
+значение `true`.
 
-### Close button
+### Кнопка закрытия
 
-Toasts have a close button to hide them on use click by default. Setting the `no-close-button` prop
-to `true` will prevent this and creates a toast without the default close button.
+По умолчанию у тостов есть кнопка закрытия, чтобы скрыть их при использовании. Установка свойства
+`no-close-button` в значение `true` предотвратит это и создаст всплывающее уведомление без кнопки
+закрытия по умолчанию.
 
-It is still possible to create a custom close button for the toast by providing a unique ID and use
-the `this.$bvToast.hide(id)` method to hide the specific toast:
+По-прежнему можно создать пользовательскую кнопку закрытия для всплывающего уведомления, указав
+уникальный идентификатор и используя метод `this.$bvToast.hide(id)`, чтобы скрыть конкретное
+всплывающее уведомление:
 
 ```html
 <template>
   <div>
-    <b-button @click="showToast">Show Toast</b-button>
+    <b-button @click="showToast">Показать тост</b-button>
   </div>
 </template>
 
@@ -324,24 +340,26 @@ the `this.$bvToast.hide(id)` method to hide the specific toast:
 <!-- toasts-advanced.vue -->
 ```
 
-### Toast roles
+### Роли тостов
 
-Toasts are rendered with a default `role` attribute of `'alert'` and `aria-live` attribute of
-`'assertive'`. For toasts that are meant for a casual notification, set the `is-status` prop to
-`true`, which will change the `role` and `aria-live` attributes to `'status'` and `'polite'`
-respectively.
+Тосты отображаются с атрибутом `role` по умолчанию `'alert'` и атрибутом `aria-live` со значением
+`'assertive'`. Для тостов, предназначенных для случайного уведомления, установите свойство
+`is-status` на `true`, что изменит атрибуты `role` и `aria-live` на `'status'` и `'polite'`
+соответственно.
 
-For more information, please the the [Accessibility](#accessibility) section below.
+Для получения дополнительной информации смотрите раздел [Специальные возможности](#accessibility)
+ниже.
 
-### Links
+### Ссылки
 
-Optionally convert the toast body to a link (`<a>`) or `<router-link>` (or `<nuxt-link>`) via the
-`href` and `to` props respectively. When set, the entire toast body becomes a link.
+При желании можно преобразовать тело сообщения в ссылку (`<a>`) или `<router-link>` (или
+`<nuxt-link>`) с помощью свойств `href` и `to` соответственно. Если установлено, все тело
+всплывающего уведомления становится ссылкой.
 
 ```html
 <template>
   <div>
-    <b-button @click="toast()">Toast with link</b-button>
+    <b-button @click="toast()">Тост с ссылкой</b-button>
   </div>
 </template>
 
@@ -349,9 +367,9 @@ Optionally convert the toast body to a link (`<a>`) or `<router-link>` (or `<nux
   export default {
     methods: {
       toast() {
-        this.$bvToast.toast(`Toast with action link`, {
+        this.$bvToast.toast(`Тост со ссылкой действия`, {
           href: '#foo',
-          title: 'Example'
+          title: 'Пример'
         })
       }
     }
@@ -361,39 +379,40 @@ Optionally convert the toast body to a link (`<a>`) or `<router-link>` (or `<nux
 <!-- toast-link.vue -->
 ```
 
-## `<b-toast>` component
+## Компонент `<b-toast>`
 
-When you have a custom component that would like to display just a single toast at a time, use the
-`<b-toast>` component. The `<b-toast>` component can be placed anywhere in your custom component or
-app, and does not render an element (they render a comment placeholder node which will not affect
-layout).
+Если у вас есть пользовательский компонент, который хотел бы отображать только одно уведомление за
+раз, используйте компонент `<b-toast>`. Компонент `<b-toast>` можно разместить в любом месте вашего
+пользовательского компонента или приложения, и он не отображает элемент (они отображают
+узел-заполнитель комментария, который не влияет на макет).
 
-The toast can be made visible via a `v-model` (which is tied to the `visible` prop), or shown using
-the component's `show()` and `hide()` instance methods, or via the `this.$bvToast.show(id)` and
-`this.$bvToast.hide(id)` methods (requires that a unique ID be set on the `<b-toast>` component).
+Тост можно сделать видимым с помощью `v-model` (который привязан к свойству `visible`), или показать
+с помощью методов экземпляра `show()` и `hide()` компонента, или с помощью `this.$bvToast.show(id)`
+и `this.$bvToast.hide(id)` (требуется, чтобы для компонента `<b-toast>` был установлен уникальный
+идентификатор).
 
-Toasts, by default will be paced into the `b-toaster-top-right` `<b-toaster>` component. The toaster
-specified by the `toaster` prop will be created on demand if it doesn't already exist in document.
+Тосты по умолчанию будут помещаться в компонент `b-toaster-top-right` `<b-toaster>`. Тостер,
+указанный в свойстве `toaster`, будет создан по запросу, если он еще не существует в документе.
 
-You can force a `<b-toast>` to appear in-place in the document by setting the `static` prop to
-`true`. you still need to show and hide the toast, but it will not be transported into a toaster
-component.
+Вы можете принудительно отобразить `<b-toast>` в документе, установив свойство `static` в значение
+`true`. Вам по-прежнему нужно показывать и скрывать всплывающее уведомление, но оно не будет
+перенесено в компонент тостера.
 
 ```html
 <template>
   <div>
-    <b-button @click="$bvToast.show('my-toast')">Show toast</b-button>
+    <b-button @click="$bvToast.show('my-toast')">Показать тост</b-button>
 
     <b-toast id="my-toast" variant="warning" solid>
       <template #toast-title>
         <div class="d-flex flex-grow-1 align-items-baseline">
           <b-img blank blank-color="#ff5555" class="mr-2" width="12" height="12"></b-img>
-          <strong class="mr-auto">Notice!</strong>
-          <small class="text-muted mr-2">42 seconds ago</small>
+          <strong class="mr-auto">Уведомление!</strong>
+          <small class="text-muted mr-2">42 секунды назад</small>
         </div>
       </template>
-      This is the content of the toast.
-      It is short and to the point.
+      Это содержание тоста.
+      Это кратко и по делу.
     </b-toast>
   </div>
 </template>
@@ -401,36 +420,38 @@ component.
 <!-- toast-component.vue -->
 ```
 
-### Slots
+### Слоты
 
-- `toast-title`: Content to replace the default title element.
-- `default`: Content of the toast body
+- `toast-title`: Контент для замены элемента заголовка по умолчанию.
+- `default`: Содержимое тела всплывающего уведомления
 
-Both slots are optionally scoped with the following scope:
+Оба слота опционально имеют следующую область действия:
 
-| Method or property | Description                                                                     |
-| ------------------ | ------------------------------------------------------------------------------- |
-| `hide()`           | Hides the toast when called. Useful if you are providing your own close button. |
+| Метод или свойство | Описание                                                                               |
+| ------------------ | -------------------------------------------------------------------------------------- |
+| `hide()`           | Скрывает тост при вызове. Полезно, если вы предоставляете собственную кнопку закрытия. |
 
-Slots are only available when using the `<b-toast>` component.
+Слоты доступны только при использовании компонента `<b-toast>`.
 
-## `<b-toaster>` target component
+## Целевой компонент `<b-toaster>`
 
-The `<b-toaster>` component provides a container where toasts will appear (the _Toaster_). Toasters
-require a unique name, and toasts can be targeted to appear in a specific named toaster.
+Компонент `<b-toaster>` предоставляет контейнер, в котором будут появляться всплывающие уведомления
+(_Тостер_). Для тостеров требуется уникальное имя, и тосты могут быть настроены так, чтобы они
+отображались в тостере с конкретным именем.
 
-In most cases you will not need to directly use this component, as `<b-toast>` will automatically
-insert a `<b-toaster>` component (appended to `<body>`) with the requested toaster name if one is
-not found in the document. But sometimes you may want to explicitly place a toaster in your app.
+В большинстве случаев вам не нужно будет напрямую использовать этот компонент, так как `<b-toast>`
+автоматически вставит компонент `<b-toaster>` (добавленный к `<body>`) с запрошенным именем тостера,
+если таковой имеется. в документе не нашел. Но иногда вы можете захотеть явно разместить тостер в
+своем приложении.
 
-The toaster `name` becomes the ID of the inserted container, and will also be used a class name on
-the rendered toaster container.
+`name` тостера становится идентификатором вставленного контейнера, а также будет использоваться в
+качестве имени класса в отображаемом контейнере тостера.
 
-Toaster positioning and the positioning of toasts inside the toaster is driven completely by CSS
-classes (based on the name of the toaster)
+Позиционирование тостера и тостов внутри тостера полностью управляется классами CSS (в зависимости
+от названия тостера).
 
-The following "built-in" toaster names (and associated styles) are defined in BootstrapVue's custom
-SCSS:
+Следующие «встроенные» имена тостеров (и связанные стили) определены в пользовательском SCSS
+BootstrapVue:
 
 - `b-toaster-top-right`
 - `b-toaster-top-left`
@@ -441,46 +462,49 @@ SCSS:
 - `b-toaster-bottom-center`
 - `b-toaster-bottom-full`
 
-The above toasters place the toasts in a stacked (columnar format), fixed within the viewport
-(meaning they will always be in view regardless of viewport scroll position). If there are more
-toasts than can fit on the viewport screen, some will be visually hidden offscreen until other
-toasts are closed/hidden.
+Вышеупомянутые тостеры помещают всплывающие уведомления в стопку (столбчатый формат), фиксированные
+в области просмотра (это означает, что они всегда будут в поле зрения независимо от положения
+прокрутки области просмотра). Если тостов больше, чем может поместиться на экране окна просмотра,
+некоторые из них будут визуально скрыты за пределами экрана, пока другие всплывающие уведомления не
+будут закрыты/спрятаны.
 
-`<b-toast>` uses the `b-toaster-top-right` toaster by default.
+`<b-toast>` по умолчанию использует тостер `b-toaster-top-right`.
 
 **Примечания:**
 
-- If a `<b-toaster>` with the same name already exists in document (either auto-created by
-  `<b-toast>`, `this.$bvToast.toast()`, or manually placed), then `<b-toaster>` will just render an
-  empty `<div>` element and issue a console warning.
-- If manually placing a `<b-toaster>` component, make sure it is placed as the last element in
-  bottom of your app root element, so that it will be available to all pages in your app.
-- Toasters that get destroyed will be auto re-created if a new toast targeted for the toaster name
-  is shown.
-- In the majority of use cases, you should not need to manually place/create a `<b-toaster>`
-  component in your app, as they will be auto generated on demand if needed. But if you need to
-  override any of the toaster default settings, ensure that you place the toaster in your app in a
-  location that will not be destroyed due to changes in the route.
+- Если в документе уже существует `<b-toaster>` с таким именем (автоматически созданный `<b-toast>`,
+  `this.$bvToast.toast()`, либо размещенный вручную), то `<b-toaster>` просто отобразит пустой
+  элемент `<div>` и выдаст предупреждение консоли.
+- При ручном размещении компонента `<b-toaster>` убедитесь, что он размещен последним элементом в
+  нижней части корневого элемента вашего приложения, чтобы он был доступен для всех страниц вашего
+  приложения.
+- Уничтоженные тостеры будут автоматически воссозданы, если появится новый тост, предназначенный для
+  имени тостера.
+- В большинстве случаев вам не нужно вручную размещать/создавать компонент `<b-toaster>` в вашем
+  приложении, поскольку при необходимости они будут автоматически генерироваться по запросу. Но если
+  вам нужно переопределить какие-либо настройки тостера по умолчанию, убедитесь, что вы поместили
+  тостер в свое приложение в место, которое не будет уничтожено из-за изменений в маршруте.
 
-## Advanced usage
+## Расширенное использование
 
-When using the `this.$bvToast.toast(...)` method for generating toasts, you may want the toast
-content to be more than just a string message. As mentioned in the
-[Toasts on demand](#toasts-on-demand) section above, you can pass arrays of `VNodes` as the message
-and title for more complex content.
+При использовании метода `this.$bvToast.toast(...)` для создания всплывающих уведомлений вы можете
+захотеть, чтобы содержание всплывающего уведомления было чем-то большим, чем просто строковое
+сообщение. Как упоминалось в разделе [Всплывающие сообщения по запросу](#toasts-on-demand) выше, вы
+можете передавать массивы `VNodes` в качестве сообщения и заголовка для более сложного контента.
 
-Remember to keep toast content simple and to the point. Avoid placing interactive components or
-elements inside toasts, as this can cause issues for users of assistive technologies. Refer to the
-[Accessibility](#accessibility) section below.
+Не забывайте, что содержание тостов должно быть простым и содержательным. Избегайте размещения
+интерактивных компонентов или элементов внутри всплывающих уведомлений, так как это может вызвать
+проблемы у пользователей вспомогательных технологий. Смотрите раздел [Доступность](#accessibility)
+ниже.
 
-Below is an example of using Vue's
-[`this.$createElement()`](https://vuejs.org/v2/guide/render-function.html#The-Virtual-DOM) method
-for generating more complex toast content:
+Ниже приведен пример использования метода Vue
+[`this.$createElement()`](https://vuejs.org/v2/guide/render-function.html#The-Virtual-DOM) для
+создания более сложного всплывающего содержимого:
 
 ```html
 <template>
   <div>
-    <b-button @click="showToast">Show Toast with custom content</b-button>
+    <b-button @click="showToast">Показать тост с кастомным контентом</b-button>
   </div>
 </template>
 
@@ -532,12 +556,13 @@ for generating more complex toast content:
 <!-- toasts-advanced.vue -->
 ```
 
-## Alerts versus toasts
+## Оповещения против тостов
 
-In some cases you may need just a simple alert style message (i.e. cookie usage notifications,
-etc.). In these cases it is usually better to use an fixed position alert instead of a toast, by
-applying a few Bootstrap [utility classes](/docs/reference/utility-classes) and a small bit of
-custom styling on a [`<b-alert>`](/docs/components/alert) component:
+В некоторых случаях вам может понадобиться простое сообщение в стиле предупреждения (например,
+уведомления об использовании файлов cookie и т. д.). В этих случаях обычно лучше использовать
+оповещение о фиксированной позиции вместо всплывающего уведомления, применив несколько
+[служебных классов Bootstrap](/docs/reference/utility-classes) и немного настраиваемого стиля для
+[`<b-alert>`](/docs/components/alert):
 
 ```html
 <template>
@@ -584,75 +609,86 @@ export default {
 <!-- fixed-position-alerts.vue -->
 ```
 
-We use class `position-fixed` to set the positioning to fixed within the user's viewport, and either
-class `fixed-bottom` or `fixed-top` to position the alert on the bottom or top of the viewport.
-Class `m-0` removes the default margins around the alert and `rounded-0` removes the default rounded
-corners. We also set the `z-index` to a large value to ensure the alert appears over any other
-content on the page (the default for `fixed-top` and `fixed-bottom` is `1030`). You may need to
-adjust the `z-index` for your specific layout.
+Мы используем класс `position-fixed`, чтобы установить фиксированное позиционирование в окне
+просмотра пользователя, и либо класс `fixed-bottom`, либо `fixed-top`, чтобы поместить
+предупреждение внизу или вверху окна просмотра. Класс `m-0` удаляет поля по умолчанию вокруг
+предупреждения, а `rounded-0` удаляет закругленные углы по умолчанию. Мы также устанавливаем для
+`z-index` большое значение, чтобы предупреждение отображалось поверх любого другого контента на
+странице (по умолчанию для `fixed-top` и `fixed-bottom` - `1030`). Возможно, вам придется настроить
+`z-index` для вашего конкретного макета.
 
-Since the alert markup remains in the DOM where you placed the `<b-alert>` component, its tab
-sequence (for accessing the dismiss button) is easily accessible to screen reader and keyboard-only
-users.
+Поскольку разметка предупреждения остается в DOM, где вы разместили компонентe `<b-alert>`, его
+последовательность вкладок (для доступа к кнопке закрытия) легко доступна для программ чтения с
+экрана и пользователей, использующих только клавиатуру.
 
 ## Доступность
 
-Toasts are intended to be **small interruptions** to your visitors or users, so to help those with
-screen readers and similar assistive technologies, toasts are wrapped in an aria-live region.
-Changes to live regions (such as injecting/updating a toast component) are automatically announced
-by screen readers without needing to move the user's focus or otherwise interrupt the user.
-Additionally, `aria-atomic="true"` is automatically set to ensure that the entire toast is always
-announced as a single (atomic) unit, rather than announcing what was changed (which could lead to
-problems if you only update part of the toast's content, or if displaying the same toast content at
-a later point in time).
+Тосты предназначены для того, чтобы **небольшие помехи** вашим посетителям или пользователям,
+поэтому, чтобы помочь тем, у кого есть программы для чтения с экрана и аналогичные вспомогательные
+технологии, всплывающие уведомления заключены в область aria-live. Изменения в активных регионах
+(такие как внедрение/обновление компонента всплывающего уведомления) автоматически объявляются
+программами чтения с экрана без необходимости перемещать фокус пользователя или иным образом
+прерывать его. Кроме того, параметр `aria-atomic="true"` автоматически устанавливается таким
+образом, чтобы вся всплывающая подсказка всегда объявлялась как единая (атомарная) единица, а не
+сообщалось об изменениях (что может привести к проблемам, если вы обновите только часть всплывающей
+подсказки). содержание всплывающего уведомления или отображение того же содержимого всплывающего
+уведомления в более поздний момент времени).
 
-If you just need a single simple message to appear along the bottom or top of the user's window, use
-a [fixed position `<b-alert>`](#alerts-versus-toasts) instead.
+Если вам просто нужно, чтобы одно простое сообщение отображалось в нижней или верхней части окна
+пользователя, вместо этого используйте [фиксированное положение `<b-alert>`](#alerts-versus-toasts).
 
-### Доступность tips
+### Советы по доступности
 
-Typically, toast messages should display one or two-line non-critical messages that **do not**
-require user interaction. Without taking extra steps, toasts can have numerous accessibility issues
-that can impact both people with and without disabilities. The following list, while not complete,
-provides general guidelines when using toasts.
+Как правило, всплывающие сообщения должны отображать некритические сообщения в одну или две строки,
+которые **не** требуют вмешательства пользователя. Без принятия дополнительных мер всплывающие
+уведомления могут иметь многочисленные проблемы с доступностью, которые могут повлиять как на людей
+с ограниченными возможностями, так и на людей без инвалидности. Следующий список, хотя и не полный,
+содержит общие рекомендации по использованию тостов.
 
-- If the information needed is important for the process, e.g. for a list of errors in a form, then
-  use the [`<b-alert>`](/docs/components/alert) component instead of `<b-toast>`.
-- `<b-toast>`, by default, sets the attributes `role` to `'alert'` and `aria-live` to `'assertive'`.
-  If it's an important message like an error, this default setting is appropriate, otherwise set the
-  prop `is-status` to `true` which will change the attributes `role` to `'status'` and `aria-live`
-  to `'polite'`.
-- Avoid popping up a toast message on page load. Performing unexpected actions on page load is very
-  confusing to screen reader users. If a toast is needed on page load or route change, delay showing
-  the toast by several seconds so that the screen reader will finishing announcing information about
-  the current page without interruption by a the toast.
-- When setting prop `no-auto-hide` to `true`, you must have a close button to allow users to dismiss
-  the toast. If you have also set prop `no-close-button` to `true`, you must provide your own close
-  button or dismiss the toast by some other means. Toasts have a tab index of `0` so that they can
-  be reached by keyboard-only users.
-- Avoid initiating many toasts in quick succession, as screen readers may interrupt reading the
-  current toast and announce the new toast, causing the context of the previous toast to be missed.
-- For toasts with long textual content, adjust the `auto-hide-delay` to a larger timeout, to allow
-  users time to read the content of the toast. The average person reads about 200 words per minute,
-  so a good length of time to keep messages up is 5 seconds, plus 300 extra milliseconds per word.
-  The shortest default that should be used as a best practice is 5 seconds (5000ms). In addition to
-  a reasonable default timeout, you could also allow the user to choose how long they want toasts to
-  stay up for. Most people inherently understand whether they are fast or slow readers. Having a
-  profile setting that is part of the user login will allow slow readers to pick a longer time if
-  the messages are going away too fast, and fast readers to pick a short time if the messages are
-  staying up too long.
-- To account for memory loss and distraction as well as disability-related issues such as ADHD, a
-  best practice would be to implement a location where users can refer to a list of past toast
-  messages which have been shown. Preferably this list should be sortable, with the default being
-  chronological.
+- Если необходимая информация важна для процесса, т.е. для списка ошибок в форме используйте
+  компонент [`<b-alert>`](/docs/components/alert) вместо `<b-toast>`.
+- `<b-toast>` по умолчанию устанавливает атрибуты `role` в `'alert'` и `aria-live` в `'assertive'`.
+  Если это важное сообщение, такое как ошибка, этот параметр по умолчанию является подходящим, в
+  противном случае установите свойство `is-status` в `true`, что изменит атрибуты `role` на
+  `'status'` и `aria-live` на `'polite'`.
+- Избегайте всплывающих всплывающих сообщений при загрузке страницы. Выполнение неожиданных действий
+  при загрузке страницы очень сбивает с толку пользователей программ чтения с экрана. Если
+  всплывающее уведомление необходимо при загрузке страницы или изменении маршрута, задержите
+  отображение всплывающего уведомления на несколько секунд, чтобы средство чтения с экрана завершило
+  объявление информации о текущей странице без прерывания всплывающего уведомления.
+- При установке параметра `no-auto-hide` в значение `true`, у вас должна быть кнопка закрытия, чтобы
+  пользователи могли отклонить всплывающее уведомление. Если вы также установили свойство
+  `no-close-button` в значение `true`, вы должны предоставить свою собственную кнопку закрытия или
+  отклонить всплывающее уведомление каким-либо другим способом. Тосты имеют индекс табуляции `0`,
+  так что они могут быть доступны пользователям, использующим только клавиатуру.
+- Избегайте запуска большого количества всплывающих уведомлений в быстрой последовательности, так
+  как программы чтения с экрана могут прервать чтение текущего всплывающего уведомления и объявить
+  новое всплывающее сообщение, что приведет к пропуску контекста предыдущего всплывающего
+  уведомления.
+- Для всплывающих уведомлений с длинным текстовым содержимым установите для параметра
+  `auto-hide-delay` большее время ожидания, чтобы у пользователей было время прочитать содержимое
+  всплывающего уведомления. Среднестатистический человек читает около 200 слов в минуту, поэтому
+  хорошее время для сохранения сообщения составляет 5 секунд плюс 300 дополнительных миллисекунд на
+  слово. Самое короткое значение по умолчанию, которое следует использовать в качестве наилучшей
+  практики, составляет 5 секунд (5000 мс). В дополнение к разумному тайм-ауту по умолчанию вы также
+  можете позволить пользователю выбирать, как долго он хочет, чтобы тосты не спали. Большинство
+  людей изначально понимают, быстро они или медленно читают. Наличие настройки профиля, которая
+  является частью входа пользователя, позволит медленным читателям выбирать более длительное время,
+  если сообщения уходят слишком быстро, а быстрым читателям выбирать короткое время, если сообщения
+  остаются слишком долго.
+- Для учета потери памяти и отвлечения внимания, а также проблем, связанных с инвалидностью, таких
+  как СДВГ, рекомендуется создать место, где пользователи могут обращаться к списку прошлых
+  всплывающих сообщений, которые были показаны. Желательно, чтобы этот список был сортируемым, по
+  умолчанию в хронологическом порядке.
 
-### Internet Explorer screen reader support
+### Поддержка программы чтения с экрана Internet Explorer
 
-Unfortunately, IE 11 when used with [NVDA](https://github.com/nvaccess/nvda) or
-[JAWS](https://www.freedomscientific.com/products/software/jaws/) screen readers, will not properly
-announce/voice toasts when they appear. If you have a large non-sighted user-base using IE 11, you
-may want to create an additional off-screen `aria-live` region for IE 11 browsers only (created on
-page load) where copies of toast message text are placed dynamically, in addition to displaying
-toasts.
+К сожалению, IE 11 при использовании с программами чтения с экрана
+[NVDA](https://github.com/nvaccess/nvda) или
+[JAWS](https://www.freedomscientific.com/products/software/jaws/) не будет правильно
+объявлять/озвучивать тосты, когда они появляются. Если у вас есть большая база незрячих
+пользователей, использующих IE 11, вы можете создать дополнительную область `aria-live` за пределами
+экрана только для браузеров IE 11 (создается при загрузке страницы), где размещаются копии текста
+всплывающего сообщения. динамически, в дополнение к отображению тостов.
 
 <!-- Component reference added automatically from component package.json -->

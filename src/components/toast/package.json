@@ -4,7 +4,7 @@
   "meta": {
     "title": "Toast",
     "slug": "toast",
-    "description": "Push notifications to your visitors with a toast, a lightweight and easily customizable alert message.",
+    "description": "Push-уведомления для ваших посетителей с тостом, легким и легко настраиваемым предупреждающим сообщением.",
     "plugins": [
       "BVToastPlugin"
     ],
@@ -14,119 +14,119 @@
         "props": [
           {
             "prop": "appendToast",
-            "description": "When true, the toast will be appended to the bottom on the visible toasts, otherwise it will be prepended"
+            "description": "При значении true всплывающее уведомление будет добавлено к нижней части видимых всплывающих уведомлений, в противном случае оно будет добавлено в начале"
           },
           {
             "prop": "autoHideDelay",
-            "description": "The number of milliseconds before the toast auto dismisses itself"
+            "description": "Время в миллисекундах до автоматического закрытия всплывающего уведомления"
           },
           {
             "prop": "bodyClass",
-            "description": "CSS class (or classes) to add to the toast body element"
+            "description": "CSS-класс (или классы) для добавления к элементу тела всплывающего уведомления"
           },
           {
             "prop": "headerClass",
-            "description": "CSS class (or classes) to add to the toast header element"
+            "description": "CSS-класс (или классы) для добавления к элементу заголовка всплывающего уведомления"
           },
           {
             "prop": "headerTag",
             "version": "2.22.0",
-            "description": "Specify the HTML tag to render instead of the default tag for the footer"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для нижнего колонтитула"
           },
           {
             "prop": "isStatus",
-            "description": "When set to 'true', makes the toast have attributes aria-live=polite and role=status. When 'false' aria-live will be 'assertive' and role will be 'alert'"
+            "description": "Если установлено значение 'true', всплывающее уведомление имеет атрибуты aria-live=polite и role=status. Когда 'false' aria-live будет 'assertive', а роль 'alert'"
           },
           {
             "prop": "noAutoHide",
-            "description": "When set, disabled the toast from automatically dismissing itself"
+            "description": "Если установлено, всплывающее уведомление отключается от автоматического закрытия"
           },
           {
             "prop": "noCloseButton",
-            "description": "When set, hides the close button in the toast header"
+            "description": "Если установлено, скрывает кнопку закрытия в заголовке всплывающего уведомления"
           },
           {
             "prop": "noHoverPause",
-            "description": "When set, disables the pausing of the auto hide delay when the mouse hovers the toast"
+            "description": "Если установлено, отключает приостановку задержки автоматического скрытия при наведении мыши на всплывающее уведомление"
           },
           {
             "prop": "solid",
-            "description": "When set, renderes the toast with a solid background rather than translucent"
+            "description": "Если установлено, всплывающее уведомление отображается со сплошным фоном, а не полупрозрачным"
           },
           {
             "prop": "title",
-            "description": "The toast's title text"
+            "description": "Текст заголовка тоста"
           },
           {
             "prop": "toastClass",
-            "description": "CSS class (or classes) to add to the toast wrapper element"
+            "description": "CSS-класс (или классы) для добавления к элементу оболочки всплывающего уведомления"
           },
           {
             "prop": "toaster",
-            "description": "The name of the toaster target to render the toast in"
+            "description": "Имя цели тостера для рендеринга всплывающего уведомления"
           },
           {
             "prop": "variant",
-            "description": "Applies one of the Bootstrap theme color variants to the component"
+            "description": "Применяет к компоненту один из цветовых вариантов темы Bootstrap"
           },
           {
             "prop": "visible",
-            "description": "When true, shows the toast"
+            "description": "Когда верно, показывает тост"
           }
         ],
         "events": [
           {
             "event": "change",
-            "description": "Toast visibility state. Used to update the v-model",
+            "description": "Состояние видимости всплывающего уведомления. Используется для обновления v-model",
             "args": [
               {
                 "arg": "visible",
                 "type": "Boolean",
-                "description": "`true` if toast is visible, `false` otherwise"
+                "description": "`true`, если тост виден, `false` в противном случае"
               }
             ]
           },
           {
             "event": "hidden",
-            "description": "Always emits after toast is hidden",
+            "description": "Всегда излучает после того, как всплывающее уведомление скрыто",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "hide",
-            "description": "Always emits just before toast has hidden",
+            "description": "Всегда излучает как раз перед тем, как тост спрятался",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "show",
-            "description": "Always emits just before toast is shown",
+            "description": "Всегда излучает непосредственно перед отображением всплывающего уведомления",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           },
           {
             "event": "shown",
-            "description": "Always emits when toast is shown",
+            "description": "Всегда излучает, когда отображается тост",
             "args": [
               {
                 "arg": "bvEvent",
                 "type": "BvEvent",
-                "description": "BvEvent object"
+                "description": "Объект BvEvent"
               }
             ]
           }
@@ -134,23 +134,23 @@
         "slots": [
           {
             "name": "default",
-            "description": "Toast body content. Optionally scoped",
+            "description": "Содержимое тела тоста. Опционально ограниченный",
             "scope": [
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "Hides the toast when called. Useful if you are providing your own close button"
+                "description": "Скрывает тост при вызове. Полезно, если вы предоставляете собственную кнопку закрытия"
               }
             ]
           },
           {
             "name": "toast-title",
-            "description": "Toast title. Optionally scoped",
+            "description": "Название тоста. Опционально ограниченный",
             "scope": [
               {
                 "prop": "hide",
                 "type": "Function",
-                "description": "Hides the toast when called. Useful if you are providing your own close button"
+                "description": "Скрывает тост при вызове. Полезно, если вы предоставляете собственную кнопку закрытия"
               }
             ]
           }
@@ -161,25 +161,25 @@
         "props": [
           {
             "prop": "ariaAtomic",
-            "description": "When screen reader's should read out the entire contents (set to string 'true') or just the changes (set to string 'false'). Leave blank for most cases"
+            "description": "Когда программа чтения с экрана должна прочитать все содержимое (установите строку «true») или только изменения (установите строку «false»). Оставьте пустым для большинства случаев"
           },
           {
             "prop": "ariaLive",
-            "description": "When the rendered element is an aria-live region (for screen reader users), set to either 'polite' or 'assertive'"
+            "description": "Когда визуализируемый элемент является областью aria-live (для пользователей программ чтения с экрана), установите значение 'polite' или 'assertive'"
           },
           {
             "prop": "name",
-            "description": "The toaster's target name"
+            "description": "Целевое имя тоста"
           },
           {
             "prop": "role",
-            "description": "Sets the ARIA attribute 'role' to a specific value"
+            "description": "Устанавливает 'role' атрибута ARIA на определенное значение"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content (toasts) to place in the toaster element"
+            "description": "Содержимое (тосты) для размещения в элементе тостера"
           }
         ]
       }
