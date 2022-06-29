@@ -1,17 +1,18 @@
-# Time
+# Время
 
-> BootstrapVue's custom `<b-time>` component generates a WAI-ARIA compliant time selection widget,
-> which can be used to control other components, or can be used to create customized time picker
-> inputs.
+> Пользовательский компонент BootstrapVue `<b-time>` создает виджет выбора времени, совместимый с
+> WAI-ARIA, который можно использовать для управления другими компонентами или для создания
+> настраиваемых входных данных для выбора времени.
 
 ## Обзор
 
-`<b-time>` is WAI-ARIA accessibility compliant, optimized for keyboard control (arrow, page up/down,
-home, and end keys). Internationalization is also supported, and default's to the browser's or
-page's locale, if no locale(s) are specified.
+`<b-time>` совместим со специальными возможностями WAI-ARIA и оптимизирован для управления с
+клавиатуры (стрелка, страница вверх/вниз, главная и конечная клавиши). Также поддерживается
+интернационализация, и по умолчанию используется локаль браузера или страницы, если локали не
+указаны.
 
-If you need a time picker as a custom form control input, use the
-[`<b-form-timepicker>`](/docs/components/form-timepicker) component instead.
+Если вам нужно средство выбора времени в качестве пользовательского элемента управления формой,
+вместо этого используйте компонент [`<b-form-timepicker>`](/docs/components/form-timepicker).
 
 ```html
 <template>
@@ -20,7 +21,7 @@ If you need a time picker as a custom form control input, use the
       <b-time v-model="value" locale="en" @context="onContext"></b-time>
     </b-col>
     <b-col>
-      <p>Value: <b>'{{ value }}'</b></p>
+      <p>Значение: <b>'{{ value }}'</b></p>
       <p class="mb-0">Context:</p>
       <pre class="small">{{ context }}</pre>
     </b-col>
@@ -46,18 +47,19 @@ If you need a time picker as a custom form control input, use the
 <!-- b-time.vue -->
 ```
 
-## `v-model` return value
+## Возвращаемое значение `v-model`
 
-`<b-time>` always returns a string in the format of `HH:mm:ss` which is the same format returned by
-native browser `<input type="time">` controls. The value will be in the range of `'00:00:00'` up to
-`'23:59:59'` (24-hour clock using the `'h23'` hour cycle syntax)
+`<b-time>` всегда возвращает строку в формате `HH:mm:ss`, который является тем же форматом, который
+возвращается собственными элементами управления браузера `<input type="time">`. Значение будет
+находиться в диапазоне от `'00:00:00'` до `'23:59:59'` (24-часовой формат с использованием
+синтаксиса часового цикла `'h23'`)
 
-If no time is selected, then `<b-time>` returns an empty string (`''`).
+Если время не выбрано, то `<b-time>` возвращает пустую строку (`''`).
 
-## Disabled and readonly states
+## Отключено и только для чтения
 
-Setting the `disabled` prop will remove all interactivity of the `<b-time>` component. Setting the
-`readonly` prop will disable selecting a time, but will keep the spinbuttons focusable.
+Установка параметра `disabled` удалит всю интерактивность компонента `<b-time>`. Установка свойства
+`readonly` отключит выбор времени, но сохранит фокус на вращающихся кнопках.
 
 ```html
 <template>
@@ -71,9 +73,9 @@ Setting the `disabled` prop will remove all interactivity of the `<b-time>` comp
         :aria-describedby="ariaDescribedby"
         aria-controls="ex-disabled-readonly"
       >
-        <b-form-radio value="disabled">Disabled</b-form-radio>
-        <b-form-radio value="readonly">Readonly</b-form-radio>
-        <b-form-radio value="normal">Normal</b-form-radio>
+        <b-form-radio value="disabled">Отключено</b-form-radio>
+        <b-form-radio value="readonly">Только чтение</b-form-radio>
+        <b-form-radio value="normal">Нормальное</b-form-radio>
       </b-form-radio-group>
     </b-form-group>
 
@@ -106,19 +108,19 @@ Setting the `disabled` prop will remove all interactivity of the `<b-time>` comp
 <!-- b-time-disabled-readonly.vue -->
 ```
 
-## Styling
+## Стайлинг
 
-### Enabling of seconds spinbutton
+### Включение секундной кнопки
 
-By default, the seconds spinbutton is not shown. To enable the section of seconds, set the
-`show-seconds` prop to `true` to enable the seconds selection spinbutton. When `show-seconds` is
-`false` (or not provided), the returned value will always have the seconds portion of the time
-string set to `00`.
+По умолчанию секундная кнопка не отображается. Чтобы включить раздел секунд, установите свойство
+`show-seconds` в значение `true`, чтобы активировать кнопку выбора секунд. Когда `show-seconds`
+равно `false` (или не указано), возвращаемое значение всегда будет иметь секундную часть строки
+времени, установленную на `00`.
 
 ```html
 <template>
   <b-time v-model="value" show-seconds locale="en"></b-time>
-  <div class="mt-2">Value: '{{ value }}'</div>
+  <div class="mt-2">Значение: '{{ value }}'</div>
 </template>
 
 <script>
@@ -134,35 +136,36 @@ string set to `00`.
 <!-- b-time-show-seconds.vue -->
 ```
 
-### Hiding the top selected time header
+### Скрытие верхнего выбранного заголовка времени
 
-By default, the current selected time will be displayed at the top of the time component, formatted
-in the locale's language.
+По умолчанию текущее выбранное время будет отображаться в верхней части компонента времени в
+формате, соответствующем языку локали.
 
-You can hide this header via the `hide-header` prop. Note this only visually hides the selected
-time, while keeping it available to screen reader users as an `aria-live` region.
+Вы можете скрыть этот заголовок с помощью параметра `hide-header`. Обратите внимание, что это только
+визуально скрывает выбранное время, оставляя его доступным для пользователей программ чтения с
+экрана в виде области `aria-live`.
 
-### Border and padding
+### Граница и отступы
 
-Fancy a time control with a border with padding? Use Bootstrap's border and padding utility classes
-to add borders and padding:
+Хотите контроль времени с рамкой с отступами? Используйте служебные классы Bootstrap border и
+padding, чтобы добавить границы и отступы:
 
 ```html
 <template>
-  <b-time class="border rounded p-2" locale="en"></b-time>
+  <b-time class="border rounded p-2" locale="ru"></b-time>
 </template>
 
 <!-- b-time-border-padding.vue -->
 ```
 
-### Default slot
+### Слот по умолчанию
 
-Provide optional content at the bottom of the time interface via the use of `default` slot. The slot
-can be used to add buttons such as Now or Reset, etc.
+Предоставьте необязательный контент в нижней части интерфейса времени с помощью слота `default`.
+Слот можно использовать для добавления таких кнопок, как Now или Reset, и т.д.
 
 ```html
 <template>
-  <b-time v-model="value" show-seconds locale="en">
+  <b-time v-model="value" show-seconds locale="ru">
     <div class="d-flex" dir="ltr">
       <b-button
         size="sm"
@@ -170,7 +173,7 @@ can be used to add buttons such as Now or Reset, etc.
         v-if="value"
         @click="clearTime"
       >
-        Clear time
+        Очистить время
       </b-button>
       <b-button
         size="sm"
@@ -178,7 +181,7 @@ can be used to add buttons such as Now or Reset, etc.
         class="ml-auto"
         @click="setNow"
       >
-        Set Now
+        Установить сейчас
       </b-button>
     </div>
   </b-time>
@@ -207,71 +210,73 @@ can be used to add buttons such as Now or Reset, etc.
 <!-- b-time-default-slot.vue -->
 ```
 
-## Events
+## События
 
-### `input` event
+### Событие `input`
 
-The `'input'` event is emitted when updating the `v-model`. The event has a single argument which is
-the selected time as a string. The value is a string in the format of `'HH:mm:ss'` (or an empty
-string if no time is selected). Valid values are in the range of `'00:00:00'` through `23:59:59'`.
+Событие `'input'` генерируется при обновлении `v-model`. Событие имеет единственный аргумент,
+который представляет собой выбранное время в виде строки. Значение представляет собой строку в
+формате `'HH:mm:ss'` (или пустую строку, если время не выбрано). Допустимые значения находятся в
+диапазоне от `'00:00:00'` до `23:59:59'`.
 
-If fhe `show-seconds` prop is not set, the seconds portion of the time value will always be `'00'`.
+Если свойство `show-seconds` не установлено, доля секунд значения времени всегда будет равна `'00'`.
 
-If the `disabled` or `readonly` props are set, the `'input'` event will **not** be emitted.
+Если установлены свойства `disabled` или `readonly`, событие `'input'` **не** генерируется.
 
-### `context` event
+### Событие `context`
 
-The `'context'` event is emitted whenever a user selects a time, or the user changes a value of one
-of the spinbuttons. It will also be emitted when the component is created (just before insertion
-into the DOM), or when the resolved locale has changed.
+Событие `'context'` генерируется всякий раз, когда пользователь выбирает время или пользователь
+изменяет значение одной из кнопок. Он также будет сгенерирован при создании компонента
+(непосредственно перед вставкой в DOM) или при изменении разрешенной локали.
 
-The event will not be emitted when the `disabled` or `readonly` props are set (except for the
-initial emit when the time component is created).
+Событие не будет генерироваться, когда установлены свойства `disabled` или `readonly` (за
+исключением начального генерирования при создании компонента времени).
 
-The `'context'` event is passed a context object as it's only argument, with the following
-properties:
+Событию `'context'` передается объект контекста в качестве единственного аргумента со следующими
+свойствами:
 
-| Property    | Description                                                                                                 |
-| ----------- | ----------------------------------------------------------------------------------------------------------- |
-| `value`     | The current value as an `HH:mm:ss` string or an empty string `''` if no time selected                       |
-| `formatted` | The current value formatted in the resolved locale, or the `label-no-time` prop value if no time selected   |
-| `hours`     | The currently selected hour (always 24 hour, `h23'` format) as a number or `null` if no hour                |
-| `minutes`   | The currently selected minute value as a number or `null` if no minute                                      |
-| `seconds`   | The currently selected seconds value as a number or `null` if no seconds                                    |
-| `locale`    | The locale resolved by the time picker, this _may_ be different than the requested locale                   |
-| `isRTL`     | Will be `true` is the locale is RTL (right-to-left)                                                         |
-| `hour12`    | Boolean value indicating if the interface is using 12 hour format                                           |
-| `hourCycle` | A string representing the type of hour cycle used for the spinbuttons: `'h11'`, `'h12'`, `'h23'` or `'h24'` |
+| Свойство    | Описание                                                                                                               |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `value`     | Текущее значение в виде строки `HH:mm:ss` или пустой строки `''`, если время не выбрано                                |
+| `formatted` | Текущее значение, отформатированное в разрешенной локали, или значение свойства `label-no-time`, если время не выбрано |
+| `hours`     | Текущий выбранный час (всегда 24 часа, формат `h23'`) в виде числа или `null`, если час не указан                      |
+| `minutes`   | Текущее выбранное значение минут в виде числа или `null`, если минут нет                                               |
+| `seconds`   | Текущее выбранное значение секунд в виде числа или `null`, если нет секунд                                             |
+| `locale`    | Языковой стандарт, определяемый средством выбора времени, он _может_ отличаться от запрошенного языкового стандарта    |
+| `isRTL`     | Будет `true`, если локаль RTL (справа налево)                                                                          |
+| `hour12`    | Логическое значение, указывающее, использует ли интерфейс 12-часовой формат                                            |
+| `hourCycle` | Строка, представляющая тип часового цикла, используемый для кнопок вращения: `'h11'`, `'h12'`, `'h23'` или `'h24'`     |
 
-Refer to the [Internationalization section](#internationalization) for information on the context
-properties `locale`, `hour12` and `hourCycle`.
+Обратитесь к [разделу интернационализации](#internationalization) для получения информации о
+свойствах контекста `locale`, `hour12` и `hourCycle`.
 
-## Internationalization
+## Интернационализация
 
-Internationalization of the time interface is provided via
+Интернационализация интерфейса времени обеспечивается через
 [`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat)
-and
+и
 [`Intl.NumberFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat),
-except for the labels applied to elements of the time control (aria-labels, selected status, etc.).
-You must provide your own translations for these labels. The available locales will be browser
-dependent (not all browsers support all locales).
+за исключением меток, применяемых к элементам контроля времени (арии-метки, выбранный статус и
+т.д.). Вы должны предоставить свои собственные переводы для этих ярлыков. Доступные локали будут
+зависеть от браузера (не все браузеры поддерживают все локали).
 
-By default `<b-time>` will use the browser's default locale, but you can specify the locale (or
-locales) to use via the `locale` prop. The prop accepts either a single locale string, or an array
-of locale strings (listed in order of most preferred locale to least preferred).
+По умолчанию `<b-time>` будет использовать локаль браузера по умолчанию, но вы можете указать локаль
+(или локали) для использования с помощью свойства `locale`. Свойство принимает либо одну строку
+локали, либо массив строк локали (перечисленных в порядке от наиболее предпочтительной локали до
+наименее предпочтительной).
 
-The emitted `'context'` event will include which locale the time control has resolved to (which may
-not be the same locale as requested, depending on the supported locales of `Intl`).
+Генерируемое событие `'context'` будет включать в себя, к какой локали разрешен контроль времени
+(которая может не совпадать с запрошенной локалью, в зависимости от поддерживаемых локалей `Intl`).
 
-For server side rendering (SSR) when using Node.js, ensure that the Node.js runtime you are using
-supports `Intl` and the locales you will be using. Refer to the
-[Node Intl support documentation](https://nodejs.org/api/intl.html) for details.
+Для рендеринга на стороне сервера (SSR) при использовании Node.js убедитесь, что используемая среда
+выполнения Node.js поддерживает `Intl` и локали, которые вы будете использовать. Подробности см. в
+[документации поддержки Node Intl](https://nodejs.org/api/intl.html).
 
 ```html
 <template>
   <b-row>
     <b-col cols="12" class="mb-3">
-      <label for="example-locales">Locale:</label>
+      <label for="example-locales">Локаль:</label>
       <b-form-select id="example-locales" v-model="locale" :options="locales"></b-form-select>
     </b-col>
     <b-col md="auto">
@@ -297,14 +302,24 @@ supports `Intl` and the locales you will be using. Refer to the
       return {
         value: '',
         context: null,
-        locale: 'en-US',
+        locale: 'ru-RU',
         locales: [
+          { value: 'ru-RU', text: 'Russian (ru-RU)' },
           { value: 'en-US', text: 'English US (en-US)' },
           { value: 'de', text: 'German (de)' },
           { value: 'ar-EG', text: 'Arabic Egyptian (ar-EG)' },
           { value: 'zh', text: 'Chinese (zh)' }
         ],
         labels: {
+          'ru-RU: {
+            labelHours: 'Часы',
+            labelMinutes: 'Минуты',
+            labelSeconds: 'Секунды',
+            labelIncrement: 'Приращение',
+            labelDecrement: 'Уменьшение',
+            labelSelected: 'Выбранное время',
+            labelNoTimeSelected: 'Время не выбрано'
+          },
           de: {
             labelHours: 'Stunden',
             labelMinutes: 'Minuten',
@@ -352,80 +367,82 @@ supports `Intl` and the locales you will be using. Refer to the
 <!-- b-time-i18n.vue -->
 ```
 
-### Understanding the `hourCycle`
+### Понимание `hourCycle`
 
-There are 2 main types of time keeping conventions (clocks) used around the world: the 12-hour clock
-and the 24-hour clock. The `hourCycle` property allows you to access the clock type used by a
-particular locale. The hour cycle type can have several different values, which are listed in the
-table below. The `hourCycle` signals how the time `'00:00:00'` (the start of the day) should be
-presented/formatted to a user of a particular locale. The [`'context'` event](#context-event)
-includes the resolved `hourCycle` value.
+Во всем мире используются 2 основных типа хронометража (часов): 12-часовой формат и 24-часовой
+формат. Свойство `hourCycle` позволяет вам получить доступ к типу часов, используемому конкретной
+локалью. Тип часового цикла может иметь несколько различных значений, которые перечислены в таблице
+ниже. `hourCycle` сигнализирует о том, как время `'00:00:00'` (начало дня) должно быть
+представлено/отформатировано для пользователя определенной локали.
+[Событие`'context'`](#context-event) включает разрешенное значение `hourCycle`.
 
-| `hourCycle` | Description                                                                       |
-| ----------- | --------------------------------------------------------------------------------- |
-| `'h12'`     | Hour system using `1`–`12`. The 12 hour clock, with midnight starting at 12:00 am |
-| `'h23'`     | Hour system using `0`–`23`. The 24 hour clock, with midnight starting at 0:00     |
-| `'h11'`     | Hour system using `0`–`11`. The 12 hour clock, with midnight starting at 0:00 am  |
-| `'h24'`     | Hour system using `1`–`24`. The 24 hour clock, with midnight starting at 24:00    |
+| `hourCycle` | Описание                                                                                        |
+| ----------- | ----------------------------------------------------------------------------------------------- |
+| `'h12'`     | Часовая система с использованием `1`–`12`. 12-часовые часы с полуночью, начинающейся в 12:00    |
+| `'h23'`     | Часовая система с использованием `0`–`23`. 24-часовой формат, с полуночью, начинающейся в 0:00  |
+| `'h11'`     | Часовая система с использованием `0`–`11`. 12-часовые часы с полуночью, начинающейся в 0:00     |
+| `'h24'`     | Часовая система с использованием `1`–`24`. 24-часовой формат, с полуночью, начинающейся в 24:00 |
 
-Native HTML5 `<input type="date">` returns the time value in the `'h23'` format, and `<b-time>` also
-returns the v-model in the `'h23'` format. This value may differ from what is presented to the user
-via the GUI (spin buttons) of the `<b-time>` component, dependent upon the
-[locale selected](#internationalization).
+Собственный HTML5 `<input type="date">` возвращает значение времени в формате `'h23'`, а `<b-time>`
+также возвращает v-model в формате `'h23'`. Это значение может отличаться от того, что
+представляется пользователю через графический интерфейс (кнопки прокрутки) компонента `<b-time>`, в
+зависимости от [выбранной локали](#internationalization).
 
-**Примечание:** IE 11 _does not support_ resolving the `hourCycle` value of a locale, so we assume
-either `h12` or `h23` based on the resolved `hour12` value.
+**Примечание:** IE 11 _не поддерживает_ разрешение значения локали `hourCycle`, поэтому мы
+предполагаем либо `h12` или `h23` на основе разрешенного значения `hour12`.
 
-### Forcing 12 or 24 hour interface
+### Принудительный 12- или 24-часовой интерфейс
 
-12-hour versus 24-hour input is determined by the client browsers default locale (or the locale
-resolved from the `locale` prop). To force a 12-hour user interface, set the prop `hour12` to
-`true`. To force a 24-hour user interface, set the prop `hour12` to `false`. The default for prop
-`hour12` is `null` which uses the resolved locale to determine which interface to use.
+12-часовой ввод по сравнению с 24-часовым определяется языковым стандартом клиентских браузеров по
+умолчанию (или языковым стандартом, полученным из свойства `locale`). Чтобы принудительно
+использовать 12-часовой пользовательский интерфейс, установите для параметра `hour12` значение
+`true`. Чтобы принудительно использовать 24-часовой пользовательский интерфейс, установите для
+параметра `hour12` значение `false`. По умолчанию для свойства `hour12` установлено значение `null`,
+которое использует разрешенную локаль, чтобы определить, какой интерфейс использовать.
 
-The setting of the `hour12` prop will affect which [`hourCycle`](#understanding-the-hourcycle) is
-resolved for formatting the hours spinbutton. Note that while this may affect the format of the hour
-spinbutton, but the formatted time string result _may_ show the `'h12` or `'h23'` format due to
-limitations in the client `Intl.DateTimeFormat` support for a particular locale. It is therefore
-**recommended to leave the `hour12` prop set to `null` (default)**, so show the locale default
-time/hour formatting.
+Настройка свойства `hour12` будет влиять на то, какой [`hourCycle`](#understanding-the-hourcycle)
+разрешается для форматирования кнопки прокрутки часов. Обратите внимание, что хотя это может
+повлиять на формат кнопки прокручивания часов, но результат отформатированной строки времени _может_
+отображать формат `'h12` или `'h23'` из-за ограничений в клиентской поддержке `Intl.DateTimeFormat`
+для конкретной локали. Поэтому **рекомендуется оставить свойство `hour12` равным `null` (по
+умолчанию)**, чтобы показать форматирование времени/часа по умолчанию в локали.
 
 ## Доступность
 
-`<b-time>` provides many accessibility features, such as `aria-live` regions, roles, aria labeling,
-shortcut keys and full keyboard navigation to work with most screen readers.
+`<b-time>` предоставляет множество специальных возможностей, таких как области `aria-live`, роли,
+метки aria, сочетания клавиш и полная навигация с помощью клавиатуры для работы с большинством
+программ чтения с экрана.
 
-Keyboard navigation:
+Клавиатурная навигация:
 
-- <kbd>ArrowUp</kbd> Increments the currently selected spinbutton value
-- <kbd>ArrowDown</kbd> Decrements the currently selected spinbutton value
-- <kbd>Home</kbd> Sets the selected spinbutton to the minimum value
-- <kbd>End</kbd> Sets the selected spinbutton to the maximum value
-- <kbd>PageUp</kbd> Increases the selected spinbutton value by the spinbutton's step by a larger
-  value
-- <kbd>PageDown</kbd> Decreases the selected spinbutton value by the spinbutton's step by a larger
-  value
-- <kbd>ArrowRight</kbd> Moves focus to the next spin button in the component
-- <kbd>ArrowLeft</kbd> Moves focus to the previous spin button in the component
+- <kbd>ArrowUp</kbd> Увеличивает текущее значение выбранной кнопки вращения
+- <kbd>ArrowDown</kbd> Уменьшает текущее значение выбранной кнопки вращения
+- <kbd>Home</kbd> Устанавливает выбранную кнопку прокрутки на минимальное значение
+- <kbd>End</kbd> Устанавливает выбранную кнопку прокрутки на максимальное значение
+- <kbd>PageUp</kbd> Увеличивает значение выбранной кнопки на шаг кнопки на большее значение
+- <kbd>PageDown</kbd> Уменьшает значение выбранной кнопки на шаг кнопки на большее значение
+- <kbd>ArrowRight</kbd> Перемещает фокус на следующую кнопку вращения в компоненте
+- <kbd>ArrowLeft</kbd> Перемещает фокус на предыдущую кнопку прокрутки в компоненте
 
-Several of the `label-*` props are not visible on screen, but are used to label various elements
-within the calendar for screen reader users. e.g. the `label-selected` prop is added to the element
-that displays the selected value.
+Некоторые свойства `label-*` не видны на экране, но используются для маркировки различных элементов
+в календаре для пользователей программ чтения с экрана. например свойство `label-selected`
+добавляется к элементу, отображающему выбранное значение.
 
-When internationalizing the datepicker, it is important to also update the `label-*` props with
-appropriate translated strings, so that international screen reader users will hear the correct
-prompts and descriptions.
+При интернационализации средства выбора даты важно также обновить свойства `label-*` с
+соответствующими переведенными строками, чтобы пользователи программ чтения с экрана, использующие
+разные языки, слышали правильные подсказки и описания.
 
-## Implementation notes
+## Замечания по реализации
 
-The `<b-time>` component is based upon the custom BootstrapVue component
+Компонент `<b-time>` основан на пользовательском компоненте BootstrapVue
 [`<b-form-spinbutton>`](/docs/components/form-spinbutton).
 
-`<b-time>` uses Bootstrap's border and flex utility classes, along with button (`btn-*`) classes and
-the `form-control` class. BootstrapVue's custom SCSS/CSS is also required for proper styling.
+`<b-time>` использует служебные классы Bootstrap для границ и flex, а также классы кнопок (`btn-*`)
+и класс `form-control`. Пользовательский SCSS/CSS BootstrapVue также требуется для правильного
+стиля.
 
 ## Смотрите также
 
-- [`<b-form-timepicker>` Time picker custom form input](/docs/components/form-timepicker)
-- [`<b-calendar>` Calendar date selection widget](/docs/components/calendar)
-- [`<b-form-datepicker>` Date picker custom form input](/docs/components/form-datepicker)
+- [`<b-form-timepicker>` Ввод пользовательской формы выбора времени](/docs/components/form-timepicker)
+- [`<b-calendar>` Виджет выбора даты календаря](/docs/components/calendar)
+- [`<b-form-datepicker>` Ввод пользовательской формы выбора даты](/docs/components/form-datepicker)

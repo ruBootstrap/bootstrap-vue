@@ -4,7 +4,7 @@
   "meta": {
     "title": "Time",
     "version": "2.6.0",
-    "description": "A custom time input widget that can be used to control other components",
+    "description": "Пользовательский виджет ввода времени, который можно использовать для управления другими компонентами",
     "components": [
       {
         "component": "BTime",
@@ -13,100 +13,100 @@
           {
             "prop": "footerTag",
             "version": "2.22.0",
-            "description": "Specify the HTML tag to render instead of the default tag for the footer"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для футера"
           },
           {
             "prop": "headerTag",
             "version": "2.22.0",
-            "description": "Specify the HTML tag to render instead of the default tag for the footer"
+            "description": "Укажите тег HTML для отображения вместо тега по умолчанию для хедера"
           },
           {
             "prop": "hideHeader",
-            "description": "When set, visually hides the selected time header"
+            "description": "Если установлено, визуально скрывает выбранный заголовок времени"
           },
           {
             "prop": "hour12",
-            "description": "Tri-state prop. If `true` forces the interface to 12 hour format. If `false` forces the interface into 24 hour format. If `null` the current locale will determine the 12 or 24 hour interface (default)"
+            "description": "Свойство с тремя состояниями. Если `true`, интерфейс переходит в 12-часовой формат. Если `false`, интерфейс переходит в 24-часовой формат. Если `null`, текущая локаль будет определять 12- или 24-часовой интерфейс (по умолчанию)"
           },
           {
             "prop": "labelAm",
-            "description": "Text to display in the AM/PM spinbutton when 'AM' is selected"
+            "description": "Текст, отображаемый на кнопке прокрутки AM/PM при выборе «AM»"
           },
           {
             "prop": "labelAmpm",
-            "description": "Value of the `aria-label` attribute on the `AM/PM` spinbutton"
+            "description": "Значение атрибута `aria-label` на кнопке вращения `AM/PM`"
           },
           {
             "prop": "labelDecrement",
-            "description": "Value of the `aria-label` attribute on the spinbuttons `-` button"
+            "description": "Значение атрибута `aria-label` на кнопке вращения spinbuttons `-`"
           },
           {
             "prop": "labelHours",
-            "description": "Value of the `aria-label` attribute on the `Hours` spinbutton"
+            "description": "Значение атрибута `aria-label` на кнопке вращения `Hours`"
           },
           {
             "prop": "labelIncrement",
-            "description": "Value of the `aria-label` attribute on the spinbuttons `+` button"
+            "description": "Значение атрибута `aria-label` на кнопке вращения `+`"
           },
           {
             "prop": "labelMinutes",
-            "description": "Value of the `aria-label` attribute on the `Minutes` spinbutton"
+            "description": "Значение атрибута `aria-label` на кнопке вращения `Minutes`"
           },
           {
             "prop": "labelNoTimeSelected",
-            "description": "String to show when no time is selected"
+            "description": "Строка для отображения, когда время не выбрано"
           },
           {
             "prop": "labelPm",
-            "description": "Text to display in the AM/PM spinbutton when 'PM' is selected"
+            "description": "Текст, отображаемый на кнопке прокрутки AM/PM при выборе «PM»"
           },
           {
             "prop": "labelSeconds",
-            "description": "Value of the `aria-label` attribute on the `Seconds` spinbutton"
+            "description": "Значение атрибута `aria-label` на кнопке вращения `Seconds`"
           },
           {
             "prop": "labelSelected",
-            "description": "Hidden sr-only string when a time is selected"
+            "description": "Скрытая строка только для sr при выборе времени"
           },
           {
             "prop": "locale",
-            "description": "Locale (or locales) for the component to use. When passing an array of locales, the order of the locales is from most preferred to least preferred. If not provided, defaults to the clients default locale"
+            "description": "Локаль (или локали) для используемого компонента. При передаче массива локалей порядок локалей от наиболее предпочтительного к наименее предпочтительному. Если не указано, по умолчанию используется локаль клиента по умолчанию"
           },
           {
             "prop": "minutesStep",
-            "description": "Step value for the minutes spinbutton. Should be a value evenly divided into 60"
+            "description": "Значение шага для кнопки минут. Должно быть значение, равномерно разделенное на 60"
           },
           {
             "prop": "secondsStep",
-            "description": "Step value for the seconds spinbutton. Should be a value evenly divided into 60"
+            "description": "Значение шага для кнопки секунд. Должно быть значение, равномерно разделенное на 60"
           },
           {
             "prop": "showSeconds",
-            "description": "When true, shows the seconds spinbutton. If `false` the seconds spin button will not be shown and the seconds portion of the time will always be `0`"
+            "description": "Когда `true`, показывает секундную кнопку. Если `false`, кнопка прокрутки секунд не будет отображаться, а секундная часть времени всегда будет `0`"
           },
           {
             "prop": "value",
-            "description": "Initially selected time value. Accepts a `HH:mm:ss` string. Valid value ranges from `00:00:00` to `23:59:59`"
+            "description": "Первоначально выбранное значение времени. Принимает строку `HH:mm:ss`. Допустимое значение находится в диапазоне от `00:00:00` до `23:59:59`"
           }
         ],
         "events": [
           {
             "event": "context",
-            "description": "Emitted whenever the internal model state, or locale, updates. Also emitted when the component is initially created",
+            "description": "Генерируется всякий раз, когда обновляется внутреннее состояние модели или локаль. Также испускается при первоначальном создании компонента",
             "args": [
               {
                 "arg": "context",
-                "description": "The context object. Refer to the docs for details"
+                "description": "Объект контекста. Подробнее см. в документации"
               }
             ]
           },
           {
             "event": "input",
-            "description": "Event that updates the v-model",
+            "description": "Событие, которое обновляет v-model",
             "args": [
               {
                 "arg": "value",
-                "description": "The selected time as an `HH:mm:ss` string. Will be an empty string if no time selected"
+                "description": "Выбранное время в виде строки `HH:mm:ss`. Будет пустой строкой, если время не выбрано"
               }
             ]
           }
@@ -114,7 +114,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Used to place custom controls at the bottom of the time component"
+            "description": "Используется для размещения пользовательских элементов управления в нижней части компонента времени"
           }
         ]
       }
