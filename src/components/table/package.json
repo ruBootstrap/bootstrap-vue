@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Table",
-    "description": "For displaying tabular data. <b-table> supports pagination, filtering, sorting, custom rendering, events, and asynchronous data. For simple display of tabular data without all the fancy features, BootstrapVue also provides lightweight alternative components <b-table-lite> and <b-table-simple>.",
+    "description": "Для отображения табличных данных. <b-table> поддерживает разбиение на страницы, фильтрацию, сортировку, пользовательскую визуализацию, события и асинхронные данные. Для простого отображения табличных данных без всяких причудливых функций BootstrapVue также предоставляет легковесные альтернативные компоненты <b-table-lite> и <b-table-simple>.",
     "plugins": [
       "TableLitePlugin",
       "TableSimplePlugin"
@@ -14,335 +14,335 @@
         "props": [
           {
             "prop": "apiUrl",
-            "description": "Pass through prop. Passed as part of the context object sent to the items provider function"
+            "description": "Пройти через свойство. Передано как часть объекта контекста, отправленного в функцию поставщика элементов"
           },
           {
             "prop": "bordered",
-            "description": "Adds borders to all the cells and headers"
+            "description": "Добавляет границы ко всем ячейкам и заголовкам"
           },
           {
             "prop": "borderless",
-            "description": "Removes all borders from cells"
+            "description": "Удаляет все границы ячеек"
           },
           {
             "prop": "busy",
-            "description": "When set, forces the table into the busy state.Automatically set when an items provider function is being called"
+            "description": "Если установлено, переводит таблицу в состояние занятости. Автоматически устанавливается при вызове функции поставщика элементов"
           },
           {
             "prop": "caption",
-            "description": "Text string to place in the caption element"
+            "description": "Текстовая строка для размещения в элементе заголовка"
           },
           {
             "prop": "captionHtml",
-            "description": "HTML string to place in the caption element",
+            "description": "Строка HTML для размещения в элементе заголовка",
             "xss": true
           },
           {
             "prop": "captionTop",
-            "description": "Visually place the table caption above the table. Default is below"
+            "description": "Визуально поместите заголовок таблицы над таблицей. Значение по умолчанию ниже"
           },
           {
             "prop": "currentPage",
-            "description": "The current page number to display when the table is paginated. Starting from 1 and up"
+            "description": "Текущий номер страницы, отображаемый при разбиении таблицы на страницы. Начиная с 1 и выше"
           },
           {
             "prop": "dark",
-            "description": "Places the table in dark mode"
+            "description": "Переводит таблицу в темный режим"
           },
           {
             "prop": "detailsTdClass",
             "version": "2.1.0",
-            "description": "CSS class (or classes) to apply to the row details' `td` element for the row-details slot"
+            "description": "Класс (или классы) CSS для применения к элементу' `td` сведений о строке для слота row-details"
           },
           {
             "prop": "emptyFilteredHtml",
-            "description": "HTML string to show when the table has no items to show due to filtering",
+            "description": "Строка HTML для отображения, когда в таблице нет элементов для отображения из-за фильтрации",
             "xss": true
           },
           {
             "prop": "emptyFilteredText",
-            "description": "Text string to show when the table has no items to show due to filtering"
+            "description": "Текстовая строка для отображения, когда в таблице нет элементов для отображения из-за фильтрации"
           },
           {
             "prop": "emptyHtml",
-            "description": "HTML string to show when the table has no items to show",
+            "description": "Строка HTML для отображения, когда в таблице нет элементов для отображения",
             "xss": true
           },
           {
             "prop": "emptyText",
-            "description": "Text string to show when the table has no items to show"
+            "description": "Текстовая строка для отображения, когда в таблице нет элементов для отображения"
           },
           {
             "prop": "fields",
-            "description": "Array of field names or array of field definition objects"
+            "description": "Массив имен полей или массив объектов определения поля"
           },
           {
             "prop": "filter",
-            "description": "Criteria for filtering. Internal filtering supports only string or RegExpr criteria"
+            "description": "Критерии фильтрации. Внутренняя фильтрация поддерживает только строковые критерии или критерии RegExpr"
           },
           {
             "prop": "filterDebounce",
             "version": "2.0.0",
-            "description": "Time in milliseconds to debounce changes to the filter criteria before filtering the records"
+            "description": "Время в миллисекундах для отмены изменений в критериях фильтра перед фильтрацией записей"
           },
           {
             "prop": "filterFunction",
-            "description": "Reference to a function to use instead of the internal filtering function. Refer to the docs for details"
+            "description": "Ссылка на функцию, которую следует использовать вместо внутренней функции фильтрации. Подробнее смотрите в документации"
           },
           {
             "prop": "filterIgnoredFields",
-            "description": "Array of top level fields to ignore when filtering the item data"
+            "description": "Массив полей верхнего уровня, которые следует игнорировать при фильтрации данных элемента"
           },
           {
             "prop": "filterIncludedFields",
-            "description": "Array of fields to include when filtering. Overrides filter-ignore-fields"
+            "description": "Массив полей для включения при фильтрации. Переопределяет filter-ignore-fields"
           },
           {
             "prop": "fixed",
-            "description": "Makes all columns equal width (fixed layout table). Will speed up rendering for large tables. Column widths can be set via CSS or colgroup"
+            "description": "Делает все столбцы одинаковой ширины (таблица с фиксированным макетом). Ускорит рендеринг для больших таблиц. Ширину столбцов можно задать с помощью CSS или colgroup"
           },
           {
             "prop": "footClone",
-            "description": "Enable the footer of the table, and clone the header content by default"
+            "description": "Включить нижний колонтитул таблицы и клонировать содержимое заголовка по умолчанию"
           },
           {
             "prop": "footRowVariant",
             "version": "2.1.0",
-            "description": "Apply a Bootstrap theme color variant to the tr element in the tfoot. Falls back to head-row-variant"
+            "description": "Примените вариант цвета темы Bootstrap к элементу `tr` в файле `tfoot`. Возвращается к head-row-variant"
           },
           {
             "prop": "footVariant",
-            "description": "Footer variant: 'light' or 'dark', or unset. May take precedence over foot-row-variant"
+            "description": "Вариант нижнего колонтитула: 'light' или 'dark' или не установлен. Может иметь приоритет над foot-row-variant"
           },
           {
             "prop": "headRowVariant",
             "version": "2.1.0",
-            "description": "Apply a Bootstrap theme color variant to the tr element in the thead"
+            "description": "Примените вариант цвета темы Bootstrap к элементу tr в thead"
           },
           {
             "prop": "headVariant",
-            "description": "Header variant: 'light' or 'dark', or unset. May take precedence over head-row-variant"
+            "description": "Вариант верхнего колонтитула: 'light' or 'dark', или не установлен. Может иметь приоритет над head-row-variant"
           },
           {
             "prop": "hover",
-            "description": "Enables hover styling on rows"
+            "description": "Включает стиль при наведении на строки"
           },
           {
             "prop": "items",
-            "description": "Array of items to display, or an items provider function reference. Refer to the docs for details"
+            "description": "Массив отображаемых элементов или ссылка на функцию поставщика элементов. Подробнее смотрите в документации"
           },
           {
             "prop": "labelSortAsc",
-            "description": "Hidden string to place in the header cell when clicking the cell will change the sort direction to ascending"
+            "description": "Скрытая строка для размещения в ячейке заголовка при нажатии на ячейку изменит направление сортировки на восходящую"
           },
           {
             "prop": "labelSortClear",
-            "description": "Hidden string to place in the header cell when clicking the cell will clear the current sorting direction"
+            "description": "Скрытая строка для размещения в ячейке заголовка при нажатии на ячейку очистит текущее направление сортировки"
           },
           {
             "prop": "labelSortDesc",
-            "description": "Hidden string to place in the header cell when clicking the cell will change the sort direction to descending"
+            "description": "Скрытая строка для размещения в ячейке заголовка при нажатии на ячейку изменит направление сортировки на убывающую"
           },
           {
             "prop": "noBorderCollapse",
             "version": "2.0.0",
-            "description": "Disable's the collapsing of table borders. Useful when table has sticky headers or columns"
+            "description": "Отключить сворачивание границ таблицы. Полезно, когда таблица имеет липкие заголовки или столбцы"
           },
           {
             "prop": "noFooterSorting",
-            "description": "When the build in formatter is used, setting this prop will disable the sorting ability in the footer"
+            "description": "Когда используется встроенный форматер, установка этого свойства отключит возможность сортировки в нижнем колонтитуле"
           },
           {
             "prop": "noLocalSorting",
-            "description": "Disabled the internal sorting routine, and expects the user to provde the items sorted. Sorting controls will still be available"
+            "description": "Отключена процедура внутренней сортировки и ожидается, что пользователь предоставит отсортированные элементы. Элементы управления сортировкой по-прежнему будут доступны"
           },
           {
             "prop": "noProviderFiltering",
-            "description": "When set, uses internal filtering to pagination the data. Otherwise the provider is expected to perform the filtering"
+            "description": "Если установлено, использует внутреннюю фильтрацию для разбиения данных на страницы. В противном случае ожидается, что провайдер выполнит фильтрацию"
           },
           {
             "prop": "noProviderPaging",
-            "description": "When set, uses internal paging to pagination the data. Otherwise the items provider is expected to perform the paging"
+            "description": "Если установлено, использует внутреннее разбиение на страницы для разбиения данных на страницы. В противном случае ожидается, что поставщик элементов выполнит пейджинг"
           },
           {
             "prop": "noProviderSorting",
-            "description": "When set, uses internal sorting to sort the data. Otherwise the items provider is expected to perform the sorting"
+            "description": "Если установлено, использует внутреннюю сортировку для сортировки данных. В противном случае ожидается, что поставщик элементов выполнит сортировку"
           },
           {
             "prop": "noSelectOnClick",
             "version": "2.1.0",
-            "description": "Disables row selection via click events. Row selection will be only available programmatically"
+            "description": "Отключить выбор строки с помощью событий щелчка. Выбор строки будет доступен только программно"
           },
           {
             "prop": "noSortReset",
-            "description": "When a table is sortable, clicking on any non-sortable column heading will clear the current sort values. Set this prop to disable this feature"
+            "description": "Когда таблица сортируется, щелчок по заголовку любого несортируемого столбца очистит текущие значения сортировки. Установите эту опору, чтобы отключить эту функцию"
           },
           {
             "prop": "outlined",
-            "description": "Adds an outline border to the table element"
+            "description": "Добавляет границу контура к элементу таблицы"
           },
           {
             "prop": "perPage",
-            "description": "Number of rows to show per page. Set to 0 to disable pagination"
+            "description": "Количество строк для отображения на странице. Установите 0, чтобы отключить разбиение на страницы"
           },
           {
             "prop": "primaryKey",
-            "description": "Name of a table field that contains a guaranteed unique value per row. Needed for tbody transition support, and also speeds up table rendering"
+            "description": "Имя поля таблицы, которое содержит гарантированное уникальное значение для каждой строки. Необходим для поддержки перехода tbody, а также ускоряет рендеринг таблицы"
           },
           {
             "prop": "responsive",
-            "description": "Makes the table responsive in width, adding a horizontal scrollbar. Set to true for always responsive or set to one of the breakpoints to switch from responsive to normal: 'sm', 'md', 'lg', 'xl'"
+            "description": "Делает таблицу адаптивной по ширине, добавляя горизонтальную полосу прокрутки. Установите значение true, чтобы всегда реагировать, или установите одну из контрольных точек, чтобы переключиться с адаптивного режима на нормальный: 'sm', 'md', 'lg', 'xl'"
           },
           {
             "prop": "selectMode",
-            "description": "The selectable mode for the table when 'selectable' is set. Possible values: 'single', 'multi' or 'range'"
+            "description": "Выбираемый режим для таблицы, когда установлен 'selectable'. Возможные значения: 'single', 'multi' или 'range'"
           },
           {
             "prop": "selectable",
-            "description": "When set, places the table body rows in selectable mode"
+            "description": "Если установлено, помещает строки тела таблицы в режим выбора"
           },
           {
             "prop": "selectedVariant",
-            "description": "Bootstrap color theme variant to set selected rows to. Use any of the standard Bootstrap theme color variants, or the special table row variant 'active' (default). Set to an empty string to not use a variant"
+            "description": "Вариант цветовой темы Bootstrap для установки выбранных строк. Используйте любой из стандартных цветовых вариантов темы Bootstrap или специальный вариант строки таблицы 'active' (по умолчанию). Установите пустую строку, чтобы не использовать вариант"
           },
           {
             "prop": "showEmpty",
-            "description": "When enabled, and there are no item records to show, shows a message that there are no rows to show"
+            "description": "Если этот параметр включен и нет записей элементов для отображения, отображается сообщение о том, что нет строк для отображения"
           },
           {
             "prop": "small",
-            "description": "Renders the table with smaller cell padding"
+            "description": "Визуализирует таблицу с меньшим заполнением ячеек"
           },
           {
             "prop": "sortBy",
-            "description": "Field name that is currently being sorted. Set to null to clear sorting. Syncable with the .sync prop modifier"
+            "description": "Имя поля, которое в данный момент сортируется. Установите значение null, чтобы очистить сортировку. Синхронизируется с модификатором свойства .sync"
           },
           {
             "prop": "sortCompare",
-            "description": "A reference to a function for sort-comparing two rows of data. Defaults to the internal sort compare routine. See docs for details"
+            "description": "Ссылка на функцию для сортировки-сравнения двух строк данных. По умолчанию используется процедура сравнения внутренней сортировки. Подробнее смотрите документацию"
           },
           {
             "prop": "sortCompareLocale",
-            "description": "The locale string (or array of locale string) that specified the language when sorting. See docs for details"
+            "description": "Строка локали (или массив строк локали), указывающая язык при сортировке. Подробнее смотрите документацию"
           },
           {
             "prop": "sortCompareOptions",
-            "description": "An object containing sort configuration for the 'String.prototype.sortLocale' method. See docs for details"
+            "description": "Объект, содержащий конфигурацию сортировки для метода 'String.prototype.sortLocale'. Подробнее смотрите документацию"
           },
           {
             "prop": "sortDesc",
-            "description": "Set to true to sort the column in descending order. Syncable with the .sync prop modifier"
+            "description": "Установите значение true, чтобы отсортировать столбец в порядке убывания. Синхронизируется с модификатором свойства .sync"
           },
           {
             "prop": "sortDirection",
-            "description": "The initial sorting direction to sort an unsorted column by: 'asc', 'desc', or 'last' (to use the previous sort direction)"
+            "description": "Начальное направление сортировки для сортировки несортированного столбца по: 'asc', 'desc' или 'last' (для использования предыдущего направления сортировки)"
           },
           {
             "prop": "sortIconLeft",
-            "description": "Positions the sort control to the left of the header text. Default is on the right of the header text"
+            "description": "Помещает элемент управления сортировкой слева от текста заголовка. По умолчанию находится справа от текста заголовка"
           },
           {
             "prop": "sortNullLast",
-            "description": "When sorting, null and undefined values will be sorted first (or last, depending on 'sort-desc'). Set this prop to sort null values last. Only applicable to internal sorting"
+            "description": "При сортировке нулевые и неопределенные значения будут отсортированы первыми (или последними, в зависимости от 'sort-desc'). Установите это свойство для сортировки нулевых значений в последнюю очередь. Применимо только к внутренней сортировке"
           },
           {
             "prop": "stacked",
-            "description": "Place the table in stacked mode. Set to true for always stacked, or set to one of the breakpoints to switch from stacked to normal: 'sm', 'md', 'lg', 'xl'"
+            "description": "Поместите таблицу в режим стека. Установите значение true для всегда сложенных или установите одну из контрольных точек для переключения с сложенного на обычный: 'sm', 'md', 'lg', 'xl'"
           },
           {
             "prop": "stickyHeader",
-            "description": "Makes the table header sticky. Set to true for a maximum height 300px tall table, or set to any valid CSS hight (including units)"
+            "description": "Делает заголовок таблицы липким. Установите значение true для максимальной высоты таблицы высотой 300 пикселей или установите любую допустимую высоту CSS (включая единицы измерения)"
           },
           {
             "prop": "striped",
-            "description": "Applies striping to the tbody rows"
+            "description": "Применяет чередование к строкам tbody"
           },
           {
             "prop": "tableClass",
-            "description": "CSS class (or classes) to apply to the table element"
+            "description": "Класс CSS (или классы) для применения к элементу таблицы"
           },
           {
             "prop": "tableVariant",
-            "description": "Apply a Bootstrap theme color variant to the entire table"
+            "description": "Примените вариант цвета темы Bootstrap ко всей таблице"
           },
           {
             "prop": "tbodyClass",
-            "description": "CSS class (or classes) to apply to the tbody element"
+            "description": "CSS-класс (или классы) для применения к элементу tbody"
           },
           {
             "prop": "tbodyTrAttr",
             "version": "2.2.0",
-            "description": "Attributes to be added to each tr in the tbody, or a function returning such attributes (see docs for details)"
+            "description": "Атрибуты, добавляемые к каждому tr в tbody, или функция, возвращающая такие атрибуты (Подробнее смотрите документацию)"
           },
           {
             "prop": "tbodyTrClass",
-            "description": "CSS class (or classes) to apply to the tr element in the tbody. Can be a function that returns a class (see docs for details)"
+            "description": "CSS-класс (или классы) для применения к элементу tr в tbody. Может быть функцией, которая возвращает класс (Подробнее смотрите документацию)"
           },
           {
             "prop": "tbodyTransitionHandlers",
-            "description": "Vue 'transition-group' event handlers. When provided will make the tbody a Vue 'transition-group' component"
+            "description": "Обработчики событий Vue 'transition-group'. При наличии сделает tbody компонентом Vue 'transition-group'"
           },
           {
             "prop": "tbodyTransitionProps",
-            "description": "Vue 'transition-group' properties. When provided will make the tbody a Vue 'transition-group' component"
+            "description": "Свойства Vue 'transition-group'. При наличии сделает tbody компонентом Vue 'transition-group'"
           },
           {
             "prop": "tfootClass",
-            "description": "CSS class (or classes) to apply to the tfoot element"
+            "description": "CSS-класс (или классы) для применения к элементу tfoot"
           },
           {
             "prop": "tfootTrClass",
-            "description": "CSS class (or classes) to apply to the tr element in the tfoot"
+            "description": "CSS-класс (или классы) для применения к элементу tr в tfoot"
           },
           {
             "prop": "theadClass",
-            "description": "CSS class (or classes) to apply to the thead element"
+            "description": "CSS-класс (или классы) для применения к элементу thead"
           },
           {
             "prop": "theadTrClass",
-            "description": "CSS class (or classes) to apply to the tr element in the thead"
+            "description": "CSS-класс (или классы) для применения к элементу tr в thead"
           },
           {
             "prop": "value",
-            "description": "Currently displayed row data. Read-only. Do not set a value on this prop"
+            "description": "Текущие отображаемые данные строки. Только для чтения. Не устанавливайте значение для этого свойства"
           }
         ],
         "events": [
           {
             "event": "context-changed",
-            "description": "Emitted whenever the table state context has changed",
+            "description": "Генерируется всякий раз, когда изменяется контекст состояния таблицы",
             "args": [
               {
                 "arg": "ctx",
                 "type": "Object",
-                "description": "Table state context object. See docs"
+                "description": "Объект контекста состояния таблицы. Посмотрите документацию"
               }
             ]
           },
           {
             "event": "filtered",
-            "description": "Emitted when local filtering causes a change in the number of items",
+            "description": "Генерируется, когда локальная фильтрация вызывает изменение количества элементов",
             "args": [
               {
                 "arg": "filteredItems",
                 "type": "Array",
-                "description": "Array of items after filtering (before local pagination occurs)"
+                "description": "Массив элементов после фильтрации (до того, как произойдет локальное разбиение на страницы)"
               }
             ]
           },
           {
             "event": "head-clicked",
-            "description": "Emitted when a header or footer cell is clicked. Not applicable for 'custom-foot' slot",
+            "description": "Генерируется при нажатии на ячейку верхнего или нижнего колонтитула. Не применимо для слота 'custom-foot'",
             "args": [
               {
                 "arg": "key",
                 "type": "String",
-                "description": "Column key clicked (field name)"
+                "description": "Нажата клавиша столбца (имя поля)"
               },
               {
                 "arg": "field",
                 "type": "Object",
-                "description": "Field definition object"
+                "description": "Объект определения поля"
               },
               {
                 "arg": "event",
@@ -350,32 +350,32 @@
                   "MouseEvent",
                   "KeyboardEvent"
                 ],
-                "description": "Native event object"
+                "description": "Собственный объект события"
               },
               {
                 "arg": "isFooter",
                 "type": "Boolean",
-                "description": "'True' if this event originated from clicking on the footer cell"
+                "description": "'True', если это событие возникло в результате нажатия на ячейку нижнего колонтитула"
               }
             ]
           },
           {
             "event": "refreshed",
-            "description": "Emitted when the items provider function has returned data"
+            "description": "Генерируется, когда функция поставщика элементов данных вернула данные"
           },
           {
             "event": "row-clicked",
-            "description": "Emitted when a row is clicked",
+            "description": "Генерируется при нажатии на строку",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being clicked"
+                "description": "Данные элемента строки, на которую нажали"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being clicked"
+                "description": "Индекс строки, на которую нажали"
               },
               {
                 "arg": "event",
@@ -383,134 +383,134 @@
                   "MouseEvent",
                   "KeyboardEvent"
                 ],
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-contextmenu",
-            "description": "Emitted when a row is right clicked",
+            "description": "Генерируется при щелчке правой кнопкой мыши по строке",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being right clicked"
+                "description": "Данные элемента строки, по которой щелкнули правой кнопкой мыши"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being right clicked"
+                "description": "Индекс строки, по которой щелкнули правой кнопкой мыши"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-dblclicked",
-            "description": "Emitted when a row is double clicked",
+            "description": "Генерируется при двойном щелчке по строке",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being double clicked"
+                "description": "Данные элемента строки по двойному щелчку"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being double clicked"
+                "description": "Индекс строки, по которой дважды щелкнули"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-hovered",
-            "description": "Emitted when a row is hovered",
+            "description": "Генерируется при наведении курсора на строку",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being hovered"
+                "description": "Данные элемента строки, на которую наведен курсор"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being hovered"
+                "description": "Индекс наводимой строки"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-middle-clicked",
-            "description": "Emitted when a row is middle clicked",
+            "description": "Генерируется, когда строка щелкается средней кнопкой мыши",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being middle clicked"
+                "description": "Данные элемента строки, по которой щелкают средней кнопкой мыши"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being middle clicked"
+                "description": "Индекс строки, по которой щелкнули посередине"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-selected",
-            "description": "Emitted when a row or rows have been selected or unselected",
+            "description": "Генерируется, когда строка или строки выбраны или не выбраны",
             "args": [
               {
                 "arg": "rows",
                 "type": "Array",
-                "description": "Array of the row items that are selected"
+                "description": "Массив выбранных элементов строки"
               }
             ]
           },
           {
             "event": "row-unhovered",
-            "description": "Emitted when a row is unhovered",
+            "description": "Генерируется, когда строка не наведена",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being unhovered"
+                "description": "Данные элемента строки не отображаются"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being unhovered"
+                "description": "Индекс строки, которая не зависает"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "sort-changed",
-            "description": "Emitted when the sorting on the table has changed",
+            "description": "Выдается при изменении сортировки в таблице",
             "args": [
               {
                 "arg": "ctx",
                 "type": "Object",
-                "description": "Table state context object. See docs"
+                "description": "Объект контекста состояния таблицы. Посмотрите документацию"
               }
             ]
           }
@@ -518,12 +518,12 @@
         "rootEventListeners": [
           {
             "event": "bv::refresh::table",
-            "description": "Refresh data of a specific table when this event is emitted on $root",
+            "description": "Обновить данные определенной таблицы, когда это событие генерируется в $root",
             "args": [
               {
                 "arg": "id",
                 "type": "String",
-                "description": "Table ID to refresh data"
+                "description": "Идентификатор таблицы для обновления данных"
               }
             ]
           }
@@ -531,469 +531,469 @@
         "slots": [
           {
             "name": "bottom-row",
-            "description": "Fixed bottom row slot for user supplied B-TD cells. Optionally Scoped",
+            "description": "Фиксированный слот нижнего ряда для пользовательских ячеек B-TD. Необязательно",
             "scope": [
               {
                 "prop": "columns",
                 "type": "Number",
-                "description": "The number of columns in the table"
+                "description": "Количество столбцов в таблице"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               }
             ]
           },
           {
             "name": "cell()",
-            "description": "Default scoped slot for custom data rendering of field data. See docs for scoped data",
+            "description": "Слот с областью действия по умолчанию для пользовательского рендеринга данных поля. Смотрите документацию для данных с ограниченной областью",
             "scope": [
               {
                 "prop": "detailsShowing",
                 "type": "Boolean",
-                "description": "Will be true if the row's row-details scoped slot is visible"
+                "description": "Будет истинным, если видимый слот области сведений о строке строки"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "The row's index (zero-based) with respect to the displayed rows"
+                "description": "Индекс строки (начиная с нуля) по отношению к отображаемым строкам"
               },
               {
                 "prop": "item",
                 "type": "Object",
-                "description": "The row's item data object"
+                "description": "Объект данных элемента строки"
               },
               {
                 "prop": "rowSelected",
                 "type": "Boolean",
-                "description": "Will be true if the row has been selected. Only applicable when table is in selectable mode"
+                "description": "Будет истинным, если строка была выбрана. Применимо, только когда таблица находится в режиме выбора"
               },
               {
                 "prop": "selectRow",
                 "type": "Function",
                 "version": "2.1.0",
-                "description": "Can be called to select the current row. Only applicable when table is in selectable mode"
+                "description": "Может вызываться для выбора текущей строки. Применимо, только когда таблица находится в режиме выбора"
               },
               {
                 "prop": "toggleDetails",
                 "type": "Function",
-                "description": "Can be called to toggle the visibility of the rows row-details scoped slot"
+                "description": "Может вызываться для переключения видимости слота с областью действия сведений о строках строк"
               },
               {
                 "prop": "unformatted",
-                "description": "The raw value for this key in the item record (null or undefined if a virtual column), before being passed to the field's formatter function"
+                "description": "Необработанное значение для этого ключа в записи элемента (пустое или неопределенное, если это виртуальный столбец) перед передачей в функцию форматирования поля"
               },
               {
                 "prop": "unselectRow",
                 "type": "Function",
                 "version": "2.1.0",
-                "description": "Can be called to unselect the current row. Only applicable when table is in selectable mode"
+                "description": "Может вызываться для отмены выбора текущей строки. Применимо, только когда таблица находится в режиме выбора"
               },
               {
                 "prop": "value",
-                "description": "The value for this key in the record (null or undefined if a virtual column), or the output of the field's formatter function"
+                "description": "Значение этого ключа в записи (пустое или неопределенное, если столбец виртуальный) или выходные данные функции форматирования поля"
               }
             ]
           },
           {
             "name": "cell({key})",
             "pattern": "cell\\([a-zA-Z0-9$_.\\-]+\\)",
-            "description": "Scoped slot for custom data rendering of field data. '{key}' is the field's key name. See docs for scoped data",
+            "description": "Слот с заданной областью для пользовательского рендеринга полевых данных. '{key}' — имя ключа поля. Смотрите документацию для данных с ограниченной областью",
             "scope": [
               {
                 "prop": "detailsShowing",
                 "type": "Boolean",
-                "description": "Will be true if the row's row-details scoped slot is visible"
+                "description": "Будет истинным, если видимый слот области сведений о строке строки"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "The row's index (zero-based) with respect to the displayed rows"
+                "description": "Индекс строки (начиная с нуля) по отношению к отображаемым строкам"
               },
               {
                 "prop": "item",
                 "type": "Object",
-                "description": "The row's item data object"
+                "description": "Объект данных элемента строки"
               },
               {
                 "prop": "rowSelected",
                 "type": "Boolean",
-                "description": "Will be true if the row has been selected. Only applicable when table is in selectable mode"
+                "description": "Будет истинным, если строка была выбрана. Применимо, только когда таблица находится в режиме выбора"
               },
               {
                 "prop": "selectRow",
                 "type": "Function",
                 "version": "2.1.0",
-                "description": "Can be called to select the current row. Only applicable when table is in selectable mode"
+                "description": "Может вызываться для выбора текущей строки. Применимо, только когда таблица находится в режиме выбора"
               },
               {
                 "prop": "toggleDetails",
                 "type": "Function",
-                "description": "Can be called to toggle the visibility of the rows row-details scoped slot"
+                "description": "Может вызываться для переключения видимости слота с областью действия сведений о строках строк"
               },
               {
                 "prop": "unformatted",
-                "description": "The raw value for this key in the item record (null or undefined if a virtual column), before being passed to the field's formatter function"
+                "description": "Необработанное значение для этого ключа в записи элемента (пустое или неопределенное, если это виртуальный столбец) перед передачей в функцию форматирования поля"
               },
               {
                 "prop": "unselectRow",
                 "type": "Function",
                 "version": "2.1.0",
-                "description": "Can be called to unselect the current row. Only applicable when table is in selectable mode"
+                "description": "Может вызываться для отмены выбора текущей строки. Применимо, только когда таблица находится в режиме выбора"
               },
               {
                 "prop": "value",
-                "description": "The value for this key in the record (null or undefined if a virtual column), or the output of the field's formatter function"
+                "description": "Значение этого ключа в записи (пустое или неопределенное, если столбец виртуальный) или выходные данные функции форматирования поля"
               }
             ]
           },
           {
             "name": "custom-foot",
-            "description": "Custom footer content slot for user supplied B-TR, B-TH, B-TD. Optionally Scoped",
+            "description": "Пользовательский слот содержимого нижнего колонтитула для предоставленных пользователем B-TR, B-TH, B-TD. Опционально ограниченный",
             "scope": [
               {
                 "prop": "columns",
                 "type": "Number",
-                "description": "The number of columns in the table"
+                "description": "Количество столбцов в таблице"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               },
               {
                 "prop": "items",
                 "type": "Array",
-                "description": "Array of items that are currently being displayed"
+                "description": "Массив элементов, отображаемых в данный момент"
               }
             ]
           },
           {
             "name": "empty",
-            "description": "Content to display when no items are present in the `items` array. Optionally scoped",
+            "description": "Содержимое для отображения, когда в массиве `items` нет элементов. Опционально ограниченный",
             "scope": [
               {
                 "prop": "emptyFilteredHtml",
                 "type": "String",
-                "description": "The value of the empty-filtered-html prop"
+                "description": "Значение параметра empty-filtered-html"
               },
               {
                 "prop": "emptyFilteredText",
                 "type": "String",
-                "description": "The value of the empty-filtered-text prop"
+                "description": "Значение параметра empty-filtered-text"
               },
               {
                 "prop": "emptyHtml",
                 "type": "String",
-                "description": "The value of the empty-html prop"
+                "description": "Значение параметра empty-html"
               },
               {
                 "prop": "emptyText",
                 "type": "String",
-                "description": "The value of the empty-text prop"
+                "description": "Значение параметра empty-text"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               },
               {
                 "prop": "items",
                 "type": "Array",
-                "description": "The items array. Exposed here to check null vs []"
+                "description": "Массив элементов. Выставлено здесь, чтобы проверить null против []"
               }
             ]
           },
           {
             "name": "emptyfiltered",
-            "description": "Content to display when no items are present in the filtered `items` array. Optionally scoped",
+            "description": "Содержимое для отображения, когда в отфильтрованном массиве `items` нет элементов. Опционально ограниченный",
             "scope": [
               {
                 "prop": "emptyFilteredHtml",
                 "type": "String",
-                "description": "The value of the empty-filtered-html prop"
+                "description": "Значение параметра empty-filtered-html"
               },
               {
                 "prop": "emptyFilteredText",
                 "type": "String",
-                "description": "The value of the empty-filtered-text prop"
+                "description": "Значение параметра empty-filtered-text"
               },
               {
                 "prop": "emptyHtml",
                 "type": "String",
-                "description": "The value of the empty-html prop"
+                "description": "Значение параметра empty-html"
               },
               {
                 "prop": "emptyText",
                 "type": "String",
-                "description": "The value of the empty-text prop"
+                "description": "Значение параметра empty-text"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               },
               {
                 "prop": "items",
                 "type": "Array",
-                "description": "The items array. Exposed here to check null vs []"
+                "description": "Массив элементов. Выставлено здесь, чтобы проверить null против []"
               }
             ]
           },
           {
             "name": "foot()",
-            "description": "Default scoped slot for custom rendering of field footer. See docs for scoped footer",
+            "description": "Слот с областью действия по умолчанию для пользовательского рендеринга поля футера. Смотрите документацию для футера с ограниченной областью",
             "scope": [
               {
                 "prop": "clearSelected",
                 "type": "Function",
-                "description": "Unselect all rows (applicable if the table is in selectable mode)"
+                "description": "Отменить выбор всех строк (применимо, если таблица находится в режиме выбора)"
               },
               {
                 "prop": "column",
                 "type": "String",
-                "description": "The field's key value"
+                "description": "Значение ключа поля"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "label",
                 "type": "String",
-                "description": "The field's label value"
+                "description": "Значение метки поля"
               },
               {
                 "prop": "selectAllRows",
                 "type": "Function",
-                "description": "Select all rows (applicable if the table is in selectable mode)"
+                "description": "Выбрать все строки (применимо, если таблица находится в режиме выбора)"
               }
             ]
           },
           {
             "name": "foot({key})",
             "pattern": "foot\\([a-zA-Z0-9$_.\\-]+\\)",
-            "description": "Scoped slot for custom rendering of field footer. '{key}' is the field's key name. See docs for scoped footer",
+            "description": "Слот с заданной областью для пользовательского рендеринга нижнего колонтитула поля. '{key}' — имя ключа поля. Смотрите документацию для футера с ограниченной областью",
             "scope": [
               {
                 "prop": "clearSelected",
                 "type": "Function",
-                "description": "Unselect all rows (applicable if the table is in selectable mode)"
+                "description": "Отменить выбор всех строк (применимо, если таблица находится в режиме выбора)"
               },
               {
                 "prop": "column",
                 "type": "String",
-                "description": "The field's key value"
+                "description": "Значение ключа поля"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "label",
                 "type": "String",
-                "description": "The field's label value"
+                "description": "Значение метки поля"
               },
               {
                 "prop": "selectAllRows",
                 "type": "Function",
-                "description": "Select all rows (applicable if the table is in selectable mode)"
+                "description": "Выбрать все строки (применимо, если таблица находится в режиме выбора)"
               }
             ]
           },
           {
             "name": "head()",
-            "description": "Default scoped slot for custom rendering of field header. See docs for scoped header",
+            "description": "Слот с областью действия по умолчанию для пользовательского рендеринга заголовка поля. Смотрите документацию для заголовка с ограниченной областью",
             "scope": [
               {
                 "prop": "clearSelected",
                 "type": "Function",
-                "description": "Unselect all rows (applicable if the table is in selectable mode)"
+                "description": "Отменить выбор всех строк (применимо, если таблица находится в режиме выбора)"
               },
               {
                 "prop": "column",
                 "type": "String",
-                "description": "The field's key value"
+                "description": "Значение ключа поля"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "isFoot",
                 "type": "Boolean",
-                "description": "Will be true if the slot is being rendered in the table footer"
+                "description": "Будет true, если слот отображается в нижнем колонтитуле таблицы"
               },
               {
                 "prop": "label",
                 "type": "String",
-                "description": "The field's label value"
+                "description": "Значение метки поля"
               },
               {
                 "prop": "selectAllRows",
                 "type": "Function",
-                "description": "Select all rows (applicable if the table is in selectable mode)"
+                "description": "Выбрать все строки (применимо, если таблица находится в режиме выбора)"
               }
             ]
           },
           {
             "name": "head({key})",
             "pattern": "head\\([a-zA-Z0-9$_.\\-]+\\)",
-            "description": "Scoped slot for custom rendering of field header. '{key}' is the field's key name. See docs for scoped header",
+            "description": "Слот с заданной областью для пользовательского рендеринга заголовка поля. '{key}' — имя ключа поля. Смотрите документацию для заголовка с ограниченной областью",
             "scope": [
               {
                 "prop": "clearSelected",
                 "type": "Function",
-                "description": "Unselect all rows (applicable if the table is in selectable mode)"
+                "description": "Отменить выбор всех строк (применимо, если таблица находится в режиме выбора)"
               },
               {
                 "prop": "column",
                 "type": "String",
-                "description": "The field's key value"
+                "description": "Значение ключа поля"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "isFoot",
                 "type": "Boolean",
-                "description": "Will be true if the slot is being rendered in the table footer"
+                "description": "Будет true, если слот отображается в нижнем колонтитуле таблицы"
               },
               {
                 "prop": "label",
                 "type": "String",
-                "description": "The field's label value"
+                "description": "Значение метки поля"
               },
               {
                 "prop": "selectAllRows",
                 "type": "Function",
-                "description": "Select all rows (applicable if the table is in selectable mode)"
+                "description": "Выбрать все строки (применимо, если таблица находится в режиме выбора)"
               }
             ]
           },
           {
             "name": "row-details",
-            "description": "Scoped slot for optional rendering additional record details. See docs for Row details support",
+            "description": "Слот с заданной областью для необязательного рендеринга дополнительных сведений о записи. Смотрите документацию для поддержки сведений о строках",
             "scope": [
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "The item's row index number (with respect to the displayed item rows)"
+                "description": "Индексный номер строки элемента (относительно отображаемых строк элемента)"
               },
               {
                 "prop": "item",
                 "type": "Object",
-                "description": "The entire row's record data object"
+                "description": "Объект данных записи всей строки"
               },
               {
                 "prop": "rowSelected",
                 "type": "Boolean",
                 "version": "2.1.0",
-                "description": "Will be true if the row has been selected. Only applicable when table is in selectable mode"
+                "description": "Будет истинным, если строка была выбрана. Применимо, только когда таблица находится в режиме выбора"
               },
               {
                 "prop": "selectRow",
                 "type": "Function",
                 "version": "2.1.0",
-                "description": "Can be called to select the current row. Only applicable when table is in selectable mode"
+                "description": "Может вызываться для выбора текущей строки. Применимо, только когда таблица находится в режиме выбора"
               },
               {
                 "prop": "toggleDetails",
                 "type": "Function",
-                "description": "Function to toggle visibility of the row's details slot"
+                "description": "Функция для переключения видимости слота сведений о строке"
               },
               {
                 "prop": "unselectRow",
                 "type": "Function",
                 "version": "2.1.0",
-                "description": "Can be called to unselect the current row. Only applicable when table is in selectable mode"
+                "description": "Может вызываться для отмены выбора текущей строки. Применимо, только когда таблица находится в режиме выбора"
               }
             ]
           },
           {
             "name": "table-busy",
-            "description": "Optional slot to place loading message when table is in the busy state"
+            "description": "Необязательный слот для размещения сообщения о загрузке, когда таблица находится в состоянии занятости"
           },
           {
             "name": "table-caption",
-            "description": "Content to display in the table's caption element"
+            "description": "Содержимое для отображения в элементе заголовка таблицы"
           },
           {
             "name": "table-colgroup",
-            "description": "Slot to place custom colgroup and col elements. Optionally scoped",
+            "description": "Слот для размещения пользовательских элементов colgroup и col. Опционально ограниченный",
             "scope": [
               {
                 "prop": "columns",
                 "type": "Number",
-                "description": "The number of columns in the table"
+                "description": "Количество столбцов в таблице"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "Array of field definition objects"
+                "description": "Массив объектов определения поля"
               }
             ]
           },
           {
             "name": "thead-top",
-            "description": "Slot above the column headers in the `thead` element for user-supplied B-TR's with B-TH/B-TD. Optionally scoped",
+            "description": "Слот над заголовками столбцов в элементе `thead` для пользовательских B-TR с B-TH/B-TD. Опционально ограниченный",
             "scope": [
               {
                 "prop": "clearSelected",
                 "type": "Function",
-                "description": "Unselect all rows (applicable if the table is in selectable mode)"
+                "description": "Отменить выбор всех строк (применимо, если таблица находится в режиме выбора)"
               },
               {
                 "prop": "columns",
                 "type": "Number",
-                "description": "The number of columns in the table"
+                "description": "Количество столбцов в таблице"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               },
               {
                 "prop": "selectAllRows",
                 "type": "Function",
-                "description": "Select all rows (applicable if the table is in selectable mode)"
+                "description": "Выбрать все строки (применимо, если таблица находится в режиме выбора)"
               }
             ]
           },
           {
             "name": "top-row",
-            "description": "Fixed top row slot for user supplied B-TD cells. Optionally scoped",
+            "description": "Фиксированный слот верхнего ряда для пользовательских ячеек B-TD. Опционально ограниченный",
             "scope": [
               {
                 "prop": "columns",
                 "type": "Number",
-                "description": "The number of columns in the table"
+                "description": "Количество столбцов в таблице"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               }
             ]
           }
@@ -1004,169 +1004,169 @@
         "props": [
           {
             "prop": "bordered",
-            "description": "Adds borders to all the cells and headers"
+            "description": "Добавляет границы ко всем ячейкам и заголовкам"
           },
           {
             "prop": "borderless",
-            "description": "Removes all borders from cells"
+            "description": "Удаляет все границы ячеек"
           },
           {
             "prop": "caption",
-            "description": "Text string to place in the caption element"
+            "description": "Текстовая строка для размещения в элементе заголовка"
           },
           {
             "prop": "captionHtml",
-            "description": "HTML string to place in the caption element",
+            "description": "Строка HTML для размещения в элементе заголовка",
             "xss": true
           },
           {
             "prop": "captionTop",
-            "description": "Visually place the table caption above the table. Default is below"
+            "description": "Визуально поместите заголовок таблицы над таблицей. Значение по умолчанию ниже"
           },
           {
             "prop": "dark",
-            "description": "Places the table in dark mode"
+            "description": "Переводит таблицу в темный режим"
           },
           {
             "prop": "detailsTdClass",
             "version": "2.1.0",
-            "description": "CSS class (or classes) to apply to the td element in the details row"
+            "description": "CSS-класс (или классы) для применения к элементу td в строке сведений"
           },
           {
             "prop": "fields",
-            "description": "Array of field names or array of field definition objects"
+            "description": "Массив имен полей или массив объектов определения поля"
           },
           {
             "prop": "fixed",
-            "description": "Makes all columns equal width (fixed layout table). Will speed up rendering for large tables. Column widths can be set via CSS or colgroup"
+            "description": "Делает все столбцы одинаковой ширины (таблица с фиксированным макетом). Ускорит рендеринг для больших таблиц. Ширину столбцов можно задать с помощью CSS или colgroup"
           },
           {
             "prop": "footClone",
-            "description": "Enable to the footer of the table, and clone the header content by default"
+            "description": "Включите нижний колонтитул таблицы и клонируйте содержимое заголовка по умолчанию"
           },
           {
             "prop": "footRowVariant",
             "version": "2.1.0",
-            "description": "Apply a Bootstrap theme color variant to the tr element in the tfoot. Falls back to head-row-variant"
+            "description": "Примените вариант цвета темы Bootstrap к элементу tr в файле tfoot. Возвращается к head-row-variant"
           },
           {
             "prop": "footVariant",
-            "description": "Footer variant: 'light' or 'dark', or unset. May take precedence over foot-row-variant"
+            "description": "Вариант футера: 'light' или 'dark' или не установлен. Может иметь приоритет над foot-row-variant"
           },
           {
             "prop": "headRowVariant",
             "version": "2.1.0",
-            "description": "Apply a Bootstrap theme color variant to the tr element in the thead"
+            "description": "Примените вариант цвета темы Bootstrap к элементу tr в thead"
           },
           {
             "prop": "headVariant",
-            "description": "Header variant: 'light' or 'dark', or unset. May take precedence over head-row-variant"
+            "description": "Вариант хедера: 'light' или 'dark' или не установлен. Может иметь приоритет над head-row-variant"
           },
           {
             "prop": "hover",
-            "description": "Enables hover styling on rows"
+            "description": "Включает стиль при наведении на строки"
           },
           {
             "prop": "items",
-            "description": "Array of items to display"
+            "description": "Массив элементов для отображения"
           },
           {
             "prop": "noBorderCollapse",
             "version": "2.0.0",
-            "description": "Disable's the collapsing of table borders. Useful when table has sticky headers or columns"
+            "description": "Отключить свертывание границ таблицы. Полезно, когда таблица имеет липкие заголовки или столбцы"
           },
           {
             "prop": "outlined",
-            "description": "Adds an outline border to the table element"
+            "description": "Добавляет границу контура к элементу таблицы"
           },
           {
             "prop": "primaryKey",
-            "description": "Name of a table field that contains a guaranteed unique value per row. Needed for tbody transition support, and also speeds up table rendering"
+            "description": "Имя поля таблицы, которое содержит гарантированное уникальное значение для каждой строки. Необходим для поддержки перехода tbody, а также ускоряет рендеринг таблицы"
           },
           {
             "prop": "responsive",
-            "description": "Makes the table responsive in width, adding a horizontal scrollbar. Set to true for always responsive or set to one of the breakpoints to switch from responsive to normal: 'sm', 'md', 'lg', 'xl'"
+            "description": "Делает таблицу адаптивной по ширине, добавляя горизонтальную полосу прокрутки. Установите значение true, чтобы всегда реагировать, или установите одну из контрольных точек, чтобы переключиться с адаптивного режима на нормальный: 'sm', 'md', 'lg', 'xl'"
           },
           {
             "prop": "small",
-            "description": "Renders the table with smaller cell padding"
+            "description": "Визуализирует таблицу с меньшим заполнением ячеек"
           },
           {
             "prop": "stacked",
-            "description": "Place the table in stacked mode. Set to true for always stacked, or set to one of the breakpoints to switch from stacked to normal: 'sm', 'md', 'lg', 'xl'"
+            "description": "Поместите таблицу в режим стека. Установите значение true для всегда сложенных или установите одну из контрольных точек для переключения с сложенного на обычный: 'sm', 'md', 'lg', 'xl'"
           },
           {
             "prop": "stickyHeader",
-            "description": "Makes the table header sticky. Set to true for a maximum height 300px tall table, or set to any valid CSS hight (including units)"
+            "description": "Делает заголовок таблицы липким. Установите значение true для максимальной высоты таблицы высотой 300 пикселей или установите любую допустимую высоту CSS (включая единицы измерения)"
           },
           {
             "prop": "striped",
-            "description": "Applies striping to the tbody rows"
+            "description": "Применяет чередование к строкам tbody"
           },
           {
             "prop": "tableClass",
-            "description": "CSS class (or classes) to apply to the table element"
+            "description": "Класс CSS (или классы) для применения к элементу таблицы"
           },
           {
             "prop": "tableVariant",
-            "description": "Apply a Bootstrap theme color variant to the entire table"
+            "description": "Примените вариант цвета темы Bootstrap ко всей таблице"
           },
           {
             "prop": "tbodyClass",
-            "description": "CSS class (or classes) to apply to the tbody element"
+            "description": "CSS-класс (или классы) для применения к элементу tbody"
           },
           {
             "prop": "tbodyTrAttr",
             "version": "2.2.0",
-            "description": "Attributes to be added to each tr in the tbody, or a function returning such attributes (see docs for details)"
+            "description": "Атрибуты, добавляемые к каждому tr в tbody, или функция, возвращающая такие атрибуты (Подробнее смотрите документацию)"
           },
           {
             "prop": "tbodyTrClass",
-            "description": "CSS class (or classes) to apply to the tr element in the tbody. Can be a function that returns a class (see docs for details)"
+            "description": "CSS-класс (или классы) для применения к элементу tr в tbody. Может быть функцией, которая возвращает класс (Подробнее смотрите документацию)"
           },
           {
             "prop": "tbodyTransitionHandlers",
-            "description": "Vue 'transition-group' event handlers. When provided will make the tbody a Vue 'transition-group' component"
+            "description": "Обработчики событий Vue 'transition-group'. При наличии сделает tbody компонентом Vue 'transition-group'"
           },
           {
             "prop": "tbodyTransitionProps",
-            "description": "Vue 'transition-group' properties. When provided will make the tbody a Vue 'transition-group' component"
+            "description": "Свойства Vue 'transition-group'. При наличии сделает tbody компонентом Vue 'transition-group'"
           },
           {
             "prop": "tfootClass",
-            "description": "CSS class (or classes) to apply to the tfoot element"
+            "description": "CSS-класс (или классы) для применения к элементу tfoot"
           },
           {
             "prop": "tfootTrClass",
-            "description": "CSS class (or classes) to apply to the tr element in the tfoot"
+            "description": "CSS-класс (или классы) для применения к элементу tr в tfoot"
           },
           {
             "prop": "theadClass",
-            "description": "CSS class (or classes) to apply to the thead element"
+            "description": "CSS-класс (или классы) для применения к элементу thead"
           },
           {
             "prop": "theadTrClass",
-            "description": "CSS class (or classes) to apply to the tr element in the thead"
+            "description": "CSS-класс (или классы) для применения к элементу tr в thead"
           },
           {
             "prop": "value",
-            "description": "Currently displayed row data. Read-only. Do not set a value on this prop"
+            "description": "Текущие отображаемые данные строки. Только для чтения. Не устанавливайте значение для этого свойства"
           }
         ],
         "events": [
           {
             "event": "head-clicked",
-            "description": "Emitted when a header or footer cell is clicked. Not applicable for 'custom-foot' slot",
+            "description": "Генерируется при нажатии на ячейку верхнего или нижнего колонтитула. Не применимо для слота 'custom-foot'",
             "args": [
               {
                 "arg": "key",
                 "type": "String",
-                "description": "Column key clicked (field name)"
+                "description": "Нажата клавиша столбца (имя поля)"
               },
               {
                 "arg": "field",
                 "type": "Object",
-                "description": "Field definition object"
+                "description": "Объект определения поля"
               },
               {
                 "arg": "event",
@@ -1174,28 +1174,28 @@
                   "MouseEvent",
                   "KeyboardEvent"
                 ],
-                "description": "Native event object"
+                "description": "Собственный объект события"
               },
               {
                 "arg": "isFooter",
                 "type": "Boolean",
-                "description": "'True' if this event originated from clicking on the footer cell"
+                "description": "'True', если это событие возникло в результате нажатия на ячейку нижнего колонтитула"
               }
             ]
           },
           {
             "event": "row-clicked",
-            "description": "Emitted when a row is clicked",
+            "description": "Генерируется при нажатии на строку",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being clicked"
+                "description": "Данные элемента строки, на которую нажали"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being clicked"
+                "description": "Индекс строки, на которую нажали"
               },
               {
                 "arg": "event",
@@ -1203,76 +1203,76 @@
                   "MouseEvent",
                   "KeyboardEvent"
                 ],
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-contextmenu",
-            "description": "Emitted when a row is right clicked",
+            "description": "Генерируется при щелчке правой кнопкой мыши по строке",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being right clicked"
+                "description": "Данные элемента строки, по которой щелкнули правой кнопкой мыши"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being right clicked"
+                "description": "Индекс строки, по которой щелкнули правой кнопкой мыши"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-dblclicked",
-            "description": "Emitted when a row is double clicked",
+            "description": "Генерируется при двойном щелчке по строке",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being double clicked"
+                "description": "Данные элемента строки по двойному щелчку"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being double clicked"
+                "description": "Индекс строки, по которой дважды щелкнули"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-hovered",
-            "description": "Emitted when a row is hovered",
+            "description": "Генерируется при наведении курсора на строку",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being hovered"
+                "description": "Данные элемента строки, на которую наведен курсор"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being hovered"
+                "description": "Индекс наводимой строки"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-middle-clicked",
-            "description": "Emitted when a row is middle clicked",
+            "description": "Генерируется, когда строка щелкается средней кнопкой мыши",
             "args": [
               {
                 "arg": "item",
@@ -1282,33 +1282,33 @@
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being middle clicked"
+                "description": "Индекс строки, по которой щелкнули посередине"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           },
           {
             "event": "row-unhovered",
-            "description": "Emitted when a row is unhovered",
+            "description": "Генерируется, когда строка не наведена",
             "args": [
               {
                 "arg": "item",
                 "type": "Object",
-                "description": "Item data of the row being unhovered"
+                "description": "Данные элемента строки не отображаются"
               },
               {
                 "arg": "index",
                 "type": "Number",
-                "description": "Index of the row being unhovered"
+                "description": "Индекс строки, которая не зависает"
               },
               {
                 "arg": "event",
                 "type": "MouseEvent",
-                "description": "Native event object"
+                "description": "Собственный объект события"
               }
             ]
           }
@@ -1316,269 +1316,269 @@
         "slots": [
           {
             "name": "cell()",
-            "description": "Default scoped slot for custom data rendering of field data",
+            "description": "Слот с областью действия по умолчанию для пользовательского рендеринга полевых данных",
             "scope": [
               {
                 "prop": "detailsShowing",
                 "type": "Boolean",
-                "description": "Will be true if the row's row-details scoped slot is visible"
+                "description": "Будет истинным, если видимый слот области сведений о строке строки"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "The row's index (zero-based) with respect to the displayed rows"
+                "description": "Индекс строки (начиная с нуля) по отношению к отображаемым строкам"
               },
               {
                 "prop": "item",
                 "type": "Object",
-                "description": "The row's item data object"
+                "description": "Объект данных элемента строки"
               },
               {
                 "prop": "toggleDetails",
                 "type": "Function",
-                "description": "Can be called to toggle the visibility of the rows row-details scoped slot"
+                "description": "Может вызываться для переключения видимости слота с областью действия сведений о строках строк"
               },
               {
                 "prop": "unformatted",
-                "description": "The raw value for this key in the item record (null or undefined if a virtual column), before being passed to the field's formatter function"
+                "description": "Необработанное значение для этого ключа в записи элемента (пустое или неопределенное, если это виртуальный столбец) перед передачей в функцию форматирования поля"
               },
               {
                 "prop": "value",
-                "description": "The value for this key in the record (null or undefined if a virtual column), or the output of the field's formatter function"
+                "description": "Значение этого ключа в записи (пустое или неопределенное, если столбец виртуальный) или выходные данные функции форматирования поля"
               }
             ]
           },
           {
             "name": "cell({key})",
             "pattern": "cell\\([a-zA-Z0-9$_.\\-]+\\)",
-            "description": "Scoped slot for custom data rendering of field data. '{key}' is the field's key name",
+            "description": "Слот с заданной областью для пользовательского рендеринга полевых данных. '{key}' — имя ключа поля",
             "scope": [
               {
                 "prop": "detailsShowing",
                 "type": "Boolean",
-                "description": "Will be true if the row's row-details scoped slot is visible"
+                "description": "Будет истинным, если видимый слот области сведений о строке строки"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "The row's index (zero-based) with respect to the displayed rows"
+                "description": "Индекс строки (начиная с нуля) по отношению к отображаемым строкам"
               },
               {
                 "prop": "item",
                 "type": "Object",
-                "description": "The row's item data object"
+                "description": "Объект данных элемента строки"
               },
               {
                 "prop": "toggleDetails",
                 "type": "Function",
-                "description": "Can be called to toggle the visibility of the rows row-details scoped slot"
+                "description": "Может вызываться для переключения видимости слота с областью действия сведений о строках строк"
               },
               {
                 "prop": "unformatted",
-                "description": "The raw value for this key in the item record (null or undefined if a virtual column), before being passed to the field's formatter function"
+                "description": "Необработанное значение для этого ключа в записи элемента (пустое или неопределенное, если это виртуальный столбец) перед передачей в функцию форматирования поля"
               },
               {
                 "prop": "value",
-                "description": "The value for this key in the record (null or undefined if a virtual column), or the output of the field's formatter function"
+                "description": "Значение этого ключа в записи (пустое или неопределенное, если столбец виртуальный) или выходные данные функции форматирования поля"
               }
             ]
           },
           {
             "name": "custom-foot",
-            "description": "Custom footer content slot for user supplied B-TR's with B-TH/B-TD. Optionally Scoped",
+            "description": "Пользовательский слот содержимого нижнего колонтитула для предоставленных пользователем B-TR с B-TH/B-TD. Опционально ограниченный",
             "scope": [
               {
                 "prop": "columns",
                 "type": "Number",
-                "description": "The number of columns in the table"
+                "description": "Количество столбцов в таблице"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               },
               {
                 "prop": "items",
                 "type": "Array",
-                "description": "Array of items that are currently being displayed"
+                "description": "Массив элементов, отображаемых в данный момент"
               }
             ]
           },
           {
             "name": "foot()",
-            "description": "Default scoped slot for custom rendering of field footer",
+            "description": "Слот с областью действия по умолчанию для пользовательского рендеринга поля футера",
             "scope": [
               {
                 "prop": "column",
                 "type": "String",
-                "description": "The field's key value"
+                "description": "Значение ключа поля"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "label",
                 "type": "String",
-                "description": "The field's label value"
+                "description": "Значение метки поля"
               }
             ]
           },
           {
             "name": "foot({key})",
             "pattern": "foot\\([a-zA-Z0-9$_.\\-]+\\)",
-            "description": "Scoped slot for custom rendering of field footer. '{key}' is the field's key name",
+            "description": "Слот с заданной областью для пользовательского рендеринга нижнего колонтитула поля. '{key}' — имя ключа поля",
             "scope": [
               {
                 "prop": "column",
                 "type": "String",
-                "description": "The field's key value"
+                "description": "Значение ключа поля"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "label",
                 "type": "String",
-                "description": "The field's label value"
+                "description": "Значение метки поля"
               }
             ]
           },
           {
             "name": "head()",
-            "description": "Default scoped slot for custom rendering of field header",
+            "description": "Слот с областью действия по умолчанию для пользовательского рендеринга заголовка поля",
             "scope": [
               {
                 "prop": "column",
                 "type": "String",
-                "description": "The field's key value"
+                "description": "Значение ключа поля"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "isFoot",
                 "type": "Boolean",
-                "description": "Will be true if the slot is being rendered in the table footer"
+                "description": "Будет true, если слот отображается в нижнем колонтитуле таблицы"
               },
               {
                 "prop": "label",
                 "type": "String",
-                "description": "The field's label value"
+                "description": "Значение метки поля"
               }
             ]
           },
           {
             "name": "head({key})",
             "pattern": "head\\([a-zA-Z0-9$_.\\-]+\\)",
-            "description": "Scoped slot for custom rendering of field header. '{key}' is the field's key name",
+            "description": "Слот с заданной областью для пользовательского рендеринга заголовка поля. '{key}' — имя ключа поля",
             "scope": [
               {
                 "prop": "column",
                 "type": "String",
-                "description": "The field's key value"
+                "description": "Значение ключа поля"
               },
               {
                 "prop": "field",
                 "type": "Object",
-                "description": "The field's normalized definition object (from the fields prop)"
+                "description": "Объект нормализованного определения поля (из свойства полей)"
               },
               {
                 "prop": "isFoot",
                 "type": "Boolean",
-                "description": "Will be true if the slot is being rendered in the table footer"
+                "description": "Будет true, если слот отображается в нижнем колонтитуле таблицы"
               },
               {
                 "prop": "label",
                 "type": "String",
-                "description": "The field's label value"
+                "description": "Значение метки поля"
               }
             ]
           },
           {
             "name": "row-details",
-            "description": "Scoped slot for optional rendering additional record details. See docs for Row details support",
+            "description": "Слот с заданной областью для необязательного рендеринга дополнительных сведений о записи. Смотрите документацию для поддержки сведений о строках",
             "scope": [
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               },
               {
                 "prop": "index",
                 "type": "Number",
-                "description": "The item's row index number (with respect to the displayed item rows)"
+                "description": "Индексный номер строки элемента (относительно отображаемых строк элемента)"
               },
               {
                 "prop": "item",
                 "type": "Object",
-                "description": "The entire row's record data object"
+                "description": "Объект данных записи всей строки"
               },
               {
                 "prop": "toggleDetails",
                 "type": "Function",
-                "description": "Function to toggle visibility of the row's details slot"
+                "description": "Функция для переключения видимости слота сведений о строке"
               }
             ]
           },
           {
             "name": "table-caption",
-            "description": "Content to display in the table's caption element"
+            "description": "Содержимое для отображения в элементе заголовка таблицы"
           },
           {
             "name": "table-colgroup",
-            "description": "Slot to place custom colgroup and col elements. Optionally scoped",
+            "description": "Слот для размещения пользовательских элементов colgroup и col. Опционально ограниченный",
             "scope": [
               {
                 "prop": "columns",
                 "type": "Number",
-                "description": "The number of columns in the table"
+                "description": "Количество столбцов в таблице"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "Array of field definition objects"
+                "description": "Массив объектов определения поля"
               }
             ]
           },
           {
             "name": "thead-top",
-            "description": "Slot above the column headers in the `thead` element for user-supplied B-TR with B-TH/B-TD. Optionally scoped",
+            "description": "Слот над заголовками столбцов в элементе `thead` для user-supplied B-TR с B-TH/B-TD. Опционально ограниченный",
             "scope": [
               {
                 "prop": "clearSelected",
                 "type": "Function",
-                "description": "Unselect all rows (applicable if the table is in selectable mode)"
+                "description": "Отменить выбор всех строк (применимо, если таблица находится в режиме выбора)"
               },
               {
                 "prop": "columns",
                 "type": "Number",
-                "description": "The number of columns in the table"
+                "description": "Количество столбцов в таблице"
               },
               {
                 "prop": "fields",
                 "type": "Array",
-                "description": "The normalized fields definition array (in the array of objects format)"
+                "description": "Массив определения нормализованных полей (в формате массива объектов)"
               },
               {
                 "prop": "selectAllRows",
                 "type": "Function",
-                "description": "Select all rows (applicable if the table is in selectable mode)"
+                "description": "Выбрать все строки (применимо, если таблица находится в режиме выбора)"
               }
             ]
           }
@@ -1589,70 +1589,70 @@
         "props": [
           {
             "prop": "bordered",
-            "description": "Adds borders to all the cells and headers"
+            "description": "Добавляет границы ко всем ячейкам и заголовкам"
           },
           {
             "prop": "borderless",
-            "description": "Removes all borders from cells"
+            "description": "Удаляет все границы ячеек"
           },
           {
             "prop": "captionTop",
-            "description": "Visually place the table caption above the table. Default is below"
+            "description": "Визуально поместите заголовок таблицы над таблицей. Значение по умолчанию ниже"
           },
           {
             "prop": "dark",
-            "description": "Places the table in dark mode"
+            "description": "Переводит таблицу в темный режим"
           },
           {
             "prop": "fixed",
-            "description": "Makes all columns equal width (fixed layout table). Will speed up rendering for large tables. Column widths can be set via CSS or colgroup"
+            "description": "Делает все столбцы одинаковой ширины (таблица с фиксированным макетом). Ускорит рендеринг для больших таблиц. Ширину столбцов можно задать с помощью CSS или colgroup"
           },
           {
             "prop": "hover",
-            "description": "Enables hover styling on rows"
+            "description": "Включает стиль при наведении на строки"
           },
           {
             "prop": "noBorderCollapse",
             "version": "2.0.0",
-            "description": "Disable's the collapsing of table borders. Useful when table has sticky headers or columns"
+            "description": "Отключить свертывание границ таблицы. Полезно, когда таблица имеет липкие заголовки или столбцы"
           },
           {
             "prop": "outlined",
-            "description": "Adds an outline border to the table element"
+            "description": "Добавляет границу контура к элементу таблицы"
           },
           {
             "prop": "responsive",
-            "description": "Makes the table responsive in width, adding a horizontal scrollbar. Set to true for always responsive or set to one of the breakpoints to switch from responsive to normal: 'sm', 'md', 'lg', 'xl'"
+            "description": "Делает таблицу адаптивной по ширине, добавляя горизонтальную полосу прокрутки. Установите значение true, чтобы всегда реагировать, или установите одну из контрольных точек, чтобы переключиться с адаптивного режима на нормальный: 'sm', 'md', 'lg', 'xl'"
           },
           {
             "prop": "small",
-            "description": "Renders the table with smaller cell padding"
+            "description": "Визуализирует таблицу с меньшим заполнением ячеек"
           },
           {
             "prop": "stacked",
-            "description": "Place the table in stacked mode. Set to true for always stacked, or set to one of the breakpoints to switch from stacked to normal: 'sm', 'md', 'lg', 'xl'"
+            "description": "Поместите таблицу в режим стека. Установите значение true для всегда сложенных или установите одну из контрольных точек для переключения с сложенного на обычный: 'sm', 'md', 'lg', 'xl'"
           },
           {
             "prop": "stickyHeader",
-            "description": "Makes the table header sticky. Set to true for a maximum height 300px tall table, or set to any valid CSS hight (including units)"
+            "description": "Делает заголовок таблицы липким. Установите значение true для максимальной высоты таблицы высотой 300 пикселей или установите любую допустимую высоту CSS (включая единицы измерения)"
           },
           {
             "prop": "striped",
-            "description": "Applies striping to the tbody rows"
+            "description": "Применяет чередование к строкам tbody"
           },
           {
             "prop": "tableClass",
-            "description": "CSS class (or classes) to apply to the table element"
+            "description": "Класс CSS (или классы) для применения к элементу таблицы"
           },
           {
             "prop": "tableVariant",
-            "description": "Apply a Bootstrap theme color variant to the entire table"
+            "description": "Примените вариант цвета темы Bootstrap ко всей таблице"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the table"
+            "description": "Контент для размещения в table"
           }
         ]
       },
@@ -1661,17 +1661,17 @@
         "props": [
           {
             "prop": "tbodyTransitionHandlers",
-            "description": "Vue 'transition-group' event handlers. When provided will make the tbody a Vue 'transition-group' component"
+            "description": "Обработчики событий Vue 'transition-group'. При наличии сделает tbody компонентом Vue 'transition-group'"
           },
           {
             "prop": "tbodyTransitionProps",
-            "description": "Vue 'transition-group' properties. When provided will make the tbody a Vue 'transition-group' component"
+            "description": "Свойства Vue 'transition-group'. При наличии сделает tbody компонентом Vue 'transition-group'"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the tbody"
+            "description": "Контент для размещения в tbody"
           }
         ]
       },
@@ -1680,13 +1680,13 @@
         "props": [
           {
             "prop": "headVariant",
-            "description": "Header variant: 'light' or 'dark', or unset"
+            "description": "Вариант хедера: 'light' или 'dark', или не установлен"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the thead"
+            "description": "Контент для размещения в thead"
           }
         ]
       },
@@ -1695,13 +1695,13 @@
         "props": [
           {
             "prop": "footVariant",
-            "description": "Footer variant: 'light' or 'dark', or unset"
+            "description": "Вариант футера: 'light' или 'dark', или не установлен"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the tfoot"
+            "description": "Контент для размещения в tfoot"
           }
         ]
       },
@@ -1710,7 +1710,7 @@
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the tr"
+            "description": "Контент для размещения в tr"
           }
         ]
       },
@@ -1719,25 +1719,25 @@
         "props": [
           {
             "prop": "colspan",
-            "description": "Number of columns this cell spans"
+            "description": "Количество столбцов, которые охватывает эта ячейка"
           },
           {
             "prop": "rowspan",
-            "description": "Number of rows this cell spans"
+            "description": "Количество строк, которые охватывает эта ячейка"
           },
           {
             "prop": "stackedHeading",
-            "description": "Heading for the cell when in stacked mode. Only applicable to cells in the 'tbody' element"
+            "description": "Направление к ячейке в режиме стека. Применимо только к ячейкам в элементе tbody"
           },
           {
             "prop": "stickyColumn",
-            "description": "If this will be a sticky colum. Must be set on all cells in this column. table must be in sticky-header or responsive mode to work"
+            "description": "Если это будет приклеенная колонка. Должен быть установлен для всех ячеек в этом столбце. Таблица должна быть с закрепленным заголовком или в адаптивном режиме для работы"
           }
         ],
         "slots": [
           {
             "name": "default",
-            "description": "Content to place in the td"
+            "description": "Контент для размещения в td"
           }
         ]
       },
@@ -1746,19 +1746,19 @@
         "props": [
           {
             "prop": "colspan",
-            "description": "Number of columns this cell spans"
+            "description": "Количество столбцов, которые охватывает эта ячейка"
           },
           {
             "prop": "rowspan",
-            "description": "Number of rows this cell spans"
+            "description": "Количество строк, которые охватывает эта ячейка"
           },
           {
             "prop": "stackedHeading",
-            "description": "Heading for the cell when in stacked mode. Only applicable to cells in the 'tbody' element"
+            "description": "Направление к ячейке в режиме стека. Применимо только к ячейкам в элементе tbody"
           },
           {
             "prop": "stickyColumn",
-            "description": "If this will be a sticky colum. Must be set on all cells in this column. table must be in sticky-header or responsive mode to work"
+            "description": "Если это будет приклеенная колонка. Должен быть установлен для всех ячеек в этом столбце. Таблица должна быть с закрепленным заголовком или в адаптивном режиме для работы"
           }
         ]
       }
