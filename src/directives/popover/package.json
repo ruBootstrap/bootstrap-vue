@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "meta": {
     "title": "Popover",
-    "description": "Add BootstrapVue popovers to any element on your site, using Bootstrap v4 CSS for styling and animations. Popovers are tooltips on steroids.",
+    "description": "Добавьте всплывающие окна BootstrapVue к любому элементу на вашем сайте, используя Bootstrap v4 CSS для стилизации и анимации. Поповеры — это всплывающие подсказки на стероидах.",
     "directive": "VBPopover",
     "arg": {
       "pattern": "[a-zA-Z][a-zA-Z0-9_\\-]*",
-      "description": "ID of element to append the popover markup when visible. Optional, defaults to the body",
+      "description": "Идентификатор элемента для добавления разметки всплывающего окна, когда он виден. Необязательно, по умолчанию для тела",
       "required": false
     },
     "expression": [
@@ -18,93 +18,93 @@
     "modifiers": [
       {
         "name": "top",
-        "description": "Positions the popover on the top of the trigger element (default)"
+        "description": "Позиционирует всплывающее окно в верхней части триггерного элемента (по умолчанию)"
       },
       {
         "name": "right",
-        "description": "Positions the popover on the right of the trigger element"
+        "description": "Позиционирует всплывающее окно справа от триггерного элемента"
       },
       {
         "name": "bottom",
-        "description": "Positions the popover on the bottom of the trigger element"
+        "description": "Позиционирует всплывающее окно в нижней части триггерного элемента"
       },
       {
         "name": "auto",
-        "description": "Positions the popover in the best fit place around the trigger element"
+        "description": "Располагает всплывающее окно в наиболее подходящем месте вокруг триггерного элемента"
       },
       {
         "name": "topright",
-        "description": "Positions the popover on the top-right of the trigger element"
+        "description": "Позиционирует всплывающее окно в правом верхнем углу триггерного элемента"
       },
       {
         "name": "topleft",
-        "description": "Positions the popover on the top-left of the trigger element"
+        "description": "Позиционирует всплывающее окно в верхнем левом углу триггерного элемента"
       },
       {
         "name": "bottomright",
-        "description": "Positions the popover on the bottom-right of the trigger element"
+        "description": "Позиционирует всплывающее окно в правом нижнем углу триггерного элемента"
       },
       {
         "name": "bottomleft",
-        "description": "Positions the popover on the bottom-left of the trigger element"
+        "description": "Позиционирует всплывающее окно в нижнем левом углу триггерного элемента"
       },
       {
         "name": "lefttop",
-        "description": "Positions the popover on the left-top of the trigger element"
+        "description": "Позиционирует всплывающее окно в левом верхнем углу триггерного элемента"
       },
       {
         "name": "leftbottom",
-        "description": "Positions the popover on the left-bottom of the trigger element"
+        "description": "Позиционирует всплывающее окно в левом нижнем углу триггерного элемента"
       },
       {
         "name": "righttop",
-        "description": "Positions the popover on the right-top of the trigger element"
+        "description": "Позиционирует всплывающее окно в правой верхней части триггерного элемента"
       },
       {
         "name": "rightbottom",
-        "description": "Positions the popover on the right-bottom of the trigger element"
+        "description": "Позиционирует всплывающее окно в правой нижней части триггерного элемента"
       },
       {
         "name": "nofade",
-        "description": "Disabled the fade animation of the popover"
+        "description": "Отключена анимация затухания всплывающего окна"
       },
       {
         "name": "html",
-        "description": "Enables basic HTML in the title/content",
+        "description": "Включает базовый HTML в заголовке/контенте",
         "xss": true
       },
       {
         "name": "viewport",
-        "description": "Sets the boundary constraint to the viewport"
+        "description": "Устанавливает граничное ограничение на область просмотра"
       },
       {
         "name": "window",
-        "description": "Sets the boundary constrain to the window"
+        "description": "Устанавливает граничное ограничение на окно"
       },
       {
         "name": "v-{variant}",
         "pattern": "v-[a-z]+",
-        "description": "Sets the popover contextual color variant to `{variant}`"
+        "description": "Устанавливает вариант контекстного цвета всплывающего окна на `{variant}`"
       },
       {
         "name": "d{###}",
         "pattern": "d[0-9]+",
-        "description": "The show and hide delay in milliseconds (where `{###}` is the value in milliseconds)"
+        "description": "Отображать и скрывать задержку в миллисекундах (где `{###}` — значение в миллисекундах)"
       },
       {
         "name": "ds{###}",
         "pattern": "ds[0-9]+",
-        "description": "The show delay in milliseconds (where `{###}` is the value in milliseconds)"
+        "description": "Задержка показа в миллисекундах (где `{###}` — значение в миллисекундах)"
       },
       {
         "name": "dh{###}",
         "pattern": "dh[0-9]+",
-        "description": "The hide delay in milliseconds (where `{###}` is the value in milliseconds)"
+        "description": "Задержка скрытия в миллисекундах (где `{###}` — значение в миллисекундах)"
       },
       {
         "name": "o{###}",
         "pattern": "o-?[0-9]+",
-        "description": "An offset value in pixels (where `{###}` is the number of pixels, defaults to 0. Negative values allowed)"
+        "description": "Значение смещения в пикселях (где `{###}` — количество пикселей, по умолчанию 0. Допускаются отрицательные значения)"
       }
     ]
   }

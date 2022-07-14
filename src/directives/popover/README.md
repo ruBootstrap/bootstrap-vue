@@ -1,42 +1,45 @@
-# Popover
+# Всплывающее окно
 
-> Documentation and examples for adding BootstrapVue popovers to any element on your site, using
-> Bootstrap v4 CSS for styling and animations. Popovers can be triggered by hovering, focusing, or
-> clicking an element, and can contain both content and a title heading. Popovers are tooltips on
-> steroids.
+> Документация и примеры добавления всплывающих окон BootstrapVue к любому элементу вашего сайта с
+> использованием Bootstrap v4 CSS для стилизации и анимации. Всплывающие окна могут вызываться
+> наведением курсора, фокусировкой или щелчком по элементу и могут содержать как содержимое, так и
+> заголовок заголовка. Поповеры — это всплывающие подсказки на стероидах.
 
 ## Обзор
 
-Use the `v-b-popover` directive on any **element** or **component** where you would like a popover
-to appear.
+Используйте директиву `v-b-popover` для любого **элемента** или **компонента**, где вы хотите, чтобы
+всплывающее окно отображалось.
 
 ```html
 <div class="text-center my-3">
-  <b-button v-b-popover.hover="'I am popover content!'" title="Popover Title">Hover Me</b-button>
+  <b-button v-b-popover.hover="'Я содержимое всплывающего окна!'" title="Заголовок всплывающего окна">Наведите меня</b-button>
 </div>
 
 <!-- b-popover.vue -->
 ```
 
-Things to know when using the popover directive:
+Что нужно знать при использовании директивы всплывающего окна:
 
-- Popovers rely on the 3rd party library [Popper.js](https://popper.js.org/) for positioning.
-- Popovers require BootstrapVue's custom SCSS/CSS in order to function correctly, and for variants.
-- If both title and content is not provided (or are an empty string), the popover will not show.
-- Specify container: 'body' (default) to avoid rendering problems in more complex components (like
-  input groups, button groups, etc.).
-- Triggering popovers on hidden elements will not work.
-- Popovers for `disabled` elements must be triggered on a wrapper element.
-- When triggered from hyperlinks that span multiple lines, popovers will be centered. Use
-  white-space: nowrap; on your `<a>`s, `<b-link>`s or `<router-link>`s b to avoid this behavior.
-- Elements that trigger popovers should be in the document tab sequence. Add `tabindex="0"` if
-  required.
+- Поповеры полагаются на стороннюю библиотеку [Popper.js](https://popper.js.org/) для
+  позиционирования.
+- Поповеры требуют пользовательского SCSS/CSS BootstrapVue для правильной работы и для вариантов.
+- Если заголовок и содержимое не указаны (или представляют собой пустую строку), всплывающее окно не
+  будет отображаться.
+- Укажите контейнер: 'body' (по умолчанию), чтобы избежать проблем с рендерингом в более сложных
+  компонентах (таких как группы ввода, группы кнопок и т. д.).
+- Запуск всплывающих окон на скрытых элементах не будет работать.
+- Поповеры для `disabled` элементов должны запускаться для элемента-оболочки.
+- При запуске из гиперссылок, которые охватывают несколько строк, всплывающие окна будут
+  центрированы. Используйте `white-space: nowrap`; на ваших `<a>`, `<b-link>` или `<router-link>`,
+  чтобы избежать такого поведения.
+- Элементы, вызывающие всплывающие окна, должны находиться в последовательности вкладок документа.
+  Добавьте `tabindex="0"`, если требуется.
 
-## Positioning
+## Позиционирование
 
-Twelve options are available for positioning: `top`, `topleft`, `topright`, `right`, `righttop`,
-`rightbottom`, `bottom`, `bottomleft`, `bottomright`, `left`, `lefttop`, and `leftbottom` aligned.
-Positioning is relative to the trigger element.
+Для позиционирования доступны двенадцать вариантов выравнивания: `top`, `topleft`, `topright`,
+`right`, `righttop`, `rightbottom`, `bottom`, `bottomleft`, `bottomright`, `left`, `lefttop` и
+`leftbottom`. Позиционирование относительно триггерного элемента.
 
 <div class="bd-example bd-example-popover-static">
   <div class="popover b-popover bs-popover-top bs-popover-top-docs">
@@ -142,7 +145,7 @@ Positioning is relative to the trigger element.
   <div class="clearfix"></div>
 </div>
 
-**Live example**
+**Живой пример**
 
 ```html
 <div>
@@ -191,20 +194,21 @@ Positioning is relative to the trigger element.
 <!-- b-popover-positioning.vue -->
 ```
 
-## Triggers
+## Триггеры
 
-Popovers can be triggered (opened/closed) via any combination of `click`, `hover` and `focus`. The
-default trigger is `click`. Or a trigger of `manual` can be specified, where the popover can only be
-opened or closed [programmatically](#hiding-and-showing-popovers-via-root-events).
+Всплывающие окна могут быть запущены (открыты/закрыты) с помощью любой комбинации `click`, `hover` и
+`focus`. Триггер по умолчанию — `click`. Или можно указать триггер `manual`, где всплывающее окно
+может быть открыто или закрыто только [программно](#hiding-and-showing-popovers-via-root-events).
 
-If a popover has more than one trigger, then all triggers must be cleared before the popover will
-close. I.e. if a popover has the trigger `focus click`, and it was opened by `focus`, and the user
-then clicks the trigger element, they must click it again **and** move focus to close the popover.
+Если всплывающее окно имеет более одного триггера, то все триггеры должны быть очищены, прежде чем
+всплывающее окно закроется. т.е. если всплывающее окно имеет триггер `focus click`, и оно было
+открыто `focus`, а затем пользователь щелкает элемент триггера, он должен щелкнуть его еще раз **и**
+переместить фокус, чтобы закрыть всплывающее окно.
 
 ```html
 <div>
   <b-container fluid>
-    <h5>Triggers</h5>
+    <h5>Триггеры</h5>
     <b-row class="text-center">
       <b-col md="6" class="py-3">
         <b-button v-b-popover="'Popover!'" variant="outline-success">Click (default)</b-button>
@@ -225,24 +229,26 @@ then clicks the trigger element, they must click it again **and** move focus to 
 <!-- b-popover-triggers.vue -->
 ```
 
-### Making popovers work for keyboard and assistive technology users
+### Настройка всплывающих окон для пользователей клавиатуры и вспомогательных технологий
 
-You should only add popovers to HTML elements that are traditionally keyboard-focusable and
-interactive (such as links, buttons, or form controls). Although arbitrary HTML elements (such as
-`<span>`s) can be made focusable by adding the `tabindex="0"` attribute, this will add potentially
-annoying and confusing tab stops on non-interactive elements for keyboard users. In addition, most
-assistive technologies currently do not announce the popover in this situation.
+Вы должны добавлять всплывающие окна только к элементам HTML, которые традиционно активны с помощью
+клавиатуры и являются интерактивными (например, ссылки, кнопки или элементы управления формы). Хотя
+произвольные элементы HTML (такие как `<span>`) можно сделать фокусируемыми, добавив атрибут
+`tabindex="0"`, это добавит потенциально раздражающие и запутанные позиции табуляции на
+неинтерактивных элементах для пользователей клавиатуры. Кроме того, большинство вспомогательных
+технологий в настоящее время не объявляют всплывающее окно в этой ситуации.
 
-Additionally, do not rely solely on `hover` as the trigger for your popover, as this will make your
-popovers _impossible to trigger for keyboard-only users_.
+Кроме того, не полагайтесь исключительно на `hover` в качестве триггера для вашего всплывающего
+окна, так как это сделает ваши всплывающие окна _невозможными для запуска для пользователей,
+использующих только клавиатуру_.
 
-### Caveats with `focus` trigger on `<button>` elements
+### Предостережения со срабатыванием `focus` на элементах `<button>`
 
-For proper cross-browser and cross-platform behavior when using only the `focus` trigger, you must
-use an element that renders the `<a>` tag, not the `<button>` tag, and you also must include a
-`tabindex="0"` attribute.
+Для правильного кросс-браузерного и кросс-платформенного поведения при использовании только триггера
+`focus`, вы должны использовать элемент, который отображает тег `<a>`, а не тег `<button>`, и вы
+также должны включить `tabindex="0"`.
 
-The following will generate an `<a>` that looks like a button:
+Следующее сгенерирует `<a>`, который выглядит как кнопка:
 
 ```html
 <b-button
@@ -255,37 +261,39 @@ The following will generate an `<a>` that looks like a button:
 </b-button>
 ```
 
-### Dismiss on next click (self dismissing)
+### Закрыть при следующем нажатии (самозакрытие)
 
-Use the `focus` trigger by itself to dismiss popovers on the next click that the user makes. `focus`
-also makes the popover activate on both `focus` and `click` (as a click makes the element receive
-focus, assuming it is in the tab sequence of the page).
+Используйте триггер `focus` отдельно, чтобы закрыть всплывающие окна при следующем щелчке, который
+делает пользователь. `focus` также заставляет всплывающее окно активироваться как при `focus` и
+`click` (поскольку щелчок заставляет элемент получать фокус, предполагая, что он находится в
+последовательности вкладок на странице).
 
-You can, however, specify your trigger as `click blur`, which will make only a click activate the
-popover, and either a click on the element - _or losing focus to another element or part of the
-document_ - will close the popover.
+Однако вы можете указать свой триггер как `click blur`, который заставит только щелчок активировать
+всплывающее окно, и либо щелчок по элементу - _или потеря фокуса на другом элементе или части
+документа_ - закроет всплывающее окно.
 
-This `blur` trigger must be used in combination with the `click` trigger.
+Этот триггер `blur` должен использоваться в сочетании с триггером `click`.
 
-The following example shows the `click blur` use case. Popovers will only open on click of the
-button, and will close either on click of the button, or a click anywhere else (or a focus change
-via pressing the <kbd>Tab</kbd> key). Some call this behavior _self dismissing_.
+В следующем примере показан вариант использования `click blur`. Всплывающие окна будут открываться
+только по нажатию кнопки и закрываться либо по нажатию кнопки, либо по щелчку в любом другом месте
+(или при смене фокуса нажатием клавиши <kbd>Tab</kbd> key). Некоторые называют это поведение
+_самоотвержением_.
 
 ```html
 <div>
   <b-container fluid>
     <b-row class="text-center">
       <b-col md="3" class="py-3">
-        <b-button v-b-popover.click.blur="'Content'" title="Popover" variant="primary">Click</b-button>
+        <b-button v-b-popover.click.blur="'Контент'" title="Всплывающее окно" variant="primary">Клик</b-button>
       </b-col>
       <b-col md="3" class="py-3">
-        <b-button v-b-popover.click.blur="'Content'" title="Popover" variant="primary">Click</b-button>
+        <b-button v-b-popover.click.blur="'Контент'" title="Всплывающее окно" variant="primary">Клик</b-button>
       </b-col>
       <b-col md="3" class="py-3">
-        <b-button v-b-popover.click.blur="'Content'" title="Popover" variant="primary">Click</b-button>
+        <b-button v-b-popover.click.blur="'Контент'" title="Всплывающее окно" variant="primary">Клик</b-button>
       </b-col>
       <b-col md="3" class="py-3">
-        <b-button v-b-popover.click.blur="'Content'" title="Popover" variant="primary">Click</b-button>
+        <b-button v-b-popover.click.blur="'Контент'" title="Всплывающее окно" variant="primary">Клик</b-button>
       </b-col>
     </b-row>
   </b-container>
@@ -294,13 +302,13 @@ via pressing the <kbd>Tab</kbd> key). Some call this behavior _self dismissing_.
 <!-- b-popover-dismiss-next-click.vue -->
 ```
 
-## Heading and content
+## Заголовок и содержание
 
-There are several options for provisioning the title and content of a popover.
+Существует несколько вариантов предоставления заголовка и содержимого всплывающего окна.
 
-By default, popover will use the `title` attribute of the element as the popover heading, and the
-content is passed as a string to the `v-b-popover` directive. The title and content can also be
-passed as an object to `v-b-popover` in the form of
+По умолчанию всплывающее окно будет использовать атрибут `title` элемента в качестве заголовка
+всплывающего окна, а содержимое передается в виде строки в директиву `v-b-popover`. Заголовок и
+содержимое также могут быть переданы как объект в `v-b-popover` в виде
 
 <!-- eslint-disable no-unused-vars -->
 
@@ -311,8 +319,8 @@ const options = {
 }
 ```
 
-If your content has basic HTML markup, then you will also need to set the `html` property to true,
-or use the directive modifier `html`
+Если ваш контент имеет базовую HTML-разметку, вам также необходимо установить для свойства `html`
+значение `true`, или использовать модификатор директивы `html`
 
 <!-- eslint-disable no-unused-vars -->
 
@@ -320,14 +328,14 @@ or use the directive modifier `html`
 // Object format with HTML:
 const options = {
   title: 'This is the <strong>title</strong>',
-  content: 'This is the <em>content<em>',
+  content: 'This is the <em>контент<em>',
   html: true
 }
 ```
 
-Title and content can also be function references, which are called each time the popover is opened.
-To make a value returned by the function reactive while open, set the title or content to a _new_
-function reference whenever the content changes.
+Заголовок и содержимое также могут быть ссылками на функции, которые вызываются каждый раз при
+открытии всплывающего окна. Чтобы сделать значение, возвращаемое функцией, реактивным при открытии,
+установите для заголовка или содержимого ссылку на функцию _new_ при каждом изменении содержимого.
 
 ```html
 <template>
@@ -390,7 +398,7 @@ function reference whenever the content changes.
       },
       popoverData() {
         return {
-          title: 'Popover Title',
+          title: 'Заголовок всплывающего окна',
           content: 'The date is ' + this.date
         }
       }
@@ -416,10 +424,10 @@ function reference whenever the content changes.
 <!-- b-popover-content.vue -->
 ```
 
-## Variants and custom class
+## Варианты и пользовательский класс
 
-BootstrapVue's popovers support contextual color variants via our custom CSS, either by using
-directive modifiers or config options:
+Всплывающие окна BootstrapVue поддерживают контекстуальные цветовые варианты с помощью нашего
+пользовательского CSS либо с помощью модификаторов директив, либо параметров конфигурации:
 
 ```html
 <template>
@@ -448,119 +456,120 @@ directive modifiers or config options:
 <!-- b-popover-variants.vue -->
 ```
 
-Bootstrap default theme variants are: `danger`, `warning`, `success`, `primary`, `secondary`,
-`info`, `light`, and `dark`. You can change or add additional variants via Bootstrap
-[SCSS variables](/docs/reference/theming)
+Варианты темы Bootstrap по умолчанию: `danger`, `warning`, `success`, `primary`, `secondary`,
+`info`, `light` и `dark`. Вы можете изменить или добавить дополнительные варианты через Bootstrap
+[переменные SCSS](/docs/reference/theming)
 
-A custom class can be applied to the popover outer wrapper <div> by using the customClass option
-property:
+Пользовательский класс можно применить к внешней оболочке всплывающего окна `<div>` с помощью
+свойства опции `customClass`:
 
 ```html
 <b-button
   v-b-popover.hover="{ customClass: 'my-popover-class', content: 'Popover content' }"
-  title="Popover"
+  title="Всплывающее окно"
 >
-  Button
+  Кнопка
 </b-button>
 ```
 
-## Directive syntax and usage
+## Синтаксис и использование директив
 
 ```html
-<b-button v-b-popover:[container].[mod].[mod].[...].[mod]="<value>">Button</b-button>
+<b-button v-b-popover:[container].[mod].[mod].[...].[mod]="<value>">Кнопка</b-button>
 ```
 
-Where `[container]` can be (optional):
+Где `[container]` может быть (необязательно):
 
-- An element ID (minus the `#`) to place the popover markup in, when visible
-- If not provided, popovers are appended to the `<body>` when visible
+- Идентификатор элемента (минус `#`) для размещения разметки всплывающего окна, когда он виден
+- Если не указано, всплывающие окна добавляются к `<body>`, когда они видны
 
-Where `[mod]` can be (all optional):
+Где может быть `[mod]` (все необязательные):
 
-- Positioning: `top`, `bottom`, `left`, `right`, `auto`; or the offset alignment positions
-  `topleft`, `topright`, `bottomleft`, `bottomright`, `lefttop`, `leftbottom`, `righttop`, or
-  `rightbottom` (last one found wins, defaults to `right`).
-- Event trigger: `click`, `hover`, `focus`, `blur` (if none specified, defaults to `click`. The
-  `blur` trigger is a close handler only, and if specified by itself, will be converted to `focus`).
-  Use `manual` if you only want to control the visibility manually.
-- `nofade` to turn off animation.
-- `html` to enable rendering raw HTML. by default HTML is escaped and converted to text.
-- A delay value in the format of `d###` (where `###` is in ms, defaults to `50`), applied to both
-  `hide` and `show`.
-- A show delay value in the format of `ds###` (where `###` is in ms, defaults to `50`), applied to
-  `show` trigger only.
-- A hide delay value in the format of `dh###` (where `###` is in ms, defaults to `50`), applied to
-  `hide` trigger only.
-- An offset value in pixels in the format of `o###` (where `###` is the number of pixels, defaults
-  to `0`. Negative values are allowed). Note if an offset is supplied, then the alignment positions
-  will fallback to one of `top`, `bottom`, `left`, or `right`.
-- A boundary setting of `window` or `viewport`. The element to constrain the visual placement of the
-  popover. If not specified, the boundary defaults to the trigger element's scroll parent (in most
-  cases this will suffice).
-- A contextual variant in the form of `v-XXX` (where `XXX` is the color variant name).
+- Позиционирование: `top`, `bottom`, `left`, `right`, `auto`; или позиции выравнивания смещения:
+  `topleft`, `topright`, `bottomleft`, `bottomright`, `lefttop`, `leftbottom`, `righttop` или
+  `rightbottom` (последнее найденное побеждает, по умолчанию `right`).
+- Триггер события: `click`, `hover`, `focus`, `blur` (если ничего не указано, по умолчанию `click`.
+  Триггер `blur` является только обработчиком закрытия, и если он указан сам по себе, он будет
+  преобразован `focus`). Используйте `manual`, если вы хотите управлять видимостью только вручную.
+- `nofade`, чтобы отключить анимацию.
+- `html`, чтобы включить рендеринг необработанного HTML. по умолчанию HTML экранируется и
+  преобразуется в текст.
+- Значение задержки в формате `d###` (где `###` в мс, по умолчанию `50`), применяется как к `hide` и
+  `show`.
+- Значение задержки показа в формате `ds###` (где `###` в мс, по умолчанию `50`), применяется только
+  к триггеру `show`.
+- Значение задержки скрытия в формате `dh###` (где `###` в мс, по умолчанию `50`), применяется
+  только к триггеру `hide`.
+- Значение смещения в пикселях в формате `o###` (где `###` – количество пикселей, по умолчанию `0`.
+  Допускаются отрицательные значения). Обратите внимание, что если задано смещение, то позиции
+  выравнивания будут возвращаться к одному из `top`, `bottom`, `left` или `right`.
+- Настройка границы `window` или `viewport`. Элемент для ограничения визуального размещения
+  всплывающего окна. Если не указано, граница по умолчанию соответствует родительскому элементу
+  прокрутки триггерного элемента (в большинстве случаев этого будет достаточно).
+- Контекстный вариант в форме `v-XXX` (где `XXX` название цветового варианта).
 
-Where `<value>` can be (optional):
+Где `<value>` может быть (необязательно):
 
-- A string containing the **content** of the popover
-- A function reference to generate the **content** of the popover (receives one argument which is a
-  reference to the DOM element triggering the popover)
-- An object containing more complex configuration of popover, See below for available options.
+- Строка, содержащая **содержимое** всплывающего окна.
+- Ссылка на функцию для создания **содержимого** всплывающего окна (получает один аргумент, который
+  является ссылкой на элемент DOM, вызывающий всплывающее окно)
+- Объект, содержащий более сложную конфигурацию поповера. Доступные параметры смотрите ниже.
 
-**Options configuration object properties:**
+**Свойства объекта конфигурации опций:**
 
-| Property            | Type                                | Default          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ------------------- | ----------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `animation`         | Boolean                             | `true`           | Apply a CSS fade transition to the popover.                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `container`         | String ID or HTMLElement or `false` | `false`          | Appends the popover to a specific element. Example: `container: '#body'`. This option is particularly useful in that it allows you to position the popover in the flow of the document near the triggering element - which will prevent the popover from floating away from the triggering element during a window resize. When set to `false` the popover will be appended to `body`, or if the trigger element is inside a modal it will append to the modal's container. |
-| `delay`             | Number or Object                    | `50`             | Delay showing and hiding the popover (ms). If a number is supplied, delay is applied to both hide/show. Object structure is: `delay: { "show": 500, "hide": 100 }`                                                                                                                                                                                                                                                                                                          |
-| `html`              | Boolean                             | `false`          | Allow HTML in the popover. If true, HTML tags in the popover's title and content will be rendered in the tooltip. If false, the title and content will be inserted as plain text. Use text if you're worried about XSS attacks.                                                                                                                                                                                                                                             |
-| `placement`         | String or Function                  | `'top'`          | How to position the popover - `auto`, `top`, `bottom`, `left`, `right`, `topleft`, `topright`, `bottomleft`, `bottomright`, `lefttop`, `leftbottom`, `righttop`, or `rightbottom`. When `auto` is specified, it will dynamically reorient the tooltip.                                                                                                                                                                                                                      |
-| `title`             | String or Function                  | `''`             | Default title value if title attribute isn't present. If a function is given, it must return a string.                                                                                                                                                                                                                                                                                                                                                                      |
-| `content`           | String or Function                  | `''`             | Default content value. If a function is given, it must return a string.                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `trigger`           | String                              | `'hover focus'`  | How tooltip is triggered: `click`, `hover`, `focus`. You may pass multiple triggers; separate them with a space. Specify `'manual'` if you are only going to show and hide the tooltip programmatically.                                                                                                                                                                                                                                                                    |
-| `offset`            | Number or String                    | `0`              | Offset of the popover relative to its target. For more information refer to Popper.js's offset docs.                                                                                                                                                                                                                                                                                                                                                                        |
-| `fallbackPlacement` | String or Array                     | `'flip'`         | Allow to specify which position Popper will use on fallback. Can be `flip`, `clockwise`, `counterclockwise` or an array of placements. For more information refer to Popper.js's behavior docs.                                                                                                                                                                                                                                                                             |
-| `boundary`          | String ID or HTMLElement            | `'scrollParent'` | The container that the popover will be constrained visually. The default should suffice in most cases, but you may need to change this if your target element is in a small container with overflow scroll. Supported values: `'scrollParent'` (default), `'viewport'`, `'window'`, or a reference to an HTML element.                                                                                                                                                      |
-| `boundaryPadding`   | Number                              | `5`              | Amount of pixel used to define a minimum distance between the boundaries and the popover. This makes sure the popover always has a little padding between the edges of its container.                                                                                                                                                                                                                                                                                       |
-| `variant`           | String                              | `null`           | Contextual color variant for the popover.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `customClass`       | String                              | `null`           | A custom classname to apply to the popover outer wrapper element.                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `id`                | String                              | `null`           | An ID to use on the popover root element. If none is provided, one will automatically be generated. If you do provide an ID, it _must_ be guaranteed to be unique on the rendered page.                                                                                                                                                                                                                                                                                     |
-| `disabled`          | Boolean                             | `false`          | Set to `true` to disable the popover                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Свойство            | Тип                                   | По умолчанию     | Описание                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------- | ------------------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `animation`         | Boolean                               | `true`           | Примените к поповеру плавный переход CSS.                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `container`         | String ID или HTMLElement или `false` | `false`          | Добавляет всплывающее окно к определенному элементу. Пример: `container: '#body'`. Этот параметр особенно полезен тем, что позволяет расположить всплывающее окно в потоке документа рядом с инициирующим элементом, что предотвратит перемещение всплывающего окна от инициирующего элемента во время изменения размера окна. Если установлено значение `false`, всплывающее окно будет добавлено к `body`, или, если элемент триггера находится внутри модального окна, он будет добавлен к модальному контейнеру. |
+| `delay`             | Number или Object                     | `50`             | Задержка показа и скрытия всплывающего окна (мс). Если указано число, задержка применяется как для скрытия, так и для показа. Структура объекта: `delay: { "show": 500, "hide": 100 }`                                                                                                                                                                                                                                                                                                                               |
+| `html`              | Boolean                               | `false`          | Разрешить HTML во всплывающем окне. Если true, теги HTML в заголовке и содержимом поповера будут отображаться во всплывающей подсказке. Если false, заголовок и содержимое будут вставлены как обычный текст. Используйте текст, если вы беспокоитесь о XSS-атаках.                                                                                                                                                                                                                                                  |
+| `placement`         | String или Function                   | `'top'`          | Как расположить всплывающее окно — `auto`, `top`, `bottom`, `left`, `right`, `topleft`, `topright`, `bottomleft`, `bottomright`, `lefttop`, `leftbottom`, `righttop` или `rightbottom`. Когда указано `auto`, подсказка будет динамически переориентироваться.                                                                                                                                                                                                                                                       |
+| `title`             | String или Function                   | `''`             | Значение заголовока по умолчанию, если атрибут тайтла отсутствует. Если задана функция, она должна возвращать строку.                                                                                                                                                                                                                                                                                                                                                                                                |
+| `content`           | String или Function                   | `''`             | Значение содержания по умолчанию. Если задана функция, она должна возвращать строку.                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `trigger`           | String                                | `'hover focus'`  | Как срабатывает всплывающая подсказка: `click`, `hover`, `focus`. Вы можете передать несколько триггеров; разделяйте их пробелом. Укажите `'manual'`, если вы собираетесь показывать и скрывать всплывающую подсказку только программно.                                                                                                                                                                                                                                                                             |
+| `offset`            | Number или String                     | `0`              | Смещение всплывающего окна относительно его цели. Для получения дополнительной информации обратитесь к документации по смещению Popper.js.                                                                                                                                                                                                                                                                                                                                                                           |
+| `fallbackPlacement` | String или Array                      | `'flip'`         | Позволяет указать, какую позицию Поппер будет использовать при откате. Может быть `flip`, `clockwise`, `counterclockwise` или массивом мест размещения. Для получения дополнительной информации обратитесь к документации по поведению Popper.js.                                                                                                                                                                                                                                                                    |
+| `boundary`          | String ID или HTMLElement             | `'scrollParent'` | Контейнер, в котором всплывающее окно будет ограничено визуально. В большинстве случаев должно быть достаточно значения по умолчанию, но вам может потребоваться изменить его, если ваш целевой элемент находится в небольшом контейнере с прокруткой переполнения. Поддерживаемые значения: `'scrollParent'` (по умолчанию), `'viewport'`, `'window'`, или ссылка на элемент HTML.                                                                                                                                  |
+| `boundaryPadding`   | Number                                | `5`              | Количество пикселей, используемое для определения минимального расстояния между границами и всплывающим окном. Это гарантирует, что всплывающее окно всегда будет иметь небольшой отступ между краями своего контейнера.                                                                                                                                                                                                                                                                                             |
+| `variant`           | String                                | `null`           | Контекстный вариант цвета всплывающего окна.                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `customClass`       | String                                | `null`           | Пользовательское имя класса для применения к элементу внешней оболочки всплывающего окна.                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `id`                | String                                | `null`           | Идентификатор для использования в корневом элементе всплывающего окна. Если ничего не указано, оно будет сгенерировано автоматически. Если вы предоставляете идентификатор, он _должен_ быть уникальным на отображаемой странице.                                                                                                                                                                                                                                                                                    |
+| `disabled`          | Boolean                               | `false`          | Установите значение `true`, чтобы отключить всплывающее окно.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
-### Usage
+### Использование
 
-**Simplest usage:**
+**Самое простое использование:**
 
 ```
 v-b-popover="'This is a Popover!'"
 ```
 
-or use the element's `title` attribute for the popover header:
+или используйте атрибут `title` элемента для заголовка всплывающего окна:
 
 ```
 v-b-popover title="This is a popover header"
 v-b-popover="'This is popover content'" title="This is popover header"
 ```
 
-or provide an object for title and content:
+или укажите объект для заголовка и содержимого:
 
 ```
 v-b-popover="{title:'Popover header', content:'Popover content'}"
 ```
 
-**Enable HTML content/title:**
+**Включить HTML-контент/заголовок:**
 
 ```html
 v-b-popover.html="'<em>Emphasis</em> in content'" title="<strong>Bolded title</strong>"
 ```
 
-**Placement examples:**
+**Примеры размещения:**
 
 ```
 v-b-popover.top
 ```
 
-**Trigger examples:**
+**Примеры триггеров:**
 
 ```
 v-b-popover => Default of click
@@ -569,7 +578,7 @@ v-b-popover.click => Click only
 v-b-popover.hover.focus => Both hover and focus
 ```
 
-**Combo:**
+**Комбо:**
 
 ```
 v-b-popover.hover.bottom => Show on hover and place at bottom
@@ -577,72 +586,73 @@ v-b-popover.bottom.hover => Same as above
 v-b-popover.bottom.click.html => Show on click and place at bottom with HTML content
 ```
 
-## Hiding and showing popovers via \$root events
+## Скрытие и отображение всплывающих окон с помощью событий \$root
 
-You can close (hide) **all open popovers** by emitting the `bv::hide::popover` event on \$root:
+Вы можете закрыть (скрыть) **все открытые всплывающие окна**, создав событие `bv::hide::popover` в
+\$root:
 
 ```js
 this.$root.$emit('bv::hide::popover')
 ```
 
-To close a **specific popover**, pass the trigger element's `id`, or the `id` of the popover (if one
-was provided in the config object) as the first argument:
+Чтобы закрыть **определенное всплывающее окно**, передайте `id` триггерного элемента или `id`
+всплывающего окна (если он был указан в объекте конфигурации) в качестве первого аргумента:
 
 ```js
 this.$root.$emit('bv::hide::popover', 'my-trigger-button-id')
 ```
 
-To open a **specific popover**, pass the trigger element's `id`, or the `id` of the popover (if one
-was provided in the config object) as the first argument when emitting the `bv::show::popover`
-event:
+Чтобы открыть **определенное всплывающее окно**, передайте `id` триггерного элемента или `id`
+всплывающего окна (если он был указан в объекте конфигурации) в качестве первого аргумента при
+создании `bv::show::popover`:
 
 ```js
 this.$root.$emit('bv::show::popover', 'my-trigger-button-id')
 ```
 
-To open all popovers simultaneously, omit the `id` argument when emitting the `bv::show::popover`
-event.
+Чтобы открыть все всплывающие окна одновременно, опустите аргумент `id` при генерации события
+`bv::show::popover`.
 
-These events work for both the component **and** directive versions of popover.
+Эти события работают как для версии компонента \*\*, так и для версии директивы popover.
 
-Note the **trigger element** must exist in the DOM and be in a visible state in order for the
-popover to instantiate and show.
+Обратите внимание, что **элемент триггера** должен существовать в DOM и быть в видимом состоянии,
+чтобы всплывающее окно могло создаваться и отображаться.
 
-## Disabling and enabling popovers via \$root events
+## Отключение и включение всплывающих окон с помощью событий \$root
 
-You can disable **all** popovers by emitting the `bv::disable::popover` event on \$root:
+Вы можете отключить **все** всплывающие окна, создав событие `bv::disable::popover` на \$root:
 
 ```js
 this.$root.$emit('bv::disable::popover')
 ```
 
-To disable a **specific popover**, pass the trigger element's `id`, or the `id` of the popover (if
-one was provided in the config object) as the first argument:
+Чтобы отключить **определенное всплывающее окно**, передайте `id` триггерного элемента или `id`
+всплывающего окна (если он был предоставлен в объекте конфигурации) в качестве первого аргумента:
 
 ```js
 this.$root.$emit('bv::disable::popover', 'my-trigger-button-id')
 ```
 
-To enable a **specific popover**, pass the trigger element's `id`, or the `id` of the popover (if
-one was provided in the config object) as the first argument when emitting the `bv::enable::popover`
-event:
+Чтобы включить **определенное всплывающее окно**, передайте `id` триггерного элемента или `id`
+всплывающего окна (если он был указан в объекте конфигурации) в качестве первого аргумента при
+генерации `bv::enable::popover`:
 
 ```js
 this.$root.$emit('bv::enable::popover', 'my-trigger-button-id')
 ```
 
-To enable all popovers simultaneously, omit the `id` argument when emitting the
-`bv::enable::popover` event.
+Чтобы включить все всплывающие окна одновременно, опустите аргумент `id` при генерации события
+`bv::enable::popover`.
 
-These events work for both the component and directive versions of popover.
+Эти события работают как для компонентной, так и для директивной версии поповера.
 
-Note the **trigger element** must exist in the DOM in order for the popover to be enabled or
-disabled.
+Обратите внимание, что **элемент триггера** должен существовать в DOM, чтобы всплывающее окно было
+включено или отключено.
 
 ## Смотрите также
 
-- [`v-b-tooltip` directive](/docs/directives/tooltip)
-- [`<b-popover>` component](/docs/components/popover)
-- [`<b-tooltip>` component](/docs/components/tooltip)
+- [директива `v-b-tooltip`](/docs/directives/tooltip)
+- [компонент `<b-popover>`](/docs/components/popover)
+- [компонент `<b-tooltip>`](/docs/components/tooltip)
 
 <!-- Directive reference section auto generated from directive package.json -->
