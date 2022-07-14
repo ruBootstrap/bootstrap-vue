@@ -1,32 +1,33 @@
-# Hover
+# Наведение
 
-> `v-b-hover` is a lightweight directive that allows you to react when an element either becomes
-> hovered or unhovered.
+> `v-b-hover` — это легковесная директива, которая позволяет вам реагировать, когда элемент
+> становится наведенным или ненаведенным.
 
 ## Обзор
 
-The `v-b-hover` directive can be used as an alternative to using custom CSS to handle hover states.
+Директиву `v-b-hover` можно использовать как альтернативу использованию пользовательского CSS для
+обработки состояний наведения.
 
-- `v-b-hover` will call your callback method with a boolean value indicating if the element is
-  hovered or not.
-- The directive can be placed on almost any element or component.
-- Internally, BootstrapVue uses this directive in several components.
+- `v-b-hover` вызовет ваш метод обратного вызова с логическим значением, указывающим, наведен ли
+  элемент или нет.
+- Директиву можно разместить практически на любом элементе или компоненте.
+- Внутри BootstrapVue использует эту директиву в нескольких компонентах.
 
-## Directive syntax and usage
+## Синтаксис и использование директив
 
 ```html
-<div v-b-hover="callback">content</div>
+<div v-b-hover="callback">контент</div>
 ```
 
-Where callback is required:
+Где требуется обратный вызов:
 
-- A function reference that will be called whenever hover state changes. The callback is passed a
-  single boolean argument. `true` indicates that the element (or component) is hovered by the users
-  pointing device, or `false` if the element is not hovered.
+- Ссылка на функцию, которая будет вызываться при изменении состояния наведения. Обратному вызову
+  передается один логический аргумент. `true` указывает, что элемент (или компонент) находится под
+  курсором указывающего устройства пользователя, или `false`, если элемент не под наведением.
 
-The directive has no modifiers.
+Директива не имеет модификаторов.
 
-### Usage example
+### Пример использования
 
 ```html
 <template>
@@ -48,9 +49,9 @@ The directive has no modifiers.
 </script>
 ```
 
-## Live example
+## Живой пример
 
-In the following, we are swapping icons and text color depending on the hover state of the element:
+Далее мы меняем иконки и цвет текста в зависимости от состояния наведения элемента:
 
 ```html
 <template>
@@ -58,7 +59,7 @@ In the following, we are swapping icons and text color depending on the hover st
     <div v-b-hover="handleHover" class="border rounded py-3 px-4">
       <b-icon v-if="isHovered" icon="battery-full" scale="2"></b-icon>
       <b-icon v-else icon="battery" scale="2"></b-icon>
-      <span class="ml-2" :class="isHovered ? 'text-danger' : ''">Hover this area</span>
+      <span class="ml-2" :class="isHovered ? 'text-danger' : ''">Наведите курсор на эту область</span>
     </div>
   </div>
 </template>
@@ -83,5 +84,6 @@ In the following, we are swapping icons and text color depending on the hover st
 
 ## Доступность concerns
 
-Hover state should not be used to convey special meaning, as screen reader users and keyboard only
-users typically can not trigger hover state on elements.
+Состояние наведения не следует использовать для передачи особого значения, поскольку пользователи
+программ чтения с экрана и пользователи, работающие только с клавиатурой, обычно не могут
+активировать состояние наведения на элементах.

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "meta": {
     "title": "Hover",
-    "description": "A lightweight directive that allows you to react when an element either becomes hovered or unhovered",
+    "description": "Облегченная директива, которая позволяет вам реагировать, когда элемент становится наведенным или ненаведенным.",
     "directive": "VBHover",
     "version": "2.5.0",
     "expression": [
