@@ -363,8 +363,6 @@
           Пожертвовать
         </b-button>
 
-        <BVContributors></BVContributors>
-
         <hr style="withd: 90%">
 
         <div class="text-center mb-n4" aria-labeledby="parners-heading">
