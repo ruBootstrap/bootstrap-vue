@@ -30,6 +30,7 @@
           <ul class="list-unstyled ml-3">
             <li><a href="https://github.com/bootstrap-vue/bootstrap-vue" target="_blank">GitHub</a></li>
             <li><a href="https://discord.gg/j2Mtcny" target="_blank">Discord чат</a></li>
+            <li><a href="https://t.me/getbootstrap_ru" target="_blank">Bootstrap чат</a></li>
             <li><a href="https://twitter.com/BootstrapVue" target="_blank">Twitter</a></li>
             <li><a href="https://opencollective.com/bootstrap-vue/" target="_blank">Open Collective</a></li>
           </ul>

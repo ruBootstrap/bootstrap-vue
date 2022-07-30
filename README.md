@@ -59,6 +59,7 @@
 - 📘 [Documentation](https://bootstrap-vue.org) | [Перевод Документации](https://bootstrap-vue.ru)
 - 🔨 [Release Notes](https://bootstrap-vue.org/docs/reference/changelog) | [Примечания к выпуску](https://bootstrap-vue.ru/docs/reference/changelog)
 - 💬 [Discord чат](https://discord.gg/j2Mtcny)
+- 💬 [Bootstrap чат](https://t.me/getbootstrap_ru)
 - 🐦 [Twitter](https://twitter.com/BootstrapVue)
 
 <h2 align="center">Спонсоры</h2>

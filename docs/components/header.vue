@@ -71,7 +71,7 @@
       </b-nav-item-dropdown>
 
       <b-nav-item
-        href="https://github.com/bootstrap-vue/bootstrap-vue"
+        href="https://github.com/ruBootstrap/bootstrap-vue"
         target="_blank"
         :link-attrs="{ 'aria-label': 'GitHub' }"
       >
@@ -96,9 +96,9 @@
       </b-nav-item>
 
       <b-nav-item
-        href="https://twitter.com/BootstrapVue"
+        href="https://t.me/getbootstrap_ru"
         target="_blank"
-        :link-attrs="{ 'aria-label': 'Twitter' }"
+        :link-attrs="{ 'aria-label': 'Telegram' }"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -109,9 +109,9 @@
           focusable="false"
           role="img"
         >
-          <title>Twitter</title>
+          <title>Telegram</title>
           <g fill="currentColor">
-            <path d="M32,6.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.7,3.8,24,3,22.2,3 c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,10.8,5.5,8.2,2.2,4.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5 c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1C2.9,27.9,6.4,29,10.1,29c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C30,8.5,31.1,7.4,32,6.1z" />
+            <path d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z" />
           </g>
         </svg>
       </b-nav-item>
