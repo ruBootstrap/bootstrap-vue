@@ -1,30 +1,31 @@
-# Scrollspy
+# Отслеживание прокрутки
 
-> Automatically update Bootstrap navigation or list group components based on scroll position to
-> indicate which link is currently active in the viewport.
+> Автоматически обновляйте компоненты навигации или группы списка Bootstrap в зависимости от
+> положения прокрутки, чтобы указать, какая ссылка в настоящее время активна в области просмотра.
 
-## How it works
+## Как это работает
 
-The `v-b-scrollspy` directive has a few requirements to function properly:
+Директива `v-b-scrollspy` имеет несколько требований для правильной работы:
 
-- It must be applied on the element/component containing the `<b-nav>` or `<b-list-group>`
-  component(s) where you want to indicate which link is currently active.
-- Scrollspy requires `position: relative;` on the element you're spying on, usually the `<body>`.
-- When spying on elements other than the `<body>`, be sure to have a `height` set and
-  `overflow-y: scroll;` applied.
-- Anchors (`<a>`, `<b-nav-item>`, `<b-dropdown-item>`, `<b-list-group-item>`) are required and must
-  have an `href` (either via the `href` or `to` props) that points to an element with that `id` in
-  the container you are spying on. When using the `to` prop, either set the `path` ending with
-  `#id-of-element`, or set the location property `hash` to `#id-of-element`.
+- Он должен применяться к элементу/компоненту, содержащему компонент(ы) `<b-nav>` или
+  `<b-list-group>`где вы хотите указать, какая ссылка активна в данный момент.
+- Отслеживание прокрутки требует `position: relative;` для элемента, за которым вы следите, обычно
+  это `<body>`.
+- При отслеживании элементов, отличных от `<body>`, обязательно установите `height` и примените
+  `overflow-y: scroll;`.
+- Якоря (`<a>`, `<b-nav-item>`, `<b-dropdown-item>`, `<b-list-group-item>`) обязательны и должны
+  иметь `href` (через свойства `href` или `to`), который указывает на элемент с этим `id` в
+  контейнере, за которым вы следите. При использовании свойства `to` либо установите `path`,
+  заканчивающийся на `#id-of-element`, либо установите свойство `hash` на `#id-of-element`.
 
-When successfully implemented, your nav or list group will update accordingly, moving the `active`
-state from one item to the next based on their associated targets.
+При успешном внедрении ваша группа навигации или списка будет соответствующим образом обновляться,
+перемещая `active` состояние от одного элемента к другому в зависимости от связанных с ними целей.
 
-### Example using navs
+### Пример использования навигации
 
-Using `v-b-scrollspy` on a `<b-nav>` component to monitor the scrolling on `<b-card-body>`. Scroll
-the area below the navbar and watch the active class change. The dropdown items will be highlighted
-as well.
+Использование `v-b-scrollspy` в компоненте `<b-nav>` для отслеживания прокрутки на `<b-card-body>`.
+Прокрутите область под панелью навигации и посмотрите, как меняется активный класс. Выпадающие
+элементы также будут выделены.
 
 ```html
 <template>
@@ -99,10 +100,11 @@ as well.
 <!-- b-scrollspy-nav.vue -->
 ```
 
-### Example using nested navs
+### Пример использования вложенных навигаций
 
-Scrollspy also works with nested `<b-nav>`. If a nested `<b-nav-item>` is active, its parent()s will
-also be active. Scroll the area next to the navbar and watch the active class change.
+Отслеживание прокрутки также работает с вложенными `<b-nav>`. Если вложенный `<b-nav-item>` активен,
+его родител(ь)(и) также будут активны. Прокрутите область рядом с панелью навигации и посмотрите,
+как меняется активный класс.
 
 ```html
 <template>
@@ -110,18 +112,18 @@ also be active. Scroll the area next to the navbar and watch the active class ch
     <b-row>
       <b-col cols="4">
         <b-navbar v-b-scrollspy:scrollspy-nested class="flex-column">
-          <b-navbar-brand href="#">Navbar</b-navbar-brand>
+          <b-navbar-brand href="#">Навбар</b-navbar-brand>
           <b-nav pills vertical>
-            <b-nav-item href="#item-1">Item 1</b-nav-item>
+            <b-nav-item href="#item-1">Элемент 1</b-nav-item>
             <b-nav pills vertical>
-              <b-nav-item class="ml-3 my-1" href="#item-1-1">Item 1-1</b-nav-item>
-              <b-nav-item class="ml-3 my-1" href="#item-1-2">Item 1-2</b-nav-item>
+              <b-nav-item class="ml-3 my-1" href="#item-1-1">Элемент 1-1</b-nav-item>
+              <b-nav-item class="ml-3 my-1" href="#item-1-2">Элемент 1-2</b-nav-item>
             </b-nav>
-            <b-nav-item href="#item-2">Item 2</b-nav-item>
-            <b-nav-item href="#item-3">Item 3</b-nav-item>
+            <b-nav-item href="#item-2">Элемент 2</b-nav-item>
+            <b-nav-item href="#item-3">Элемент 3</b-nav-item>
             <b-nav pills vertical>
-              <b-nav-item class="ml-3 my-1" href="#item-3-1">Item 3-1</b-nav-item>
-              <b-nav-item class="ml-3 my-1" href="#item-3-2">Item 3-2</b-nav-item>
+              <b-nav-item class="ml-3 my-1" href="#item-3-1">Элемент 3-1</b-nav-item>
+              <b-nav-item class="ml-3 my-1" href="#item-3-2">Элемент 3-2</b-nav-item>
             </b-nav>
           </b-nav>
         </b-navbar>
@@ -129,19 +131,19 @@ also be active. Scroll the area next to the navbar and watch the active class ch
 
       <b-col cols="8">
         <div id="scrollspy-nested" style="position:relative; height:350px; overflow-y:auto">
-          <h4 id="item-1" style="">Item 1</h4>
+          <h4 id="item-1" style="">Элемент 1</h4>
           <p>{{ text }}</p>
-          <h5 id="item-1-1" style="">Item 1-1</h5>
+          <h5 id="item-1-1" style="">Элемент 1-1</h5>
           <p>{{ text }}</p>
-          <h5 id="item-1-2" style="">Item 2-2</h5>
+          <h5 id="item-1-2" style="">Элемент 2-2</h5>
           <p>{{ text }}</p>
-          <h4 id="item-2" style="">Item 2</h4>
+          <h4 id="item-2" style="">Элемент 2</h4>
           <p>{{ text }}</p>
-          <h4 id="item-3" style="">Item 3</h4>
+          <h4 id="item-3" style="">Элемент 3</h4>
           <p>{{ text }}</p>
-          <h5 id="item-3-1" style="">Item 3-1</h5>
+          <h5 id="item-3-1" style="">Элемент 3-1</h5>
           <p>{{ text }}</p>
-          <h5 id="item-3-2" style="">Item 3-2</h5>
+          <h5 id="item-3-2" style="">Элемент 3-2</h5>
           <p>{{ text }}</p>
         </div>
       </b-col>
@@ -171,10 +173,11 @@ also be active. Scroll the area next to the navbar and watch the active class ch
 <!-- b-scrollspy-nested.vue -->
 ```
 
-### Example using list group
+### Пример использования группы списка
 
-Scrollspy also works with `<b-list-group>` when it contains `<b-list-group-item>`s that have a
-_local_ `href` or `to`. Scroll the area next to the list group and watch the active state change.
+Scrollspy также работает с `<b-list-group>`, когда он содержит `<b-list-group-item>`, которые имеют
+_локальный_ `href` или `to`. Прокрутите область рядом с группой списка и наблюдайте за изменением
+активного состояния.
 
 ```html
 <template>
@@ -182,25 +185,25 @@ _local_ `href` or `to`. Scroll the area next to the list group and watch the act
     <b-row>
       <b-col cols="4">
         <b-list-group v-b-scrollspy:listgroup-ex>
-          <b-list-group-item href="#list-item-1">Item 1</b-list-group-item>
-          <b-list-group-item href="#list-item-2">Item2</b-list-group-item>
-          <b-list-group-item href="#list-item-3">Item 3</b-list-group-item>
-          <b-list-group-item href="#list-item-4">Item 4</b-list-group-item>
-          <b-list-group-item href="#list-item-5">Item 5</b-list-group-item>
+          <b-list-group-item href="#list-item-1">Элемент 1</b-list-group-item>
+          <b-list-group-item href="#list-item-2">Элемент 2</b-list-group-item>
+          <b-list-group-item href="#list-item-3">Элемент 3</b-list-group-item>
+          <b-list-group-item href="#list-item-4">Элемент 4</b-list-group-item>
+          <b-list-group-item href="#list-item-5">Элемент 5</b-list-group-item>
         </b-list-group>
       </b-col>
 
       <b-col cols="8">
         <div id="listgroup-ex" style="position:relative; overflow-y:auto; height:300px">
-          <h4 id="list-item-1">Item 1</h4>
+          <h4 id="list-item-1">Элемент 1</h4>
           <p>{{ text }}</p>
-          <h4 id="list-item-2">Item 2</h4>
+          <h4 id="list-item-2">Элемент 2</h4>
           <p>{{ text }}</p>
-          <h4 id="list-item-3">Item 3</h4>
+          <h4 id="list-item-3">Элемент 3</h4>
           <p>{{ text }}</p>
-          <h4 id="list-item-4">Item 4</h4>
+          <h4 id="list-item-4">Элемент 4</h4>
           <p>{{ text }}</p>
-          <h4 id="list-item-5">Item 5</h4>
+          <h4 id="list-item-5">Элемент 5</h4>
           <p>{{ text }}</p>
         </div>
       </b-col>
@@ -230,47 +233,48 @@ _local_ `href` or `to`. Scroll the area next to the list group and watch the act
 <!-- b-scrollspy-listgroup.vue -->
 ```
 
-## Using scrollspy on components with the `to` prop
+## Использование scrollspy для компонентов со свойством `to`
 
-When Vue Router (or Nuxt.js) is used, and you are generating your links with the `to` prop, use one
-of the following methods to generate the appropriate `href` on the rendered link:
+Когда используется Vue Router (или Nuxt.js) и вы создаете свои ссылки со свойством `to`, используйте
+один из следующих методов для создания соответствующего `href` для отображаемой ссылки:
 
 ```html
 <!-- using a string path -->
-<b-nav-item to="#id-of-element">link text</b-nav-item>
+<b-nav-item to="#id-of-element">ссылка-текст</b-nav-item>
 
 <!-- using a router `to` location object -->
-<b-nav-item :to="{ hash: '#id-of-element' }">link text</b-nav-item>
+<b-nav-item :to="{ hash: '#id-of-element' }">ссылка-текст</b-nav-item>
 ```
 
-Scrollspy works with both `history` and `hash` routing modes, as long as the generated URL ends with
-`#id-of-element`.
+Scrollspy работает с режимами маршрутизации как `history`, так и `hash`, если сгенерированный
+URL-адрес заканчивается на `#id-of-element`.
 
-## Directive syntax and usage
+## Синтаксис и использование директив
 
 ```
 v-b-scrollspy:arg.mod1.mod2="option"
 ```
 
-Where:
+Где:
 
-- `arg` is the ID (minus the `#`) of the element to monitor scrolling on. Optional (defaults to
-  `body`. Can be overridden by `option`)
-- `mod1` & `mod2` can be an `offset` number or string `method` (see config object below). Order of
-  the modifiers is not important. Both are optional
-- `option` can be a string identifying the `element` to monitor scrolling on, a numeric `offset`, or
-  a configuration object (see below). Optional
+- `arg` - это идентификатор (минус `#`) элемента для отслеживания прокрутки. Необязательный (по
+  умолчанию `body`. Может быть переопределен `option`)
+- `mod1` и `mod2` могут быть числом `offset` или строковым `method` (смотрите объект конфигурации
+  ниже). Порядок модификаторов не важен. Оба являются необязательными
+- `option` может быть строкой, идентифицирующей `element` для отслеживания прокрутки, числовое
+  `offset` или объект конфигурации (смотрите ниже). По желанию
 
-**Примечание:** The directive is applied backwards compared to native Bootstrap v4. In
-**BootstrapVue** the `v-b-scrollspy` directive is applied to the target element that has the links
-to be activated, and the arg or option specifies which element to monitor (spy) scrolling on.
+**Примечание:** Директива применяется в обратном порядке по сравнению с собственным Bootstrap v4. В
+**BootstrapVue** директива `v-b-scrollspy` применяется к целевому элементу, у которого есть
+активируемые ссылки, а аргумент или опция указывает, какой элемент отслеживать (шпионить) за
+прокруткой.
 
-The directive an be applied to any containing element or component that has `<nav-item>`,
-`<b-dropdown-item>`, `<b-list-group-item>` (or `<a>` tags with the appropriate classes), a long as
-they have rendered `href` attributes that point to elements with the respective `id`s in the
-scrolling element.
+Директива может быть применена к любому содержащему элементу или компоненту, который имеет теги
+`<nav-item>`, `<b-dropdown-item>`, `<b-list-group-item>` (или `<a>` с соответствующими классами),
+если они отображают атрибуты `href`, указывающие на элементы с соответствующими идентификаторами
+`id` в элементе прокрутки.
 
-### Config object properties
+### Свойства объекта конфигурации
 
 <!-- eslint-disable no-unused-vars -->
 
@@ -283,32 +287,33 @@ const config = {
 }
 ```
 
-| Property   | Type                | Default  | Description                                                                                                                                                                                                                                               |
-| ---------- | ------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `element`  | String or Reference | `'body'` | Element to be monitored for scrolling. Can be an ID (`#foo`), a css Selector (`#foo div`), or a reference to an element/component node. If a CSS string, then the first matching element is used. If an ID is used it must start with `#`.                |
-| `offset`   | Number              | `10`     | offset (in pixels) from top of scrolling viewport before triggering active state.                                                                                                                                                                         |
-| `method`   | String              | `'auto'` | `position` will calculate target offsets relative to the scroll container. `offset` will calculate the target offsets relative to the top of the window/viewport. `auto` will choose `offset` if scroll element is `body`, else the method is `position`. |
-| `throttle` | Number              | `100`    | Timeout in `ms` for resize events to stop firing before recalculating offsets.                                                                                                                                                                            |
+| Свойство   | Тип                  | По умолчанию | Описание                                                                                                                                                                                                                                                                         |
+| ---------- | -------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `element`  | String или Reference | `'body'`     | Элемент для отслеживания прокрутки. Может быть идентификатором (`#foo`), селектором css (`#foo div`), или ссылкой на узел элемента/компонента. Если это строка CSS, то используется первый соответствующий элемент. Если используется идентификатор, он должен начинаться с `#`. |
+| `offset`   | Number               | `10`         | смещение (в пикселях) от верхней части области просмотра прокрутки перед запуском активного состояния.                                                                                                                                                                           |
+| `method`   | String               | `'auto'`     | `position` будет вычислять целевые смещения относительно контейнера прокрутки. `offset` будет вычислять целевые смещения относительно верхней части окна/окна просмотра. `auto` выберет `offset`, если элементом прокрутки является `body`, иначе метод будет `position`.        |
+| `throttle` | Number               | `100`        | Тайм-аут в `ms` для прекращения запуска событий изменения размера перед пересчетом смещений.                                                                                                                                                                                     |
 
-If args/modifiers and a value (object or number) is passed, the value takes precedence over the arg
-and modifiers.
+Если передаются аргументы/модификаторы и значение (объект или число), значение имеет приоритет над
+аргументом и модификаторами.
 
-If any of the options are invalid types, then an error is written to the console.
+Если какой-либо из параметров имеет недопустимый тип, то в консоль записывается ошибка.
 
-### Config notes
+### Примечания к конфигурации
 
-- If scroll element is not present, then we assume scrolling on `<body>`
-- If scroll element is a CSS selector, the first found element is chosen
-- If scroll element is not found, then Scrollspy silently does nothing
+- Если элемент прокрутки отсутствует, то предполагается прокрутка на `<body>`
+- Если элемент прокрутки является селектором CSS, выбирается первый найденный элемент
+- Если элемент прокрутки не найден, то Scrollspy молча ничего не делает
 
-**Important! Requires relative positioning** No matter the implementation method, scrollspy requires
-the use of `position: relative;` on the element you're scrolling on. In most cases this is the
-`<body>`. When scrollspying on elements other than the `<body>`, be sure to have a CSS `height` set
-and `overflow-y: scroll;` applied.
+**Важно! Требуется относительное позиционирование** Независимо от метода реализации, scrollspy
+требует использования `position: relative;` для элемента, который вы прокручиваете. В большинстве
+случаев это `<body>`. При просмотре элементов, отличных от `<body>`, убедитесь, что установлена
+высота CSS `height` и применено `overflow-y: scroll;`.
 
-### Directive use examples
+### Примеры использования директив
 
-Assume `<body>` is the scroll element, and use default offset of 10 pixels
+Предположим, что `<body>` является элементом прокрутки и использует смещение по умолчанию 10
+пикселей
 
 ```html
 <div>
@@ -319,7 +324,7 @@ Assume `<body>` is the scroll element, and use default offset of 10 pixels
 </div>
 ```
 
-Assume `<body>` is the scroll element, and use offset of 20 pixels
+Предположим, что `<body>` является элементом прокрутки и использует смещение 20 пикселей
 
 ```html
 <div>
@@ -330,7 +335,8 @@ Assume `<body>` is the scroll element, and use offset of 20 pixels
 </div>
 ```
 
-Element with ID `#foo` is the scroll element, and use default offset of 10 pixels
+Элемент с идентификатором `#foo` является элементом прокрутки и использует смещение по умолчанию 10
+пикселей
 
 ```html
 <div>
@@ -341,7 +347,7 @@ Element with ID `#foo` is the scroll element, and use default offset of 10 pixel
 </div>
 ```
 
-Element `#foo` is the scroll element, and use offset of 20 pixels
+Элемент с идентификатором `#foo` является элементом прокрутки и использует смещение 20 пикселей
 
 ```html
 <div>
@@ -352,7 +358,7 @@ Element `#foo` is the scroll element, and use offset of 20 pixels
 </div>
 ```
 
-Element `#foo` is the scroll element, and use offset of 25 pixels
+Элемент `#foo` является элементом прокрутки и использует смещение 25 пикселей.
 
 ```html
 <div>
@@ -363,8 +369,8 @@ Element `#foo` is the scroll element, and use offset of 25 pixels
 </div>
 ```
 
-Element `#foo` is the scroll element, and use default offset of 10 pixels (note single quotes around
-value)
+Элемент `#foo` является элементом прокрутки и использует смещение по умолчанию 10 пикселей (обратите
+внимание на одинарные кавычки вокруг значения)
 
 ```html
 <div>
@@ -375,8 +381,8 @@ value)
 </div>
 ```
 
-Pass object as config. `element` can be a CSS ID (i.e `#foo`), a CSS selector (i.e. `body`), or a
-node reference
+Передать объект как конфиг. `element` может быть идентификатором CSS (например, `#foo`), селектором
+CSS (например, `body`), или ссылкой на узел
 
 ```html
 <div>
@@ -387,10 +393,10 @@ node reference
 </div>
 ```
 
-## Events
+## События
 
-Whenever a target is activated, the event `bv:scrollspy::activate` is emitted on `$root` with the
-target's ID as the argument (i.e. `#bar`)
+Всякий раз, когда цель активируется, событие `bv:scrollspy::activate` генерируется для `$root` с
+идентификатором цели в качестве аргумента (например, `#bar`)
 
 <!-- eslint-disable no-unused-vars -->
 

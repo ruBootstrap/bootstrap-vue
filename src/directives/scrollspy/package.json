@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "meta": {
     "title": "Scrollspy",
-    "description": "Automatically activate BootstrapVue navigation or list group components based on scroll position to indicate which link is currently active in the viewport.",
+    "description": "Автоматически активируйте компоненты навигации или группы списка BootstrapVue в зависимости от положения прокрутки, чтобы указать, какая ссылка в настоящее время активна в области просмотра.",
     "directive": "VBScrollspy",
     "arg": {
       "pattern": "[a-zA-Z][a-zA-Z0-9_\\-]*",
-      "description": "ID of element to monitor scrolling on (if not provided defaults to the body element)",
+      "description": "Идентификатор элемента для отслеживания прокрутки (если он не указан, по умолчанию используется элемент body)",
       "required": false
     },
     "expression": [
@@ -19,19 +19,19 @@
       {
         "name": "###",
         "pattern": "[\\d]+",
-        "description": "Offset (in pixels) from top of scrolling viewport before triggering active state"
+        "description": "Смещение (в пикселях) от верхней части области просмотра прокрутки перед запуском активного состояния"
       },
       {
         "name": "offset",
-        "description": "Position calculation method using `offset` procedure (default process for body)"
+        "description": "Метод расчета положения с использованием процедуры `offset` procedure (процесс по умолчанию для body)"
       },
       {
         "name": "position",
-        "description": "Position calculation method using the `position` procedure"
+        "description": "Метод расчета положения с использованием процедуры `position`"
       },
       {
         "name": "auto",
-        "description": "Position calculation method: `auto` will choose `offset` if scroll element is body, else the method is `position`. This is the default"
+        "description": "Метод расчета положения: `auto` выберет `offset`, если элемент прокрутки является телом, иначе метод `position`. Это значение по умолчанию"
       }
     ]
   }
