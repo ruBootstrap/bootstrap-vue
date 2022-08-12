@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "meta": {
     "title": "Visible",
-    "description": "The `v-b-visible` directive allows you to react when an element becomes visible in the viewport.",
+    "description": "Директива `v-b-visible` позволяет вам реагировать, когда элемент становится видимым в окне просмотра.",
     "directive": "VBVisible",
     "version": "2.1.0",
     "expression": [
@@ -12,12 +12,12 @@
     "modifiers": [
       {
         "name": "once",
-        "description": "Only calls the callback once when the element becomes visible in the viewport"
+        "description": "Вызывает обратный вызов только один раз, когда элемент становится видимым в области просмотра"
       },
       {
         "name": "{###}",
         "pattern": "[0-9]+",
-        "description": "An offset value in pixels (where `{###}` is the number of pixels) relative to the viewport, defaults to 0. Negative values allowed"
+        "description": "Значение смещения в пикселях (где `{###}` – количество пикселей) относительно области просмотра, по умолчанию равно 0. Допускаются отрицательные значения"
       }
     ]
   }
