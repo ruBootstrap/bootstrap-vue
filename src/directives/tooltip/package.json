@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "meta": {
     "title": "Tooltip",
-    "description": "Add custom BootstrapVue tooltips to any element. Tooltips can be triggered by hovering, focusing, or clicking an element.",
+    "description": "Добавляйте настраиваемые всплывающие подсказки BootstrapVue к любому элементу. Всплывающие подсказки могут быть вызваны наведением курсора, фокусировкой или щелчком по элементу.",
     "directive": "VBTooltip",
     "arg": {
       "pattern": "[a-zA-Z][a-zA-Z0-9_\\-]*",
-      "description": "ID of element to append the tooltip markup when visible. Optional, defaults to the body",
+      "description": "Идентификатор элемента для добавления разметки всплывающей подсказки, когда он виден. Необязательно, по умолчанию для тела",
       "required": false
     },
     "expression": [
@@ -18,97 +18,97 @@
     "modifiers": [
       {
         "name": "top",
-        "description": "Positions the tooltip on the top of the trigger element (default)"
+        "description": "Помещает всплывающую подсказку в верхнюю часть триггерного элемента (по умолчанию)"
       },
       {
         "name": "right",
-        "description": "Positions the tooltip on the right of the trigger element"
+        "description": "Помещает всплывающую подсказку в правую часть триггерного элемента"
       },
       {
         "name": "bottom",
-        "description": "Positions the tooltip on the bottom of the trigger element"
+        "description": "Помещает всплывающую подсказку в нижнюю часть триггерного элемента"
       },
       {
         "name": "auto",
-        "description": "Positions the tooltip in the best fit place around the trigger element"
+        "description": "Помещает всплывающую подсказку в наиболее подходящем месте вокруг триггерного элемента"
       },
       {
         "name": "topright",
-        "description": "Positions the tooltip on the top-right of the trigger element"
+        "description": "Помещает всплывающую подсказку в верхнем правом углу элемента триггера"
       },
       {
         "name": "topleft",
-        "description": "Positions the tooltip on the top-left of the trigger element"
+        "description": "Помещает всплывающую подсказку в левом верхнем углу элемента триггера"
       },
       {
         "name": "bottomright",
-        "description": "Positions the tooltip on the bottom-right of the trigger element"
+        "description": "Помещает всплывающую подсказку в нижнем правом углу элемента триггера"
       },
       {
         "name": "bottomleft",
-        "description": "Positions the tooltip on the bottom-left of the trigger element"
+        "description": "Помещает всплывающую подсказку в нижнем левом углу элемента триггера"
       },
       {
         "name": "lefttop",
-        "description": "Positions the tooltip on the left-top of the trigger element"
+        "description": "Помещает всплывающую подсказку в левом верхнем углу элемента триггера"
       },
       {
         "name": "leftbottom",
-        "description": "Positions the tooltip on the left-bottom of the trigger element"
+        "description": "Помещает всплывающую подсказку в левом нижнем углу элемента триггера"
       },
       {
         "name": "righttop",
-        "description": "Positions the tooltip on the right-top of the trigger element"
+        "description": "Помещает всплывающую подсказку в правом верхнем углу элемента триггера"
       },
       {
         "name": "rightbottom",
-        "description": "Positions the tooltip on the right-bottom of the trigger element"
+        "description": "Помещает всплывающую подсказку в правом нижнем углу элемента триггера"
       },
       {
         "name": "nofade",
-        "description": "Disabled the fade animation of the tooltip"
+        "description": "Отключает анимацию затухания всплывающей подсказки"
       },
       {
         "name": "html",
-        "description": "Enables basic HTML in the title",
+        "description": "Включает базовый HTML в заголовке",
         "xss": true
       },
       {
         "name": "interactive",
-        "description": "Wether the tooltip should be user-interactive"
+        "description": "Должна ли всплывающая подсказка быть интерактивной с пользователем"
       },
       {
         "name": "viewport",
-        "description": "Sets the boundary constraint to the viewport"
+        "description": "Устанавливает ограничение границы на область просмотра"
       },
       {
         "name": "window",
-        "description": "Sets the boundary constrain to the window"
+        "description": "Устанавливает ограничение границы на окно"
       },
       {
         "name": "v-{variant}",
         "pattern": "v-[a-z]+",
-        "description": "Sets the tooltip contextual color variant to `{variant}`"
+        "description": "Устанавливает контекстный вариант цвета всплывающей подсказки на `{variant}`"
       },
       {
         "name": "d{###}",
         "pattern": "d[0-9]+",
-        "description": "The show and hide delay in milliseconds (where `{###}` is the value in milliseconds)"
+        "description": "Отображает и скрывает задержку в миллисекундах (где `{###}` — значение в миллисекундах)"
       },
       {
         "name": "ds{###}",
         "pattern": "ds[0-9]+",
-        "description": "The show delay in milliseconds (where `{###}` is the value in milliseconds)"
+        "description": "Задержка показа в миллисекундах (где `{###}` — значение в миллисекундах)"
       },
       {
         "name": "dh{###}",
         "pattern": "dh[0-9]+",
-        "description": "The hide delay in milliseconds (where `{###}` is the value in milliseconds)"
+        "description": "Задержка скрытия в миллисекундах (где `{###}` — значение в миллисекундах)"
       },
       {
         "name": "o{###}",
         "pattern": "o-?[0-9]+",
-        "description": "An offset value in pixels (where `{###}` is the number of pixels, defaults to 0. Negative values allowed)"
+        "description": "Значение смещения в пикселях (где `{###}` — количество пикселей, по умолчанию 0. Допускаются отрицательные значения)"
       }
     ]
   }
