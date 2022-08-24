@@ -1,53 +1,54 @@
-# Icons
+# Иконки
 
-> Bootstrap Icons are designed to work with Bootstrap components, from form controls to navigation.
-> Bootstrap Icons are SVGs, so they scale quickly and easily and can be styled with CSS. While they
-> are built for Bootstrap, they will work in any project.
+> Иконки Bootstrap предназначены для работы с компонентами Bootstrap, от элементов управления формой
+> до навигации. Иконки Bootstrap представляют собой SVG, поэтому они быстро и легко масштабируются и
+> могут быть оформлены с помощью CSS. Хотя они созданы для Bootstrap, они будут работать в любом
+> проекте.
 
-BootstrapVue icon components are built from
-[`bootstrap-icons` v{{ bootstrapIconsVersion }}](https://icons.getbootstrap.com/) source SVGs. Icons
-are opt-in, meaning that they explicitly need to be imported in order to be used. They are not
-installed by default. You do not need `bootstrap-icons` as a dependency.
+Компоненты иконок BootstrapVue созданы из svg-исходников
+[`bootstrap-icons` v{{ bootstrapIconsVersion }}](https://icons.getbootstrap.com/). Иконки являются
+опциональными, что означает, что их необходимо явно импортировать, чтобы использовать. Они не
+устанавливаются по умолчанию. Вам не нужны `bootstrap-icons` в качестве зависимости.
 
-- [Bootstrap Icons](https://blog.getbootstrap.com/2019/11/26/bootstrap-icons/) were introduced to
-  BootstrapVue in release `v2.2.0`.
+- [Bootstrap Icons](https://blog.getbootstrap.com/2019/11/26/bootstrap-icons/) были представлены в
+  BootstrapVue в выпуске `v2.2.0`.
 - [Bootstrap Icons `v1.0.0-alpha3`](https://blog.getbootstrap.com/2020/03/19/bootstrap-icons-alpha-3/)
-  were added in BootstrapVue `v2.8.0`.
+  были добавлены в BootstrapVue `v2.8.0`.
 - [Bootstrap Icons `v1.0.0-alpha4`](https://blog.getbootstrap.com/2020/05/21/bootstrap-icons-alpha4/)
-  were added in BootstrapVue `v2.15.0`.
+  были добавлены в BootstrapVue `v2.15.0`.
 - [Bootstrap Icons `v1.0.0-alpha5`](https://blog.getbootstrap.com/2020/06/26/bootstrap-icons-alpha5/)
-  were added in BootstrapVue `v2.16.0`.
-- [Bootstrap Icons `v1.0.0`](https://blog.getbootstrap.com/2020/08/28/bootstrap-icons-stable/) were
-  added in BootstrapVue `v2.17.0`.
-- [Bootstrap Icons `v1.1.0`](https://blog.getbootstrap.com/2020/10/28/bootstrap-icons-1-1-0/) were
-  added in BootstrapVue `v2.19.0`.
-- [Bootstrap Icons `v1.2.0`](https://blog.getbootstrap.com/2020/12/11/bootstrap-icons-1-2-0/) were
-  added in BootstrapVue `v2.21.0`.
-- [Bootstrap Icons `v1.3.0`](https://blog.getbootstrap.com/2021/01/07/bootstrap-icons-1-3-0/) were
-  added in BootstrapVue `v2.22.0`.
-- [Bootstrap Icons `v1.4.0`](https://blog.getbootstrap.com/2021/02/22/bootstrap-icons-1-4-0/) were
-  added in BootstrapVue `v2.22.0`.
-- [Bootstrap Icons `v1.4.1`](https://blog.getbootstrap.com/2021/03/29/bootstrap-icons-1-4-1/) were
-  added in BootstrapVue `v2.22.0`.
-- [Bootstrap Icons `v1.5.0`](https://blog.getbootstrap.com/2021/05/10/bootstrap-icons-1-5-0/) were
-  added in BootstrapVue `v2.22.0`.
+  были добавлены в BootstrapVue `v2.16.0`.
+- [Bootstrap Icons `v1.0.0`](https://blog.getbootstrap.com/2020/08/28/bootstrap-icons-stable/) были
+  добавлены в BootstrapVue `v2.17.0`.
+- [Bootstrap Icons `v1.1.0`](https://blog.getbootstrap.com/2020/10/28/bootstrap-icons-1-1-0/) были
+  добавлены в BootstrapVue `v2.19.0`.
+- [Bootstrap Icons `v1.2.0`](https://blog.getbootstrap.com/2020/12/11/bootstrap-icons-1-2-0/) были
+  добавлены в BootstrapVue `v2.21.0`.
+- [Bootstrap Icons `v1.3.0`](https://blog.getbootstrap.com/2021/01/07/bootstrap-icons-1-3-0/) были
+  добавлены в BootstrapVue `v2.22.0`.
+- [Bootstrap Icons `v1.4.0`](https://blog.getbootstrap.com/2021/02/22/bootstrap-icons-1-4-0/) были
+  добавлены в BootstrapVue `v2.22.0`.
+- [Bootstrap Icons `v1.4.1`](https://blog.getbootstrap.com/2021/03/29/bootstrap-icons-1-4-1/) были
+  добавлены в BootstrapVue `v2.22.0`.
+- [Bootstrap Icons `v1.5.0`](https://blog.getbootstrap.com/2021/05/10/bootstrap-icons-1-5-0/) были
+  добавлены в BootstrapVue `v2.22.0`.
 
-## Usage
+## Использование
 
-BootstrapVue icons are not automatically installed when using BootstrapVue in your project, you must
-explicitly include them.
+Иконки BootstrapVue не устанавливаются автоматически при использовании BootstrapVue в вашем проекте,
+вы должны явно включить их.
 
-Icons inherit the current font color and font size from their parent container element. To change
-the color of the icon, refer to the [Variants](#variants) section, and to change the size of the
-icon refer to the [Sizing](#sizing) section.
+Иконки наследуют текущий цвет шрифта и размер шрифта от своего родительского элемента-контейнера.
+Чтобы изменить цвет иконки, обратитесь к разделу [Варианты](#variants), а чтобы изменить размер
+иконки, обратитесь к разделу [Размер](#sizing).
 
-All icons are exported with the name in <samp>PascalCase</samp>, prefixed with <samp>BIcon</samp>.
-i.e icon `'alert-circle-fill'` is exported as `BIconAlertCircleFill`, icon `'x'` is exported as
-`BIconX`, and icon `'x-square-fill'` is exported as `BIconXSquareFill`.
+Все иконки экспортируются с именем в <samp>PascalCase</samp>, с префиксом <samp>BIcon</samp>. Т. е.
+иконка `'alert-circle-fill'` экспортируется как `BIconAlertCircleFill`, иконка `'x'` экспортируется
+как `BIconX`, а иконка `'x-square-fill'` экспортируется как `BIconXSquareFill`.
 
-### Module bundlers
+### Сборщики модулей
 
-**Importing all icons:**
+**Импорт всех иконок:**
 
 ```js
 import { Vue } from 'vue'
@@ -57,7 +58,7 @@ Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 ```
 
-Or
+Или
 
 ```js
 import { Vue } from 'vue'
@@ -67,9 +68,9 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 ```
 
-**Importing specific icons:**
+**Импорт определенных иконок:**
 
-Making them globally available:
+Сделать их доступными по всему миру:
 
 ```js
 import { Vue } from 'vue'
@@ -81,7 +82,7 @@ Vue.component('BIconArrowUp', BIconArrowUp)
 Vue.component('BIconArrowDown', BIconArrowDown)
 ```
 
-Or if using in specific pages or components:
+Или при использовании на определенных страницах или компонентах:
 
 ```js
 import { BIcon, BIconArrowUp, BIconArrowDown } from 'bootstrap-vue'
@@ -99,8 +100,8 @@ export default {
 }
 ```
 
-If you are using _only_ `BootstrapVueIcons` or `IconsPlugin` in your project, you can also just
-import the required icons CSS, rather than the full Bootstrap and BootstrapVue SCSS/CSS.
+Если вы используете _только_ `BootstrapVueIcons` или `IconsPlugin` в своем проекте, вы также можете
+просто импортировать необходимые иконки CSS, а не полный Bootstrap и BootstrapVue SCSS/CSS.
 
 ```js
 import { BootstrapVueIcons } from 'bootstrap-vue'
@@ -109,7 +110,7 @@ import 'bootstrap-vue/dist/bootstrap-vue-icons.min.css'
 Vue.use(BootstrapVueIcons)
 ```
 
-Or if using the icons SCSS source:
+Или при использовании источника иконок SCSS:
 
 ```js
 import { BootstrapVueIcons } from 'bootstrap-vue'
@@ -118,15 +119,15 @@ import 'bootstrap-vue/src/icons.scss'
 Vue.use(BootstrapVueIcons)
 ```
 
-BootstrapVue icons SCSS/CSS does not depend on any Bootstrap SASS variables, mixins, functions or
-CSS classes (other than the Bootstrap `text-{variant}` text color utility classes, if using the
-`variant` prop). Please note that the icons CSS is _also_ included in the main BootstrapVue SCSS/CSS
-files. Animations effects require BootstrapVue custom SCSS/CSS.
+Иконки BootstrapVue SCSS/CSS не зависят ни от каких переменных Bootstrap SASS, миксинов, функций или
+классов CSS (кроме служебных классов цвета текста Bootstrap `text-{variant}`, если используется
+свойство `variant`). Обратите внимание, что CSS иконок _также_ включен в основные файлы BootstrapVue
+SCSS/CSS. Для эффектов анимации требуется пользовательский SCSS/CSS BootstrapVue.
 
-### Browser
+### Браузер
 
-Icons are **not** installed by default in the UMD browser build, so you must explicitly include the
-icons library:
+Иконки **не** устанавливаются по умолчанию в сборке браузера UMD, поэтому вы должны явно включить
+библиотеку иконок:
 
 ```html
 <head>
@@ -139,7 +140,7 @@ icons library:
 </head>
 ```
 
-If using just the icons:
+Если использовать только иконки:
 
 ```html
 <head>
@@ -151,15 +152,15 @@ If using just the icons:
 </head>
 ```
 
-### Icon components
+### Компонент иконки
 
-You can either uses individual icon components, or use the icon helper component `<b-icon>`, to
-place icons in your project templates.
+Вы можете либо использовать отдельные компоненты иконок, либо использовать вспомогательный компонент
+иконок `<b-icon>` для размещения иконок в шаблонах проекта.
 
-All individual icon components are prefixed with the name `<b-icon-{name}>`, where `{name}` is one
-of the icon names listed in the [Icons](#icons) section above.
+Все отдельные компоненты иконок имеют префикс имени `<b-icon-{name}>`, где `{name}` — одно из имен
+иконок, перечисленных в разделе [Иконки](#icons).
 
-**Using individual icon components:**
+**Использование отдельных компонентов иконок:**
 
 ```html
 <template>
@@ -172,7 +173,7 @@ of the icon names listed in the [Icons](#icons) section above.
 <!-- icons-individual-usage.vue -->
 ```
 
-**Using the `<b-icon>` helper component:**
+**Использование вспомогательного компонента `<b-icon>`:**
 
 ```html
 <template>
@@ -185,13 +186,14 @@ of the icon names listed in the [Icons](#icons) section above.
 <!-- icons-helper-usage.vue -->
 ```
 
-**Примечание:** when using `<b-icon>`, you **must** also import the required individual icon
-components, unless you are using the `IconsPlugin` or `BootstrapVueIcons` plugin.
+**Примечание:** при использовании `<b-icon>`, вы **должны** также импортировать необходимые
+отдельные компоненты иконок, если вы не используете плагин `IconsPlugin` или `BootstrapVueIcons`.
 
-## Variants
+## Варианты
 
-By default, icons inherit the current text color of their parent element. All icon components
-provide a `variant` prop to apply one of the Bootstrap contextual text variant colors:
+По умолчанию иконки наследуют текущий цвет текста своего родительского элемента. Все компоненты
+иконок предоставляют свойство `variant` для применения одного из вариантов контекстного текста
+Bootstrap:
 
 ```html
 <template>
@@ -209,8 +211,8 @@ provide a `variant` prop to apply one of the Bootstrap contextual text variant c
 <!-- icons-color-variants.vue -->
 ```
 
-You can also use custom CSS to set the icon color, either via direct `style` attribute, or via
-custom classes:
+Вы также можете использовать пользовательский CSS для установки цвета иконки либо с помощью прямого
+атрибута `style`, либо с помощью пользовательских классов:
 
 ```html
 <template>
@@ -222,30 +224,30 @@ custom classes:
 <!-- icons-color-css.vue -->
 ```
 
-The `variant` prop places the [color utility class](/docs/reference/color-variants) `text-{variant}`
-on the icon's root element.
+Свойство `variant` помещает [класс цвета утилиты](/docs/reference/color-variants) `text-{variant}` в
+корневой элемент иконки.
 
-## Sizing
+## Размеры
 
-Icons have a default width and height of `1em`, which means they will scale with the size of the
-current font size:
+Иконки имеют ширину и высоту по умолчанию `1em`, что означает, что они будут масштабироваться с
+размером текущего размера шрифта:
 
 ```html
 <template>
   <div>
-    <p class="h1 mb-2">Icon <b-icon icon="exclamation-circle-fill"></b-icon></p>
-    <p class="h2 mb-2">Icon <b-icon icon="exclamation-circle-fill"></b-icon></p>
-    <p class="h3 mb-2">Icon <b-icon icon="exclamation-circle-fill"></b-icon></p>
-    <p class="h4 mb-2">Icon <b-icon icon="exclamation-circle-fill"></b-icon></p>
-    <p class="h5 mb-2">Icon <b-icon icon="exclamation-circle-fill"></b-icon></p>
+    <p class="h1 mb-2">Иконка <b-icon icon="exclamation-circle-fill"></b-icon></p>
+    <p class="h2 mb-2">Иконка <b-icon icon="exclamation-circle-fill"></b-icon></p>
+    <p class="h3 mb-2">Иконка <b-icon icon="exclamation-circle-fill"></b-icon></p>
+    <p class="h4 mb-2">Иконка <b-icon icon="exclamation-circle-fill"></b-icon></p>
+    <p class="h5 mb-2">Иконка <b-icon icon="exclamation-circle-fill"></b-icon></p>
   </div>
 </template>
 
 <!-- icons-size-inherit.vue -->
 ```
 
-You can also use custom CSS to set the icon size, either via direct `style` attribute, or via custom
-classes:
+Вы также можете использовать пользовательский CSS для установки размера иконки либо с помощью
+прямого атрибута `style`, либо с помощью пользовательских классов:
 
 ```html
 <template>
@@ -257,8 +259,8 @@ classes:
 <!-- icons-size-css.vue -->
 ```
 
-You can also use the prop `font-scale` to scale the icon's current font size by the specified
-factor:
+Вы также можете использовать свойство `font-scale`, чтобы масштабировать текущий размер шрифта
+иконки на указанный коэффициент:
 
 ```html
 <template>
@@ -276,12 +278,13 @@ factor:
 <!-- icons-size-font-size-prop.vue -->
 ```
 
-Also see the [scaling transforms](#scale) section below for additional sizing options.
+Также смотрите раздел [преобразования масштабирования](#scale) ниже, чтобы узнать о дополнительных
+параметрах изменения размера.
 
-## Styling
+## Стилизация
 
-With the use of Bootstrap's border, background and padding
-[utility classes](/docs/reference/utility-classes), you can create various styling effects:
+Используя рамку, фон и отступы Bootstrap [вспомогательные классы](/docs/reference/utility-classes),
+вы можете создавать различные эффекты стиля:
 
 ```html
 <template>
@@ -296,15 +299,15 @@ With the use of Bootstrap's border, background and padding
 <!-- icons-styling.vue -->
 ```
 
-## SVG transforms
+## SVG-преобразования
 
-BootstrapVue icons provide several props for applying basic SVG transforms to the `<svg>`. All
-transforms can be combined for added effect. Note that the transforms are applied to the `<svg>`
-_content_ and not the `<svg>` bounding box.
+Иконки BootstrapVue предоставляют несколько свойств для применения базовых преобразований SVG к
+`<svg>`. Все преобразования могут быть объединены для дополнительного эффекта. Обратите внимание,
+что преобразования применяются к `<svg>` _контенту_, а не к ограничивающей рамке `<svg>`.
 
-### Flipping
+### Перелистывание
 
-Flip the icon horizontally and/or vertically via the `flip-h` and `flip-v` props.
+Отразите иконку по горизонтали и/или по вертикали с помощью свойств `flip-h` и `flip-v`.
 
 ```html
 <template>
@@ -319,10 +322,11 @@ Flip the icon horizontally and/or vertically via the `flip-h` and `flip-v` props
 <!-- icons-transform-flip.vue -->
 ```
 
-### Rotate
+### Повороты
 
-Rotate the icon by a specified number of degrees via the `rotate` prop. Positive values will rotate
-the icon clockwise, while negative values will rotate the icon counterclockwise.
+Поверните иконку на указанное количество градусов с помощью свойства `rotate`. Положительные
+значения будут вращать иконку по часовой стрелке, а отрицательные значения будут вращать иконку
+против часовой стрелки.
 
 ```html
 <template>
@@ -339,12 +343,13 @@ the icon clockwise, while negative values will rotate the icon counterclockwise.
 <!-- icons-transform-rotate.vue -->
 ```
 
-Note that any [flipping](#flipping) is performed before the rotation is applied.
+Обратите внимание, что любое [flipping](#flipping) выполняется до применения поворота.
 
-### Scale
+### Масштабирование
 
-Scale the icon by any positive factor via the `scale` prop. Note this changes the icon's visual size
-but not its physical font size. To illustrate this we have added a background color to the icons.
+Масштабируйте иконку любым положительным фактором с помощью свойства `scale`. Обратите внимание, что
+это изменяет визуальный размер иконки, но не физический размер шрифта. Чтобы проиллюстрировать это,
+мы добавили фоновый цвет для иконок.
 
 ```html
 <template>
@@ -367,21 +372,21 @@ but not its physical font size. To illustrate this we have added a background co
 <!-- icons-transform-scale.vue -->
 ```
 
-If you need to have the background and/or border scale with the icon, use the `font-scale` prop
-instead.
+Если вам нужно, чтобы фон и/или граница масштабировались вместе с иконкой, используйте вместо этого
+свойство `font-scale`.
 
-### Shifting
+### Смещение
 
-Shifting affects icon location without changing or moving the svg container. To move icons on the
-horizontal and/or vertical axis, use the `shift-h` and `shift-v` props with any arbitrary numeric
-value, including decimals.
+Сдвиг влияет на расположение иконки без изменения или перемещения контейнера svg. Для перемещения
+иконок по горизонтальной и/или вертикальной оси используйте реквизиты `shift-h` и `shift-v` с любым
+произвольным числовым значением, включая десятичные дроби.
 
-For `shift-v`, positive values will move the icon upwards, while negative values will move the icon
-downwards. For `shift-h`, positive values will move the icon to the right, while negative values
-will move it left. Both props accept values that are in units of 1/16em (relative to the icon's
-current _font size_).
+Для `shift-v`, положительные значения будут перемещать иконку вверх, а отрицательные значения будут
+перемещать иконку вниз. Для `shift-h`, положительные значения будут перемещать иконку вправо, а
+отрицательные значения - влево. Оба реквизита принимают значения в единицах 1/16em (относительно
+текущего размера шрифта иконки).
 
-For clarity in the example, we’ve added a background color on the icon so you can see the effect.
+Для ясности в примере мы добавили цвет фона на иконку, чтобы вы могли видеть эффект.
 
 ```html
 <template>
@@ -423,26 +428,27 @@ For clarity in the example, we’ve added a background color on the icon so you 
 <!-- icons-transform-shift.vue -->
 ```
 
-Shifting is applied after any rotation transforms. As with scaling, backgrounds and borders are not
-affected. If you need to shift the border/background with the icon, use Bootstrap's margin
-[spacing utility classes](/docs/reference/utility-classes).
+Сдвиг применяется после любых преобразований вращения. Как и при масштабировании, фон и границы не
+затрагиваются. Если вам нужно сместить границу/фон с помощью иконки, используйте поле Bootstrap
+[промежутки между служебными классами](/docs/reference/utility-classes).
 
-## Animated icons
+## Анимированные иконки
 
 <span class="badge badge-info small">v2.7.0+</span>
 
-BootstrapVue includes the following built-in animations for icons:
+BootstrapVue включает следующие встроенные анимации для иконок:
 
-- `'cylon'` slides the icon left-right
-- `'cylon-vertical'` slides the icon up-down
-- `'fade'` fades the icon in and out <span class="badge badge-info small">2.12.0+</span>
-- `'spin'` smoothly spins the icon clockwise
-- `'spin-reverse'` smoothly spins the icon counter-clockwise
-- `'spin-pulse'` spins the icon clockwise, but in a pulsed step style
-- `'spin-reverse-pulse'` spins the icon counter-clockwise, but in a pulsed step style
-- `'throb'` scales the icon in and out <span class="badge badge-info small">2.12.0+</span>
+- `'cylon'` перемещает иконку влево-вправо
+- `'cylon-vertical'` перемещает иконку вверх-вниз
+- `'fade'` иконка появляется и исчезает <span class="badge badge-info small">2.12.0+</span>
+- `'spin'` плавно вращает иконку по часовой стрелке
+- `'spin-reverse'` плавно вращает иконку против часовой стрелки
+- `'spin-pulse'` вращает иконку по часовой стрелке, но в стиле импульсного шага
+- `'spin-reverse-pulse'` вращает иконку против часовой стрелки, но в стиле пульсирующего шага
+- `'throb'` увеличивает и уменьшает масштаб иконки
+  <span class="badge badge-info small">2.12.0+</span>
 
-To use the animation, set the `animation` prop to one of the animation names above.
+Чтобы использовать анимацию, установите свойство `animation` на одно из названий анимации выше.
 
 ```html
 <template>
@@ -485,7 +491,7 @@ To use the animation, set the `animation` prop to one of the animation names abo
 <!-- b-icon-aminations.vue -->
 ```
 
-As the animations are CSS based, they are applied _after_ any SVG transforms have taken place:
+Поскольку анимации основаны на CSS, они применяются _после_ любых преобразований SVG:
 
 ```html
 <template>
@@ -497,32 +503,31 @@ As the animations are CSS based, they are applied _after_ any SVG transforms hav
 <!-- b-icon-aminations-transforms.vue -->
 ```
 
-The BootstrapVue defined icon animation effects require BootstrapVue's custom CSS. The `animation`
-prop translates to the class name `b-icon-animation-{animationName}`.
+Эффекты анимации иконок, определенные BootstrapVue, требуют пользовательского CSS BootstrapVue.
+Свойство `animation` транслируется в имя класса `b-icon-animation-{animationName}`.
 
-Need a different style animation? Just create a custom class defining the animation, and apply that
-class to the icon component, or create a new animation class in the form of
-`b-icon-animation-{animationName}` and pass the custom animation name to the `animation` prop.
+Нужна анимация в другом стиле? Просто создайте пользовательский класс, определяющий анимацию, и
+примените этот класс к компоненту иконки, или создайте новый класс анимации в форме
+`b-icon-animation-{animationName}` и передайте имя пользовательской анимации в свойство `animation`.
 
-**Animation notes:**
+**Примечания к анимации:**
 
-- With the `cylon` animations, the left-right movement (or up-down movement) extends _past_ the
-  icon's bounding box by `+/- 25%`, so you may need to adjust padding or margins to compensate for
-  your use case.
-- Animation durations can be [configured via SASS SCSS variables](/docs/reference/theming)
-- The BootstrapVue defined animation effects of this component is dependent on the
-  `prefers-reduced-motion` media query. See the
-  [reduced motion section of our accessibility documentation](/docs/reference/accessibility#reduced-motion)
-  for additional details.
-- The `cylon` animation gets its name from the "eye" of the Cylons from the _original_
-  [1978 Battlestar Galactica TV series](https://www.youtube.com/watch?v=5a5bEIf0UaU).
+- С анимацией `cylon` движение влево-вправо (или движение вверх-вниз) расширяет ограничивающую рамку
+  иконки на `+/- 25%`, поэтому вам может потребоваться настроить отступы или поля, чтобы
+  компенсировать ваш вариант использования.
+- Длительность анимации можно [настроить с помощью переменных SASS SCSS](/docs/reference/theming)
+- Определяемые BootstrapVue анимационные эффекты этого компонента зависят от медиа-запроса
+  `prefers-reduced-motion`. Дополнительную информацию см. в
+  [разделе с ограниченным движением нашей документации по специальным возможностям](/docs/reference/accessibility#reduced-motion).
+- Анимация `cylon` получила свое название от «глаза» сайлонов из _оригинального_
+  [тв телесериала Battlestar Galactica 1978 года](https://www.youtube.com/watch?v=5a5bEIf0UaU).
 
-## Stacking icons
+## Укладка иконок
 
 <span class="badge badge-info small">v2.3.0+</span>
 
-Combine icons together via the use of the component `<b-iconstack>` and the `stacked` prop on
-individual icons (`<b-icon>` or `<b-icon-{icon-name}>`) to create complex icons:
+Объедините иконки вместе с помощью компонента `<b-iconstack>` и свойства `stacked` на отдельных
+иконках (`<b-icon>` или `<b-icon-{icon-name}>`) для создания комплексных иконки:
 
 ```html
 <template>
@@ -572,19 +577,19 @@ individual icons (`<b-icon>` or `<b-icon-{icon-name}>`) to create complex icons:
 <!-- b-iconsstack.vue -->
 ```
 
-`<b-iconstack>` supports the same `variant`, `font-size`, `animation` and transformation props
-available on individual icons.
+`<b-iconstack>` поддерживает те же свойства `variant`, `font-size`, `animation` и трансформации, что
+и для отдельных иконок.
 
-Stacked icon notes:
+Примечания к иконкам с накоплением:
 
-- Remember to set the `stacked` prop on the inner icon components!
-- The `font-scale` prop cannot be used on the inner icon components
-- The `width` and `height` attributes cannot be applied to the inner icon components
-- Stacked icons **cannot** be stacked inside another `<b-iconstack>`
+- Не забудьте установить свойство `stacked` для внутренних компонентов иконок!
+- Опция `font-scale` не может использоваться на внутренних компонентах иконок
+- Атрибуты `width` и `height` не могут быть применены к внутренним компонентам иконок.
+- Сложенные иконки **не могут** быть сложены внутри другого `<b-iconstack>`
 
-### Stacked icon animation
+### Анимация сложенных иконок
 
-The `<b-iconstack>` component supports the same animations as individual icons:
+Компонент `<b-iconstack>` поддерживает те же анимации, что и отдельные иконки:
 
 ```html
 <template>
@@ -599,7 +604,7 @@ The `<b-iconstack>` component supports the same animations as individual icons:
 <!-- b-iconstack-animation.vue -->
 ```
 
-Individual icons within the icon stack can also be animated (except on IE 11):
+Отдельные иконки в стеке иконок также можно анимировать (кроме IE 11):
 
 ```html
 <template>
@@ -627,41 +632,40 @@ Individual icons within the icon stack can also be animated (except on IE 11):
 
 **Примечания:**
 
-- IE 11 does not support animation of child elements within an SVG, hence only the `<b-iconstack>`
-  component can be animated. The child icon(s) animation will not be visible to IE 11 users.
-- The BootstrapVue defined animation effects of this component is dependent on the
-  `prefers-reduced-motion` media query. See the
-  [reduced motion section of our accessibility documentation](/docs/reference/accessibility) for
-  additional details.
+- IE 11 не поддерживает анимацию дочерних элементов в SVG, поэтому можно анимировать только
+  компонент `<b-iconstack>`. Анимация дочерних иконок не будет видна пользователям IE 11.
+- Определяемые BootstrapVue анимационные эффекты этого компонента зависят от медиа-запроса
+  `prefers-reduced-motion`. Дополнительную информацию смотрите в
+  [разделе с уменьшенным движением в нашей документации по специальным возможностям](/docs/reference/accessibility).
 
-## Using in components
+## Использование в компонентах
 
-Easily place icons as content in other components.
+Легко размещайте иконки в качестве контента в других компонентах.
 
-Note that icons placed in BootstrapVue components use BootstrapVue's custom CSS for additional
-styling compensation due to current issues with Bootstrap Icons `<svg>` alignment implementation,
-and for additional aesthetic scaling (icons placed in the components listed below will have their
-font scaled by 125%).
+Обратите внимание, что иконки, размещенные в компонентах BootstrapVue, используют пользовательский
+CSS BootstrapVue для дополнительной компенсации стиля из-за текущих проблем с реализацией
+выравнивания иконок Bootstrap `<svg>`, а также для дополнительного эстетического масштабирования
+(иконки, размещенные в компонентах, перечисленных ниже, будут масштабироваться на 125%).
 
-### Buttons
+### Кнопки
 
 ```html
 <template>
   <div>
     <b-button size="sm" class="mb-2">
-      <b-icon icon="gear-fill" aria-hidden="true"></b-icon> Settings
+      <b-icon icon="gear-fill" aria-hidden="true"></b-icon> Настройки
     </b-button>
     <br>
     <b-button variant="primary" class="mb-2">
-      Pay now <b-icon icon="credit-card" aria-hidden="true"></b-icon>
+      Оплатить сейчас <b-icon icon="credit-card" aria-hidden="true"></b-icon>
     </b-button>
     <br>
     <b-button variant="outline-info" class="mb-2">
-      <b-icon icon="power" aria-hidden="true"></b-icon> Logout
+      <b-icon icon="power" aria-hidden="true"></b-icon> Выйти
     </b-button>
     <br>
     <b-button size="lg" variant="primary" class="mb-2">
-      <b-icon icon="question-circle-fill" aria-label="Help"></b-icon>
+      <b-icon icon="question-circle-fill" aria-label="Помощь"></b-icon>
     </b-button>
   </div>
 </template>
@@ -669,22 +673,22 @@ font scaled by 125%).
 <!-- icons-buttons.vue -->
 ```
 
-### Button Groups and toolbars
+### Группы кнопок и панели инструментов
 
-#### Button Group
+#### Группы кнопок
 
 ```html
 <template>
   <div>
     <b-button-group>
       <b-button variant="outline-primary">
-        <b-icon icon="tools"></b-icon> Settings
+        <b-icon icon="tools"></b-icon> Настройки
       </b-button>
       <b-button variant="outline-primary">
-        <b-icon icon="person-fill"></b-icon> Account
+        <b-icon icon="person-fill"></b-icon> Аккаунт
       </b-button>
       <b-button variant="outline-primary">
-        <b-icon icon="inbox-fill"></b-icon> Messages
+        <b-icon icon="inbox-fill"></b-icon> Сообщения
       </b-button>
     </b-button-group>
   </div>
@@ -693,45 +697,45 @@ font scaled by 125%).
 <!-- icons-button-group.vue -->
 ```
 
-#### Button Toolbar
+#### Кнопка панели инструментов
 
 ```html
 <template>
   <div>
     <b-button-toolbar>
       <b-button-group class="mr-1">
-        <b-button title="Save file">
+        <b-button title="Сохранить файл">
           <b-icon icon="cloud-upload" aria-hidden="true"></b-icon>
         </b-button>
-        <b-button title="Load file">
+        <b-button title="Загрузить файл">
           <b-icon icon="cloud-download" aria-hidden="true"></b-icon>
         </b-button>
-        <b-button title="New document">
+        <b-button title="Новый документ">
           <b-icon icon="file-earmark" aria-hidden="true"></b-icon>
         </b-button>
       </b-button-group>
       <b-button-group class="mr-1">
-        <b-button title="Align left">
+        <b-button title="Выравнивание слева">
           <b-icon icon="text-left" aria-hidden="true"></b-icon>
         </b-button>
-        <b-button title="Align center">
+        <b-button title="Выравнивание по центру">
           <b-icon icon="text-center" aria-hidden="true"></b-icon>
         </b-button>
-        <b-button title="Align right">
+        <b-button title="Выравнивание справа">
           <b-icon icon="text-right" aria-hidden="true"></b-icon>
         </b-button>
       </b-button-group>
       <b-button-group>
-        <b-button title="Bold">
+        <b-button title="Жирный">
           <b-icon icon="type-bold" aria-hidden="true"></b-icon>
         </b-button>
-        <b-button title="Italic">
+        <b-button title="Курсив">
           <b-icon icon="type-italic" aria-hidden="true"></b-icon>
         </b-button>
-        <b-button title="Underline">
+        <b-button title="Подчеркивание">
           <b-icon icon="type-underline" aria-hidden="true"></b-icon>
         </b-button>
-        <b-button title="Strikethrough">
+        <b-button title="Зачеркнутый">
           <b-icon icon="type-strikethrough" aria-hidden="true"></b-icon>
         </b-button>
       </b-button-group>
@@ -742,7 +746,7 @@ font scaled by 125%).
 <!-- icons-button-toolbar.vue -->
 ```
 
-### Input Groups
+### Группа ввода
 
 ```html
 <template>
@@ -751,7 +755,7 @@ font scaled by 125%).
       <b-input-group-prepend is-text>
         <b-icon icon="search"></b-icon>
       </b-input-group-prepend>
-      <b-form-input type="search" placeholder="Search terms"></b-form-input>
+      <b-form-input type="search" placeholder="Условия поиска"></b-form-input>
     </b-input-group>
     <b-input-group class="mb-2">
       <b-input-group-prepend is-text>
@@ -760,7 +764,7 @@ font scaled by 125%).
       <b-form-tags
         separator=" ,;"
         tag-variant="primary"
-        placeholder="Enter new tags separated by space, comma or semicolon"
+        placeholder="Введите новые теги, разделенные пробелом, запятой или точкой с запятой"
         no-add-on-enter
       ></b-form-tags>
     </b-input-group>
@@ -782,7 +786,7 @@ font scaled by 125%).
 <!-- icons-input-groups.vue -->
 ```
 
-### List Groups
+### Группа списка
 
 ```html
 <template>
@@ -809,41 +813,41 @@ font scaled by 125%).
 <!-- icons-list-groups.vue -->
 ```
 
-### Dropdowns
+### Выпадающие списки
 
 ```html
 <template>
   <div>
     <b-dropdown variant="primary">
       <template #button-content>
-        <b-icon icon="gear-fill" aria-hidden="true"></b-icon> Settings
+        <b-icon icon="gear-fill" aria-hidden="true"></b-icon> Настройки
       </template>
       <b-dropdown-item-button>
          <b-icon icon="lock-fill" aria-hidden="true"></b-icon>
-         Locked <span class="sr-only">(Click to unlock)</span>
+         Заблокировано <span class="sr-only">(Нажмите, чтобы разблокировать)</span>
       </b-dropdown-item-button>
       <b-dropdown-divider></b-dropdown-divider>
-      <b-dropdown-group header="Choose options" class="small">
+      <b-dropdown-group header="Выберите опцию" class="small">
         <b-dropdown-item-button>
            <b-icon icon="blank" aria-hidden="true"></b-icon>
-           Option A <span class="sr-only">(Not selected)</span>
+           Опция А <span class="sr-only">(Не выбрано)</span>
         </b-dropdown-item-button>
         <b-dropdown-item-button>
            <b-icon icon="check" aria-hidden="true"></b-icon>
-           Option B <span class="sr-only">(Selected)</span>
+           Опция Б <span class="sr-only">(Selected)</span>
         </b-dropdown-item-button>
          <b-dropdown-item-button>
            <b-icon icon="blank" aria-hidden="true"></b-icon>
-           Option C <span class="sr-only">(Not selected)</span>
+           Опция В <span class="sr-only">(Не выбрано)</span>
         </b-dropdown-item-button>
       </b-dropdown-group>
       <b-dropdown-divider></b-dropdown-divider>
-      <b-dropdown-item-button>Some action</b-dropdown-item-button>
-      <b-dropdown-item-button>Some other action</b-dropdown-item-button>
+      <b-dropdown-item-button>Некоторое действие</b-dropdown-item-button>
+      <b-dropdown-item-button>Какое-то другое действие</b-dropdown-item-button>
       <b-dropdown-divider></b-dropdown-divider>
       <b-dropdown-item-button variant="danger">
         <b-icon icon="trash-fill" aria-hidden="true"></b-icon>
-        Delete
+        Удалить
       </b-dropdown-item-button>
     </b-dropdown>
   </div>
@@ -852,22 +856,23 @@ font scaled by 125%).
 <!-- icons-dropdowns.vue -->
 ```
 
-## Working with SVGs
+## Работа с SVG
 
-SVGs are awesome to work with, but they do have some known quirks to work around.
+С SVG замечательно работать, но у них есть некоторые известные особенности, которые нужно обойти.
 
-- **Focus handling is broken in Internet Explorer and Edge.** We have added the attribute
-  `focusable="false"` to the `<svg>` element. You can override this by setting the attribute
-  `focusable="false"` on the icon component.
-- **Browsers inconsistently announce SVGs as `<img>` tags with voice assistance.** Hence, we have
-  added added the attributes `role="img"` and `alt="icon"`. You can override these attributes if
-  needed.
-- **Safari skips `aria-label` when used on non-focusable SVGs.** As such, use the attribute
-  `aria-hidden="true"` when using the icon and use CSS to visually hide the equivalent label.
+- **Обработка фокуса не работает в Internet Explorer и Edge.** Мы добавили атрибут
+  `focusable="false"` к элементу `<svg>`. Вы можете переопределить это, установив атрибут
+  `focusable="false"` для компонента иконки.
+- **Браузеры непоследовательно объявляют SVG как теги `<img>` с голосовой поддержкой.** Поэтому мы
+  добавили атрибуты `role="img"` и `alt="icon"`. При необходимости вы можете переопределить эти
+  атрибуты.
+- **Safari пропускает `aria-label` при использовании на нефокусируемых SVG.** Таким образом,
+  используйте атрибут `aria-hidden="true"` при использовании иконки и используйте CSS, чтобы
+  визуально скрыть эквивалентную метку.
 
-## Icons
+## Иконки
 
-Use the explorer below to search and browse the available icons.
+Используйте проводник ниже для поиска и просмотра доступных иконок.
 
 <!-- Component rendered by `docs/pages/docs/icons.index.js` -->
 <!-- We use a `<div is="...">` to prevent marked loader from mangling the unknown tag -->

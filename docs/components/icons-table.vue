@@ -8,17 +8,17 @@
     <b-row align-v="start">
       <b-col md="5" lg="6">
         <div id="bv-icons-table-title" class="h3 text-muted mb-3 mb-md-0">
-          Icon explorer
+          Обзор иконок
         </div>
       </b-col>
       <b-col md="7" lg="6">
         <b-form @submit.prevent>
           <b-form-group
-            label="Search icons"
+            label="Поиск иконок"
             label-for="bv-icons-table-search"
             label-cols-sm="auto"
             label-align-sm="right"
-            :description="`Showing ${filteredIcons.length} of ${totalIcons} icons`"
+            :description="`Показаны ${filteredIcons.length} из ${totalIcons} иконок`"
           >
             <b-input-group>
               <b-input-group-prepend is-text>
@@ -67,7 +67,7 @@
           class="text-center mt-4 d-flex align-items-center justify-content-center"
         >
           <b-icon icon="alert-triangle-fill" aria-hidden="true"></b-icon>
-          <span>No matching icons found. Try searching again.</span>
+          <span>Подходящие иконки не найдены. Попробуйте поискать еще раз.</span>
         </b-alert>
       </div>
     </div>

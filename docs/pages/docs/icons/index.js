@@ -58,7 +58,7 @@ export default {
       <QuickLinks key="quick-/docs/icons"></QuickLinks>
       <Section play>${body}</Section>
       <Section class="bd-component-reference">
-        <AnchoredHeading id="component-reference">Component reference</AnchoredHeading>
+        <AnchoredHeading id="component-reference">Справочник по компонентам</AnchoredHeading>
         <template v-for="c in componentMeta">
           <Componentdoc
             :key="c.component"
@@ -74,12 +74,12 @@ export default {
         </template>
         <div class="alert alert-info small">
           <p class="mb-0">
-            Individual icon components are not listed here due to the large number of components.
+            Отдельные компоненты иконок здесь не перечислены из-за большого количества компонентов.
           </p>
         </div>
         <Importdoc :meta="importMeta"></ImportDoc>
         <p>
-          <code>IconsPlugin</code> is also exported as <code>BootstrapVueIcons</code>.
+          <code>IconsPlugin</code> также экспортируется как <code>BootstrapVueIcons</code>.
         </p>
       </Section>
     </Main>`
