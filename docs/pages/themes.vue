@@ -2,19 +2,17 @@
   <b-container id="content" fluid="lg" tag="main" class="pb-5">
     <section>
       <header class="bd-content pb-4">
-        <h1>Custom themes and dashboards</h1>
+        <h1>Пользовательские темы и информационные панели</h1>
         <p class="lead">
-          With the themes and dashboards built by our partners, you can build eye-catching
-          apps and pages &mdash; all using BootstrapVue! The following items have been curated by
-          the BootstrapVue team.
+          С темами и информационными панелями, созданными нашими партнерами, вы можете создавать привлекательные приложения и страницы &mdash; все используют BootstrapVue! Следующие элементы были подготовлены командой BootstrapVue.
         </p>
       </header>
 
       <article v-if="!themes || themes.length === 0" class="bvd-theme text-center mb-5">
         <b-card bg-varinatt="light">
           <BvLogo class="mx-auto"></BvLogo>
-          <h2 class="display-4 font-weight-bold text-dark mt-3">Coming soon!</h2>
-          <p class="card-text">Themes will be coming in the near future.</p>
+          <h2 class="display-4 font-weight-bold text-dark mt-3">Скоро будет!</h2>
+          <p class="card-text">Темы появятся в ближайшее время.</p>
         </b-card>
       </article>
 
@@ -48,15 +46,15 @@
               <h2 :id="`theme-label-${idx}`" class="h5 mb-3">{{ theme.title }}</h2>
               <b-card-text class="flex-grow-1">{{ theme.description }}</b-card-text>
               <b-card-text class="text-muted small">
-                <span class="d-block d-lg-inline-block mb-2 mb-lg-0"><strong>Category:</strong> {{ theme.category }}</span>
-                <span class="d-block d-lg-inline-block ml-lg-3"><i><strong>Provided by:</strong> {{ theme.provider }}</i></span>
+                <span class="d-block d-lg-inline-block mb-2 mb-lg-0"><strong>Категория:</strong> {{ theme.category }}</span>
+                <span class="d-block d-lg-inline-block ml-lg-3"><i><strong>Предоставлено:</strong> {{ theme.provider }}</i></span>
               </b-card-text>
               <b-card-text class="d-flex align-items-center">
                 <b-button :href="theme.href" target="_blank" variant="bd-primary">
-                  Get {{ theme.type || 'theme' }}
+                  Получить {{ theme.type || 'theme' }}
                 </b-button>
                 <span v-if="theme.price" class="text-muted position-relative ml-3">
-                  <strong>Price:</strong> {{ theme.price }}<b-link href="#theme-notes" title="See notes">*</b-link>
+                  <strong>Стоимость:</strong> {{ theme.price }}<b-link href="#theme-notes" title="Смотреть примечания">*</b-link>
                 </span>
               </b-card-text>
             </b-col>
@@ -65,51 +63,43 @@
       </article>
 
       <aside id="theme-notes" class="text-muted mb-3" aria-labelledby="theme-notes-heading">
-        <h2 id="theme-notes-heading" class="h6">Notes:</h2>
+        <h2 id="theme-notes-heading" class="h6">Примечания:</h2>
         <ul class="small">
           <li>
-            Prices shown are in US dollars. Prices are subject to change. Refer to the
-            vendor/provider website for current pricing.
+            Цены указаны в долларах США. Цены подвержены изменениям. Текущие цены смотрите на веб-сайте вендора/провайдера.
           </li>
           <li>
-            Theme licenses are typically per-site (unless onterwised noted). Refer to the theme
-            site documentation for licensing information.
+            Лицензии на темы обычно предоставляются для каждого сайта (если не указано иное). Информацию о лицензировании см. в документации тематического сайта.
           </li>
           <li>
-            BootstrapVue does not guarantee that all custom components provided by a theme are
-            WIA-ARIA compliant. Refer to the provider documentation for details.
+            BootstrapVue не гарантирует, что все пользовательские компоненты, предоставляемые темой, совместимы с WIA-ARIA. За подробностями обратитесь к документации провайдера.
           </li>
           <li>
-            BootstrapVue receives a commission on themes purchased via the above affiliate links.
+            BootstrapVue получает комиссию за темы, приобретенные по вышеуказанным партнерским ссылкам.
           </li>
           <li>
-            Refer to the <b-link to="/docs/reference/theming">Theming section</b-link> for
-            details on incorporating custom theme SCSS files.
+            Обратитесь к <b-link to="/docs/reference/theming">разделу Тем</b-link> для получения подробной информации о включении файлов SCSS пользовательских тем.
           </li>
         </ul>
       </aside>
 
       <aside id="theme-providers" class="text-muted" aria-labelledby="theme-provider-heading">
-        <h2 id="theme-provider-heading" class="h6">Are you a theme provider?</h2>
+        <h2 id="theme-provider-heading" class="h6">Вы представитель темы?</h2>
         <p class="small mb-2">
-          If you are interested in being an affiliate and listing your theme or dashboard on this
-          page, your product must meet the following guidelines:
+          Если вы заинтересованы в том, чтобы стать партнером и разместить свою тему или информационную панель на этой странице, ваш продукт должен соответствовать следующим требованиям:
         </p>
         <ul class="small">
-          <li>It must be based on (or extends) BootstrapVue components.</li>
+          <li>Он должен быть основан на компонентах BootstrapVue (или расширять их).</li>
           <li>
-            Must be be compatible with BootstrapVue so that users can incorporate native
-            BootstrapVue components if they wish.
+            Должен быть совместим с BootstrapVue, чтобы пользователи могли при желании включать собственные компоненты BootstrapVue.
           </li>
           <li>
-            Should avoid the need for jQuery or Bootstrap v4 JavaScript files (except for included
-            3<sup>rd</sup> party components if required).
+            Следует избегать необходимости в файлах JavaScript jQuery или Bootstrap v4 (за исключением включенных сторонних компонентов, если это необходимо).
           </li>
-          <li>Should provide the source SCSS/SASS files/variables.</li>
-          <li>Should promote that it is based on (or compatible with) <i>BootstrapVue</i>.</li>
+          <li>Должен предоставить исходные файлы/переменные SCSS/SASS.</li>
+          <li>Следует продвигать, что он основан на (или совместим с) <i>BootstrapVue</i>.</li>
           <li>
-            Custom components provided by the theme should be WAI-ARIA accessible. Any WAI-ARIA
-            limitations should be noted in the theme documeantation.
+            Пользовательские компоненты, предоставляемые темой, должны быть доступны через WAI-ARIA. Любые ограничения WAI-ARIA должны быть отмечены в документации к теме.
           </li>
         </ul>
       </aside>
@@ -142,7 +132,7 @@ export default {
   },
   head() {
     const title = `${this.title} | BootstrapVue`
-    const description = 'BootstrapVue based premium themes and dashboards.'
+    const description = 'Темы премиум-класса и информационные панели на основе BootstrapVue.'
     return {
       title,
       meta: [
@@ -168,7 +158,7 @@ export default {
   },
   computed: {
     title() {
-      return 'Themes and dashboards'
+      return 'Темы и панели'
     }
   }
 }
