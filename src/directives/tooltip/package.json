@@ -25,6 +25,10 @@
         "description": "Помещает всплывающую подсказку в правую часть триггерного элемента"
       },
       {
+        "name": "left",
+        "description": "Positions the tooltip on the left of the trigger element"
+      },
+      {
         "name": "bottom",
         "description": "Помещает всплывающую подсказку в нижнюю часть триггерного элемента"
       },
@@ -63,6 +67,18 @@
       {
         "name": "rightbottom",
         "description": "Помещает всплывающую подсказку в правом нижнем углу элемента триггера"
+      },
+      {
+        "name": "hover",
+        "description": "Trigger the tooltip on hovering"
+      },
+      {
+        "name": "click",
+        "description": "Trigger the tooltip on clicking"
+      },
+      {
+        "name": "focus",
+        "description": "Trigger the tooltip on focusing"
       },
       {
         "name": "nofade",

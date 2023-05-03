@@ -29,8 +29,8 @@
 
 ## Предпосылки
 
-В этой документации BootstrapVue предполагается, что Вы знакомы с Vue и Bootstrap
-v{{ bootstrapVersionMajor }} CSS. Хорошие отправные точки для этого:
+В этой документации по BootstrapVue предполагается, что вы знакомы с Vue и Bootstrap
+v{{ bootstrapVersionMajor }} CSS. Хорошие отправные точки для них:
 
 - [Руководство по Vue](https://vuejs.org/v2/guide/)
 - [Vue API](https://vuejs.org/v2/api/)
@@ -39,7 +39,10 @@ v{{ bootstrapVersionMajor }} CSS. Хорошие отправные точки �
 
 ## Информация о документации
 
-Во многих примерах, показанных в документации BootstrapVue, Вы можете увидеть использование CSS-классы такие как <code class="text-nowrap">ml-2</code>, <code class="text-nowrap">py-1</code> и т. д. Это классы утилиты Bootstrap v{{bootstrapVersionMinor}}, которые помогают управлять заполнением, полями, позиционированием и т. д. Вы можете найти информацию об этих классах в справочном разделе по [Утилитам классов](/docs/reference/utility-classes).
+Во многих примерах, показанных в документации BootstrapVue, вы можете увидеть использование классов CSS,
+таких как <code class="text-nowrap">ml-2</code>, <code class="text-nowrap">py-1</code>, и т. д. Это служебные классы
+Bootstrap v{{bootstrapVersionMinor}}, которые помогают управлять отступами, полями, позиционированием и многим другим.
+Информацию об этих классах можно найти в справочном разделе [Вспомогательные классы](/docs/reference/utility-classes).
 
 Многие из примеров в этой документации являются _действующими_ и могут быть отредактированы на месте для улучшения процесса обучения (обратите внимание, что некоторые примеры могут не работать в IE 11 из-за использования кода ES6 JavaScript в разделах `<template>`).
 
@@ -611,15 +614,15 @@ vue add bootstrap-vue
 ```html
 <!-- Добавьте это в <head> -->
 
-<!-- Загрузите необходимые CSS Bootstrap и BootstrapVue -->
-<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+<!-- Load required Bootstrap and BootstrapVue CSS -->
+<link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap@{{ bootstrapVersion }}/dist/css/bootstrap.min.css" />
 <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
 
 <!-- Загрузите полифиллы для поддержки старых браузеров -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
 
-<!-- Загрузите Vue, а затем BootstrapVue -->
-<script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+<!-- Load Vue followed by BootstrapVue -->
+<script src="https://unpkg.com/vue@{{ vueVersion }}/dist/vue.min.js"></script>
 <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 
 <!-- Загрузите следующее для поддержки BootstrapVueIcons -->

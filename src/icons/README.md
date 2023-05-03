@@ -131,10 +131,10 @@ SCSS/CSS. Для эффектов анимации требуется польз
 
 ```html
 <head>
-  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap@{{ bootstrapVersion }}/dist/css/bootstrap.min.css" />
   <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
   <!-- Load Vue followed by BootstrapVue, and BootstrapVueIcons -->
-  <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+  <script src="//unpkg.com/vue@{{ vueVersion }}/dist/vue.min.js"></script>
   <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
   <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
 </head>
@@ -144,10 +144,10 @@ SCSS/CSS. Для эффектов анимации требуется польз
 
 ```html
 <head>
-  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap@{{ bootstrapVersion }}/dist/css/bootstrap.min.css" />
   <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.css" />
   <!-- Load Vue followed by BootstrapVueIcons -->
-  <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+  <script src="//unpkg.com/vue@{{ vueVersion }}/dist/vue.min.js"></script>
   <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
 </head>
 ```
