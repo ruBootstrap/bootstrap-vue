@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[85],{626:function(e,c,n){"use strict";n.r(c),c.default={fetch:function(e){var c=e.redirect,n=e.route;c(301,"/docs/reference/changelog".concat((void 0===n?{}:n).hash||""))}}}}]);
