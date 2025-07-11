@@ -477,7 +477,7 @@ this.$root.$emit('bv::hide::tooltip')
 всплывающей подсказки (если он был указан в объекте конфигурации) в качестве первого аргумента:
 
 ```js
-this.$root.$emit('bv::show::tooltip', 'my-trigger-button-id')
+this.$root.$emit('bv::hide::tooltip', 'my-trigger-button-id')
 ```
 
 Чтобы открыть **конкретную всплывающую подсказку**, передайте `id` элемента триггера или `id`
